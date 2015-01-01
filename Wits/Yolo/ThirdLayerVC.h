@@ -90,6 +90,7 @@
      IBOutlet UILabel *vsLbl;
      IBOutlet UIButton *backBtn2;
      NSTimer *timer;
+     NSTimer *NewTimer;
      int timeSinceTimer;
      BOOL isOpponentFound;
      

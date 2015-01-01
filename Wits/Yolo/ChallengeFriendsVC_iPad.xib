@@ -11,6 +11,7 @@
                 <outlet property="firstdot" destination="OiJ-1N-msn" id="Rmf-vN-NWM"/>
                 <outlet property="fourthDot" destination="0BT-Sm-GLk" id="xw8-pO-4cs"/>
                 <outlet property="noFriendsLbl" destination="kmG-cl-DFo" id="KRc-kF-E03"/>
+                <outlet property="opponentName" destination="Bhh-wB-3lX" id="Dz0-mY-urP"/>
                 <outlet property="opponentProfileImageView" destination="2Gz-ml-NY9" id="rxb-dR-6hY"/>
                 <outlet property="searchField" destination="4Gy-vu-NTY" id="Uts-WN-hiT"/>
                 <outlet property="searchingLoaderView" destination="BMk-EC-fJF" id="fgl-yD-Dhx"/>
@@ -108,16 +109,9 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WyV-wE-7xM">
-                    <rect key="frame" x="303" y="293" width="161" height="40"/>
+                    <rect key="frame" x="303" y="295" width="161" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="25"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bhh-wB-3lX">
-                    <rect key="frame" x="41" y="484" width="242" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -136,7 +130,7 @@
                     <rect key="frame" x="280" y="580" width="200" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <view contentMode="scaleToFill" id="BMk-EC-fJF">
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" id="BMk-EC-fJF">
                     <rect key="frame" x="327" y="450" width="113" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -160,7 +154,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="P1N-m0-nHe">
-                    <rect key="frame" x="284" y="845" width="200" height="50"/>
+                    <rect key="frame" x="284" y="938" width="200" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                     <state key="normal" title="Cancel" backgroundImage="btnbgpressed.png">
@@ -174,6 +168,13 @@
                         <action selector="quitGame:" destination="-1" eventType="touchUpInside" id="jGL-Dx-MR6"/>
                     </connections>
                 </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bhh-wB-3lX">
+                    <rect key="frame" x="303" y="790" width="161" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>

@@ -20,13 +20,14 @@
      BOOL isOpponentFound;
      ChallengeSearchObject *senderObj;
      __weak IBOutlet UIImageView *searchBg;
-     __weak IBOutlet AsyncImageView *senderProfileImageView;
+      IBOutlet AsyncImageView *senderProfileImageView;
      
+     __weak IBOutlet UILabel *searchingOpponentLbl;
      __weak IBOutlet UIButton *cancelbtn;
      __weak IBOutlet UILabel *senderNameLbl;
     __weak IBOutlet UILabel *opponentNameLbl;
      
-     __weak IBOutlet AsyncImageView *opponentProfileImageView;
+      IBOutlet AsyncImageView *opponentProfileImageView;
 }
 
 - (void)showAlertMessage:(ChallengeSearchObject *)searchObject;

@@ -514,7 +514,7 @@
           [request setHTTPBody:postData];
           
           [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response , NSData  *data, NSError *error) {
-               NSLog(@"%ld",(long)[(NSHTTPURLResponse *)response statusCode]);
+               
                if ( [(NSHTTPURLResponse *)response statusCode] == 200 )
                {
                     [_loadingView hide];

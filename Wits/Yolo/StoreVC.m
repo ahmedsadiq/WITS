@@ -47,7 +47,9 @@
      if ([val intValue] < 0) {
           [SharedManager getInstance]._userProfile.cashablePoints = @"0";
      }
-     
+     AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+          if(!appDelegate.fromHomeScreen)
+               appDelegate.resetToHomeScreen = true;
      [cashablePoints setText:[[SharedManager getInstance] _userProfile].cashablePoints];
      [nonCashablePoints setText:[[SharedManager getInstance] _userProfile].totalPoints];
 }
@@ -157,7 +159,7 @@
           [_acceptBtn setTitle:@"Accept" forState:UIControlStateNormal];
           [_rejectBtn setTitle:@"Reject" forState:UIControlStateNormal];
           ////////Paypal & Skrill//////
-          
+          RewardsbtnLbl.text = @"Rewards";
           _O1name.placeholder = @"Name";
           _O1emailAccount.placeholder = PAYPAL_EMAIL;
           _O1ContactAccount.placeholder = CONTACT_EMAIL;
@@ -1408,7 +1410,7 @@
      
      NSString *totalPoints = [NSString stringWithFormat:@"%d",points];
      [cashablePoints setText:totalPoints];
-     
+     [loadView hide];
 }
 - (void)UIUpdaterFailure:(NSNotification *)notification {
      //[loadView hide];

@@ -181,7 +181,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 {
      [super viewDidLoad];
      //  Do any additional setup after loading the view from its nib.
-     
+     stopAnimation = false;
      [self initData];
      [self initViews];
      imageNames = @[@"avatar1.png",@"avatar2.png",@"avatar3.png",@"avatar4.png",@"avatar5.png",@"avatar6.png"];
@@ -221,8 +221,12 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      [super viewWillAppear:animated];
      answerTxt.text = @"";
      [self setLanguageForScreen];
-     if(!appDelegate.isGameInProcess)
-          [self.navigationController popToRootViewControllerAnimated:true];
+     if(appDelegate.resetToHomeScreen)
+     {
+          appDelegate.resetToHomeScreen = false;
+          [self.navigationController popToRootViewControllerAnimated:false];
+          
+     }
 }
 
 -(void) setAfterChalleneg {
@@ -565,7 +569,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      int width = (screenWidth/10)*(timeSpend+2);
      width = screenWidth - width;
      
-     if(width>-60) {
+     if(width>-60 && !stopAnimation) {
           [UIView beginAnimations:@"" context:nil];
           [UIView setAnimationDuration:2]; //whatever time you want
           _timerBar.frame = CGRectMake(0, 0, width, 7);//ends small
@@ -635,7 +639,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      [[RightBarVC getInstance] ShowInView];
 }
 -(void)TimerUp{
-     NSLog(@"challelahscljhdlkas d%@",_challenge.challengeID );
+     
      if(!isQuestionAnswered){
           answerReaction.hidden = true;
           int timeSpend = 10 - ([timerLbl.text  intValue] - 1);
@@ -819,7 +823,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           [self playCorrectSound:@"incorrect.mp3" Loop: NO];
           if(ShouldVibrate)
                AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-         
+          stopAnimation = true;
           switch (btn.tag) {
                case 100:
                     [option_1_Btn setBackgroundImage:[UIImage imageNamed:@"1wrong.png"] forState:UIControlStateNormal];
@@ -1204,7 +1208,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 #pragma mark Notify User
 
 -(void)notifyUser:(int)_selectedIndex{
-     NSLog(@"USER ID IS : %@",[SharedManager getInstance].userID);
+    
      reconnectAttempt = 0;
      
      sharedManager.socketdelegate = self;
@@ -1213,7 +1217,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      int seconds = [timerLbl.text intValue];
      seconds = 10-seconds;
      int randomNumber = 3 + rand() % (7-2);
-     int randomNumber1 = 2 + rand() % (7-2);
+     int randomNumber1 = 1 + rand() % (5-1);
      
      requestType = [[NSUserDefaults standardUserDefaults]
                     stringForKey:@"requestType"];
@@ -1233,7 +1237,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                
                NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",tempQuestion.questionID,@"question_id",@"-1",@"q_option_id",@"2",@"is_correct",selfPointsStr,@"current_points",[NSString stringWithFormat:@"%d",seconds],@"seconds", _challenge.opponent_ID,@"opponent_id", otherPointsStr,@"opponent_points", _challenge.type,@"type",_challenge.type_ID,@"type_id",_challenge.contest_ID,@"contest_id",requestType, @"request_type", nil];
                NSLog(@":::::::::::: Not Selected :::::::::::::");
-               NSLog( @"%@", registerDictionary );
+         
                latestEvent.eventName = @"individualQuestionResult";
                latestEvent.params = registerDictionary;
                
@@ -1246,7 +1250,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                Option *tempOption = [tempQuestion.optionsArray objectAtIndex:_selectedIndex];
                
                NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",tempQuestion.questionID,@"question_id",tempOption.optionID,@"q_option_id",tempOption.isCorrect,@"is_correct",selfPointsStr,@"current_points",[NSString stringWithFormat:@"%d",seconds],@"seconds", _challenge.opponent_ID,@"opponent_id", otherPointsStr,@"opponent_points", _challenge.type,@"type",_challenge.type_ID,@"type_id",_challenge.contest_ID,@"contest_id",requestType, @"request_type", nil];
-               NSLog( @"%@", registerDictionary );
+               
                latestEvent.eventName = @"individualQuestionResult";
                latestEvent.params = registerDictionary;
                [sharedManager sendEvent:@"individualQuestionResult" andParameters:registerDictionary];
@@ -1270,8 +1274,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                NSString *selfPointsStr = [NSString stringWithFormat:@"%i",currentSelfPoints];
                
                if ([_challenge.isSuperBot intValue]== 0 && _selectedIndex == -1){
-                    
-                    
+   
                     timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber];
                     //correctOpt = [_challenge.randAnswerArray objectAtIndex:currentIndex];
                     
@@ -1280,23 +1283,23 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                if ([_challenge.isSuperBot intValue]== 1 && _selectedIndex == -1) {
                     timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
                     if (ChancesSuperbot <= 70) {
-                         //timeInSeconds = @"7";
-                         timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
+                         timeInSeconds = @"9";
+                         //timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
                          // correctOpt = @"1";
                     }else if (ChancesSuperbot >70 && ChancesSuperbot <= 90){
-                         // timeInSeconds = @"8";
-                         timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
+                          timeInSeconds = @"8";
+                         //timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
                          //correctOpt = @"1";
                     }else if (ChancesSuperbot >90 && ChancesSuperbot <= 100){
-                         //timeInSeconds = @"6";
-                         timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
+                         timeInSeconds = @"7";
+                         //timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
                          //correctOpt = @"1";
                     }
                     
                }else{
                     
                     
-                    NSLog(@"randomNumber : %d",ChancesSuperbot);
+                    
                     if (ChancesSuperbot <= 70) {
                          //timeInSeconds = @"7";
                          timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber];
@@ -1425,11 +1428,13 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           quitMsg.text = SURRENDER_LBL;
           [quityes setTitle:YES_BTN forState:UIControlStateNormal];
           [quitno setTitle:NO_BTN forState:UIControlStateNormal];
+         
      }else if (languageCode == 1){
           QuitTitle.text = QUIT_GAME_1;
           quitMsg.text = SURRENDER_LBL_1;
           [quityes setTitle:YES_BTN_1 forState:UIControlStateNormal];
           [quitno setTitle:NO_BTN_1 forState:UIControlStateNormal];
+          
      }else if (languageCode == 2){
           QuitTitle.text = QUIT_GAME_2;
           quitMsg.text = SURRENDER_LBL_2;
@@ -1500,6 +1505,14 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 - (IBAction)QuitNO:(id)sender {
      
      [quitGameDialog removeFromSuperview];
+}
+
+- (IBAction)checkNow:(id)sender {
+      [self.tabBarController setSelectedIndex:3];
+}
+
+- (IBAction)checkLater:(id)sender {
+     [CheckNow removeFromSuperview];
 }
 
 
@@ -1600,14 +1613,15 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                     
                     int consumed_gems = [[SharedManager getInstance]._userProfile.consumedGems intValue];
                     
-                    
+                    int gems =  [[mainDict objectForKey:@"gems"] intValue];
+                    int points = [[mainDict objectForKey:@"points"] intValue];
                     isGameEnd = true;
                     int *userEarnedPoints = [[mainDict objectForKey:@"user_score"] intValue];
                     NSString* userEarnedPointsSte = [NSString stringWithFormat:@"%d",userEarnedPoints];
                     
                     userTotal.text = userEarnedPointsSte;
-                    userGemTotal.text = [SharedManager getInstance]._userProfile.cashablePoints;
-                    userPointsTotal.text =  [SharedManager getInstance]._userProfile.totalPoints;
+                    userGemTotal.text = [NSString stringWithFormat:@"%d", gems];
+                    userPointsTotal.text =  [NSString stringWithFormat:@"%d", points];
                     [SharedManager getInstance]._userProfile.cashablePoints = [mainDict objectForKey:@"gems"];
                     NSString *val = [mainDict objectForKey:@"gems"];
                     if ([val intValue] < 0) {
@@ -1670,7 +1684,11 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                               youWinTitle.text = YOU_WIN_4;
                               
                          }
-                         
+                         CheckNow.layer.borderColor = [UIColor lightGrayColor].CGColor;
+                         CheckNow.layer.borderWidth = 1.0f;
+                         CheckNow.center = self.view.center;
+                         CheckNow.center = CGPointMake(self.view.center.x, CheckNow.center.y);
+                         [self.view addSubview:CheckNow];
                          youWinTitle.hidden = false;
                          youLooseTitle.hidden = true;
                     }else if(receiverTotalPoints > senderTotalPoints && [val intValue] < 500 )
@@ -1967,7 +1985,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      answerReaction.hidden = true;
      answerTxt.text = @"";
      //answerTxt.hidden = true;
-     
+     stopAnimation = false;
      if([self checkFinished])
      {
           [self fetchResults];
@@ -2317,6 +2335,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      
      if([dict.name isEqualToString:@"notifyOnSurrender"])
      {
+          [sharedManager closeWebSocket];
           if(!userDisconnected) {
                
                NSString *title;
@@ -2343,7 +2362,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                     cancel = CANCEL_4;
                }
                
-               
+              
                [AlertMessage showAlertWithMessage:message andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
                // [self QuitYes:nil];
                [responeTimeOutTimer invalidate];
@@ -2483,29 +2502,10 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           int flag = [[userDictInner objectForKey:@"flag"] intValue];
           if(flag == 0){
                //opponent gone away
-               
-               //  NSString *message;
-               // NSString *title;
-               
-               //               NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
-               //               [sharedManager sendEvent:@"register" andParameters:registerDictionary];
-               //               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-               //               languageCode = [language intValue];
-               
-               //               NSArray* args = dict.args;
-               //               NSDictionary* arg = args[0];
-               //
-               //               NSString *isVerified = [arg objectForKey:@"msg"];
-               //               if([isVerified isEqualToString:@"verified"] ){
+
                NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
                languageCode = [language intValue];
-               
-               //                    if(appDelegate.friendToBeChalleneged) {
-               //                         NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",appDelegate.friendToBeChalleneged.friendID,@"friend_id",@"2",@"type",_challenge.type_ID,@"type_id",language,@"language",requestType,@"challenge_type", nil];
-               //                         [sharedManager sendEvent:@"sendChallenge" andParameters:registerDictionary];
-               //
-               //                    }
-               //                    else {
+           
                NSDictionary *registerDictionaryS = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"2",@"type",_challenge.type_ID,@"type_id",language,@"language",@"false",@"is_cancel",requestType, @"request_type", nil];
                [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionaryS];
                // }
@@ -3129,11 +3129,11 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                title = @"Erreur: Quelque chose s\'est mal passé!";
                cancel = CANCEL_2;
           }else if (languageCode == 3){
-               message1 = @"Lo sentimos, usted o su oponente habeis perdido conexión a Internet.";
+               message1 = @"Lo sentimos, o tú o tu oponente habéis perdido la conexión a internet.";
                title = @"Algo salió mal!";
                cancel = CANCEL_3;
           }else if (languageCode == 4){
-               message1 = @"Desculpe, você ou o seu adversário perdestes a conexão internet.";
+               message1 = @"Desculpe, você ou o seu adversário perdeu a conexão com a internet.";
                title = @"Alguma coisa deu errado!";
                cancel = CANCEL_4;
           }
@@ -3163,7 +3163,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           _roundLbl.text = Round;
           roundTitleLbl.text = Round;
           searchingOpponentLbl.text = @"Waiting for opponent...";
-         
+          [CheckNowBtn setTitle:@"Check Now" forState:UIControlStateNormal];
+          [LaterBtn setTitle:@"Later" forState:UIControlStateNormal];
           lblGemsPoints.text = PLAY_FOR_GEMS;
           lblPlayforPoints.text = PLAY_FOR_POINTS;
           willhelpinRanking.text = WILL_HELP_IN_RANKING;
@@ -3172,10 +3173,14 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           gameModForPoints.text = For_Points;
           loadingTitle = Loading;
           resultTitle.text = RESULTS_LBL;
-          
+          CongtratulatoinsLbl.text = @"Congratulations!";
+          CongratsMsg.text = @"Congrats! You just won new prizes!";
+          [cancelbuttonOutlet setTitle:@"Cancel" forState:UIControlStateNormal];
+       
      }
      else if(languageCode == 1 ) {
-          
+          [CheckNowBtn setTitle:@"تأكد الآن" forState:UIControlStateNormal];
+          [LaterBtn setTitle:@"في وقت لاحق" forState:UIControlStateNormal];
           loadingTitle = Loading_1;
           _roundLbl.text = Round_1;
           PlayAgainLabel.text = @"إلعب مرة أخرى";
@@ -3188,7 +3193,9 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           roundTitleLbl.text = Round_1;
           resultTitle.text = RESULTS_LBL_1;
           searchingOpponentLbl.text = @"االبحث عن الخصم...";
-      
+          CongtratulatoinsLbl.text = @"ألف مبروك!";
+          CongratsMsg.text = @"مبروك ! لفد فزت الان جوائز جديدة في اتظارك !";
+          [cancelbuttonOutlet setTitle:@"إلغاء" forState:UIControlStateNormal];
      }
      else if(languageCode == 2) {
           loadingTitle = Loading_2;
@@ -3201,9 +3208,13 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           willhelpinRanking.text = WILL_HELP_IN_RANKING_2;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_2;
           searchingOpponentLbl.text = @"En attendant un adversaire...";
-      
+          [CheckNowBtn setTitle:@"Vérifie maintenant" forState:UIControlStateNormal];
+          [LaterBtn setTitle:@"Plus tard" forState:UIControlStateNormal];
           roundTitleLbl.text = Round_2;
           resultTitle.text = RESULTS_LBL_2;
+          CongtratulatoinsLbl.text = @"Félicitations!";
+          CongratsMsg.text = @"Félicitations! Juste gagner un nouveau prix!";
+          [cancelbuttonOutlet setTitle:@"Annuler" forState:UIControlStateNormal];
      }
      else if(languageCode == 3) {
           gameModForGems.text = For_Gems3;
@@ -3217,8 +3228,13 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           willhelpinRanking.text = WILL_HELP_IN_RANKING_3;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_3;
           searchingOpponentLbl.text = @"Esperando oponente...";
-        
+          [CheckNowBtn setTitle:@"Ver ahora" forState:UIControlStateNormal];
+          [LaterBtn setTitle:@"Después" forState:UIControlStateNormal];
           resultTitle.text = RESULTS_LBL_3;
+          CongtratulatoinsLbl.text = @"¡Felicidades!";
+          CongratsMsg.text = @"¡Enhorabuena! ¡Has ganado nuevos premios!";
+          [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
+          
      }
      else if(languageCode == 4) {
           loadingTitle = Loading_4;
@@ -3233,6 +3249,11 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           roundTitleLbl.text = Round_4;
           resultTitle.text = RESULTS_LBL_4;
           searchingOpponentLbl.text = @"Esperando por Oponente...";
+          [CheckNowBtn setTitle:@"Ver Agora" forState:UIControlStateNormal];
+          [LaterBtn setTitle:@"Mais Tarde" forState:UIControlStateNormal];
+          CongtratulatoinsLbl.text = @"Parabéns";
+          CongratsMsg.text = @"Parabéns! Você ganhou novos prêmios!";
+          [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
      }
      
      if (languageCode == 1) {

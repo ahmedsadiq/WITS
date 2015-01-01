@@ -46,8 +46,8 @@
         Option *_option = [[Option alloc] init];
         _option.optionID = [r_optionsIDArray objectAtIndex:i];
         _option.optionText = [r_optionsArray objectAtIndex:i];
+          _option.optionText = [_option.optionText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         _option.isCorrect = [r_isCorrectArray objectAtIndex:i];
-        
         [self.optionsArray addObject:_option];
         
     }

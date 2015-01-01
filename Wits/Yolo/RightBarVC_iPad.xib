@@ -59,7 +59,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topics_icon.png" id="JiN-OC-RST">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about.png" id="JiN-OC-RST">
                             <rect key="frame" x="74" y="670" width="20" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -204,7 +204,7 @@
                                 <action selector="movetoranking:" destination="-1" eventType="touchUpInside" id="IHX-V9-gMw"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="dgz-To-Unz">
+                        <button opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="dgz-To-Unz">
                             <rect key="frame" x="334" y="700" width="100" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -222,7 +222,7 @@
                             <rect key="frame" x="631" y="700" width="100" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                            <state key="normal" backgroundImage="logout.png">
+                            <state key="normal" backgroundImage="logoutglow.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="selected" backgroundImage="logoutglow.png"/>
@@ -294,7 +294,7 @@
                             <rect key="frame" x="508" y="293" width="40" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="0WA-CE-qvv">
+                        <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="wordWrap" id="0WA-CE-qvv">
                             <rect key="frame" x="33" y="700" width="100" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -347,7 +347,8 @@
     </objects>
     <resources>
         <image name="Edit-Profile.png" width="37" height="37"/>
-        <image name="aboutus.png" width="94" height="94"/>
+        <image name="about.png" width="540" height="960"/>
+        <image name="aboutus.png" width="81" height="80"/>
         <image name="aboutusglow.png" width="84" height="84"/>
         <image name="aboutuspressed.png" width="81" height="81"/>
         <image name="contactUsNew1.png" width="128" height="128"/>
@@ -357,7 +358,6 @@
         <image name="history_icon.png" width="83" height="83"/>
         <image name="historyglow.png" width="87" height="87"/>
         <image name="historypressed.png" width="83" height="84"/>
-        <image name="logout.png" width="85" height="83"/>
         <image name="logout_signout_exit_icon.png" width="32" height="32"/>
         <image name="logoutglow.png" width="77" height="77"/>
         <image name="logoutpressed.png" width="73" height="72"/>
@@ -370,12 +370,11 @@
         <image name="rankings.png" width="110" height="90"/>
         <image name="rankingsglow.png" width="96" height="81"/>
         <image name="rankingspressed.png" width="94" height="77"/>
-        <image name="settings.png" width="92" height="90"/>
+        <image name="settings.png" width="78" height="77"/>
         <image name="settings_icon.png" width="23" height="23"/>
         <image name="settingsglow.png" width="82" height="81"/>
         <image name="settingspressed.png" width="78" height="78"/>
         <image name="store_icon.png" width="29" height="23"/>
-        <image name="topics_icon.png" width="21" height="23"/>
         <image name="transferPoints1.png" width="256" height="256"/>
         <image name="verified.png" width="31" height="31"/>
     </resources>

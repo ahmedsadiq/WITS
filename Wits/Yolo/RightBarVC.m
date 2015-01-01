@@ -129,6 +129,10 @@ float _yLocation;
      [super viewWillAppear:animated];
      //initData
      [self setLanguage];
+     [namelbl setText:[SharedManager getInstance]._userProfile.display_name];
+     AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+     if(!appDelegate.fromHomeScreen)
+          appDelegate.resetToHomeScreen = true;
      [self.tabBarController.tabBar setHidden:NO];
      
 }

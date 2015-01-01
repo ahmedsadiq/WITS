@@ -43,7 +43,6 @@
                 <outlet property="searchDisplayController" destination="aUa-TG-Tl4" id="ONd-Kk-wba"/>
                 <outlet property="searchOppLbl" destination="6Nq-7y-gDF" id="LCY-qr-hwy"/>
                 <outlet property="searchingLoaderView" destination="8Zs-1n-QRd" id="Ybi-nA-x0h"/>
-                <outlet property="searchingView" destination="DdX-I8-BQ4" id="Rje-si-JFE"/>
                 <outlet property="secondDot" destination="g1T-aF-UEm" id="wTb-kY-Ff3"/>
                 <outlet property="sendQuestion" destination="Rc6-Xp-o9h" id="Xzq-Fv-Gdg"/>
                 <outlet property="senderNameLbl" destination="QEW-X0-v4R" id="V6y-eZ-62A"/>

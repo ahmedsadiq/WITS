@@ -16,8 +16,7 @@
 //#define SERVER_URL @"http://quizapplication.faditekdev.com/api/service.php"
 
 /////Live Server///
-
-#define SERVER_URL @"http://quizapplication.witsapplication.com/api/service.php"
+     #define SERVER_URL @"http://quizapplication.witsapplication.com/api/service.php"
 ////// Dev Server
 //#define SERVER_URL @"http://witsdev.witsapplication.com/api/service.php"
 
@@ -434,10 +433,10 @@
 #define OR_TEXT_2 @" o"
 #define SIGNUP_FORGOT_PASS_2 @" Olvidado Contraseña"
 #define SIGNUP_FORGOT_PASS_1 @" ?نسيت كلمة السر"
-#define SIGNUP_DISPLAY_NAME_2 @"   Nom d'affichage"
-#define SIGNUP_PASSWORD_2 @"   Mot de passe"
-#define SIGNUP_BIRTHDAY_2 @"  anniversaire"
-#define SIGNUP_USERNAME_2 @"   Nom d\'affichage"
+#define SIGNUP_DISPLAY_NAME_2 @"Nom d'affichage"
+#define SIGNUP_PASSWORD_2 @"Mot de passe"
+#define SIGNUP_BIRTHDAY_2 @"anniversaire"
+#define SIGNUP_USERNAME_2 @"Nom d\'affichage"
 #define SIGNUP_DESC_2 @"Nous utilisons votre localisation pour déterminer votre classement dans votre pays. En vous inscrivant, vous acceptez les Conditions d'Utilisation et la Politique de Confidentialité."
 #define SIGNUP_REGISTER_2 @"Enregistrer"
 
@@ -448,24 +447,24 @@
 #define SIGNUP_TEXT_3 @" signer"
 #define SIGNUP_FORGOT_PASS_3 @" Oublié Mot de passe"
 #define SIGNUP_EMAIL_3 @"   Correo electrónico"
-#define SIGNUP_DISPLAY_NAME_3 @"   nombre para mostrar"
+#define SIGNUP_DISPLAY_NAME_3 @"nombre para mostrar"
 #define SIGNUP_PASSWORD_3 @"  Contraseña"
 #define SIGNUP_BIRTHDAY_3 @" Cumpleaños"
 #define SIGIN_TEXT_3 @" S'inscrire"
-#define SIGNUP_USERNAME_3 @"   Usuario"
+#define SIGNUP_USERNAME_3 @"Usuario"
 #define SIGNUP_DESC_3 @"Necesitamos su ubicación para determinar su clasificación en su país. Al inscribirse, usted ha aceptado las Condiciones del Servicio y la Política de Privacidad."
 #define SIGNUP_REGISTER_3 @"Registro"
 
 
 #define OR_TEXT_4 @" ou"
 #define SIGNUP_FORGOT_PASS_4 @" Esqueceu Senha"
-#define SIGNUP_EMAIL_4 @"   Email"
-#define SIGNUP_DISPLAY_NAME_4 @"   Nome de exibição"
+#define SIGNUP_EMAIL_4 @"Email"
+#define SIGNUP_DISPLAY_NAME_4 @"Nome de exibição"
 #define SIGNUP_TEXT_4 @" Inscrever-se"
-#define SIGNUP_PASSWORD_4 @"   Senha"
+#define SIGNUP_PASSWORD_4 @"Senha"
 #define SIGIN_TEXT_4 @" assinar em"
-#define SIGNUP_BIRTHDAY_4 @" Aniversário"
-#define SIGNUP_USERNAME_4 @"   Nome de Usuário"
+#define SIGNUP_BIRTHDAY_4 @"Aniversário"
+#define SIGNUP_USERNAME_4 @"Nome de Usuário"
 #define SIGNUP_DESC_4 @"Nós aproximamos sua localização afim de que você possa ver sua classificação no seu país. Ao registrar-se, você concorda com nossos Termos de Serviço e Política de Privacidade."
 #define SIGNUP_REGISTER_4 @"Cadastre-se"
 
@@ -482,18 +481,18 @@
 #define LOGIN_LOGIN_BTN_1 @" الدخول الآن "
 
 #define LOGIN_EMAIL_2 @" Saisissez votre email ou nom d'utilisateur"
-#define LOGIN_FORGOT_PSWD_2 @" Email"
-#define LOGIN_PASSWORD_2 @" Mot de passe"
-#define LOGIN_LOGIN_BTN_2 @" Identifiant"
+#define LOGIN_FORGOT_PSWD_2 @"Email"
+#define LOGIN_PASSWORD_2 @"Mot de passe"
+#define LOGIN_LOGIN_BTN_2 @"Identifiant"
 
 #define LOGIN_EMAIL_3 @" Eniri Retpoŝto aŭ salutnomo"
-#define LOGIN_FORGOT_PSWD_3 @" Email"
+#define LOGIN_FORGOT_PSWD_3 @"Email"
 #define LOGIN_PASSWORD_3 @" Pasvorto"
 #define LOGIN_LOGIN_BTN_3 @"Usuario"
 
-#define LOGIN_EMAIL_4 @" Digite o e-mail ou usuário"
-#define LOGIN_FORGOT_PSWD_4 @" Email"
-#define LOGIN_PASSWORD_4 @" Senha"
+#define LOGIN_EMAIL_4 @"Digite o e-mail ou usuário"
+#define LOGIN_FORGOT_PSWD_4 @"Email"
+#define LOGIN_PASSWORD_4 @"Senha"
 #define LOGIN_LOGIN_BTN_4 @"Usuário"
 
 ////////HomePage//////
@@ -577,7 +576,7 @@
 #define SOUND_LBL @"Sound Effects"
 #define VIBRATION_LBL @"Vibration"
 #define GENERAL_LBL @"General"
-#define PUSH_LBL @"Push Notification"
+#define PUSH_LBL @"Push Notifications"
 #define CHALLENGE_LBL @"Challenge Notifictions"
 #define CHAT_LBL @"Chat Notifications"
 #define REFERAL_CODE_LBL @"Referral Code"

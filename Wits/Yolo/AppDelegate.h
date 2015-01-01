@@ -28,6 +28,8 @@
 @property BOOL isStore;
 @property BOOL isChallengeCancelled;
 @property BOOL isGameOver;
+@property BOOL resetToHomeScreen;
+@property BOOL fromHomeScreen;
 @property (strong, nonatomic) UIImage *profileImage;
 @property (strong, nonatomic) NSString *requestType;
 @property (strong, nonatomic) NSString *transferPointsEmail;

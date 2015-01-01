@@ -114,13 +114,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZZv-Dp-3Pw">
-                    <rect key="frame" x="41" y="450" width="242" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R1H-2k-r7U">
                     <rect key="frame" x="39" y="234" width="242" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -128,7 +121,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" id="yrz-ZS-1HL">
+                <view opaque="NO" contentMode="scaleToFill" id="yrz-ZS-1HL">
                     <rect key="frame" x="104" y="272" width="113" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -155,6 +148,13 @@
                     <rect key="frame" x="112" y="331" width="100" height="102"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZZv-Dp-3Pw">
+                    <rect key="frame" x="41" y="450" width="242" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="trg-g8-4uA">
                     <rect key="frame" x="100" y="501" width="120" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -341,7 +341,7 @@
                             <rect key="frame" x="13" y="188" width="26" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buynowlbl.png" id="pkQ-Hh-P9r">
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttom_bar-ipad.png" id="pkQ-Hh-P9r">
                             <rect key="frame" x="246" y="21" width="54" height="49"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -395,7 +395,6 @@
                     <state key="normal" backgroundImage="Newchallengenow.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Newchallengenowglow.png"/>
                     <connections>
                         <action selector="challengeNowPressed:" destination="-1" eventType="touchUpInside" id="aP3-Kp-P10"/>
                     </connections>
@@ -411,8 +410,8 @@
                         <action selector="gmPlayNowPressed:" destination="-1" eventType="touchUpInside" id="iJM-YG-6cj"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="jqK-tB-bWV">
-                    <rect key="frame" x="30" y="296" width="260" height="1"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seprater.png" id="jqK-tB-bWV">
+                    <rect key="frame" x="30" y="306" width="260" height="2"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o2i-qh-yUZ">
@@ -564,7 +563,6 @@
     </objects>
     <resources>
         <image name="Newchallengenow.png" width="109" height="88"/>
-        <image name="Newchallengenowglow.png" width="109" height="89"/>
         <image name="Newplaynowglow.png" width="115" height="86"/>
         <image name="ame1.png" width="168" height="184"/>
         <image name="ame1_glow.png" width="88" height="90"/>
@@ -572,7 +570,7 @@
         <image name="blueBar.png" width="91" height="31"/>
         <image name="btnbg_gameMod.png" width="290" height="72"/>
         <image name="btnbgpressed.png" width="484" height="98"/>
-        <image name="buynowlbl.png" width="67" height="66"/>
+        <image name="buttom_bar-ipad.png" width="640" height="63"/>
         <image name="close.png" width="56" height="56"/>
         <image name="closeDialog.png" width="31" height="31"/>
         <image name="crossbtn.png" width="128" height="128"/>
@@ -584,12 +582,12 @@
         <image name="forpintsglowNew.png" width="75" height="72"/>
         <image name="header-ipad.png" width="640" height="85"/>
         <image name="header_bar.png" width="320" height="1"/>
-        <image name="line.png" width="466" height="2"/>
         <image name="newbg.png" width="540" height="960"/>
         <image name="opponentpic.png" width="151" height="151"/>
         <image name="personal.png" width="512" height="512"/>
         <image name="picbg.png" width="151" height="151"/>
         <image name="pinkBar.png" width="280" height="40"/>
+        <image name="seprater.png" width="960" height="3"/>
         <image name="starg1 (1).png" width="106" height="99"/>
         <image name="starg1.png" width="339" height="297"/>
         <image name="transparentbg.png" width="320" height="568"/>

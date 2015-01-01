@@ -230,12 +230,8 @@
                         <action selector="fmChallengeNowBtnPressed:" destination="-1" eventType="touchUpInside" id="ASz-kG-EEr"/>
                     </connections>
                 </button>
-                <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="Lfi-tH-feX">
-                    <rect key="frame" x="134" y="512" width="500" height="1"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView hidden="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="hAq-ZN-5OU">
-                    <rect key="frame" x="134" y="760" width="500" height="1"/>
+                <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seprater.png" id="Lfi-tH-feX">
+                    <rect key="frame" x="134" y="512" width="500" height="4"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView hidden="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ff8-Mu-2jg" customClass="AsyncImageView">
@@ -337,11 +333,11 @@
         <image name="close.png" width="56" height="56"/>
         <image name="closeDialog.png" width="31" height="31"/>
         <image name="dialogbg.png" width="487" height="371"/>
-        <image name="line.png" width="466" height="2"/>
         <image name="loadlarge.png" width="300" height="180"/>
         <image name="newbg.png" width="540" height="960"/>
         <image name="pinkBar.png" width="280" height="40"/>
         <image name="searchglow.png" width="64" height="64"/>
+        <image name="seprater.png" width="960" height="3"/>
         <image name="textboxbg.png" width="470" height="73"/>
         <image name="verified.png" width="31" height="31"/>
     </resources>

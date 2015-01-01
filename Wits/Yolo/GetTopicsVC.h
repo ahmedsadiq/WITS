@@ -26,6 +26,7 @@
      NSString *howtoEarnPointDesc;
      
      AppDelegate *emailOBj;
+     AppDelegate *appdelegate;
      NSString *verified;
      
      NSString *loadingTitle;

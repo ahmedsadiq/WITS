@@ -9,7 +9,7 @@
 #import "AlertMessage.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Utils.h"
-
+#import "NavigationHandler.h"
 @implementation AlertMessage
 
 @synthesize textView = _textView;
@@ -33,12 +33,10 @@ static BOOL showing;
 + (void)showAlertWithMessage:(NSString*)message andTitle: (NSString*)Title SingleBtn:(BOOL)Bool cancelButton: (NSString*)CancelBtn OtherButton:(NSString*)Otherbuttons;
 {
      
-     
-     
      if(showing) {
           return;
      }
-     
+ 
      AlertMessage *alertMessage = [[[NSBundle mainBundle] loadNibNamed:@"AlertMessage" owner:nil options:nil] objectAtIndex:0];
      alertMessage.textView.text = message;
      
@@ -110,6 +108,7 @@ static BOOL showing;
 
 - (IBAction)Okbtn:(id)sender {
      showing = NO;
+     
      [self removeFromSuperview];
 }
 

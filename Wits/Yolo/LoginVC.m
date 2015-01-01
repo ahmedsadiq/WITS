@@ -480,8 +480,7 @@
      MKNetworkOperation *op = [engine operationWithURLString:SERVER_URL params:postParams httpMethod:@"POST"];
      
      [op onCompletion:^(MKNetworkOperation *completedOperation) {
-          NSLog(@"Response: %@",[completedOperation responseString]);
-          
+        
           // extract user id and session id using json parser and save it in shared manager
           
           NSDictionary *responseDict = [completedOperation responseJSON];

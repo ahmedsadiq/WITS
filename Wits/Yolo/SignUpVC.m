@@ -751,7 +751,7 @@
      
      
      [op onCompletion:^(MKNetworkOperation *completedOperation) {
-          NSLog(@"Response: %@",[completedOperation responseString]);
+        
           NSDictionary *recievedDict = [completedOperation responseJSON];
           NSNumber *flag = [recievedDict objectForKey:@"flag"];
           

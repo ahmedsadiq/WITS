@@ -52,7 +52,7 @@
      _currentPoints.text = [SharedManager getInstance]._userProfile.totalPoints;
      currentGems.text = [SharedManager getInstance]._userProfile.cashablePoints;
      titleLbl.text = [SharedManager getInstance]._userProfile.display_name;
-     NSLog(@"Title %@",[SharedManager getInstance]._userProfile.display_name);
+     //NSLog(@"Title %@",[SharedManager getInstance]._userProfile.display_name);
      
      NSString  *gems = [SharedManager getInstance]._userProfile.cashablePoints;
      int totalPoints = [gems intValue];

@@ -59,8 +59,10 @@
      [[forgotpasswordSigninButtonn layer] setBorderColor:[UIColor whiteColor].CGColor];
     
      //
-  if(IS_IPAD)
-       skipbtn.titleLabel.font = [UIFont systemFontOfSize:30];
+     if(IS_IPAD){
+       skipbtn.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:30];
+          _skipOutlet.titleLabel.font =[UIFont fontWithName:@"HelveticaNeue" size:30];
+     }
      UIColor *color = [UIColor whiteColor];
      DontSwipe = false;
      emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"EMAIL" attributes:@{NSForegroundColorAttributeName: color}];
@@ -732,17 +734,11 @@
           tutorialScroll.contentSize = CGSizeMake(768 * 7, tutorialScroll.frame.size.height);
           
           _skipOutlet.frame = CGRectMake(tutorialScrollView.frame.size.width - _skipOutlet.frame.size.width, 1024-_skipOutlet.frame.size.height, _skipOutlet.frame.size.width, _skipOutlet.frame.size.height+30);
-          _skipOutlet.titleLabel.font = [UIFont fontWithName:@"Tw Cen MT" size:24.0];
+         _ArrowRight.frame = CGRectMake(_skipOutlet.frame.origin.x + 10, _skipOutlet.frame.origin.y, _ArrowRight.frame.size.width, _ArrowRight.frame.size.height);
+          
           _lblTutorial.frame = CGRectMake(20, _skipOutlet.frame.origin.y - _lblTutorial.frame.size.height, _lblTutorial.frame.size.width, _skipOutlet.frame.size.height);
      }
      
-//     CGRect btnframe = _skipOutlet.frame;
-//     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//     
-//     UIImage *buttonImageNormal = [UIImage imageNamed:@"arrowRight.png"];
-//     [button setBackgroundImage:buttonImageNormal forState:UIControlStateNormal];
-//     button.frame = CGRectMake(btnframe.origin.x + 20, btnframe.origin.y, 20, 30);
-//     [tutorialScrollView addSubview:button];
      
      [tutorialScrollView addSubview:tutorialScroll];
      tutorialScroll.pagingEnabled = YES;
@@ -1190,8 +1186,7 @@
      [op onCompletion:^(MKNetworkOperation *completedOperation) {
           
           [_loadingView hide];
-          
-          NSLog(@"Response: %@",[completedOperation responseString]);
+       
           NSDictionary *responseDict = [completedOperation responseJSON];
           NSNumber *flag = [responseDict objectForKey:@"flag"];
           
@@ -1214,54 +1209,55 @@
               // [self DialogYes:self];
                /*    [AlertMessage showAlertWithMessage:@"You have already signed in from another device. Would you like to sign out from all other devices and sign in here?"  andTitle:@"Error"];
                 */
-               NSString *Title;
-               NSString *message;
-               NSString *cancel;
-               NSString *otherButton;
-               if(languageCode == 0 ) {
-                    
-                    
-                    Title = @"Security Warning!";
-                    message = @"You have already signed in from another device. Would you like to sign out from all other devices and sign in here?";
-                    cancel= @"No" ;
-                    otherButton = @"Yes";
-                    
-               }else if (languageCode == 1){
-                    
-                    Title = @"لقد حصل خطأ ما";
-                    message =@" هذا المستخدم التوقيع بالفعل في الجهاز الآخر. لا تريد التوقيع في على هذا الجهاز؟";
-                    cancel= @"لا";
-                    otherButton = @"نعم";
-                    
-               }else if (languageCode == 2){
-                    
-                    Title = @"Erreur: Quelque chose s\'est mal passé!";
-                    message = @"Cet utilisateur grace déjà un autre appareil. \ N Voulez-vous vous connecter sur cet appareil?";
-                    cancel = @"No";
-                    otherButton = @"Oui";
-                    
-                    
-               }else if (languageCode == 3){
-                    
-                    Title = @"Algo salió mal!";
-                    message = @"Usted ya ha firmado desde otro dispositivo.\n Te gustaría firmar su salida de todos los demás dispositivos y firme aquí?";
-                    cancel = @"No";
-                    otherButton=@"Sí";
-                    
-                    
-               }else if(languageCode == 4){
-                    
-                    Title = @"Alguma coisa deu errado!";
-                    message = @"Você já assinaram a partir de outro dispositivo.\n Gostaria de sair de todos os outros dispositivos e login aqui?";
-                    cancel = @"Não";
-                    otherButton = @"Sim";
-                    
-                    
-               }
-               //   [AlertMessage showAlertWithMessage:message andTitle:Title SingleBtn:NO cancelButton:cancel OtherButton:otherButton];
-               
-               UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:Title message:message delegate:self cancelButtonTitle:cancel otherButtonTitles:otherButton,nil];
-               [alertView show];
+               [self sendRegistrationCall:true andRequestType:lastRequestType];
+//               NSString *Title;
+//               NSString *message;
+//               NSString *cancel;
+//               NSString *otherButton;
+//               if(languageCode == 0 ) {
+//                    
+//                    
+//                    Title = @"Security Warning!";
+//                    message = @"You have already signed in from another device. Would you like to sign out from all other devices and sign in here?";
+//                    cancel= @"No" ;
+//                    otherButton = @"Yes";
+//                    
+//               }else if (languageCode == 1){
+//                    
+//                    Title = @"لقد حصل خطأ ما";
+//                    message =@" هذا المستخدم التوقيع بالفعل في الجهاز الآخر. لا تريد التوقيع في على هذا الجهاز؟";
+//                    cancel= @"لا";
+//                    otherButton = @"نعم";
+//                    
+//               }else if (languageCode == 2){
+//                    
+//                    Title = @"Erreur: Quelque chose s\'est mal passé!";
+//                    message = @"Cet utilisateur grace déjà un autre appareil. \ N Voulez-vous vous connecter sur cet appareil?";
+//                    cancel = @"No";
+//                    otherButton = @"Oui";
+//                    
+//                    
+//               }else if (languageCode == 3){
+//                    
+//                    Title = @"Algo salió mal!";
+//                    message = @"Usted ya ha firmado desde otro dispositivo.\n Te gustaría firmar su salida de todos los demás dispositivos y firme aquí?";
+//                    cancel = @"No";
+//                    otherButton=@"Sí";
+//                    
+//                    
+//               }else if(languageCode == 4){
+//                    
+//                    Title = @"Alguma coisa deu errado!";
+//                    message = @"Você já assinaram a partir de outro dispositivo.\n Gostaria de sair de todos os outros dispositivos e login aqui?";
+//                    cancel = @"Não";
+//                    otherButton = @"Sim";
+//                    
+//                    
+//               }
+//               //   [AlertMessage showAlertWithMessage:message andTitle:Title SingleBtn:NO cancelButton:cancel OtherButton:otherButton];
+//               
+//               UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:Title message:message delegate:self cancelButtonTitle:cancel otherButtonTitles:otherButton,nil];
+//               [alertView show];
           }
           else {
                /* [AlertMessage showAlertWithMessage:@"Please try again"  andTitle:@"Network Erro"];
@@ -1778,7 +1774,7 @@
           howtoEarnPointDesc = @"You can always earn free Points simply by inviting your friends and sharing the app on Facebook or Twitter.";
           [_resetButtonOutlet setTitle:@"Reset Password" forState:UIControlStateNormal];
           logInBtn.text = LOGIN_BTN;
-          [skipbtn setTitle:@"SKIP" forState:UIControlStateNormal];
+          [_skipOutlet setTitle:@"SKIP" forState:UIControlStateNormal];
           [LoginBtnOutlet setTitle:@"LOG IN" forState:UIControlStateNormal];
           [twitterBtn setTitle:TWITTER_BTN forState:UIControlStateNormal];
           [signUpBtn setTitle:SIGNUP_BTN forState:UIControlStateNormal];
@@ -1827,7 +1823,7 @@
           logInBtn.text = LOGIN_BTN_1;
           
           
-          [skipbtn setTitle:@"تخطي" forState:UIControlStateNormal];
+          [_skipOutlet setTitle:@"تخطي" forState:UIControlStateNormal];
           [LoginBtnOutlet setTitle:@"تسجيل الدخول" forState:UIControlStateNormal];
           [twitterBtn setTitle:TWITTER_BTN_1 forState:UIControlStateNormal];
           [signUpBtn setTitle:SIGNUP_BTN_1 forState:UIControlStateNormal];
@@ -1871,7 +1867,7 @@
           howtoEarnPointDesc = @"Vous pouvez toujours gagner des Points en invitant vos amis et en partageant notre application sur Facebook et Twitter.";
           
           logInBtn.text = LOGIN_BTN_2;
-          [skipbtn setTitle:@"sauter" forState:UIControlStateNormal];
+          [_skipOutlet setTitle:@"sauter" forState:UIControlStateNormal];
           [LoginBtnOutlet setTitle:@"INICIAR" forState:UIControlStateNormal];
           [twitterBtn setTitle:TWITTER_BTN_2 forState:UIControlStateNormal];
           [signUpBtn setTitle:SIGNUP_BTN_2 forState:UIControlStateNormal];
@@ -1924,7 +1920,7 @@
           [signUpBtn setTitle:SIGNUP_BTN_3 forState:UIControlStateNormal];
           [tutorialBtn setTitle:TUTORIAL_BTN_3 forState:UIControlStateNormal];
           [backLbl setTitle:BACK_BTN_3 forState:UIControlStateNormal];
-          [skipbtn setTitle:@"Skip" forState:UIControlStateNormal];
+          [_skipOutlet setTitle:@"Skip" forState:UIControlStateNormal];
      }
      else if(languageCode == 4) {
           LoadingTitle = Loading_4;
@@ -1970,7 +1966,7 @@
           [signUpBtn setTitle:SIGNUP_BTN_4 forState:UIControlStateNormal];
           [tutorialBtn setTitle:TUTORIAL_BTN_4 forState:UIControlStateNormal];
           [backLbl setTitle:BACK_BTN_4 forState:UIControlStateNormal];
-          [skipbtn setTitle:@"Pular" forState:UIControlStateNormal];
+          [_skipOutlet setTitle:@"Pular" forState:UIControlStateNormal];
      }
      
      if(languageCode == 0 ) {
@@ -2268,9 +2264,7 @@
      MKNetworkOperation *op = [engine operationWithURLString:SERVER_URL params:postParams httpMethod:@"POST"];
      
      [op onCompletion:^(MKNetworkOperation *completedOperation) {
-          NSLog(@"Response: %@",[completedOperation responseString]);
-          
-          // extract user id and session id using json parser and save it in shared manager
+                  // extract user id and session id using json parser and save it in shared manager
           
           NSDictionary *responseDict = [completedOperation responseJSON];
           //NSString *flag = [responseDict objectForKey:@"flag"];

@@ -98,6 +98,7 @@
                 <outlet property="opponentProfileImageView" destination="GsE-dY-cEF" id="nv8-4u-Auy"/>
                 <outlet property="searchBg" destination="yfk-cn-LLu" id="Im1-XS-kg5"/>
                 <outlet property="searchingLoaderView" destination="8iN-KC-hu8" id="WsE-kV-9ir"/>
+                <outlet property="searchingOpponentLbl" destination="yHT-b2-WR7" id="4vM-Uw-tNe"/>
                 <outlet property="secondDot" destination="DfG-sn-gaE" id="UKN-IS-McA"/>
                 <outlet property="senderNameLbl" destination="lhD-pf-owV" id="yOJ-fu-Rkf"/>
                 <outlet property="senderProfileImageView" destination="F1q-mI-NfA" id="pZh-WT-acR"/>

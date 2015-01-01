@@ -11,7 +11,7 @@
 
 @class LoginVC;
 @interface AlertMessage : UIView {
-     
+    
 }
 @property (strong, nonatomic) IBOutlet UILabel *titleLbl;
 

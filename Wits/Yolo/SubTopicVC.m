@@ -115,7 +115,7 @@
      }
      
      appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-     
+     appDelegate.fromHomeScreen = false;
      [self SendSelfImageView];
      NSString *val = [SharedManager getInstance]._userProfile.cashablePoints;
      if ([val intValue] < 0) {
@@ -1057,7 +1057,7 @@
      [opponentProfileImageView startAnimating];
      animationTimer= [NSTimer timerWithTimeInterval:1.0
                                              target:self
-                                           selector:@selector(onTimer)
+                                           selector:@selector(onTimerImage)
                                            userInfo:nil
                                             repeats:YES];
      
@@ -1080,7 +1080,7 @@
      sharedManager.socketdelegate = self;
      [sharedManager openSockets];
 }
--(void)onTimer{
+-(void)onTimerImage{
      [UIView animateWithDuration:1.0 animations:^{
           opponentProfileImageView.alpha = 0.0;
      }];
@@ -1312,6 +1312,7 @@
           NSLog(@"challengeid ::::::::%@",challengeID);
           
           opponentProfileImageView.imageURL = [NSURL URLWithString:appDelegate.friendToBeChalleneged.profile_image];
+          
           NSURL *url = [NSURL URLWithString:appDelegate.friendToBeChalleneged.profile_image];
           [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
           [opponentProfileImageView roundImageCorner];
@@ -2763,6 +2764,13 @@
 - (void)viewWillAppear:(BOOL)animated {
      [super viewWillAppear:animated];
      [self setLanguageForScreen];
+     timer = nil;
+     if(appDelegate.resetToHomeScreen)   
+     {
+          appDelegate.resetToHomeScreen = false;
+          [self.navigationController popToRootViewControllerAnimated:false];
+     }
+     appDelegate.fromHomeScreen = false;
      self.tabBarController.tabBar.hidden = false;
      
 }

@@ -39,8 +39,7 @@
 }
 
 -(void)LoadChallenge:(NSDictionary *)_dictionary{
-     
-     NSLog(@"Dict ::::::::%@ ", _dictionary);
+
     
     self.opponent_ID = [_dictionary objectForKey:@"oId"];
     self.opponentDisplayName = [_dictionary objectForKey:@"displayName"];

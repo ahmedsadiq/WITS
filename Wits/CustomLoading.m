@@ -21,20 +21,33 @@ static BOOL showing;
 CustomLoading *loaderObj;
 
 - (void)showAlertMessage:(ChallengeSearchObject *)searchObject
-{
+{ AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;
+     del.isChallengeCancelled = false;
      senderObj = searchObject;
      language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
      if(languageCode == 0)
+     {
+          searchingOpponentLbl.text = @"Waiting for opponent...";
           [cancelbtn setTitle:@"Cancel" forState:UIControlStateNormal];
+     }
      else if(languageCode == 1)
+     {
+          searchingOpponentLbl.text = @"االبحث عن الخصم...";
           [cancelbtn setTitle:@"إلغاء" forState:UIControlStateNormal];
-     else if(languageCode == 2)
+     }
+     else if(languageCode == 2){
           [cancelbtn setTitle:@"Cancelar" forState:UIControlStateNormal];
-     else if(languageCode == 3)
+            searchingOpponentLbl.text = @"En attendant un adversaire...";
+     }
+     else if(languageCode == 3){
+           searchingOpponentLbl.text = @"Esperando oponente...";
           [cancelbtn setTitle:@"Annuler" forState:UIControlStateNormal];
-     else if (languageCode == 4)
+     }
+     else if (languageCode == 4){
+           searchingOpponentLbl.text = @"Esperando por Oponente...";
           [cancelbtn setTitle:@"Cancelar" forState:UIControlStateNormal];
+     }
      [self showPrivate];
 }
 
@@ -60,6 +73,7 @@ CustomLoading *loaderObj;
           senderProfileImageView.image = senderObj.senderProfileImage;
      }
      else {
+     
           MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
           
           MKNetworkOperation *op = [engine operationWithURLString:[SharedManager getInstance]._userProfile.profile_image params:Nil httpMethod:@"GET"];
@@ -69,20 +83,40 @@ CustomLoading *loaderObj;
                [senderProfileImageView roundImageCorner];
                
           } onError:^(NSError* error) {
-               //////Changed by Fiza //////
-               senderProfileImageView.image= [UIImage imageNamed:@"personal.png"];
-               [senderProfileImageView roundImageCorner];
+//               //////Changed by Fiza //////
+//               senderProfileImageView.image= [UIImage imageNamed:@"personal.png"];
+//               [senderProfileImageView roundImageCorner];
           }];
           
           [engine enqueueOperation:op];
      }
      opponentProfileImageView.image= [UIImage imageNamed:@"personal.png"];
-     opponentProfileImageView.imageURL = [NSURL URLWithString:senderObj.recieverProfileImgLink];
-     NSURL *url2 = [NSURL URLWithString:senderObj.recieverProfileImgLink];
-     [[AsyncImageLoader sharedLoader] loadImageWithURL:url2];
-     [opponentProfileImageView roundImageCorner];
-     
-     
+//     opponentProfileImageView.imageURL = [NSURL URLWithString:senderObj.recieverProfileImgLink];
+//     NSURL *url2 = [NSURL URLWithString:senderObj.recieverProfileImgLink];
+//     [[AsyncImageLoader sharedLoader] loadImageWithURL:url2];
+//     [opponentProfileImageView roundImageCorner];
+     NSURL *url = [NSURL URLWithString:[senderObj.recieverProfileImgLink stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+     [self downloadImageWithURL:url completionBlock:^(BOOL succeeded, UIImage *image) {
+          if (succeeded) {
+             opponentProfileImageView.image = image;
+          }
+     }];
+}
+- (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
+{
+     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+     [NSURLConnection sendAsynchronousRequest:request
+                                        queue:[NSOperationQueue mainQueue]
+                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                                 if ( !error )
+                                 {
+                                      UIImage *image = [[UIImage alloc] initWithData:data];
+                                      completionBlock(YES,image);
+                                 } else{
+                                      completionBlock(NO,nil);
+                                     
+                                 }
+                            }];
 }
 - (void)increaseTimerCount
 {
@@ -143,15 +177,11 @@ CustomLoading *loaderObj;
 - (IBAction)cancelPressed:(id)sender {
      
      [timer invalidate];
-   
      timer = nil;
-     
-     
      AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;
      del.isChallengeCancelled = true;
      del.friendToBeChalleneged = nil;
      del.requestType = nil;
-     [sharedManager closeWebSocket];
      [self removeFromSuperview];
 }
 @end

@@ -23,7 +23,7 @@
 static NSString *_deviceToken = NULL;
 
 @implementation AppDelegate
-@synthesize profileImage,isChatNotificationOn,transferPointsEmail,isFirstTime,isLanguageChanged,isGameInProcess,isInbox,LoginEmail,isAlreadyFetched,isStore,selectedIndex,friendToBeChalleneged,isFriendRequest,requestType,isGameOver;
+@synthesize profileImage,isChatNotificationOn,transferPointsEmail,isFirstTime,isLanguageChanged,isGameInProcess,isInbox,LoginEmail,isAlreadyFetched,isStore,selectedIndex,friendToBeChalleneged,isFriendRequest,requestType,isGameOver,resetToHomeScreen,fromHomeScreen;
 +(NSString *)getDeviceToken{
     
     return _deviceToken;
@@ -43,8 +43,8 @@ NSString * const NotificationActionTwoIdent = @"CLOSE_CATEGORY";
      isInbox = false;
      isGameInProcess = false;
      isGameOver = false;
-
-     
+     resetToHomeScreen = false;
+     fromHomeScreen = true;
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [[UIApplication sharedApplication] setStatusBarHidden:YES animated:NO];
@@ -196,8 +196,6 @@ NSString * const NotificationActionTwoIdent = @"CLOSE_CATEGORY";
 }
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
      if(!isGameInProcess) {
-           NSLog(@"Notification message: %@",[userInfo valueForKey:@"aps"]);
-          
           if(application.applicationState != UIApplicationStateActive){
                [self showNotoficationAlert:userInfo];
           }else{
@@ -322,7 +320,7 @@ NSString * const NotificationActionTwoIdent = @"CLOSE_CATEGORY";
     [operation onCompletion:^(MKNetworkOperation *completedOperation){
         
         NSDictionary *mainDict = [completedOperation responseJSON];
-        NSLog(@"main dict %@",mainDict);
+        
         
     }
                     onError:^(NSError *error){
@@ -354,7 +352,7 @@ NSString * const NotificationActionTwoIdent = @"CLOSE_CATEGORY";
 
                          
                          [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-                         
+                      
                      /*   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error !" message:@"Network Unreachable" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
                         
                         [alert show];*/
@@ -431,10 +429,10 @@ NSString * const NotificationActionTwoIdent = @"CLOSE_CATEGORY";
      
      [engine enqueueOperation:op];
      
-     if(points >= 100) {
-          //Add Add On Screen here
-          [[NavigationHandler getInstance] MoveToAddOnVC];
-     }
+//     if(points >= 100) {
+//          //Add Add On Screen here
+//          [[NavigationHandler getInstance] MoveToAddOnVC];
+//     }
 }
 - (void)recieveInventoryUpdateFailure:(NSNotification *)notification {
      //pointForPurchase = 0;

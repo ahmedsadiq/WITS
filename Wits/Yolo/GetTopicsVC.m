@@ -211,7 +211,7 @@
      [self setLanguageForScreen];
      self.tabBarController.tabBar.hidden = false;
      indexCounter = 0;
-     
+     appdelegate.fromHomeScreen = true;
      
      if (![[SharedManager getInstance] categoryArray] || ![[SharedManager getInstance] categoryArray].count){
           customObject = [[CustomAnimationView alloc]initWithFrame:CGRectMake(50, 50, 50, 50)];
@@ -245,10 +245,6 @@
      
      [lblGemsPoints setText:[[SharedManager getInstance] _userProfile].cashablePoints];
      [lblStarsPoints setText:[[SharedManager getInstance] _userProfile].totalPoints];
-     
-     
-     
-     
      titleErrrorMsg.font = [UIFont fontWithName:FONT_NAME  size:17];
      msgErrrormsg.font = [UIFont fontWithName:FONT_NAME  size:16];
      loginbuttonErrorMsg.font = [UIFont fontWithName:FONT_NAME  size:14];
@@ -257,8 +253,7 @@
      vsLbl.font = [UIFont fontWithName:FONT_NAME  size:17];
      searchingTxt.font = [UIFont fontWithName:FONT_NAME  size:14];
      opponent.font = [UIFont fontWithName:FONT_NAME  size:14];
-
-     
+      appdelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
      BOOL isMusicOn = [[NSUserDefaults standardUserDefaults] boolForKey:@"music"];
      if(isMusicOn) {
           AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;

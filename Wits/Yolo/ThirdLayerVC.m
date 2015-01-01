@@ -638,14 +638,38 @@
 }
 
 - (IBAction)gameQuit:(id)sender {
+//      [self.tabBarController.tabBar setHidden:NO];
+//     isGameStarted = true;
+//     [NewTimer invalidate];
+//     NewTimer = nil;
+//     _gmGemsSelected = false;
+//     _gmChallengeSelected = false;
+//     [self.navigationController popToRootViewControllerAnimated:false];
+//     [opponentProfileImageView stopAnimating];
+//     [animationTimer invalidate];
+//     AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;
+//     del.friendToBeChalleneged = nil;
+//     del.requestType = nil;
+//
+//     [sharedManager closeWebSocket];
+//     [searchingView removeFromSuperview];
+      [self.navigationController popToRootViewControllerAnimated:false];
+     [self.tabBarController.tabBar setHidden:NO];
      isGameStarted = true;
-     [timer invalidate];
-     timer = nil;
-     [self.navigationController popToRootViewControllerAnimated:false];
+     [NewTimer invalidate];
      [opponentProfileImageView stopAnimating];
      [animationTimer invalidate];
-     [sharedManager closeWebSocket];
+     NewTimer = nil;
+     _gmGemsSelected = false;
+     _gmChallengeSelected = false;
+     /////
+     AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;
+     del.friendToBeChalleneged = nil;
+     del.requestType = nil;
+     _gameModView.hidden = true;
+     [_gameModView removeFromSuperview];
      [searchingView removeFromSuperview];
+     [sharedManager closeWebSocket];
 }
 
 
@@ -1098,8 +1122,8 @@
 }
 
 - (IBAction)mainBackPressed:(id)sender {
-     [timer invalidate];
-     timer = nil;
+     [NewTimer invalidate];
+     NewTimer = nil;
      
      [self.navigationController popViewControllerAnimated:NO];
 }
@@ -1171,7 +1195,7 @@
      }
      [self.view addSubview:searchingView];
      _loaderIndex = 1;
-     timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
+     NewTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
      NSMutableArray *images = [[NSMutableArray alloc] init];
      for (int i = 0; i < imageNames.count; i++) {
           [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
@@ -1180,9 +1204,9 @@
      opponentProfileImageView.animationImages = images;
      opponentProfileImageView.animationDuration = 6.0f;
      [opponentProfileImageView startAnimating];
-     animationTimer= [NSTimer timerWithTimeInterval:2.0
+     animationTimer= [NSTimer timerWithTimeInterval:1.0
                                              target:self
-                                           selector:@selector(onTimer)
+                                           selector:@selector(onTimerImage)
                                            userInfo:nil
                                             repeats:YES];
      
@@ -1204,11 +1228,11 @@
      sharedManager.socketdelegate = self;
      [sharedManager openSockets];
 }
--(void)onTimer{
-     [UIView animateWithDuration:0.5 animations:^{
-          opponentProfileImageView.alpha = 0.2;
+-(void)onTimerImage{
+     [UIView animateWithDuration:1.0 animations:^{
+          opponentProfileImageView.alpha = 0.0;
      }];
-     [UIView animateWithDuration:0.5 animations:^{
+     [UIView animateWithDuration:2.0 animations:^{
           opponentProfileImageView.alpha = 1.0;
      }];
 }
@@ -1233,8 +1257,8 @@
      }
      if(timeSinceTimer == 180) {
           if(!isOpponentFound) {
-               [timer invalidate];
-               timer = nil;
+               [NewTimer invalidate];
+               NewTimer = nil;
                
                [searchingView removeFromSuperview];
                [SocketManager getInstance].socketdelegate = nil;
@@ -1267,15 +1291,15 @@
                
           }
           else {
-               [timer invalidate];
-               timer = nil;
+               [NewTimer invalidate];
+               NewTimer = nil;
           }
           timeSinceTimer = 0;
      }
 }
 
 #pragma mark Challenge
-- (void) tick:(NSTimer *) timer {
+- (void) tick:(NSTimer *) NewTimer {
      if(sharedManager.socketIO.isConnected) {
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
@@ -1306,7 +1330,7 @@
           [self.navigationController pushViewController:_challengeVC animated:YES];
      }
 }
-- (void) tickForChallenege:(NSTimer *) timer {
+- (void) tickForChallenege:(NSTimer *) NewTimer {
      if(sharedManager.socketIO.isConnected) {
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
@@ -1448,16 +1472,16 @@
                }
                [self.view addSubview:searchingView];
                _loaderIndex = 1;
-               //
-               //               for(int i = 1; i<5; i++) {
-               //                    UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
-               //                    if(i == _loaderIndex) {
-               //                         dot.image = [UIImage imageNamed:@"dotglow.png"];
-               //                    }
-               //                    else {
-               //                         dot.image = [UIImage imageNamed:@"dotblack.png"];
-               //                    }
-               //               }
+//               
+//                              for(int i = 1; i<5; i++) {
+//                                   UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
+//                                   if(i == _loaderIndex) {
+//                                        dot.image = [UIImage imageNamed:@"dotglow.png"];
+//                                   }
+//                                   else {
+//                                        dot.image = [UIImage imageNamed:@"dotblack.png"];
+//                                   }
+//                              }
           }
           else {
                
@@ -1513,8 +1537,8 @@
                     }
                     
                     [AlertMessage showAlertWithMessage:message  andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-                    [timer invalidate];
-                    timer = nil;
+                    [NewTimer invalidate];
+                    NewTimer = nil;
                     [sharedManager closeWebSocket];
                     [searchingView removeFromSuperview];
                }
@@ -1597,8 +1621,8 @@
                [opponentProfileImageView stopAnimating];
                [animationTimer invalidate
                 ];
-               [timer invalidate];
-               timer = nil;
+               [NewTimer invalidate];
+               NewTimer = nil;
                isGameStarted = true;
                 backBtn2.hidden = YES;
                //Oponent Found
@@ -1662,8 +1686,8 @@
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
           
-          [timer invalidate];
-          timer = nil;
+          [NewTimer invalidate];
+          NewTimer = nil;
           
           [searchingView removeFromSuperview];
           [SocketManager getInstance].socketdelegate = nil;
@@ -1705,8 +1729,8 @@
           languageCode = [language intValue];
           
   
-          [timer invalidate];
-          timer = nil;
+          [NewTimer invalidate];
+          NewTimer = nil;
           
           [searchingView removeFromSuperview];
           [SocketManager getInstance].socketdelegate = nil;
@@ -1793,8 +1817,8 @@
           CategoriesLbl.text = @"Sub Topics";
           adContentLbl.text = ADD_CONTENT;
           guidelineLbl.text = GUIDELINES;
-          
-          // [backBtn2 setTitle:BACK_BTN forState:UIControlStateNormal];
+          [backBtn2 setTitle:@"Cancel" forState:UIControlStateNormal];
+      
           [sendQuestion setTitle:SEND forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN forState:UIControlStateNormal];
@@ -1816,7 +1840,7 @@
           HowWitsStore = @"كيفية استخدام مخزن ويتس";
           HowtoEarnPoints = @"كيف تحصل على النقاط مجاناً؟";
           
-          
+          [backBtn2 setTitle:@"إلغاء" forState:UIControlStateNormal];
           lblPlayforPoints.text = PLAY_NOW_1;
           lblplayforGems.text = Challenge_a_friend1;
           PlayNowLabel.text =PLAY_NOW_1;
@@ -1844,7 +1868,7 @@
           guidelineLbl.text = GUIDELINES_1;
           
           [backBtn3 setTitle:BACK_BTN_1 forState:UIControlStateNormal];
-          //          [backBtn2 setTitle:BACK_BTN_1 forState:UIControlStateNormal];
+          [backBtn2 setTitle:BACK_BTN_1 forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_1 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_1 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_1 forState:UIControlStateNormal];
@@ -1888,7 +1912,7 @@
           loadingTitle = Loading_2;
           
           [backBtn3 setTitle:BACK_BTN_2 forState:UIControlStateNormal];
-          // [backBtn2 setTitle:BACK_BTN_2 forState:UIControlStateNormal];
+           [backBtn2 setTitle:@"Annuler" forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_2 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_2 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_2 forState:UIControlStateNormal];
@@ -1935,7 +1959,7 @@
           adContentLbl.text = ADD_CONTENT_3;
           guidelineLbl.text = GUIDELINES_3;
           
-          //    [backBtn2 setTitle:BACK_BTN_3 forState:UIControlStateNormal];
+          [backBtn2 setTitle:@"Cancelar" forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_3 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_3 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_3 forState:UIControlStateNormal];
@@ -1980,8 +2004,9 @@
           adContentLbl.text = ADD_CONTENT_4;
           guidelineLbl.text = GUIDELINES_4;
           
+          [backBtn2 setTitle:@"Cancelar" forState:UIControlStateNormal];
           [backBtn3 setTitle:BACK_BTN_4 forState:UIControlStateNormal];
-          //   [backBtn2 setTitle:BACK_BTN_4 forState:UIControlStateNormal];
+         
           [sendQuestion setTitle:SEND_4 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_4 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_4 forState:UIControlStateNormal];
@@ -2460,12 +2485,19 @@
 - (void)viewWillAppear:(BOOL)animated {
      [super viewWillAppear:animated];
      [self setLanguageForScreen];
+     NewTimer = nil;
      self.tabBarController.tabBar.hidden = false;
+     if(appDelegate.resetToHomeScreen)
+     {
+          [self.navigationController popToRootViewControllerAnimated:false];
+          appDelegate.resetToHomeScreen = false;
+     }
+     
 }
 
 -(void)SendChallengeToYourFriend:(UserProfile *)_user{
      
-     timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
+    // NewTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
      
      opponentProfileImageView.imageURL = [NSURL URLWithString:_user.profile_image];
      [opponentProfileImageView roundImageCorner];

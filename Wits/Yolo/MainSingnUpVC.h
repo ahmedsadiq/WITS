@@ -182,6 +182,7 @@ static NSString * const kClientId = @"1020327276316-t4kr4gqvabt8dl5rscsblcco5nq7
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControll;
 - (IBAction)btnSkip:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *skipOutlet;
+@property (weak, nonatomic) IBOutlet UIImageView *ArrowRight;
 
 - (IBAction)resetPasswordPressed:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *resetPswdView;

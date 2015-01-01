@@ -101,7 +101,7 @@
         
         [_loadView hide];
         NSDictionary *tempDict = [completedOperation responseJSON];
-        NSLog(@"%@",tempDict);
+      
         
         NSNumber *flag = [tempDict objectForKey:@"flag"];
         if ([flag isEqualToNumber:[NSNumber numberWithInt:SUCCESSFUL_LOGIN_FLAG]]) {
@@ -193,8 +193,7 @@
         
         [_loadView hide];
         NSDictionary *tempDict = [completedOperation responseJSON];
-        NSLog(@"%@",tempDict);
-        
+
         NSNumber *flag = [tempDict objectForKey:@"flag"];
         if ([flag isEqualToNumber:[NSNumber numberWithInt:SUCCESSFUL_LOGIN_FLAG]]) {
             
@@ -342,8 +341,7 @@
     
     UITableViewCell *tempCell = (UITableViewCell *)[sender view];
     indexToDelete = tempCell.tag;
-    NSLog(@"%i",tempCell.tag);
-    
+
     if (sender.state == UIGestureRecognizerStateEnded) {
         
          [AlertMessage showAlertWithMessage:@"You want to delete conversation ?" andTitle:@"Delete" SingleBtn:NO cancelButton:@"NO" OtherButton:@"YES"];
@@ -362,8 +360,7 @@
 #pragma mark Alert View Delegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
-    NSLog(@"%i",buttonIndex);
+
     if (buttonIndex == 1) {
         
         [self YesDeleteDiscussion];
@@ -392,8 +389,7 @@
         
         [_loadView hide];
         NSDictionary *tempDict = [completedOperation responseJSON];
-        NSLog(@"%@",tempDict);
-        
+
         NSString *message = [tempDict objectForKey:@"message"];
         NSNumber *flag = [tempDict objectForKey:@"flag"];
         if ([flag isEqualToNumber:[NSNumber numberWithInt:SUCCESSFUL_LOGIN_FLAG]]) {

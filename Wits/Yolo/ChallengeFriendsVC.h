@@ -84,5 +84,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *backBtn2;
 
 @property (weak, nonatomic) IBOutlet UILabel *searchOppLbl;
+@property (weak, nonatomic) IBOutlet UILabel *opponentName;
 
 @end

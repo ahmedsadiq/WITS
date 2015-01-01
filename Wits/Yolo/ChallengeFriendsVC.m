@@ -43,7 +43,11 @@
 }
 
 #pragma mark =======================
+- (void)viewWillAppear:(BOOL)animated {
+     [super viewWillAppear:animated];
 
+
+}
 
 - (void)viewDidLoad
 {
@@ -82,7 +86,7 @@
      
      loadView = [[LoadingView alloc] init];
      challengeArray = [[NSMutableArray alloc] init];
-     
+
      NSUInteger index = [challengeArray count];
      if (index == 0) {
           noFriendsLbl.hidden = false;
@@ -112,7 +116,7 @@
      
      [searchField resignFirstResponder];
      if (searchField.text.length != 0) {
-          NSLog(@"%@",challengeArray);
+         
           NSPredicate * predicate = [NSPredicate predicateWithFormat:@"display_name contains[cd]%@", searchField.text];
           NSArray *results = [challengeArray filteredArrayUsingPredicate:predicate];
           challengeArray = [[NSMutableArray alloc] initWithArray:results];
@@ -145,7 +149,10 @@
      
      NSString *requestType = [[NSUserDefaults standardUserDefaults]
                               stringForKey:@"requestType"];
-     
+     AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;
+     del.friendToBeChalleneged = nil;
+     del.requestType = nil;
+    
      NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",challengeID,@"challenge_id",requestType,@"request_type", nil];
      [sharedManager sendEvent:@"cancelChallenge" andParameters:registerDictionary];
      [self.navigationController popToRootViewControllerAnimated:false];
@@ -793,7 +800,7 @@
           NSURL *url = [NSURL URLWithString:_selectedUser.profile_image];
           [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
           [opponentProfileImageView roundImageCorner];
-          
+          _opponentName.text = _selectedUser.display_name;
           int flag = [[innerDictionary objectForKey:@"flag"] intValue];
           if(flag == 1) {
                [self displayNameAndImage];

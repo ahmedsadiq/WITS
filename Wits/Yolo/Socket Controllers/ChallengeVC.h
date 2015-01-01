@@ -39,11 +39,16 @@
      //Quit Game
      IBOutlet UIView *quitGameDialog;
      
+     IBOutlet UIView *CheckNow;
      IBOutlet UILabel *QuitTitle;
      IBOutlet UITextView *quitMsg;
      IBOutlet UIButton *quitno;
      IBOutlet UIButton *quityes;
      
+     __weak IBOutlet UILabel *CongtratulatoinsLbl;
+     __weak IBOutlet UITextView *CongratsMsg;
+     __weak IBOutlet UIButton *LaterBtn;
+     __weak IBOutlet UIButton *CheckNowBtn;
      NSString *loadingTitle;
      
      NSString *cancel;
@@ -77,7 +82,7 @@
      BOOL responseStatus;
      BOOL isPlayAgain;
      BOOL botAnswerSeconds;
-     
+     BOOL stopAnimation;
 #pragma mark -
 #pragma mark Result Card
      
@@ -230,6 +235,8 @@
 
 - (IBAction)QuitYes:(id)sender;
 - (IBAction)QuitNO:(id)sender;
+- (IBAction)checkNow:(id)sender;
+- (IBAction)checkLater:(id)sender;
 
 
 - (id)initWithChallenge:(Challenge *)_Challenge andRecieved:(BOOL) isRecieved;

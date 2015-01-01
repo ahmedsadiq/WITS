@@ -100,7 +100,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="blueBar.png" width="91" height="31"/>
+        <image name="blueBar.png" width="540" height="960"/>
         <image name="btn_pink.png" width="50" height="15"/>
         <image name="img_frame.png" width="25" height="25"/>
         <image name="message_bar.png" width="580" height="50"/>

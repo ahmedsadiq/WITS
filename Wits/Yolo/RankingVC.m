@@ -59,7 +59,7 @@
         
         [loadView hide];
         NSDictionary *mainDict = [compOperation responseJSON];
-        NSLog(@"%@",mainDict);
+      
         NSString *messageStr = [mainDict objectForKey:@"message"];
         rankingArray = [mainDict objectForKey:@"ranking"];
         if ([rankingArray count]>0) {

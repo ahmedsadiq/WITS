@@ -140,7 +140,7 @@
           [_loadingView hide];
           [_refreshControl endRefreshing];
           NSDictionary *mainDict = [compOperation responseJSON];
-          NSLog(@"%@",mainDict);
+          
           NSNumber *flag = [mainDict objectForKey:@"flag"];
           
           if([flag isEqualToNumber:[NSNumber numberWithInt:SUCCESSFUL_LOGIN_FLAG]])
@@ -290,7 +290,7 @@
      cell.leftUserName.font = [UIFont fontWithName:FONT_NAME size:15];
      if(IS_IPAD)
      {
-          cell.leftUserName.font = [UIFont fontWithName:FONT_NAME size:25];
+          cell.leftUserName.font = [UIFont fontWithName:FONT_NAME size:22];
      }
      NSString * stat = _user.RelationshipStatus ;
      int status = [[NSString stringWithFormat:@"%@",stat] intValue];
@@ -617,7 +617,7 @@
           
           [_loadingView hide];
           NSDictionary *mainDict = [compOp responseJSON];
-          NSLog(@"main Dictionary :%@",[compOp responseString]);
+        
           NSNumber *flag = [mainDict objectForKey:@"flag"];
           
           if([flag isEqualToNumber:[NSNumber numberWithInt:SUCCESSFUL_LOGIN_FLAG]])
@@ -734,7 +734,7 @@
           
           [_loadingView hide];
           NSDictionary *mainDict = [compOp responseJSON];
-          NSLog(@"main Dictionary :%@",mainDict);
+     
           NSNumber *flag = [mainDict objectForKey:@"flag"];
           
           if([flag isEqualToNumber:[NSNumber numberWithInt:SUCCESSFUL_LOGIN_FLAG]])
@@ -819,7 +819,7 @@
           
           [_loadingView hide];
           NSDictionary *mainDict = [compOp responseJSON];
-          NSLog(@"main Dictionary :%@",[compOp responseString]);
+          
           NSNumber *flag = [mainDict objectForKey:@"flag"];
           
           if([flag isEqualToNumber:[NSNumber numberWithInt:SUCCESSFUL_LOGIN_FLAG]])
@@ -1498,7 +1498,11 @@
           delegate.isFriendRequest = true;
           [self FetchFriendList];
      }
+
      [self friendModCanelBtnPressed:nil];
+     AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+     if(!appDelegate.fromHomeScreen)
+          appDelegate.resetToHomeScreen = true;
 }
 - (void)handleSingleTap:(UITapGestureRecognizer *) sender
 

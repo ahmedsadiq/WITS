@@ -469,8 +469,7 @@
                     
                     [loadView hide];
                     NSDictionary *mainDict = [completedOperation responseJSON];
-                    NSLog(@"main dict %@",mainDict);
-                    
+
                     NSString *msgStr = [mainDict objectForKey:@"message"];
                     if ([msgStr isEqualToString:@"success"]) {
                          NSString *message;
@@ -612,7 +611,7 @@
      languageCode = [language intValue];
      NSString *suffix = @"";
      if(languageCode == 0 ) {
-          newShareString = @"WITS is an award winning multiplayer trivia game and fan community. Now you can also earn cash and real prizes on WITS! Click here : ";
+          newShareString = @"WITS is an award winning multiplayer trivia game and fun community. Now you can also earn cash and real prizes on WITS! Click here : ";
           referalStr = @"Hi, My referral Code is";
           referalStr2 = @". Help me Earn Free Points. Lets play Wits together.";
           _knowlegdeLbl.text = KNOWLEDGE_LBL;

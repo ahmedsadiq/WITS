@@ -242,7 +242,7 @@
                             <rect key="frame" x="63" y="62" width="157" height="130"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buynowlbl.png" id="v2s-T5-LPf">
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttom_bar-ipad.png" id="v2s-T5-LPf">
                             <rect key="frame" x="422" y="53" width="77" height="66"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -303,7 +303,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" id="x2V-9D-62o">
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" id="x2V-9D-62o">
                     <rect key="frame" x="298" y="500" width="171" height="36"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -410,7 +410,6 @@
                     <state key="normal" backgroundImage="Newchallengenow.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Newchallengenowglow.png"/>
                     <connections>
                         <action selector="challengeNowPressed:" destination="-1" eventType="touchUpInside" id="ngi-6E-6ol"/>
                     </connections>
@@ -436,9 +435,9 @@
                         <action selector="gmGemsPressed:" destination="-1" eventType="touchUpInside" id="bw5-Tp-sw3"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="dzG-en-wFl">
-                    <rect key="frame" x="184" y="512" width="400" height="1"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seprater.png" id="dzG-en-wFl">
+                    <rect key="frame" x="208" y="513" width="391" height="4"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Gems" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V2p-yL-HVh">
                     <rect key="frame" x="173" y="713" width="184" height="37"/>
@@ -487,9 +486,9 @@
                     </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME MODE" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ETR-rA-n0L">
-                    <rect key="frame" x="187" y="130" width="394" height="96"/>
+                    <rect key="frame" x="36" y="130" width="695" height="96"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
                     <color key="textColor" red="0.71764705880000002" green="0.84705882349999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -503,7 +502,7 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="1459" y="-403"/>
+            <point key="canvasLocation" x="1535" y="-440"/>
         </view>
         <view contentMode="scaleToFill" id="mDp-yA-et5">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -578,7 +577,6 @@
     </objects>
     <resources>
         <image name="Newchallengenow.png" width="109" height="88"/>
-        <image name="Newchallengenowglow.png" width="109" height="89"/>
         <image name="Newplaynowglow.png" width="115" height="86"/>
         <image name="ame1.png" width="168" height="184"/>
         <image name="ame1_glow.png" width="88" height="90"/>
@@ -586,7 +584,7 @@
         <image name="blueBar.png" width="91" height="31"/>
         <image name="btnbg_gameMod.png" width="290" height="72"/>
         <image name="btnbgpressed.png" width="484" height="98"/>
-        <image name="buynowlbl.png" width="67" height="66"/>
+        <image name="buttom_bar-ipad.png" width="640" height="63"/>
         <image name="close.png" width="56" height="56"/>
         <image name="closeDialog.png" width="31" height="31"/>
         <image name="crossbtn.png" width="128" height="128"/>
@@ -598,12 +596,12 @@
         <image name="forpintsglowNew.png" width="75" height="72"/>
         <image name="header.png" width="320" height="43"/>
         <image name="header_bar.png" width="320" height="1"/>
-        <image name="line.png" width="466" height="2"/>
         <image name="newbg.png" width="540" height="960"/>
         <image name="opponentpic.png" width="151" height="151"/>
         <image name="personal.png" width="512" height="512"/>
         <image name="picbg.png" width="151" height="151"/>
         <image name="pinkBar.png" width="280" height="40"/>
+        <image name="seprater.png" width="960" height="3"/>
         <image name="starg1 (1).png" width="106" height="99"/>
         <image name="starg1.png" width="339" height="297"/>
         <image name="transparentbg.png" width="320" height="568"/>

@@ -349,7 +349,7 @@
     </objects>
     <resources>
         <image name="Edit-Profile.png" width="37" height="37"/>
-        <image name="aboutus.png" width="94" height="94"/>
+        <image name="aboutus.png" width="81" height="80"/>
         <image name="aboutusglow.png" width="84" height="84"/>
         <image name="aboutuspressed.png" width="81" height="81"/>
         <image name="contactUsNew1.png" width="128" height="128"/>
@@ -359,7 +359,7 @@
         <image name="history_icon.png" width="83" height="83"/>
         <image name="historyglow.png" width="87" height="87"/>
         <image name="historypressed.png" width="83" height="84"/>
-        <image name="logout.png" width="85" height="83"/>
+        <image name="logout.png" width="73" height="71"/>
         <image name="logout_signout_exit_icon.png" width="32" height="32"/>
         <image name="logoutglow.png" width="77" height="77"/>
         <image name="logoutpressed.png" width="73" height="72"/>
@@ -372,7 +372,7 @@
         <image name="rankings.png" width="110" height="90"/>
         <image name="rankingsglow.png" width="96" height="81"/>
         <image name="rankingspressed.png" width="94" height="77"/>
-        <image name="settings.png" width="92" height="90"/>
+        <image name="settings.png" width="78" height="77"/>
         <image name="settings_icon.png" width="23" height="23"/>
         <image name="settingsglow.png" width="82" height="81"/>
         <image name="settingspressed.png" width="78" height="78"/>

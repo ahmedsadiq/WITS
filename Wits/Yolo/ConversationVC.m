@@ -611,8 +611,6 @@
           
           [_loadView hide];
           NSDictionary *tempDict = [completedOperation responseJSON];
-          NSLog(@"%@",tempDict);
-          
           NSNumber *flag = [tempDict objectForKey:@"flag"];
           if ([flag isEqualToNumber:[NSNumber numberWithInt:SUCCESSFUL_LOGIN_FLAG]]) {
                
@@ -720,8 +718,6 @@
           [postParams setObject:[SharedManager getInstance].userID forKey:@"user_id"];
           [postParams setObject:[SharedManager getInstance].sessionID forKey:@"session_id"];
           [postParams setObject:chatField.text forKey:@"message"];
-          
-          NSLog(@"%@",postParams);
           MKNetworkOperation *operation = [engine operationWithURLString:SERVER_URL params:postParams httpMethod:@"POST"];
           
           [operation onCompletion:^(MKNetworkOperation *completedOperation){

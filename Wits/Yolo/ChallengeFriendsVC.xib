@@ -11,6 +11,7 @@
                 <outlet property="firstdot" destination="GHW-kY-rn9" id="nr2-6G-j2C"/>
                 <outlet property="fourthDot" destination="vfX-oS-BRT" id="aWO-Tl-Kas"/>
                 <outlet property="noFriendsLbl" destination="TIW-Ot-HFl" id="fiN-8l-HZO"/>
+                <outlet property="opponentName" destination="pS0-IK-diN" id="TwA-pN-jLc"/>
                 <outlet property="opponentProfileImageView" destination="JET-Xv-s6Q" id="FEF-21-alh"/>
                 <outlet property="searchField" destination="Bpe-OW-soT" id="aHM-Go-7GF"/>
                 <outlet property="searchOppLbl" destination="DLx-pY-3NU" id="lY0-sO-RLg"/>
@@ -109,14 +110,14 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4KM-NL-iJB">
-                    <rect key="frame" x="80" y="172" width="161" height="21"/>
+                    <rect key="frame" x="80" y="178" width="161" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pS0-IK-diN">
-                    <rect key="frame" x="41" y="434" width="242" height="31"/>
+                    <rect key="frame" x="79" y="440" width="161" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -133,7 +134,7 @@
                     <rect key="frame" x="108" y="370" width="108" height="110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <view contentMode="scaleToFill" id="38C-iK-kPq">
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" id="38C-iK-kPq">
                     <rect key="frame" x="104" y="272" width="113" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>

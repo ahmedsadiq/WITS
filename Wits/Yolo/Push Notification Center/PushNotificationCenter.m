@@ -187,7 +187,7 @@ static PushNotificationCenter *centerInstance;
      NSString *finalTitle = [NSString stringWithFormat:@"%@ %@",opposenderName,title];
      
      UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:finalTitle
-                                                         message:msgbody
+                                                         message:finalString
                                                         delegate:self
                                                cancelButtonTitle:cancel
                                                otherButtonTitles:View,nil];
@@ -651,7 +651,6 @@ static PushNotificationCenter *centerInstance;
      NSString *requestType = [[NSUserDefaults standardUserDefaults]
                               stringForKey:@"requestType"];
      challengeID = [challengeDIctionary objectForKey:@"challengeId"];
-     
      if([packet.name isEqualToString:@"connected"])
      {
           eventId = 1;
@@ -728,19 +727,19 @@ static PushNotificationCenter *centerInstance;
                }
           }
           else {
+               
                AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
                appDelegate.isGameInProcess = false;
                [customSerachView removeFromSuperview];
-               
                [sharedManager closeWebSocket];
           }
           
      }
      else if ([packet.name isEqualToString:@"cancelChallenge"]) {
           AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+          NSLog(@"Packet response %@",packet.name);
           appDelegate.isGameInProcess = false;
-          [customSerachView removeFromSuperview];
-          
+          [customSerachView removeFromSuperview];   
           [sharedManager closeWebSocket];
      }
 }

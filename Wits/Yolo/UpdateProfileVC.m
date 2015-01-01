@@ -384,7 +384,7 @@
      UserProfile *tempUser = profile;
      
      displayName = tempUser.display_name;
-     titleField.text = tempUser.display_name;;
+     titleField.text = tempUser.display_name;
      aboutField.text = tempUser.about;
      cityField.text = tempUser.cityName;
      dobLbl.text = tempUser.birthday;
@@ -631,7 +631,7 @@
      [postParams setObject:countryField.text forKey:@"country"];
      [postParams setObject:cityField.text forKey:@"city"];
      
-     [postParams setObject:displayName forKey:@"display_name"];
+     [postParams setObject:titleField.text forKey:@"display_name"];
      [postParams setObject:dobLbl.text forKey:@"birthday"];
      [postParams setObject:usernameField.text forKey:@"user_name_id"];
      [postParams setObject:aboutField.text forKey:@"about"];
@@ -677,7 +677,7 @@
                //[SharedManager getInstance]._userProfile = profile;
                
                [SharedManager getInstance]._userProfile.profile_image = imageUrl;
-               [SharedManager getInstance]._userProfile.display_name = displayName;
+               [SharedManager getInstance]._userProfile.display_name = titleField.text;
                [SharedManager getInstance]._userProfile.usernameID = profile.usernameID;
                [SharedManager getInstance]._userProfile.about = aboutField.text;
                [SharedManager getInstance]._userProfile.cityName = cityField.text;

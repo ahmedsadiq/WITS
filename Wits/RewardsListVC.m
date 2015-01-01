@@ -34,6 +34,9 @@
      [gemsCountLbl setText:[[SharedManager getInstance] _userProfile].cashablePoints];
      [pointsCountLbl setText:[[SharedManager getInstance] _userProfile].totalPoints];
      [self Crossbtn:nil];
+     AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+     if(!appDelegate.fromHomeScreen)
+          appDelegate.resetToHomeScreen = true;
      consumedGems = [[[SharedManager getInstance] _userProfile].cashablePoints intValue];
      [rewardsTableView reloadData];
 }
@@ -102,12 +105,12 @@
                rewardObj.unlock_price = [rewardDict objectForKey:@"unlock_price"];
                
                rewardObj.productName = [rewardDict objectForKey:@"name"];
-               NSString *newString = [rewardObj.productName stringByReplacingOccurrencesOfString:@" " withString:@""];
+               rewardObj.productName = [rewardObj.productName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                NSString *newString2 = [rewardObj.unlock_price stringByReplacingOccurrencesOfString:@" " withString:@""];
-              newString = [newString lowercaseString];
+               rewardObj.NameToDisplay = rewardObj.productName;
+               rewardObj.productName = [rewardObj.productName lowercaseString];
                rewardObj.unlock_price = newString2;
                rewardObj.price = [ rewardObj.unlock_price intValue];
-               rewardObj.productName = newString;
                [_addOnsArray addObject:rewardObj];
           }
           currentIndex = 0;
@@ -279,7 +282,7 @@
           NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"AddOnCell" owner:self options:nil];
           cell = [nib objectAtIndex:0];
      }
-     cell.title.text = obj.productName;
+     cell.title.text = obj.NameToDisplay;
      cell.title.font = [UIFont fontWithName:FONT_NAME size:10];
      if(IS_IPAD)
           cell.title.font = [UIFont fontWithName:FONT_NAME size:17];
@@ -325,7 +328,7 @@
      {
           RewardObj *obj = [_addOnsArray objectAtIndex:currentIndex];
           
-          cell.rightTitle.text = obj.productName;
+          cell.rightTitle.text = obj.NameToDisplay;
           cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:10];
           if(IS_IPAD)
                cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:17];
@@ -423,7 +426,7 @@
      RewardObj *obj = [_addOnsArray objectAtIndex:currentSelectedIndex];
      rewardDetailView.hidden = false;
      discriptionlbl.text = obj.productDescription;
-     titlelbl.text = obj.productName;
+     titlelbl.text = obj.NameToDisplay;
      gemsAmountlbl.text = [NSString stringWithFormat:@"%d",[obj.unlock_price intValue]];
      if(obj.cellimage){
           rewardsiconimgview.image = obj.cellimage;

@@ -98,6 +98,7 @@
                 <outlet property="opponentNameLbl" destination="EJ3-s2-leO" id="jbn-we-5B1"/>
                 <outlet property="opponentProfileImageView" destination="MA1-db-ZpF" id="Mcz-5j-6gR"/>
                 <outlet property="searchingLoaderView" destination="G1N-hl-qJW" id="4D9-lq-UNZ"/>
+                <outlet property="searchingOpponentLbl" destination="Cyp-Cc-IBg" id="b5U-04-YHE"/>
                 <outlet property="senderNameLbl" destination="vDd-U6-Zs7" id="Tde-Da-2ga"/>
                 <outlet property="senderProfileImageView" destination="kR7-75-eSU" id="38O-Pg-202"/>
             </connections>

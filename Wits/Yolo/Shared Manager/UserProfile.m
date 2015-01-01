@@ -27,6 +27,7 @@
      
      
     self.display_name = [_dictionary objectForKey:@"display_name"];
+     self.display_name = [self.display_name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     self.gender = [_dictionary objectForKey:@"gender"];
     self.birthday = [_dictionary objectForKey:@"birthday"] ;
     self.about = [_dictionary objectForKey:@"about"];
@@ -52,7 +53,7 @@
      else {
           isVerifiedBool = false;
      }
-     NSLog(@"User Name %@",_dictionary);
+
     self.totalPoints = [_dictionary objectForKey:@"totalPoints"];
     self.usernameID = [_dictionary objectForKey:@"user_name_id"];
     NSString *onlineStr = [_dictionary objectForKey:@"online_status"];

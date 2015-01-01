@@ -555,7 +555,7 @@ static NavigationHandler *instance= NULL;
      [operation onCompletion:^(MKNetworkOperation *completedOperation){
           
           NSDictionary *mainDict = [completedOperation responseJSON];
-          NSLog(@"main dict %@",mainDict);
+          
           
      }
                      onError:^(NSError *error){

@@ -591,8 +591,7 @@
                     
                     [loadView hide];
                     NSDictionary *mainDict = [completedOperation responseJSON];
-                    NSLog(@"main dict %@",mainDict);
-                    
+
                     NSString *msgStr = [mainDict objectForKey:@"message"];
                     if ([msgStr isEqualToString:@"success"]) {
                          

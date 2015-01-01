@@ -72,9 +72,7 @@
         
         [_loadingView hide];
         NSDictionary *mainDict = [completedOperation responseJSON];
-        NSLog(@"main dict %@",mainDict);
-        
-        NSString *msgStr = [mainDict objectForKey:@"message"];
+              NSString *msgStr = [mainDict objectForKey:@"message"];
         if ([msgStr isEqualToString:@"success"]) {
             
             NSArray *recivedArray = [mainDict objectForKey:@"data"];
@@ -89,7 +87,7 @@
                [historyArray addObject:temp_Obj];
            }
             [table_View reloadData];
-            NSLog(@"History Count %i",[historyArray count]);
+          
         }
         else{
             

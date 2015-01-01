@@ -14,7 +14,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeVC">
             <connections>
+                <outlet property="CheckNow" destination="wV7-1F-Aya" id="GhB-wq-36O"/>
+                <outlet property="CheckNowBtn" destination="320-HK-4px" id="yuA-Ey-UGS"/>
+                <outlet property="CongratsMsg" destination="vq1-8q-32O" id="wqY-O9-86S"/>
+                <outlet property="CongtratulatoinsLbl" destination="AvW-Kt-2ZE" id="eH5-O1-Mcq"/>
                 <outlet property="GemsDialogView" destination="XdF-hr-ARA" id="dn0-Op-STl"/>
+                <outlet property="LaterBtn" destination="0gj-0e-hjv" id="prt-d6-TwG"/>
                 <outlet property="PlayAgainLabel" destination="cSx-GN-YOQ" id="qaW-tR-gfr"/>
                 <outlet property="QuitTitle" destination="iYZ-r7-QMg" id="CbJ-Xm-epw"/>
                 <outlet property="ResultsView" destination="Mk8-RQ-wMr" id="kGi-Sy-IcV"/>
@@ -23,7 +28,7 @@
                 <outlet property="answerTxt" destination="n6o-tL-iVw" id="1a0-mk-c1Q"/>
                 <outlet property="bg" destination="JKi-Z9-ie4" id="iuY-Ya-OdX"/>
                 <outlet property="buynowlabel" destination="u1k-eN-lP9" id="cVt-7D-heW"/>
-                <outlet property="cancelbuttonOutlet" destination="1e3-fM-fkJ" id="jxW-Kh-y4T"/>
+                <outlet property="cancelbuttonOutlet" destination="1e3-fM-fkJ" id="vxA-fn-dXN"/>
                 <outlet property="carrierView" destination="tbh-5n-Xfd" id="Qe3-KX-lIz"/>
                 <outlet property="firstdot" destination="etm-xr-oti" id="umh-wL-kOe"/>
                 <outlet property="fourthDot" destination="8Cc-pe-cTP" id="Bh1-oz-tAx"/>
@@ -179,7 +184,7 @@
                             <state key="selected" backgroundImage="optionpressedstate.png"/>
                             <state key="highlighted" backgroundImage="optionpressedstate.png"/>
                             <connections>
-                                <action selector="optionSelected:" destination="-1" eventType="touchUpInside" id="tgw-CT-SUP"/>
+                                <action selector="optionSelected:" destination="-1" eventType="touchDown" id="zKr-q3-clJ"/>
                             </connections>
                         </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" id="MvI-be-dHd">
@@ -198,7 +203,7 @@
                             <state key="selected" backgroundImage="optionpressedstate.png"/>
                             <state key="highlighted" backgroundImage="optionpressedstate.png"/>
                             <connections>
-                                <action selector="optionSelected:" destination="-1" eventType="touchUpInside" id="vhc-r0-Ct8"/>
+                                <action selector="optionSelected:" destination="-1" eventType="touchDown" id="X09-MR-XWF"/>
                             </connections>
                         </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" id="1DH-Fx-0hg">
@@ -217,7 +222,7 @@
                             <state key="selected" backgroundImage="optionpressedstate.png"/>
                             <state key="highlighted" backgroundImage="optionpressedstate.png"/>
                             <connections>
-                                <action selector="optionSelected:" destination="-1" eventType="touchUpInside" id="WeP-QV-Sff"/>
+                                <action selector="optionSelected:" destination="-1" eventType="touchDown" id="fhb-gR-4ik"/>
                             </connections>
                         </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" id="TuN-F3-q9M">
@@ -236,7 +241,7 @@
                             <state key="selected" backgroundImage="optionpressedstate.png"/>
                             <state key="highlighted" backgroundImage="optionpressedstate.png"/>
                             <connections>
-                                <action selector="optionSelected:" destination="-1" eventType="touchUpInside" id="4xA-1o-g0o"/>
+                                <action selector="optionSelected:" destination="-1" eventType="touchDown" id="3h7-m1-dVu"/>
                             </connections>
                         </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" id="20y-7z-ZWJ">
@@ -305,13 +310,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemnotinstore.png" id="hKR-Eq-TTd">
-                            <rect key="frame" x="83" y="26" width="26" height="19"/>
+                            <rect key="frame" x="90" y="24" width="26" height="19"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="742" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e2A-Qs-eYN">
                             <rect key="frame" x="55" y="22" width="60" height="28"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -322,9 +327,9 @@
                     <rect key="frame" x="166" y="28" width="160" height="68"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2xS-Fv-eCh">
-                            <rect key="frame" x="32.999997090363024" y="20" width="60" height="28"/>
+                            <rect key="frame" x="39.000001817941616" y="23" width="60" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -366,7 +371,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemnotinstore.png" id="owz-f2-dlD">
-                            <rect key="frame" x="40" y="26" width="26" height="19"/>
+                            <rect key="frame" x="35" y="24" width="26" height="19"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
@@ -475,7 +480,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="JRJ-JP-yxT">
-                    <rect key="frame" x="100" y="460.00000274521818" width="120" height="67"/>
+                    <rect key="frame" x="100" y="460.00000139698881" width="120" height="67"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" backgroundImage="playagainglowNew.png">
@@ -856,17 +861,6 @@
                             <rect key="frame" x="0.0" y="69" width="307" height="180"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZfF-gm-vG5">
-                            <rect key="frame" x="185" y="132" width="86" height="64"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            <state key="normal" backgroundImage="forgemsNew.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" backgroundImage="gemglow.png"/>
-                            <connections>
-                                <action selector="PlaywithGems:" destination="-1" eventType="touchUpInside" id="i1h-AS-sUB"/>
-                            </connections>
-                        </button>
                         <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buynowlbl.png" id="u1k-eN-lP9">
                             <rect key="frame" x="223" y="91" width="52" height="58"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -897,6 +891,17 @@
                             </state>
                             <connections>
                                 <action selector="PlaywitStars:" destination="-1" eventType="touchUpInside" id="o07-54-0DQ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZfF-gm-vG5">
+                            <rect key="frame" x="184" y="132" width="86" height="64"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="forgemsNew.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" backgroundImage="gemglow.png"/>
+                            <connections>
+                                <action selector="PlaywithGems:" destination="-1" eventType="touchUpInside" id="i1h-AS-sUB"/>
                             </connections>
                         </button>
                     </subviews>
@@ -1001,6 +1006,69 @@
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="-400" y="-1087"/>
+        </view>
+        <view contentMode="scaleToFill" id="wV7-1F-Aya" customClass="AlertMessage">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="qPe-cW-L75">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="mwA-LI-Uh7">
+                    <rect key="frame" x="14" y="190" width="292" height="189"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialogbg.png" id="sXr-9h-igR">
+                            <rect key="frame" x="0.0" y="0.0" width="292" height="190"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="AvW-Kt-2ZE">
+                            <rect key="frame" x="0.0" y="11" width="289" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Congrats! You just won new prizes!" textAlignment="center" id="vq1-8q-32O">
+                            <rect key="frame" x="26" y="59" width="244" height="58"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0gj-0e-hjv">
+                            <rect key="frame" x="148" y="142" width="135" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Later" backgroundImage="blackBar.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="checkLater:" destination="-1" eventType="touchUpInside" id="0PI-nN-cnU"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="320-HK-4px">
+                            <rect key="frame" x="8" y="142" width="135" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                            <state key="normal" title="Check Now" backgroundImage="blackBar.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="checkNow:" destination="-1" eventType="touchUpInside" id="Qql-rb-fLa"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
