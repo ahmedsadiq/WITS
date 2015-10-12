@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingVC">
+            <connections>
+                <outlet property="aboutBtn" destination="tHw-Xy-w7F" id="0la-iC-c5f"/>
+                <outlet property="challengeNotificationBtn" destination="LC3-hp-fIM" id="j1c-Sk-sir"/>
+                <outlet property="challengeNotificationLbl" destination="Byg-uL-4MQ" id="k6n-X9-Z9C"/>
+                <outlet property="changeLangBtn" destination="qtN-RP-nGz" id="Tcq-z4-FMd"/>
+                <outlet property="chatNotification" destination="f3A-B4-vTW" id="A15-2A-YbB"/>
+                <outlet property="chatNotificationBtn" destination="suT-l4-FdF" id="Pim-XM-bfc"/>
+                <outlet property="chooseLang" destination="9p6-L4-WIV" id="hFN-pJ-rXd"/>
+                <outlet property="generalLbl" destination="hXH-mP-j1W" id="Yvc-ay-ksl"/>
+                <outlet property="langSelectionPopUp" destination="Dyg-Ke-Jtc" id="aXW-Zz-dch"/>
+                <outlet property="languageBtn" destination="TTh-MB-HVI" id="dhZ-Sc-uv1"/>
+                <outlet property="languageSaveBtn" destination="LRD-gl-Pfk" id="Yxh-aq-gGF"/>
+                <outlet property="languageTitle" destination="UMB-xs-IUI" id="jId-6C-h9Y"/>
+                <outlet property="mainbackBtn" destination="RoT-jH-uxf" id="KbM-D6-4x1"/>
+                <outlet property="musicBtn" destination="uVX-00-bxz" id="mfr-9C-8Qp"/>
+                <outlet property="musiclbl" destination="qKp-CB-i0g" id="TRG-Vh-uIE"/>
+                <outlet property="pushNotificationLbl" destination="6Eq-LG-xoi" id="asU-dd-LrS"/>
+                <outlet property="rateUs" destination="rWn-ra-oqx" id="3iJ-BV-jYh"/>
+                <outlet property="referalCode" destination="SeI-wv-GnP" id="o6k-5f-ZHM"/>
+                <outlet property="referralCodeTxt" destination="Hit-9d-uIO" id="x7w-0l-ApQ"/>
+                <outlet property="sendBtn" destination="w4l-QO-Ef2" id="IeQ-FF-u78"/>
+                <outlet property="settingsLbl" destination="db3-6G-wf3" id="bhc-rR-rqE"/>
+                <outlet property="soundEffectBtn" destination="z9E-Qr-OP9" id="9NA-lF-dKM"/>
+                <outlet property="soundEffectLbl" destination="KtR-2g-ocm" id="aoW-I4-Jq7"/>
+                <outlet property="vibrationBtn" destination="cAQ-q7-ODv" id="kyu-a0-EXB"/>
+                <outlet property="vibrationLbl" destination="z2z-zp-m94" id="fxd-mR-pcS"/>
+                <outlet property="view" destination="m1j-XQ-PLK" id="Fml-3f-8ZV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="m1j-XQ-PLK">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-ipad.png" translatesAutoresizingMaskIntoConstraints="NO" id="Egv-fj-1rs">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="General" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXH-mP-j1W">
+                    <rect key="frame" x="120" y="119" width="531" height="23"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="General_btn_bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Hw-m9-BLg">
+                    <rect key="frame" x="118" y="160" width="533" height="210"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vibration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2z-zp-m94">
+                    <rect key="frame" x="209" y="313" width="151" height="39"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sound Effects" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtR-2g-ocm">
+                    <rect key="frame" x="209" y="245" width="293" height="34"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVX-00-bxz">
+                    <rect key="frame" x="528" y="176" width="93" height="38"/>
+                    <state key="normal" backgroundImage="on_btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" backgroundImage="on_btn.png"/>
+                    <connections>
+                        <action selector="musicBtnPressed:" destination="-1" eventType="touchUpInside" id="yP6-Ax-1Qb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9E-Qr-OP9">
+                    <rect key="frame" x="527" y="242" width="93" height="39"/>
+                    <state key="normal" backgroundImage="off_btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" backgroundImage="on_btn.png"/>
+                    <connections>
+                        <action selector="soundEffectPressed:" destination="-1" eventType="touchUpInside" id="V9F-TL-UXz"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Push Notification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eq-LG-xoi">
+                    <rect key="frame" x="120" y="411" width="531" height="37"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAQ-q7-ODv">
+                    <rect key="frame" x="527" y="313" width="93" height="39"/>
+                    <state key="normal" backgroundImage="off_btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" backgroundImage="on_btn.png"/>
+                    <connections>
+                        <action selector="vibrationPressed:" destination="-1" eventType="touchUpInside" id="pKb-7k-zju"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_bar1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cat-Ia-Ec5">
+                    <rect key="frame" x="118" y="477" width="533" height="140"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suT-l4-FdF">
+                    <rect key="frame" x="528" y="564" width="93" height="39"/>
+                    <state key="normal" backgroundImage="off_btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" backgroundImage="on_btn.png"/>
+                    <connections>
+                        <action selector="chatNotificationPressed:" destination="-1" eventType="touchUpInside" id="Ejl-Yv-X8a"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settingTitle.png" translatesAutoresizingMaskIntoConstraints="NO" id="ojV-Od-eiY">
+                    <rect key="frame" x="142" y="492" width="40" height="40"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Challenge Notifictions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byg-uL-4MQ">
+                    <rect key="frame" x="209" y="497" width="253" height="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LC3-hp-fIM">
+                    <rect key="frame" x="528" y="493" width="93" height="39"/>
+                    <state key="normal" backgroundImage="off_btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" backgroundImage="on_btn.png"/>
+                    <connections>
+                        <action selector="challengeNotificationPressed:" destination="-1" eventType="touchUpInside" id="AyZ-rj-zo5"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settingTitle.png" translatesAutoresizingMaskIntoConstraints="NO" id="nxX-aK-WiB">
+                    <rect key="frame" x="142" y="564" width="40" height="40"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3A-B4-vTW">
+                    <rect key="frame" x="209" y="569" width="216" height="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4l-QO-Ef2">
+                    <rect key="frame" x="120" y="699" width="533" height="44"/>
+                    <state key="normal" title="Send" backgroundImage="pinkBar.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sendPressed:" destination="-1" eventType="touchUpInside" id="sFe-R9-Ofx"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHw-Xy-w7F">
+                    <rect key="frame" x="120" y="784" width="533" height="44"/>
+                    <state key="normal" title="About" backgroundImage="pinkBar.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="aboutUsPressed:" destination="-1" eventType="touchUpInside" id="dRa-iC-zAZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtN-RP-nGz">
+                    <rect key="frame" x="120" y="847" width="533" height="44"/>
+                    <state key="normal" title="Change Language" backgroundImage="pinkBar.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="changeLanguagePressed:" destination="-1" eventType="touchUpInside" id="2l2-4C-Sfk"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settingTitle.png" translatesAutoresizingMaskIntoConstraints="NO" id="N2Y-YZ-3Gt">
+                    <rect key="frame" x="142" y="178" width="40" height="40"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settingTitle.png" translatesAutoresizingMaskIntoConstraints="NO" id="X5t-0F-mxl">
+                    <rect key="frame" x="142" y="245" width="40" height="40"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settingTitle.png" translatesAutoresizingMaskIntoConstraints="NO" id="4KE-Xj-EOh">
+                    <rect key="frame" x="142" y="312" width="40" height="40"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKp-CB-i0g">
+                    <rect key="frame" x="209" y="172" width="106" height="46"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Referral Code" minimumFontSize="17" background="Login_bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hit-9d-uIO">
+                    <rect key="frame" x="120" y="647" width="533" height="44"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Mo9-Tz-g4u"/>
+                    </connections>
+                </textField>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="header-ipad.png" translatesAutoresizingMaskIntoConstraints="NO" id="aqe-4k-DFv">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Setting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="db3-6G-wf3">
+                    <rect key="frame" x="155" y="10" width="376" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RoT-jH-uxf">
+                    <rect key="frame" x="26" y="3" width="117" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Back" backgroundImage="done_btn.png">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="mainBackPressed:" destination="-1" eventType="touchUpInside" id="5m6-LQ-Ftk"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2l-gN-7vz">
+                    <rect key="frame" x="719" y="10" width="33" height="30"/>
+                    <state key="normal" backgroundImage="rightMenubtn-iPad.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="ShowRightMenu:" destination="-1" eventType="touchUpInside" id="7L5-bQ-5IH"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="header_bar-ipad.png" translatesAutoresizingMaskIntoConstraints="NO" id="rh6-Ue-Al4">
+                    <rect key="frame" x="0.0" y="51" width="768" height="2"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWn-ra-oqx">
+                    <rect key="frame" x="120" y="718" width="533" height="44"/>
+                    <state key="normal" title="Rate Us" backgroundImage="pinkBar.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="rateUsPressed:" destination="-1" eventType="touchUpInside" id="nEd-bg-cER"/>
+                    </connections>
+                </button>
+                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Referral Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeI-wv-GnP">
+                    <rect key="frame" x="118" y="625" width="533" height="73"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+        </view>
+        <view contentMode="scaleToFill" id="Dyg-Ke-Jtc">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-ipad.png" translatesAutoresizingMaskIntoConstraints="NO" id="ipp-hU-Azw">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="header.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tv0-nI-XSQ">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="85"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Language Selection" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMB-xs-IUI">
+                    <rect key="frame" x="17" y="21" width="285" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="header_bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="aYR-Xe-9L5">
+                    <rect key="frame" x="0.0" y="85" width="768" height="2"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please choose your Language" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9p6-L4-WIV">
+                    <rect key="frame" x="200" y="109" width="369" height="59"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" red="0.71764707569999997" green="0.086274512110000007" blue="0.36078432199999999" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTh-MB-HVI">
+                    <rect key="frame" x="234" y="269" width="300" height="54"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="English(US)" backgroundImage="done_btn-ipad.png">
+                        <color key="titleColor" red="0.71764707569999997" green="0.086274512110000007" blue="0.36078432199999999" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="languageSelectonPressed:" destination="-1" eventType="touchUpInside" id="Twl-6O-fjG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRD-gl-Pfk">
+                    <rect key="frame" x="234" y="576" width="300" height="54"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                    <state key="normal" title="Save" backgroundImage="pinkBar.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="languageSaved:" destination="-1" eventType="touchUpInside" id="EQv-B6-tLq"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="General_btn_bar.png" width="290" height="105"/>
+        <image name="Login_bar.png" width="400" height="50"/>
+        <image name="bg-ipad.png" width="640" height="1136"/>
+        <image name="btn_bar1.png" width="290" height="70"/>
+        <image name="done_btn-ipad.png" width="130" height="50"/>
+        <image name="done_btn.png" width="65" height="25"/>
+        <image name="header-ipad.png" width="640" height="85"/>
+        <image name="header.png" width="320" height="43"/>
+        <image name="header_bar-ipad.png" width="640" height="2"/>
+        <image name="header_bar.png" width="320" height="1"/>
+        <image name="off_btn.png" width="93" height="39"/>
+        <image name="on_btn.png" width="93" height="38"/>
+        <image name="pinkBar.png" width="280" height="40"/>
+        <image name="rightMenubtn-iPad.png" width="46" height="24"/>
+        <image name="settingTitle.png" width="288" height="288"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

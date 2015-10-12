@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EEF654A8-B7C4-4714-8CE1-5217D7F7D400</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Wits</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>285B3482381D41360AF8470373F1CF941566592F</key>
+		<string>https://bitbucket.org/ahmed_sadiq_/wits-txlabz.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Wits/Wits.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>285B3482381D41360AF8470373F1CF941566592F</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/ahmed_sadiq_/wits-txlabz.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>285B3482381D41360AF8470373F1CF941566592F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>285B3482381D41360AF8470373F1CF941566592F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Wits-TxLabz</string>
+		</dict>
+	</array>
+</dict>
+</plist>
