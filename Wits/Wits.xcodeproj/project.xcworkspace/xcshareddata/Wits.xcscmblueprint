@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3842B7ACFDC3CE26E01079C12F6A5BB84FDEE46C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3842B7ACFDC3CE26E01079C12F6A5BB84FDEE46C" : 0,
+    "285B3482381D41360AF8470373F1CF941566592F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EEF654A8-B7C4-4714-8CE1-5217D7F7D400",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3842B7ACFDC3CE26E01079C12F6A5BB84FDEE46C" : "WITS\/",
+    "285B3482381D41360AF8470373F1CF941566592F" : "Wits-TxLabz"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Wits",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Wits\/Wits.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/ahmed_sadiq_\/wits-txlabz.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "285B3482381D41360AF8470373F1CF941566592F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ahmedsadiq\/WITS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3842B7ACFDC3CE26E01079C12F6A5BB84FDEE46C"
+    }
+  ]
+}
