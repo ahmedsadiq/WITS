@@ -440,18 +440,18 @@
      if(!isRanking) {
           if ([[UIScreen mainScreen] bounds].size.height == iPad)
           {
-               returnValue = 140.0f;
+               returnValue =300.0f;
           }
           else
           {
-               returnValue = 140.0f;
+               returnValue = 300.0f;
           }
      }
      else {
           if ([[UIScreen mainScreen] bounds].size.height == iPad)
-               returnValue = 140.0f;
+               returnValue = 320.0f;
           else
-               returnValue = 140.0f;
+               returnValue = 320.0f;
      }
      
      return returnValue;

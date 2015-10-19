@@ -74,14 +74,23 @@
      passwordField.leftView = leftView3;
      isEditPressed = NO;
      
-     
+     if(IS_IPAD)
+     {
+          displayNameField.font = [UIFont fontWithName:FONT_NAME size:25];
+          emailField.font = [UIFont fontWithName:FONT_NAME  size:25];
+          usernameLbl.font = [UIFont fontWithName:FONT_NAME size:25];
+          passwordField.font = [UIFont fontWithName:FONT_NAME  size:25];
+          registerBtn.font = [UIFont fontWithName:FONT_NAME size:27];
+          signinLabel.font = [UIFont fontWithName:FONT_NAME size:25];
+     }else
+     {
      displayNameField.font = [UIFont fontWithName:FONT_NAME size:15];
      emailField.font = [UIFont fontWithName:FONT_NAME  size:15];
      usernameLbl.font = [UIFont fontWithName:FONT_NAME size:15];
      passwordField.font = [UIFont fontWithName:FONT_NAME  size:15];
      registerBtn.font = [UIFont fontWithName:FONT_NAME size:17];
      signinLabel.font = [UIFont fontWithName:FONT_NAME size:15];
-     
+     }
      
      UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(signUpSwipeDown:)];
      [left setDirection:UISwipeGestureRecognizerDirectionDown];
@@ -130,7 +139,7 @@
           emailField.placeholder = @"EMAIL";
           displayNameField.placeholder = @"DISPLAY NAME";
           passwordField.placeholder = SIGNUP_PASSWORD;
-          birthdaylbl.text = @" BIRTHDAY";
+          birthdaylbl.text = @"BIRTHDAY";
           usernameLbl.placeholder = @"USERNAME";
           signUpDescLbl.text = SIGNUP_DESC;
           signUplbl.text = @"Sign Up";
@@ -1532,7 +1541,7 @@
      self.tabBarController = [[UITabBarController alloc] init] ;
      self.tabBarController.viewControllers = [NSArray arrayWithObjects:self.navController, friendsNavController,storeNavController,historyNavController,settingsNavController,nil];
      
-     [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg.png"]];
+     [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg@2x.png"]];
      
      //    [self setFieldsAndButtonsText:self.configResponse];
      self.viewController.navigationController.navigationBar.tintColor = [UIColor blackColor];

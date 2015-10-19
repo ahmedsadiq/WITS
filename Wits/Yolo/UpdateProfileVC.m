@@ -1062,7 +1062,8 @@
           [avatarSelectionBtn setTag:k];
           [AvatarsScrollView addSubview:avatarSelectionBtn];
      }
-     [AvatarsScrollView setContentSize:CGSizeMake((Width*2)+18,y_Position+Height)];
+     [AvatarsScrollView setContentSize:CGSizeMake(AvatarsScrollView.frame.size.width, AvatarsScrollView.frame.size.height+60)];
+
 }
 -(void)loadAvatarsToIpadView{
      ////////////    Add cover image here  ///////////
@@ -1112,7 +1113,8 @@
           }
      }
      
-     [AvatarsScrollView setContentSize:CGSizeMake(AvatarsScrollView.frame.size.width,yPosition+Height)];
+     [AvatarsScrollView setContentSize:CGSizeMake(AvatarsScrollView.frame.size.width, AvatarsScrollView.frame.size.height+60)];
+
      
 }
 

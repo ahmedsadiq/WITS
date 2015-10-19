@@ -32,12 +32,13 @@
 #define kOAuthConsumerKey        @"XL0qdKEsuBscc8zUQDHo0VXQa"         //REPLACE With Twitter App OAuth Key
 #define kOAuthConsumerSecret    @"SUlS1QVX5I9XxhVXZJmcUzsUhvnMCbEut8LERJZBYFI1BRCmtL"
 
+
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 -(id)init
 {
      if ([[UIScreen mainScreen] bounds].size.height == iPad) {
-          
           self = [super initWithNibName:@"MainSignUpVC_iPad" bundle:Nil];
+          
      }
      
      else{
@@ -64,12 +65,30 @@
      CGRect myRect = CGRectMake(0, 0, 0, 0);
      NSString *imageName = @"";
      if ([[UIScreen mainScreen] bounds].size.height == iPad){
-          myRect = CGRectMake(84, 328, 600, 80);
+           myRect = CGRectMake(415, 700, 300, 100);
           imageName = @"facebookbg.png";
+           signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:25];
+           forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:25];
+           orLabel.font = [UIFont fontWithName:FONT_NAME size:20];
+           emailTxt.font = [UIFont fontWithName:FONT_NAME size:30];
+           pswdTxt.font = [UIFont fontWithName:FONT_NAME size:30];
+           _resetPswdEmail.font = [UIFont fontWithName:FONT_NAME size:30];
+            OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:25];
+          LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:25];
+          _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:25];
      }
      else{
           myRect = CGRectMake(174,421,132,42);
           imageName = @"facebookbg.png";
+           signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:13];
+           forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:18];
+           orLabel.font = [UIFont fontWithName:FONT_NAME size:14];
+           emailTxt.font = [UIFont fontWithName:FONT_NAME size:17];
+           pswdTxt.font = [UIFont fontWithName:FONT_NAME size:17];
+           _resetPswdEmail.font = [UIFont fontWithName:FONT_NAME size:14];
+            OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:15];
+          LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
+          _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
      }
      BOOL isLanguageSelected = [[NSUserDefaults standardUserDefaults] boolForKey:@"isLanguageSelected"];
      if(!isLanguageSelected) {
@@ -89,14 +108,13 @@
      _loadingView = [[LoadingView alloc] init];
      
      
-     
-     emailTxt.font = [UIFont fontWithName:FONT_NAME size:17];
-     pswdTxt.font = [UIFont fontWithName:FONT_NAME size:17];
-     LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
-     forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:18];
-     orLabel.font = [UIFont fontWithName:FONT_NAME size:14];
+     //emailTxt.font = [UIFont fontWithName:FONT_NAME size:17];
+     //pswdTxt.font = [UIFont fontWithName:FONT_NAME size:17];
+     //LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
+   //  forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:18];
+     //orLabel.font = [UIFont fontWithName:FONT_NAME size:14];
      twitterBtn.font = [UIFont fontWithName:FONT_NAME size:17];
-     signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:13];
+    // signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:13];
      chooseLangLbl.font = [UIFont fontWithName:FONT_NAME size:17];
      languageTitle.font = [UIFont fontWithName:FONT_NAME size:17];
      languageBtn.font = [UIFont fontWithName:FONT_NAME size:18];
@@ -105,9 +123,9 @@
      DialogMsg.font = [UIFont fontWithName:FONT_NAME size:15];
      Dialogyes.font = [UIFont fontWithName:FONT_NAME size:14];
      Dialogno.font = [UIFont fontWithName:FONT_NAME size:14];
-     _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
-     _resetPswdEmail.font = [UIFont fontWithName:FONT_NAME size:14];
-     OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:15];
+    // _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
+     //_resetPswdEmail.font = [UIFont fontWithName:FONT_NAME size:14];
+     //OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:15];
      forgotpasswordSigninButtonn.font = [UIFont fontWithName:FONT_NAME size:18];
      
      UIColor *color = [UIColor whiteColor];
@@ -709,7 +727,7 @@
      NSString *imageName = @"";
      
      if ([[UIScreen mainScreen] bounds].size.height == iPad){
-          myRect = CGRectMake(84, 328, 600, 80);
+          myRect = CGRectMake(415, 700, 300, 100);
           imageName = @"facebookbg.png";
      }
      else{
@@ -1242,6 +1260,12 @@
 -(void)createTabBarAndControl {
      if(IS_IPAD){
           self.viewController = [[GetTopicsVC alloc] initWithNibName:@"GetTopicsVC_iPad" bundle:nil];
+          /*CGRect tabFrame = self.tabBarController.tabBar.frame;
+          CGFloat tabHeight = self.tabBarController.tabBar.frame.size.height;
+          tabFrame.size.height = tabHeight * 2;
+          // tabFrame.origin.y = self..frame.size.height - (tabHeight);
+        //  self.tabBarController.tabBar.frame = tabFrame;
+          self.tabBarController.tabBar.frame = CGRectMake(0,0,768,100);*/
      }
      else {
           self.viewController = [[GetTopicsVC alloc] initWithNibName:@"GetTopicsVC" bundle:nil];
@@ -1330,7 +1354,7 @@
      self.tabBarController = [[UITabBarController alloc] init] ;
      self.tabBarController.viewControllers = [NSArray arrayWithObjects:self.navController, friendsNavController,storeNavController,historyNavController,settingsNavController,nil];
      
-     [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg.png"]];
+     [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg@2x.png"]];
      
      //    [self setFieldsAndButtonsText:self.configResponse];
      self.viewController.navigationController.navigationBar.tintColor = [UIColor blackColor];

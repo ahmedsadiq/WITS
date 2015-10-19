@@ -213,11 +213,11 @@
      float returnValue;
      if ([[UIScreen mainScreen] bounds].size.height == iPad)
      {
-          returnValue = 140.0f;
+          returnValue = 220.0f;
      }
      else
      {
-          returnValue = 140.0f;
+          returnValue = 220.0f;
      }
      return returnValue;
 }

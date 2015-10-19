@@ -63,6 +63,9 @@ static NavigationHandler *instance= NULL;
      {
           if(IS_IPAD){
                self.viewController = [[GetTopicsVC alloc] initWithNibName:@"GetTopicsVC_iPad" bundle:nil];
+             
+               
+               
           }
           else {
                self.viewController = [[GetTopicsVC alloc] initWithNibName:@"GetTopicsVC" bundle:nil];
@@ -151,7 +154,7 @@ static NavigationHandler *instance= NULL;
           self.tabBarController = [[UITabBarController alloc] init] ;
           self.tabBarController.viewControllers = [NSArray arrayWithObjects:self.navigationController, friendsNavController,storeNavController,historyNavController,settingsNavController,nil];
           
-          [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg.png"]];
+          [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg@2x.png"]];
           
           //    [self setFieldsAndButtonsText:self.configResponse];
           self.viewController.navigationController.navigationBar.tintColor = [UIColor blackColor];
@@ -164,7 +167,7 @@ static NavigationHandler *instance= NULL;
      {
           MainSingnUpVC *signUpViewController;
           if(IS_IPAD){
-               signUpViewController = [[MainSingnUpVC alloc] initWithNibName:@"MainSingnUpVC_iPad" bundle:nil];
+               signUpViewController = [[MainSingnUpVC alloc] initWithNibName:@"MainSignUpVC_iPad" bundle:nil];
           }
           else {
                signUpViewController = [[MainSingnUpVC alloc] initWithNibName:@"MainSingnUpVC" bundle:nil];

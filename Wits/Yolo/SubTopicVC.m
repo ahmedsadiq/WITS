@@ -254,11 +254,11 @@
           float returnValue;
           if ([[UIScreen mainScreen] bounds].size.height == iPad)
           {
-               returnValue = 140.0f;
+               returnValue = 230.0f;
           }
           else
           {
-               returnValue = 140.0f;
+               returnValue = 200.0f;
           }
           return returnValue;
      }
@@ -488,7 +488,8 @@
                     cell.rightTitle.hidden = true;
                }
                cell.selectionStyle = NAN;
-               
+               [cell setBackgroundColor:[UIColor clearColor]];
+               [cell.contentView setBackgroundColor:[UIColor clearColor]];
                return cell;
           }
           else
@@ -537,6 +538,7 @@
 //               cell.mainImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
                [cell.mainBtn addTarget:self action:@selector(mainBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
                cell.mainBtn.tag = index;
+               [cell setBackgroundColor:[UIColor clearColor]];
                [cell.contentView setBackgroundColor:[UIColor clearColor]];
                return cell;
                

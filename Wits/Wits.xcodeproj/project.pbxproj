@@ -3485,9 +3485,9 @@
 				35307B1B1959BA18006E7E19 /* MyPointsVC.m */,
 				35307B1C1959BA18006E7E19 /* MyPointsVC.xib */,
 				35307B1F1959BA85006E7E19 /* MyPointsVC_iPad.xib */,
-				F493F6361BAD6B6000E80E21 /* GetTopicsVC.xib */,
 				35307AFC19599569006E7E19 /* GetTopicsVC.h */,
 				35307AFD19599569006E7E19 /* GetTopicsVC.m */,
+				F493F6361BAD6B6000E80E21 /* GetTopicsVC.xib */,
 				35307B0119599590006E7E19 /* GetTopicsVC_iPad.xib */,
 				5801032E195AED8D00F5F2B1 /* SubTopicVC.h */,
 				5801032F195AED8D00F5F2B1 /* SubTopicVC.m */,
@@ -7368,8 +7368,8 @@
 		58ABD3A2193E0BB70054064C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Bachir Alzaim (CJWZU6HA53)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bachir Alzaim (CJWZU6HA53)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7389,10 +7389,10 @@
 					"-ObjC\n-ObjC\n-ObjC\n-ObjC",
 				);
 				PRODUCT_NAME = Wits;
-				PROVISIONING_PROFILE = "4ab828ee-9745-4f85-8d8b-1df0ad879044";
+				PROVISIONING_PROFILE = "bfe0440f-b8f1-46ca-b843-bedbb8817dbb";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -7400,8 +7400,8 @@
 		58ABD3A3193E0BB70054064C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Bachir Alzaim (CJWZU6HA53)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bachir Alzaim (CJWZU6HA53)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7421,9 +7421,9 @@
 					"-ObjC\n-ObjC\n-ObjC\n-ObjC",
 				);
 				PRODUCT_NAME = Wits;
-				PROVISIONING_PROFILE = "4ab828ee-9745-4f85-8d8b-1df0ad879044";
+				PROVISIONING_PROFILE = "bfe0440f-b8f1-46ca-b843-bedbb8817dbb";
 				RUN_CLANG_STATIC_ANALYZER = NO;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -7526,8 +7526,8 @@
 		58C0E208195C15D000C2A34F /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Bachir Alzaim (CJWZU6HA53)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bachir Alzaim (CJWZU6HA53)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7547,9 +7547,9 @@
 					"-ObjC\n-ObjC\n-ObjC\n-ObjC",
 				);
 				PRODUCT_NAME = Wits;
-				PROVISIONING_PROFILE = "4ab828ee-9745-4f85-8d8b-1df0ad879044";
+				PROVISIONING_PROFILE = "bfe0440f-b8f1-46ca-b843-bedbb8817dbb";
 				RUN_CLANG_STATIC_ANALYZER = NO;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Distribution;

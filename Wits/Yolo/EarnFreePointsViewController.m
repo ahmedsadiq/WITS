@@ -36,10 +36,15 @@
      //[self setLanguageForScreen];
      CGRect screenRect = [[UIScreen mainScreen] bounds];
      CGFloat screenWidth = screenRect.size.width;
+     if(IS_IPAD){
+          knowledgelbl.font = [UIFont fontWithName:FONT_NAME size:30];
+          _shareLbl.font = [UIFont fontWithName:FONT_NAME size:25];
+     }
+     else{
      knowledgelbl.font = [UIFont fontWithName:FONT_NAME size:17];
      _shareLbl.font = [UIFont fontWithName:FONT_NAME size:14];
-     
-     _tutorialScrollView.contentSize = CGSizeMake(screenWidth*8, screenRect.size.height);
+     }
+     _tutorialScrollView.contentSize = CGSizeMake(screenWidth , screenRect.size.height);
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,7 +110,7 @@
           }else{
                headerString.text = HowtoEarnPoints;
           }
-          backgroundImage.image = [UIImage imageNamed:@"pinkBar.png"];
+          backgroundImage.image = [UIImage imageNamed:@"greenBar.png"];
           
           
      }
