@@ -46,7 +46,13 @@ static BOOL showing;
           alertMessage.outletCancel.font = [UIFont fontWithName:FONT_NAME size:14];
           alertMessage.OutletOk.font = [UIFont fontWithName:FONT_NAME size:14];
                alertMessage.textView.font = [UIFont fontWithName:FONT_NAME size:15];
-     
+     if(IS_IPAD)
+     {
+          alertMessage.titleLbl.font = [UIFont fontWithName:FONT_NAME size:20];
+          alertMessage.outletCancel.font = [UIFont fontWithName:FONT_NAME size:14];
+          alertMessage.OutletOk.font = [UIFont fontWithName:FONT_NAME size:14];
+          alertMessage.textView.font = [UIFont fontWithName:FONT_NAME size:18];
+     }
      alertMessage.titleLbl.text = Title;
      [alertMessage.outletCancel setTitle:CancelBtn forState:UIControlStateNormal];
      [alertMessage.OutletOk setTitle:Otherbuttons forState:UIControlStateNormal];
@@ -120,15 +126,13 @@ static BOOL showing;
           
           
           CGSize sizeBtnWeb = [_textView sizeThatFits:CGSizeMake(280,FLT_MAX)];
+         // _containerView.frame = CGRectMake(0, 0, 300, 300);
+          _messageView.frame= CGRectMake(0, 0, 286, 252);
           
-          _textView.frame = CGRectMake(5, 76, 280, sizeBtnWeb.height+10);
-          
-          _messageView.frame= CGRectMake(112, 280, 400, 400);
-          
-          [_messageView setCenter:CGPointMake(200 , 300)];
-          
+          [_messageView setCenter:CGPointMake(100 , 200)];
+
           CGRect btnFrame = _outletCancel.frame;
-          btnFrame.origin.y = _textView.frame.origin.y + _textView.frame.size.height + 40;
+          btnFrame.origin.y = _textView.frame.origin.y + _textView.frame.size.height + 20;
           _outletCancel.frame = btnFrame;
           
           CGRect messageViewFrame = _messageView.frame;

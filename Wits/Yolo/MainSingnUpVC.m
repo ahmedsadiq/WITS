@@ -76,10 +76,12 @@
             OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:25];
           LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:25];
           _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:25];
+          twitterBtn.font = [UIFont fontWithName:FONT_NAME size:25];
      }
      else{
           myRect = CGRectMake(174,421,132,42);
           imageName = @"facebookbg.png";
+          twitterBtn.font = [UIFont fontWithName:FONT_NAME size:17];
            signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:13];
            forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:18];
            orLabel.font = [UIFont fontWithName:FONT_NAME size:14];
@@ -113,7 +115,7 @@
      //LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
    //  forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:18];
      //orLabel.font = [UIFont fontWithName:FONT_NAME size:14];
-     twitterBtn.font = [UIFont fontWithName:FONT_NAME size:17];
+    // twitterBtn.font = [UIFont fontWithName:FONT_NAME size:17];
     // signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:13];
      chooseLangLbl.font = [UIFont fontWithName:FONT_NAME size:17];
      languageTitle.font = [UIFont fontWithName:FONT_NAME size:17];
@@ -227,11 +229,11 @@
            [alertView show];
            return;*/
      }else{
-          
+     
           [pswdTxt resignFirstResponder];
-          [self sendLoginCall:false];
+         [self sendLoginCall:false];
           
-     }
+}
      
      [emailTxt resignFirstResponder];
      [pswdTxt resignFirstResponder];
@@ -445,7 +447,7 @@
                     loginLabel.text = @"Conectar com Facebook";
                }
                if ([[UIScreen mainScreen] bounds].size.height == iPad){
-                    loginLabel.font = [UIFont fontWithName:FONT_NAME size:22.0f];
+                    loginLabel.font = [UIFont fontWithName:FONT_NAME size:25.0f];
                }
                
           }
@@ -1260,26 +1262,31 @@
 -(void)createTabBarAndControl {
      if(IS_IPAD){
           self.viewController = [[GetTopicsVC alloc] initWithNibName:@"GetTopicsVC_iPad" bundle:nil];
-          /*CGRect tabFrame = self.tabBarController.tabBar.frame;
-          CGFloat tabHeight = self.tabBarController.tabBar.frame.size.height;
-          tabFrame.size.height = tabHeight * 2;
-          // tabFrame.origin.y = self..frame.size.height - (tabHeight);
-        //  self.tabBarController.tabBar.frame = tabFrame;
-          self.tabBarController.tabBar.frame = CGRectMake(0,0,768,100);*/
+
      }
      else {
           self.viewController = [[GetTopicsVC alloc] initWithNibName:@"GetTopicsVC" bundle:nil];
      }
      
      
+     
      self.navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+     
      [self.navController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"homeglow.png"]
-                                                      imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+                                                             imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal] ];
      
-     [self.navController.tabBarItem setImage:[[UIImage imageNamed:@"home.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-     
-     
+     [self.navController.tabBarItem setImage:[[UIImage imageNamed:@"home.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+      ];
      self.navController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD)
+     {
+          [self.navController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"homeglowForIpad.png"]
+                                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          
+          [self.navController.tabBarItem setImage:[[UIImage imageNamed:@"homeForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          self.navController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -35, 15, 35);
+          
+     }
      [self.navController setNavigationBarHidden:YES animated:NO];
      
      UIViewController *friendsVC;
@@ -1299,6 +1306,15 @@
      
      
      friendsVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD)
+          
+     {
+          [friendsVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"friendsglowForIpad.png"]
+                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [friendsVC.tabBarItem setImage:[[UIImage imageNamed:@"friendsForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          friendsVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -30, 15,30);
+          
+     }
      [friendsVC.navigationController setNavigationBarHidden:YES animated:NO];
      
      UIViewController *storeVC;
@@ -1315,6 +1331,14 @@
      [storeVC.tabBarItem setImage:[[UIImage imageNamed:@"shop.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      
      storeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD){
+          [storeVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"shopglowForIpad.png"]
+                                                imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [storeVC.tabBarItem setImage:[[UIImage imageNamed:@"shopForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          storeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -20, 15, 20);
+          
+     }
+     
      [storeVC.navigationController setNavigationBarHidden:YES animated:NO];
      
      UIViewController *historyViewController;
@@ -1331,16 +1355,26 @@
      [historyViewController.tabBarItem setImage:[[UIImage imageNamed:@"referral.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      
      historyViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD)
+     {
+          [historyViewController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"referglowForIpad.png"]
+                                                              imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [historyViewController.tabBarItem setImage:[[UIImage imageNamed:@"referforIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          historyViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, 0, 15, 0);
+          
+     }
+     
      [historyViewController.navigationController setNavigationBarHidden:YES animated:NO];
      
      
      UIViewController *settingVC;
      if(IS_IPAD) {
           settingVC = [[RightBarVC alloc] initWithNibName:@"RightBarVC_iPad" bundle:[NSBundle mainBundle]];
+          
      }
      else {
           settingVC = [[RightBarVC alloc] initWithNibName:@"RightBarVC" bundle:[NSBundle mainBundle]];
-     }
+              }
      
      UINavigationController *settingsNavController = [[UINavigationController alloc] initWithRootViewController:settingVC];
      
@@ -1349,12 +1383,24 @@
      [settingVC.tabBarItem setImage:[[UIImage imageNamed:@"menu.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      
      settingsNavController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD){
+          [settingVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"menuglowForIpad.png"]
+                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [settingVC.tabBarItem setImage:[[UIImage imageNamed:@"menuForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          settingsNavController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, 30, 15, -30);
+          
+     }
+     
      [settingVC.navigationController setNavigationBarHidden:YES animated:NO];
      
      self.tabBarController = [[UITabBarController alloc] init] ;
      self.tabBarController.viewControllers = [NSArray arrayWithObjects:self.navController, friendsNavController,storeNavController,historyNavController,settingsNavController,nil];
      
-     [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg@2x.png"]];
+     [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg.png"]];
+     if(IS_IPAD) {
+          [self.tabBarController.tabBar setShadowImage:[[UIImage alloc] init]];
+          [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubgForIpad.png"]];
+     }
      
      //    [self setFieldsAndButtonsText:self.configResponse];
      self.viewController.navigationController.navigationBar.tintColor = [UIColor blackColor];
@@ -2040,7 +2086,7 @@
      [self.view addSubview:_resetPswdView];
      
      UIColor *color = [UIColor whiteColor];
-     _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Enter Email ID" attributes:@{NSForegroundColorAttributeName: color}];
+     _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"ENTER EMAIL ID" attributes:@{NSForegroundColorAttributeName: color}];
      
 }
 - (IBAction)sendResetPswdCall:(id)sender {

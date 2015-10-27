@@ -214,27 +214,27 @@
 		</data>
 		<key>AddOnCell.nib</key>
 		<data>
-		02O6DVej+X1nmbY0HxjQONcViZQ=
+		8Db7uJlamuU4i5NSyaq0Rgwyths=
 		</data>
 		<key>AddOnCell_iPad.nib</key>
 		<data>
-		pfiH5+AZD9942wZ+S4dAjooVmJw=
+		MjZBls8igRkicHVhVgoiVbjovXU=
 		</data>
 		<key>AddOnViewController.nib</key>
 		<data>
-		Wp5TkY9GiR8ouuop4Djbd+5daQQ=
+		Xh9X3V1Y9MQwTgnIUrQ3J560I6o=
 		</data>
 		<key>AddOnViewController_iPad.nib</key>
 		<data>
-		jf69cSTTfdUhG6VsUAmRqPPvF4Y=
+		/nE2pfNArzSVtyEETOnayOn+9Ek=
 		</data>
 		<key>AddOnViewSelected.nib</key>
 		<data>
-		0RVwNvLuLdnYgZOgH3MqaLbeEB8=
+		ykV9mHgw5gtTi/k6nKD/vkwjmdg=
 		</data>
 		<key>AddOnViewSelected_iPad.nib</key>
 		<data>
-		RXobOQ6bCKwfE7Oq7sCxW1or46I=
+		n1DSXukqpQbUlQxHHnovqaPy5PE=
 		</data>
 		<key>AddPortuguese.png</key>
 		<data>
@@ -476,7 +476,11 @@
 		<data>
 		XdG3DWmHZYcxr5e5JOBDPqMRTxg=
 		</data>
-		<key>CN@2x.png</key>
+		<key>CNP.png</key>
+		<data>
+		iZwX6z5GIn4/tS1XWNs9KT22LAQ=
+		</data>
+		<key>CNP@2x.png</key>
 		<data>
 		QU2nsqMD6BInkmxIvfn01tXA/q8=
 		</data>
@@ -562,11 +566,11 @@
 		</data>
 		<key>ChallengeFriendsVC.nib</key>
 		<data>
-		mJ3NrMPyWCdU1OXNx3Utvo7+sYU=
+		meSyEaLODMEuS2Tm7QZJnQAXLfk=
 		</data>
 		<key>ChallengeFriendsVC_iPad.nib</key>
 		<data>
-		WFVxXL8Jeype7xTsSc8I3QUkhqg=
+		PnWIKN2rqDYrmRhwpZ7TMtiGug4=
 		</data>
 		<key>ChallengePortuguese.png</key>
 		<data>
@@ -586,11 +590,11 @@
 		</data>
 		<key>ChallengeVC.nib</key>
 		<data>
-		nE19k6J2oVAh4RLg7ye7LKMedi8=
+		iPPdnnTjCUR050cUYOvb+yo1mbo=
 		</data>
 		<key>ChallengeVC_iPad.nib</key>
 		<data>
-		Hw69QGsfhk6YquIqvm/p9JOu9qw=
+		4/sWAi2CvbHc8fnbdyfs6ss/q9Y=
 		</data>
 		<key>ChallengeglowArabic.png</key>
 		<data>
@@ -706,11 +710,11 @@
 		</data>
 		<key>ChatVC.nib</key>
 		<data>
-		LJo5UaEnkV5hzq6JlP5HY6hmtHU=
+		MRHYNM+Hc7Ckw0KnunLJbMffHf8=
 		</data>
 		<key>ChatVC_iPad.nib</key>
 		<data>
-		0ZIcFy6G2s0YMOUEdnP6AC6V1BU=
+		5AhUU1Lv3KUaCPVAuQ52VUeojQA=
 		</data>
 		<key>Chatarabic.png</key>
 		<data>
@@ -750,19 +754,19 @@
 		</data>
 		<key>ContactUsViewController.nib</key>
 		<data>
-		YVHaxihylbx16k54hhXass63J1g=
+		crXUGk2VWu6Cr7u4ULJfuG1QsX0=
 		</data>
 		<key>ContactUsViewController_iPad.nib</key>
 		<data>
-		P/8+xTQ7x2wLtLv3XsL1qunp62g=
+		a61B3ArckX1wXyv8cTiXkC73kyE=
 		</data>
 		<key>ConversationVC.nib</key>
 		<data>
-		aXJ6MBWkwkXgOMVUr/tgvCjz9C8=
+		2wf2VaQsoC0dS6Ll5WWjc9IuKxc=
 		</data>
 		<key>ConversationVC_iPad.nib</key>
 		<data>
-		N+HuOihgoadobGIXN0Il3WbTK0g=
+		jTN7UIJZSS2zZibPaISxUTTinFE=
 		</data>
 		<key>Cricket.png</key>
 		<data>
@@ -774,23 +778,23 @@
 		</data>
 		<key>CustomCell.nib</key>
 		<data>
-		rhYrjmmbNg5nDdFloXcvSjAdxKI=
+		T4YAIi1ejxPB6zchBr35JZURopY=
 		</data>
 		<key>CustomCellSelected_iPad.nib</key>
 		<data>
-		Y8dXJyaFQZKxwt3rJNUeV43TgMg=
+		CfMHqSTBFhMzTlVZBX5+VyQWARE=
 		</data>
 		<key>CustomCell_SelectedCC.nib</key>
 		<data>
-		/1CWLWPz7ziJ7iF8ulTiYw5VkXg=
+		rf7kXaPvFcb7Tb7kHFOfjtjCyNg=
 		</data>
 		<key>CustomCell_iPad.nib</key>
 		<data>
-		jzNLH4Zf74HPaxt4xq5wVA+mDN8=
+		32ThYoFn1bP1+EAt/Lc2kxVYe3o=
 		</data>
 		<key>CustomLoading.nib</key>
 		<data>
-		awOEaKtqM+mOhJnP/YJqmXarFoY=
+		eeXZgaQO0OdFBsnJ434dk2HQS/Y=
 		</data>
 		<key>DE.png</key>
 		<data>
@@ -842,11 +846,11 @@
 		</data>
 		<key>DiscussionVC.nib</key>
 		<data>
-		9DOuuupxYrmACWeqU97dmoKqzrE=
+		3mJr0faWgvrszQjMiMGfFIyaK0g=
 		</data>
 		<key>DiscussionVC_iPad.nib</key>
 		<data>
-		Jmj1ujyntUgHyLmcUnjSgEZyrQ0=
+		bX8mEtfY3XY6SFaR+x7GvJT/5dw=
 		</data>
 		<key>EC.png</key>
 		<data>
@@ -878,11 +882,11 @@
 		</data>
 		<key>EarnFreePointsViewController.nib</key>
 		<data>
-		3e2g2Pmp0aoJPDi+Dl+LDfRijss=
+		E3k8Y2JzHVVq+KMbLEXEHCKEmkA=
 		</data>
 		<key>EarnFreePointsViewController_iPad.nib</key>
 		<data>
-		4lYlJevfouija9oEETX/GfiJlXQ=
+		VRlvdsxPorVdq/TlyFxdJ54e7Ag=
 		</data>
 		<key>Edit-Profile.png</key>
 		<data>
@@ -1178,11 +1182,11 @@
 		</data>
 		<key>FriendsCC.nib</key>
 		<data>
-		aPXwoJFwRZH5W8+r/17j1LxFYwc=
+		HnaVhJ/dcVyPKFPm4L568kzuG40=
 		</data>
 		<key>FriendsCC_iPad.nib</key>
 		<data>
-		Bl1EZOKDPHtUPAyX2l4qZ4lKqFg=
+		5prSFKOHIlBsffalQ+LAOpPeT2w=
 		</data>
 		<key>FriendsGlow@2x.png</key>
 		<data>
@@ -1230,19 +1234,19 @@
 		</data>
 		<key>FriendsSelectedCC.nib</key>
 		<data>
-		5xLIuYih75yqysvvpe/AATuBOik=
+		InrVwxFHt23zwOaJWoWAJXTeBDw=
 		</data>
 		<key>FriendsSelectedCC_iPad.nib</key>
 		<data>
-		8piu2PhsTUAOYf0yXrK8MezHTtY=
+		DLJDX5feRjyT0qPTQMjSRLOBOLA=
 		</data>
 		<key>FriendsVC.nib</key>
 		<data>
-		VSUNDLj8GAZKixf+cpp3HkKlpAU=
+		l0nIrxiq1JAsbCmhU21qebdePu0=
 		</data>
 		<key>FriendsVC_iPad.nib</key>
 		<data>
-		swmHIQlWdo3Y7Da/zJe6qeU/qMA=
+		hqddMLL4wg36cCYWokSRhDBGqGs=
 		</data>
 		<key>GA.png</key>
 		<data>
@@ -1466,11 +1470,11 @@
 		</data>
 		<key>GetTopicsVC.nib</key>
 		<data>
-		0721/kLSZS1AUc8IKLxUsxbrURQ=
+		bkNEMuuzGHch49eQ18Z7p/vuyCM=
 		</data>
 		<key>GetTopicsVC_iPad.nib</key>
 		<data>
-		EXAZf77DZAQ2rFX6hNo0AyMG9VA=
+		UiKkY1YVoPYRkLYWt1g4eAnJqoM=
 		</data>
 		<key>GooglePlus.bundle/Info.plist</key>
 		<data>
@@ -1929,35 +1933,35 @@
 		</data>
 		<key>HistoryCC.nib</key>
 		<data>
-		TOVaMnyzSdzh1KjA1hm4rPZnh+0=
+		IoMCJ2nKon5ObWONw8ooq06xxy8=
 		</data>
 		<key>HistoryCC_iPad.nib</key>
 		<data>
-		sqhLttvO1JUN6M6XbmQq1csn99o=
+		9K0gDivoCQfmvV2H05QnJt6in7k=
 		</data>
 		<key>HistorySelectedCC.nib</key>
 		<data>
-		q7JOMTv31OMm/8ifKE04QR/FnHI=
+		xmpzxYzIOUfNNnPenBhZRQ4YkCA=
 		</data>
 		<key>HistorySelectedCC_iPad.nib</key>
 		<data>
-		d3+3EqXF+TMsNI4Br3iTYNaxkfM=
+		Ki8O1w/+dFA/eyHgPHttItD81WE=
 		</data>
 		<key>HistoryVC.nib</key>
 		<data>
-		PXJJuDc3StVrkEQXPsLRtu9aTp8=
+		8MfDkdfWUUA0iolLsv7Gt+bMNlY=
 		</data>
 		<key>HistoryVC_iPad.nib</key>
 		<data>
-		VwF3aJw/hLenV5OiX9dVb4QMBHU=
+		6XTtvhGD8lLqxy8dZWQmVUUsSx4=
 		</data>
 		<key>HistoryViewController.nib</key>
 		<data>
-		1sXF2L+MVLudf40W0PalplLS0Do=
+		+3yDOW4ZE5+L3uysWruZLhJ+tWI=
 		</data>
 		<key>HistoryViewController_iPad.nib</key>
 		<data>
-		AhBmKPNgrqJle67Eu/9lGlKwQAg=
+		Sht9GPXafE6GGrLMN4ul73dmFzQ=
 		</data>
 		<key>Historyicon.png</key>
 		<data>
@@ -1977,11 +1981,11 @@
 		</data>
 		<key>HomeVC.nib</key>
 		<data>
-		O9Oj2MbZJoZtYtsxHLiyP5I4NLo=
+		8O17axx4z+G0lKuR7VfK+8pNSYA=
 		</data>
 		<key>HomeVC_iPad.nib</key>
 		<data>
-		DC7VyhQ1+6DvVwLskwf+YmK6cXI=
+		v/bjrWLDi50I99WT51BfJvSukNo=
 		</data>
 		<key>ID.png</key>
 		<data>
@@ -2177,7 +2181,7 @@
 		</data>
 		<key>Launch Screen.nib</key>
 		<data>
-		f+fY8/p36NNBpGyUwGBOsvjgnx0=
+		OeMQVlTQ8DImPoJlR9ViUTwhSDw=
 		</data>
 		<key>League of Legends.png</key>
 		<data>
@@ -2213,11 +2217,11 @@
 		</data>
 		<key>LoginVC.nib</key>
 		<data>
-		trOQkPLbOc+CDsXabKB91IaGRCw=
+		h+fcuLrmHZR8+IZIbNQ6HO1wbFc=
 		</data>
 		<key>LoginVC_iPad.nib</key>
 		<data>
-		+bvhbis/yu8s2bvomXzvDNBU5LY=
+		5d2D2XWb/0oqdR00c9EEywdb3DA=
 		</data>
 		<key>Login_bar-568h@2x.png</key>
 		<data>
@@ -2333,11 +2337,11 @@
 		</data>
 		<key>MainSignUpVC_iPad.nib</key>
 		<data>
-		Xpbnfm+9YZ/xlf6eWhTTPWUTbxA=
+		kp/xL9Bm4wUasfDS6Ualztmu4ns=
 		</data>
 		<key>MainSingnUpVC.nib</key>
 		<data>
-		RL/YDgQ2wmLVMktHtN+LNAinp+o=
+		nOBvT9cAs0d+1Va8WVw06RvjwMQ=
 		</data>
 		<key>Math.png</key>
 		<data>
@@ -2349,11 +2353,11 @@
 		</data>
 		<key>MessagesVC.nib</key>
 		<data>
-		7TY+cB6q38TrnsI+l/XUAGDFQgo=
+		uFPDJny/MtYUoZ7ztHooVdnkgvQ=
 		</data>
 		<key>MessagesVC_iPad.nib</key>
 		<data>
-		rZ/KwDLTMb6PeAYBXNKXE/mxaxA=
+		AobSh1XTf3GMbYzTw/AMU0TBcQ4=
 		</data>
 		<key>Modern History.png</key>
 		<data>
@@ -2373,11 +2377,11 @@
 		</data>
 		<key>MyPointsVC.nib</key>
 		<data>
-		RNJnti8J9BxkkAa3dqBmCU5B1N8=
+		h76ZubejH4tYAz7AYbNoAhrZvSE=
 		</data>
 		<key>MyPointsVC_iPad.nib</key>
 		<data>
-		Cjrt4UlbJ+dhsZFM+ouEuYR8WFQ=
+		NOHr42DtDlhoYPuORtqst6YSKsY=
 		</data>
 		<key>NA.png</key>
 		<data>
@@ -2437,15 +2441,15 @@
 		</data>
 		<key>NotifAlertMessage.nib/objects-8.0+.nib</key>
 		<data>
-		gz7h5dBzRo0efVPrSNorchYHgog=
+		ZyldsrsHuqLW+CbpNVjBCa0TSw8=
 		</data>
 		<key>NotifAlertMessage.nib/objects.nib</key>
 		<data>
-		gz7h5dBzRo0efVPrSNorchYHgog=
+		ZyldsrsHuqLW+CbpNVjBCa0TSw8=
 		</data>
 		<key>NotifAlertMessage.nib/runtime.nib</key>
 		<data>
-		vcmZkabfkvmtqs7OSxOzSFt7dtM=
+		ACYWrf8Gl/zSgChpk2hJE66bfjc=
 		</data>
 		<key>OM.png</key>
 		<data>
@@ -2697,11 +2701,11 @@
 		</data>
 		<key>PurchaseVC.nib</key>
 		<data>
-		G1Kp5DPrKYpyiIk4IsyAzWA0l0E=
+		M0Ae8+B7gsAatLO47FJ30ESf0XE=
 		</data>
 		<key>PurchaseVC_iPad.nib</key>
 		<data>
-		VpRl1bAmOanCAhirzXRF563adZA=
+		SAgpI2z843y3s0kIqMHJIKxosPc=
 		</data>
 		<key>QA.png</key>
 		<data>
@@ -2737,19 +2741,19 @@
 		</data>
 		<key>RankingCC.nib</key>
 		<data>
-		kwf/BjTFfsAeno3gcLBc1dXHNpQ=
+		jRN6cmIpt983m04cGvjlhvLuoZM=
 		</data>
 		<key>RankingCC_iPad.nib</key>
 		<data>
-		zdDIG5p1Uf940cNeKbWoDdpwaWw=
+		lV7os3jryjWj3lJGX+tFHiDvAZk=
 		</data>
 		<key>RankingVC.nib</key>
 		<data>
-		9q2G6/Xmy2QG58+iXWINgddyWFQ=
+		157v6zvRtR4xvBrsIGK68NbzFi0=
 		</data>
 		<key>RankingVC_iPad.nib</key>
 		<data>
-		bXk2wLAd1ZTz/E9+EhFuhcKIHbs=
+		XAKrUwVGdezle+lRylPPhEMCFoA=
 		</data>
 		<key>Ranking_iPad.png</key>
 		<data>
@@ -2825,19 +2829,19 @@
 		</data>
 		<key>RewardsListVC.nib</key>
 		<data>
-		DthWA81V77bNTCg7WgdlmmYdOTU=
+		xxjegXh9K59cszZM0WA7WPm1dcQ=
 		</data>
 		<key>RewardsListVC_iPad.nib</key>
 		<data>
-		G+tN5gMx0DZoRmMLsSp+IcK6FTs=
+		GKv1gh1voUSR3nuGHX29WmkmBAE=
 		</data>
 		<key>RightBarVC.nib</key>
 		<data>
-		6xFVwnAg7jGFcfbncUaAHXL6C8c=
+		PORGOb8g68xrmD0giA2c1XtD5Cc=
 		</data>
 		<key>RightBarVC_iPad.nib</key>
 		<data>
-		DJRW0inaJrzLsO0laP3CuR74V0k=
+		BuZ6lYAQxIEB/gWSMwnamdlnLhc=
 		</data>
 		<key>Right_arow.png</key>
 		<data>
@@ -2957,15 +2961,15 @@
 		</data>
 		<key>SenderConversation.nib</key>
 		<data>
-		JxAkDbnonk6nF8xSk4puHO0KkxI=
+		adGN7VKB2eYHnqktLZArK0AscjQ=
 		</data>
 		<key>SettingVC.nib</key>
 		<data>
-		OO44OJwa4ZnItQkZt4YjdtE8/o4=
+		ipiA0bpH5r5TL0cakNXEh10wPBI=
 		</data>
 		<key>SettingVC_iPad.nib</key>
 		<data>
-		x/vfF5qJG8PgpRGR5aQpcy8Ohig=
+		kI7EbYbgk8DsVXDy0Hl6l1L8Elg=
 		</data>
 		<key>Settings-iPad.png</key>
 		<data>
@@ -2973,11 +2977,11 @@
 		</data>
 		<key>SignUpVC.nib</key>
 		<data>
-		wjHijJMtmHvqp1KxrreIIxXLLBE=
+		RP2gCv0JhFLNp96eNzIcwhI99Dk=
 		</data>
 		<key>SignUpVC_iPad.nib</key>
 		<data>
-		O0E8GBNulh0CReFFn7hhnTT8vvQ=
+		rA9nSGrB5y5gqlnjzGreZZmmm/g=
 		</data>
 		<key>Sign_in_google-568h@2x.png</key>
 		<data>
@@ -3033,35 +3037,35 @@
 		</data>
 		<key>StoreVC.nib</key>
 		<data>
-		P3NuwDs2Pv4wlZQuo/J23PivwbY=
+		wCPDwytRa9uF4AvXfrIRESByZG4=
 		</data>
 		<key>StoreVC_iPad.nib</key>
 		<data>
-		T8R3v1R+M/w1QuWNvELT1V3gakM=
+		T4hEQ7ukHP6r7j6qFfbiiRps/o4=
 		</data>
 		<key>SubTopicCC.nib</key>
 		<data>
-		6K2G7nmUxr9phP2Q0F8QiGgxq5w=
+		yKG8+NZesSn6A+KL+wqmxsK9g6E=
 		</data>
 		<key>SubTopicCC_iPad.nib</key>
 		<data>
-		/sY/BlskuVawal+WEtPBkW/pfQU=
+		8d5aWka2pATrBDcJzM5rszpXGoA=
 		</data>
 		<key>SubTopicSelectedCC.nib</key>
 		<data>
-		4bssVIV8bZPa7SspiRcqFXlLwJw=
+		w3bf+09GSvGQl71ZS65vnCPCwWc=
 		</data>
 		<key>SubTopicSelectedCC_iPad.nib</key>
 		<data>
-		CtmLkpCcJIthzA+xron/d8yeYDM=
+		3tQhnx4h/IrM1mtHFg2OUm9GW28=
 		</data>
 		<key>SubTopicVC.nib</key>
 		<data>
-		UsPmRP9swXNW9mxLJjzO4HHZ6cY=
+		awmKUoUBAZKJYGGOguUnA73Zzpw=
 		</data>
 		<key>SubTopicVC_iPad.nib</key>
 		<data>
-		9OkDz9pCvj7czueM+AfU6eMKKrA=
+		ZCHcmwOK7omNoIS8Gv1k3cgNDN4=
 		</data>
 		<key>TC.png</key>
 		<data>
@@ -3145,11 +3149,11 @@
 		</data>
 		<key>ThirdLayerVC.nib</key>
 		<data>
-		gARpY80zIEjj+HWZLSraZsZ7O04=
+		qaZLH0DoKvjz4P5xVU5ecpKCypU=
 		</data>
 		<key>ThirdLayerVC_iPad.nib</key>
 		<data>
-		YAlSkFdVu3wAHNkMoj4jPapWTFI=
+		Bun6H2JdgpGQ+ceqX15ncd1u+V4=
 		</data>
 		<key>This_week_btn_unpress568h@2x.png</key>
 		<data>
@@ -3157,11 +3161,11 @@
 		</data>
 		<key>ThreadCC.nib</key>
 		<data>
-		mZ+1WpJEVFArnOhkOiT01jtVtCg=
+		J8otQKjURmcw9cctFdnLk30CIyA=
 		</data>
 		<key>ThreadCC_iPad.nib</key>
 		<data>
-		kO13IC04Z4LSYW59kw0Q6aeovEY=
+		fUICkjTPgz+Jl9T9Fd1QLNYyeA0=
 		</data>
 		<key>TopicDiscussionns_iPad.png</key>
 		<data>
@@ -3229,11 +3233,11 @@
 		</data>
 		<key>TransferPointsViewController.nib</key>
 		<data>
-		jYG13OU55jYtNu8stCNw6+FzKg8=
+		ifWFPdMxr6Zp6q6b2RzKMJRKw/o=
 		</data>
 		<key>TransferPointsViewController_iPad.nib</key>
 		<data>
-		MGWr/JGX5XIXZ+9t2jyZ6axwZkg=
+		QZyfd9BBDZOyHHFEXnJd/GGcXbU=
 		</data>
 		<key>TransferSpanish.png</key>
 		<data>
@@ -3261,7 +3265,7 @@
 		</data>
 		<key>Tutorial.nib</key>
 		<data>
-		S89+ACDzf8ctTkOjg05cxPnQavE=
+		o4BbMhFxZLZx4dDBpT7LLdQarNs=
 		</data>
 		<key>UA.png</key>
 		<data>
@@ -3289,11 +3293,11 @@
 		</data>
 		<key>UpdateProfileVC.nib</key>
 		<data>
-		5RHqPs0f+x9Le7RLtm+4NxHDVGQ=
+		dke+y5xcJv0nASZ/+qCkZOHLhY0=
 		</data>
 		<key>UpdateProfileVC_iPad.nib</key>
 		<data>
-		5zBNy7OcW0l5TMkuhlTNI4gZ65E=
+		7MOswRXUC8f1AuZT74auEB2Z8RQ=
 		</data>
 		<key>VA.png</key>
 		<data>
@@ -4108,6 +4112,10 @@
 		<data>
 		AgyvE3EFLGTdTBz0fUV08vbsPJQ=
 		</data>
+		<key>friendsForIpad.png</key>
+		<data>
+		mbDLCfFbj8x2mkMZq1bhHh7/BvI=
+		</data>
 		<key>friends_icon.png</key>
 		<data>
 		W0CMJiASzkp0krVXt8k0eSIEE+E=
@@ -4127,6 +4135,10 @@
 		<key>friendsglow1@2x.png</key>
 		<data>
 		GtQOlDTeSBCtbPt1eAThyjzXXBA=
+		</data>
+		<key>friendsglowForIpad.png</key>
+		<data>
+		7r6GFvRo0IiL8hpPioj5Wfosh1I=
 		</data>
 		<key>friendspending.png</key>
 		<data>
@@ -4308,6 +4320,14 @@
 		<data>
 		vy9Bkd0WQ6G74iKcxiKM/703J1Y=
 		</data>
+		<key>history_icon.png</key>
+		<data>
+		ssOyLG+kr5UyC/pOJgVNE0VLZKs=
+		</data>
+		<key>history_icon@2x.png</key>
+		<data>
+		IqnUJJYDge3DY19XOi6xmcg7/+w=
+		</data>
 		<key>historybg.png</key>
 		<data>
 		OqXyxLVVezpyS3/Z6FPNjhtNPFg=
@@ -4332,6 +4352,10 @@
 		<data>
 		S/sNrKG2anR9Qxy1n4NYr81/c8E=
 		</data>
+		<key>homeForIpad.png</key>
+		<data>
+		nnBrojFxA1rZD3RnZ1xhHoDwU7Q=
+		</data>
 		<key>home_icon568h@2x.png</key>
 		<data>
 		99z4wsHfLDYJIna3U5lOdgaa5hs=
@@ -4343,6 +4367,10 @@
 		<key>homeglow@2x.png</key>
 		<data>
 		kxUxUOzQytonig5gXpsMte9CaKI=
+		</data>
+		<key>homeglowForIpad.png</key>
+		<data>
+		rJaeVcd47IvJfrbbhUx0k+ffDN4=
 		</data>
 		<key>homeios.png</key>
 		<data>
@@ -4879,6 +4907,10 @@
 		<data>
 		A+xnuxpgVtd6tbMOql6Ec5RLcoc=
 		</data>
+		<key>menuForIpad.png</key>
+		<data>
+		qwltmMo9CT/QEdW+NjBfPR0mPEs=
+		</data>
 		<key>menubg.png</key>
 		<data>
 		a33ReFLBE0f4azi4q1Og5/hIEDY=
@@ -4887,6 +4919,10 @@
 		<data>
 		kmVJW7Twl7y8BEEUx2zSm1DQjzk=
 		</data>
+		<key>menubgForIpad.png</key>
+		<data>
+		rUhCbRiSdYqba/QukpKrYU6T1DY=
+		</data>
 		<key>menuglow.png</key>
 		<data>
 		pSyVxO67NniMVFy8XHjIVr4gv7A=
@@ -4894,6 +4930,10 @@
 		<key>menuglow@2x.png</key>
 		<data>
 		WaC/YYGrNM8GWufGdl2kFGrwJv4=
+		</data>
+		<key>menuglowForIpad.png</key>
+		<data>
+		+1ZBpYwZkX+Hz4Z+HEPoMn2wSRw=
 		</data>
 		<key>message_bar.png</key>
 		<data>
@@ -5203,6 +5243,14 @@
 		<data>
 		oIPS3RKo/Q0itK5OOwdZXc6SdBA=
 		</data>
+		<key>referforIpad.png</key>
+		<data>
+		ZBwGAOQvEggpXdpLu3BssmMgmiU=
+		</data>
+		<key>referglowForIpad.png</key>
+		<data>
+		lSk89iE3GYwRdy04A0syxgjiD6w=
+		</data>
 		<key>referral.png</key>
 		<data>
 		ZpNq+791SQTTLinIscxgIMrrZmk=
@@ -5242,6 +5290,14 @@
 		<key>reward@2x.png</key>
 		<data>
 		dRmLzBD9C5TUfrCAmPgAVSRCZlc=
+		</data>
+		<key>rewardForIpad.png</key>
+		<data>
+		0JF/KET4JzVbAxjFWVgSj1IbLWY=
+		</data>
+		<key>rewardglowForIpad.png</key>
+		<data>
+		TLGCPHnuuAn2U0k0fA3+pKnOEE4=
 		</data>
 		<key>rewardsglow.png</key>
 		<data>
@@ -5451,6 +5507,10 @@
 		<data>
 		7BnUA+yAeXj/mCRUOXvSPMuFROA=
 		</data>
+		<key>shopForIpad.png</key>
+		<data>
+		fA8615Tpl2engY7cPgHpOxEVs3w=
+		</data>
 		<key>shopglow.png</key>
 		<data>
 		VLXC86ynhR4IMQclWMD/HfuWZiY=
@@ -5458,6 +5518,10 @@
 		<key>shopglow@2x.png</key>
 		<data>
 		ikq1HOG/wvimOaqye/JelFN6DII=
+		</data>
+		<key>shopglowForIpad.png</key>
+		<data>
+		u33PKft9hpdEv+WeAIblHzO34G0=
 		</data>
 		<key>signinbg.png</key>
 		<data>
@@ -5577,7 +5641,7 @@
 		</data>
 		<key>taboff.png</key>
 		<data>
-		IBAvyqfKTdRzX30aS7SyznhF5C0=
+		t4sFkP+s0TT9KjWDxK0CfP/K9bk=
 		</data>
 		<key>taboff@2x.png</key>
 		<data>
@@ -5585,7 +5649,7 @@
 		</data>
 		<key>tabon.png</key>
 		<data>
-		sXjEZhNN/VoMEezuPSGeiZXORbY=
+		fjOFuxT8fnP/PfGWHZtsr8HGemg=
 		</data>
 		<key>tabon@2x.png</key>
 		<data>
@@ -5713,7 +5777,7 @@
 		</data>
 		<key>transfergems@2x.png</key>
 		<data>
-		JfVXFTpfN8ZT0uqcxgB2OLbvu1Y=
+		ue26WgxyFOcnL5j/HpnGhKD4P7s=
 		</data>
 		<key>transfergemsglow.png</key>
 		<data>
@@ -5777,9 +5841,17 @@
 		</data>
 		<key>tutorial6.png</key>
 		<data>
-		/u66uNAFDBTHToQC6GeeFSxw1VA=
+		3jPk0/JhfO5IdDdvtAHzJp2La94=
 		</data>
 		<key>tutorial6@2x.png</key>
+		<data>
+		EEwlkxLQvrZUj4IjS6mPlXHRKjM=
+		</data>
+		<key>tutorial6Old.png</key>
+		<data>
+		/u66uNAFDBTHToQC6GeeFSxw1VA=
+		</data>
+		<key>tutorial6Old@2x.png</key>
 		<data>
 		WOzSVMpfA9A4Ouqvtt4vZIpLEz8=
 		</data>
@@ -6128,27 +6200,27 @@
 		</data>
 		<key>AddOnCell.nib</key>
 		<data>
-		02O6DVej+X1nmbY0HxjQONcViZQ=
+		8Db7uJlamuU4i5NSyaq0Rgwyths=
 		</data>
 		<key>AddOnCell_iPad.nib</key>
 		<data>
-		pfiH5+AZD9942wZ+S4dAjooVmJw=
+		MjZBls8igRkicHVhVgoiVbjovXU=
 		</data>
 		<key>AddOnViewController.nib</key>
 		<data>
-		Wp5TkY9GiR8ouuop4Djbd+5daQQ=
+		Xh9X3V1Y9MQwTgnIUrQ3J560I6o=
 		</data>
 		<key>AddOnViewController_iPad.nib</key>
 		<data>
-		jf69cSTTfdUhG6VsUAmRqPPvF4Y=
+		/nE2pfNArzSVtyEETOnayOn+9Ek=
 		</data>
 		<key>AddOnViewSelected.nib</key>
 		<data>
-		0RVwNvLuLdnYgZOgH3MqaLbeEB8=
+		ykV9mHgw5gtTi/k6nKD/vkwjmdg=
 		</data>
 		<key>AddOnViewSelected_iPad.nib</key>
 		<data>
-		RXobOQ6bCKwfE7Oq7sCxW1or46I=
+		n1DSXukqpQbUlQxHHnovqaPy5PE=
 		</data>
 		<key>AddPortuguese.png</key>
 		<data>
@@ -6390,7 +6462,11 @@
 		<data>
 		XdG3DWmHZYcxr5e5JOBDPqMRTxg=
 		</data>
-		<key>CN@2x.png</key>
+		<key>CNP.png</key>
+		<data>
+		iZwX6z5GIn4/tS1XWNs9KT22LAQ=
+		</data>
+		<key>CNP@2x.png</key>
 		<data>
 		QU2nsqMD6BInkmxIvfn01tXA/q8=
 		</data>
@@ -6476,11 +6552,11 @@
 		</data>
 		<key>ChallengeFriendsVC.nib</key>
 		<data>
-		mJ3NrMPyWCdU1OXNx3Utvo7+sYU=
+		meSyEaLODMEuS2Tm7QZJnQAXLfk=
 		</data>
 		<key>ChallengeFriendsVC_iPad.nib</key>
 		<data>
-		WFVxXL8Jeype7xTsSc8I3QUkhqg=
+		PnWIKN2rqDYrmRhwpZ7TMtiGug4=
 		</data>
 		<key>ChallengePortuguese.png</key>
 		<data>
@@ -6500,11 +6576,11 @@
 		</data>
 		<key>ChallengeVC.nib</key>
 		<data>
-		nE19k6J2oVAh4RLg7ye7LKMedi8=
+		iPPdnnTjCUR050cUYOvb+yo1mbo=
 		</data>
 		<key>ChallengeVC_iPad.nib</key>
 		<data>
-		Hw69QGsfhk6YquIqvm/p9JOu9qw=
+		4/sWAi2CvbHc8fnbdyfs6ss/q9Y=
 		</data>
 		<key>ChallengeglowArabic.png</key>
 		<data>
@@ -6620,11 +6696,11 @@
 		</data>
 		<key>ChatVC.nib</key>
 		<data>
-		LJo5UaEnkV5hzq6JlP5HY6hmtHU=
+		MRHYNM+Hc7Ckw0KnunLJbMffHf8=
 		</data>
 		<key>ChatVC_iPad.nib</key>
 		<data>
-		0ZIcFy6G2s0YMOUEdnP6AC6V1BU=
+		5AhUU1Lv3KUaCPVAuQ52VUeojQA=
 		</data>
 		<key>Chatarabic.png</key>
 		<data>
@@ -6664,19 +6740,19 @@
 		</data>
 		<key>ContactUsViewController.nib</key>
 		<data>
-		YVHaxihylbx16k54hhXass63J1g=
+		crXUGk2VWu6Cr7u4ULJfuG1QsX0=
 		</data>
 		<key>ContactUsViewController_iPad.nib</key>
 		<data>
-		P/8+xTQ7x2wLtLv3XsL1qunp62g=
+		a61B3ArckX1wXyv8cTiXkC73kyE=
 		</data>
 		<key>ConversationVC.nib</key>
 		<data>
-		aXJ6MBWkwkXgOMVUr/tgvCjz9C8=
+		2wf2VaQsoC0dS6Ll5WWjc9IuKxc=
 		</data>
 		<key>ConversationVC_iPad.nib</key>
 		<data>
-		N+HuOihgoadobGIXN0Il3WbTK0g=
+		jTN7UIJZSS2zZibPaISxUTTinFE=
 		</data>
 		<key>Cricket.png</key>
 		<data>
@@ -6688,23 +6764,23 @@
 		</data>
 		<key>CustomCell.nib</key>
 		<data>
-		rhYrjmmbNg5nDdFloXcvSjAdxKI=
+		T4YAIi1ejxPB6zchBr35JZURopY=
 		</data>
 		<key>CustomCellSelected_iPad.nib</key>
 		<data>
-		Y8dXJyaFQZKxwt3rJNUeV43TgMg=
+		CfMHqSTBFhMzTlVZBX5+VyQWARE=
 		</data>
 		<key>CustomCell_SelectedCC.nib</key>
 		<data>
-		/1CWLWPz7ziJ7iF8ulTiYw5VkXg=
+		rf7kXaPvFcb7Tb7kHFOfjtjCyNg=
 		</data>
 		<key>CustomCell_iPad.nib</key>
 		<data>
-		jzNLH4Zf74HPaxt4xq5wVA+mDN8=
+		32ThYoFn1bP1+EAt/Lc2kxVYe3o=
 		</data>
 		<key>CustomLoading.nib</key>
 		<data>
-		awOEaKtqM+mOhJnP/YJqmXarFoY=
+		eeXZgaQO0OdFBsnJ434dk2HQS/Y=
 		</data>
 		<key>DE.png</key>
 		<data>
@@ -6756,11 +6832,11 @@
 		</data>
 		<key>DiscussionVC.nib</key>
 		<data>
-		9DOuuupxYrmACWeqU97dmoKqzrE=
+		3mJr0faWgvrszQjMiMGfFIyaK0g=
 		</data>
 		<key>DiscussionVC_iPad.nib</key>
 		<data>
-		Jmj1ujyntUgHyLmcUnjSgEZyrQ0=
+		bX8mEtfY3XY6SFaR+x7GvJT/5dw=
 		</data>
 		<key>EC.png</key>
 		<data>
@@ -6792,11 +6868,11 @@
 		</data>
 		<key>EarnFreePointsViewController.nib</key>
 		<data>
-		3e2g2Pmp0aoJPDi+Dl+LDfRijss=
+		E3k8Y2JzHVVq+KMbLEXEHCKEmkA=
 		</data>
 		<key>EarnFreePointsViewController_iPad.nib</key>
 		<data>
-		4lYlJevfouija9oEETX/GfiJlXQ=
+		VRlvdsxPorVdq/TlyFxdJ54e7Ag=
 		</data>
 		<key>Edit-Profile.png</key>
 		<data>
@@ -7092,11 +7168,11 @@
 		</data>
 		<key>FriendsCC.nib</key>
 		<data>
-		aPXwoJFwRZH5W8+r/17j1LxFYwc=
+		HnaVhJ/dcVyPKFPm4L568kzuG40=
 		</data>
 		<key>FriendsCC_iPad.nib</key>
 		<data>
-		Bl1EZOKDPHtUPAyX2l4qZ4lKqFg=
+		5prSFKOHIlBsffalQ+LAOpPeT2w=
 		</data>
 		<key>FriendsGlow@2x.png</key>
 		<data>
@@ -7144,19 +7220,19 @@
 		</data>
 		<key>FriendsSelectedCC.nib</key>
 		<data>
-		5xLIuYih75yqysvvpe/AATuBOik=
+		InrVwxFHt23zwOaJWoWAJXTeBDw=
 		</data>
 		<key>FriendsSelectedCC_iPad.nib</key>
 		<data>
-		8piu2PhsTUAOYf0yXrK8MezHTtY=
+		DLJDX5feRjyT0qPTQMjSRLOBOLA=
 		</data>
 		<key>FriendsVC.nib</key>
 		<data>
-		VSUNDLj8GAZKixf+cpp3HkKlpAU=
+		l0nIrxiq1JAsbCmhU21qebdePu0=
 		</data>
 		<key>FriendsVC_iPad.nib</key>
 		<data>
-		swmHIQlWdo3Y7Da/zJe6qeU/qMA=
+		hqddMLL4wg36cCYWokSRhDBGqGs=
 		</data>
 		<key>GA.png</key>
 		<data>
@@ -7380,11 +7456,11 @@
 		</data>
 		<key>GetTopicsVC.nib</key>
 		<data>
-		0721/kLSZS1AUc8IKLxUsxbrURQ=
+		bkNEMuuzGHch49eQ18Z7p/vuyCM=
 		</data>
 		<key>GetTopicsVC_iPad.nib</key>
 		<data>
-		EXAZf77DZAQ2rFX6hNo0AyMG9VA=
+		UiKkY1YVoPYRkLYWt1g4eAnJqoM=
 		</data>
 		<key>GooglePlus.bundle/Info.plist</key>
 		<data>
@@ -7843,35 +7919,35 @@
 		</data>
 		<key>HistoryCC.nib</key>
 		<data>
-		TOVaMnyzSdzh1KjA1hm4rPZnh+0=
+		IoMCJ2nKon5ObWONw8ooq06xxy8=
 		</data>
 		<key>HistoryCC_iPad.nib</key>
 		<data>
-		sqhLttvO1JUN6M6XbmQq1csn99o=
+		9K0gDivoCQfmvV2H05QnJt6in7k=
 		</data>
 		<key>HistorySelectedCC.nib</key>
 		<data>
-		q7JOMTv31OMm/8ifKE04QR/FnHI=
+		xmpzxYzIOUfNNnPenBhZRQ4YkCA=
 		</data>
 		<key>HistorySelectedCC_iPad.nib</key>
 		<data>
-		d3+3EqXF+TMsNI4Br3iTYNaxkfM=
+		Ki8O1w/+dFA/eyHgPHttItD81WE=
 		</data>
 		<key>HistoryVC.nib</key>
 		<data>
-		PXJJuDc3StVrkEQXPsLRtu9aTp8=
+		8MfDkdfWUUA0iolLsv7Gt+bMNlY=
 		</data>
 		<key>HistoryVC_iPad.nib</key>
 		<data>
-		VwF3aJw/hLenV5OiX9dVb4QMBHU=
+		6XTtvhGD8lLqxy8dZWQmVUUsSx4=
 		</data>
 		<key>HistoryViewController.nib</key>
 		<data>
-		1sXF2L+MVLudf40W0PalplLS0Do=
+		+3yDOW4ZE5+L3uysWruZLhJ+tWI=
 		</data>
 		<key>HistoryViewController_iPad.nib</key>
 		<data>
-		AhBmKPNgrqJle67Eu/9lGlKwQAg=
+		Sht9GPXafE6GGrLMN4ul73dmFzQ=
 		</data>
 		<key>Historyicon.png</key>
 		<data>
@@ -7891,11 +7967,11 @@
 		</data>
 		<key>HomeVC.nib</key>
 		<data>
-		O9Oj2MbZJoZtYtsxHLiyP5I4NLo=
+		8O17axx4z+G0lKuR7VfK+8pNSYA=
 		</data>
 		<key>HomeVC_iPad.nib</key>
 		<data>
-		DC7VyhQ1+6DvVwLskwf+YmK6cXI=
+		v/bjrWLDi50I99WT51BfJvSukNo=
 		</data>
 		<key>ID.png</key>
 		<data>
@@ -8087,7 +8163,7 @@
 		</data>
 		<key>Launch Screen.nib</key>
 		<data>
-		f+fY8/p36NNBpGyUwGBOsvjgnx0=
+		OeMQVlTQ8DImPoJlR9ViUTwhSDw=
 		</data>
 		<key>League of Legends.png</key>
 		<data>
@@ -8123,11 +8199,11 @@
 		</data>
 		<key>LoginVC.nib</key>
 		<data>
-		trOQkPLbOc+CDsXabKB91IaGRCw=
+		h+fcuLrmHZR8+IZIbNQ6HO1wbFc=
 		</data>
 		<key>LoginVC_iPad.nib</key>
 		<data>
-		+bvhbis/yu8s2bvomXzvDNBU5LY=
+		5d2D2XWb/0oqdR00c9EEywdb3DA=
 		</data>
 		<key>Login_bar-568h@2x.png</key>
 		<data>
@@ -8243,11 +8319,11 @@
 		</data>
 		<key>MainSignUpVC_iPad.nib</key>
 		<data>
-		Xpbnfm+9YZ/xlf6eWhTTPWUTbxA=
+		kp/xL9Bm4wUasfDS6Ualztmu4ns=
 		</data>
 		<key>MainSingnUpVC.nib</key>
 		<data>
-		RL/YDgQ2wmLVMktHtN+LNAinp+o=
+		nOBvT9cAs0d+1Va8WVw06RvjwMQ=
 		</data>
 		<key>Math.png</key>
 		<data>
@@ -8259,11 +8335,11 @@
 		</data>
 		<key>MessagesVC.nib</key>
 		<data>
-		7TY+cB6q38TrnsI+l/XUAGDFQgo=
+		uFPDJny/MtYUoZ7ztHooVdnkgvQ=
 		</data>
 		<key>MessagesVC_iPad.nib</key>
 		<data>
-		rZ/KwDLTMb6PeAYBXNKXE/mxaxA=
+		AobSh1XTf3GMbYzTw/AMU0TBcQ4=
 		</data>
 		<key>Modern History.png</key>
 		<data>
@@ -8283,11 +8359,11 @@
 		</data>
 		<key>MyPointsVC.nib</key>
 		<data>
-		RNJnti8J9BxkkAa3dqBmCU5B1N8=
+		h76ZubejH4tYAz7AYbNoAhrZvSE=
 		</data>
 		<key>MyPointsVC_iPad.nib</key>
 		<data>
-		Cjrt4UlbJ+dhsZFM+ouEuYR8WFQ=
+		NOHr42DtDlhoYPuORtqst6YSKsY=
 		</data>
 		<key>NA.png</key>
 		<data>
@@ -8347,15 +8423,15 @@
 		</data>
 		<key>NotifAlertMessage.nib/objects-8.0+.nib</key>
 		<data>
-		gz7h5dBzRo0efVPrSNorchYHgog=
+		ZyldsrsHuqLW+CbpNVjBCa0TSw8=
 		</data>
 		<key>NotifAlertMessage.nib/objects.nib</key>
 		<data>
-		gz7h5dBzRo0efVPrSNorchYHgog=
+		ZyldsrsHuqLW+CbpNVjBCa0TSw8=
 		</data>
 		<key>NotifAlertMessage.nib/runtime.nib</key>
 		<data>
-		vcmZkabfkvmtqs7OSxOzSFt7dtM=
+		ACYWrf8Gl/zSgChpk2hJE66bfjc=
 		</data>
 		<key>OM.png</key>
 		<data>
@@ -8603,11 +8679,11 @@
 		</data>
 		<key>PurchaseVC.nib</key>
 		<data>
-		G1Kp5DPrKYpyiIk4IsyAzWA0l0E=
+		M0Ae8+B7gsAatLO47FJ30ESf0XE=
 		</data>
 		<key>PurchaseVC_iPad.nib</key>
 		<data>
-		VpRl1bAmOanCAhirzXRF563adZA=
+		SAgpI2z843y3s0kIqMHJIKxosPc=
 		</data>
 		<key>QA.png</key>
 		<data>
@@ -8643,19 +8719,19 @@
 		</data>
 		<key>RankingCC.nib</key>
 		<data>
-		kwf/BjTFfsAeno3gcLBc1dXHNpQ=
+		jRN6cmIpt983m04cGvjlhvLuoZM=
 		</data>
 		<key>RankingCC_iPad.nib</key>
 		<data>
-		zdDIG5p1Uf940cNeKbWoDdpwaWw=
+		lV7os3jryjWj3lJGX+tFHiDvAZk=
 		</data>
 		<key>RankingVC.nib</key>
 		<data>
-		9q2G6/Xmy2QG58+iXWINgddyWFQ=
+		157v6zvRtR4xvBrsIGK68NbzFi0=
 		</data>
 		<key>RankingVC_iPad.nib</key>
 		<data>
-		bXk2wLAd1ZTz/E9+EhFuhcKIHbs=
+		XAKrUwVGdezle+lRylPPhEMCFoA=
 		</data>
 		<key>Ranking_iPad.png</key>
 		<data>
@@ -8731,19 +8807,19 @@
 		</data>
 		<key>RewardsListVC.nib</key>
 		<data>
-		DthWA81V77bNTCg7WgdlmmYdOTU=
+		xxjegXh9K59cszZM0WA7WPm1dcQ=
 		</data>
 		<key>RewardsListVC_iPad.nib</key>
 		<data>
-		G+tN5gMx0DZoRmMLsSp+IcK6FTs=
+		GKv1gh1voUSR3nuGHX29WmkmBAE=
 		</data>
 		<key>RightBarVC.nib</key>
 		<data>
-		6xFVwnAg7jGFcfbncUaAHXL6C8c=
+		PORGOb8g68xrmD0giA2c1XtD5Cc=
 		</data>
 		<key>RightBarVC_iPad.nib</key>
 		<data>
-		DJRW0inaJrzLsO0laP3CuR74V0k=
+		BuZ6lYAQxIEB/gWSMwnamdlnLhc=
 		</data>
 		<key>Right_arow.png</key>
 		<data>
@@ -8863,15 +8939,15 @@
 		</data>
 		<key>SenderConversation.nib</key>
 		<data>
-		JxAkDbnonk6nF8xSk4puHO0KkxI=
+		adGN7VKB2eYHnqktLZArK0AscjQ=
 		</data>
 		<key>SettingVC.nib</key>
 		<data>
-		OO44OJwa4ZnItQkZt4YjdtE8/o4=
+		ipiA0bpH5r5TL0cakNXEh10wPBI=
 		</data>
 		<key>SettingVC_iPad.nib</key>
 		<data>
-		x/vfF5qJG8PgpRGR5aQpcy8Ohig=
+		kI7EbYbgk8DsVXDy0Hl6l1L8Elg=
 		</data>
 		<key>Settings-iPad.png</key>
 		<data>
@@ -8879,11 +8955,11 @@
 		</data>
 		<key>SignUpVC.nib</key>
 		<data>
-		wjHijJMtmHvqp1KxrreIIxXLLBE=
+		RP2gCv0JhFLNp96eNzIcwhI99Dk=
 		</data>
 		<key>SignUpVC_iPad.nib</key>
 		<data>
-		O0E8GBNulh0CReFFn7hhnTT8vvQ=
+		rA9nSGrB5y5gqlnjzGreZZmmm/g=
 		</data>
 		<key>Sign_in_google-568h@2x.png</key>
 		<data>
@@ -8939,35 +9015,35 @@
 		</data>
 		<key>StoreVC.nib</key>
 		<data>
-		P3NuwDs2Pv4wlZQuo/J23PivwbY=
+		wCPDwytRa9uF4AvXfrIRESByZG4=
 		</data>
 		<key>StoreVC_iPad.nib</key>
 		<data>
-		T8R3v1R+M/w1QuWNvELT1V3gakM=
+		T4hEQ7ukHP6r7j6qFfbiiRps/o4=
 		</data>
 		<key>SubTopicCC.nib</key>
 		<data>
-		6K2G7nmUxr9phP2Q0F8QiGgxq5w=
+		yKG8+NZesSn6A+KL+wqmxsK9g6E=
 		</data>
 		<key>SubTopicCC_iPad.nib</key>
 		<data>
-		/sY/BlskuVawal+WEtPBkW/pfQU=
+		8d5aWka2pATrBDcJzM5rszpXGoA=
 		</data>
 		<key>SubTopicSelectedCC.nib</key>
 		<data>
-		4bssVIV8bZPa7SspiRcqFXlLwJw=
+		w3bf+09GSvGQl71ZS65vnCPCwWc=
 		</data>
 		<key>SubTopicSelectedCC_iPad.nib</key>
 		<data>
-		CtmLkpCcJIthzA+xron/d8yeYDM=
+		3tQhnx4h/IrM1mtHFg2OUm9GW28=
 		</data>
 		<key>SubTopicVC.nib</key>
 		<data>
-		UsPmRP9swXNW9mxLJjzO4HHZ6cY=
+		awmKUoUBAZKJYGGOguUnA73Zzpw=
 		</data>
 		<key>SubTopicVC_iPad.nib</key>
 		<data>
-		9OkDz9pCvj7czueM+AfU6eMKKrA=
+		ZCHcmwOK7omNoIS8Gv1k3cgNDN4=
 		</data>
 		<key>TC.png</key>
 		<data>
@@ -9051,11 +9127,11 @@
 		</data>
 		<key>ThirdLayerVC.nib</key>
 		<data>
-		gARpY80zIEjj+HWZLSraZsZ7O04=
+		qaZLH0DoKvjz4P5xVU5ecpKCypU=
 		</data>
 		<key>ThirdLayerVC_iPad.nib</key>
 		<data>
-		YAlSkFdVu3wAHNkMoj4jPapWTFI=
+		Bun6H2JdgpGQ+ceqX15ncd1u+V4=
 		</data>
 		<key>This_week_btn_unpress568h@2x.png</key>
 		<data>
@@ -9063,11 +9139,11 @@
 		</data>
 		<key>ThreadCC.nib</key>
 		<data>
-		mZ+1WpJEVFArnOhkOiT01jtVtCg=
+		J8otQKjURmcw9cctFdnLk30CIyA=
 		</data>
 		<key>ThreadCC_iPad.nib</key>
 		<data>
-		kO13IC04Z4LSYW59kw0Q6aeovEY=
+		fUICkjTPgz+Jl9T9Fd1QLNYyeA0=
 		</data>
 		<key>TopicDiscussionns_iPad.png</key>
 		<data>
@@ -9135,11 +9211,11 @@
 		</data>
 		<key>TransferPointsViewController.nib</key>
 		<data>
-		jYG13OU55jYtNu8stCNw6+FzKg8=
+		ifWFPdMxr6Zp6q6b2RzKMJRKw/o=
 		</data>
 		<key>TransferPointsViewController_iPad.nib</key>
 		<data>
-		MGWr/JGX5XIXZ+9t2jyZ6axwZkg=
+		QZyfd9BBDZOyHHFEXnJd/GGcXbU=
 		</data>
 		<key>TransferSpanish.png</key>
 		<data>
@@ -9167,7 +9243,7 @@
 		</data>
 		<key>Tutorial.nib</key>
 		<data>
-		S89+ACDzf8ctTkOjg05cxPnQavE=
+		o4BbMhFxZLZx4dDBpT7LLdQarNs=
 		</data>
 		<key>UA.png</key>
 		<data>
@@ -9195,11 +9271,11 @@
 		</data>
 		<key>UpdateProfileVC.nib</key>
 		<data>
-		5RHqPs0f+x9Le7RLtm+4NxHDVGQ=
+		dke+y5xcJv0nASZ/+qCkZOHLhY0=
 		</data>
 		<key>UpdateProfileVC_iPad.nib</key>
 		<data>
-		5zBNy7OcW0l5TMkuhlTNI4gZ65E=
+		7MOswRXUC8f1AuZT74auEB2Z8RQ=
 		</data>
 		<key>VA.png</key>
 		<data>
@@ -10014,6 +10090,10 @@
 		<data>
 		AgyvE3EFLGTdTBz0fUV08vbsPJQ=
 		</data>
+		<key>friendsForIpad.png</key>
+		<data>
+		mbDLCfFbj8x2mkMZq1bhHh7/BvI=
+		</data>
 		<key>friends_icon.png</key>
 		<data>
 		W0CMJiASzkp0krVXt8k0eSIEE+E=
@@ -10033,6 +10113,10 @@
 		<key>friendsglow1@2x.png</key>
 		<data>
 		GtQOlDTeSBCtbPt1eAThyjzXXBA=
+		</data>
+		<key>friendsglowForIpad.png</key>
+		<data>
+		7r6GFvRo0IiL8hpPioj5Wfosh1I=
 		</data>
 		<key>friendspending.png</key>
 		<data>
@@ -10214,6 +10298,14 @@
 		<data>
 		vy9Bkd0WQ6G74iKcxiKM/703J1Y=
 		</data>
+		<key>history_icon.png</key>
+		<data>
+		ssOyLG+kr5UyC/pOJgVNE0VLZKs=
+		</data>
+		<key>history_icon@2x.png</key>
+		<data>
+		IqnUJJYDge3DY19XOi6xmcg7/+w=
+		</data>
 		<key>historybg.png</key>
 		<data>
 		OqXyxLVVezpyS3/Z6FPNjhtNPFg=
@@ -10238,6 +10330,10 @@
 		<data>
 		S/sNrKG2anR9Qxy1n4NYr81/c8E=
 		</data>
+		<key>homeForIpad.png</key>
+		<data>
+		nnBrojFxA1rZD3RnZ1xhHoDwU7Q=
+		</data>
 		<key>home_icon568h@2x.png</key>
 		<data>
 		99z4wsHfLDYJIna3U5lOdgaa5hs=
@@ -10249,6 +10345,10 @@
 		<key>homeglow@2x.png</key>
 		<data>
 		kxUxUOzQytonig5gXpsMte9CaKI=
+		</data>
+		<key>homeglowForIpad.png</key>
+		<data>
+		rJaeVcd47IvJfrbbhUx0k+ffDN4=
 		</data>
 		<key>homeios.png</key>
 		<data>
@@ -10785,6 +10885,10 @@
 		<data>
 		A+xnuxpgVtd6tbMOql6Ec5RLcoc=
 		</data>
+		<key>menuForIpad.png</key>
+		<data>
+		qwltmMo9CT/QEdW+NjBfPR0mPEs=
+		</data>
 		<key>menubg.png</key>
 		<data>
 		a33ReFLBE0f4azi4q1Og5/hIEDY=
@@ -10793,6 +10897,10 @@
 		<data>
 		kmVJW7Twl7y8BEEUx2zSm1DQjzk=
 		</data>
+		<key>menubgForIpad.png</key>
+		<data>
+		rUhCbRiSdYqba/QukpKrYU6T1DY=
+		</data>
 		<key>menuglow.png</key>
 		<data>
 		pSyVxO67NniMVFy8XHjIVr4gv7A=
@@ -10800,6 +10908,10 @@
 		<key>menuglow@2x.png</key>
 		<data>
 		WaC/YYGrNM8GWufGdl2kFGrwJv4=
+		</data>
+		<key>menuglowForIpad.png</key>
+		<data>
+		+1ZBpYwZkX+Hz4Z+HEPoMn2wSRw=
 		</data>
 		<key>message_bar.png</key>
 		<data>
@@ -11109,6 +11221,14 @@
 		<data>
 		oIPS3RKo/Q0itK5OOwdZXc6SdBA=
 		</data>
+		<key>referforIpad.png</key>
+		<data>
+		ZBwGAOQvEggpXdpLu3BssmMgmiU=
+		</data>
+		<key>referglowForIpad.png</key>
+		<data>
+		lSk89iE3GYwRdy04A0syxgjiD6w=
+		</data>
 		<key>referral.png</key>
 		<data>
 		ZpNq+791SQTTLinIscxgIMrrZmk=
@@ -11148,6 +11268,14 @@
 		<key>reward@2x.png</key>
 		<data>
 		dRmLzBD9C5TUfrCAmPgAVSRCZlc=
+		</data>
+		<key>rewardForIpad.png</key>
+		<data>
+		0JF/KET4JzVbAxjFWVgSj1IbLWY=
+		</data>
+		<key>rewardglowForIpad.png</key>
+		<data>
+		TLGCPHnuuAn2U0k0fA3+pKnOEE4=
 		</data>
 		<key>rewardsglow.png</key>
 		<data>
@@ -11357,6 +11485,10 @@
 		<data>
 		7BnUA+yAeXj/mCRUOXvSPMuFROA=
 		</data>
+		<key>shopForIpad.png</key>
+		<data>
+		fA8615Tpl2engY7cPgHpOxEVs3w=
+		</data>
 		<key>shopglow.png</key>
 		<data>
 		VLXC86ynhR4IMQclWMD/HfuWZiY=
@@ -11364,6 +11496,10 @@
 		<key>shopglow@2x.png</key>
 		<data>
 		ikq1HOG/wvimOaqye/JelFN6DII=
+		</data>
+		<key>shopglowForIpad.png</key>
+		<data>
+		u33PKft9hpdEv+WeAIblHzO34G0=
 		</data>
 		<key>signinbg.png</key>
 		<data>
@@ -11483,7 +11619,7 @@
 		</data>
 		<key>taboff.png</key>
 		<data>
-		IBAvyqfKTdRzX30aS7SyznhF5C0=
+		t4sFkP+s0TT9KjWDxK0CfP/K9bk=
 		</data>
 		<key>taboff@2x.png</key>
 		<data>
@@ -11491,7 +11627,7 @@
 		</data>
 		<key>tabon.png</key>
 		<data>
-		sXjEZhNN/VoMEezuPSGeiZXORbY=
+		fjOFuxT8fnP/PfGWHZtsr8HGemg=
 		</data>
 		<key>tabon@2x.png</key>
 		<data>
@@ -11619,7 +11755,7 @@
 		</data>
 		<key>transfergems@2x.png</key>
 		<data>
-		JfVXFTpfN8ZT0uqcxgB2OLbvu1Y=
+		ue26WgxyFOcnL5j/HpnGhKD4P7s=
 		</data>
 		<key>transfergemsglow.png</key>
 		<data>
@@ -11683,9 +11819,17 @@
 		</data>
 		<key>tutorial6.png</key>
 		<data>
-		/u66uNAFDBTHToQC6GeeFSxw1VA=
+		3jPk0/JhfO5IdDdvtAHzJp2La94=
 		</data>
 		<key>tutorial6@2x.png</key>
+		<data>
+		EEwlkxLQvrZUj4IjS6mPlXHRKjM=
+		</data>
+		<key>tutorial6Old.png</key>
+		<data>
+		/u66uNAFDBTHToQC6GeeFSxw1VA=
+		</data>
+		<key>tutorial6Old@2x.png</key>
 		<data>
 		WOzSVMpfA9A4Ouqvtt4vZIpLEz8=
 		</data>

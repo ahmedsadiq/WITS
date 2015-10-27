@@ -85,7 +85,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6AY-4w-ZVL">
-                    <rect key="frame" x="0.0" y="14" width="160" height="38"/>
+                    <rect key="frame" x="0.0" y="12" width="160" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="RANKINGS" backgroundImage="tabon.png">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

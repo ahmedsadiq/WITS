@@ -33,7 +33,7 @@
      [self setLanguage];
      // Do any additional setup after loading the view from its nib.
      //[self setUpTutorial];
-     //[self setLanguageForScreen];
+     [self setLanguageForScreen];
      CGRect screenRect = [[UIScreen mainScreen] bounds];
      CGFloat screenWidth = screenRect.size.width;
      if(IS_IPAD){
@@ -44,7 +44,7 @@
      knowledgelbl.font = [UIFont fontWithName:FONT_NAME size:17];
      _shareLbl.font = [UIFont fontWithName:FONT_NAME size:14];
      }
-     _tutorialScrollView.contentSize = CGSizeMake(screenWidth , screenRect.size.height);
+     _tutorialScrollView.contentSize = CGSizeMake(screenWidth*8, screenRect.size.height);
 }
 
 - (void)didReceiveMemoryWarning
@@ -232,10 +232,11 @@
 
 
 - (IBAction)fbBtnPressed:(id)sender {
-     
+    
      if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
           SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-          NSString *sharingStr = @" bnc.lt/l/4p9rauk_Qr";
+           NSString *sharingStr = @"bnc.lt/l/4p9rauk_Qr";
+          
           [controller setInitialText:sharingStr];
           [self presentViewController:controller animated:YES completion:Nil];
      }
@@ -273,7 +274,8 @@
 - (IBAction)twitterBtnPressed:(id)sender {
      if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
      {
-          NSString *sharingStr = [NSString stringWithFormat:@"%@ \n%@",referalStr,[SharedManager getInstance]._userProfile.referral_code];
+          
+          NSString *sharingStr = [NSString stringWithFormat:@"%@ \n%@%@",referalStr,[SharedManager getInstance]._userProfile.referral_code,referalStr2];
           SLComposeViewController *tweetSheet = [SLComposeViewController
                                                  composeViewControllerForServiceType:SLServiceTypeTwitter];
           [tweetSheet setInitialText:sharingStr];
@@ -349,7 +351,7 @@
      }
      else {
           NSArray *recipents = @[@""];
-          NSString *sharingStr = [NSString stringWithFormat:@"%@ \n%@",referalStr,[SharedManager getInstance]._userProfile.referral_code];
+          NSString *sharingStr = [NSString stringWithFormat:@"%@ \n%@%@",referalStr,[SharedManager getInstance]._userProfile.referral_code,referalStr2];
           
           
           MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
@@ -633,7 +635,7 @@
           
           howtouseStoreDesc = @"Sign up now and get your hands on 100 free Gems.";
           howtoEarnPointDesc = @"You can always earn free Points simply by inviting your friends and sharing the app on Facebook or Twitter.";
-          [_tutorialPressed setTitle:TUTORIAL_BTN forState:UIControlStateNormal];
+         // [_tutorialPressed setTitle:TUTORIAL_BTN forState:UIControlStateNormal];
           [_tutorialBacklbl setTitle:BACK_BTN forState:UIControlStateNormal];
           [mainBack setTitle:BACK_BTN forState:UIControlStateNormal];
           

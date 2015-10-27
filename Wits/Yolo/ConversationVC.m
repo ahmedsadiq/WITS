@@ -269,12 +269,14 @@
      
      
      UITextView *recievedMsgLbl = [[UITextView alloc] initWithFrame:CGRectMake(0, 20, 290, 65)];
+     if(IS_IPAD)
+          recievedMsgLbl =  [[UITextView alloc] initWithFrame:CGRectMake(40, 40, 650, 75)];
      recievedMsgLbl.scrollEnabled = false;
      recievedMsgLbl.backgroundColor = [UIColor clearColor];
      recievedMsgLbl.text = [_dict objectForKey:@"message"];
      recievedMsgLbl.textColor = [UIColor whiteColor];
      recievedMsgLbl.textAlignment = NSTextAlignmentJustified;
-     
+     recievedMsgLbl.editable = NO;
      
      NSString *str = [_dict objectForKey:@"message"];
      if(str.length >20){
@@ -293,11 +295,16 @@
      }
      
      UIView *resizableOuterView = [[UIView alloc] initWithFrame:CGRectMake(15, recievedMsgsY, 290, recievedMsgLbl.frame.size.height+25)];
-     
+     if(IS_IPAD)
+     {
+          resizableOuterView = [[UIView alloc] initWithFrame:CGRectMake(15, recievedMsgsY, 700, recievedMsgLbl.frame.size.height+40)];
+     }
      resizableOuterView.backgroundColor = [UIColor blackColor];
      
      UIImageView *profileImgTemp = [[UIImageView alloc] initWithFrame:CGRectMake(6, 10, 70, 70)];
-     
+     if(IS_IPAD)
+          profileImgTemp = [[UIImageView alloc] initWithFrame:CGRectMake(6, 10, 100, 100)];
+
      UIBezierPath * imgRect = [UIBezierPath bezierPathWithRect:CGRectMake(6, 10, 70, 70)];
      recievedMsgLbl.textContainer.exclusionPaths = @[imgRect];
      
@@ -323,7 +330,10 @@
      recievedTitleLbl.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:19.0f];
      recievedTitleLbl.textColor = [UIColor whiteColor];
      recievedTitleLbl.text = _thread.displayName;
-     
+     if(IS_IPAD){
+          recievedTitleLbl = [[UILabel alloc] initWithFrame:CGRectMake(120, 6, 210, 18)];
+          
+     }
      [resizableOuterView addSubview:recievedTitleLbl];
      
      [conversationWindow addSubview:resizableOuterView];
@@ -428,13 +438,16 @@
      
      
      UITextView *recievedMsgLbl = [[UITextView alloc] initWithFrame:CGRectMake(4, 20, 285, 65)];
+     if(IS_IPAD)
+          recievedMsgLbl =  [[UITextView alloc] initWithFrame:CGRectMake(5, 40, 650, 75)];
      recievedMsgLbl.scrollEnabled = false;
      recievedMsgLbl.backgroundColor = [UIColor clearColor];
      recievedMsgLbl.text = [_dict objectForKey:@"message"];
      recievedMsgLbl.textColor = [UIColor whiteColor];
      recievedMsgLbl.textAlignment = NSTextAlignmentJustified;
+     recievedMsgLbl.editable = NO;
      
-     
+     [recievedMsgLbl setUserInteractionEnabled:NO];
      NSString *str = [_dict objectForKey:@"message"];
      if(str.length >20){
           [recievedMsgLbl sizeToFit];
@@ -452,11 +465,15 @@
      }
      
      UIView *resizableOuterView = [[UIView alloc] initWithFrame:CGRectMake(15, recievedMsgsY, 290, recievedMsgLbl.frame.size.height+25)];
-     
+     if(IS_IPAD)
+     {
+          resizableOuterView = [[UIView alloc] initWithFrame:CGRectMake(15, recievedMsgsY, 700, recievedMsgLbl.frame.size.height+40)];
+     }
      resizableOuterView.backgroundColor = [UIColor blackColor];
      
      UIImageView *profileImgTemp = [[UIImageView alloc] initWithFrame:CGRectMake(215, 10, 70, 70)];
-     
+     if(IS_IPAD)
+          profileImgTemp = [[UIImageView alloc] initWithFrame:CGRectMake(590, 10, 100, 100)];
      UIBezierPath * imgRect = [UIBezierPath bezierPathWithRect:CGRectMake(205, 10, 80, 70)];
      recievedMsgLbl.textContainer.exclusionPaths = @[imgRect];
      
@@ -499,6 +516,10 @@
      
      UILabel *recievedTitleLbl = [[UILabel alloc] initWithFrame:CGRectMake(6, 4, 210, 18)];
      recievedTitleLbl.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:19.0f];
+     if(IS_IPAD){
+          recievedTitleLbl = [[UILabel alloc] initWithFrame:CGRectMake(6, 4, 210, 18)];
+          
+     }
      recievedTitleLbl.textColor = [UIColor whiteColor];
      recievedTitleLbl.text = [SharedManager getInstance]._userProfile.display_name;
      
@@ -513,7 +534,7 @@
      timeLbl.textColor = [UIColor whiteColor];
      timeLbl.text = [self getTimeDifference:[_dict objectForKey:@"time_ago"]];
      [conversationWindow addSubview:timeLbl];
-     timeLbl.textAlignment = NSTextAlignmentLeft;
+     timeLbl.textAlignment = NSTextAlignmentRight;
      
      recievedMsgsY = recievedMsgsY +30;
      

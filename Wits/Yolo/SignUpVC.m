@@ -139,7 +139,7 @@
           emailField.placeholder = @"EMAIL";
           displayNameField.placeholder = @"DISPLAY NAME";
           passwordField.placeholder = SIGNUP_PASSWORD;
-          birthdaylbl.text = @"BIRTHDAY";
+          birthdaylbl.text = @" BIRTHDAY";
           usernameLbl.placeholder = @"USERNAME";
           signUpDescLbl.text = SIGNUP_DESC;
           signUplbl.text = @"Sign Up";
@@ -1467,6 +1467,15 @@
      
      
      self.navController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD)
+     {
+          [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"homeglowForIpad.png"]
+                                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          
+          [self.navigationController.tabBarItem setImage:[[UIImage imageNamed:@"homeForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          self.navigationController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -35, 15, 35);
+          
+     }
      [self.navController setNavigationBarHidden:YES animated:NO];
      
      UIViewController *friendsVC;
@@ -1486,6 +1495,15 @@
      
      
      friendsVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD)
+          
+     {
+          [friendsVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"friendsglowForIpad.png"]
+                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [friendsVC.tabBarItem setImage:[[UIImage imageNamed:@"friendsForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          friendsVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -30, 15,30);
+          
+     }
      [friendsVC.navigationController setNavigationBarHidden:YES animated:NO];
      
      UIViewController *storeVC;
@@ -1502,6 +1520,13 @@
      [storeVC.tabBarItem setImage:[[UIImage imageNamed:@"shop.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      
      storeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD){
+          [storeVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"shopglowForIpad.png"]
+                                                imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [storeVC.tabBarItem setImage:[[UIImage imageNamed:@"shopForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          storeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -20, 15, 20);
+          
+     }
      [storeVC.navigationController setNavigationBarHidden:YES animated:NO];
      
      UIViewController *historyViewController;
@@ -1518,15 +1543,25 @@
      [historyViewController.tabBarItem setImage:[[UIImage imageNamed:@"referral.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      
      historyViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD)
+     {
+          [historyViewController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"referglowForIpad.png"]
+                                                              imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [historyViewController.tabBarItem setImage:[[UIImage imageNamed:@"referforIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          historyViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, 0, 15, 0);
+          
+     }
      [historyViewController.navigationController setNavigationBarHidden:YES animated:NO];
      
      
      UIViewController *settingVC;
      if(IS_IPAD) {
           settingVC = [[RightBarVC alloc] initWithNibName:@"RightBarVC_iPad" bundle:[NSBundle mainBundle]];
+         
      }
      else {
           settingVC = [[RightBarVC alloc] initWithNibName:@"RightBarVC" bundle:[NSBundle mainBundle]];
+          
      }
      
      UINavigationController *settingsNavController = [[UINavigationController alloc] initWithRootViewController:settingVC];
@@ -1536,12 +1571,23 @@
      [settingVC.tabBarItem setImage:[[UIImage imageNamed:@"menu.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      
      settingsNavController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD){
+          [settingVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"menuglowForIpad.png"]
+                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [settingVC.tabBarItem setImage:[[UIImage imageNamed:@"menuForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          settingsNavController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, 30, 15, -30);
+          
+     }
      [settingVC.navigationController setNavigationBarHidden:YES animated:NO];
      
      self.tabBarController = [[UITabBarController alloc] init] ;
      self.tabBarController.viewControllers = [NSArray arrayWithObjects:self.navController, friendsNavController,storeNavController,historyNavController,settingsNavController,nil];
      
-     [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg@2x.png"]];
+     [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg.png"]];
+     if(IS_IPAD) {
+          [self.tabBarController.tabBar setShadowImage:[[UIImage alloc] init]];
+          [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubgForIpad.png"]];
+     }
      
      //    [self setFieldsAndButtonsText:self.configResponse];
      self.viewController.navigationController.navigationBar.tintColor = [UIColor blackColor];

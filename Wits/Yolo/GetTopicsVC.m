@@ -567,10 +567,10 @@
           {
                CategoryModel *tempToplic = (topicTblView==tableView)?[topicsArray objectAtIndex:indexPath.row] : [topicsArrayForSearch objectAtIndex:indexPath.row];
                if(tempToplic.isSelected)
-                    returnValue = 230.0f;
+                    returnValue = 260.0f;
                
                else
-                    returnValue = 230.0f;
+                    returnValue = 260.0f;
           }
           else
           {
@@ -663,6 +663,11 @@
           cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:15];
           cell.leftSubTitles.text = [NSString stringWithFormat:@"%lu",(unsigned long)tempTopic.topicsArray.count];
           cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
+          if(IS_IPAD)
+          {
+           cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+               cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
+          }
           [cell.leftBtn addTarget:self action:@selector(leftBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
           cell.leftBtn.tag = index;
           if(i==0) {
@@ -698,6 +703,10 @@
                cell.rightImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:catthumbnailtempName]];
                cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:15];
                cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
+               if(IS_IPAD){
+                    cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+                    cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
+               }
                cell.rightSubTitles.text = [NSString stringWithFormat:@"%lu",(unsigned long)tempTopic.topicsArray.count];
                [cell.rightBtn addTarget:self action:@selector(rightBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
                cell.rightBtn.tag = index+1;
@@ -747,7 +756,12 @@
           cell.mainTitle.text = tempTopic.title;
           cell.mainTitle.font = [UIFont fontWithName:FONT_NAME size:15];
           cell.mainSubTitle.font = [UIFont fontWithName:FONT_NAME size:38];
-          
+          if(IS_IPAD)
+          {
+               cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:25];
+               cell.mainTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+               cell.mainSubTitle.font = [UIFont fontWithName:FONT_NAME size:45];
+          }
           cell.mainSubTitle.text = [NSString stringWithFormat:@"%lu",(unsigned long)tempTopic.topicsArray.count];
           
           NSString *tempTopicId = tempTopic.category_id;

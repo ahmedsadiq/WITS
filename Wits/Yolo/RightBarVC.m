@@ -193,7 +193,7 @@ float _yLocation;
           //[self ShowInView];
           [self removeImage:@"test"];
           profileImageView.image = [UIImage imageNamed:@"Icon_152.png"];
-          
+          [delegate musicSwitch:false];
      } onError:^(NSError* error) {
           
           [_loadingView hide];
@@ -243,7 +243,7 @@ float _yLocation;
      
      if ([[UIScreen mainScreen] bounds].size.height == iPad) {
           
-          MessagesVC *update = [[MessagesVC alloc] initWithNibName:@"MessagesVC" bundle:nil];
+          MessagesVC *update = [[MessagesVC alloc] initWithNibName:@"MessagesVC_iPad" bundle:nil];
           [self.navigationController pushViewController:update animated:YES];
      }
      else{
@@ -845,8 +845,8 @@ float _yLocation;
                longitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.longitude];
                state = placemark.administrativeArea;
                country = placemark.country;
+               userRankingLbl.text = [NSString stringWithFormat:@"%@, %@", state, country];
                
-               userRankingLbl.text = [NSString stringWithFormat:@"%@ , %@", state, country];
           } else {
                NSLog(@"%@", error.debugDescription);
           }

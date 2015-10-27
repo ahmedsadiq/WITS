@@ -97,8 +97,8 @@
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                             <state key="normal" title="Update" backgroundImage="btnbgpressed.png">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                             </state>
                             <connections>
                                 <action selector="Updated:" destination="-1" eventType="touchUpInside" id="zU0-VG-8Fm"/>
@@ -178,7 +178,7 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fAQ-kS-Xzb">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Birthday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fAQ-kS-Xzb">
                                     <rect key="frame" x="50" y="205" width="350" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -254,7 +254,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jFU-7C-SaX">
-                                    <rect key="frame" x="108" y="20" width="84" height="84"/>
+                                    <rect key="frame" x="175" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <state key="normal">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -279,11 +279,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialogbg.png" id="89N-nq-6D4">
-                            <rect key="frame" x="234" y="337" width="300" height="260"/>
+                            <rect key="frame" x="184" y="337" width="400" height="350"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </imageView>
                         <pickerView contentMode="scaleToFill" id="1BU-me-Y3l" customClass="CountryPicker">
-                            <rect key="frame" x="234" y="337" width="300" height="260"/>
+                            <rect key="frame" x="184" y="382" width="400" height="260"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="1Ge-F2-caX"/>
@@ -298,13 +298,13 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialogbg.png" id="tmZ-Yh-cfQ">
-                            <rect key="frame" x="0.0" y="212" width="768" height="600"/>
+                            <rect key="frame" x="184" y="337" width="400" height="350"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" id="0MY-cC-RCa">
-                            <rect key="frame" x="0.0" y="262" width="768" height="500"/>
+                            <rect key="frame" x="184" y="387" width="400" height="250"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" patternImage="4B6AC51E-6871-459A-9988-FF1D013478B8" colorSpace="pattern"/>
+                            <color key="backgroundColor" patternImage="7A918F05-3F7D-4647-B122-9A661F399F35" colorSpace="pattern"/>
                             <date key="date" timeIntervalSinceReferenceDate="-31582232.09760797">
                                 <!--2000-01-01 11:09:27 +0000-->
                             </date>
@@ -323,11 +323,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialogbg.png" id="uhp-pb-4Iy">
-                            <rect key="frame" x="8" y="387" width="768" height="251"/>
+                            <rect key="frame" x="134" y="262" width="500" height="500"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pti-1t-Nzx">
-                            <rect key="frame" x="245" y="337" width="222" height="34"/>
+                            <rect key="frame" x="273" y="337" width="222" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                             <state key="normal" title="Take Picture" backgroundImage="messagebg.png">
@@ -339,7 +339,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3Gx-vT-Qed">
-                            <rect key="frame" x="245" y="436" width="222" height="34"/>
+                            <rect key="frame" x="273" y="436" width="222" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                             <state key="normal" title="Camera Roll" backgroundImage="messagebg.png">
@@ -351,7 +351,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2dW-Q7-Lgc">
-                            <rect key="frame" x="245" y="539" width="222" height="34"/>
+                            <rect key="frame" x="273" y="539" width="222" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                             <state key="normal" title="Avatar" backgroundImage="messagebg.png">
@@ -363,7 +363,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IrG-0X-GnB">
-                            <rect key="frame" x="245" y="641" width="222" height="34"/>
+                            <rect key="frame" x="273" y="641" width="222" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                             <state key="normal" title="Cancel" backgroundImage="messagebg.png">
@@ -384,7 +384,7 @@
         </view>
     </objects>
     <resources>
-        <image name="4B6AC51E-6871-459A-9988-FF1D013478B8" width="256" height="256">
+        <image name="7A918F05-3F7D-4647-B122-9A661F399F35" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

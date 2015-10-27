@@ -667,6 +667,15 @@
      
      
      self.navController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD)
+     {
+          [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"homeglowForIpad.png"]
+                                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          
+          [self.navigationController.tabBarItem setImage:[[UIImage imageNamed:@"homeForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          self.navigationController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -35, 15, 35);
+          
+     }
      [self.navController setNavigationBarHidden:YES animated:NO];
      
      UIViewController *friendsVC;
@@ -710,7 +719,7 @@
      }
      else {
           historyViewController = [[EarnFreePointsViewController alloc] initWithNibName:@"EarnFreePointsViewController" bundle:[NSBundle mainBundle]];
-     }
+               }
      UINavigationController *historyNavController = [[UINavigationController alloc] initWithRootViewController:historyViewController];
      
      [historyViewController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"referralglow.png"]
@@ -740,8 +749,12 @@
      
      self.tabBarController = [[UITabBarController alloc] init] ;
      self.tabBarController.viewControllers = [NSArray arrayWithObjects:self.navController, friendsNavController,storeNavController,historyNavController,settingsNavController,nil];
-     
-     [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg@2x.png"]];
+     [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg.png"]];
+     if(IS_IPAD) {
+          [self.tabBarController.tabBar setShadowImage:[[UIImage alloc] init]];
+          [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubgForIpad.png"]];
+     }
+    
      
      //    [self setFieldsAndButtonsText:self.configResponse];
      self.viewController.navigationController.navigationBar.tintColor = [UIColor blackColor];

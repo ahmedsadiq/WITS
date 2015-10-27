@@ -398,7 +398,7 @@
 
 
 #define SIGNUP_TEXT @" SIGN UP"
-#define SIGIN_TEXT @" SIGN UP"
+#define SIGIN_TEXT @" SIGN IN"
 #define OR_TEXT @"  OR"
 #define SIGNUP_EMAIL @"  Email"
 #define SIGNUP_DISPLAY_NAME @"  Display Name"

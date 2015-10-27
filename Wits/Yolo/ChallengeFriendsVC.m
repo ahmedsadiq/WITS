@@ -282,7 +282,7 @@
      float returnValue;
      if ([[UIScreen mainScreen] bounds].size.height == iPad)
      {
-          returnValue = 140.0f;
+          returnValue = 340.0f;
      }
      else
      {
@@ -435,6 +435,8 @@
           cell.rightUserVerified.hidden = true;
           cell.rightOverlayView.hidden = true;
      }
+     [cell setBackgroundColor:[UIColor clearColor]];
+     [cell.contentView setBackgroundColor:[UIColor clearColor]];
      return cell;
      
      

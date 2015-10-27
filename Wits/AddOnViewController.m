@@ -79,7 +79,12 @@
      lblCongratulations.font = [UIFont fontWithName:FONT_NAME size:24];
      
      addOnmainlabel.font = [UIFont fontWithName:FONT_NAME size:15];
-     
+     if(IS_IPAD){addOnmainlabel.font = [UIFont fontWithName:FONT_NAME size:20];
+          successMsg.font = [UIFont fontWithName:FONT_NAME size:25];
+          
+          lblYouUnlocked.font = [UIFont fontWithName:FONT_NAME size:25];
+          lblCongratulations.font = [UIFont fontWithName:FONT_NAME size:25];
+     }
      [self.addOnsArray addObject:Obj2nd];
 }
 

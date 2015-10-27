@@ -57,14 +57,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="786" height="1024"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SIGN UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-VF-h37">
-                    <rect key="frame" x="209" y="881" width="350" height="50"/>
+                    <rect key="frame" x="209" y="918" width="350" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowdown.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rfo-mF-lrf">
-                    <rect key="frame" x="349" y="961" width="70" height="55"/>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTP-ns-iJt">
                     <rect key="frame" x="109" y="398" width="550" height="80"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -136,6 +133,9 @@
                         <action selector="twiiterSignIn:" destination="-1" eventType="touchUpInside" id="bxU-S8-MBc"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowdown.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rfo-mF-lrf">
+                    <rect key="frame" x="354" y="965" width="60" height="40"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -212,7 +212,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SWIPE DOWN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYd-T9-Yua">
-                    <rect key="frame" x="237" y="907" width="400" height="50"/>
+                    <rect key="frame" x="184" y="907" width="400" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -231,10 +231,10 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Je2-dw-TJk">
-                    <rect key="frame" x="40" y="35" width="700" height="114"/>
+                    <rect key="frame" x="40" y="50" width="700" height="200"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowdown.png" translatesAutoresizingMaskIntoConstraints="NO" id="rON-QI-b9F">
-                    <rect key="frame" x="402" y="961" width="70" height="55"/>
+                    <rect key="frame" x="349" y="961" width="70" height="55"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -300,10 +300,10 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signupbgcolored.png" translatesAutoresizingMaskIntoConstraints="NO" id="pKn-wS-4hm">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Signinbgcolored.png" translatesAutoresizingMaskIntoConstraints="NO" id="pKn-wS-4hm">
                     <rect key="frame" x="0.0" y="0.0" width="786" height="1024"/>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wgJ-DW-Ra4">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ENTER EMAIL ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wgJ-DW-Ra4">
                     <rect key="frame" x="109" y="361" width="550" height="65"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -321,7 +321,7 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1d-TL-zlT">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1d-TL-zlT">
                     <rect key="frame" x="359" y="652" width="50" height="50"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -365,29 +365,18 @@
                     <color key="backgroundColor" red="0.392282197" green="0.392282197" blue="0.392282197" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lgg-Kc-WFh">
-                    <rect key="frame" x="14" y="190" width="292" height="189"/>
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dialogbg.png" translatesAutoresizingMaskIntoConstraints="NO" id="b3X-P0-p64">
-                            <rect key="frame" x="0.0" y="0.0" width="292" height="189"/>
+                            <rect key="frame" x="209" y="372" width="350" height="280"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DI7-rp-Qc3">
-                            <rect key="frame" x="8" y="142" width="135" height="39"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
-                            <state key="normal" title="YES" backgroundImage="messagebg.png">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="DialogYes:" destination="-1" eventType="touchUpInside" id="zBG-kE-qTk"/>
-                            </connections>
-                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Security Warning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="afy-3l-gLW">
-                            <rect key="frame" x="0.0" y="11" width="289" height="39"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                            <rect key="frame" x="239" y="387" width="289" height="39"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVn-JM-ksa">
-                            <rect key="frame" x="148" y="142" width="135" height="39"/>
+                            <rect key="frame" x="387" y="593" width="160" height="50"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="NO" backgroundImage="messagebg.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -400,10 +389,21 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have already signed in from another device. Would you like to sign out from all other devices and sign in here?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEq-uO-lHH">
-                            <rect key="frame" x="8" y="55" width="275" height="81"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                            <rect key="frame" x="246" y="443" width="275" height="130"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DI7-rp-Qc3">
+                            <rect key="frame" x="219" y="592" width="160" height="50"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                            <state key="normal" title="YES" backgroundImage="messagebg.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="DialogYes:" destination="-1" eventType="touchUpInside" id="zBG-kE-qTk"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
@@ -427,7 +427,6 @@
         <image name="line.png" width="466" height="2"/>
         <image name="logo.png" width="388" height="177"/>
         <image name="messagebg.png" width="493" height="137"/>
-        <image name="signupbgcolored.png" width="540" height="960"/>
         <image name="twitterbg.png" width="218" height="79"/>
         <image name="twitterbgpressed.png" width="281" height="142"/>
     </resources>

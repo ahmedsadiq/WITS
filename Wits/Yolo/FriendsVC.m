@@ -47,6 +47,7 @@
      // Do any additional setup after loading the view from its nib.
      self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
      currentIndex = 0;
+    
      UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
      searchField.leftView = paddingView;
      searchField.leftViewMode = UITextFieldViewModeAlways;
@@ -58,23 +59,28 @@
      friendsList = [[NSMutableArray alloc] init];
      if (IS_IPAD) {
           if (languageCode== 1) {
-               searchimg.frame = CGRectMake(122, 99, 617, 40);
-               searchField.frame = CGRectMake(102, 67, 630, 56);
+               searchimg.frame = CGRectMake(15, 15, 617, 40);
+               searchField.frame = CGRectMake(15, 15, 630, 56);
                GoBtn.frame = CGRectMake(20, 67, 101, 56);
           }else{
-               searchField.frame= CGRectMake(20, 67, 630, 56);
-               searchimg.frame = CGRectMake(20, 99, 728, 40);
+               searchField.frame= CGRectMake(15, 15, 680, 56);
+               searchimg.frame = CGRectMake(15, 15, 728, 40);
                GoBtn.frame = CGRectMake(647, 67, 101, 56);
           }
+          _friendActionAcceptBtn.font = [UIFont fontWithName:FONT_NAME size:20];
+          _friendActionRejectBtn.font = [UIFont fontWithName:FONT_NAME size:20];
+          _friendActionText.font = [UIFont fontWithName:FONT_NAME size:20];
+          _friendActionTitle.font = [UIFont fontWithName:FONT_NAME size:20];
+          searchField.font = [UIFont fontWithName:FONT_NAME size:25];
      }
      
-     
+     else{
      _friendActionAcceptBtn.font = [UIFont fontWithName:FONT_NAME size:14];
      _friendActionRejectBtn.font = [UIFont fontWithName:FONT_NAME size:14];
      _friendActionText.font = [UIFont fontWithName:FONT_NAME size:16];
      _friendActionTitle.font = [UIFont fontWithName:FONT_NAME size:16];
      searchField.font = [UIFont fontWithName:FONT_NAME size:19];
-     
+     }
      
      NSUInteger index = [friendsList count];
      if (index == 0) {
@@ -213,11 +219,11 @@
      float returnValue;
      if ([[UIScreen mainScreen] bounds].size.height == iPad)
      {
-          returnValue = 220.0f;
+          returnValue = 340.0f;
      }
      else
      {
-          returnValue = 220.0f;
+          returnValue = 140.0f;
      }
      return returnValue;
 }
@@ -260,6 +266,10 @@
      [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
      cell.leftUserName.text = _user.display_name;
      cell.leftUserName.font = [UIFont fontWithName:FONT_NAME size:15];
+     if(IS_IPAD)
+     {
+          cell.leftUserName.font = [UIFont fontWithName:FONT_NAME size:25];
+     }
      NSString * stat = _user.RelationshipStatus ;
      int status = [[NSString stringWithFormat:@"%@",stat] intValue];
      // here
@@ -285,6 +295,8 @@
           [[AsyncImageLoader sharedLoader] loadImageWithURL:url2];
           cell.rightUserName.text = _user2.display_name;
           cell.rightUserName.font = [UIFont fontWithName:FONT_NAME size:15];
+          if(IS_IPAD)
+              cell.rightUserName.font = [UIFont fontWithName:FONT_NAME size:25];
           //          cell.rightOverlayView.tag = currentIndex;
           //          [HelperFunctions setBackgroundColor:cell.rightOverlayView];
           cell.rightUserActionBtn.tag = currentIndex;
@@ -310,6 +322,10 @@
           cell.rightUserVerified.hidden = true;
           cell.rightOverlayView.hidden = true;
      }
+     
+     cell.selectionStyle = NAN;
+     [cell setBackgroundColor:[UIColor clearColor]];
+     [cell.contentView setBackgroundColor:[UIColor clearColor]];
      [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
      return cell;
 }
@@ -791,11 +807,12 @@
 }
 
 -(void)setLanguageForScreen {
+     CGRect friendbtnclone = _fmFriendButton.frame;
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
      NSString *suffix = @"";
      if(languageCode == 0 ) {
-          
+          _fmFriendButton.frame = friendbtnclone;
           
           // Frnd Mode PopUp Settings
           
@@ -810,7 +827,7 @@
           noFriendLbl.text = @"You have no friend.";
           
           UIColor *color = [UIColor whiteColor];
-          searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Search a Friends" attributes:@{NSForegroundColorAttributeName: color}];
+          searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Search a Friend" attributes:@{NSForegroundColorAttributeName: color}];
           [backbtn setTitle:BACK_BTN forState:UIControlStateNormal];
           [GoBtn setTitle:@"Search" forState:UIControlStateNormal];
           [mainBackBtn setTitle:BACK_BTN forState:UIControlStateNormal];
@@ -900,7 +917,9 @@
 #pragma mark New UI
 
 - (IBAction)PerformLeftUserAction:(id)sender {
+      CGRect friendbtnclone = _fmFriendButton.frame;
      CGRect btnFrame = _fmFriendButton.frame;
+    
      UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
      UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
      blurEffectView.frame = self.view.frame;
@@ -1022,6 +1041,7 @@
      [_friendModView.layer addAnimation:transition forKey:nil];
      _friendModView.hidden = false;
      [self.view addSubview:_friendModView];
+     [self.tabBarController.tabBar setHidden:true];
      
      UIButton *senderBtn = (UIButton*)sender;
      
@@ -1047,6 +1067,7 @@
           // Case 0 : for add friend
           case 0:
                if(languageCode == 0 ) {
+                
                     [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chat.png"] forState:UIControlStateNormal];
                     [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGems.png"] forState:UIControlStateNormal];
                     [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsEnglish.png"] forState:UIControlStateNormal];
@@ -1092,7 +1113,9 @@
                
                //case 1 : for already friend
           case 1:
+               
                if(languageCode == 0 ) {
+                  
                     [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlow.png"] forState:UIControlStateNormal];
                     [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowEnglish.png"] forState:UIControlStateNormal];
                     [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlow.png"] forState:UIControlStateNormal];
@@ -1101,6 +1124,11 @@
                     _challengeForPoints.enabled = YES;
                     _fmChatBtn.enabled = YES;
                     _fmFriendButton.enabled = YES;
+                    btnFrame.origin.x = 485;
+                    btnFrame.origin.y = 572;
+                    btnFrame.size.width = 109;
+                    btnFrame.size.height = 146;
+                    _fmFriendButton.frame = btnFrame;
                }else if(languageCode == 1 ) {
                     [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowArabic.png"] forState:UIControlStateNormal];
                     [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowArabic.png"] forState:UIControlStateNormal];
@@ -1147,6 +1175,8 @@
                break;
                // case 2: friend request received
           case 2:
+             
+               
                if(languageCode == 0 ) {
                     [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chat.png"] forState:UIControlStateNormal];
                     [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGems.png"] forState:UIControlStateNormal];
@@ -1156,6 +1186,9 @@
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = YES;
+                    btnFrame.size.width = 187;
+                    btnFrame.size.height = 151;
+                    _fmFriendButton.frame = btnFrame;
                }else if(languageCode == 1 ) {
                     [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatarabic.png"] forState:UIControlStateNormal];
                     [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsArabic.png"] forState:UIControlStateNormal];
@@ -1201,6 +1234,8 @@
           case 3:
                
                if(languageCode == 0 ) {
+                    _fmFriendButton.frame  =CGRectMake(455,572, 171,151 );
+                    
                     [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chat.png"] forState:UIControlStateNormal];
                     [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGems.png"] forState:UIControlStateNormal];
                     [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsEnglish.png"] forState:UIControlStateNormal];
@@ -1721,7 +1756,7 @@
      
 }
 - (IBAction)friendModCanelBtnPressed:(id)sender {
-     
+     [self.tabBarController.tabBar setHidden:false];
      UIView *effectView = [self.view viewWithTag:499];
      [effectView removeFromSuperview];
      
