@@ -942,6 +942,10 @@
 		E2AB1B3E1B7B40DB002C98E0 /* shopglow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AB1B281B7B40DB002C98E0 /* shopglow@2x.png */; };
 		E2BB02BB1B8497A000653BC9 /* swordglow.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BB02B91B8497A000653BC9 /* swordglow.png */; };
 		E2BB02BC1B8497A000653BC9 /* swordglow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BB02BA1B8497A000653BC9 /* swordglow@2x.png */; };
+		E2CA40EB1BFCAB9C00EFEA92 /* settingsmenubg.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CA40E91BFCAB9C00EFEA92 /* settingsmenubg.png */; settings = {ASSET_TAGS = (); }; };
+		E2CA40EC1BFCAB9C00EFEA92 /* settingsmenubg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CA40EA1BFCAB9C00EFEA92 /* settingsmenubg@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E2CA40EF1BFCB02100EFEA92 /* resultsbg.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CA40ED1BFCB02100EFEA92 /* resultsbg.png */; settings = {ASSET_TAGS = (); }; };
+		E2CA40F01BFCB02100EFEA92 /* resultsbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CA40EE1BFCB02100EFEA92 /* resultsbg@2x.png */; settings = {ASSET_TAGS = (); }; };
 		E2DB121F1B1D97EF00FA655A /* AddOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB121D1B1D97EF00FA655A /* AddOnViewController.m */; };
 		E2DB12201B1D97EF00FA655A /* AddOnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2DB121E1B1D97EF00FA655A /* AddOnViewController.xib */; };
 		E2DB12241B1D9F3200FA655A /* AddOnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB12221B1D9F3200FA655A /* AddOnCell.m */; };
@@ -2498,6 +2502,10 @@
 		E2AB1B281B7B40DB002C98E0 /* shopglow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shopglow@2x.png"; sourceTree = "<group>"; };
 		E2BB02B91B8497A000653BC9 /* swordglow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swordglow.png; sourceTree = "<group>"; };
 		E2BB02BA1B8497A000653BC9 /* swordglow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swordglow@2x.png"; sourceTree = "<group>"; };
+		E2CA40E91BFCAB9C00EFEA92 /* settingsmenubg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsmenubg.png; sourceTree = "<group>"; };
+		E2CA40EA1BFCAB9C00EFEA92 /* settingsmenubg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settingsmenubg@2x.png"; sourceTree = "<group>"; };
+		E2CA40ED1BFCB02100EFEA92 /* resultsbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resultsbg.png; sourceTree = "<group>"; };
+		E2CA40EE1BFCB02100EFEA92 /* resultsbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resultsbg@2x.png"; sourceTree = "<group>"; };
 		E2DB121C1B1D97EF00FA655A /* AddOnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOnViewController.h; sourceTree = "<group>"; };
 		E2DB121D1B1D97EF00FA655A /* AddOnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOnViewController.m; sourceTree = "<group>"; };
 		E2DB121E1B1D97EF00FA655A /* AddOnViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddOnViewController.xib; sourceTree = "<group>"; };
@@ -4074,6 +4082,10 @@
 		58ABD37F193E0BB60054064C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E2CA40ED1BFCB02100EFEA92 /* resultsbg.png */,
+				E2CA40EE1BFCB02100EFEA92 /* resultsbg@2x.png */,
+				E2CA40E91BFCAB9C00EFEA92 /* settingsmenubg.png */,
+				E2CA40EA1BFCAB9C00EFEA92 /* settingsmenubg@2x.png */,
 				2EDBEAED1B591F3800BEC1AB /* Reload-icon.png */,
 				2EC2460B1B4D4DFA00D1B232 /* drawerbg.png */,
 				E283B6A41B25A469006167A4 /* optionbg.png */,
@@ -5905,6 +5917,7 @@
 				2E9C28511A272051009D80BC /* KY.png in Resources */,
 				2EA27FE41A56D80C0083D1CC /* purpleBar.png in Resources */,
 				35626039195D939D00BF9B65 /* RankingCC_iPad.xib in Resources */,
+				E2CA40F01BFCB02100EFEA92 /* resultsbg@2x.png in Resources */,
 				5805A534195C42BB005F2DE8 /* Total_points_bar.png in Resources */,
 				E210F0F51B8753F800BEDD6B /* Edit-Profile@2x.png in Resources */,
 				355E480A195EBF8400D7A3B7 /* btn_blue_iPad.png in Resources */,
@@ -6244,6 +6257,7 @@
 				2E9C28B31A272051009D80BC /* TM.png in Resources */,
 				356825E01966CCC600ED51CD /* img_back568h@2x.png in Resources */,
 				E218560F1B8CF83A00D10ACC /* headingbg.png in Resources */,
+				E2CA40EF1BFCB02100EFEA92 /* resultsbg.png in Resources */,
 				2E9C27D61A272051009D80BC /* AF.png in Resources */,
 				F48A70281BAC3EF300175086 /* ForGemsGlow@2x.png in Resources */,
 				F4B5BFD01BB96B3A000FF551 /* FriendRequestFrench.png in Resources */,
@@ -6293,6 +6307,7 @@
 				35628BF0197CF9D300D43660 /* settings_icon.png in Resources */,
 				2E9C28961A272051009D80BC /* SA.png in Resources */,
 				2E9C280C1A272051009D80BC /* CZ.png in Resources */,
+				E2CA40EC1BFCAB9C00EFEA92 /* settingsmenubg@2x.png in Resources */,
 				2E6195B119FA679900D00CAD /* new_contentsioswhite.png in Resources */,
 				35307B291959BB1C006E7E19 /* Total_points_bar_iPad.png in Resources */,
 				E284C8AB1B79D09400F410AE /* logo@2x.png in Resources */,
@@ -6403,6 +6418,7 @@
 				E2DB12201B1D97EF00FA655A /* AddOnViewController.xib in Resources */,
 				5805A598195C6A5D005F2DE8 /* on_btn_iPad.png in Resources */,
 				2E4DEDDB1A42DB9D001CB62E /* redbar.jpeg in Resources */,
+				E2CA40EB1BFCAB9C00EFEA92 /* settingsmenubg.png in Resources */,
 				2E9C28141A272051009D80BC /* EE.png in Resources */,
 				F42CA78F1BAADC3B0083653E /* History@2x.png in Resources */,
 				2E9C28031A272051009D80BC /* CM.png in Resources */,
@@ -7368,8 +7384,8 @@
 		58ABD3A2193E0BB70054064C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Bachir Alzaim (CJWZU6HA53)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bachir Alzaim (CJWZU6HA53)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lance Baker (5HG3URT5V7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lance Baker (5HG3URT5V7)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7388,8 +7404,9 @@
 				OTHER_LDFLAGS = (
 					"-ObjC\n-ObjC\n-ObjC\n-ObjC",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.txlabs.wit;
 				PRODUCT_NAME = Wits;
-				PROVISIONING_PROFILE = "4ab828ee-9745-4f85-8d8b-1df0ad879044";
+				PROVISIONING_PROFILE = "b100e110-b732-4c92-8892-dfa68c2256f8";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -7400,8 +7417,8 @@
 		58ABD3A3193E0BB70054064C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Bachir Alzaim (CJWZU6HA53)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bachir Alzaim (CJWZU6HA53)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lance Baker (5HG3URT5V7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lance Baker (5HG3URT5V7)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7420,8 +7437,9 @@
 				OTHER_LDFLAGS = (
 					"-ObjC\n-ObjC\n-ObjC\n-ObjC",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.txlabs.wit;
 				PRODUCT_NAME = Wits;
-				PROVISIONING_PROFILE = "4ab828ee-9745-4f85-8d8b-1df0ad879044";
+				PROVISIONING_PROFILE = "b100e110-b732-4c92-8892-dfa68c2256f8";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -7526,8 +7544,8 @@
 		58C0E208195C15D000C2A34F /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Bachir Alzaim (CJWZU6HA53)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bachir Alzaim (CJWZU6HA53)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lance Baker (5HG3URT5V7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lance Baker (5HG3URT5V7)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7546,8 +7564,9 @@
 				OTHER_LDFLAGS = (
 					"-ObjC\n-ObjC\n-ObjC\n-ObjC",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.txlabs.wit;
 				PRODUCT_NAME = Wits;
-				PROVISIONING_PROFILE = "4ab828ee-9745-4f85-8d8b-1df0ad879044";
+				PROVISIONING_PROFILE = "b100e110-b732-4c92-8892-dfa68c2256f8";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

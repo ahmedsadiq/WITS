@@ -18,5 +18,4 @@
      myView.backgroundColor = [black colorWithAlphaComponent:ALPHA_OVERLAY_VALUE];
 }
 
-
 @end

@@ -74,14 +74,12 @@
      passwordField.leftView = leftView3;
      isEditPressed = NO;
      
-     
      displayNameField.font = [UIFont fontWithName:FONT_NAME size:15];
      emailField.font = [UIFont fontWithName:FONT_NAME  size:15];
      usernameLbl.font = [UIFont fontWithName:FONT_NAME size:15];
      passwordField.font = [UIFont fontWithName:FONT_NAME  size:15];
      registerBtn.font = [UIFont fontWithName:FONT_NAME size:17];
-     signinLabel.font = [UIFont fontWithName:FONT_NAME size:15];
-     
+     signinLabel.font = [UIFont fontWithName:FONT_NAME size:13];
      
      UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(signUpSwipeDown:)];
      [left setDirection:UISwipeGestureRecognizerDirectionDown];
@@ -130,7 +128,7 @@
           emailField.placeholder = @"EMAIL";
           displayNameField.placeholder = @"DISPLAY NAME";
           passwordField.placeholder = SIGNUP_PASSWORD;
-          birthdaylbl.text = @" BIRTHDAY";
+          birthdaylbl.text = @" BIRTHDAY (Optional)";
           usernameLbl.placeholder = @"USERNAME";
           signUpDescLbl.text = SIGNUP_DESC;
           signUplbl.text = @"Sign Up";
@@ -406,11 +404,6 @@
           }
           
           [AlertMessage showAlertWithMessage:emptyfield andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-          
-          
-          /*  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please Enter Display Name" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-           [alertView show];
-           return;*/
      }
      else if([birthdaylbl.text isEqualToString:@"Birthday"])
      {
@@ -487,15 +480,7 @@
                title = @"Erro";
                cancel = CANCEL_1;
           }
-          
-          
-          
           [AlertMessage showAlertWithMessage:emptyfield andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-          
-          
-          /*UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please Enter Email Address" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-           [alertView show];
-           return;*/
      }else if (usernameLbl.text.length <1 ){
           NSString *emptyfield;
           NSString *title;
@@ -588,18 +573,28 @@
                cancel = CANCEL_4;
           }
           
-          
           [AlertMessage showAlertWithMessage:passwrdLimit andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+     }
+     else if(![self isValidPassword:[passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]]) {
           
+          /*This is to check if string has atleast one Caps. Add appropiate error msg according to the language*/
           
-          /* UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Password must be atleast six characters long!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-           [alertView show];
-           return;*/
-     }else{
+          UIAlertView *pwAlrt = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Password Must Be Of Six Characters And One Of The Letters Should Be Caps" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+          [pwAlrt show];
+          
+     }
+     else if(!([passwordField.text rangeOfCharacterFromSet:[NSCharacterSet characterSetWithCharactersInString:@"0123456789!@#$%^&*()-"]].location != NSNotFound) ) {
+          // this matches the criteria
+          /*This is to check if string has atleast one Caps. Add appropiate error msg according to the language*/
+          
+          UIAlertView *pwAlrt = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Password Must Be Of Six Characters And One Of The Letters Should Be Caps" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+          [pwAlrt show];
+     }
+     else{
           [[NSUserDefaults standardUserDefaults] setObject:emailField.text forKey:@"LoginEmail"];
           [[NSUserDefaults standardUserDefaults] synchronize];
           
-         AppDelegate *emailOBj = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+          AppDelegate *emailOBj = (AppDelegate *)[[UIApplication sharedApplication]delegate];
           emailOBj.LoginEmail = emailField.text;
           [self sendRegistrationCall];
      }
@@ -1300,22 +1295,22 @@
 #pragma mark - TextField Delegates
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-     if (textField == usernameLbl){
-          [UIView beginAnimations:nil context:nil];
-          [UIView setAnimationDuration:0.3];
-          [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-          self.view.frame = CGRectMake(0, -100, self.view.frame.size.width, self.view.frame.size.height);
-          [UIView commitAnimations];
-          
-     }
-     if (textField == passwordField){
-          [UIView beginAnimations:nil context:nil];
-          [UIView setAnimationDuration:0.3];
-          [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-          self.view.frame = CGRectMake(0, -100, self.view.frame.size.width, self.view.frame.size.height);
-          [UIView commitAnimations];
-          
-     }
+//     if (textField == usernameLbl){
+//          [UIView beginAnimations:nil context:nil];
+//          [UIView setAnimationDuration:0.3];
+//          [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+//          self.view.frame = CGRectMake(0, -100, self.view.frame.size.width, self.view.frame.size.height);
+//          [UIView commitAnimations];
+//          
+//     }
+//     if (textField == passwordField){
+//          [UIView beginAnimations:nil context:nil];
+//          [UIView setAnimationDuration:0.3];
+//          [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+//          self.view.frame = CGRectMake(0, -100, self.view.frame.size.width, self.view.frame.size.height);
+//          [UIView commitAnimations];
+//          
+//     }
      [self animateTextField: textField up: YES];
 }
 
@@ -1538,6 +1533,14 @@
      self.viewController.navigationController.navigationBar.tintColor = [UIColor blackColor];
      //self.viewController.navigationController.navigationBar
      [[[UIApplication sharedApplication]delegate] window].rootViewController = self.tabBarController;
+}
+
+#pragma mark ----------------------------------------------------
+#pragma mark - Password Validation Methods
+- (BOOL)isValidPassword:(NSString*)password
+{
+     NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern:@"^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*$" options:0 error:nil];
+     return [regex numberOfMatchesInString:password options:0 range:NSMakeRange(0, [password length])] > 0;
 }
 
 @end

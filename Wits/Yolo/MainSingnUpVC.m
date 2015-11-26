@@ -543,7 +543,7 @@
 }
 -(void) setUpTutorial {
      
-     [self setLanguage];
+     //[self setLanguage];
      
      
 }
@@ -686,11 +686,24 @@
      }
      
      [self.view addSubview:tutorialScrollView];
-     _lblTutorial.text = @"Welcome to WITS - an award winning multiplayer Trivia game that let's you earn real cash while you compete with the topics you are good at!";
      
      [self moveViewPosition:0.0f forView:tutorialScrollView];
      
      [self setLanguage];
+     
+     if(languageCode == 0 ) {
+          _lblTutorial.text = screenOne;
+     }
+     else if(languageCode == 1) {
+          _lblTutorial.text = screenOne1;
+     }
+     else if(languageCode == 2 ) {
+          _lblTutorial.text = screenOne2;
+     }else if(languageCode == 3 ) {
+          _lblTutorial.text = screenOne3;
+     }else if(languageCode == 4 ) {
+          _lblTutorial.text = screenOne4;
+     }
      
      
 }
@@ -1595,6 +1608,7 @@
       */
      language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
+     UIColor *color = [UIColor whiteColor];
      NSString *suffix = @"";
      if(languageCode == 0 ) {
           
@@ -1606,8 +1620,11 @@
           howtoPlay1 = @"Embark on a 1-1 challenge against anyone in the world.";
           howtoPlay2 = @"The faster you answer the more Gems you\'ll collect.";
           howtoPlay3 = @"Claim your rewards.";
-          emailTxt.placeholder = SIGNUP_EMAIL;
-          pswdTxt.placeholder      = SIGNUP_PASSWORD;
+          
+          
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD attributes:@{NSForegroundColorAttributeName: color}];
+          
           //           [forgotPasswordLabel setTitle:SIGNUP_FORGOT_PASS forState:UIControlStateNormal];
           forgot_password_button_text_label.text =SIGNUP_FORGOT_PASS;
           tutoStr1 = TUTORIAL_STR_1;
@@ -1635,11 +1652,11 @@
           forgot_password_button_text_label.text =SIGNUP_FORGOT_PASS_1;
           LoadingTitle = Loading_1;
           orLabel.text = OR_TEXT_1;
-          emailTxt.placeholder = SIGNUP_EMAIL_1;
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_1 attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_1 attributes:@{NSForegroundColorAttributeName: color}];
           alreadyLbl.text = ALREADY_LBL_1;
           languageSelectionLbl.text = LANGUAGE_SELECTION_LBL_1;
           chooseLangLbl.text = CHOOSE_LANG_LBL_1;
-          pswdTxt.placeholder = SIGNUP_PASSWORD_1;
           tutorialLbl.text = TUTORIAL_LBL_1;
           knowledgelbl.text = KNOWLEDGE_LBL_1;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_1;
@@ -1684,14 +1701,15 @@
           orLabel.text = OR_TEXT_2;
           knowledgelbl.text = KNOWLEDGE_LBL_2;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_2;
-          pswdTxt.placeholder = SIGNUP_PASSWORD_2;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_2;
           signuplabelTextbelow.text = SIGNUP_TEXT_2;
           tutoStr1 = TUTORIAL_STR_1_2;
           tutoStr2 = TUTORIAL_STR_2_2;
-          emailTxt.placeholder = SIGNUP_EMAIL_2;
           tutoStr3 = TUTORIAL_STR_3_2;
           tutoStr4 = TUTORIAL_STR_4_2;
+          
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_2 attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_2 attributes:@{NSForegroundColorAttributeName: color}];
           
           HowtoPlay = @"Comment jouer";
           HowWitsStore = @"Comment utiliser ESPRITS magasin";
@@ -1726,9 +1744,10 @@
           tutorialLbl.text = TUTORIAL_LBL_3;
           forgot_password_button_text_label.text =SIGNUP_FORGOT_PASS_3;          knowledgelbl.text = KNOWLEDGE_LBL_3;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_3;
-          pswdTxt.placeholder = SIGNUP_PASSWORD_3;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_3;
-          emailTxt.placeholder = SIGNUP_EMAIL_3;
+          
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_3 attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_3 attributes:@{NSForegroundColorAttributeName: color}];
           
           tutoStr1 = TUTORIAL_STR_1_3;
           tutoStr2 = TUTORIAL_STR_2_3;
@@ -1756,15 +1775,16 @@
      }
      else if(languageCode == 4) {
           LoadingTitle = Loading_4;
-          emailTxt.placeholder = SIGNUP_EMAIL_4;
           forgot_password_button_text_label.text =SIGNUP_FORGOT_PASS_4;
           tutoStr1 = TUTORIAL_STR_1_4;
           tutoStr2 = TUTORIAL_STR_2_4;
           tutoStr3 = TUTORIAL_STR_3_4;
           orLabel.text = OR_TEXT_4;
-          pswdTxt.placeholder = SIGNUP_PASSWORD_4;
           tutoStr4 = TUTORIAL_STR_4_4;
           signuplabelTextbelow.text = SIGNUP_TEXT_4;
+          
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_4 attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_4 attributes:@{NSForegroundColorAttributeName: color}];
           
           howtoPlay1 = @"Inicie um desafio de 1-1 contra qualquer pessoa no mundo.";
           
