@@ -942,10 +942,10 @@
 		E2AB1B3E1B7B40DB002C98E0 /* shopglow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AB1B281B7B40DB002C98E0 /* shopglow@2x.png */; };
 		E2BB02BB1B8497A000653BC9 /* swordglow.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BB02B91B8497A000653BC9 /* swordglow.png */; };
 		E2BB02BC1B8497A000653BC9 /* swordglow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BB02BA1B8497A000653BC9 /* swordglow@2x.png */; };
-		E2CA40EB1BFCAB9C00EFEA92 /* settingsmenubg.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CA40E91BFCAB9C00EFEA92 /* settingsmenubg.png */; settings = {ASSET_TAGS = (); }; };
-		E2CA40EC1BFCAB9C00EFEA92 /* settingsmenubg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CA40EA1BFCAB9C00EFEA92 /* settingsmenubg@2x.png */; settings = {ASSET_TAGS = (); }; };
-		E2CA40EF1BFCB02100EFEA92 /* resultsbg.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CA40ED1BFCB02100EFEA92 /* resultsbg.png */; settings = {ASSET_TAGS = (); }; };
-		E2CA40F01BFCB02100EFEA92 /* resultsbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CA40EE1BFCB02100EFEA92 /* resultsbg@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E2CA40EB1BFCAB9C00EFEA92 /* settingsmenubg.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CA40E91BFCAB9C00EFEA92 /* settingsmenubg.png */; };
+		E2CA40EC1BFCAB9C00EFEA92 /* settingsmenubg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CA40EA1BFCAB9C00EFEA92 /* settingsmenubg@2x.png */; };
+		E2CA40EF1BFCB02100EFEA92 /* resultsbg.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CA40ED1BFCB02100EFEA92 /* resultsbg.png */; };
+		E2CA40F01BFCB02100EFEA92 /* resultsbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CA40EE1BFCB02100EFEA92 /* resultsbg@2x.png */; };
 		E2DB121F1B1D97EF00FA655A /* AddOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB121D1B1D97EF00FA655A /* AddOnViewController.m */; };
 		E2DB12201B1D97EF00FA655A /* AddOnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2DB121E1B1D97EF00FA655A /* AddOnViewController.xib */; };
 		E2DB12241B1D9F3200FA655A /* AddOnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB12221B1D9F3200FA655A /* AddOnCell.m */; };
