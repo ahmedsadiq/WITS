@@ -144,7 +144,7 @@ static BOOL showing;
           //     [_messageView setCenter:CGPointMake(400 , 300)];
           
           CGRect btnFrame = _outletCancel.frame;
-          btnFrame.origin.y = _textView.frame.origin.y + _textView.frame.size.height + 23;
+          btnFrame.origin.y = _textView.frame.origin.y + _textView.frame.size.height + 13;
           _outletCancel.frame = btnFrame;
           
           CGRect messageViewFrame = _messageView.frame;

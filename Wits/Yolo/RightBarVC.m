@@ -71,6 +71,17 @@ float _yLocation;
      self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
      language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
+     if(IS_IPAD){
+          userRankingLbl.font = [UIFont fontWithName:FONT_NAME size:30];
+          lblaboutus.font = [UIFont fontWithName:FONT_NAME size:20];
+          lblhistory.font = [UIFont fontWithName:FONT_NAME size:20];
+          lbllogout.font = [UIFont fontWithName:FONT_NAME size:20];
+          lblmesage.font = [UIFont fontWithName:FONT_NAME size:20];
+          lblranking.font = [UIFont fontWithName:FONT_NAME size:20];
+          namelbl.font = [UIFont fontWithName:FONT_NAME size:30];
+          lblsetting.font = [UIFont fontWithName:FONT_NAME size:20];
+     }
+     else{
      userRankingLbl.font = [UIFont fontWithName:FONT_NAME size:15];
      lblaboutus.font = [UIFont fontWithName:FONT_NAME size:14];
      lblhistory.font = [UIFont fontWithName:FONT_NAME size:14];
@@ -79,7 +90,7 @@ float _yLocation;
      lblranking.font = [UIFont fontWithName:FONT_NAME size:14];
      namelbl.font = [UIFont fontWithName:FONT_NAME size:18];
      lblsetting.font = [UIFont fontWithName:FONT_NAME size:14];
-     
+     }
      
      userRankingLbl.text = @"Loading...";
      
@@ -182,7 +193,7 @@ float _yLocation;
           //[self ShowInView];
           [self removeImage:@"test"];
           profileImageView.image = [UIImage imageNamed:@"Icon_152.png"];
-          
+          [delegate musicSwitch:false];
      } onError:^(NSError* error) {
           
           [_loadingView hide];
@@ -232,7 +243,7 @@ float _yLocation;
      
      if ([[UIScreen mainScreen] bounds].size.height == iPad) {
           
-          MessagesVC *update = [[MessagesVC alloc] initWithNibName:@"MessagesVC" bundle:nil];
+          MessagesVC *update = [[MessagesVC alloc] initWithNibName:@"MessagesVC_iPad" bundle:nil];
           [self.navigationController pushViewController:update animated:YES];
      }
      else{
@@ -834,8 +845,8 @@ float _yLocation;
                longitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.longitude];
                state = placemark.administrativeArea;
                country = placemark.country;
+               userRankingLbl.text = [NSString stringWithFormat:@"%@, %@", state, country];
                
-               userRankingLbl.text = [NSString stringWithFormat:@"%@ , %@", state, country];
           } else {
                NSLog(@"%@", error.debugDescription);
           }

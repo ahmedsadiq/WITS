@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryViewController">
@@ -20,7 +21,6 @@
                 <outlet property="opponentName" destination="lia-Iw-924" id="Uqw-YH-0O7"/>
                 <outlet property="opponentSearchImg" destination="5fy-oT-0kl" id="ssQ-5z-UGu"/>
                 <outlet property="opponentTotal" destination="ZIe-9C-U5m" id="UNv-VI-jTS"/>
-                <outlet property="playAgain" destination="ec1-6r-mK7" id="sFd-br-4mO"/>
                 <outlet property="playerName" destination="IuE-rf-Sk7" id="KRU-Xo-jLY"/>
                 <outlet property="playwithGemsbtn" destination="NXN-hS-JSh" id="VXw-gF-5H9"/>
                 <outlet property="quitsearch" destination="K75-jP-uzW" id="jF9-BM-94J"/>
@@ -85,7 +85,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6AY-4w-ZVL">
-                    <rect key="frame" x="0.0" y="14" width="160" height="38"/>
+                    <rect key="frame" x="0.0" y="12" width="160" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="RANKINGS" backgroundImage="tabon.png">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,18 +172,6 @@
                         <action selector="Rightbar:" destination="-1" eventType="touchUpInside" id="CRI-Ni-zG9"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ec1-6r-mK7">
-                    <rect key="frame" x="40" y="427" width="240" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.7065774937" green="0.1288714131" blue="0.16820950740000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Play Again" backgroundImage="pinkBar.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="PlayAgainPressed:" destination="-1" eventType="touchUpInside" id="XQ5-ni-g7a"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HJm-0n-gfA">
                     <rect key="frame" x="75" y="7" width="121" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -194,7 +182,7 @@
                     <rect key="frame" x="41" y="480" width="239" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.7065774937" green="0.1288714131" blue="0.16820950740000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Return Home" backgroundImage="pinkBar.png">
+                    <state key="normal" title="Return Home" backgroundImage="greenBar.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -594,6 +582,7 @@
         <image name="crossbtn.png" width="128" height="128"/>
         <image name="dialogbg.png" width="487" height="371"/>
         <image name="done_btn.png" width="65" height="25"/>
+        <image name="greenBar.png" width="83" height="34"/>
         <image name="header.png" width="320" height="43"/>
         <image name="header_bar.png" width="320" height="1"/>
         <image name="pinkBar.png" width="280" height="40"/>
@@ -606,9 +595,4 @@
         <image name="witsnewblue.png" width="1004" height="245"/>
         <image name="witsround.PNG" width="210" height="208"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

@@ -13,8 +13,12 @@
 -(void)roundImageCorner{
     
     [self setBackgroundColor:[UIColor clearColor]];
-    self.layer.cornerRadius = self.frame.size.width / 2;
-    self.clipsToBounds = YES;
+     self.layer.cornerRadius = self.frame.size.width / 2;
+     self.layer.borderWidth = 4.0f;
+      self.clipsToBounds = YES;
+     //self.layer.masksToBounds = YES;
+     self.layer.borderColor = [UIColor whiteColor].CGColor;
+   
     
     //return self;
 }

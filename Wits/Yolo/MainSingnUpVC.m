@@ -32,12 +32,13 @@
 #define kOAuthConsumerKey        @"XL0qdKEsuBscc8zUQDHo0VXQa"         //REPLACE With Twitter App OAuth Key
 #define kOAuthConsumerSecret    @"SUlS1QVX5I9XxhVXZJmcUzsUhvnMCbEut8LERJZBYFI1BRCmtL"
 
+
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 -(id)init
 {
      if ([[UIScreen mainScreen] bounds].size.height == iPad) {
-          
           self = [super initWithNibName:@"MainSignUpVC_iPad" bundle:Nil];
+          
      }
      
      else{
@@ -64,12 +65,32 @@
      CGRect myRect = CGRectMake(0, 0, 0, 0);
      NSString *imageName = @"";
      if ([[UIScreen mainScreen] bounds].size.height == iPad){
-          myRect = CGRectMake(84, 328, 600, 80);
+           myRect = CGRectMake(415, 700, 300, 100);
           imageName = @"facebookbg.png";
+           signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:25];
+           forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:25];
+           orLabel.font = [UIFont fontWithName:FONT_NAME size:20];
+           emailTxt.font = [UIFont fontWithName:FONT_NAME size:30];
+           pswdTxt.font = [UIFont fontWithName:FONT_NAME size:30];
+           _resetPswdEmail.font = [UIFont fontWithName:FONT_NAME size:30];
+            OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:25];
+          LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:25];
+          _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:25];
+          twitterBtn.font = [UIFont fontWithName:FONT_NAME size:25];
      }
      else{
           myRect = CGRectMake(174,421,132,42);
           imageName = @"facebookbg.png";
+          twitterBtn.font = [UIFont fontWithName:FONT_NAME size:17];
+           signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:13];
+           forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:18];
+           orLabel.font = [UIFont fontWithName:FONT_NAME size:14];
+           emailTxt.font = [UIFont fontWithName:FONT_NAME size:17];
+           pswdTxt.font = [UIFont fontWithName:FONT_NAME size:17];
+           _resetPswdEmail.font = [UIFont fontWithName:FONT_NAME size:14];
+            OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:15];
+          LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
+          _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
      }
      BOOL isLanguageSelected = [[NSUserDefaults standardUserDefaults] boolForKey:@"isLanguageSelected"];
      if(!isLanguageSelected) {
@@ -89,14 +110,13 @@
      _loadingView = [[LoadingView alloc] init];
      
      
-     
-     emailTxt.font = [UIFont fontWithName:FONT_NAME size:17];
-     pswdTxt.font = [UIFont fontWithName:FONT_NAME size:17];
-     LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
-     forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:18];
-     orLabel.font = [UIFont fontWithName:FONT_NAME size:14];
-     twitterBtn.font = [UIFont fontWithName:FONT_NAME size:17];
-     signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:13];
+     //emailTxt.font = [UIFont fontWithName:FONT_NAME size:17];
+     //pswdTxt.font = [UIFont fontWithName:FONT_NAME size:17];
+     //LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
+   //  forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:18];
+     //orLabel.font = [UIFont fontWithName:FONT_NAME size:14];
+    // twitterBtn.font = [UIFont fontWithName:FONT_NAME size:17];
+    // signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:13];
      chooseLangLbl.font = [UIFont fontWithName:FONT_NAME size:17];
      languageTitle.font = [UIFont fontWithName:FONT_NAME size:17];
      languageBtn.font = [UIFont fontWithName:FONT_NAME size:18];
@@ -105,9 +125,9 @@
      DialogMsg.font = [UIFont fontWithName:FONT_NAME size:15];
      Dialogyes.font = [UIFont fontWithName:FONT_NAME size:14];
      Dialogno.font = [UIFont fontWithName:FONT_NAME size:14];
-     _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
-     _resetPswdEmail.font = [UIFont fontWithName:FONT_NAME size:14];
-     OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:15];
+    // _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
+     //_resetPswdEmail.font = [UIFont fontWithName:FONT_NAME size:14];
+     //OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:15];
      forgotpasswordSigninButtonn.font = [UIFont fontWithName:FONT_NAME size:18];
      
      UIColor *color = [UIColor whiteColor];
@@ -209,11 +229,11 @@
            [alertView show];
            return;*/
      }else{
-          
+     
           [pswdTxt resignFirstResponder];
-          [self sendLoginCall:false];
+         [self sendLoginCall:false];
           
-     }
+}
      
      [emailTxt resignFirstResponder];
      [pswdTxt resignFirstResponder];
@@ -427,7 +447,7 @@
                     loginLabel.text = @"Conectar com Facebook";
                }
                if ([[UIScreen mainScreen] bounds].size.height == iPad){
-                    loginLabel.font = [UIFont fontWithName:FONT_NAME size:22.0f];
+                    loginLabel.font = [UIFont fontWithName:FONT_NAME size:25.0f];
                }
                
           }
@@ -722,7 +742,7 @@
      NSString *imageName = @"";
      
      if ([[UIScreen mainScreen] bounds].size.height == iPad){
-          myRect = CGRectMake(84, 328, 600, 80);
+          myRect = CGRectMake(415, 700, 300, 100);
           imageName = @"facebookbg.png";
      }
      else{
@@ -1255,20 +1275,31 @@
 -(void)createTabBarAndControl {
      if(IS_IPAD){
           self.viewController = [[GetTopicsVC alloc] initWithNibName:@"GetTopicsVC_iPad" bundle:nil];
+
      }
      else {
           self.viewController = [[GetTopicsVC alloc] initWithNibName:@"GetTopicsVC" bundle:nil];
      }
      
      
+     
      self.navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+     
      [self.navController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"homeglow.png"]
-                                                      imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+                                                             imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal] ];
      
-     [self.navController.tabBarItem setImage:[[UIImage imageNamed:@"home.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-     
-     
+     [self.navController.tabBarItem setImage:[[UIImage imageNamed:@"home.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+      ];
      self.navController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD)
+     {
+          [self.navController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"homeglowForIpad.png"]
+                                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          
+          [self.navController.tabBarItem setImage:[[UIImage imageNamed:@"homeForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          self.navController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -35, 15, 35);
+          
+     }
      [self.navController setNavigationBarHidden:YES animated:NO];
      
      UIViewController *friendsVC;
@@ -1288,6 +1319,15 @@
      
      
      friendsVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD)
+          
+     {
+          [friendsVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"friendsglowForIpad.png"]
+                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [friendsVC.tabBarItem setImage:[[UIImage imageNamed:@"friendsForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          friendsVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -30, 15,30);
+          
+     }
      [friendsVC.navigationController setNavigationBarHidden:YES animated:NO];
      
      UIViewController *storeVC;
@@ -1304,6 +1344,14 @@
      [storeVC.tabBarItem setImage:[[UIImage imageNamed:@"shop.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      
      storeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD){
+          [storeVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"shopglowForIpad.png"]
+                                                imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [storeVC.tabBarItem setImage:[[UIImage imageNamed:@"shopForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          storeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -20, 15, 20);
+          
+     }
+     
      [storeVC.navigationController setNavigationBarHidden:YES animated:NO];
      
      UIViewController *historyViewController;
@@ -1320,16 +1368,26 @@
      [historyViewController.tabBarItem setImage:[[UIImage imageNamed:@"referral.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      
      historyViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD)
+     {
+          [historyViewController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"referglowForIpad.png"]
+                                                              imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [historyViewController.tabBarItem setImage:[[UIImage imageNamed:@"referforIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          historyViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, 0, 15, 0);
+          
+     }
+     
      [historyViewController.navigationController setNavigationBarHidden:YES animated:NO];
      
      
      UIViewController *settingVC;
      if(IS_IPAD) {
           settingVC = [[RightBarVC alloc] initWithNibName:@"RightBarVC_iPad" bundle:[NSBundle mainBundle]];
+          
      }
      else {
           settingVC = [[RightBarVC alloc] initWithNibName:@"RightBarVC" bundle:[NSBundle mainBundle]];
-     }
+              }
      
      UINavigationController *settingsNavController = [[UINavigationController alloc] initWithRootViewController:settingVC];
      
@@ -1338,12 +1396,24 @@
      [settingVC.tabBarItem setImage:[[UIImage imageNamed:@"menu.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      
      settingsNavController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD){
+          [settingVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"menuglowForIpad.png"]
+                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [settingVC.tabBarItem setImage:[[UIImage imageNamed:@"menuForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          settingsNavController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, 30, 15, -30);
+          
+     }
+     
      [settingVC.navigationController setNavigationBarHidden:YES animated:NO];
      
      self.tabBarController = [[UITabBarController alloc] init] ;
      self.tabBarController.viewControllers = [NSArray arrayWithObjects:self.navController, friendsNavController,storeNavController,historyNavController,settingsNavController,nil];
      
      [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg.png"]];
+     if(IS_IPAD) {
+          [self.tabBarController.tabBar setShadowImage:[[UIImage alloc] init]];
+          [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubgForIpad.png"]];
+     }
      
      //    [self setFieldsAndButtonsText:self.configResponse];
      self.viewController.navigationController.navigationBar.tintColor = [UIColor blackColor];
@@ -2036,7 +2106,7 @@
      [self.view addSubview:_resetPswdView];
      
      UIColor *color = [UIColor whiteColor];
-     _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Enter Email ID" attributes:@{NSForegroundColorAttributeName: color}];
+     _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"ENTER EMAIL ID" attributes:@{NSForegroundColorAttributeName: color}];
      
 }
 - (IBAction)sendResetPswdCall:(id)sender {

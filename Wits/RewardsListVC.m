@@ -51,7 +51,12 @@
      
      lblRewards.font = [UIFont fontWithName:FONT_NAME size:20];
      buyAddonLbl.font = [UIFont fontWithName:FONT_NAME size:15];
-     
+     if(IS_IPAD){
+          LblCograts.font = [UIFont fontWithName:FONT_NAME size:25];
+          
+          lblRewards.font = [UIFont fontWithName:FONT_NAME size:25];
+          buyAddonLbl.font = [UIFont fontWithName:FONT_NAME size:20];
+     }
      
      
      MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];

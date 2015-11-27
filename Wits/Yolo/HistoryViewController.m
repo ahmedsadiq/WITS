@@ -62,8 +62,8 @@
      _HistoryPinkLine.frame = CGRectMake(161, 91, 159, 1);
      
      if(IS_IPAD){
-          _RankingPinkLine.frame = CGRectMake(0,138, 384, 6);
-          _HistoryPinkLine.frame = CGRectMake(385, 142, 384, 2);
+         // _RankingPinkLine.frame = CGRectMake(0,138, 384, 6);
+          //_HistoryPinkLine.frame = CGRectMake(385, 142, 384, 2);
      }
      else if(IS_IPHONE_4){
           
@@ -440,7 +440,7 @@
      if(!isRanking) {
           if ([[UIScreen mainScreen] bounds].size.height == iPad)
           {
-               returnValue = 140.0f;
+               returnValue =320.0f;
           }
           else
           {
@@ -449,7 +449,7 @@
      }
      else {
           if ([[UIScreen mainScreen] bounds].size.height == iPad)
-               returnValue = 140.0f;
+               returnValue = 320.0f;
           else
                returnValue = 140.0f;
      }
