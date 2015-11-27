@@ -1,158 +1,315 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FriendsVC">
             <connections>
-                <outlet property="GoBtn" destination="Ic2-BC-1R6" id="vV9-xx-X4m"/>
-                <outlet property="backbtn" destination="LNm-XK-RFw" id="tVA-P5-suA"/>
-                <outlet property="friendImageView" destination="rPC-VW-rmc" id="YiO-Ir-mjj"/>
-                <outlet property="friendLargeImage" destination="osF-fc-YuG" id="b0A-f1-Y4P"/>
-                <outlet property="friendsLbl" destination="Jdj-0a-Xuy" id="z3z-ag-evY"/>
-                <outlet property="friendsTable" destination="Hou-HE-r13" id="dD9-ww-qyO"/>
-                <outlet property="mainBackBtn" destination="lDD-XO-HuP" id="NeN-XF-Jo8"/>
-                <outlet property="noFriendLbl" destination="Zhr-ur-LlE" id="Z2Z-gx-2zD"/>
-                <outlet property="searchField" destination="3c6-EJ-ejj" id="xyN-vb-vnp"/>
-                <outlet property="view" destination="2tX-kc-5d6" id="ct5-H0-ehd"/>
+                <outlet property="backbtn" destination="4iH-LU-F0V" id="gVM-BM-Rhm"/>
+                <outlet property="challengeForGems" destination="tFN-7w-Xqt" id="B8m-6e-CZz"/>
+                <outlet property="challengeForPoints" destination="vpF-jp-ttd" id="xuw-ET-84O"/>
+                <outlet property="fmBg" destination="J6A-G7-Wk6" id="4Sd-bN-0v4"/>
+                <outlet property="fmChallengeNowBtn" destination="yoS-g7-PRh" id="JWZ-3O-e9e"/>
+                <outlet property="fmChatBtn" destination="TPa-hZ-qWM" id="pef-VS-2f8"/>
+                <outlet property="fmFriendButton" destination="Nsn-xE-sLO" id="d1p-VV-aY7"/>
+                <outlet property="friendActionAcceptBtn" destination="nFk-1T-mhW" id="duh-VG-FE8"/>
+                <outlet property="friendActionImg" destination="h3X-Au-Mrk" id="MUC-2U-XCd"/>
+                <outlet property="friendActionRejectBtn" destination="Xvu-4X-P8R" id="0yE-ra-Hwr"/>
+                <outlet property="friendActionText" destination="f2v-qs-a7h" id="KFQ-yt-gsl"/>
+                <outlet property="friendActionTitle" destination="53H-ml-sFf" id="qKS-nJ-ivS"/>
+                <outlet property="friendActionView" destination="5E4-3M-ceJ" id="hbY-04-nCJ"/>
+                <outlet property="friendImageView" destination="vOg-ac-myR" id="4y2-IM-tR9"/>
+                <outlet property="friendLargeImage" destination="F4P-wZ-pDh" id="Wsy-3i-Ywl"/>
+                <outlet property="friendModView" destination="Cgj-qg-pav" id="G0c-A0-CXi"/>
+                <outlet property="friendNamePopUp" destination="xAi-H8-FpN" id="ayo-q6-Mx0"/>
+                <outlet property="friendPopUpImg" destination="ff8-Mu-2jg" id="lME-ct-PVf"/>
+                <outlet property="friendsTable" destination="ie8-xh-Xj9" id="DbK-OL-pCh"/>
+                <outlet property="noFriendLbl" destination="ypO-gr-DFV" id="b1w-RW-sg2"/>
+                <outlet property="searchField" destination="hUa-lQ-duK" id="ZoX-zP-qYQ"/>
+                <outlet property="view" destination="4X4-eB-RIn" id="pMa-4O-ApG"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="2tX-kc-5d6">
+        <view contentMode="scaleToFill" id="5E4-3M-ceJ">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-ipad.png" id="r9g-FB-w0d">
+                <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="TQg-TW-dvZ">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header-ipad.png" id="xEZ-B3-h0M">
-                    <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jdj-0a-Xuy">
-                    <rect key="frame" x="164" y="10" width="234" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lDD-XO-HuP">
-                    <rect key="frame" x="25" y="5" width="107" height="39"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <state key="normal" title="Back" backgroundImage="done_btn.png">
-                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="mainBackPressed:" destination="-1" eventType="touchUpInside" id="fdU-hL-XZq"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7Jq-v2-mKH">
-                    <rect key="frame" x="715" y="10" width="33" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="rightMenubtn-iPad.png">
-                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="ShowRightMenu:" destination="-1" eventType="touchUpInside" id="xN7-c4-zMf"/>
-                    </connections>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_bar-ipad.png" id="VtX-AE-pM7">
-                    <rect key="frame" x="0.0" y="51" width="768" height="2"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for Friends" minimumFontSize="17" background="topic_search_iPad.png" id="3c6-EJ-ejj">
-                    <rect key="frame" x="25" y="67" width="623" height="56"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <action selector="ChangedEditing:" destination="-1" eventType="editingChanged" id="XmA-qp-kJE"/>
-                        <outlet property="delegate" destination="-1" id="e8I-b0-uh3"/>
-                    </connections>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ic2-BC-1R6">
-                    <rect key="frame" x="647" y="67" width="101" height="56"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="pinkBar.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="sendSearcgCall:" destination="-1" eventType="touchUpInside" id="N4Z-g3-TE5"/>
-                    </connections>
-                </button>
-                <view contentMode="scaleToFill" id="a5O-Bi-aP3">
-                    <rect key="frame" x="0.0" y="134" width="768" height="2"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hou-HE-r13">
-                    <rect key="frame" x="20" y="144" width="728" height="877"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="8iO-wM-u0A"/>
-                        <outlet property="delegate" destination="-1" id="5ze-Z9-IGE"/>
-                    </connections>
-                </tableView>
-                <view hidden="YES" contentMode="scaleToFill" id="rPC-VW-rmc">
-                    <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="VcQ-wj-DFf">
+                    <rect key="frame" x="134" y="362" width="500" height="300"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" id="Jt6-el-Qgl">
-                            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialogbg.png" id="C9I-0H-4RZ">
+                            <rect key="frame" x="0.0" y="0.0" width="500" height="301"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nFk-1T-mhW">
+                            <rect key="frame" x="20" y="235" width="200" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                            <state key="normal" title="Accept" backgroundImage="blackBar.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="friendActionAcceptBtnPressed:" destination="-1" eventType="touchUpInside" id="wGO-kt-mW2"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Request" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="53H-ml-sFf">
+                            <rect key="frame" x="102" y="18" width="295" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="You recieved a new Friend Request" textAlignment="center" id="f2v-qs-a7h">
+                            <rect key="frame" x="14" y="120" width="471" height="92"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="25"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xvu-4X-P8R">
+                            <rect key="frame" x="280" y="235" width="200" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Reject" backgroundImage="blackBar.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="friendActionRejectBtnPressed:" destination="-1" eventType="touchUpInside" id="ftf-Ex-WUk"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="h3X-Au-Mrk" customClass="AsyncImageView">
+                            <rect key="frame" x="13" y="8" width="100" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadlarge.png" id="osF-fc-YuG">
-                                    <rect key="frame" x="134" y="316" width="500" height="430"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LNm-XK-RFw">
-                                    <rect key="frame" x="134" y="777" width="500" height="60"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                    <state key="normal" title="Back" backgroundImage="pinkBar.png">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="largeImageBackPressed:" destination="-1" eventType="touchUpInside" id="ayj-xU-25f"/>
-                                    </connections>
-                                </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no Friends." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zhr-ur-LlE">
-                                    <rect key="frame" x="21" y="460" width="726" height="104"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
-                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bpt-Ay-gnF">
+                            <rect key="frame" x="460" y="10" width="24" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="closeDialog.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="friendActionQuit:" destination="-1" eventType="touchUpInside" id="GiW-OJ-SsV"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="1254" y="-980"/>
+        </view>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="4X4-eB-RIn">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="lZ3-XB-Wix">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textboxbg.png" id="fIK-og-657">
+                    <rect key="frame" x="14" y="15" width="730" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ie8-xh-Xj9">
+                    <rect key="frame" x="0.0" y="100" width="768" height="900"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="8du-XG-Ayz"/>
+                        <outlet property="delegate" destination="-1" id="yG2-g9-kLI"/>
+                    </connections>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have noFriends." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ypO-gr-DFV">
+                    <rect key="frame" x="234" y="483" width="299" height="59"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bzb-97-OAk">
+                    <rect key="frame" x="697" y="25" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <state key="normal" backgroundImage="searchglow.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sendSearcgCall:" destination="-1" eventType="touchUpInside" id="ac0-TH-LPL"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Search for friend" minimumFontSize="17" id="hUa-lQ-duK">
+                    <rect key="frame" x="15" y="15" width="680" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <connections>
+                        <action selector="ChangedEditing:" destination="-1" eventType="editingChanged" id="rX5-bi-PFB"/>
+                        <outlet property="delegate" destination="-1" id="2c7-yk-Uw4"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+        </view>
+        <view hidden="YES" contentMode="scaleToFill" id="vOg-ac-myR">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="yzK-IF-X5E">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadlarge.png" id="F4P-wZ-pDh">
+                    <rect key="frame" x="232" y="154" width="304" height="261"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4iH-LU-F0V">
+                    <rect key="frame" x="290" y="490" width="187" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <state key="normal" title="Back" backgroundImage="pinkBar.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="largeImageBackPressed:" destination="-1" eventType="touchUpInside" id="4m5-CF-ueb"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </view>
+        <view contentMode="scaleToFill" id="Cgj-qg-pav">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BuL-Pm-nsP">
+                    <rect key="frame" x="680" y="20" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="close.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="friendModCanelBtnPressed:" destination="-1" eventType="touchUpInside" id="GJU-81-g1N"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transbg.png" id="J6A-G7-Wk6">
+                    <rect key="frame" x="0.0" y="1" width="768" height="1024"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yoS-g7-PRh">
+                    <rect key="frame" x="254" y="231" width="135" height="115"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="challengenowglow.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="fmChallengeNowBtnPressed:" destination="-1" eventType="touchUpInside" id="ASz-kG-EEr"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="Lfi-tH-feX">
+                    <rect key="frame" x="134" y="512" width="500" height="1"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="hAq-ZN-5OU">
+                    <rect key="frame" x="134" y="760" width="500" height="1"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ff8-Mu-2jg" customClass="AsyncImageView">
+                    <rect key="frame" x="334" y="104" width="100" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ahmed Sadiq" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="xAi-H8-FpN">
+                    <rect key="frame" x="298" y="173" width="189" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Nsn-xE-sLO">
+                    <rect key="frame" x="485" y="572" width="109" height="146"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="AddedFriendsGlow.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="fmFriendButtonPressed:" destination="-1" eventType="touchUpInside" id="by5-dQ-bdb"/>
+                    </connections>
+                </button>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verified.png" id="qye-EY-Nbr">
+                    <rect key="frame" x="413" y="104" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tFN-7w-Xqt">
+                    <rect key="frame" x="134" y="324" width="252" height="151"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="fmChallenegeGemsPressed:" destination="-1" eventType="touchUpInside" id="PhS-bt-rgS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TPa-hZ-qWM">
+                    <rect key="frame" x="485" y="326" width="131" height="148"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="ChatGlow.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="fmChatBtnPressed:" destination="-1" eventType="touchUpInside" id="xut-Dz-KWN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vpF-jp-ttd">
+                    <rect key="frame" x="129" y="568" width="260" height="150"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" backgroundImage="ForPointsGlowEnglish.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="fmchallengepointspressed:" destination="-1" eventType="touchUpInside" id="Qlv-NH-aPc"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="879" y="-980"/>
         </view>
     </objects>
     <resources>
-        <image name="bg-ipad.png" width="640" height="1136"/>
-        <image name="done_btn.png" width="65" height="25"/>
-        <image name="header-ipad.png" width="640" height="85"/>
-        <image name="header_bar-ipad.png" width="640" height="2"/>
+        <image name="AddedFriendsGlow.png" width="109" height="146"/>
+        <image name="ChatGlow.png" width="131" height="148"/>
+        <image name="ForPointsGlowEnglish.png" width="260" height="151"/>
+        <image name="bg.png" width="540" height="960"/>
+        <image name="blackBar.png" width="220" height="34"/>
+        <image name="challengenowglow.png" width="195" height="178"/>
+        <image name="close.png" width="56" height="56"/>
+        <image name="closeDialog.png" width="31" height="31"/>
+        <image name="dialogbg.png" width="487" height="371"/>
+        <image name="line.png" width="466" height="2"/>
         <image name="loadlarge.png" width="300" height="180"/>
         <image name="pinkBar.png" width="280" height="40"/>
-        <image name="rightMenubtn-iPad.png" width="46" height="24"/>
-        <image name="topic_search_iPad.png" width="480" height="40"/>
+        <image name="searchglow.png" width="64" height="64"/>
+        <image name="textboxbg.png" width="470" height="73"/>
+        <image name="transbg.png" width="539" height="960"/>
+        <image name="verified.png" width="31" height="31"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
 </document>

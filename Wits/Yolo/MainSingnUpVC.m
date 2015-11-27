@@ -32,12 +32,13 @@
 #define kOAuthConsumerKey        @"XL0qdKEsuBscc8zUQDHo0VXQa"         //REPLACE With Twitter App OAuth Key
 #define kOAuthConsumerSecret    @"SUlS1QVX5I9XxhVXZJmcUzsUhvnMCbEut8LERJZBYFI1BRCmtL"
 
+
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 -(id)init
 {
      if ([[UIScreen mainScreen] bounds].size.height == iPad) {
-          
           self = [super initWithNibName:@"MainSignUpVC_iPad" bundle:Nil];
+          
      }
      
      else{
@@ -64,12 +65,32 @@
      CGRect myRect = CGRectMake(0, 0, 0, 0);
      NSString *imageName = @"";
      if ([[UIScreen mainScreen] bounds].size.height == iPad){
-          myRect = CGRectMake(84, 328, 600, 80);
+           myRect = CGRectMake(415, 700, 300, 100);
           imageName = @"facebookbg.png";
+           signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:25];
+           forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:25];
+           orLabel.font = [UIFont fontWithName:FONT_NAME size:20];
+           emailTxt.font = [UIFont fontWithName:FONT_NAME size:30];
+           pswdTxt.font = [UIFont fontWithName:FONT_NAME size:30];
+           _resetPswdEmail.font = [UIFont fontWithName:FONT_NAME size:30];
+            OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:25];
+          LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:25];
+          _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:25];
+          twitterBtn.font = [UIFont fontWithName:FONT_NAME size:25];
      }
      else{
           myRect = CGRectMake(174,421,132,42);
           imageName = @"facebookbg.png";
+          twitterBtn.font = [UIFont fontWithName:FONT_NAME size:17];
+           signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:13];
+           forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:18];
+           orLabel.font = [UIFont fontWithName:FONT_NAME size:14];
+           emailTxt.font = [UIFont fontWithName:FONT_NAME size:17];
+           pswdTxt.font = [UIFont fontWithName:FONT_NAME size:17];
+           _resetPswdEmail.font = [UIFont fontWithName:FONT_NAME size:14];
+            OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:15];
+          LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
+          _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
      }
      BOOL isLanguageSelected = [[NSUserDefaults standardUserDefaults] boolForKey:@"isLanguageSelected"];
      if(!isLanguageSelected) {
@@ -89,14 +110,13 @@
      _loadingView = [[LoadingView alloc] init];
      
      
-     
-     emailTxt.font = [UIFont fontWithName:FONT_NAME size:17];
-     pswdTxt.font = [UIFont fontWithName:FONT_NAME size:17];
-     LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
-     forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:18];
-     orLabel.font = [UIFont fontWithName:FONT_NAME size:14];
-     twitterBtn.font = [UIFont fontWithName:FONT_NAME size:17];
-     signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:13];
+     //emailTxt.font = [UIFont fontWithName:FONT_NAME size:17];
+     //pswdTxt.font = [UIFont fontWithName:FONT_NAME size:17];
+     //LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
+   //  forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:18];
+     //orLabel.font = [UIFont fontWithName:FONT_NAME size:14];
+    // twitterBtn.font = [UIFont fontWithName:FONT_NAME size:17];
+    // signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:13];
      chooseLangLbl.font = [UIFont fontWithName:FONT_NAME size:17];
      languageTitle.font = [UIFont fontWithName:FONT_NAME size:17];
      languageBtn.font = [UIFont fontWithName:FONT_NAME size:18];
@@ -105,9 +125,9 @@
      DialogMsg.font = [UIFont fontWithName:FONT_NAME size:15];
      Dialogyes.font = [UIFont fontWithName:FONT_NAME size:14];
      Dialogno.font = [UIFont fontWithName:FONT_NAME size:14];
-     _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
-     _resetPswdEmail.font = [UIFont fontWithName:FONT_NAME size:14];
-     OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:15];
+    // _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
+     //_resetPswdEmail.font = [UIFont fontWithName:FONT_NAME size:14];
+     //OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:15];
      forgotpasswordSigninButtonn.font = [UIFont fontWithName:FONT_NAME size:18];
      
      UIColor *color = [UIColor whiteColor];
@@ -209,11 +229,11 @@
            [alertView show];
            return;*/
      }else{
-          
+     
           [pswdTxt resignFirstResponder];
-          [self sendLoginCall:false];
+         [self sendLoginCall:false];
           
-     }
+}
      
      [emailTxt resignFirstResponder];
      [pswdTxt resignFirstResponder];
@@ -427,7 +447,7 @@
                     loginLabel.text = @"Conectar com Facebook";
                }
                if ([[UIScreen mainScreen] bounds].size.height == iPad){
-                    loginLabel.font = [UIFont fontWithName:FONT_NAME size:22.0f];
+                    loginLabel.font = [UIFont fontWithName:FONT_NAME size:25.0f];
                }
                
           }
@@ -543,7 +563,7 @@
 }
 -(void) setUpTutorial {
      
-     [self setLanguage];
+     //[self setLanguage];
      
      
 }
@@ -686,11 +706,24 @@
      }
      
      [self.view addSubview:tutorialScrollView];
-     _lblTutorial.text = @"Welcome to WITS - an award winning multiplayer Trivia game that let's you earn real cash while you compete with the topics you are good at!";
      
      [self moveViewPosition:0.0f forView:tutorialScrollView];
      
      [self setLanguage];
+     
+     if(languageCode == 0 ) {
+          _lblTutorial.text = screenOne;
+     }
+     else if(languageCode == 1) {
+          _lblTutorial.text = screenOne1;
+     }
+     else if(languageCode == 2 ) {
+          _lblTutorial.text = screenOne2;
+     }else if(languageCode == 3 ) {
+          _lblTutorial.text = screenOne3;
+     }else if(languageCode == 4 ) {
+          _lblTutorial.text = screenOne4;
+     }
      
      
 }
@@ -709,7 +742,7 @@
      NSString *imageName = @"";
      
      if ([[UIScreen mainScreen] bounds].size.height == iPad){
-          myRect = CGRectMake(84, 328, 600, 80);
+          myRect = CGRectMake(415, 700, 300, 100);
           imageName = @"facebookbg.png";
      }
      else{
@@ -1242,20 +1275,31 @@
 -(void)createTabBarAndControl {
      if(IS_IPAD){
           self.viewController = [[GetTopicsVC alloc] initWithNibName:@"GetTopicsVC_iPad" bundle:nil];
+
      }
      else {
           self.viewController = [[GetTopicsVC alloc] initWithNibName:@"GetTopicsVC" bundle:nil];
      }
      
      
+     
      self.navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+     
      [self.navController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"homeglow.png"]
-                                                      imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+                                                             imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal] ];
      
-     [self.navController.tabBarItem setImage:[[UIImage imageNamed:@"home.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-     
-     
+     [self.navController.tabBarItem setImage:[[UIImage imageNamed:@"home.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+      ];
      self.navController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD)
+     {
+          [self.navController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"homeglowForIpad.png"]
+                                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          
+          [self.navController.tabBarItem setImage:[[UIImage imageNamed:@"homeForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          self.navController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -35, 15, 35);
+          
+     }
      [self.navController setNavigationBarHidden:YES animated:NO];
      
      UIViewController *friendsVC;
@@ -1275,6 +1319,15 @@
      
      
      friendsVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD)
+          
+     {
+          [friendsVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"friendsglowForIpad.png"]
+                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [friendsVC.tabBarItem setImage:[[UIImage imageNamed:@"friendsForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          friendsVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -30, 15,30);
+          
+     }
      [friendsVC.navigationController setNavigationBarHidden:YES animated:NO];
      
      UIViewController *storeVC;
@@ -1291,6 +1344,14 @@
      [storeVC.tabBarItem setImage:[[UIImage imageNamed:@"shop.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      
      storeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD){
+          [storeVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"shopglowForIpad.png"]
+                                                imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [storeVC.tabBarItem setImage:[[UIImage imageNamed:@"shopForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          storeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -20, 15, 20);
+          
+     }
+     
      [storeVC.navigationController setNavigationBarHidden:YES animated:NO];
      
      UIViewController *historyViewController;
@@ -1307,16 +1368,26 @@
      [historyViewController.tabBarItem setImage:[[UIImage imageNamed:@"referral.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      
      historyViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD)
+     {
+          [historyViewController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"referglowForIpad.png"]
+                                                              imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [historyViewController.tabBarItem setImage:[[UIImage imageNamed:@"referforIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          historyViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, 0, 15, 0);
+          
+     }
+     
      [historyViewController.navigationController setNavigationBarHidden:YES animated:NO];
      
      
      UIViewController *settingVC;
      if(IS_IPAD) {
           settingVC = [[RightBarVC alloc] initWithNibName:@"RightBarVC_iPad" bundle:[NSBundle mainBundle]];
+          
      }
      else {
           settingVC = [[RightBarVC alloc] initWithNibName:@"RightBarVC" bundle:[NSBundle mainBundle]];
-     }
+              }
      
      UINavigationController *settingsNavController = [[UINavigationController alloc] initWithRootViewController:settingVC];
      
@@ -1325,12 +1396,24 @@
      [settingVC.tabBarItem setImage:[[UIImage imageNamed:@"menu.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      
      settingsNavController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     if(IS_IPAD){
+          [settingVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"menuglowForIpad.png"]
+                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [settingVC.tabBarItem setImage:[[UIImage imageNamed:@"menuForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          settingsNavController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, 30, 15, -30);
+          
+     }
+     
      [settingVC.navigationController setNavigationBarHidden:YES animated:NO];
      
      self.tabBarController = [[UITabBarController alloc] init] ;
      self.tabBarController.viewControllers = [NSArray arrayWithObjects:self.navController, friendsNavController,storeNavController,historyNavController,settingsNavController,nil];
      
      [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubg.png"]];
+     if(IS_IPAD) {
+          [self.tabBarController.tabBar setShadowImage:[[UIImage alloc] init]];
+          [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubgForIpad.png"]];
+     }
      
      //    [self setFieldsAndButtonsText:self.configResponse];
      self.viewController.navigationController.navigationBar.tintColor = [UIColor blackColor];
@@ -1595,6 +1678,7 @@
       */
      language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
+     UIColor *color = [UIColor whiteColor];
      NSString *suffix = @"";
      if(languageCode == 0 ) {
           
@@ -1606,8 +1690,11 @@
           howtoPlay1 = @"Embark on a 1-1 challenge against anyone in the world.";
           howtoPlay2 = @"The faster you answer the more Gems you\'ll collect.";
           howtoPlay3 = @"Claim your rewards.";
-          emailTxt.placeholder = SIGNUP_EMAIL;
-          pswdTxt.placeholder      = SIGNUP_PASSWORD;
+          
+          
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD attributes:@{NSForegroundColorAttributeName: color}];
+          
           //           [forgotPasswordLabel setTitle:SIGNUP_FORGOT_PASS forState:UIControlStateNormal];
           forgot_password_button_text_label.text =SIGNUP_FORGOT_PASS;
           tutoStr1 = TUTORIAL_STR_1;
@@ -1635,11 +1722,11 @@
           forgot_password_button_text_label.text =SIGNUP_FORGOT_PASS_1;
           LoadingTitle = Loading_1;
           orLabel.text = OR_TEXT_1;
-          emailTxt.placeholder = SIGNUP_EMAIL_1;
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_1 attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_1 attributes:@{NSForegroundColorAttributeName: color}];
           alreadyLbl.text = ALREADY_LBL_1;
           languageSelectionLbl.text = LANGUAGE_SELECTION_LBL_1;
           chooseLangLbl.text = CHOOSE_LANG_LBL_1;
-          pswdTxt.placeholder = SIGNUP_PASSWORD_1;
           tutorialLbl.text = TUTORIAL_LBL_1;
           knowledgelbl.text = KNOWLEDGE_LBL_1;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_1;
@@ -1684,14 +1771,15 @@
           orLabel.text = OR_TEXT_2;
           knowledgelbl.text = KNOWLEDGE_LBL_2;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_2;
-          pswdTxt.placeholder = SIGNUP_PASSWORD_2;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_2;
           signuplabelTextbelow.text = SIGNUP_TEXT_2;
           tutoStr1 = TUTORIAL_STR_1_2;
           tutoStr2 = TUTORIAL_STR_2_2;
-          emailTxt.placeholder = SIGNUP_EMAIL_2;
           tutoStr3 = TUTORIAL_STR_3_2;
           tutoStr4 = TUTORIAL_STR_4_2;
+          
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_2 attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_2 attributes:@{NSForegroundColorAttributeName: color}];
           
           HowtoPlay = @"Comment jouer";
           HowWitsStore = @"Comment utiliser ESPRITS magasin";
@@ -1726,9 +1814,10 @@
           tutorialLbl.text = TUTORIAL_LBL_3;
           forgot_password_button_text_label.text =SIGNUP_FORGOT_PASS_3;          knowledgelbl.text = KNOWLEDGE_LBL_3;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_3;
-          pswdTxt.placeholder = SIGNUP_PASSWORD_3;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_3;
-          emailTxt.placeholder = SIGNUP_EMAIL_3;
+          
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_3 attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_3 attributes:@{NSForegroundColorAttributeName: color}];
           
           tutoStr1 = TUTORIAL_STR_1_3;
           tutoStr2 = TUTORIAL_STR_2_3;
@@ -1756,15 +1845,16 @@
      }
      else if(languageCode == 4) {
           LoadingTitle = Loading_4;
-          emailTxt.placeholder = SIGNUP_EMAIL_4;
           forgot_password_button_text_label.text =SIGNUP_FORGOT_PASS_4;
           tutoStr1 = TUTORIAL_STR_1_4;
           tutoStr2 = TUTORIAL_STR_2_4;
           tutoStr3 = TUTORIAL_STR_3_4;
           orLabel.text = OR_TEXT_4;
-          pswdTxt.placeholder = SIGNUP_PASSWORD_4;
           tutoStr4 = TUTORIAL_STR_4_4;
           signuplabelTextbelow.text = SIGNUP_TEXT_4;
+          
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_4 attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_4 attributes:@{NSForegroundColorAttributeName: color}];
           
           howtoPlay1 = @"Inicie um desafio de 1-1 contra qualquer pessoa no mundo.";
           
@@ -2016,7 +2106,7 @@
      [self.view addSubview:_resetPswdView];
      
      UIColor *color = [UIColor whiteColor];
-     _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Enter Email ID" attributes:@{NSForegroundColorAttributeName: color}];
+     _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"ENTER EMAIL ID" attributes:@{NSForegroundColorAttributeName: color}];
      
 }
 - (IBAction)sendResetPswdCall:(id)sender {

@@ -485,7 +485,8 @@
      UIButton *DateSelected = [UIButton buttonWithType:UIButtonTypeCustom];
      [DateSelected setFrame:CGRectMake(50, 350, 85, 30)];
      if(IS_IPAD) {
-          [DateSelected setFrame:CGRectMake(dobView.frame.origin.x-60, dobView.frame.size.height-50, 120, 35)];
+        //  [DateSelected setFrame:CGRectMake(dobVi\0ew.frame.origin.x-60, dobView.frame.size.height-50, 120, 35)];
+          [DateSelected setFrame:CGRectMake(220, 620, 140, 50)];
      }
      [DateSelected setBackgroundImage:[UIImage imageNamed:@"messagebg.png"] forState:UIControlStateNormal];
      [DateSelected setTitle:Done forState:UIControlStateNormal];
@@ -497,7 +498,9 @@
      UIButton *CancelSelected = [UIButton buttonWithType:UIButtonTypeCustom];
      [CancelSelected setFrame:CGRectMake(DateSelected.frame.origin.x+DateSelected.frame.size.width+55, DateSelected.frame.origin.y, 85, 30)];
      if(IS_IPAD) {
-          [CancelSelected setFrame:CGRectMake(DateSelected.frame.origin.x+DateSelected.frame.size.width+30, DateSelected.frame.origin.y, 120, 35)];
+        //  [CancelSelected setFrame:CGRectMake(DateSelected.frame.origin.x+DateSelected.frame.size.width+30, DateSelected.frame.origin.y, 120, 35)];
+         [CancelSelected setFrame:CGRectMake(420, 620, 140, 50)];
+
      }
      [CancelSelected setBackgroundImage:[UIImage imageNamed:@"messagebg.png"] forState:UIControlStateNormal];
      [CancelSelected setTitle:cancel1 forState:UIControlStateNormal];
@@ -721,7 +724,7 @@
      UIButton *DateSelected = [UIButton buttonWithType:UIButtonTypeCustom];
      [DateSelected setFrame:CGRectMake(_datePicker.frame.origin.x+40, countryPicker.frame.origin.y+countryPicker.frame.size.height, 85, 25)];
      if(IS_IPAD) {
-          [DateSelected setFrame:CGRectMake(_datePicker.frame.origin.x+60, countryPicker.frame.origin.y+countryPicker.frame.size.height+80, 120, 35)];
+          [DateSelected setFrame:CGRectMake(220, 620, 140, 50)];
      }
      [DateSelected setBackgroundImage:[UIImage imageNamed:@"messagebg.png"] forState:UIControlStateNormal];
      [DateSelected setTitle:Done forState:UIControlStateNormal];
@@ -733,7 +736,7 @@
      UIButton *CancelSelected = [UIButton buttonWithType:UIButtonTypeCustom];
      [CancelSelected setFrame:CGRectMake(DateSelected.frame.origin.x+DateSelected.frame.size.width+70, DateSelected.frame.origin.y, 86, 25)];
      if(IS_IPAD) {
-          [CancelSelected setFrame:CGRectMake(DateSelected.frame.origin.x+DateSelected.frame.size.width+135, DateSelected.frame.origin.y, 120, 35)];
+         [CancelSelected setFrame:CGRectMake(420, 620, 140, 50)];
      }
      [CancelSelected setBackgroundImage:[UIImage imageNamed:@"messagebg.png"] forState:UIControlStateNormal];
      [CancelSelected setTitle:cancel1 forState:UIControlStateNormal];
@@ -1062,7 +1065,8 @@
           [avatarSelectionBtn setTag:k];
           [AvatarsScrollView addSubview:avatarSelectionBtn];
      }
-     [AvatarsScrollView setContentSize:CGSizeMake((Width*2)+18,y_Position+Height)];
+     [AvatarsScrollView setContentSize:CGSizeMake(AvatarsScrollView.frame.size.width, AvatarsScrollView.frame.size.height+60)];
+
 }
 -(void)loadAvatarsToIpadView{
      ////////////    Add cover image here  ///////////
@@ -1112,7 +1116,8 @@
           }
      }
      
-     [AvatarsScrollView setContentSize:CGSizeMake(AvatarsScrollView.frame.size.width,yPosition+Height)];
+     [AvatarsScrollView setContentSize:CGSizeMake(AvatarsScrollView.frame.size.width, AvatarsScrollView.frame.size.height+60)];
+
      
 }
 

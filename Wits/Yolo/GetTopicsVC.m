@@ -298,7 +298,7 @@
 }
 -(void)fetchTopics{
      //[loadView showInView:self.view withTitle:loadingTitle];
-[_loadingView showInView:self.view withTitle:loadingTitle];
+     [_loadingView showInView:self.view withTitle:loadingTitle];
      NSURL *url = [NSURL URLWithString:SERVER_URL];
      
      NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
@@ -326,7 +326,7 @@
      [request setHTTPBody:postData];
      
      [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response , NSData  *data, NSError *error) {
-                    [_loadingView hide];
+          [_loadingView hide];
           if ( [(NSHTTPURLResponse *)response statusCode] == 200 )
           {
                [customObject stopAnimating];
@@ -567,10 +567,10 @@
           {
                CategoryModel *tempToplic = (topicTblView==tableView)?[topicsArray objectAtIndex:indexPath.row] : [topicsArrayForSearch objectAtIndex:indexPath.row];
                if(tempToplic.isSelected)
-                    returnValue = 140.0f;
+                    returnValue = 260.0f;
                
                else
-                    returnValue = 140.0f;
+                    returnValue = 260.0f;
           }
           else
           {
@@ -634,209 +634,149 @@
                indexCounter = indexPath.row/3;
           }
      }
-     if(tableView.tag == 5) {
-          static NSString *CellIdentifier = @"Cell";
-          UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-          if (cell == nil) {
-               cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-               if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                    //                   cell.accessoryType = UITableViewCellAccessoryNone;
-               }
-          }
-          BOOL manyCells  = [[arrayForBool objectAtIndex:indexPath.section] boolValue];
-          if (!manyCells) {
-               cell.textLabel.text = @"click to enlarge";
-          }
-          else{
-               
-               int row = indexPath.section;
-               if(row == 0){
-                    cell.textLabel.text = [tutorialArray1 objectAtIndex:indexPath.row];
-               }
-               else if(row == 1){
-                    cell.textLabel.text = [tutorialArray2 objectAtIndex:indexPath.row];
-               }
-               else if(row == 2){
-                    cell.textLabel.text = [tutorialArray3 objectAtIndex:indexPath.row];
-               }
-               cell.textLabel.numberOfLines = 4;
-               cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:20];
-               cell.textLabel.textAlignment = NSTextAlignmentLeft;
-               
-               if (languageCode == 1) {
-                    cell.textLabel.textAlignment = NSTextAlignmentRight;
-               }
-               if(IS_IPAD) {
-                    cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:20];
-               }
-               
-               
-          }
-          
-          
-          return cell;
-     }
-     else {
-          if(indexPath.row == 0 || indexPath.row%3 != 2)
+     
+     if(indexPath.row == 0 || indexPath.row%3 != 2)
+     {
+          static NSString *simpleTableIdentifier = @"CustomCell";
+          CustomCell *cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:nil];
+          if (cell == nil)
           {
-               static NSString *simpleTableIdentifier = @"CustomCell";
-               CustomCell *cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:nil];
-               if (cell == nil)
-               {
-                    if ([[UIScreen mainScreen] bounds].size.height == iPad) {
-                         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCell_iPad" owner:self options:nil];
-                         cell = [nib objectAtIndex:0];
-                    }
-                    else{
-                         
-                         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCell" owner:self options:nil];
-                         cell = [nib objectAtIndex:0];
-                    }
+               if ([[UIScreen mainScreen] bounds].size.height == iPad) {
+                    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCell_iPad" owner:self options:nil];
+                    cell = [nib objectAtIndex:0];
                }
-               
-               
-               
-               
-               int i = indexPath.row;
-               int index= i+(i-indexCounter);
-               
-               cell.leftOverLay.tag = index;
-               //               cell.rightOverLay.tag = index;
-               [HelperFunctions setBackgroundColor:cell.leftOverLay];
-               //               [HelperFunctions setBackgroundColor:cell.rightOverLay];
-               
-               CategoryModel *tempTopic = (CategoryModel*)[topicsArray objectAtIndex:index];
-               cell.leftTitle.text = tempTopic.title;
-               
-               cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:15];
-               cell.leftSubTitles.text = [NSString stringWithFormat:@"%lu",(unsigned long)tempTopic.topicsArray.count];
-               cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
-               [cell.leftBtn addTarget:self action:@selector(leftBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
-               cell.leftBtn.tag = index;
-               if(i==0) {
-                    NSString *tempTopicId = tempTopic.category_id;
-                    // here changed
-                    [self settingNameofImage:tempTopicId];
-                    cell.leftImg.image = [UIImage imageNamed:[NSString stringWithFormat:catMaintempImgName]];
-                    cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:catthumbnailtempName]];
+               else{
                     
-                    //                    cell.leftImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@1.png",tempTopic.title]];
-                    //                    NSString *tempTopicId = tempTopic.category_id;
-                    //                    if([tempTopicId isEqual:@"1"])
-                    //                    {
-                    //                    cell.leftImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"General1.png"]];
-                    //                    cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"Generalsmallicon.png"]];
-                    //                    }
-                    
+                    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCell" owner:self options:nil];
+                    cell = [nib objectAtIndex:0];
                }
-               else {
-                    
-                    //                    here changed
-                    //                    cell.leftImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",tempTopic.title]];
-                    //                    cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
-                    
-                    
-                    NSString *tempTopicId = tempTopic.category_id;
-                    // here
-                    [self settingNameofImage:tempTopicId];
-                    cell.leftImg.image = [UIImage imageNamed:[NSString stringWithFormat:catMaintempImgName]];
-                    
-                    cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:catthumbnailtempName]];
-                    
-               }
-               
-               
-               if(index+1 < topicsArray.count){
-                    
-                    CategoryModel *tempTopic = (CategoryModel*)[topicsArray objectAtIndex:index+1];
-                    cell.rightTitle.text = tempTopic.title;
-                    // Here logic Changed images
-                    NSString *tempTopicId = tempTopic.category_id;
-                    // here
-                    [self settingNameofImage:tempTopicId];
-                    cell.rightImg.image = [UIImage imageNamed:[NSString stringWithFormat:catMaintempImgName]];
-                    
-                    cell.rightImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:catthumbnailtempName]];
-                    
-                    //                    cell.rightImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",tempTopic.title]];
-                    //                    cell.rightImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
-                    cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:15];
-                    cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
-                    cell.rightSubTitles.text = [NSString stringWithFormat:@"%lu",(unsigned long)tempTopic.topicsArray.count];
-                    [cell.rightBtn addTarget:self action:@selector(rightBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
-                    cell.rightBtn.tag = index+1;
-                    //cell.leftOverLay.tag = index;
-                    cell.rightOverLay.tag = index+1;
-                    //[HelperFunctions setBackgroundColor:cell.leftOverLay];
-                    [HelperFunctions setBackgroundColor:cell.rightOverLay];
-                    
-               }
-               else {
-                    cell.rightBtn.enabled = false;
-                    cell.rightImg.hidden = true;
-                    cell.rightImgThumbnail.hidden = true;
-                    cell.rightSubTitles.hidden = true;
-                    cell.rightTitle.hidden = true;
-                    cell.rightOverLay.hidden = true;
-               }
-               
-               
-               cell.selectionStyle = NAN;
-               
-               return cell;
           }
-          else
+          int i = indexPath.row;
+          int index= i+(i-indexCounter);
+          
+          cell.leftOverLay.tag = index;
+          [HelperFunctions setBackgroundColor:cell.leftOverLay];
+          
+          CategoryModel *tempTopic = (CategoryModel*)[topicsArray objectAtIndex:index];
+          cell.leftTitle.text = tempTopic.title;
+          
+          cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:15];
+          cell.leftSubTitles.text = [NSString stringWithFormat:@"%lu",(unsigned long)tempTopic.topicsArray.count];
+          cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
+          if(IS_IPAD)
           {
-               
-               static NSString *simpleTableIdentifier = @"CustomCell_SelectedCC";
-               CustomCell_SelectedCC *cell = (CustomCell_SelectedCC *)[tableView dequeueReusableCellWithIdentifier:nil];
-               if (cell == nil)
-               {
-                    if ([[UIScreen mainScreen] bounds].size.height == iPad) {
-                         
-                         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCellSelected_iPad" owner:self options:nil];
-                         cell = [nib objectAtIndex:0];
-                    }
-                    else{
-                         
-                         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCell_SelectedCC" owner:self options:nil];
-                         cell = [nib objectAtIndex:0];
-                    }
-               }
-               int i = indexPath.row;
-               int index= (i+(i-indexCounter))+1;
-               
-               cell.OverlayMain.tag = index;
-               [HelperFunctions setBackgroundColor:cell.OverlayMain];
-               cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:13];
-               
-               CategoryModel *tempTopic = (CategoryModel*)[topicsArray objectAtIndex:index];
-               cell.mainTitle.text = tempTopic.title;
-               cell.mainTitle.font = [UIFont fontWithName:FONT_NAME size:15];
-               cell.mainSubTitle.font = [UIFont fontWithName:FONT_NAME size:38];
-               
-               cell.mainSubTitle.text = [NSString stringWithFormat:@"%lu",(unsigned long)tempTopic.topicsArray.count];
-               
-               
+           cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+               cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
+          }
+          [cell.leftBtn addTarget:self action:@selector(leftBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
+          cell.leftBtn.tag = index;
+          if(i==0) {
+               NSString *tempTopicId = tempTopic.category_id;
                // here changed
+               [self settingNameofImage:tempTopicId];
+               cell.leftImg.image = [UIImage imageNamed:[NSString stringWithFormat:catMaintempImgName]];
+               cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:catthumbnailtempName]];
                
+          }
+          else {
                
                NSString *tempTopicId = tempTopic.category_id;
                // here
                [self settingNameofImage:tempTopicId];
-               cell.mainImg.image = [UIImage imageNamed:[NSString stringWithFormat:catMaintempImgName]];
+               cell.leftImg.image = [UIImage imageNamed:[NSString stringWithFormat:catMaintempImgName]];
                
-               cell.mainImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:catthumbnailtempName]];
-               
-               
-               //               cell.mainImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",tempTopic.title]];
-               //               cell.mainImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
-               [cell.mainBtn addTarget:self action:@selector(mainBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
-               cell.mainBtn.tag = index;
-               [cell.contentView setBackgroundColor:[UIColor clearColor]];
-               return cell;
+               cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:catthumbnailtempName]];
                
           }
+          
+          
+          if(index+1 < topicsArray.count){
+               
+               CategoryModel *tempTopic = (CategoryModel*)[topicsArray objectAtIndex:index+1];
+               cell.rightTitle.text = tempTopic.title;
+               // Here logic Changed images
+               NSString *tempTopicId = tempTopic.category_id;
+               // here
+               [self settingNameofImage:tempTopicId];
+               cell.rightImg.image = [UIImage imageNamed:[NSString stringWithFormat:catMaintempImgName]];
+               
+               cell.rightImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:catthumbnailtempName]];
+               cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:15];
+               cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
+               if(IS_IPAD){
+                    cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+                    cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
+               }
+               cell.rightSubTitles.text = [NSString stringWithFormat:@"%lu",(unsigned long)tempTopic.topicsArray.count];
+               [cell.rightBtn addTarget:self action:@selector(rightBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
+               cell.rightBtn.tag = index+1;
+               cell.rightOverLay.tag = index+1;
+               [HelperFunctions setBackgroundColor:cell.rightOverLay];
+               
+          }
+          else {
+               cell.rightBtn.enabled = false;
+               cell.rightImg.hidden = true;
+               cell.rightImgThumbnail.hidden = true;
+               cell.rightSubTitles.hidden = true;
+               cell.rightTitle.hidden = true;
+               cell.rightOverLay.hidden = true;
+          }
+          [cell setBackgroundColor:[UIColor clearColor]];
+          [cell.contentView setBackgroundColor:[UIColor clearColor]];
+          cell.selectionStyle = NAN;
+          
+          return cell;
+     }
+     else
+     {
+          static NSString *simpleTableIdentifier = @"CustomCell_SelectedCC";
+          CustomCell_SelectedCC *cell = (CustomCell_SelectedCC *)[tableView dequeueReusableCellWithIdentifier:nil];
+          if (cell == nil)
+          {
+               if ([[UIScreen mainScreen] bounds].size.height == iPad) {
+                    
+                    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCellSelected_iPad" owner:self options:nil];
+                    cell = [nib objectAtIndex:0];
+               }
+               else{
+                    
+                    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCell_SelectedCC" owner:self options:nil];
+                    cell = [nib objectAtIndex:0];
+               }
+          }
+          int i = indexPath.row;
+          int index= (i+(i-indexCounter))+1;
+          
+          cell.OverlayMain.tag = index;
+          [HelperFunctions setBackgroundColor:cell.OverlayMain];
+          cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:13];
+          
+          CategoryModel *tempTopic = (CategoryModel*)[topicsArray objectAtIndex:index];
+          cell.mainTitle.text = tempTopic.title;
+          cell.mainTitle.font = [UIFont fontWithName:FONT_NAME size:15];
+          cell.mainSubTitle.font = [UIFont fontWithName:FONT_NAME size:38];
+          if(IS_IPAD)
+          {
+               cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:25];
+               cell.mainTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+               cell.mainSubTitle.font = [UIFont fontWithName:FONT_NAME size:45];
+          }
+          cell.mainSubTitle.text = [NSString stringWithFormat:@"%lu",(unsigned long)tempTopic.topicsArray.count];
+          
+          NSString *tempTopicId = tempTopic.category_id;
+          [self settingNameofImage:tempTopicId];
+          cell.mainImg.image = [UIImage imageNamed:[NSString stringWithFormat:catMaintempImgName]];
+          
+          cell.mainImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:catthumbnailtempName]];
+          
+          [cell.mainBtn addTarget:self action:@selector(mainBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
+          cell.mainBtn.tag = index;
+          [cell setBackgroundColor:[UIColor clearColor]];
+          [cell.contentView setBackgroundColor:[UIColor clearColor]];
+          cell.selectionStyle = NAN;
+          return cell;
+          
      }
      return nil;
 }
@@ -871,128 +811,69 @@
 #pragma mark - TableView Delegates
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-     if(tableView.tag == 5) {
-          
-          UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-          UIImageView *backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-          headerView.tag                  = section;
-          headerView.backgroundColor      = [UIColor whiteColor];
-          UILabel *headerString           = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20-50, 50)];
-          
-          if(IS_IPAD) {
-               headerView.frame = CGRectMake(0, 0, 597, 90);
-               backgroundImage.frame = CGRectMake(0, 0, 597, 90);
-               headerString.frame = CGRectMake(0, 0, 597, 90);
-               
-               
-          }
-          BOOL manyCells = [[arrayForBool objectAtIndex:section] boolValue];
-          
-          if(section == 0){
-               if (!manyCells) {
-                    headerString.text = HowtoPlay;
-                    
-               }else{
-                    headerString.text = HowtoPlay;
-               }
-               backgroundImage.image = [UIImage imageNamed:@"blueBar.png"];
-          }
-          else if (section == 1){
-               
-               if (!manyCells) {
-                    headerString.text = HowtoEarnPoints;
-               }else{
-                    headerString.text = HowtoEarnPoints;
-               }
-               backgroundImage.image = [UIImage imageNamed:@"pinkBar.png"];
-               
-               
-          }
-          [headerView addSubview:backgroundImage];
-          headerString.textAlignment      = NSTextAlignmentCenter;
-          headerString.textColor          = [UIColor whiteColor];
-          if(IS_IPAD) {
-               headerString.font = [UIFont fontWithName:FONT_NAME size:20];
-          }
-          [headerView addSubview:headerString];
-          
-          UITapGestureRecognizer  *headerTapped   = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sectionHeaderTapped:)];
-          [headerView addGestureRecognizer:headerTapped];
-          
-          return headerView;
-     }
+     
      return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-     if(tableView.tag == 5) {
+     if(indexPath.row < topicsArray.count) {
           
-     }
-     else {
-          if(indexPath.row < topicsArray.count) {
-               
-               CategoryModel *tempTopic  = (topicTblView==tableView)?[topicsArray objectAtIndex:indexPath.row] : [topicsArrayForSearch objectAtIndex:indexPath.row];
-               
-               if(tempTopic.topicsArray.count > 0) {
-                    SubTopicVC *tempVC = [[SubTopicVC alloc] initWithParentTopicModel:tempTopic];
-                    [self.navigationController pushViewController:tempVC animated:YES];
-               }
-               else {
-                    if ([SharedManager getInstance].isFriendListSelected) {
-                         
-                         CategoryModel *subTopic = (topicTblView==tableView)?[topicsArray objectAtIndex:indexPath.row] : [topicsArrayForSearch objectAtIndex:indexPath.row];
-                         
-                         ChallengeFriendsVC *challenge = [[ChallengeFriendsVC alloc] initWithTopic_ID:@"1" andSubTopic:subTopic.category_id];
-                         
-                         [self.navigationController pushViewController:challenge animated:YES];
-                    }
-                    else{
-                         if(tempTopic.isSelected)
-                              tempTopic.isSelected = false;
-                         else
-                              tempTopic.isSelected = true;
-                         
-                         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-                    }
-               }
+          CategoryModel *tempTopic  = (topicTblView==tableView)?[topicsArray objectAtIndex:indexPath.row] : [topicsArrayForSearch objectAtIndex:indexPath.row];
+          
+          if(tempTopic.topicsArray.count > 0) {
+               SubTopicVC *tempVC = [[SubTopicVC alloc] initWithParentTopicModel:tempTopic];
+               [self.navigationController pushViewController:tempVC animated:YES];
           }
           else {
-               topicsArray = [[SharedManager getInstance] categoriesArray];
-               CategoryModel *tempTopic  = (topicTblView==tableView)?[topicsArray objectAtIndex:indexPath.row] : [topicsArrayForSearch objectAtIndex:indexPath.row];
-               
-               if(tempTopic.topicsArray.count > 0) {
-                    SubTopicVC *tempVC = [[SubTopicVC alloc] initWithParentTopicModel:tempTopic];
-                    [self.navigationController pushViewController:tempVC animated:YES];
+               if ([SharedManager getInstance].isFriendListSelected) {
+                    
+                    CategoryModel *subTopic = (topicTblView==tableView)?[topicsArray objectAtIndex:indexPath.row] : [topicsArrayForSearch objectAtIndex:indexPath.row];
+                    
+                    ChallengeFriendsVC *challenge = [[ChallengeFriendsVC alloc] initWithTopic_ID:@"1" andSubTopic:subTopic.category_id];
+                    
+                    [self.navigationController pushViewController:challenge animated:YES];
                }
-               else {
-                    if ([SharedManager getInstance].isFriendListSelected) {
-                         
-                         CategoryModel *subTopic = (topicTblView==tableView)?[topicsArray objectAtIndex:indexPath.row] : [topicsArrayForSearch objectAtIndex:indexPath.row];
-                         
-                         ChallengeFriendsVC *challenge = [[ChallengeFriendsVC alloc] initWithTopic_ID:@"1" andSubTopic:subTopic.category_id];
-                         
-                         [self.navigationController pushViewController:challenge animated:YES];
-                    }
-                    else{
-                         if(tempTopic.isSelected)
-                              tempTopic.isSelected = false;
-                         else
-                              tempTopic.isSelected = true;
-                         
-                         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-                    }
+               else{
+                    if(tempTopic.isSelected)
+                         tempTopic.isSelected = false;
+                    else
+                         tempTopic.isSelected = true;
+                    
+                    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+               }
+          }
+     }
+     else {
+          topicsArray = [[SharedManager getInstance] categoriesArray];
+          CategoryModel *tempTopic  = (topicTblView==tableView)?[topicsArray objectAtIndex:indexPath.row] : [topicsArrayForSearch objectAtIndex:indexPath.row];
+          
+          if(tempTopic.topicsArray.count > 0) {
+               SubTopicVC *tempVC = [[SubTopicVC alloc] initWithParentTopicModel:tempTopic];
+               [self.navigationController pushViewController:tempVC animated:YES];
+          }
+          else {
+               if ([SharedManager getInstance].isFriendListSelected) {
+                    
+                    CategoryModel *subTopic = (topicTblView==tableView)?[topicsArray objectAtIndex:indexPath.row] : [topicsArrayForSearch objectAtIndex:indexPath.row];
+                    
+                    ChallengeFriendsVC *challenge = [[ChallengeFriendsVC alloc] initWithTopic_ID:@"1" andSubTopic:subTopic.category_id];
+                    
+                    [self.navigationController pushViewController:challenge animated:YES];
+               }
+               else{
+                    if(tempTopic.isSelected)
+                         tempTopic.isSelected = false;
+                    else
+                         tempTopic.isSelected = true;
+                    
+                    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
                }
           }
      }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-     if(tableView.tag == 5) {
-          if(IS_IPAD) {
-               return 89;
-          }
-          return 49;
-     }
-     else return 0;
+     
+     return 0;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
      return 0;

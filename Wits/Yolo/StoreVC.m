@@ -705,8 +705,6 @@
                     NSString *emailTitle = [NSString stringWithFormat:@"Cash Out Request [%@]",[[SharedManager getInstance] _userProfile].display_name];
                     // Email Content
                     
-                    
-                    
                     NSString *messageBody = [NSString stringWithFormat:@"Cash Out Request \n User : %@ \n Payment Method : %@ \n Amount : %@ \n Name : %@ \n User Email : %@ \n Contact Email : %@ \n Contact Number : %@ \n Address : %@ \n Note: This request will be processed within 5-10 working days.",[NSString stringWithFormat:@"%@",[[SharedManager getInstance] _userProfile].display_name], paymentMethod, cashTxt.text, _O1name.text, _O1emailAccount.text, _O1ContactAccount.text, _O1ContactNumber.text, _O1Address.text];
                     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
                     mc.mailComposeDelegate = self;

@@ -59,7 +59,6 @@ CustomLoading *loaderObj;
           MKNetworkOperation *op = [engine operationWithURLString:[SharedManager getInstance]._userProfile.profile_image params:Nil httpMethod:@"GET"];
           
           [op onCompletion:^(MKNetworkOperation *completedOperation) {
-               
                [senderProfileImageView setImage:[completedOperation responseImage]];
                
           } onError:^(NSError* error) {

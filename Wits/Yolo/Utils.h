@@ -117,8 +117,6 @@
 #define WITS_STORE_BUY_BUTTON_100_4 @"Compre 100 Gems"
 
 
-
-
 #define WITS_STORE_TITLE @"WITS Store"
 #define CASHABLE_TITLE @"Gems :"
 #define NON_CASHABLE_TITLE @"Non Cashable : "
@@ -398,7 +396,7 @@
 
 
 #define SIGNUP_TEXT @" SIGN UP"
-#define SIGIN_TEXT @" SIGN UP"
+#define SIGIN_TEXT @" SIGN IN"
 #define OR_TEXT @"  OR"
 #define SIGNUP_EMAIL @"  Email"
 #define SIGNUP_DISPLAY_NAME @"  Display Name"

@@ -57,7 +57,6 @@ static NSString * const kClientId = @"1020327276316-t4kr4gqvabt8dl5rscsblcco5nq7
     NSString *language;
     int languageCode;
     
-    
     NSString *HowtoPlay;
     NSString *HowWitsStore;
     NSString *HowtoEarnPoints;

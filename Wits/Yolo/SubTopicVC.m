@@ -254,7 +254,7 @@
           float returnValue;
           if ([[UIScreen mainScreen] bounds].size.height == iPad)
           {
-               returnValue = 140.0f;
+               returnValue = 260.0f;
           }
           else
           {
@@ -358,7 +358,7 @@
                     cell.textLabel.textAlignment = NSTextAlignmentRight;
                }
                if(IS_IPAD) {
-                    cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:20];
+                    cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:25];
                }
           }
           return cell;
@@ -389,6 +389,11 @@
                // here
                cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:15];
                 cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
+               if(IS_IPAD)
+               {
+                    cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+                    cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
+               }
                cell.leftOverLay.tag = index;
                //cell.rightOverLay.tag = index;
                [HelperFunctions setBackgroundColor:cell.leftOverLay];
@@ -465,7 +470,13 @@
                     
                     
                      cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:15];
-                                         cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
+                     cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
+                    if(IS_IPAD)
+                    {
+                         cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+                         cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
+                         
+                    }
                    
                     if(tempTopic.subTopicsArray.count > 0) {
                          cell.rightSubTitles.text = [NSString stringWithFormat:@"%lu",(unsigned long)tempTopic.subTopicsArray.count];
@@ -488,7 +499,8 @@
                     cell.rightTitle.hidden = true;
                }
                cell.selectionStyle = NAN;
-               
+               [cell setBackgroundColor:[UIColor clearColor]];
+               [cell.contentView setBackgroundColor:[UIColor clearColor]];
                return cell;
           }
           else
@@ -514,7 +526,11 @@
                cell.mainTitle.text = tempTopic.title;
                 cell.mainTitle.font = [UIFont fontWithName:FONT_NAME size:15];
                cell.mainSubTitle.font = [UIFont fontWithName:FONT_NAME size:38];
-               
+               if(IS_IPAD)
+               {
+                    cell.mainTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+                    cell.mainSubTitle.font = [UIFont fontWithName:FONT_NAME size:45];
+               }
                if(tempTopic.subTopicsArray.count > 0) {
                     cell.mainSubTitle.text = [NSString stringWithFormat:@"%lu",(unsigned long)tempTopic.subTopicsArray.count];
                }
@@ -537,6 +553,7 @@
 //               cell.mainImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
                [cell.mainBtn addTarget:self action:@selector(mainBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
                cell.mainBtn.tag = index;
+               [cell setBackgroundColor:[UIColor clearColor]];
                [cell.contentView setBackgroundColor:[UIColor clearColor]];
                return cell;
                
@@ -2205,8 +2222,9 @@
      transition.subtype = kCATransitionFromBottom;
      [_gameModView.layer addAnimation:transition forKey:nil];
      _gameModView.hidden = false;
-     [self.view addSubview:_gameModView];
      
+     [self.view addSubview:_gameModView];
+     [self.tabBarController.tabBar setHidden:true];
      _searchingLoaderView.hidden = false;
      
      //     [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gem.png"] forState:UIControlStateNormal];

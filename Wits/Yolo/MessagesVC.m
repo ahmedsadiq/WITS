@@ -377,7 +377,9 @@
 //     
 //     }
      
-     cell.selectionStyle =  NAN;
+     [cell setBackgroundColor:[UIColor clearColor]];
+     [cell.contentView setBackgroundColor:[UIColor clearColor]];
+     cell.selectionStyle = NAN;
      
      return cell;
 }

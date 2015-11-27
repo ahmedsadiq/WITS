@@ -236,7 +236,7 @@
           float returnValue;
           if ([[UIScreen mainScreen] bounds].size.height == iPad)
           {
-               returnValue = 140.0f;
+               returnValue = 260.0f;
           }
           else
           {
@@ -347,6 +347,9 @@
                     cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:20];
                }
           }
+          [cell setBackgroundColor:[UIColor clearColor]];
+          [cell.contentView setBackgroundColor:[UIColor clearColor]];
+          cell.selectionStyle = NAN;
           return cell;
      }
      else {
@@ -396,6 +399,14 @@
                     cell.rightSubTitles.text = @"";
                     cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:15];
                     cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:13];
+                    if(IS_IPAD)
+                    {
+                         cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:25];
+                         cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+                         cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
+                         cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+                         cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
+                    }
                     cell.rightOverLay.tag = index;
                     [HelperFunctions setBackgroundColor:cell.rightOverLay];
                     // Changes here
@@ -415,6 +426,8 @@
                     cell.rightSubTitles.hidden = true;
                     cell.rightTitle.hidden = true;
                }
+               [cell setBackgroundColor:[UIColor clearColor]];
+               [cell.contentView setBackgroundColor:[UIColor clearColor]];
                cell.selectionStyle = NAN;
                
                return cell;
@@ -443,6 +456,11 @@
                NSString * tempId = tempTopic.subTopic_id;
                cell.mainTitle.font = [UIFont fontWithName:FONT_NAME size:15];
                cell.mainSubTitle.font = [UIFont fontWithName:FONT_NAME size:13];
+               if(IS_IPAD)
+               {
+                    cell.mainTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+                    cell.mainSubTitle.font = [UIFont fontWithName:FONT_NAME size:45];
+               }
                [self settingNameofImage:tempId];
                cell.mainImg.image = [UIImage imageNamed:[NSString stringWithFormat:ThirdLayerMaintempImgName]];
                
@@ -451,7 +469,9 @@
                cell.mainSubTitle.text = @"";
                [cell.mainBtn addTarget:self action:@selector(mainBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
                cell.mainBtn.tag = index;
+               [cell setBackgroundColor:[UIColor clearColor]];
                [cell.contentView setBackgroundColor:[UIColor clearColor]];
+               cell.selectionStyle = NAN;
                return cell;
                
           }
