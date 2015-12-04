@@ -87,7 +87,7 @@
           cashOutBtn.enabled = NO;
           [cashOutBtn setBackgroundImage:[UIImage imageNamed:@"disableBar.png"] forState:UIControlStateNormal];
      }
-     
+     cashablePoints.font = [UIFont fontWithName:STORE_FONT_NAME size:20];
      _ageemntTitle.font = [UIFont fontWithName:FONT_NAME size:21];
      _txtAgreemnt.font = [UIFont fontWithName:FONT_NAME size:17];
      _acceptBtn.font = [UIFont fontWithName:FONT_NAME size:16];
@@ -513,6 +513,7 @@
           pointForPurchase = 100;
           [shared purchase100Points];
      }
+    
 }
 
 - (IBAction)buy500Pressed:(id)sender {

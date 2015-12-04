@@ -43,7 +43,7 @@
      [self setLanguageForScreen];
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
-          emailOBJ = (AppDelegate *) [[UIApplication sharedApplication]delegate];
+     emailOBJ = (AppDelegate *) [[UIApplication sharedApplication]delegate];
      
      // Do any additional setup after loading the view from its nib.
      loadingView = [[LoadingView alloc] init];
@@ -126,7 +126,7 @@
           forgotEmailField.placeholder = LOGIN_FORGOT_PSWD_3;
           loginLbl.text = LOGIN_LOGIN_BTN_3;
           forgetpassLbl.text = @"Olvidado Contraseña?";
-            forgetPasswordTitle.text = @"Olvidado Contraseña";
+          forgetPasswordTitle.text = @"Olvidado Contraseña";
           Ok = OK_BTN_3;
           _verifyTxt.text = @"Para activar su cuenta WITS, por favor haga click en el vínculo del mensaje de correo electrónico de comprobación.";
           _verifyTitle.text = @"Comprobar su cuenta WITS";
@@ -144,7 +144,7 @@
           forgotEmailField.placeholder = LOGIN_FORGOT_PSWD_4;
           loginLbl.text = LOGIN_LOGIN_BTN_4;
           forgetpassLbl.text = @"Esqueceu Senha?";
-           forgetPasswordTitle.text = @"Esqueceu Senha?";
+          forgetPasswordTitle.text = @"Esqueceu Senha?";
           Ok = OK_BTN_4;
           _verifyTitle.text = @"Verifique sua conta WITS";
           _verifyTxt.text = @"Para ativar sua conta, Por favor click no link the verificação que foi enviado para ";
@@ -155,7 +155,7 @@
           [backBtn setTitle:BACK_BTN_4 forState:UIControlStateNormal];
           [loginBtn setTitle:LOGIN_LOGIN_BTN_4 forState:UIControlStateNormal];
      }
-
+     
      if(languageCode == 0 ) {
           
           
@@ -196,7 +196,7 @@
           
           
      }
-
+     
      
      [_verifyOkPressed setTitle:Ok forState:UIControlStateNormal];
      if (languageCode == 1) {
@@ -215,7 +215,7 @@
 - (IBAction)verifyOkPressed:(id)sender {
      
      [VerificationView removeFromSuperview];
-   
+     
      
 }
 
@@ -227,9 +227,9 @@
 
 -(IBAction)LoginInuser:(id)sender{
      
-   
+     
      emailOBJ.LoginEmail = emailField.text;
-          NSLog(@"Login User");
+     NSLog(@"Login User");
      
      if(![self validateEmail:emailField.text])
      {
@@ -313,7 +313,7 @@
           }
           else if ([flag isEqualToNumber:[NSNumber numberWithInt:SUCCESSFUL_LOGIN_FLAG]])
           {
-            
+               
                [SharedManager getInstance].userID = [responseDict objectForKey:@"user_id"];
                [SharedManager getInstance].sessionID = [responseDict objectForKey:@"session_id"];
                
@@ -454,11 +454,11 @@
           }
           [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
      }
-          /*
-           UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter some valid email address." delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-           
-           [alertView show];
-           return;*/
+     /*
+      UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter some valid email address." delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+      
+      [alertView show];
+      return;*/
      
      else{
           
@@ -487,43 +487,43 @@
           NSDictionary *responseDict = [completedOperation responseJSON];
           //NSString *flag = [responseDict objectForKey:@"flag"];
           NSString *message = [responseDict objectForKey:@"message"];
-     
+          
           
           [loadingView hide];
           forgotEmailField.text = nil;
           if ([message isEqualToString:@"Password Reset Email has been sent successfully"]){
                [forgotEmailField resignFirstResponder];
-          NSString *emailMsg;
-          NSString *title;
-          NSString *cancel;
-          if (languageCode == 0 ) {
-               emailMsg = @"Password Reset Email has been sent successfully";
-               title = @"Password Reset";
-               cancel = CANCEL;
-          } else if(languageCode == 1) {
-               emailMsg = @"تم إرسال البريد الإلكتروني لإعادة تعيين كلمة المرور بنجاح";
-               title = @"إعادة تعيين كلمة المرور";
-               cancel = CANCEL_1;
-          }else if (languageCode == 2){
-               emailMsg = @"El correo electrónico del cambio de la contraseña ha sido enviado satisfactoriamente";
-               title = @"réinitialiser le mot de";
-               cancel = CANCEL_2;
-          }else if (languageCode == 3){
-               emailMsg = @"L'e-mail de réinitialisation de mot de passe vous a été envoyé avec succès.";
-               title = @"Restablecer contraseña";
-               cancel = CANCEL_3;
-          }else if (languageCode == 4){
-               emailMsg = @"Foi enviado um e-mail para restabelecer a senha";
-               title = @"Redefinir senha";
-               cancel = CANCEL_4;
-          }
-          
-          [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:Ok OtherButton:nil];
-          
-          /*  UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Alert" message:message delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-           [alert show];*/
+               NSString *emailMsg;
+               NSString *title;
+               NSString *cancel;
+               if (languageCode == 0 ) {
+                    emailMsg = @"Password Reset Email has been sent successfully";
+                    title = @"Password Reset";
+                    cancel = CANCEL;
+               } else if(languageCode == 1) {
+                    emailMsg = @"تم إرسال البريد الإلكتروني لإعادة تعيين كلمة المرور بنجاح";
+                    title = @"إعادة تعيين كلمة المرور";
+                    cancel = CANCEL_1;
+               }else if (languageCode == 2){
+                    emailMsg = @"El correo electrónico del cambio de la contraseña ha sido enviado satisfactoriamente";
+                    title = @"réinitialiser le mot de";
+                    cancel = CANCEL_2;
+               }else if (languageCode == 3){
+                    emailMsg = @"L'e-mail de réinitialisation de mot de passe vous a été envoyé avec succès.";
+                    title = @"Restablecer contraseña";
+                    cancel = CANCEL_3;
+               }else if (languageCode == 4){
+                    emailMsg = @"Foi enviado um e-mail para restabelecer a senha";
+                    title = @"Redefinir senha";
+                    cancel = CANCEL_4;
+               }
+               
+               [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:Ok OtherButton:nil];
+               
+               /*  UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Alert" message:message delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+                [alert show];*/
           }else if ([message isEqualToString:@"Provided Email not registered!"]){
-          
+               
                NSString *emailMsg;
                NSString *title;
                NSString *cancel;
@@ -551,9 +551,9 @@
                
                [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:Ok OtherButton:nil];
                
-
+               
           }
-        
+          
      } onError:^(NSError* error) {
           
           //[loading hide];
@@ -719,7 +719,7 @@
      }
      else {
           historyViewController = [[EarnFreePointsViewController alloc] initWithNibName:@"EarnFreePointsViewController" bundle:[NSBundle mainBundle]];
-               }
+     }
      UINavigationController *historyNavController = [[UINavigationController alloc] initWithRootViewController:historyViewController];
      
      [historyViewController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"referralglow.png"]
@@ -754,7 +754,7 @@
           [self.tabBarController.tabBar setShadowImage:[[UIImage alloc] init]];
           [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"menubgForIpad.png"]];
      }
-    
+     
      
      //    [self setFieldsAndButtonsText:self.configResponse];
      self.viewController.navigationController.navigationBar.tintColor = [UIColor blackColor];

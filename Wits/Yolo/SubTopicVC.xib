@@ -7,12 +7,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubTopicVC">
             <connections>
                 <outlet property="GemsDialogView" destination="cNR-qp-NaP" id="M0b-O2-uXa"/>
+                <outlet property="PlayNowLabel" destination="XLZ-QF-deR" id="Tan-en-vJL"/>
                 <outlet property="backBtn1" destination="rso-ti-UNu" id="B6L-dO-Kfh"/>
                 <outlet property="backBtn2" destination="trg-g8-4uA" id="Tf2-eZ-dcD"/>
                 <outlet property="buynowlabel" destination="pkQ-Hh-P9r" id="OBg-df-g3y"/>
+                <outlet property="challengeAFriend" destination="SJb-LQ-puS" id="zqH-16-1rJ"/>
                 <outlet property="challengeNowBtn" destination="pW9-Gb-xOZ" id="d3s-C4-1Uz"/>
                 <outlet property="expandView" destination="6iL-vG-rQC" id="Oqn-Qr-o3H"/>
                 <outlet property="firstdot" destination="QmL-qm-BXx" id="1gL-bL-oPf"/>
+                <outlet property="forGemsLable" destination="R5h-X1-vd4" id="hJl-gw-rmA"/>
+                <outlet property="forPointsLabel" destination="vkL-M3-Ofb" id="Twy-AR-ws9"/>
                 <outlet property="fourthDot" destination="6g4-jf-bQQ" id="izH-op-eVE"/>
                 <outlet property="gameModView" destination="D8M-ps-w9K" id="jR7-Om-zLz"/>
                 <outlet property="gemImage" destination="Mhk-f6-6we" id="e31-48-Moj"/>
@@ -52,7 +56,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="cLI-Gp-vZU">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbg.png" id="cLI-Gp-vZU">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -78,7 +82,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="Fea-ps-nc5">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbg.png" id="Fea-ps-nc5">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -116,11 +120,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="trg-g8-4uA">
-                    <rect key="frame" x="81" y="527" width="162" height="32"/>
+                    <rect key="frame" x="100" y="510" width="120" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                    <state key="normal" title="Cancel" backgroundImage="btnbg_gameMod.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Cancel" backgroundImage="btnbgpressed.png">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -163,7 +167,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="sY5-Wq-tF9">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbg.png" id="sY5-Wq-tF9">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -360,9 +364,9 @@
         </view>
         <view contentMode="scaleToFill" id="D8M-ps-w9K">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparentbg.png" id="7nf-li-LUN">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbg.png" id="7nf-li-LUN">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -376,65 +380,100 @@
                         <action selector="gameModCanelBtnPressed:" destination="-1" eventType="touchUpInside" id="Q9d-gp-afd"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o2i-qh-yUZ">
-                    <rect key="frame" x="78" y="472" width="164" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                    <state key="normal" title="GO" backgroundImage="btnbg_gameMod.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="gmGoPressed:" destination="-1" eventType="touchUpInside" id="dh7-X2-x9T"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameMode-Logo.png" id="aj3-s5-OSD">
                     <rect key="frame" x="62" y="80" width="196" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pW9-Gb-xOZ">
-                    <rect key="frame" x="187" y="199" width="89" height="80"/>
+                    <rect key="frame" x="187" y="190" width="90" height="73"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="ChallengeEnglish.png">
+                    <state key="normal" backgroundImage="Newchallengenow.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="highlighted" backgroundImage="Newchallengenowglow.png"/>
                     <connections>
                         <action selector="challengeNowPressed:" destination="-1" eventType="touchUpInside" id="aP3-Kp-P10"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o58-SI-2Ct">
-                    <rect key="frame" x="44" y="319" width="80" height="86"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="gem.png">
+                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kh9-oL-Tlk">
+                    <rect key="frame" x="45" y="190" width="90" height="67"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="Newplaynowglow.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="highlighted" backgroundImage="Newplaynowglow.png"/>
                     <connections>
-                        <action selector="gmGemsPressed:" destination="-1" eventType="touchUpInside" id="4mk-ob-aGm"/>
+                        <action selector="gmPlayNowPressed:" destination="-1" eventType="touchUpInside" id="iJM-YG-6cj"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="isn-Ga-p3c">
-                    <rect key="frame" x="187" y="314" width="89" height="91"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="starglow.png">
+                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o58-SI-2Ct">
+                    <rect key="frame" x="45" y="325" width="70" height="52"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="forgemsNew.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="highlighted" backgroundImage="forgemsglowNew.png"/>
                     <connections>
-                        <action selector="gmStarsPressed:" destination="-1" eventType="touchUpInside" id="ijA-PS-4K0"/>
+                        <action selector="gmGemsPressed:" destination="-1" eventType="touchUpInside" id="4mk-ob-aGm"/>
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="jqK-tB-bWV">
                     <rect key="frame" x="30" y="296" width="260" height="1"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kh9-oL-Tlk">
-                    <rect key="frame" x="44" y="199" width="80" height="80"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o2i-qh-yUZ">
+                    <rect key="frame" x="78" y="470" width="164" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="PlayNowGlowEnglish.png">
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                    <state key="normal" title="GO" backgroundImage="btnbgpressed.png">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="btnbg_gameMod.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="gmGoPressed:" destination="-1" eventType="touchUpInside" id="dh7-X2-x9T"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Gems" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R5h-X1-vd4">
+                    <rect key="frame" x="32" y="390" width="100" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="isn-Ga-p3c">
+                    <rect key="frame" x="210" y="320" width="60" height="58"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="forpintsglowNew.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="gmPlayNowPressed:" destination="-1" eventType="touchUpInside" id="iJM-YG-6cj"/>
+                        <action selector="gmStarsPressed:" destination="-1" eventType="touchUpInside" id="ijA-PS-4K0"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vkL-M3-Ofb">
+                    <rect key="frame" x="190" y="390" width="100" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Now!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XLZ-QF-deR">
+                    <rect key="frame" x="30" y="270" width="100" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenge a Friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SJb-LQ-puS">
+                    <rect key="frame" x="165" y="270" width="140" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -442,13 +481,14 @@
         </view>
     </objects>
     <resources>
-        <image name="ChallengeEnglish.png" width="177" height="127"/>
-        <image name="PlayNowGlowEnglish.png" width="134" height="142"/>
+        <image name="Newchallengenow.png" width="109" height="88"/>
+        <image name="Newchallengenowglow.png" width="109" height="89"/>
+        <image name="Newplaynowglow.png" width="115" height="86"/>
         <image name="ame1.png" width="168" height="184"/>
         <image name="ame1_glow.png" width="88" height="90"/>
-        <image name="bg.png" width="540" height="960"/>
         <image name="blueBar.png" width="91" height="31"/>
         <image name="btnbg_gameMod.png" width="290" height="72"/>
+        <image name="btnbgpressed.png" width="484" height="98"/>
         <image name="buynowlbl.png" width="67" height="66"/>
         <image name="close.png" width="56" height="56"/>
         <image name="crossbtn.png" width="128" height="128"/>
@@ -456,17 +496,19 @@
         <image name="done_btn.png" width="65" height="25"/>
         <image name="dotblack.png" width="26" height="27"/>
         <image name="dotglow.png" width="45" height="45"/>
+        <image name="forgemsNew.png" width="86" height="64"/>
+        <image name="forgemsglowNew.png" width="86" height="63"/>
+        <image name="forpintsglowNew.png" width="75" height="72"/>
         <image name="gameMode-Logo.png" width="263" height="48"/>
-        <image name="gem.png" width="108" height="129"/>
         <image name="header-ipad.png" width="640" height="85"/>
         <image name="header_bar.png" width="320" height="1"/>
         <image name="line.png" width="466" height="2"/>
+        <image name="newbg.png" width="540" height="960"/>
         <image name="opponentpic.png" width="151" height="151"/>
         <image name="picbg.png" width="151" height="151"/>
         <image name="pinkBar.png" width="280" height="40"/>
         <image name="starg1 (1).png" width="106" height="99"/>
         <image name="starg1.png" width="339" height="297"/>
-        <image name="starglow.png" width="135" height="149"/>
         <image name="transparentbg.png" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

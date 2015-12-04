@@ -115,7 +115,14 @@
      guidelineLbl.font = [UIFont fontWithName:FONT_NAME size:10];
      senderNameLbl.font = [UIFont fontWithName:FONT_NAME size:14];
      _searchOppLbl.font = [UIFont fontWithName:FONT_NAME size:18];
-     
+     if(IS_IPAD)
+     {
+          PlayNowLabel.font = [UIFont fontWithName:FONT_NAME size:18];
+          challengeAFriend.font = [UIFont fontWithName:FONT_NAME size:18];
+          forGemsLable.font = [UIFont fontWithName:FONT_NAME size:18];
+          forPointsLabel.font = [UIFont fontWithName:FONT_NAME size:18];
+          
+     }
      [topicTblView reloadData];
      [self SendSelfImageView];
      
@@ -1211,6 +1218,25 @@
      {
           NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
           [sharedManager sendEvent:@"register" andParameters:registerDictionary];
+          NSArray* args = packet.args;
+          NSDictionary* arg = args[0];
+          
+          NSString *isVerified = [arg objectForKey:@"msg"];
+          if([isVerified isEqualToString:@"verified"] ){
+               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+               languageCode = [language intValue];
+               
+               if(appDelegate.friendToBeChalleneged) {
+                    
+                    NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",appDelegate.friendToBeChalleneged.friendID,@"friend_id",@"3",@"type",subTopic.subTopic_id,@"type_id",language,@"language",requestType,@"challenge_type", nil];
+                    [sharedManager sendEvent:@"sendChallenge" andParameters:registerDictionary];
+                    
+               }
+               else {
+                    NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"3",@"type",subTopic.subTopic_id,@"type_id",language,@"language",@"false",@"is_cancel",requestType, @"request_type", nil];
+                    [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionary];
+               }
+          }
      }
      
      else if([packet.name isEqualToString:@"register"])
@@ -1531,21 +1557,26 @@
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
      NSString *suffix = @"";
+     PlayNowLabel.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
+     challengeAFriend.textColor = [UIColor whiteColor];
+     forPointsLabel.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
+     forGemsLable.textColor = [UIColor whiteColor];
      if(languageCode == 0 ) {
-          
+          loadingTitle = Loading;
           searchBar.placeholder = SEARCH_CATEGORY;
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gem.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"starglow.png"] forState:UIControlStateNormal];
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowEnglish.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeEnglish.png"] forState:UIControlStateNormal];
           
+          
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynowglow.png"] forState:UIControlStateNormal];
+          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenow.png"] forState:UIControlStateNormal];
           
           knowledgeLbl.text = KNOWLEDGE_LBL;
           tutoDesc1.text = TUTORIAL_DESC_LBL;
           tutoDesc2.text = TUTORIAL_DESC_LBL2;
           
           howtoPlay1 = @"Embark on a 1-1 challenge against anyone in the world.";
-          howtoPlay2 = @"The faster you answer the more Gems you\'ll collect.";
+          howtoPlay2 = @"The faster you answer the more Gems you'll collect.";
           howtoPlay3 = @"Claim your rewards.";
           
           howtouseStoreDesc = @"Sign up now and get your hands on 1000 free Gems.";
@@ -1564,51 +1595,43 @@
           questionTxt.placeholder = @"Enter a Question";
           
           homeLbl.text = HOME_BTN;
-          CategoriesLbl.text = CATEGORIES;
+          CategoriesLbl.text = @"Sub Topics";
           adContentLbl.text = ADD_CONTENT;
           guidelineLbl.text = GUIDELINES;
           
-          [backBtn3 setTitle:BACK_BTN forState:UIControlStateNormal];
+          // [backBtn2 setTitle:BACK_BTN forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN forState:UIControlStateNormal];
-          [backBtn2 setTitle:BACK_BTN forState:UIControlStateNormal];
      }
      else if(languageCode == 1 ) {
           
-          
-          
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsArabic.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowArabic.png"] forState:UIControlStateNormal];
+          loadingTitle = Loading_1;
+          searchBar.placeholder = SEARCH_CATEGORY_1;
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
           [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowArabic.png"] forState:UIControlStateNormal];
           [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeArabic.png"] forState:UIControlStateNormal];
-          
-          searchBar.placeholder = SEARCH_CATEGORY_1;
           howtoPlay1 = @"أسرع في دخول تحدي ضد أي شخص في العالم ";
           howtoPlay2 = @"اسرع في الاجابة للحصول على نقاط اكثر";
           howtoPlay3 = @"قم باستبدال جواهرك بنقود حقيقية.";
-          
           howtouseStoreDesc = @"اشترك الآن و احصل على 1000 نقطة مجانا.";
           howtoEarnPointDesc = @"يمكنك أن تحصل دائماً على النقاط مجانية بمجرد دعوة اصدقائك للعب و بمشاركة تطبيق اللعبة على الفيس بوك أو تويتر";
           HowtoPlay = @"كيفية اللعب";
           HowWitsStore = @"كيفية استخدام مخزن ويتس";
           HowtoEarnPoints = @"كيف تحصل على النقاط مجاناً؟";
           
+          
           lblPlayforPoints.text = PLAY_FOR_POINTS_1;
           lblplayforGems.text = PLAY_FOR_GEMS_1;
           willhelpinRanking.text = WILL_HELP_IN_RANKING_1;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_1;
-          
-          willhelpinRanking.textAlignment = UIControlContentHorizontalAlignmentRight;
-          willHelpinEarnMoney.textAlignment = UIControlContentHorizontalAlignmentRight;
-          
           knowledgeLbl.text = KNOWLEDGE_LBL_1;
           tutoDesc1.text = TUTORIAL_DESC_LBL_1;
           tutoDesc2.text = TUTORIAL_DESC_LBL2_1;
           tutoDesc1.textAlignment = NSTextAlignmentRight;
           tutoDesc2.textAlignment = NSTextAlignmentRight;
           vsLbl.text = VS_1;
-          
           AddaQuestion.text = ADD_QUESTION_1;
           answerTxt.placeholder = ENTER_ANSWER_1;
           questionTxt.placeholder = @"ادخل السؤال";
@@ -1617,30 +1640,40 @@
           answerTxt.textAlignment = NSTextAlignmentRight;
           
           
-          
           homeLbl.text = HOME_BTN_1;
-          CategoriesLbl.text = CATEGORIES_1;
+          CategoriesLbl.text = @"مواضيع فرعية";
           adContentLbl.text = ADD_CONTENT_1;
           guidelineLbl.text = GUIDELINES_1;
           
           [backBtn3 setTitle:BACK_BTN_1 forState:UIControlStateNormal];
+          //          [backBtn2 setTitle:BACK_BTN_1 forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_1 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_1 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_1 forState:UIControlStateNormal];
-          [backBtn2 setTitle:BACK_BTN_1 forState:UIControlStateNormal];
      }
      else if(languageCode == 2) {
           
           searchBar.placeholder = SEARCH_CATEGORY_2;
-          knowledgeLbl.text = KNOWLEDGE_LBL_2;
-          tutoDesc1.text = TUTORIAL_DESC_LBL_2;
-          tutoDesc2.text = TUTORIAL_DESC_LBL2_2;
+          HowtoPlay = @"Comment jouer";
+          HowWitsStore = @"Comment utiliser ESPRITS magasin";
+          HowtoEarnPoints = @"Comment gagner des Points";
+          howtoPlay1 = @"Défiez à 1-1 n\'importe qui dans le monde.";
+          howtoPlay2 = @"Plus vite vous répondez, plus vous cumulez de Gems.";
+          howtoPlay3 = @"Echangez vos Gems contre de l'argent.";
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsSpanish.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowSpanish.png"] forState:UIControlStateNormal];
+          
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
           [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowSpanish.png"] forState:UIControlStateNormal];
           [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeSpanish.png"] forState:UIControlStateNormal];
           
+          
+          
+          howtouseStoreDesc = @"Inscrivez-vous maintenant et gagnez 1000 Gems gratuits.";
+          howtoEarnPointDesc = @"Vous pouvez toujours gagner des Points en invitant vos amis et en partageant notre application sur Facebook et Twitter.";
+          knowledgeLbl.text = KNOWLEDGE_LBL_2;
+          tutoDesc1.text = TUTORIAL_DESC_LBL_2;
+          tutoDesc2.text = TUTORIAL_DESC_LBL2_2;
           
           AddaQuestion.text = ADD_QUESTION_2;
           answerTxt.placeholder = ENTER_ANSWER_2;
@@ -1651,48 +1684,30 @@
           willhelpinRanking.text = WILL_HELP_IN_RANKING_2;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_2;
           
-          HowtoPlay = @"Comment jouer";
-          HowWitsStore = @"Comment utiliser ESPRITS magasin";
-          HowtoEarnPoints = @"Comment gagner des Points";
-          howtoPlay1 = @"Défiez à 1-1 n\'importe qui dans le monde.";
-          howtoPlay2 = @"Plus vite vous répondez, plus vous cumulez de Gems.";
-          howtoPlay3 = @"Echangez vos gems contre de l'argent.";
-          
-          
-          howtouseStoreDesc = @"Inscrivez-vous maintenant et gagnez 1000 Gems gratuits.";
-          howtoEarnPointDesc = @"Vous pouvez toujours gagner des Points en invitant vos amis et en partageant notre application sur Facebook et Twitter.";
-          
-          
           homeLbl.text = HOME_BTN_2;
-          CategoriesLbl.text = CATEGORIES_2;
+          CategoriesLbl.text = @"Subcategoría";
           adContentLbl.text = ADD_CONTENT_2;
           guidelineLbl.text = GUIDELINES_2;
+          loadingTitle = Loading_2;
           
           [backBtn3 setTitle:BACK_BTN_2 forState:UIControlStateNormal];
+          // [backBtn2 setTitle:BACK_BTN_2 forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_2 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_2 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_2 forState:UIControlStateNormal];
-          [backBtn2 setTitle:BACK_BTN_2 forState:UIControlStateNormal];
      }
      else if(languageCode == 3) {
           
           searchBar.placeholder = SEARCH_CATEGORY_3;
-          HowtoPlay = @"Cómo jugar";
-          HowWitsStore = @"Cómo utilizar WITS tienda";
-          HowtoEarnPoints = @"Cómo ganar pontus.";
+          loadingTitle = Loading_3;
           
-          howtoPlay1 = @" Inicie un reto 1-1 contra a cualquiera en el mundo.";
-          howtoPlay2 = @"En cuanto más rápido responde más puntos podrá recoger.";
-          howtoPlay3 = @"Cambia tus gemas por dinero real.";
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsFrench.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowFrench.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
           [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowFrench.png"] forState:UIControlStateNormal];
           [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeFrench.png"] forState:UIControlStateNormal];
           
           
           
-          howtouseStoreDesc = @"Registrase ahora y gane 1000 puntos gratis";
-          howtoEarnPointDesc = @"Puedes ganar pontus gratis invitando a tus amigos y compartiendo la aplicación en Facebook or Twitter.";
           knowledgeLbl.text = KNOWLEDGE_LBL_3;
           tutoDesc1.text = TUTORIAL_DESC_LBL_3;
           tutoDesc2.text = TUTORIAL_DESC_LBL2_3;
@@ -1701,65 +1716,82 @@
           answerTxt.placeholder = ENTER_ANSWER_3;
           questionTxt.placeholder = @"Introduzca pregunta";
           
+          HowtoPlay = @"Cómo jugar";
+          HowWitsStore = @"Cómo utilizar WITS tienda";
+          HowtoEarnPoints = @"Cómo ganar pontus.";
+          
+          howtoPlay1 = @" Inicie un reto 1-1 contra a cualquiera en el mundo.";
+          howtoPlay2 = @"En cuanto más rápido responde más puntos podrá recoger.";
+          howtoPlay3 = @"Cambia tus gemas por dinero real.";
+          
+          howtouseStoreDesc = @"Registrase ahora y gane 1000 puntos gratis";
+          howtoEarnPointDesc = @"Puedes ganar pontus gratis invitando a tus amigos y compartiendo la aplicación en Facebook or Twitter.";
           lblPlayforPoints.text = PLAY_FOR_POINTS_3;
           lblplayforGems.text = PLAY_FOR_GEMS_3;
+          
           willhelpinRanking.text = WILL_HELP_IN_RANKING_3;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_3;
           
           homeLbl.text = HOME_BTN_3;
-          CategoriesLbl.text = CATEGORIES_3;
+          CategoriesLbl.text = @"sous catégories";
           adContentLbl.text = ADD_CONTENT_3;
           guidelineLbl.text = GUIDELINES_3;
           
-          [backBtn3 setTitle:BACK_BTN_3 forState:UIControlStateNormal];
+          //    [backBtn2 setTitle:BACK_BTN_3 forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_3 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_3 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_3 forState:UIControlStateNormal];
-          [backBtn2 setTitle:BACK_BTN_3 forState:UIControlStateNormal];
+          [backBtn3 setTitle:BACK_BTN_3 forState:UIControlStateNormal];
      }
-     
-     
      else if(languageCode == 4) {
           
           searchBar.placeholder = SEARCH_CATEGORY_4;
-          knowledgeLbl.text = KNOWLEDGE_LBL_4;
-          tutoDesc1.text = TUTORIAL_DESC_LBL_4;
-          tutoDesc2.text = TUTORIAL_DESC_LBL2_4;
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"Gemsportuguese.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowportuguese.png"] forState:UIControlStateNormal];
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowportuguese.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Challengeportuguese.png"] forState:UIControlStateNormal];
-          
-          
-          AddaQuestion.text = ADD_QUESTION_4;
-          answerTxt.placeholder = ENTER_ANSWER_4;
-          questionTxt.placeholder = @"Digite Pergunta";
-          
+          loadingTitle = Loading_4;
           howtoPlay1 = @"Inicie um desafio de 1-1 contra qualquer pessoa no mundo.";
           howtoPlay2 = @"Quanto mais rápido você responder, mais pontos você vai acumular.";
           howtoPlay3 = @"Troque as suas Gemas por dinheiro verdadeiro.";
           
-          howtouseStoreDesc = @"Inscreva-se gratuitamente e ganhe 1000 pontos";
+          howtouseStoreDesc = @"Inscreva-se gratuitamente e ganhe 1000 gemas";
           howtoEarnPointDesc = @"Poderá receber pontus Grátis a todo momento ao convidar os seus amigos ou ao partilhar a App no Facebook ou Twitter.";
           HowtoPlay = @"Como Jogar";
           HowWitsStore = @"Como usar WITS loja";
-          HowtoEarnPoints = @"Como ganhar pontus grátis";
+          HowtoEarnPoints = @"Convide amigos e desafiá-los";
+          
+          knowledgeLbl.text = KNOWLEDGE_LBL_4;
+          
+          
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowportuguese.png"] forState:UIControlStateNormal];
+          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Challengeportuguese.png"] forState:UIControlStateNormal];
+          
+          
           
           lblPlayforPoints.text = PLAY_FOR_POINTS_4;
           lblplayforGems.text = PLAY_FOR_GEMS_4;
           willhelpinRanking.text = WILL_HELP_IN_RANKING_4;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_4;
           
+          tutoDesc1.text = TUTORIAL_DESC_LBL_4;
+          tutoDesc2.text = TUTORIAL_DESC_LBL2_4;
+          
+          AddaQuestion.text = ADD_QUESTION_4;
+          answerTxt.placeholder = ENTER_ANSWER_4;
+          questionTxt.placeholder = @"Digite Pergunta";
+          
           homeLbl.text = HOME_BTN_4;
-          CategoriesLbl.text = CATEGORIES_4;
+          CategoriesLbl.text = @"sub-tópicos";
           adContentLbl.text = ADD_CONTENT_4;
           guidelineLbl.text = GUIDELINES_4;
+          
           [backBtn3 setTitle:BACK_BTN_4 forState:UIControlStateNormal];
-          [backBtn2 setTitle:BACK_BTN_4 forState:UIControlStateNormal];
+          //   [backBtn2 setTitle:BACK_BTN_4 forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_4 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_4 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_4 forState:UIControlStateNormal];
      }
+     
+     
      if (!languageCode == 0) {
           self.searchDisplayController.searchBar.userInteractionEnabled = NO;
           self.searchDisplayController.searchBar.alpha = .5;
@@ -1963,8 +1995,8 @@
      
      _searchingLoaderView.hidden = false;
      
-     [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gem.png"] forState:UIControlStateNormal];
-     [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"starglow.png"] forState:UIControlStateNormal];
+    // [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gem.png"] forState:UIControlStateNormal];
+    // [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"starglow.png"] forState:UIControlStateNormal];
      if(appDelegate.friendToBeChalleneged) {
           //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"playNow.png"] forState:UIControlStateNormal];
           //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"challengenowglow.png"] forState:UIControlStateNormal];
@@ -1992,32 +2024,39 @@
      
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
-     if(languageCode == 0 ) {
-          
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowEnglish.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeEnglish.png"] forState:UIControlStateNormal];
-          
-          
-          
-     }else      if(languageCode == 1 ) {
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowArabic.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeArabic.png"] forState:UIControlStateNormal];
-          
-     }else      if(languageCode == 2 ) {
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowSpanish.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeSpanish.png"] forState:UIControlStateNormal];
-          
-     }else      if(languageCode == 3 ) {
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowFrench.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeFrench.png"] forState:UIControlStateNormal];
-          
-     }else      if(languageCode == 4 ) {
-          
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowPortuguese.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengePortuguese.png"] forState:UIControlStateNormal];
-          
-     }
+     PlayNowLabel.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
+     challengeAFriend.textColor = [UIColor whiteColor];
+     [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynowglow.png"] forState:UIControlStateNormal];
+     [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenow.png"] forState:UIControlStateNormal];
      
+//     NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+//     languageCode = [language intValue];
+//     if(languageCode == 0 ) {
+//          
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowEnglish.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeEnglish.png"] forState:UIControlStateNormal];
+//          
+//          
+//          
+//     }else      if(languageCode == 1 ) {
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowArabic.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeArabic.png"] forState:UIControlStateNormal];
+//          
+//     }else      if(languageCode == 2 ) {
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowSpanish.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeSpanish.png"] forState:UIControlStateNormal];
+//          
+//     }else      if(languageCode == 3 ) {
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowFrench.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeFrench.png"] forState:UIControlStateNormal];
+//          
+//     }else      if(languageCode == 4 ) {
+//          
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowPortuguese.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengePortuguese.png"] forState:UIControlStateNormal];
+//          
+//     }
+//     
      
      
      
@@ -2034,31 +2073,37 @@
      _gmChallengeSelected = true;
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
-     if(languageCode == 0 ) {
-          
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowEnglish.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowEnglish.png"] forState:UIControlStateNormal];
-          
-          
-          
-     }else      if(languageCode == 1 ) {
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowArabic.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowArabic.png"] forState:UIControlStateNormal];
-          
-     }else      if(languageCode == 2 ) {
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowSpanish.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowSpanish.png"] forState:UIControlStateNormal];
-          
-     }else      if(languageCode == 3 ) {
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowFrench.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowFrench.png"] forState:UIControlStateNormal];
-          
-     }else      if(languageCode == 4 ) {
-          
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowPortuguese.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowPortuguese.png"] forState:UIControlStateNormal];
-          
-     }
+   
+     challengeAFriend.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
+     PlayNowLabel.textColor = [UIColor whiteColor];
+     [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynow.png"] forState:UIControlStateNormal];
+     [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenowglow.png"] forState:UIControlStateNormal];
+     
+//     if(languageCode == 0 ) {
+//          
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowEnglish.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowEnglish.png"] forState:UIControlStateNormal];
+//          
+//          
+//          
+//     }else      if(languageCode == 1 ) {
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowArabic.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowArabic.png"] forState:UIControlStateNormal];
+//          
+//     }else      if(languageCode == 2 ) {
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowSpanish.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowSpanish.png"] forState:UIControlStateNormal];
+//          
+//     }else      if(languageCode == 3 ) {
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowFrench.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowFrench.png"] forState:UIControlStateNormal];
+//          
+//     }else      if(languageCode == 4 ) {
+//          
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowPortuguese.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowPortuguese.png"] forState:UIControlStateNormal];
+//          
+//     }
      
 }
 
@@ -2074,72 +2119,84 @@
      
      
      
+     forGemsLable.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
+     forPointsLabel.textColor = [UIColor whiteColor];
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
      if(languageCode == 0 ) {
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gemglow.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
           
           
           
           
      }else      if(languageCode == 1 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsGlowArabic.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsArabic.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+          
           
           
      }else      if(languageCode == 2 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsGlowSpanish.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsSpanish.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
           
           
      }else      if(languageCode == 3 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsGlowFrench.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsFrench.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
           
           
      }else      if(languageCode == 4 ) {
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsGlowportuguese.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsPortuguese.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
           
           
-     }}
+          
+     }
+
+}
 
 - (IBAction)gmStarsPressed:(id)sender {
      //     if(_gmGemsSelected) {
      _gmGemsSelected = false;
      
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+     forGemsLable.textColor = [UIColor whiteColor];
+     forPointsLabel.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
      languageCode = [language intValue];
      if(languageCode == 0 ) {
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gem.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"starglow.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
           
           
           
           
      }else      if(languageCode == 1 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsArabic.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowArabic.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+          
           
           
      }else      if(languageCode == 2 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsSpanish.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowSpanish.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+          
           
           
      }else      if(languageCode == 3 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsFrench.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowFrench.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+          
           
           
      }else      if(languageCode == 4 ) {
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"Gemsportuguese.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowportuguese.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+          
           
           
      }

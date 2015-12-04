@@ -44,7 +44,7 @@
      knowledgelbl.font = [UIFont fontWithName:FONT_NAME size:17];
      _shareLbl.font = [UIFont fontWithName:FONT_NAME size:14];
      }
-     _tutorialScrollView.contentSize = CGSizeMake(screenWidth*8, screenRect.size.height);
+     _tutorialScrollView.contentSize = CGSizeMake(screenWidth*7, screenRect.size.height);
 }
 
 - (void)didReceiveMemoryWarning
@@ -623,7 +623,7 @@
           referalStr = @"Hi, My referral Code is";
           referalStr2 = @". Help me Earn Free Points. Lets play Wits together.";
           _knowlegdeLbl.text = KNOWLEDGE_LBL;
-          _shareLbl.text = SHARE_WITS_LBL;
+          //_shareLbl.text = SHARE_WITS_LBL;
           _EarnfreePointLbl.text = INVITE_FRIENDS;
           howtoPlay1 = @"Embark on a 1-1 challenge against anyone in the world.";
           howtoPlay2 = @"The faster you answer the more Gems you\'ll collect.";
@@ -645,7 +645,7 @@
           referalStr2 = @". ساعدني لأحصل على النقاط مجانية. دعنا نلعب Wits سوياً.";
           
           _knowlegdeLbl.text = KNOWLEDGE_LBL_1;
-          _shareLbl.text = SHARE_WITS_LBL_1;
+          //_shareLbl.text = SHARE_WITS_LBL_1;
           _EarnfreePointLbl.text = INVITE_FRIENDS_1;
           
           knowledgelbl.text = KNOWLEDGE_LBL_1;
@@ -693,7 +693,7 @@
           howtoEarnPointDesc = @"Vous pouvez toujours gagner des Points en invitant vos amis et en partageant notre application sur Facebook et Twitter.";
           
           
-          _shareLbl.text = SHARE_WITS_LBL_2;
+          //_shareLbl.text = SHARE_WITS_LBL_2;
           _EarnfreePointLbl.text = INVITE_FRIENDS_2;
           
           [_tutorialPressed setTitle:TUTORIAL_BTN_2 forState:UIControlStateNormal];
@@ -707,7 +707,7 @@
           referalStr = @"Hola, Mi Código de Referencia es";
           referalStr2 = @". Ayudame a ganar gemas gratis. Jueguemos Wits juntos.";
           _knowlegdeLbl.text = KNOWLEDGE_LBL_3;
-          _shareLbl.text = SHARE_WITS_LBL_3;
+         // _shareLbl.text = SHARE_WITS_LBL_3;
           _EarnfreePointLbl.text = INVITE_FRIENDS_3;
           
           knowledgelbl.text = KNOWLEDGE_LBL_3;
@@ -749,7 +749,7 @@
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_4;
           
           _knowlegdeLbl.text = KNOWLEDGE_LBL_4;
-          _shareLbl.text = SHARE_WITS_LBL_4;
+          //_shareLbl.text = SHARE_WITS_LBL_4;
           _EarnfreePointLbl.text = INVITE_FRIENDS_4;
           
           [_tutorialPressed setTitle:TUTORIAL_BTN_4 forState:UIControlStateNormal];
@@ -770,31 +770,31 @@
      if(languageCode == 0 ) {
           
           _knowlegdeLbl.text = REFER_YOUR_FRIENDS;
-          _shareLbl.text = EARN_POINT_TEXT;
+          //_shareLbl.text = EARN_POINT_TEXT;
           
      }
      else if(languageCode == 1 ) {
           
           _knowlegdeLbl.text = REFER_YOUR_FRIENDS_1;
-          _shareLbl.text = EARN_POINT_TEXT_1;
+         // _shareLbl.text = EARN_POINT_TEXT_1;
           
      }
      else if(languageCode == 2) {
           
           
           _knowlegdeLbl.text = REFER_YOUR_FRIENDS_2;
-          _shareLbl.text = EARN_POINT_TEXT_2;
+          //_shareLbl.text = EARN_POINT_TEXT_2;
           
      }
      else if(languageCode == 3) {
           
           _knowlegdeLbl.text = REFER_YOUR_FRIENDS_3;
-          _shareLbl.text = EARN_POINT_TEXT_3;
+         // _shareLbl.text = EARN_POINT_TEXT_3;
           
      }
      else if(languageCode == 4) {
           _knowlegdeLbl.text = REFER_YOUR_FRIENDS_4;
-          _shareLbl.text = EARN_POINT_TEXT_4;
+          //_shareLbl.text = EARN_POINT_TEXT_4;
           
      }
 }
@@ -965,17 +965,17 @@
                if(languageCode == 0 ) {
                     //                    textToBeShown = @"Welcome to WITS - an award winning multiplayer Trivia game that let's you earn real cash while you compete with the topics you are good at!";
                     
-                    textToBeShown = screenseven;
+                    textToBeShown = screeneight;
                }
                else if(languageCode == 1) {
-                    textToBeShown = screenseven1;
+                    textToBeShown = screeneight1;
                }
                else if(languageCode == 2 ) {
-                    textToBeShown = screenseven2;
+                    textToBeShown = screeneight2;
                }else if(languageCode == 3 ) {
-                    textToBeShown = screenseven3;
+                    textToBeShown = screeneight3;
                }else if(languageCode == 4 ) {
-                    textToBeShown = screenseven4;
+                    textToBeShown = screeneight4;
                }
                break;
           case 7:

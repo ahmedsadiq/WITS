@@ -11,7 +11,7 @@
 #import "SharedManager.h"
 #import "NavigationHandler.h"
 #import "AlertMessage.h"
-
+#import "RewardsListVC.h"
 #import "FriendsVC.h"
 #import "StoreVC.h"
 #import "EarnFreePointsViewController.h"
@@ -74,7 +74,6 @@
      passwordField.leftView = leftView3;
      isEditPressed = NO;
      
-
      if(IS_IPAD)
      {
           displayNameField.font = [UIFont fontWithName:FONT_NAME size:25];
@@ -85,14 +84,14 @@
           signinLabel.font = [UIFont fontWithName:FONT_NAME size:25];
      }else
      {
-     displayNameField.font = [UIFont fontWithName:FONT_NAME size:15];
-     emailField.font = [UIFont fontWithName:FONT_NAME  size:15];
-     usernameLbl.font = [UIFont fontWithName:FONT_NAME size:15];
-     passwordField.font = [UIFont fontWithName:FONT_NAME  size:15];
-     registerBtn.font = [UIFont fontWithName:FONT_NAME size:17];
-     signinLabel.font = [UIFont fontWithName:FONT_NAME size:13];
-     signinLabel.font = [UIFont fontWithName:FONT_NAME size:15];
+          displayNameField.font = [UIFont fontWithName:FONT_NAME size:15];
+          emailField.font = [UIFont fontWithName:FONT_NAME  size:15];
+          usernameLbl.font = [UIFont fontWithName:FONT_NAME size:15];
+          passwordField.font = [UIFont fontWithName:FONT_NAME  size:15];
+          registerBtn.font = [UIFont fontWithName:FONT_NAME size:17];
+          signinLabel.font = [UIFont fontWithName:FONT_NAME size:15];
      }
+     
      UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(signUpSwipeDown:)];
      [left setDirection:UISwipeGestureRecognizerDirectionDown];
      [self.view addGestureRecognizer:left];
@@ -113,17 +112,17 @@
 {
      [super viewWillAppear:true];
      
-    
-//     for (NSString* family in [UIFont familyNames])
-//     {
-//          NSLog(@"%@", family);
-//          
-//          for (NSString* name in [UIFont fontNamesForFamilyName: family])
-//          {
-//               NSLog(@"  %@", name);
-//          }
-//     }
-    
+     
+     //     for (NSString* family in [UIFont familyNames])
+     //     {
+     //          NSLog(@"%@", family);
+     //
+     //          for (NSString* name in [UIFont fontNamesForFamilyName: family])
+     //          {
+     //               NSLog(@"  %@", name);
+     //          }
+     //     }
+     
 }
 
 
@@ -140,7 +139,7 @@
           emailField.placeholder = @"EMAIL";
           displayNameField.placeholder = @"DISPLAY NAME";
           passwordField.placeholder = SIGNUP_PASSWORD;
-          birthdaylbl.text = @" BIRTHDAY (Optional)";
+          birthdaylbl.text = @" BIRTHDAY";
           usernameLbl.placeholder = @"USERNAME";
           signUpDescLbl.text = SIGNUP_DESC;
           signUplbl.text = @"Sign Up";
@@ -168,7 +167,7 @@
           birthdaylbl.text = SIGNUP_BIRTHDAY_1;
           signUplbl.text = @"اشترك";
           
-                    signinLabel.text = SIGIN_TEXT_1;
+          signinLabel.text = SIGIN_TEXT_1;
           emailField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_1 attributes:@{NSForegroundColorAttributeName: color}];
           displayNameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_DISPLAY_NAME_1 attributes:@{NSForegroundColorAttributeName: color}];
           usernameLbl.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_USERNAME_1 attributes:@{NSForegroundColorAttributeName: color}];
@@ -194,7 +193,7 @@
      else if(languageCode == 2) {
           LoadingTitle = Loading_2;
           cancel1 = CANCEL_2;
-                              signinLabel.text = SIGIN_TEXT_2;
+          signinLabel.text = SIGIN_TEXT_2;
           Done = @"Terminé";
           birthdaylbl.text = SIGNUP_BIRTHDAY_2;
           signUpDescLbl.text = SIGNUP_DESC_2;
@@ -217,7 +216,7 @@
      else if(languageCode == 3) {
           cancel1 = CANCEL_3;
           Done = @"Done";
-                              signinLabel.text = SIGIN_TEXT_3;
+          signinLabel.text = SIGIN_TEXT_3;
           LoadingTitle = Loading_3;
           emailField.placeholder = SIGNUP_EMAIL_3;
           displayNameField.placeholder = SIGNUP_DISPLAY_NAME_3;
@@ -247,7 +246,7 @@
           LoadingTitle = Loading_4;
           emailField.placeholder = SIGNUP_EMAIL_4;
           displayNameField.placeholder = SIGNUP_DISPLAY_NAME_4;
-                              signinLabel.text = SIGIN_TEXT_4;
+          signinLabel.text = SIGIN_TEXT_4;
           passwordField.placeholder = SIGNUP_PASSWORD_4;
           birthdaylbl.text = SIGNUP_BIRTHDAY_4;
           usernameLbl.placeholder = SIGNUP_USERNAME_4;
@@ -323,8 +322,8 @@
      [DateSelected setFrame:CGRectMake(_datePicker.frame.origin.x+40, _datePicker.frame.origin.y+_datePicker.frame.size.height+10, 85, 30)];
      [DateSelected setBackgroundImage:[UIImage imageNamed:@"messagebg.png"] forState:UIControlStateNormal];
      [DateSelected setTitle:Done forState:UIControlStateNormal];
-//     DateSelected.titleLabel.font = [UIFont fontWithName:@"System" size:12];
-          DateSelected.titleLabel.font = [UIFont fontWithName:FONT_NAME size:12];
+     //     DateSelected.titleLabel.font = [UIFont fontWithName:@"System" size:12];
+     DateSelected.titleLabel.font = [UIFont fontWithName:FONT_NAME size:12];
      [DateSelected setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
      [DateSelected addTarget:self action:@selector(dateSelected:) forControlEvents:UIControlEventTouchUpInside];
      [datePickerContainer addSubview:DateSelected];
@@ -416,6 +415,11 @@
           }
           
           [AlertMessage showAlertWithMessage:emptyfield andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+          
+          
+          /*  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please Enter Display Name" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+           [alertView show];
+           return;*/
      }
      else if([birthdaylbl.text isEqualToString:@"Birthday"])
      {
@@ -492,7 +496,15 @@
                title = @"Erro";
                cancel = CANCEL_1;
           }
+          
+          
+          
           [AlertMessage showAlertWithMessage:emptyfield andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+          
+          
+          /*UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please Enter Email Address" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+           [alertView show];
+           return;*/
      }else if (usernameLbl.text.length <1 ){
           NSString *emptyfield;
           NSString *title;
@@ -585,24 +597,14 @@
                cancel = CANCEL_4;
           }
           
+          
           [AlertMessage showAlertWithMessage:passwrdLimit andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-     }
-     else if(![self isValidPassword:[passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]]) {
           
-          /*This is to check if string has atleast one Caps. Add appropiate error msg according to the language*/
           
-          UIAlertView *pwAlrt = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Password Must Be Of Six Characters And One Of The Letters Should Be Caps" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-          [pwAlrt show];
-          
-     }
-     else if(!([passwordField.text rangeOfCharacterFromSet:[NSCharacterSet characterSetWithCharactersInString:@"0123456789!@#$%^&*()-"]].location != NSNotFound) ) {
-          // this matches the criteria
-          /*This is to check if string has atleast one Caps. Add appropiate error msg according to the language*/
-          
-          UIAlertView *pwAlrt = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Password Must Be Of Six Characters And One Of The Letters Should Be Caps" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-          [pwAlrt show];
-     }
-     else{
+          /* UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Password must be atleast six characters long!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+           [alertView show];
+           return;*/
+     }else{
           [[NSUserDefaults standardUserDefaults] setObject:emailField.text forKey:@"LoginEmail"];
           [[NSUserDefaults standardUserDefaults] synchronize];
           
@@ -613,7 +615,7 @@
 }
 
 -(IBAction)EditProfileImage:(id)sender{
-      isEditPressed = YES;
+     isEditPressed = YES;
      [self DismissTextField:sender];
      overlayView.hidden = NO;
      popUpView.hidden = NO;
@@ -741,7 +743,7 @@
                int randomNumber =  0 + rand() % (_avatarsArray.count - 0);
                NSLog(@"randomNumber : %d",randomNumber);
                NSString *i = [NSString stringWithFormat:@"%d",randomNumber];
-
+               
                [self downloadAvatars];
                
                NSString *avatarURL = [_avatarsArray objectAtIndex:[i intValue]];
@@ -822,10 +824,10 @@
      
      [_loadingView hide];
      if (isEditPressed == YES) {
-     if ([[UIScreen mainScreen] bounds].size.height == iPad)
-          [self loadAvatarsToIpadView];
-     else
-          [self LoadAvatars];
+          if ([[UIScreen mainScreen] bounds].size.height == iPad)
+               [self loadAvatarsToIpadView];
+          else
+               [self LoadAvatars];
           [self.view addSubview:AvatarView];
      }
 }
@@ -1065,7 +1067,7 @@
      [postParams setObject:passwordField.text forKey:@"password"];
      [postParams setObject:birthdaylbl.text forKey:@"birthday"];
      [postParams setObject:usernameLbl.text forKey:@"user_name_id"];
-
+     
      [postParams setObject:@"Pakistan" forKey:@"country_name"];
      [postParams setObject:@"xxx" forKey:@"about"];
      [postParams setObject:@"male" forKey:@"gender"];
@@ -1145,7 +1147,7 @@
                     
                     
                }else if ([[responseDict objectForKey:@"message"]isEqualToString:@"Email Already Exist"]){
-               
+                    
                     
                     NSString *emailMsg;
                     NSString *title;
@@ -1201,7 +1203,7 @@
                          title = @"Erro";
                          cancel = CANCEL_4;
                     }
-
+                    
                     
                     [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
                }
@@ -1307,22 +1309,22 @@
 #pragma mark - TextField Delegates
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-//     if (textField == usernameLbl){
-//          [UIView beginAnimations:nil context:nil];
-//          [UIView setAnimationDuration:0.3];
-//          [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-//          self.view.frame = CGRectMake(0, -100, self.view.frame.size.width, self.view.frame.size.height);
-//          [UIView commitAnimations];
-//          
-//     }
-//     if (textField == passwordField){
-//          [UIView beginAnimations:nil context:nil];
-//          [UIView setAnimationDuration:0.3];
-//          [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-//          self.view.frame = CGRectMake(0, -100, self.view.frame.size.width, self.view.frame.size.height);
-//          [UIView commitAnimations];
-//          
-//     }
+     if (textField == usernameLbl){
+          [UIView beginAnimations:nil context:nil];
+          [UIView setAnimationDuration:0.3];
+          [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+          self.view.frame = CGRectMake(0, -100, self.view.frame.size.width, self.view.frame.size.height);
+          [UIView commitAnimations];
+          
+     }
+     if (textField == passwordField){
+          [UIView beginAnimations:nil context:nil];
+          [UIView setAnimationDuration:0.3];
+          [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+          self.view.frame = CGRectMake(0, -100, self.view.frame.size.width, self.view.frame.size.height);
+          [UIView commitAnimations];
+          
+     }
      [self animateTextField: textField up: YES];
 }
 
@@ -1527,35 +1529,36 @@
      }
      [storeVC.navigationController setNavigationBarHidden:YES animated:NO];
      
-     UIViewController *historyViewController;
+     UIViewController *rewardsVC;
      if(IS_IPAD) {
-          historyViewController = [[EarnFreePointsViewController alloc] initWithNibName:@"EarnFreePointsViewController_iPad" bundle:[NSBundle mainBundle]];
+          rewardsVC = [[RewardsListVC alloc] initWithNibName:@"RewardsListVC_iPad" bundle:[NSBundle mainBundle]];
      }
      else {
-          historyViewController = [[EarnFreePointsViewController alloc] initWithNibName:@"EarnFreePointsViewController" bundle:[NSBundle mainBundle]];
+          rewardsVC = [[RewardsListVC alloc] initWithNibName:@"RewardsListVC" bundle:[NSBundle mainBundle]];
      }
-     UINavigationController *historyNavController = [[UINavigationController alloc] initWithRootViewController:historyViewController];
+     UINavigationController *historyNavController = [[UINavigationController alloc] initWithRootViewController:rewardsVC];
      
-     [historyViewController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"referralglow.png"]
-                                                         imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
-     [historyViewController.tabBarItem setImage:[[UIImage imageNamed:@"referral.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+     [rewardsVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"rewardsglowp.png"]
+                                             imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+     [rewardsVC.tabBarItem setImage:[[UIImage imageNamed:@"rewardsp.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      
-     historyViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     rewardsVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
      if(IS_IPAD)
      {
-          [historyViewController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"referglowForIpad.png"]
-                                                              imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
-          [historyViewController.tabBarItem setImage:[[UIImage imageNamed:@"referforIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-          historyViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, 0, 15, 0);
+          [rewardsVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"referglowForIpad.png"]
+                                                  imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+          [rewardsVC.tabBarItem setImage:[[UIImage imageNamed:@"referforIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          rewardsVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, 0, 15, 0);
           
      }
-     [historyViewController.navigationController setNavigationBarHidden:YES animated:NO];
+     
+     [rewardsVC.navigationController setNavigationBarHidden:YES animated:NO];
      
      
      UIViewController *settingVC;
      if(IS_IPAD) {
           settingVC = [[RightBarVC alloc] initWithNibName:@"RightBarVC_iPad" bundle:[NSBundle mainBundle]];
-         
+          
      }
      else {
           settingVC = [[RightBarVC alloc] initWithNibName:@"RightBarVC" bundle:[NSBundle mainBundle]];
@@ -1591,14 +1594,6 @@
      self.viewController.navigationController.navigationBar.tintColor = [UIColor blackColor];
      //self.viewController.navigationController.navigationBar
      [[[UIApplication sharedApplication]delegate] window].rootViewController = self.tabBarController;
-}
-
-#pragma mark ----------------------------------------------------
-#pragma mark - Password Validation Methods
-- (BOOL)isValidPassword:(NSString*)password
-{
-     NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern:@"^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*$" options:0 error:nil];
-     return [regex numberOfMatchesInString:password options:0 range:NSMakeRange(0, [password length])] > 0;
 }
 
 @end

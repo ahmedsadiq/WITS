@@ -23,7 +23,7 @@
 
 //#define FONT_NAME @"PTC55F"
 #define FONT_NAME @"PTSans-Caption"
-
+#define STORE_FONT_NAME @"GameFont7"
 
 //#define WEBSOCKETS_URL @"ws://192.163.211.75:1215"
 
@@ -327,7 +327,7 @@
 #define LANGUAGE_SELECTION_LBL @"Language Selection"
 #define CHOOSE_LANG_LBL @"Please choose your Language"
 #define TUTORIAL_LBL @"Tutorial"
-#define KNOWLEDGE_LBL @"Knowledge is Money, Know More Earn More Rewards!"
+#define KNOWLEDGE_LBL @"Share the Joy with your friends!"
 #define TUTORIAL_DESC_LBL @"Wits application will make your wish come true, log in and finish 10 Witty question in any topic you master."
 #define TUTORIAL_DESC_LBL2 @"Wits will make you earn real money the fastest and most guaranteed way."
 #define SHARE_WITS_LBL @"Share WITS on any of the following tools and you 'll earn free Gems every time one of your friends uses the referral code you have shared"
@@ -404,7 +404,7 @@
 #define SIGNUP_BIRTHDAY @" Birthday"
 #define SIGNUP_USERNAME @"  Username"
 #define SIGNUP_DESC @"We approxomate your location so you can see how you rank in your country By signing up, you agree with Term of Service & Privacy Policy"
-#define SIGNUP_REGISTER @"Register"
+#define SIGNUP_REGISTER @"REGISTER"
 
 #define SIGNUP_FORGOT_PASS @" Forgot Password? Reset"
 
@@ -497,9 +497,9 @@
 #define TOPICS_BTN @"Categories"
 #define FRIENDS_BTN @"Friends"
 #define HISTORY_BTN @"History"
-#define MESSAGE_BTN @"Messages"
+#define MESSAGE_BTN @"Earn Free Points"
 #define DISCUSSION_BTN @"Discussion"
-#define RANKING_BTN @"Ranking"
+#define RANKING_BTN @"Rankings"
 #define WITS_STORE_BTN @"WITS Store (-)"
 #define SETTINGS_BTN @"Settings"
 #define LOGOUT_BTN @"Log Out"

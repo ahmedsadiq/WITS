@@ -409,7 +409,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                //changed  by fiza
                _roundLbl.frame = CGRectMake(54, 140, 212, 68);
           }
-          
+         
           _roundLbl.text = [NSString stringWithFormat:@"%@ %d",Round,currentIndex+1];
           roundTitleLbl.text = [NSString stringWithFormat:@"%@ %d",Round,currentIndex+1];
           
@@ -479,7 +479,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           }
      }
      timerLbl.text = @"10";
-     
+     questionNoLbl.text = [NSString stringWithFormat:@"%d",currentIndex+1];
      [NSTimer scheduledTimerWithTimeInterval: 2.0 target: self
                                     selector: @selector(callAfterSixtySecond:) userInfo: nil repeats: NO];
 }

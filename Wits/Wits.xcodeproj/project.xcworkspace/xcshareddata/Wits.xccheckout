@@ -12,22 +12,34 @@
 	<dict>
 		<key>285B3482381D41360AF8470373F1CF941566592F</key>
 		<string>https://bitbucket.org/ahmed_sadiq_/wits-txlabz.git</string>
+		<key>3842B7ACFDC3CE26E01079C12F6A5BB84FDEE46C</key>
+		<string>https://github.com/ahmedsadiq/WITS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Wits/Wits.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>285B3482381D41360AF8470373F1CF941566592F</key>
+		<string>../../../../Wits-TxLabz</string>
+		<key>3842B7ACFDC3CE26E01079C12F6A5BB84FDEE46C</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://bitbucket.org/ahmed_sadiq_/wits-txlabz.git</string>
+	<string>https://github.com/ahmedsadiq/WITS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>285B3482381D41360AF8470373F1CF941566592F</string>
+	<string>3842B7ACFDC3CE26E01079C12F6A5BB84FDEE46C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3842B7ACFDC3CE26E01079C12F6A5BB84FDEE46C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WITS</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

@@ -132,7 +132,14 @@
           isDisabled = false;
           
      }
-     
+     if(IS_IPAD)
+     {
+         PlayNowLabel.font = [UIFont fontWithName:FONT_NAME size:18];
+          challengeAFriend.font = [UIFont fontWithName:FONT_NAME size:18];
+          forGemsLable.font = [UIFont fontWithName:FONT_NAME size:18];
+          forPointsLabel.font = [UIFont fontWithName:FONT_NAME size:18];
+          
+     }
      senderNameLbl.font = [UIFont fontWithName:FONT_NAME size:16];
      backBtn2.font = [UIFont fontWithName:FONT_NAME size:16];
      
@@ -720,7 +727,19 @@
      isGameStarted = true;
      [timer invalidate];
      timer = nil;
+     _gmGemsSelected = false;
+     _gmChallengeSelected = false;
+     UIView *effectView = [self.view viewWithTag:499];
+     [effectView removeFromSuperview];
      
+     //added by osama 
+     AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;
+     del.friendToBeChalleneged = nil;
+     del.requestType = nil;
+     
+     
+     _gameModView.hidden = true;
+     [_gameModView removeFromSuperview];
      [searchingView removeFromSuperview];
      [sharedManager closeWebSocket];
 }
@@ -1172,9 +1191,28 @@
      {
           NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
           [sharedManager sendEvent:@"register" andParameters:registerDictionary];
-          NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+         NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
           
+          NSArray* args = packet.args;
+          NSDictionary* arg = args[0];
+          
+          NSString *isVerified = [arg objectForKey:@"msg"];
+          if([isVerified isEqualToString:@"verified"] ){
+               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+               languageCode = [language intValue];
+               
+               if(appDelegate.friendToBeChalleneged) {
+                    NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",appDelegate.friendToBeChalleneged.friendID,@"friend_id",@"2",@"type",tempToplic.topic_id,@"type_id",language,@"language",requestType,@"challenge_type", nil];
+                    [sharedManager sendEvent:@"sendChallenge" andParameters:registerDictionary];
+                    
+               }
+               else {
+                    NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"2",@"type",tempToplic.topic_id,@"type_id",language,@"language",@"false",@"is_cancel",requestType, @"request_type", nil];
+                    [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionary];
+               }
+          }
+
           if(!(_gmChallengeSelected))
           {
                if (languageCode == 0) {
@@ -1789,15 +1827,19 @@
      
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
+     PlayNowLabel.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
+     challengeAFriend.textColor = [UIColor whiteColor];
+     forPointsLabel.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
+     forGemsLable.textColor = [UIColor whiteColor];
      if(languageCode == 0 ) {
           loadingTitle = Loading;
           searchBar.placeholder = SEARCH_CATEGORY;
           
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gem.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"starglow.png"] forState:UIControlStateNormal];
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowEnglish.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeEnglish.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynowglow.png"] forState:UIControlStateNormal];
+          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenow.png"] forState:UIControlStateNormal];
           
           knowledgeLbl.text = KNOWLEDGE_LBL;
           tutoDesc1.text = TUTORIAL_DESC_LBL;
@@ -1836,8 +1878,8 @@
           
           loadingTitle = Loading_1;
           searchBar.placeholder = SEARCH_CATEGORY_1;
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsArabic.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowArabic.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
           [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowArabic.png"] forState:UIControlStateNormal];
           [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeArabic.png"] forState:UIControlStateNormal];
           howtoPlay1 = @"أسرع في دخول تحدي ضد أي شخص في العالم ";
@@ -1890,8 +1932,8 @@
           howtoPlay3 = @"Echangez vos Gems contre de l'argent.";
           
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsSpanish.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowSpanish.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
           [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowSpanish.png"] forState:UIControlStateNormal];
           [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeSpanish.png"] forState:UIControlStateNormal];
 
@@ -1929,8 +1971,8 @@
           searchBar.placeholder = SEARCH_CATEGORY_3;
           loadingTitle = Loading_3;
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsFrench.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowFrench.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
           [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowFrench.png"] forState:UIControlStateNormal];
           [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeFrench.png"] forState:UIControlStateNormal];
           
@@ -1988,8 +2030,8 @@
           knowledgeLbl.text = KNOWLEDGE_LBL_4;
           
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"Gemsportuguese.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowportuguese.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
           [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowportuguese.png"] forState:UIControlStateNormal];
           [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Challengeportuguese.png"] forState:UIControlStateNormal];
           
@@ -2208,7 +2250,7 @@
      blurEffectView.frame = self.view.frame;
      blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
      blurEffectView.tag = 499;
-     [self.view addSubview:blurEffectView];
+     //[self.view addSubview:blurEffectView];
      // popup settings
      
      [[NSUserDefaults standardUserDefaults] setObject:requestType forKey:@"requestType"];
@@ -2217,7 +2259,7 @@
      isChallenge = false;
      //
      CATransition *transition = [CATransition animation];
-     transition.duration = 0.3;
+     transition.duration = 0.6;
      transition.type = kCATransitionPush; //choose your animation
      transition.subtype = kCATransitionFromBottom;
      [_gameModView.layer addAnimation:transition forKey:nil];
@@ -2256,31 +2298,34 @@
      
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
-     if(languageCode == 0 ) {
-        
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowEnglish.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeEnglish.png"] forState:UIControlStateNormal];
-          
-         
-          
-     }else      if(languageCode == 1 ) {
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowArabic.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeArabic.png"] forState:UIControlStateNormal];
-          
-     }else      if(languageCode == 2 ) {
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowSpanish.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeSpanish.png"] forState:UIControlStateNormal];
-          
-     }else      if(languageCode == 3 ) {
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowFrench.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeFrench.png"] forState:UIControlStateNormal];
-          
-     }else      if(languageCode == 4 ) {
-          
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowPortuguese.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengePortuguese.png"] forState:UIControlStateNormal];
-          
-     }
+     PlayNowLabel.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
+     challengeAFriend.textColor = [UIColor whiteColor];
+     [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynowglow.png"] forState:UIControlStateNormal];
+     [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenow.png"] forState:UIControlStateNormal];
+//     if(languageCode == 0 ) {
+//        
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynowglow.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenow.png"] forState:UIControlStateNormal];
+//         
+//          
+//     }else      if(languageCode == 1 ) {
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowArabic.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeArabic.png"] forState:UIControlStateNormal];
+//          
+//     }else      if(languageCode == 2 ) {
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowSpanish.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeSpanish.png"] forState:UIControlStateNormal];
+//          
+//     }else      if(languageCode == 3 ) {
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowFrench.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeFrench.png"] forState:UIControlStateNormal];
+//          
+//     }else      if(languageCode == 4 ) {
+//          
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowPortuguese.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengePortuguese.png"] forState:UIControlStateNormal];
+//          
+//     }
      
      
      
@@ -2309,31 +2354,35 @@
      
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
-     if(languageCode == 0 ) {
-          
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowEnglish.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowEnglish.png"] forState:UIControlStateNormal];
-          
-          
-          
-     }else      if(languageCode == 1 ) {
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowArabic.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowArabic.png"] forState:UIControlStateNormal];
-          
-     }else      if(languageCode == 2 ) {
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowSpanish.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowSpanish.png"] forState:UIControlStateNormal];
-          
-     }else      if(languageCode == 3 ) {
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowFrench.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowFrench.png"] forState:UIControlStateNormal];
-          
-     }else      if(languageCode == 4 ) {
-          
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowPortuguese.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowPortuguese.png"] forState:UIControlStateNormal];
-          
-     }
+     challengeAFriend.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
+     PlayNowLabel.textColor = [UIColor whiteColor];
+     [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynow.png"] forState:UIControlStateNormal];
+     [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenowglow.png"] forState:UIControlStateNormal];
+//     if(languageCode == 0 ) {
+//          
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowEnglish.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowEnglish.png"] forState:UIControlStateNormal];
+//          
+//          
+//          
+//     }else      if(languageCode == 1 ) {
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowArabic.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowArabic.png"] forState:UIControlStateNormal];
+//          
+//     }else      if(languageCode == 2 ) {
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowSpanish.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowSpanish.png"] forState:UIControlStateNormal];
+//          
+//     }else      if(languageCode == 3 ) {
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowFrench.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowFrench.png"] forState:UIControlStateNormal];
+//          
+//     }else      if(languageCode == 4 ) {
+//          
+//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowPortuguese.png"] forState:UIControlStateNormal];
+//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowPortuguese.png"] forState:UIControlStateNormal];
+//          
+//     }
      
      
      
@@ -2353,36 +2402,39 @@
      _gmGemsSelected = true;
      
      
-     
+     forGemsLable.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
+     forPointsLabel.textColor = [UIColor whiteColor];
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
      if(languageCode == 0 ) {
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gemglow.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
 
           
           
           
      }else      if(languageCode == 1 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsGlowArabic.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsArabic.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+
 
           
      }else      if(languageCode == 2 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsGlowSpanish.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsSpanish.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
 
           
      }else      if(languageCode == 3 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsGlowFrench.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsFrench.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
 
           
      }else      if(languageCode == 4 ) {
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsGlowportuguese.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsPortuguese.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+
 
           
      }
@@ -2401,34 +2453,40 @@
 //     [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"starglow.png"] forState:UIControlStateNormal];
 //     
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+     forGemsLable.textColor = [UIColor whiteColor];
+     forPointsLabel.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
      languageCode = [language intValue];
      if(languageCode == 0 ) {
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gem.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"starglow.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
           
           
           
           
      }else      if(languageCode == 1 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsArabic.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowArabic.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+          
           
           
      }else      if(languageCode == 2 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsSpanish.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowSpanish.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+          
           
           
      }else      if(languageCode == 3 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"GemsFrench.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowFrench.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+          
           
           
      }else      if(languageCode == 4 ) {
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"Gemsportuguese.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"PointsGlowportuguese.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+          
           
           
      }

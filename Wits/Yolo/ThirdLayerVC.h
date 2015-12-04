@@ -26,6 +26,14 @@
      IBOutlet UIImageView *statusView;
      AppDelegate *appDelegate;
      
+     //labels
+     IBOutlet UILabel *forGemsLable;
+     IBOutlet UILabel *forPointsLabel;
+     
+     IBOutlet UILabel *challengeAFriend;
+     IBOutlet UILabel *PlayNowLabel;
+     
+     
      
      NSString *howtoPlay1;
      NSString *howtoPlay2;

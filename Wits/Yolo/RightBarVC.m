@@ -19,7 +19,7 @@
 #import "MessagesVC.h"
 #import "ContactUsViewController.h"
 #import "UpdateProfileVC.h"
-
+#import "EarnFreePointsViewController.h"
 @interface RightBarVC () {
      CLGeocoder *geocoder;
      CLPlacemark *placemark;
@@ -65,7 +65,7 @@ float _yLocation;
 - (void)viewDidLoad
 {
      [super viewDidLoad];
-
+     
      // Do any additional setup after loading the view from its nib.
      _loadingView = [[LoadingView alloc] init];
      self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
@@ -73,23 +73,23 @@ float _yLocation;
      languageCode = [language intValue];
      if(IS_IPAD){
           userRankingLbl.font = [UIFont fontWithName:FONT_NAME size:30];
-          lblaboutus.font = [UIFont fontWithName:FONT_NAME size:20];
-          lblhistory.font = [UIFont fontWithName:FONT_NAME size:20];
-          lbllogout.font = [UIFont fontWithName:FONT_NAME size:20];
-          lblmesage.font = [UIFont fontWithName:FONT_NAME size:20];
-          lblranking.font = [UIFont fontWithName:FONT_NAME size:20];
+          lblaboutus.font = [UIFont fontWithName:FONT_NAME size:17];
+          lblhistory.font = [UIFont fontWithName:FONT_NAME size:17];
+          lbllogout.font = [UIFont fontWithName:FONT_NAME size:17];
+          lblmesage.font = [UIFont fontWithName:FONT_NAME size:17];
+          lblranking.font = [UIFont fontWithName:FONT_NAME size:17];
           namelbl.font = [UIFont fontWithName:FONT_NAME size:30];
-          lblsetting.font = [UIFont fontWithName:FONT_NAME size:20];
+          lblsetting.font = [UIFont fontWithName:FONT_NAME size:17];
      }
      else{
-     userRankingLbl.font = [UIFont fontWithName:FONT_NAME size:15];
-     lblaboutus.font = [UIFont fontWithName:FONT_NAME size:14];
-     lblhistory.font = [UIFont fontWithName:FONT_NAME size:14];
-     lbllogout.font = [UIFont fontWithName:FONT_NAME size:14];
-     lblmesage.font = [UIFont fontWithName:FONT_NAME size:14];
-     lblranking.font = [UIFont fontWithName:FONT_NAME size:14];
-     namelbl.font = [UIFont fontWithName:FONT_NAME size:18];
-     lblsetting.font = [UIFont fontWithName:FONT_NAME size:14];
+          userRankingLbl.font = [UIFont fontWithName:FONT_NAME size:15];
+          lblaboutus.font = [UIFont fontWithName:FONT_NAME size:11];
+          lblhistory.font = [UIFont fontWithName:FONT_NAME size:11];
+          lbllogout.font = [UIFont fontWithName:FONT_NAME size:11];
+          lblmesage.font = [UIFont fontWithName:FONT_NAME size:11];
+          lblranking.font = [UIFont fontWithName:FONT_NAME size:11];
+          namelbl.font = [UIFont fontWithName:FONT_NAME size:18];
+          lblsetting.font = [UIFont fontWithName:FONT_NAME size:11];
      }
      
      userRankingLbl.text = @"Loading...";
@@ -128,7 +128,7 @@ float _yLocation;
 - (void)viewWillAppear:(BOOL)animated {
      [super viewWillAppear:animated];
      //initData
-          [self setLanguage];
+     [self setLanguage];
      [self.tabBarController.tabBar setHidden:NO];
      
 }
@@ -239,18 +239,19 @@ float _yLocation;
 
 -(IBAction)ShowMessages:(id)sender{
      
-     [self.tabBarController.tabBar setHidden:YES];
+     [self.tabBarController.tabBar setHidden:NO];
      
      if ([[UIScreen mainScreen] bounds].size.height == iPad) {
           
-          MessagesVC *update = [[MessagesVC alloc] initWithNibName:@"MessagesVC_iPad" bundle:nil];
+          EarnFreePointsViewController *update = [[EarnFreePointsViewController alloc] initWithNibName:@"EarnFreePointsViewController_iPad" bundle:nil];
           [self.navigationController pushViewController:update animated:YES];
      }
      else{
           
-          MessagesVC *update = [[MessagesVC alloc] initWithNibName:@"MessagesVC" bundle:nil];
+          EarnFreePointsViewController *update = [[EarnFreePointsViewController alloc] initWithNibName:@"EarnFreePointsViewController" bundle:nil];
           [self.navigationController pushViewController:update animated:YES];
      }
+
 }
 
 -(IBAction)generalAction:(id)sender{
@@ -451,27 +452,27 @@ float _yLocation;
           
           
           lblhistory.text = HISTORY_BTN;
-                    lblmesage.text = MESSAGE_BTN;
-                    lblranking.text = RANKING_BTN;
-                    lblsetting.text = SETTINGS_BTN;
-                    lblaboutus.text = ABOUTUS_TEXT;
-                    lbllogout.text = LOGOUT_BTN;
+          lblmesage.text = MESSAGE_BTN;
+          lblranking.text = RANKING_BTN;
+          lblsetting.text = SETTINGS_BTN;
+          lblaboutus.text = ABOUTUS_TEXT;
+          lbllogout.text = LOGOUT_BTN;
           
           
           
           
-//          [homeBtn setTitle:HOME_BTN forState:UIControlStateNormal];
-//          [topicsBtn setTitle:TOPICS_BTN forState:UIControlStateNormal];
-//          [friendsBtn setTitle:FRIENDS_BTN forState:UIControlStateNormal];
-//          [historyBtn setTitle:HISTORY_BTN forState:UIControlStateNormal];
-//          [messageBtn setTitle:MESSAGE_BTN forState:UIControlStateNormal];
-//          [discussionBtn setTitle:DISCUSSION_BTN forState:UIControlStateNormal];
-//          [rankingBtn setTitle:RANKING_BTN forState:UIControlStateNormal];
-//          [witsStoreBtn setTitle:WITS_STORE_BTN forState:UIControlStateNormal];
-//          [settingsBtn setTitle:SETTINGS_BTN forState:UIControlStateNormal];
-//          [logOutBtn setTitle:LOGOUT_BTN forState:UIControlStateNormal];
-//          [transferPoints setTitle:TRANSFER_POINTS_BTN forState:UIControlStateNormal];
-//          [contactsBtn setTitle:CONTACTS_BTN forState:UIControlStateNormal];
+          //          [homeBtn setTitle:HOME_BTN forState:UIControlStateNormal];
+          //          [topicsBtn setTitle:TOPICS_BTN forState:UIControlStateNormal];
+          //          [friendsBtn setTitle:FRIENDS_BTN forState:UIControlStateNormal];
+          //          [historyBtn setTitle:HISTORY_BTN forState:UIControlStateNormal];
+          //          [messageBtn setTitle:MESSAGE_BTN forState:UIControlStateNormal];
+          //          [discussionBtn setTitle:DISCUSSION_BTN forState:UIControlStateNormal];
+          //          [rankingBtn setTitle:RANKING_BTN forState:UIControlStateNormal];
+          //          [witsStoreBtn setTitle:WITS_STORE_BTN forState:UIControlStateNormal];
+          //          [settingsBtn setTitle:SETTINGS_BTN forState:UIControlStateNormal];
+          //          [logOutBtn setTitle:LOGOUT_BTN forState:UIControlStateNormal];
+          //          [transferPoints setTitle:TRANSFER_POINTS_BTN forState:UIControlStateNormal];
+          //          [contactsBtn setTitle:CONTACTS_BTN forState:UIControlStateNormal];
      }
      else if(languageCode == 1 ) {
           loadingTitle = Loading_1;
@@ -483,18 +484,18 @@ float _yLocation;
           lbllogout.text = LOGOUT_BTN_1;
           
           
-//          [homeBtn setTitle:HOME_BTN_1 forState:UIControlStateNormal];
-//          [topicsBtn setTitle:TOPICS_BTN_1 forState:UIControlStateNormal];
-//          [friendsBtn setTitle:FRIENDS_BTN_1 forState:UIControlStateNormal];
-//          [historyBtn setTitle:HISTORY_BTN_1 forState:UIControlStateNormal];
-//          [messageBtn setTitle:MESSAGE_BTN_1 forState:UIControlStateNormal];
-//          [discussionBtn setTitle:DISCUSSION_BTN_1 forState:UIControlStateNormal];
-//          [rankingBtn setTitle:RANKING_BTN_1 forState:UIControlStateNormal];
-//          [witsStoreBtn setTitle:WITS_STORE_BTN_1 forState:UIControlStateNormal];
-//          [settingsBtn setTitle:SETTINGS_BTN_1 forState:UIControlStateNormal];
-//          [logOutBtn setTitle:LOGOUT_BTN_1 forState:UIControlStateNormal];
-//          [transferPoints setTitle:TRANSFER_POINTS_BTN_1 forState:UIControlStateNormal];
-//          [contactsBtn setTitle:CONTACTS_BTN_1 forState:UIControlStateNormal];
+          //          [homeBtn setTitle:HOME_BTN_1 forState:UIControlStateNormal];
+          //          [topicsBtn setTitle:TOPICS_BTN_1 forState:UIControlStateNormal];
+          //          [friendsBtn setTitle:FRIENDS_BTN_1 forState:UIControlStateNormal];
+          //          [historyBtn setTitle:HISTORY_BTN_1 forState:UIControlStateNormal];
+          //          [messageBtn setTitle:MESSAGE_BTN_1 forState:UIControlStateNormal];
+          //          [discussionBtn setTitle:DISCUSSION_BTN_1 forState:UIControlStateNormal];
+          //          [rankingBtn setTitle:RANKING_BTN_1 forState:UIControlStateNormal];
+          //          [witsStoreBtn setTitle:WITS_STORE_BTN_1 forState:UIControlStateNormal];
+          //          [settingsBtn setTitle:SETTINGS_BTN_1 forState:UIControlStateNormal];
+          //          [logOutBtn setTitle:LOGOUT_BTN_1 forState:UIControlStateNormal];
+          //          [transferPoints setTitle:TRANSFER_POINTS_BTN_1 forState:UIControlStateNormal];
+          //          [contactsBtn setTitle:CONTACTS_BTN_1 forState:UIControlStateNormal];
           
           homeBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
           topicsBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -518,18 +519,18 @@ float _yLocation;
           lblsetting.text = SETTINGS_BTN_2;
           lblaboutus.text = ABOUTUS_TEXT_2;
           lbllogout.text = LOGOUT_BTN_2;
-//          [homeBtn setTitle:HOME_BTN_2 forState:UIControlStateNormal];
-//          [topicsBtn setTitle:TOPICS_BTN_2 forState:UIControlStateNormal];
-//          [friendsBtn setTitle:FRIENDS_BTN_2 forState:UIControlStateNormal];
-//          [historyBtn setTitle:HISTORY_BTN_2 forState:UIControlStateNormal];
-//          [messageBtn setTitle:MESSAGE_BTN_2 forState:UIControlStateNormal];
-//          [discussionBtn setTitle:DISCUSSION_BTN_2 forState:UIControlStateNormal];
-//          [rankingBtn setTitle:RANKING_BTN_2 forState:UIControlStateNormal];
-//          [witsStoreBtn setTitle:WITS_STORE_BTN_2 forState:UIControlStateNormal];
-//          [settingsBtn setTitle:SETTINGS_BTN_2 forState:UIControlStateNormal];
-//          [logOutBtn setTitle:LOGOUT_BTN_2 forState:UIControlStateNormal];
-//          [transferPoints setTitle:TRANSFER_POINTS_BTN_2 forState:UIControlStateNormal];
-//          [contactsBtn setTitle:CONTACTS_BTN_2 forState:UIControlStateNormal];
+          //          [homeBtn setTitle:HOME_BTN_2 forState:UIControlStateNormal];
+          //          [topicsBtn setTitle:TOPICS_BTN_2 forState:UIControlStateNormal];
+          //          [friendsBtn setTitle:FRIENDS_BTN_2 forState:UIControlStateNormal];
+          //          [historyBtn setTitle:HISTORY_BTN_2 forState:UIControlStateNormal];
+          //          [messageBtn setTitle:MESSAGE_BTN_2 forState:UIControlStateNormal];
+          //          [discussionBtn setTitle:DISCUSSION_BTN_2 forState:UIControlStateNormal];
+          //          [rankingBtn setTitle:RANKING_BTN_2 forState:UIControlStateNormal];
+          //          [witsStoreBtn setTitle:WITS_STORE_BTN_2 forState:UIControlStateNormal];
+          //          [settingsBtn setTitle:SETTINGS_BTN_2 forState:UIControlStateNormal];
+          //          [logOutBtn setTitle:LOGOUT_BTN_2 forState:UIControlStateNormal];
+          //          [transferPoints setTitle:TRANSFER_POINTS_BTN_2 forState:UIControlStateNormal];
+          //          [contactsBtn setTitle:CONTACTS_BTN_2 forState:UIControlStateNormal];
      }
      else if(languageCode == 3) {
           
@@ -541,18 +542,18 @@ float _yLocation;
           lblaboutus.text = ABOUTUS_TEXT_3;
           lbllogout.text = LOGOUT_BTN_3;
           
-//          [homeBtn setTitle:HOME_BTN_3 forState:UIControlStateNormal];
-//          [topicsBtn setTitle:TOPICS_BTN_3 forState:UIControlStateNormal];
-//          [friendsBtn setTitle:FRIENDS_BTN_3 forState:UIControlStateNormal];
-//          [historyBtn setTitle:HISTORY_BTN_3 forState:UIControlStateNormal];
-//          [messageBtn setTitle:MESSAGE_BTN_3 forState:UIControlStateNormal];
-//          [discussionBtn setTitle:DISCUSSION_BTN_3 forState:UIControlStateNormal];
-//          [rankingBtn setTitle:RANKING_BTN_3 forState:UIControlStateNormal];
-//          [witsStoreBtn setTitle:WITS_STORE_BTN_3 forState:UIControlStateNormal];
-//          [settingsBtn setTitle:SETTINGS_BTN_3 forState:UIControlStateNormal];
-//          [logOutBtn setTitle:LOGOUT_BTN_3 forState:UIControlStateNormal];
-//          [transferPoints setTitle:TRANSFER_POINTS_BTN_3 forState:UIControlStateNormal];
-//          [contactsBtn setTitle:CONTACTS_BTN_3 forState:UIControlStateNormal];
+          //          [homeBtn setTitle:HOME_BTN_3 forState:UIControlStateNormal];
+          //          [topicsBtn setTitle:TOPICS_BTN_3 forState:UIControlStateNormal];
+          //          [friendsBtn setTitle:FRIENDS_BTN_3 forState:UIControlStateNormal];
+          //          [historyBtn setTitle:HISTORY_BTN_3 forState:UIControlStateNormal];
+          //          [messageBtn setTitle:MESSAGE_BTN_3 forState:UIControlStateNormal];
+          //          [discussionBtn setTitle:DISCUSSION_BTN_3 forState:UIControlStateNormal];
+          //          [rankingBtn setTitle:RANKING_BTN_3 forState:UIControlStateNormal];
+          //          [witsStoreBtn setTitle:WITS_STORE_BTN_3 forState:UIControlStateNormal];
+          //          [settingsBtn setTitle:SETTINGS_BTN_3 forState:UIControlStateNormal];
+          //          [logOutBtn setTitle:LOGOUT_BTN_3 forState:UIControlStateNormal];
+          //          [transferPoints setTitle:TRANSFER_POINTS_BTN_3 forState:UIControlStateNormal];
+          //          [contactsBtn setTitle:CONTACTS_BTN_3 forState:UIControlStateNormal];
      }
      else if(languageCode == 4) {
           loadingTitle = Loading_4;
@@ -564,19 +565,19 @@ float _yLocation;
           lblaboutus.text = ABOUTUS_TEXT_4;
           lbllogout.text = LOGOUT_BTN_4;
           
-//          [homeBtn setTitle:HOME_BTN_4 forState:UIControlStateNormal];
-//          [topicsBtn setTitle:TOPICS_BTN_4 forState:UIControlStateNormal];
-//          [friendsBtn setTitle:FRIENDS_BTN_4 forState:UIControlStateNormal];
-//          [historyBtn setTitle:HISTORY_BTN_4 forState:UIControlStateNormal];
-//          [messageBtn setTitle:MESSAGE_BTN_4 forState:UIControlStateNormal];
-//          [discussionBtn setTitle:DISCUSSION_BTN_4 forState:UIControlStateNormal];
-//          [rankingBtn setTitle:RANKING_BTN_4 forState:UIControlStateNormal];
-//          [witsStoreBtn setTitle:WITS_STORE_BTN_4 forState:UIControlStateNormal];
-//          [settingsBtn setTitle:SETTINGS_BTN_4 forState:UIControlStateNormal];
-//          [logOutBtn setTitle:LOGOUT_BTN_4 forState:UIControlStateNormal];
-//          [transferPoints setTitle:TRANSFER_POINTS_BTN_4 forState:UIControlStateNormal];
-//          
-//          [contactsBtn setTitle:CONTACTS_BTN_4 forState:UIControlStateNormal];
+          //          [homeBtn setTitle:HOME_BTN_4 forState:UIControlStateNormal];
+          //          [topicsBtn setTitle:TOPICS_BTN_4 forState:UIControlStateNormal];
+          //          [friendsBtn setTitle:FRIENDS_BTN_4 forState:UIControlStateNormal];
+          //          [historyBtn setTitle:HISTORY_BTN_4 forState:UIControlStateNormal];
+          //          [messageBtn setTitle:MESSAGE_BTN_4 forState:UIControlStateNormal];
+          //          [discussionBtn setTitle:DISCUSSION_BTN_4 forState:UIControlStateNormal];
+          //          [rankingBtn setTitle:RANKING_BTN_4 forState:UIControlStateNormal];
+          //          [witsStoreBtn setTitle:WITS_STORE_BTN_4 forState:UIControlStateNormal];
+          //          [settingsBtn setTitle:SETTINGS_BTN_4 forState:UIControlStateNormal];
+          //          [logOutBtn setTitle:LOGOUT_BTN_4 forState:UIControlStateNormal];
+          //          [transferPoints setTitle:TRANSFER_POINTS_BTN_4 forState:UIControlStateNormal];
+          //
+          //          [contactsBtn setTitle:CONTACTS_BTN_4 forState:UIControlStateNormal];
      }
      if (languageCode == 1) {
           homeBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;

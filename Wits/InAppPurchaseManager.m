@@ -239,6 +239,7 @@
     else
     {
         // this is fine, the user just cancelled, so don’t notify
+         
         [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
     }
 }

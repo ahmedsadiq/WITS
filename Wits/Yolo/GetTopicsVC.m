@@ -41,6 +41,14 @@
      return self;
 }
 
+- (IBAction)HelpShiftViewCancelPressed:(id)sender {
+     self.tabBarController.tabBar.hidden = false;
+     
+     _HelpShiftView.hidden = true;
+     [_HelpShiftView removeFromSuperview];
+     
+}
+
 - (IBAction)sendQuestion:(id)sender {
      
      if (answerTxt.text.length < 1) {
@@ -256,6 +264,7 @@
           AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;
           [del musicSwitch:true];
      }
+     
 }
 -(void) setUpTutorial {
      
@@ -332,7 +341,7 @@
                [customObject stopAnimating];
                [customObject removeFromSuperview];
                
-               self.tabBarController.tabBar.hidden = false;
+               //self.tabBarController.tabBar.hidden = false;
                
                NSDictionary *mainDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                NSNumber *flag = [mainDict objectForKey:@"flag"];
@@ -357,7 +366,7 @@
                          NSString *verified = [SharedManager getInstance]._userProfile.isVerfied;
                          NSString *loginEmail = emailOBj.LoginEmail;
                     }
-                    self.tabBarController.tabBar.hidden = false;
+                    //self.tabBarController.tabBar.hidden = false;
                     [customObject stopAnimating];
                     [customObject removeFromSuperview];
                     
@@ -466,6 +475,28 @@
                     
                     indexCounter = 0;
                     [topicTblView reloadData];
+                    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+                    // bool firstTime = FALSE;
+                    
+                    if ([standardUserDefaults objectForKey:@"FirstTime"] == nil){
+                         [self.tabBarController.tabBar setHidden:false];
+                    }
+                    else {
+                         if([[NSUserDefaults standardUserDefaults] boolForKey:@"FirstTime"] == YES){
+                              CATransition *transition = [CATransition animation];
+                              transition.duration = 0.6;
+                              transition.type = kCATransitionPush; //choose your animation
+                              transition.subtype = kCATransitionFromBottom;
+                              [_HelpShiftView.layer addAnimation:transition forKey:nil];
+                              _HelpShiftView.hidden = false;
+                              [self.view addSubview:_HelpShiftView];
+                              [self.tabBarController.tabBar setHidden:true];
+                              [[NSUserDefaults standardUserDefaults]  removeObjectForKey:@"FirstTime"];
+                              [standardUserDefaults setBool:NO forKey:@"FirstTime"];
+                              [standardUserDefaults synchronize];
+                         }
+                         else{ [self.tabBarController.tabBar setHidden:false];}
+                    }
                }
                else if([flag isEqualToNumber:[NSNumber numberWithInt:USER_ALREADY_FLAG]])
                {
@@ -509,7 +540,7 @@
                }
           }
           else{
-               self.tabBarController.tabBar.hidden = false;
+               //self.tabBarController.tabBar.hidden = false;
                [customObject stopAnimating];
                [customObject removeFromSuperview];
                
@@ -665,7 +696,7 @@
           cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
           if(IS_IPAD)
           {
-           cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+               cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:25];
                cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
           }
           [cell.leftBtn addTarget:self action:@selector(leftBtnPressed:) forControlEvents:UIControlEventTouchUpInside];

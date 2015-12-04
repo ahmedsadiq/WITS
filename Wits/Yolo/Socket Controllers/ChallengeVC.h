@@ -124,6 +124,7 @@
      IBOutlet UIButton *homeBtn;
      IBOutlet UILabel *roundTitleLbl;
      
+     IBOutlet UILabel *questionNoLbl;
      
      IBOutlet UIImageView *roundBg;
      

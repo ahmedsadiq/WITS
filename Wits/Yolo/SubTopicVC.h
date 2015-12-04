@@ -36,8 +36,16 @@
      IBOutlet UILabel *mainTitlelbl;
      IBOutlet UIImageView *statusView;
      
+     
+     
      NSMutableArray *subtopicsArray;
      NSUInteger currentSelectedIndex;
+     
+     IBOutlet UILabel *forGemsLable;
+     IBOutlet UILabel *forPointsLabel;
+     
+     IBOutlet UILabel *challengeAFriend;
+      IBOutlet UILabel *PlayNowLabel;
      
      BOOL isChallengeSelected;
      Challenge *_challenge;

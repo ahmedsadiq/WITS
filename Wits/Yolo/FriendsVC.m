@@ -89,9 +89,13 @@
           noFriendLbl.hidden = true;
      }
      
+     
+     
+     
      [self FetchFriendList];
      
 }
+
 
 -(IBAction)sendSearcgCall:(id)sender{
      
@@ -925,7 +929,7 @@
      blurEffectView.frame = self.view.frame;
      blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
      blurEffectView.tag = 499;
-     [self.view addSubview:blurEffectView];
+     //[self.view addSubview:blurEffectView];
      
      if(isSearched)
      {
@@ -1035,7 +1039,7 @@
           //          _fmChatBtn.hidden = NO;
      }
      CATransition *transition = [CATransition animation];
-     transition.duration = 0.3;
+     transition.duration = 0.6;
      transition.type = kCATransitionPush; //choose your animation
      transition.subtype = kCATransitionFromBottom;
      [_friendModView.layer addAnimation:transition forKey:nil];
@@ -1761,10 +1765,11 @@
      [effectView removeFromSuperview];
      
      CATransition *transition = [CATransition animation];
-     transition.duration = 0.3;
+     transition.duration = 0.6;
      transition.type = kCATransitionPush; //choose your animation
      transition.subtype = kCATransitionFromTop;
      [_friendModView.layer addAnimation:transition forKey:nil];
+     
      _friendModView.hidden = true;
      [_friendModView removeFromSuperview];
 }
@@ -1835,6 +1840,7 @@
           delegate.isFriendRequest = true;
           [self FetchFriendList];
      }
+          [self friendModCanelBtnPressed:nil];
 }
 - (void)handleSingleTap:(UITapGestureRecognizer *) sender
 

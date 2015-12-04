@@ -123,6 +123,8 @@
 - (IBAction)PlaywithGems:(id)sender;
 - (IBAction)CloseGemsDialog:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIView *HelpShiftView;
+- (IBAction)HelpShiftViewCancelPressed:(id)sender;
 
 - (IBAction)sendQuestion:(id)sender;
 - (IBAction)ShowRightMenu:(id)sender;
