@@ -32,6 +32,7 @@
     IBOutlet UILabel *transferGemslbl;
     IBOutlet UILabel *cashoutGemslbl;
   
+      IBOutlet UILabel *RewardsbtnLbl;
     NIDropDown *dropDown;
     NSString *paymentMethod;
     

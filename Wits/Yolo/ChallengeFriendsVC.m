@@ -405,7 +405,12 @@
           
           cell.leftUserActionBtn.enabled = NO;
      }
-     
+     NSString * stat = _user.RelationshipStatus ;
+     int status = [[NSString stringWithFormat:@"%@",stat] intValue];
+     if(status){
+            [cell.leftUserVerified setImage:[UIImage imageNamed:@"friendstick.png"]];
+           [cell.rightUserVerified setImage:[UIImage imageNamed:@"friendstick.png"]];
+     }
      currentIndex++;
      if(currentIndex < challengeArray.count) {
           UserProfile *_user2 = [challengeArray objectAtIndex:currentIndex];

@@ -665,7 +665,7 @@
           HowWitsStore = @"كيفية استخدام مخزن ويتس";
           HowtoEarnPoints = @"كيف تحصل على النقاط مجاناً؟";
           
-          [_tutorialPressed setTitle:TUTORIAL_BTN_1 forState:UIControlStateNormal];
+          //[_tutorialPressed setTitle:TUTORIAL_BTN_1 forState:UIControlStateNormal];
           [_tutorialBacklbl setTitle:BACK_BTN_1 forState:UIControlStateNormal];
           [mainBack setTitle:BACK_BTN_1 forState:UIControlStateNormal];
           
@@ -696,7 +696,7 @@
           //_shareLbl.text = SHARE_WITS_LBL_2;
           _EarnfreePointLbl.text = INVITE_FRIENDS_2;
           
-          [_tutorialPressed setTitle:TUTORIAL_BTN_2 forState:UIControlStateNormal];
+          ////[_tutorialPressed setTitle:TUTORIAL_BTN_2 forState:UIControlStateNormal];
           [_tutorialBacklbl setTitle:BACK_BTN_2 forState:UIControlStateNormal];
           [mainBack setTitle:BACK_BTN_2 forState:UIControlStateNormal];
           
@@ -726,7 +726,7 @@
           howtouseStoreDesc = @"Registrase ahora y gane 1000 puntos gratis";
           howtoEarnPointDesc = @"Puedes ganar pontus gratis invitando a tus amigos y compartiendo la aplicación en Facebook or Twitter.";
           
-          [_tutorialPressed setTitle:TUTORIAL_BTN_3 forState:UIControlStateNormal];
+          //[_tutorialPressed setTitle:TUTORIAL_BTN_3 forState:UIControlStateNormal];
           [_tutorialBacklbl setTitle:BACK_BTN_3 forState:UIControlStateNormal];
           [mainBack setTitle:BACK_BTN_3 forState:UIControlStateNormal];
           
@@ -752,7 +752,7 @@
           //_shareLbl.text = SHARE_WITS_LBL_4;
           _EarnfreePointLbl.text = INVITE_FRIENDS_4;
           
-          [_tutorialPressed setTitle:TUTORIAL_BTN_4 forState:UIControlStateNormal];
+          //[_tutorialPressed setTitle:TUTORIAL_BTN_4 forState:UIControlStateNormal];
           [_tutorialBacklbl setTitle:BACK_BTN_4 forState:UIControlStateNormal];
           [mainBack setTitle:BACK_BTN_4 forState:UIControlStateNormal];
           

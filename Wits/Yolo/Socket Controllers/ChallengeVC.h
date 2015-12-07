@@ -114,6 +114,8 @@
      IBOutlet UILabel *topBarPlayerName;
      IBOutlet UILabel *topBarOpponentName;
      
+      IBOutlet UILabel *userPointsTotal;
+      IBOutlet UILabel *userGemTotal;
      IBOutlet UIView *resulltSecondLayer;
      
      IBOutlet UIView *resultBottomBar;
@@ -231,6 +233,8 @@
 @property (strong, nonatomic) IBOutlet UIView *roundView;
 @property (strong, nonatomic) IBOutlet UILabel *roundLbl;
 @property (weak, nonatomic) IBOutlet UIImageView *gamebg;
+@property (weak, nonatomic) IBOutlet UIImageView *gemLeft;
+@property (weak, nonatomic) IBOutlet UIImageView *gemRight;
 
 - (id)initWithChallenge:(Challenge *)_Challenge;
 

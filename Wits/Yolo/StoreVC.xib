@@ -29,6 +29,7 @@
                 <outlet property="O2View" destination="ZWy-mc-LRv" id="eLr-dE-aoB"/>
                 <outlet property="O2sendBtn" destination="PDO-mx-DEh" id="Nb9-YW-0jh"/>
                 <outlet property="OKBtn" destination="JAX-IK-gMM" id="VZL-e7-mEh"/>
+                <outlet property="RewardsbtnLbl" destination="Oof-UE-bNG" id="3s4-co-bxa"/>
                 <outlet property="ViewAgreement" destination="Kao-bp-rKv" id="KTJ-bA-opz"/>
                 <outlet property="acceptBtn" destination="wUD-tf-qas" id="yJL-RL-Tvy"/>
                 <outlet property="ageemntTitle" destination="xQR-fF-DeP" id="ai8-Lf-vwq"/>
@@ -43,7 +44,6 @@
                 <outlet property="cashoutDollarLbl" destination="Ugk-Q1-M4e" id="5Af-01-16H"/>
                 <outlet property="cashoutLbl" destination="k4h-JW-QAg" id="yc7-r9-Hmf"/>
                 <outlet property="cashoutSmallView" destination="8NC-g5-Rlr" id="iYE-4O-ckH"/>
-                <outlet property="nonCashablePoints" destination="cBo-NQ-efx" id="XVy-GK-LTn"/>
                 <outlet property="overlayView" destination="Knr-St-q3L" id="fSM-K7-q3N"/>
                 <outlet property="rejectBtn" destination="z4q-Im-axx" id="96m-Ia-k8B"/>
                 <outlet property="transferPointsBtn" destination="M68-ho-U7x" id="aDd-rj-BEw"/>
@@ -270,7 +270,7 @@
                             </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lWI-58-GUw">
-                            <rect key="frame" x="13" y="322.00000188562512" width="259" height="42"/>
+                            <rect key="frame" x="13" y="322.00000260787044" width="259" height="42"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -351,7 +351,7 @@
                             </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PDO-mx-DEh">
-                            <rect key="frame" x="13" y="315.00000184363466" width="259" height="42"/>
+                            <rect key="frame" x="13" y="315.00000260787044" width="259" height="42"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>

@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSString *expired_at;
 @property (nonatomic, retain) NSString *reward_id;
 @property (nonatomic, retain) NSString *image;
+@property (nonatomic, retain) UIImage *cellimage;
 @property (nonatomic, retain) NSString *unlock_price;
 @property BOOL isSelected;
 @property BOOL isUnlocked;

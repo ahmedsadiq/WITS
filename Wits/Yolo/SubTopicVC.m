@@ -177,7 +177,7 @@
           [op onCompletion:^(MKNetworkOperation *completedOperation) {
                
                [senderProfileImageView setImage:[completedOperation responseImage]];
-               //[senderProfileImageView roundImageCorner];
+               [senderProfileImageView roundImageCorner];
                
           } onError:^(NSError* error) {
                
@@ -865,7 +865,7 @@
           AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
           if(delegate.profileImage) {
                [senderProfileImageView setImage:delegate.profileImage];
-               //[senderProfileImageView roundImageCorner];
+               [senderProfileImageView roundImageCorner];
           }
           else {
                MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
@@ -873,7 +873,7 @@
                
                [op onCompletion:^(MKNetworkOperation *completedOperation) {
                     [senderProfileImageView setImage:[completedOperation responseImage]];
-                    //[senderProfileImageView roundImageCorner];
+                    [senderProfileImageView roundImageCorner];
                     
                } onError:^(NSError* error) {
                     senderProfileImageView.image = [UIImage imageNamed:@"Icon_152.png"];
@@ -1125,6 +1125,7 @@
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
           
+         _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
           if (languageCode == 0) {
                _searchOppLbl.text = @"VS";
           }else if(languageCode == 1){
@@ -1154,7 +1155,7 @@
      if(sharedManager.socketIO.isConnected) {
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
-          
+           _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
           if (languageCode == 0) {
                _searchOppLbl.text = @"VS";
           }else if(languageCode == 1){
@@ -1280,7 +1281,7 @@
           opponentProfileImageView.imageURL = [NSURL URLWithString:appDelegate.friendToBeChalleneged.profile_image];
           NSURL *url = [NSURL URLWithString:appDelegate.friendToBeChalleneged.profile_image];
           [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
-          
+            [opponentProfileImageView roundImageCorner];
           int flag = [[innerDictionary objectForKey:@"flag"] intValue];
           if(flag == 1) {
                [self displayNameAndImage];
@@ -1436,6 +1437,7 @@
           else if(flag == 1){
                //Oponent Found
                _searchingLoaderView.hidden = true;
+                _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
                _searchOppLbl.text = @"VS";
                //               _searchOppLbl.text = @"";
                [timer invalidate];
@@ -1450,7 +1452,7 @@
                opponentProfileImageView.imageURL = [NSURL URLWithString:_challenge.opponent_profileImage];
                NSURL *url = [NSURL URLWithString:_challenge.opponent_profileImage];
                [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
-               
+               [opponentProfileImageView roundImageCorner];
                _challenge = [[Challenge alloc] initWithDictionary:json];
                _challenge.type = @"2";
                _challenge.type_ID = tempToplic.topic_id;
@@ -1831,15 +1833,15 @@
      challengeAFriend.textColor = [UIColor whiteColor];
      forPointsLabel.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
      forGemsLable.textColor = [UIColor whiteColor];
+     [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+     [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+     [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynowglow.png"] forState:UIControlStateNormal];
+     [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenow.png"] forState:UIControlStateNormal];
      if(languageCode == 0 ) {
           loadingTitle = Loading;
           searchBar.placeholder = SEARCH_CATEGORY;
           
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynowglow.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenow.png"] forState:UIControlStateNormal];
           
           knowledgeLbl.text = KNOWLEDGE_LBL;
           tutoDesc1.text = TUTORIAL_DESC_LBL;
@@ -1855,8 +1857,13 @@
           HowWitsStore = @"How to Use WITS Store";
           HowtoEarnPoints = @"How to Earn Free Points";
           
-          lblPlayforPoints.text = PLAY_FOR_POINTS;
-          lblplayforGems.text = PLAY_FOR_GEMS;
+          lblPlayforPoints.text = PLAY_NOW;
+          lblplayforGems.text = Challenge_a_friend;
+          PlayNowLabel.text =PLAY_NOW;
+          challengeAFriend.text = Challenge_a_friend;
+          forGemsLable.text = For_Gems;
+          forPointsLabel.text = For_Points;
+          
           willhelpinRanking.text = WILL_HELP_IN_RANKING;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY;
           
@@ -1878,10 +1885,8 @@
           
           loadingTitle = Loading_1;
           searchBar.placeholder = SEARCH_CATEGORY_1;
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowArabic.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeArabic.png"] forState:UIControlStateNormal];
+          forGemsLable.text = For_Gems1;
+          forPointsLabel.text = For_Points1;
           howtoPlay1 = @"أسرع في دخول تحدي ضد أي شخص في العالم ";
           howtoPlay2 = @"اسرع في الاجابة للحصول على نقاط اكثر";
           howtoPlay3 = @"قم باستبدال جواهرك بنقود حقيقية.";
@@ -1892,8 +1897,11 @@
           HowtoEarnPoints = @"كيف تحصل على النقاط مجاناً؟";
           
           
-          lblPlayforPoints.text = PLAY_FOR_POINTS_1;
-          lblplayforGems.text = PLAY_FOR_GEMS_1;
+          lblPlayforPoints.text = PLAY_NOW_1;
+          lblplayforGems.text = Challenge_a_friend1;
+          PlayNowLabel.text =PLAY_NOW_1;
+          challengeAFriend.text = Challenge_a_friend1;
+          
           willhelpinRanking.text = WILL_HELP_IN_RANKING_1;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_1;
           knowledgeLbl.text = KNOWLEDGE_LBL_1;
@@ -1930,12 +1938,10 @@
           howtoPlay1 = @"Défiez à 1-1 n\'importe qui dans le monde.";
           howtoPlay2 = @"Plus vite vous répondez, plus vous cumulez de Gems.";
           howtoPlay3 = @"Echangez vos Gems contre de l'argent.";
+          forGemsLable.text = For_Gems2;
+          forPointsLabel.text = For_Points2;
           
-          
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowSpanish.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeSpanish.png"] forState:UIControlStateNormal];
+         
 
           
           
@@ -1949,10 +1955,13 @@
           answerTxt.placeholder = ENTER_ANSWER_2;
           questionTxt.placeholder = @"Entrez question";
           
-          lblPlayforPoints.text = PLAY_FOR_POINTS_2;
-          lblplayforGems.text = PLAY_FOR_GEMS_2;
+          lblPlayforPoints.text = PLAY_NOW_2;
+          lblplayforGems.text = Challenge_a_friend2;
           willhelpinRanking.text = WILL_HELP_IN_RANKING_2;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_2;
+          
+          PlayNowLabel.text =PLAY_NOW_2;
+          challengeAFriend.text = Challenge_a_friend2;
           
           homeLbl.text = HOME_BTN_2;
           CategoriesLbl.text = @"Subcategoría";
@@ -1971,12 +1980,11 @@
           searchBar.placeholder = SEARCH_CATEGORY_3;
           loadingTitle = Loading_3;
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowFrench.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeFrench.png"] forState:UIControlStateNormal];
+          PlayNowLabel.text =PLAY_NOW_3;
+          challengeAFriend.text = Challenge_a_friend3;
           
-          
+          forGemsLable.text = For_Gems3;
+          forPointsLabel.text = For_Points3;
           
           knowledgeLbl.text = KNOWLEDGE_LBL_3;
           tutoDesc1.text = TUTORIAL_DESC_LBL_3;
@@ -1996,8 +2004,8 @@
           
           howtouseStoreDesc = @"Registrase ahora y gane 1000 puntos gratis";
           howtoEarnPointDesc = @"Puedes ganar pontus gratis invitando a tus amigos y compartiendo la aplicación en Facebook or Twitter.";
-          lblPlayforPoints.text = PLAY_FOR_POINTS_3;
-          lblplayforGems.text = PLAY_FOR_GEMS_3;
+          lblPlayforPoints.text = PLAY_NOW_3;
+          lblplayforGems.text = Challenge_a_friend3;
           
           willhelpinRanking.text = WILL_HELP_IN_RANKING_3;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_3;
@@ -2020,7 +2028,8 @@
           howtoPlay1 = @"Inicie um desafio de 1-1 contra qualquer pessoa no mundo.";
           howtoPlay2 = @"Quanto mais rápido você responder, mais pontos você vai acumular.";
           howtoPlay3 = @"Troque as suas Gemas por dinheiro verdadeiro.";
-          
+          PlayNowLabel.text =PLAY_NOW_4;
+          challengeAFriend.text = Challenge_a_friend4;
           howtouseStoreDesc = @"Inscreva-se gratuitamente e ganhe 1000 gemas";
           howtoEarnPointDesc = @"Poderá receber pontus Grátis a todo momento ao convidar os seus amigos ou ao partilhar a App no Facebook ou Twitter.";
           HowtoPlay = @"Como Jogar";
@@ -2028,17 +2037,14 @@
           HowtoEarnPoints = @"Convide amigos e desafiá-los";
           
           knowledgeLbl.text = KNOWLEDGE_LBL_4;
-          
-          
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowportuguese.png"] forState:UIControlStateNormal];
-          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Challengeportuguese.png"] forState:UIControlStateNormal];
+          forGemsLable.text = For_Gems4;
+          forPointsLabel.text = For_Points4;
+        
           
           
           
-          lblPlayforPoints.text = PLAY_FOR_POINTS_4;
-          lblplayforGems.text = PLAY_FOR_GEMS_4;
+          lblPlayforPoints.text = PLAY_NOW_4;
+          lblplayforGems.text = Challenge_a_friend4;
           willhelpinRanking.text = WILL_HELP_IN_RANKING_4;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_4;
           
@@ -2517,6 +2523,7 @@
      //     _searchOppLbl.hidden = false;
      opponent.text = @"";
      opponentProfileImageView.image = [UIImage imageNamed:@"Icon_152.png"];
+     [opponentProfileImageView roundImageCorner];
      if(_gmChallengeSelected) {
           if(appDelegate.friendToBeChalleneged) {
                if(_gmGemsSelected) {
@@ -2567,6 +2574,7 @@
      //     _searchOppLbl.hidden = false;
      opponent.text = @"";
      opponentProfileImageView.image = [UIImage imageNamed:@"Icon_152.png"];
+     [opponentProfileImageView roundImageCorner];
      if(_gmChallengeSelected) {
           if(appDelegate.friendToBeChalleneged) {
                if(_gmGemsSelected) {
@@ -2618,6 +2626,7 @@
      opponentProfileImageView.imageURL = [NSURL URLWithString:_user.profile_image];
      NSURL *url = [NSURL URLWithString:_user.profile_image];
      [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
+     [opponentProfileImageView roundImageCorner];
      searchingTxt.text = _user.display_name;
      [loadView showInView:self.view withTitle:loadingTitle];
      [self connectToSocket];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LoadingView.h"
-@interface RewardsListVC : UIViewController <UITableViewDataSource,UITableViewDelegate> {
+@interface RewardsListVC : UIViewController <UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate> {
     
     __weak IBOutlet UITableView *rewardsTableView;
     __weak IBOutlet UILabel *gemsCountLbl;
@@ -18,6 +18,8 @@
      __weak IBOutlet UIView *popupView;
      NSUInteger currentSelectedIndex;
      
+     bool firsttime;
+
      IBOutlet UILabel *buyAddonLbl;
      NSString *claim;
      NSString *loadingTitle;
@@ -25,7 +27,10 @@
      NSString *purchaseError;
      NSString *OKstr;
      NSIndexPath *indexPath;
-     
+     int currentIndex;
+     UIImage *selectedRewardImage;
+     NSString *product_id;
+     int timeSort;
      IBOutlet UILabel *LblCograts;
      
      IBOutlet UILabel *lblRequestRecieved;
@@ -33,9 +38,23 @@
      IBOutlet UIButton *backBtn;
      IBOutlet UILabel *lblRewards;
      
+     IBOutlet UIView *rewardDetailView;
+     
+     __weak IBOutlet UILabel *discriptionlbl;
+     __weak IBOutlet UILabel *titlelbl;
+     __weak IBOutlet UIImageView *rewardsiconimgview;
+    __weak IBOutlet UILabel *gemsAmountlbl;
+     
+     __weak IBOutlet UIButton *sortbtn;
+      IBOutlet UITextField *searchField;
 }
 @property (strong, nonatomic) NSMutableArray *addOnsArray;
+@property (strong, nonatomic) NSMutableArray *listFiles ;
+
 - (IBAction)backPressed:(id)sender;
 - (IBAction)popupBackBtn:(id)sender;
+- (IBAction)Crossbtn:(id)sender;
+- (IBAction)sortBtn:(id)sender;
+
 
 @end

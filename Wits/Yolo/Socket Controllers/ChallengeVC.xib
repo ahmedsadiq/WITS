@@ -3,6 +3,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="game_font_7.ttf">
+            <string>GameFont7</string>
+            <string>GameFont7</string>
+            <string>GameFont7</string>
+            <string>GameFont7</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeVC">
             <connections>
@@ -16,6 +24,8 @@
                 <outlet property="carrierView" destination="tbh-5n-Xfd" id="Qe3-KX-lIz"/>
                 <outlet property="firstdot" destination="etm-xr-oti" id="umh-wL-kOe"/>
                 <outlet property="fourthDot" destination="8Cc-pe-cTP" id="Bh1-oz-tAx"/>
+                <outlet property="gemLeft" destination="hKR-Eq-TTd" id="EZq-LG-Omw"/>
+                <outlet property="gemRight" destination="owz-f2-dlD" id="Kto-GE-ul8"/>
                 <outlet property="homeBtn" destination="y7E-Yl-C3X" id="GJa-tK-7io"/>
                 <outlet property="opponentName" destination="2E8-dE-OY4" id="UhG-R1-HHs"/>
                 <outlet property="opponentPointsLbl" destination="2xS-Fv-eCh" id="Lz5-Co-PkK"/>
@@ -72,6 +82,8 @@
                 <outlet property="topBarPlayerName" destination="UDS-lB-ksD" id="bBi-bV-Qbm"/>
                 <outlet property="upperViewLeft" destination="Gr3-w9-nQ5" id="iYW-VR-S0h"/>
                 <outlet property="upperViewRight" destination="0nu-6e-H6j" id="kl4-ja-TzV"/>
+                <outlet property="userGemTotal" destination="tiA-cv-eLR" id="YsQ-5t-Yug"/>
+                <outlet property="userPointsTotal" destination="tvh-8h-sz0" id="ZUi-vL-pkt"/>
                 <outlet property="userTotal" destination="EzX-P1-iS0" id="Ow0-6Y-eHe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="youLooseTitle" destination="6AU-yF-c40" id="HLY-wH-EEj"/>
@@ -113,7 +125,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="JKi-Z9-ie4">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbg.png" id="JKi-Z9-ie4">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -249,24 +261,18 @@
                 <view contentMode="scaleToFill" id="Gr3-w9-nQ5">
                     <rect key="frame" x="0.0" y="28" width="160" height="68"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="742" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e2A-Qs-eYN">
-                            <rect key="frame" x="55" y="8" width="91" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="742" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e2A-Qs-eYN">
+                            <rect key="frame" x="55" y="23" width="91" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joseph" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UDS-lB-ksD">
-                            <rect key="frame" x="8" y="29" width="138" height="21"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="witsround.PNG" id="1HW-1E-tYN">
                             <rect key="frame" x="2" y="0.0" width="50" height="50"/>
                         </imageView>
-                        <imageView hidden="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="QMQ-0R-gHE">
-                            <rect key="frame" x="10" y="53" width="15" height="15"/>
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemstore.png" id="QMQ-0R-gHE">
+                            <rect key="frame" x="100" y="21" width="30" height="24"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView hidden="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="rP9-8M-MyL">
@@ -293,6 +299,16 @@
                             <rect key="frame" x="135" y="53" width="15" height="15"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joseph" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UDS-lB-ksD">
+                            <rect key="frame" x="55" y="0.0" width="100" height="21"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemstore.png" id="hKR-Eq-TTd">
+                            <rect key="frame" x="95" y="22" width="30" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
@@ -300,14 +316,14 @@
                     <rect key="frame" x="166" y="28" width="160" height="68"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2xS-Fv-eCh">
-                            <rect key="frame" x="8" y="4" width="94" height="28"/>
+                            <rect key="frame" x="8" y="20" width="94" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bachir Alzaim" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wLr-Im-fps">
-                            <rect key="frame" x="8" y="25" width="104" height="28"/>
+                            <rect key="frame" x="8" y="0.0" width="104" height="28"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -339,8 +355,8 @@
                             <rect key="frame" x="30" y="53" width="15" height="15"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView hidden="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="76U-ZI-ICH">
-                            <rect key="frame" x="10" y="53" width="15" height="15"/>
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemstore.png" id="76U-ZI-ICH">
+                            <rect key="frame" x="52" y="21" width="30" height="24"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
@@ -371,6 +387,10 @@
                         <action selector="quiteUser:" destination="-1" eventType="touchUpInside" id="ImA-91-vNT"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemstore.png" id="owz-f2-dlD">
+                    <rect key="frame" x="220" y="50" width="30" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -380,9 +400,35 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="axj-kG-d9l">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbg.png" id="axj-kG-d9l">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemstore.png" id="aMc-uA-phW">
+                    <rect key="frame" x="117" y="290" width="86" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" id="tiA-cv-eLR">
+                    <rect key="frame" x="10" y="55" width="100" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="GameFont7" family="Game Font 7" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" id="tvh-8h-sz0">
+                    <rect key="frame" x="210" y="55" width="100" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="GameFont7" family="Game Font 7" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemstore.png" id="RLP-Ua-Nn9">
+                    <rect key="frame" x="40" y="20" width="40" height="33"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newStarPoints.png" id="7gl-rW-KdY">
+                    <rect key="frame" x="240" y="20" width="40" height="33"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="xgf-zD-PH3">
                     <rect key="frame" x="5" y="162" width="310" height="407"/>
@@ -412,25 +458,21 @@
                     </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Lost !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" id="Tyo-sf-TcT">
-                    <rect key="frame" x="18" y="25" width="284" height="66"/>
+                    <rect key="frame" x="18" y="80" width="284" height="66"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="29"/>
+                    <fontDescription key="fontDescription" name="GameFont7" family="Game Font 7" pointSize="29"/>
                     <color key="textColor" red="0.6588235294117647" green="0.81568627450980391" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="witsround.PNG" id="Qjc-ti-8qr">
-                    <rect key="frame" x="100" y="105" width="120" height="120"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starg1.png" id="aMc-uA-phW">
-                    <rect key="frame" x="117" y="258" width="86" height="80"/>
+                    <rect key="frame" x="100" y="150" width="120" height="120"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="JRJ-JP-yxT">
                     <rect key="frame" x="120" y="480.00000035762787" width="80" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                    <state key="normal" backgroundImage="playagain.png">
+                    <state key="normal" backgroundImage="playagainglow.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -442,15 +484,15 @@
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EzX-P1-iS0">
                     <rect key="frame" x="120" y="357" width="81" height="76"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="38"/>
+                    <fontDescription key="fontDescription" name="GameFont7" family="Game Font 7" pointSize="38"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="y7E-Yl-C3X">
-                    <rect key="frame" x="34" y="500.00000142561782" width="40" height="40"/>
+                    <rect key="frame" x="34" y="500.00000020861626" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                    <state key="normal" backgroundImage="home.png">
+                    <state key="normal" backgroundImage="homeglow.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -460,11 +502,11 @@
                         <action selector="homePressed:" destination="-1" eventType="touchUpInside" id="gET-TL-QIf"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1JJ-Pb-ghG">
-                    <rect key="frame" x="247" y="500.00000142561782" width="40" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1JJ-Pb-ghG">
+                    <rect key="frame" x="247" y="500.00000020861626" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                    <state key="normal" backgroundImage="rewardsicon.png">
+                    <state key="normal" backgroundImage="rewardsglowp.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -949,22 +991,22 @@
         <image name="dotglow.png" width="45" height="45"/>
         <image name="gem.png" width="108" height="129"/>
         <image name="gemglow.png" width="127" height="146"/>
+        <image name="gemstore.png" width="147" height="120"/>
         <image name="gemwhite.png" width="43" height="35"/>
         <image name="gp5050.png" width="95" height="110"/>
         <image name="gpclose.png" width="100" height="110"/>
         <image name="header.png" width="320" height="43"/>
         <image name="header_bar.png" width="320" height="1"/>
-        <image name="home.png" width="38" height="34"/>
         <image name="homeglow.png" width="51" height="48"/>
+        <image name="newStarPoints.png" width="200" height="191"/>
+        <image name="newbg.png" width="540" height="960"/>
         <image name="opponentpic.png" width="151" height="151"/>
         <image name="optionpressedstate.png" width="540" height="110"/>
         <image name="picbg.png" width="151" height="151"/>
-        <image name="playagain.png" width="126" height="114"/>
         <image name="playagainglow.png" width="145" height="130"/>
         <image name="rewardsglow.png" width="60" height="61"/>
-        <image name="rewardsicon.png" width="113" height="118"/>
+        <image name="rewardsglowp.png" width="54" height="56"/>
         <image name="star.png" width="116" height="133"/>
-        <image name="starg1.png" width="339" height="297"/>
         <image name="transparentbg.png" width="320" height="568"/>
         <image name="witsnewblue.png" width="1004" height="245"/>
         <image name="witsround.PNG" width="210" height="208"/>

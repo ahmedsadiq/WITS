@@ -814,16 +814,21 @@
      CGRect friendbtnclone = _fmFriendButton.frame;
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
-     NSString *suffix = @"";
+    
+     [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"Newchallengeforgems.png"] forState:UIControlStateNormal];
+     [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"NewForPointsglow.png"] forState:UIControlStateNormal];
+     [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlow.png"] forState:UIControlStateNormal];
+     [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"NewTickglow.png"] forState:UIControlStateNormal];
+     
      if(languageCode == 0 ) {
-          _fmFriendButton.frame = friendbtnclone;
+        //  _fmFriendButton.frame = friendbtnclone;
           
           // Frnd Mode PopUp Settings
-          
-          [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlow.png"] forState:UIControlStateNormal];
-          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowEnglish.png"] forState:UIControlStateNormal];
-          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlow.png"] forState:UIControlStateNormal];
-          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlow.png"] forState:UIControlStateNormal];
+//          
+//          [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlow.png"] forState:UIControlStateNormal];
+//          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowEnglish.png"] forState:UIControlStateNormal];
+//          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlow.png"] forState:UIControlStateNormal];
+//          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlow.png"] forState:UIControlStateNormal];
           
           
           _friendsLbl.text = FRIENDS_BTN;
@@ -841,10 +846,12 @@
           _friendsLbl.text = FRIENDS_BTN_1;
           loadingTitle = Loading_1;
           noFriendLbl.text = @"لا يوجد لديك صديق.      ";
-          [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowArabic.png"] forState:UIControlStateNormal];
-          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowArabic.png"] forState:UIControlStateNormal];
-          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowarabic.png"] forState:UIControlStateNormal];
-          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowarabic.png"] forState:UIControlStateNormal];
+          
+//          [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowArabic.png"] forState:UIControlStateNormal];
+//          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowArabic.png"] forState:UIControlStateNormal];
+//          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowarabic.png"] forState:UIControlStateNormal];
+//          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowarabic.png"] forState:UIControlStateNormal];
+          
           UIColor *color = [UIColor whiteColor];
           searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"بحث صديق" attributes:@{NSForegroundColorAttributeName: color}];
           searchField.textAlignment = NSTextAlignmentRight;
@@ -857,10 +864,10 @@
      
      else if(languageCode == 2) {
           
-          [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowSpanish.png"] forState:UIControlStateNormal];
-          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowSpanish.png"] forState:UIControlStateNormal];
-          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowSpanish.png"] forState:UIControlStateNormal];
-          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowSpanish.png"] forState:UIControlStateNormal];
+//          [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowSpanish.png"] forState:UIControlStateNormal];
+//          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowSpanish.png"] forState:UIControlStateNormal];
+//          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowSpanish.png"] forState:UIControlStateNormal];
+//          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowSpanish.png"] forState:UIControlStateNormal];
           
           
           _friendsLbl.text = FRIENDS_BTN_2;
@@ -877,10 +884,10 @@
      
      else if(languageCode == 3) {
           
-          [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowFrench.png"] forState:UIControlStateNormal];
-          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowFrench.png"] forState:UIControlStateNormal];
-          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowFrench.png"] forState:UIControlStateNormal];
-          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowFrench.png"] forState:UIControlStateNormal];
+//          [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowFrench.png"] forState:UIControlStateNormal];
+//          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowFrench.png"] forState:UIControlStateNormal];
+//          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowFrench.png"] forState:UIControlStateNormal];
+//          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowFrench.png"] forState:UIControlStateNormal];
           
           
           _friendsLbl.text = FRIENDS_BTN_3;
@@ -897,10 +904,10 @@
      else if(languageCode == 4) {
           
           
-          [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowPortuguese.png"] forState:UIControlStateNormal];
-          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowPortuguese.png"] forState:UIControlStateNormal];
-          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowportuguese.png"] forState:UIControlStateNormal];
-          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowportuguese.png"] forState:UIControlStateNormal];
+//          [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowPortuguese.png"] forState:UIControlStateNormal];
+//          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowPortuguese.png"] forState:UIControlStateNormal];
+//          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowportuguese.png"] forState:UIControlStateNormal];
+//          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowportuguese.png"] forState:UIControlStateNormal];
           _friendsLbl.text = FRIENDS_BTN_4;
           loadingTitle = Loading_4;
           noFriendLbl.text = @"Você não tem nenhum amigo";
@@ -1070,44 +1077,51 @@
      switch (status) {
           // Case 0 : for add friend
           case 0:
+               [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"Newchallengeforgems.png"] forState:UIControlStateNormal];
+               [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"NewForPointsglow.png"] forState:UIControlStateNormal];
+               [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlow.png"] forState:UIControlStateNormal];
+               [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"Newfriendsglow.png"] forState:UIControlStateNormal];
                if(languageCode == 0 ) {
                 
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chat.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGems.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsEnglish.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"Add.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chat.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGems.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsEnglish.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"Add.png"] forState:UIControlStateNormal];
+                    
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                }else if(languageCode == 1 ) {
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatarabic.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsArabic.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsArabic.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddArabic.png"] forState:UIControlStateNormal];
+                    
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatarabic.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsArabic.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsArabic.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddArabic.png"] forState:UIControlStateNormal];
+                    
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                }else if(languageCode == 2 ) {
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatSpanish.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsSpanish.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsSpanish.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddSpanish.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatSpanish.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsSpanish.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsSpanish.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddSpanish.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                }else if(languageCode == 3 ) {
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatFrench.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsFrench.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsFrench.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddFrench.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatFrench.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsFrench.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsFrench.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddFrench.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                }else if(languageCode == 4 ) {
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatportuguese.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsPortuguese.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsPortuguese.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddPortuguese.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatportuguese.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsPortuguese.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsPortuguese.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddPortuguese.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
@@ -1117,27 +1131,27 @@
                
                //case 1 : for already friend
           case 1:
-               
+               [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"Newchallengeforgems.png"] forState:UIControlStateNormal];
+               [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"NewForPointsglow.png"] forState:UIControlStateNormal];
+               [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlow.png"] forState:UIControlStateNormal];
+               [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"NewTickpressed.png"] forState:UIControlStateNormal];
                if(languageCode == 0 ) {
                   
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlow.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowEnglish.png"] forState:UIControlStateNormal];
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlow.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlow.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlow.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowEnglish.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlow.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlow.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = YES;
                     _challengeForPoints.enabled = YES;
                     _fmChatBtn.enabled = YES;
                     _fmFriendButton.enabled = YES;
-                    btnFrame.origin.x = 485;
-                    btnFrame.origin.y = 572;
-                    btnFrame.size.width = 109;
-                    btnFrame.size.height = 146;
-                    _fmFriendButton.frame = btnFrame;
+                    
+                    //_fmFriendButton.frame = btnFrame;
                }else if(languageCode == 1 ) {
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowArabic.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowArabic.png"] forState:UIControlStateNormal];
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowarabic.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowarabic.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowArabic.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowArabic.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowarabic.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowarabic.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = YES;
                     _challengeForPoints.enabled = YES;
                     _fmChatBtn.enabled = YES;
@@ -1145,20 +1159,20 @@
                     
                }else if(languageCode == 2 ) {
                     
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowSpanish.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowSpanish.png"] forState:UIControlStateNormal];
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowSpanish.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowSpanish.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowSpanish.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowSpanish.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowSpanish.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowSpanish.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = YES;
                     _challengeForPoints.enabled = YES;
                     _fmChatBtn.enabled = YES;
                     _fmFriendButton.enabled = YES;
                     
                }else if(languageCode == 3 ) {
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowFrench.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowFrench.png"] forState:UIControlStateNormal];
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowFrench.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowFrench.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowFrench.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowFrench.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowFrench.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowFrench.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = YES;
                     _challengeForPoints.enabled = YES;
                     _fmChatBtn.enabled = YES;
@@ -1166,10 +1180,10 @@
 
                }else if(languageCode == 4 ) {
                     
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowPortuguese.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowPortuguese.png"] forState:UIControlStateNormal];
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowportuguese.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowportuguese.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowPortuguese.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowPortuguese.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowportuguese.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowportuguese.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = YES;
                     _challengeForPoints.enabled = YES;
                     _fmChatBtn.enabled = YES;
@@ -1180,52 +1194,54 @@
                // case 2: friend request received
           case 2:
              
-               
+               [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"Newchallengeforgems.png"] forState:UIControlStateNormal];
+               [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"NewForPointsglow.png"] forState:UIControlStateNormal];
+               [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlow.png"] forState:UIControlStateNormal];
+               [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"NewReceivedglow.png"] forState:UIControlStateNormal];
                if(languageCode == 0 ) {
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chat.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGems.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsEnglish.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendRequest.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chat.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGems.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsEnglish.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendRequest.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = YES;
-                    btnFrame.size.width = 187;
-                    btnFrame.size.height = 151;
-                    _fmFriendButton.frame = btnFrame;
+                   
+                    //_fmFriendButton.frame = btnFrame;
                }else if(languageCode == 1 ) {
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatarabic.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsArabic.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsArabic.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendRequestArabic.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatarabic.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsArabic.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsArabic.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendRequestArabic.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = YES;
                }else if(languageCode == 2 ) {
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatSpanish.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsSpanish.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsSpanish.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendRequestSpanish.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatSpanish.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsSpanish.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsSpanish.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendRequestSpanish.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = YES;
                }else if(languageCode == 3 ) {
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatFrench.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsFrench.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsFrench.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendRequestFrench.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatFrench.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsFrench.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsFrench.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendRequestFrench.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = YES;
                }else if(languageCode == 4 ) {
                     
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatportuguese.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsPortuguese.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsPortuguese.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendRequestPortuguese.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatportuguese.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsPortuguese.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsPortuguese.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendRequestPortuguese.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
@@ -1236,51 +1252,55 @@
                break;
                // case 3: friend request sent
           case 3:
-               
+               [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"Newchallengeforgems.png"] forState:UIControlStateNormal];
+               [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"NewForPointsglow.png"] forState:UIControlStateNormal];
+               [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlow.png"] forState:UIControlStateNormal];
+               [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"NewSent.png"] forState:UIControlStateNormal];
                if(languageCode == 0 ) {
-                    _fmFriendButton.frame  =CGRectMake(455,572, 171,151 );
+                   // _fmFriendButton.frame  =CGRectMake(455,572, 171,151 );
                     
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chat.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGems.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsEnglish.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"RequestSentEnglish.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chat.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGems.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsEnglish.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"RequestSentEnglish.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = NO;
                }else if(languageCode == 1 ) {
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatarabic.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsArabic.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsArabic.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"RequestSentArabic.png"] forState:UIControlStateNormal];
+                    
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatarabic.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsArabic.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsArabic.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"RequestSentArabic.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = NO;
                }else if(languageCode == 2 ) {
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatSpanish.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsSpanish.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsSpanish.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"RequestSentSpanish.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatSpanish.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsSpanish.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsSpanish.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"RequestSentSpanish.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = NO;
                }else if(languageCode == 3 ) {
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatFrench.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsFrench.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsFrench.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"RequestSentFrench.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatFrench.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsFrench.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsFrench.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"RequestSentFrench.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = NO;
                }else if(languageCode == 4 ) {
                     
-                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatportuguese.png"] forState:UIControlStateNormal];
-                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsPortuguese.png"] forState:UIControlStateNormal];
-                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsPortuguese.png"] forState:UIControlStateNormal];
-                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"RequestSentPortuguese.png"] forState:UIControlStateNormal];
+//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatportuguese.png"] forState:UIControlStateNormal];
+//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsPortuguese.png"] forState:UIControlStateNormal];
+//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsPortuguese.png"] forState:UIControlStateNormal];
+//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"RequestSentPortuguese.png"] forState:UIControlStateNormal];
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;

@@ -216,7 +216,7 @@
                cell.buyBtn.tag = 1;
           }
 
-          [cell.buyBtn addTarget:self action:@selector(buyBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+          [cell.buyBtn addTarget:self action:@selector(buyBtnClickede:) forControlEvents:UIControlEventTouchUpInside];
           // cell.buyBtn.font = [UIFont systemFontOfSize:13];
           cell.buyBtn.font = [UIFont fontWithName:FONT_NAME size:15];
           [cell.buyBtn setTitle:buystr forState:UIControlStateNormal];
@@ -262,7 +262,11 @@
      [v setBackgroundColor:[UIColor clearColor]];
      return v;
 }
-
+-(void)detailedBtnPressed:(id)sender{
+     AddOnObj *obj;
+     UIButton *downBtn = (UIButton *)sender;
+     currentSelectedIndex = downBtn.tag;
+}
 -(void)downbtnSelected:(id)sender{
      AddOnObj *obj;
      UIButton *downBtn = (UIButton *)sender;
@@ -281,6 +285,10 @@
      
      //[_mainTbl reloadRowsAtIndexPaths:[NSArray arrayWithObject:index] withRowAnimation:UITableViewRowAnimationAutomatic];
      
+}
+-(void)buyBtnClickede:(UIButton*)sender
+{
+
 }
 -(void)buyBtnClicked:(UIButton*)sender
 {
@@ -303,10 +311,11 @@
      NSString *pointDeducted = [NSString stringWithFormat:@"%d",pointsToBeDeducted];
      MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
      NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
-     [postParams setObject:@"updateConsumedGems" forKey:@"method"];
+     [postParams setObject:@"claimRewardLatest" forKey:@"method"];
      [postParams setObject:[SharedManager getInstance].userID forKey:@"user_id"];
      [postParams setObject:[SharedManager getInstance].sessionID forKey:@"session_id"];
-     [postParams setObject:pointDeducted forKey:@"consumed_gems"];
+    // [postParams setObject:pointDeducted forKey:@"consumed_gems"];
+     //[postParams setObject: forKey:@"reward_id"];
      MKNetworkOperation *op = [engine operationWithURLString:SERVER_URL params:postParams httpMethod:@"POST"];
      
      [op onCompletion:^(MKNetworkOperation *completedOperation) {

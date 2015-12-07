@@ -116,8 +116,9 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      if ([requestType isEqualToString:@"gems"]) {
           selfgameTypeimg.image = [UIImage imageNamed:@"ame1.png"];
           oppGametypeimg.image = [UIImage imageNamed:@"ame1.png"];
-          resultGametypeimg.image = [UIImage imageNamed:@"ame1.png"];
-          
+          resultGametypeimg.image = [UIImage imageNamed:@"gemstore.png"];
+          _gemRight.image = [UIImage imageNamed:@"gemstore.png"];
+          _gemLeft.image = [UIImage imageNamed:@"gemstore.png"];
           if([[SharedManager getInstance]._userProfile.cashablePoints intValue] < 70) {
                currentSelfPoints = [[SharedManager getInstance]._userProfile.cashablePoints intValue];
                currentOtherPoints = 70;
@@ -126,24 +127,26 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                currentSelfPoints = 70;
                currentOtherPoints = 70;
           }
-          for(int i=1; i<8; i++) {
-               UIImageView *starImgLeftView = (UIImageView*)[upperViewLeft viewWithTag:i];
-               UIImageView *starImgRightView = (UIImageView*)[upperViewRight viewWithTag:i];
-               starImgLeftView.image = [UIImage imageNamed:@"gemwhite.png"];
-               starImgRightView.image = [UIImage imageNamed:@"gemwhite.png"];
-          }
+//          for(int i=1; i<8; i++) {
+//               UIImageView *starImgLeftView = (UIImageView*)[upperViewLeft viewWithTag:i];
+//               UIImageView *starImgRightView = (UIImageView*)[upperViewRight viewWithTag:i];
+//               starImgLeftView.image = [UIImage imageNamed:@"gemwhite.png"];
+//               starImgRightView.image = [UIImage imageNamed:@"gemwhite.png"];
+//          }
      }else if ([requestType isEqualToString:@"points"]){
           selfgameTypeimg.image = [UIImage imageNamed:@"starg1.png"];
           oppGametypeimg.image = [UIImage imageNamed:@"starg1.png"];
-          resultGametypeimg.image = [UIImage imageNamed:@"starg1.png"];
+          resultGametypeimg.image = [UIImage imageNamed:@"newStarPoints.png"];
           currentSelfPoints = 0;
           currentOtherPoints = 0;
-          for(int i=1; i<8; i++) {
-               UIImageView *starImgLeftView = (UIImageView*)[upperViewLeft viewWithTag:i];
-               UIImageView *starImgRightView = (UIImageView*)[upperViewRight viewWithTag:i];
-               starImgLeftView.image = [UIImage imageNamed:@"starwhite.png"];
-               starImgRightView.image = [UIImage imageNamed:@"starwhite.png"];
-          }
+          _gemRight.image = [UIImage imageNamed:@"newStarPoints.png"];
+          _gemLeft.image = [UIImage imageNamed:@"newStarPoints.png"];
+//          for(int i=1; i<8; i++) {
+//               UIImageView *starImgLeftView = (UIImageView*)[upperViewLeft viewWithTag:i];
+//               UIImageView *starImgRightView = (UIImageView*)[upperViewRight viewWithTag:i];
+//               starImgLeftView.image = [UIImage imageNamed:@"starwhite.png"];
+//               starImgRightView.image = [UIImage imageNamed:@"starwhite.png"];
+//          }
      }
      if(IS_IPHONE_4){
           _roundView.frame = CGRectMake(0,_roundLbl.frame.size.height+400, 320, 330);
@@ -409,7 +412,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                //changed  by fiza
                _roundLbl.frame = CGRectMake(54, 140, 212, 68);
           }
-         
+          
           _roundLbl.text = [NSString stringWithFormat:@"%@ %d",Round,currentIndex+1];
           roundTitleLbl.text = [NSString stringWithFormat:@"%@ %d",Round,currentIndex+1];
           
@@ -1514,6 +1517,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                NSString* userEarnedPointsSte = [NSString stringWithFormat:@"%d",userEarnedPoints];
                
                userTotal.text = userEarnedPointsSte;
+               userGemTotal.text = [SharedManager getInstance]._userProfile.cashablePoints;
+              userPointsTotal.text =  [SharedManager getInstance]._userProfile.totalPoints;
                [SharedManager getInstance]._userProfile.cashablePoints = [mainDict objectForKey:@"gems"];
                NSString *val = [mainDict objectForKey:@"gems"];
                if ([val intValue] < 0) {
@@ -1528,6 +1533,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                selfPointsArray = [mainDict objectForKey:[SharedManager getInstance].userID];
                
                [self_resultImg setImage:[selfProfileImg image]];
+               [self_resultImg roundImageCorner];
                [opponent_resultImg setImage:[opponentProfileImg image]];
                if([senderPointsArray count] > [selfPointsArray count])
                     tempVar = (int)[senderPointsArray count];
@@ -2850,7 +2856,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                                                                                                        else {
                                                                                                             addOnBtn.hidden = true;
                                                                                                             addOnBtn.enabled = false;
-                                                                                                            bg.image = [UIImage imageNamed:@"bg.png"];
+                                                                                                            bg.image = [UIImage imageNamed:@"newbg.png"];
                                                                                                             
                                                                                                             [a_Timer invalidate];
                                                                                                             

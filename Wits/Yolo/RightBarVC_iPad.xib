@@ -157,7 +157,7 @@
                             <rect key="frame" x="74" y="790" width="20" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menubg_settings.png" id="E2C-Wx-7ZI">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menubgrightbar.png" id="E2C-Wx-7ZI">
                             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -361,7 +361,7 @@
         <image name="logoutglow.png" width="77" height="77"/>
         <image name="logoutpressed.png" width="73" height="72"/>
         <image name="mapmarker.png" width="23" height="35"/>
-        <image name="menubg_settings.png" width="540" height="960"/>
+        <image name="menubgrightbar.png" width="540" height="960"/>
         <image name="message_icon.png" width="32" height="32"/>
         <image name="messagesglow.png" width="102" height="84"/>
         <image name="rankingo1.png" width="128" height="128"/>

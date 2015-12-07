@@ -32,8 +32,11 @@
      IBOutlet UIButton *mainBackBtn;
      UIGestureRecognizer *tapper;
      
+      IBOutlet UILabel *challengeForGemsLbl;
 
+      IBOutlet UILabel *FriendsLabel;
      
+      IBOutlet UILabel *ChallengeForPoints;
      BOOL isSearched;
      
 #pragma New UI changes

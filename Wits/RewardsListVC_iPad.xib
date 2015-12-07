@@ -126,7 +126,7 @@
         <image name="gemstore.png" width="147" height="120"/>
         <image name="newbg.png" width="540" height="960"/>
         <image name="popupclose.png" width="55" height="55"/>
-        <image name="rewardsicon.png" width="113" height="118"/>
+        <image name="rewardsicon.png" width="110" height="115"/>
         <image name="starg1.png" width="339" height="297"/>
         <image name="textbg.png" width="438" height="306"/>
         <image name="trans.png" width="540" height="960"/>

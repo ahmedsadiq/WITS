@@ -185,7 +185,7 @@
           
           cashoutAmount.text = CASHOUT_BTN_TITLE_1;
           loadingTitle = Loading_1;
-          
+          RewardsbtnLbl.text = REWARDS_1;
           LblbuyButtonText.text = WITS_STORE_BUY_BUTTON_100_1;
           titleLbl.text = WITS_STORE_TITLE_1;
           cashableTitle.text = CASHABLE_TITLE_1;
@@ -194,7 +194,7 @@
           cashoutTitle.text = CASHOUT_TITLE_1;
           currentPointTitle.text = CURRENT_POINT_TITLE_1;
           cashableTitle.textAlignment = NSTextAlignmentRight;
-          cashablePoints.textAlignment = NSTextAlignmentLeft;
+          //cashablePoints.textAlignment = NSTextAlignmentLeft;
           
           cashoutAmount.textAlignment = NSTextAlignmentRight;
           cashoutDollarLbl.textAlignment = NSTextAlignmentRight;
@@ -260,7 +260,7 @@
      }
      else if(languageCode == 2) {
           
-          
+           RewardsbtnLbl.text = REWARDS_2;
           cashoutAmount.text = CASHOUT_BTN_TITLE_2;
           loadingTitle = Loading_2;
           titleLbl.text = WITS_STORE_TITLE_2;
@@ -318,7 +318,7 @@
      }
      else if(languageCode == 3) {
           
-          
+           RewardsbtnLbl.text = REWARDS_3;
           cashoutAmount.text = @"Ingresa los Puntos";
           loadingTitle = Loading_3;
           LblbuyButtonText.text = WITS_STORE_BUY_BUTTON_100_3;
@@ -374,7 +374,7 @@
           [buyBtn3 setTitle:INAPP_BTN3_3 forState:UIControlStateNormal];
      }
      else if(languageCode == 4) {
-          
+           RewardsbtnLbl.text = REWARDS_4;
           cashoutAmount.text = CASHOUT_BTN_TITLE_4;
           loadingTitle = Loading_4;
           titleLbl.text = WITS_STORE_TITLE_4;

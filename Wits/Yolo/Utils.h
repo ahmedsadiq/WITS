@@ -57,6 +57,7 @@
 #define APP_NAME @"Wits"
 #define HOME_PAGE_TITLE @"Home"
 #define PLAY_NOW @"Play Now"
+#define Challenge_a_friend @"Challenge a Friend"
 #define WITS_STORE @"WITS Store"
 #define EARN_FREE_POINTS @"Earn Free Points"
 #define MY_MESSAGE @"My Messages"
@@ -68,6 +69,7 @@
 #define APP_NAME_1 @"Wits"
 #define HOME_PAGE_TITLE_1 @"الصفحة الرئسية"
 #define PLAY_NOW_1 @"تلعب الآن!"
+#define Challenge_a_friend1 @"اضغط لقبول التحدي"
 #define WITS_STORE_1 @"متجر الويتس"
 #define EARN_FREE_POINTS_1 @"احصل على النقاط مجانية"
 #define MY_MESSAGE_1 @"رسائلي"
@@ -79,6 +81,7 @@
 #define APP_NAME_2 @"Wits"
 #define HOME_PAGE_TITLE_2 @"Accueil"
 #define PLAY_NOW_2 @"Jouez maintenant!"
+#define Challenge_a_friend2 @ "Desafío"
 #define WITS_STORE_2 @"WITS Boutique"
 #define EARN_FREE_POINTS_2 @"Gagnez des Points"
 #define MY_MESSAGE_2 @"Mes Messages"
@@ -88,6 +91,7 @@
 
 #define Loading_3 @"Cargando..."
 #define APP_NAME_3 @"Wits"
+#define Challenge_a_friend3 @"défi"
 #define HOME_PAGE_TITLE_3 @"Inicio"
 #define PLAY_NOW_3 @"Jugar ahora"
 #define WITS_STORE_3 @"WITS Tienda"
@@ -101,6 +105,7 @@
 #define APP_NAME_4 @"Wits"
 #define HOME_PAGE_TITLE_4 @"Início"
 #define PLAY_NOW_4 @"Jogue Agora"
+#define Challenge_a_friend4 @"Desafie um Amigo"
 #define WITS_STORE_4 @"WITS loja"
 #define EARN_FREE_POINTS_4 @"Ganhe pontus grátis"
 #define MY_MESSAGE_4 @"Meus Mensagens"
@@ -1109,6 +1114,13 @@
 
 #define Friend_Not_Availabl_4 @"Amigo não disponível"
 
+#define ChallengeForGem @"Challenge For Gems"
+#define ChallengeForPoint @"Challenge For Points"
+#define  FriendMod @"Friends"
+#define ChallengeForGem1 @"التحدي للحصول على الجواهر"
+#define ChallengeForPoints1 @""
+
+
 
 
 ////////// Game Play Strings /////////
@@ -1627,6 +1639,9 @@
 
 #define PLAY_FOR_POINTS @"PLAY FOR POINTS"
 #define PLAY_FOR_GEMS @"PLAY FOR GEMS"
+#define For_Gems @"For Gems"
+#define For_Points @"For Points"
+
 #define WILL_HELP_IN_RANKING @"Will improve your Ranking"
 #define WILL_HELP_EARN_MONEY @"Will help you earn rewards"
 #define TUTORIAL_STR_1 @"Play in your own language"
@@ -1634,7 +1649,8 @@
 #define TUTORIAL_STR_3 @"Find random players having same interests; be correct and quick to gain more"
 #define TUTORIAL_STR_4 @"Buy gems to unlock game play that helps you earn real money. Redeem Your Gems for Real Money."
 
-
+#define For_Gems1 @"للحصول على الجواهر"
+#define For_Points1 @"للحصول على نقاط"
 #define PLAY_FOR_POINTS_1 @"العب من أجل الحصول على نقاط"
 #define PLAY_FOR_GEMS_1 @"العب من أجل الحصول على جواهر"
 #define WILL_HELP_IN_RANKING_1 @"سيحسن من ترتيبك"
@@ -1644,7 +1660,8 @@
 #define TUTORIAL_STR_3_1 @"ابحث عن لاعبين عشوائيين لديهم نفس اهتماماتك; كن دقيقا وسريعا لتكسب أكثر."
 #define TUTORIAL_STR_4_1 @"اشتر حجارة مرصعًة لفك الألعاب التي تساعدك لكسب أموال حقيقية. استبدل حجارتك الكريمة بأموال حقيقية."
 
-
+#define For_Gems2 @"Por Gemas"
+#define For_Points2 @"Por PuntosS"
 #define PLAY_FOR_POINTS_2 @"Jouez pour des points"
 #define PLAY_FOR_GEMS_2 @"Jouez pour des Gems"
 #define WILL_HELP_IN_RANKING_2 @"Améliorera votre classement"
@@ -1654,7 +1671,8 @@
 #define TUTORIAL_STR_3_2 @"Trouvez des joueurs avec les mêmes intérêts de façon aléatoire; répondez correctement et soyez rapide pour plus de gains."
 #define TUTORIAL_STR_4_2 @"Achetez des gemmes pour débloquer une catégorie de jeu qui vous aide à gagner de l'argent réel. Echangez vos gemmes contre de l'argent réel."
 
-
+#define For_Gems3 @"Par les gems"
+#define For_Points3 @"Pour les points"
 #define PLAY_FOR_POINTS_3 @"Juega para obtener puntos"
 #define PLAY_FOR_GEMS_3 @"Juega para obtener gemas"
 #define WILL_HELP_IN_RANKING_3 @"Mejorará tu ranking"
@@ -1664,7 +1682,8 @@
 #define TUTORIAL_STR_3_3 @"Encuentra aleatoriamente jugadores con tus mismos intereses; acierta y se rápido para ganar más."
 #define TUTORIAL_STR_4_3 @"Compra gemas para desbloquear el modo de juego que te ayuda a ganar dinero real. Canjea tus gemas por dinero real."
 
-
+#define For_Gems4 @"Por Gems"
+#define For_Points4 @"Por Pontos"
 #define PLAY_FOR_POINTS_4 @"JOGUE PARA PONTOS"
 #define PLAY_FOR_GEMS_4 @"JOGUE PARA GEMAS"
 #define WILL_HELP_IN_RANKING_4 @"Melhora a sua pontuação"
@@ -1685,7 +1704,7 @@
 #define FIVE_CONSECUTIVE @"For five consecutive questions two wrong answers will be removed."
 #define PURCHASE_ERROR @"Purchase Error"
 #define ADDONS @"AddOns"
-#define CLAIM @"Claim"
+#define CLAIM @"Redeem"
 #define REWARDSLIST @"Rewards List"
 #define UNLOCK_TWO_QUESTIONS @"Unlock 2 Questions"
 #define UNLOCK_FIVE_QUESTIONS @"Unlock 5 Questions"
