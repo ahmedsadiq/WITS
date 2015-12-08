@@ -184,12 +184,16 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      
      [self initData];
      [self initViews];
-     
-     topBarOpponentName.text = _challenge.opponentDisplayName;
-     topBarPlayerName.text = [SharedManager getInstance]._userProfile.display_name;
+    
+     NSArray * name_Player = [[SharedManager getInstance]._userProfile.display_name componentsSeparatedByString:@" "];
+     NSArray * name_opponent = [_challenge.opponentDisplayName componentsSeparatedByString:@" "];
+     //topBarOpponentName.text = _challenge.opponentDisplayName;
+     //topBarPlayerName.text = [SharedManager getInstance]._userProfile.display_name;
+     topBarPlayerName.text = [name_Player objectAtIndex:0];
+     topBarOpponentName.text = [name_opponent objectAtIndex:0];
      [self viewSlideInFromLeftToRight:upperViewLeft];
      [self viewSlideInFromRightToLeft:upperViewRight];
-     
+      appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
      [self showQuestion:currentIndex];
      
      [self setInitialPoints];
@@ -1805,6 +1809,47 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      
      
 }
+
+- (void) ticki:(NSTimer *) timer {
+    
+
+     if(sharedManager.socketIO.isConnected) {
+          NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+          languageCode = [language intValue];
+          
+          searchingOpponentLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
+          if (languageCode == 0) {
+               searchingOpponentLbl.text = @"VS";
+          }else if(languageCode == 1){
+               searchingOpponentLbl.text = @"VS";
+          }else if (languageCode == 2 ){
+               searchingOpponentLbl.text = @"VS";
+          }else if (languageCode == 3){
+               searchingOpponentLbl.text = @"VS";
+          }else if (languageCode == 4){
+               searchingOpponentLbl.text = @"VS";
+          }
+          [GemsDialogView removeFromSuperview];
+          [searchingView removeFromSuperview];
+          appDelegate.friendToBeChalleneged = nil;
+          UIView *effectView = [self.view viewWithTag:499];
+          
+          [effectView removeFromSuperview];
+//          _gmGemsSelected = false;
+//          _gmChallengeSelected = false;
+//          _gameModView.hidden = true;
+//          [_gameModView removeFromSuperview];
+          //Challenge *_challenge1 = [[Challenge alloc] initWithDictionary:userDictInner];
+          _challenge.type = rematchType;
+          _challenge.type_ID = rematchTypeId;
+         // _challenge.challengeID = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"ChallengeId"];
+          
+          isOpponentFound = true;
+          ChallengeVC *_challengeVC = [[ChallengeVC alloc] initWithChallenge:_challenge ];
+          [self.navigationController pushViewController:_challengeVC animated:YES ] ;
+     }
+     
+}
 - (void) tick:(NSTimer *) timer {
      //do something here..
      
@@ -1873,7 +1918,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      }else if (IS_IPHONE_5){
           GemsDialogView.frame = CGRectMake(0, 0, 320, 568);
      }else if (IS_IPHONE_6){
-          GemsDialogView.frame = CGRectMake(0, 0, 375, 667);
+         // GemsDialogView.frame = CGRectMake(0, 0, 375, 667);
      }
      
      if (languageCode == 1) {
@@ -1937,7 +1982,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 }
 
 - (IBAction)PlaywitStars:(id)sender {
-     
+      [opponentProfileImageView roundImageCorner];
      requestType = @"points";
      [[NSUserDefaults standardUserDefaults] setObject:requestType forKey:@"requestType"];
      [[NSUserDefaults standardUserDefaults] synchronize];
@@ -1958,7 +2003,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 }
 
 - (IBAction)PlaywithGems:(id)sender {
-     
+      [opponentProfileImageView roundImageCorner];
      requestType = @"gems";
      [[NSUserDefaults standardUserDefaults] setObject:requestType forKey:@"requestType"];
      [[NSUserDefaults standardUserDefaults] synchronize];
@@ -2010,7 +2055,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           [op onCompletion:^(MKNetworkOperation *completedOperation) {
                
                [senderProfileImageView setImage:[completedOperation responseImage]];
-               //[senderProfileImageView roundImageCorner];
+               [senderProfileImageView roundImageCorner];
                
           } onError:^(NSError* error) {
                
@@ -2130,7 +2175,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 
 #pragma mark iPhone - Server Communication
 -(void) DataRevieved:(SocketIOPacket *)dict{
-     
+       
      [loadView hide];
      
      [self dissableOptionSelection];
@@ -2177,6 +2222,114 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           }
           
      }
+     else if([dict.name isEqualToString:@"findPlayerOpponent"])
+     {
+          NSArray* args = dict.args;
+          NSDictionary *json = (NSDictionary*)args[0] ;
+          int flag = [[json objectForKey:@"flag"] intValue];
+          if(flag == 3) {
+               
+               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+               languageCode = [language intValue];
+               
+//               if(!(_gmChallengeSelected))
+//               {
+//                    if (languageCode == 0) {
+//                         _searchOppLbl.text = @"Searching opponent...";
+//                    }else if(languageCode == 1){
+//                         _searchOppLbl.text = @"االبحث عن الخصم...";
+//                    }else if (languageCode == 2 ){
+//                         _searchOppLbl.text = @"Recherche d\'un adversaire...";
+//                    }else if (languageCode == 3){
+//                         _searchOppLbl.text = @"La búsqueda de un oponente...";
+//                    }else if (languageCode == 4){
+//                         _searchOppLbl.text = @"Procurando um adversário...";
+//                    }
+//               }else
+//               {
+                    if (languageCode == 0) {
+                         searchingOpponentLbl.text = @"Waiting for opponent...";
+                    }else if(languageCode == 1){
+                         searchingOpponentLbl.text = @"االبحث عن الخصم...";
+                    }else if (languageCode == 2 ){
+                         searchingOpponentLbl.text = @"Recherche d\'un adversaire...";
+                    }else if (languageCode == 3){
+                         searchingOpponentLbl.text = @"La búsqueda de un oponente...";
+                    }else if (languageCode == 4){
+                         searchingOpponentLbl.text = @"Procurando um adversário...";
+                    }
+                    
+                    
+               //}
+               //Oponent is still searching
+               
+               NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"2",@"type",_challenge.type_ID,@"type_id",language,@"language",@"false",@"is_cancel",requestType, @"request_type", nil];
+               [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionary];
+               
+          }
+          else if(flag == 1){
+               //Oponent Found
+               _searchingLoaderView.hidden = true;
+               searchingOpponentLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
+               searchingOpponentLbl.text = @"VS";
+               //               _searchOppLbl.text = @"";
+               [timer invalidate];
+               timer = nil;
+               
+               //isGameStarted = true;
+               
+               NSString *oppName = [json objectForKey:@"displayName"];
+               searchingTxt.text = oppName;
+               NSString *image = [json objectForKey:@"profileImage"];
+               
+               opponentProfileImageView.imageURL = [NSURL URLWithString:image];
+               NSURL *url = [NSURL URLWithString:image];
+               [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
+               [opponentProfileImageView roundImageCorner];
+              _challenge = [[Challenge alloc] initWithDictionary:json];
+               _challenge.type = @"2";
+              // _challenge.type_ID = tempToplic.topic_id;
+               
+               
+               [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(ticki:) userInfo:nil repeats:NO];
+               
+          }
+          
+          else if(flag == 0){
+               
+               [searchingView removeFromSuperview];
+               NSString *emailMsg;
+               NSString *title;
+               NSString *cancel;
+               if (languageCode == 0 ) {
+                    emailMsg = @"You don't have sufficient Gems in your account.";
+                    title = @"Error";
+                    cancel = CANCEL;
+               } else if(languageCode == 1) {
+                    emailMsg = @"ليس لديك رصيد كافٍ من الجواهر";
+                    title = @"خطأ";
+                    cancel = CANCEL_1;
+               }else if (languageCode == 2){
+                    emailMsg = @"Vous n'avez pas assez de Gems";
+                    title = @"Erreur";
+                    cancel = CANCEL_2;
+               }else if (languageCode == 3){
+                    emailMsg = @"YNo tienes suficientes gemas";
+                    title = @"Error";
+                    cancel = CANCEL_3;
+               }else if (languageCode == 4){
+                    emailMsg = @"Não tem Gemas suficientes";
+                    title = @"erro";
+                    cancel = CANCEL_4;
+               }
+               
+               [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+               
+               
+          }
+          
+     }
+
      else if([dict.name isEqualToString:@"reMatch"])
      {
           NSArray* args = dict.args;
@@ -2193,30 +2346,73 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           if(flag == 0){
                //opponent gone away
                
-               NSString *message;
-               NSString *title;
+             //  NSString *message;
+              // NSString *title;
                
+//               NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
+//               [sharedManager sendEvent:@"register" andParameters:registerDictionary];
+//               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+//               languageCode = [language intValue];
                
-               if (languageCode == 0 ) {
-                    title = Friend_Not_Available;
-                    message = @"Unfortunately, your friend can't be reached at the moment. Please try later.";
-               }else if (languageCode == 1){
-                    title = Friend_Not_Availabl_1;
-                    message = @"لسوء الحظ، لا يمكن أن يتم التوصل صديقك في الوقت الراهن. يرجى المحاولة لاحقا.";
-               }else if (languageCode == 2){
-                    title = Friend_Not_Availabl_2;
-                    message = @"Malheureusement, votre ami ne peut pas être atteint pour le moment. Se il vous plaît réessayer plus tard.";
-               }else if (languageCode == 3){
-                    title = Friend_Not_Availabl_3;
-                    message = @"Por desgracia, su amigo no puede ser alcanzado por el momento. Por favor, intente más tarde.";
-               }else if (languageCode == 4){
-                    title = Friend_Not_Availabl_4;
-                    message = @"Infelizmente, o seu amigo não pode ser alcançado no momento. Por favor, tente mais tarde.";
+//               NSArray* args = dict.args;
+//               NSDictionary* arg = args[0];
+//               
+//               NSString *isVerified = [arg objectForKey:@"msg"];
+//               if([isVerified isEqualToString:@"verified"] ){
+                    NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+                    languageCode = [language intValue];
+               
+//                    if(appDelegate.friendToBeChalleneged) {
+//                         NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",appDelegate.friendToBeChalleneged.friendID,@"friend_id",@"2",@"type",_challenge.type_ID,@"type_id",language,@"language",requestType,@"challenge_type", nil];
+//                         [sharedManager sendEvent:@"sendChallenge" andParameters:registerDictionary];
+//                         
+//                    }
+//                    else {
+                         NSDictionary *registerDictionaryS = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"2",@"type",_challenge.type_ID,@"type_id",language,@"language",@"false",@"is_cancel",requestType, @"request_type", nil];
+                         [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionaryS];
+                   // }
+            //   }//
+               
+               [self displayNameAndImage];
+               if(IS_IPHONE_5) {
+                    searchingView.frame = CGRectMake(0, 0, 320, 568);
                }
+               else if(IS_IPHONE_4) {
+                    searchingView.frame = CGRectMake(0, 0, 320, 480);
+               }
+               [self.view addSubview:searchingView];
+               _loaderIndex = 1;
                
-               [AlertMessage showAlertWithMessage:message andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-               //[[NavigationHandler getInstance] NavigateToRoot];
-          }
+               for(int i = 1; i<5; i++) {
+                    UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
+                    if(i == _loaderIndex) {
+                         dot.image = [UIImage imageNamed:@"dotglow.png"];
+                    }
+                    else {
+                         dot.image = [UIImage imageNamed:@"dotblack.png"];
+                    }
+               }
+               timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
+//               if (languageCode == 0 ) {
+//                    title = Friend_Not_Available;
+//                    message = @"Unfortunately, your friend can't be reached at the moment. Please try later.";
+//               }else if (languageCode == 1){
+//                    title = Friend_Not_Availabl_1;
+//                    message = @"لسوء الحظ، لا يمكن أن يتم التوصل صديقك في الوقت الراهن. يرجى المحاولة لاحقا.";
+//               }else if (languageCode == 2){
+//                    title = Friend_Not_Availabl_2;
+//                    message = @"Malheureusement, votre ami ne peut pas être atteint pour le moment. Se il vous plaît réessayer plus tard.";
+//               }else if (languageCode == 3){
+//                    title = Friend_Not_Availabl_3;
+//                    message = @"Por desgracia, su amigo no puede ser alcanzado por el momento. Por favor, intente más tarde.";
+//               }else if (languageCode == 4){
+//                    title = Friend_Not_Availabl_4;
+//                    message = @"Infelizmente, o seu amigo não pode ser alcançado no momento. Por favor, tente mais tarde.";
+//               }
+//               
+//               [AlertMessage showAlertWithMessage:message andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+//               //[[NavigationHandler getInstance] NavigateToRoot];
+     }
           else{
                //UI for Socket connection and User searching
                [self displayNameAndImage];
@@ -2489,6 +2685,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           }
      }
 }
+
 -(void)socketDisconnected:(SocketIO *)socket onError:(NSError *)error {
      [loadView hide];
      AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
@@ -2627,7 +2824,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           lblPlayforPoints.text = PLAY_FOR_POINTS;
           willhelpinRanking.text = WILL_HELP_IN_RANKING;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY;
-          
+          gameModForGems.text = For_Gems;
+          gameModForPoints.text = For_Points;
           loadingTitle = Loading;
           resultTitle.text = RESULTS_LBL;
      }
@@ -2640,14 +2838,16 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           lblplayforGems.text = PLAY_FOR_GEMS_1;
           willhelpinRanking.text = WILL_HELP_IN_RANKING_1;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_1;
-          
+          gameModForGems.text = For_Gems1;
+          gameModForPoints.text = For_Points1;
           roundTitleLbl.text = Round_1;
           resultTitle.text = RESULTS_LBL_1;
      }
      else if(languageCode == 2) {
           loadingTitle = Loading_2;
           _roundLbl.text = Round_2;
-          
+          gameModForGems.text = For_Gems2;
+          gameModForPoints.text = For_Points2;
           lblPlayforPoints.text = PLAY_FOR_POINTS_2;
           lblplayforGems.text = PLAY_FOR_GEMS_2;
           willhelpinRanking.text = WILL_HELP_IN_RANKING_2;
@@ -2657,7 +2857,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           resultTitle.text = RESULTS_LBL_2;
      }
      else if(languageCode == 3) {
-          
+          gameModForGems.text = For_Gems3;
+          gameModForPoints.text = For_Points3;
           loadingTitle = Loading_3;
           _roundLbl.text = Round_3;
           roundTitleLbl.text = Round_3;
@@ -2675,7 +2876,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           lblplayforGems.text = PLAY_FOR_GEMS_4;
           willhelpinRanking.text = WILL_HELP_IN_RANKING_4;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_4;
-          
+          gameModForGems.text = For_Gems4;
+          gameModForPoints.text = For_Points4;
           roundTitleLbl.text = Round_4;
           resultTitle.text = RESULTS_LBL_4;
      }

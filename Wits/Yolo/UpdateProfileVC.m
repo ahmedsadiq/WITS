@@ -786,8 +786,8 @@
      
      [_loadingView hide];
      [_loadView removeFromSuperview];
-     _loadingView = [[LoadingView alloc] init];
-     [_loadingView showInView:self.view withTitle:loadingTitle];
+     //_loadingView = [[LoadingView alloc] init];
+     //[_loadingView showInView:self.view withTitle:loadingTitle];
      [self showAvatars];
 }
 

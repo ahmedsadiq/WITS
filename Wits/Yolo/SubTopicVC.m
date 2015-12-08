@@ -2522,7 +2522,7 @@
      isOpponentFound = false;
      //     _searchOppLbl.hidden = false;
      opponent.text = @"";
-     opponentProfileImageView.image = [UIImage imageNamed:@"Icon_152.png"];
+     opponentProfileImageView.image = [UIImage imageNamed:@"personal.png"];
      [opponentProfileImageView roundImageCorner];
      if(_gmChallengeSelected) {
           if(appDelegate.friendToBeChalleneged) {
@@ -2573,7 +2573,7 @@
      isOpponentFound = false;
      //     _searchOppLbl.hidden = false;
      opponent.text = @"";
-     opponentProfileImageView.image = [UIImage imageNamed:@"Icon_152.png"];
+     opponentProfileImageView.image = [UIImage imageNamed:@"personal.png"];
      [opponentProfileImageView roundImageCorner];
      if(_gmChallengeSelected) {
           if(appDelegate.friendToBeChalleneged) {

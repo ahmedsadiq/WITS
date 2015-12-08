@@ -1970,6 +1970,7 @@
 #pragma GameModeScreen
 
 -(void) setUpGameModScreen {
+      self.tabBarController.tabBar.hidden = true;
      UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
      UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
      blurEffectView.frame = self.view.frame;
@@ -1991,6 +1992,7 @@
      transition.subtype = kCATransitionFromBottom;
      [_gameModView.layer addAnimation:transition forKey:nil];
      _gameModView.hidden = false;
+      self.tabBarController.tabBar.hidden = false;
      [self.view addSubview:_gameModView];
      
      _searchingLoaderView.hidden = false;

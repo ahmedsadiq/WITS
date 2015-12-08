@@ -19,7 +19,7 @@
      IBOutlet UITableView *friendsTable;
      IBOutlet UIView *friendImageView;
      IBOutlet UIImageView *friendLargeImage;
-     
+     bool iscancel;
      NSMutableArray *arrFriendImage;
      int languageCode;
      NSString *statusStr;

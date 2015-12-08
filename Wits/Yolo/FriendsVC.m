@@ -47,7 +47,7 @@
      // Do any additional setup after loading the view from its nib.
      self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
      currentIndex = 0;
-    
+     iscancel = false;
      UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
      searchField.leftView = paddingView;
      searchField.leftViewMode = UITextFieldViewModeAlways;
@@ -1781,7 +1781,7 @@
           
           [_friendActionAcceptBtn setTitle:@"Delete" forState:UIControlStateNormal];
           [_friendActionRejectBtn setTitle:@"Cancel" forState:UIControlStateNormal];
-          
+         // iscancel = true;
           _friendActionImg.imageURL = [NSURL URLWithString:selectedUser.profile_image];
           NSURL *url = [NSURL URLWithString:selectedUser.profile_image];
           [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
@@ -1812,9 +1812,11 @@
      if(status == 2) {
           [self AcceptRejectRequest];
      }
-     else if(status == 1) {
+     else if(status == 1 ) {
           [self DeleteFriend];
      }
+//     else if(status == 1 && iscancel)
+//     {[self friendModCanelBtnPressed:nil];}
 }
 
 - (IBAction)friendActionAcceptBtnPressed:(id)sender {

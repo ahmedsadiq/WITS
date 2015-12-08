@@ -13,6 +13,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "EventModel.h"
 #import "Option.h"
+#import "AppDelegate.h"
 @interface ChallengeVC : UIViewController<SocketManagerDelegate>{
      
      __weak IBOutlet UIImageView *selfProfileImg;
@@ -126,8 +127,10 @@
      IBOutlet UIButton *homeBtn;
      IBOutlet UILabel *roundTitleLbl;
      
+      IBOutlet UILabel *gameModForGems;
      IBOutlet UILabel *questionNoLbl;
      
+      IBOutlet UILabel *gameModForPoints;
      IBOutlet UIImageView *roundBg;
      
 #pragma mark -
@@ -160,6 +163,7 @@
      BOOL userDisconnected;
      SocketManager *sharedManager;
      
+     AppDelegate *appDelegate;
      int finalScore;
      int finalGameScore;
      
@@ -187,6 +191,7 @@
      IBOutlet UILabel *lblGemsPoints;
      IBOutlet UILabel *lblStarsPoints;
      
+      IBOutlet UILabel *searchingOpponentLbl;
      IBOutlet UILabel *lblPlayforPoints;
      IBOutlet UILabel *lblplayforGems;
      IBOutlet UILabel *willhelpinRanking;
