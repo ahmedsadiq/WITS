@@ -830,7 +830,9 @@
 //          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlow.png"] forState:UIControlStateNormal];
 //          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlow.png"] forState:UIControlStateNormal];
           
-          
+          FriendsLabel.text = FRIENDS_BTN;
+          challengeForGemsLbl.text = ChallengeForGem;
+          ChallengeForPoints.text =  ChallengeForPoint;
           _friendsLbl.text = FRIENDS_BTN;
           loadingTitle = Loading;
           noFriendLbl.text = @"You have no friend.";
@@ -846,12 +848,13 @@
           _friendsLbl.text = FRIENDS_BTN_1;
           loadingTitle = Loading_1;
           noFriendLbl.text = @"لا يوجد لديك صديق.      ";
-          
+          FriendsLabel.text = FRIENDS_BTN_1;
 //          [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowArabic.png"] forState:UIControlStateNormal];
 //          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowArabic.png"] forState:UIControlStateNormal];
 //          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowarabic.png"] forState:UIControlStateNormal];
 //          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowarabic.png"] forState:UIControlStateNormal];
-          
+          challengeForGemsLbl.text = ChallengeForGem1;
+          ChallengeForPoints.text =  ChallengeForPoints1;
           UIColor *color = [UIColor whiteColor];
           searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"بحث صديق" attributes:@{NSForegroundColorAttributeName: color}];
           searchField.textAlignment = NSTextAlignmentRight;
@@ -868,8 +871,9 @@
 //          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowSpanish.png"] forState:UIControlStateNormal];
 //          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowSpanish.png"] forState:UIControlStateNormal];
 //          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowSpanish.png"] forState:UIControlStateNormal];
-          
-          
+          challengeForGemsLbl.text = ChallengeForGem2;
+          ChallengeForPoints.text =  ChallengeForPoints2;
+          FriendsLabel.text = FRIENDS_BTN_2;
           _friendsLbl.text = FRIENDS_BTN_2;
           loadingTitle = Loading_2;
           noFriendLbl.text = @"No tienes amigo.";
@@ -888,8 +892,10 @@
 //          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowFrench.png"] forState:UIControlStateNormal];
 //          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowFrench.png"] forState:UIControlStateNormal];
 //          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowFrench.png"] forState:UIControlStateNormal];
+          challengeForGemsLbl.text = ChallengeForGem3;
+          ChallengeForPoints.text =  ChallengeForPoints3;
           
-          
+          FriendsLabel.text = FRIENDS_BTN_3;
           _friendsLbl.text = FRIENDS_BTN_3;
           loadingTitle = Loading_3;
           noFriendLbl.text = @"Vous n'avez pas d'ami";
@@ -910,6 +916,10 @@
 //          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowportuguese.png"] forState:UIControlStateNormal];
           _friendsLbl.text = FRIENDS_BTN_4;
           loadingTitle = Loading_4;
+          
+          FriendsLabel.text = FRIENDS_BTN_4;
+          challengeForGemsLbl.text = ChallengeForGem4;
+         ChallengeForPoints.text =  ChallengeForPoints4;
           noFriendLbl.text = @"Você não tem nenhum amigo";
           UIColor *color = [UIColor whiteColor];
           searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"desafio" attributes:@{NSForegroundColorAttributeName: color}];

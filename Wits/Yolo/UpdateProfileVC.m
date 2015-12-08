@@ -285,7 +285,7 @@
      [op onCompletion:^(MKNetworkOperation *completedOperation) {
           
           [_loadView hide];
-          
+          [_loadView removeFromSuperview];
           NSDictionary *recievedDict = [completedOperation responseJSON];
           NSNumber *flag = [recievedDict objectForKey:@"flag"];
           if([flag isEqualToNumber:[NSNumber numberWithInt:SUCCESSFUL_LOGIN_FLAG]])
@@ -300,7 +300,7 @@
      } onError:^(NSError* error) {
           
           [_loadView hide];
-          
+          [_loadView removeFromSuperview];
           NSString *emailMsg;
           NSString *title;
           NSString *cancel;
@@ -375,14 +375,14 @@
                MKNetworkOperation *op = [engine operationWithURLString:[SharedManager getInstance]._userProfile.profile_image params:Nil httpMethod:@"GET"];
                
                [op onCompletion:^(MKNetworkOperation *completedOperation) {
-                    
+                    [_loadView removeFromSuperview];
                     [userImage setImage:[completedOperation responseImage]];
                     //[userImage roundImageCorner];
                     
                } onError:^(NSError* error) {
                     
                     
-                    
+                    [_loadView removeFromSuperview];
                     NSString *emailMsg;
                     NSString *title;
                     NSString *cancel;
@@ -785,6 +785,7 @@
 - (IBAction)popUpAvatarPressed:(id)sender {
      
      [_loadingView hide];
+     [_loadView removeFromSuperview];
      _loadingView = [[LoadingView alloc] init];
      [_loadingView showInView:self.view withTitle:loadingTitle];
      [self showAvatars];
@@ -866,6 +867,7 @@
      [op onCompletion:^(MKNetworkOperation *completedOperation) {
           
           [_loadView hide];
+          [_loadView removeFromSuperview];
           NSLog(@"Response: %@",[completedOperation responseString]);
           NSDictionary *recievedDict = [completedOperation responseJSON];
           NSNumber *flag = [recievedDict objectForKey:@"flag"];
@@ -880,6 +882,7 @@
      } onError:^(NSError* error) {
           
           [_loadView hide];
+          [_loadView removeFromSuperview];
           NSString *emailMsg;
           NSString *title;
           NSString *cancel;
@@ -959,7 +962,8 @@
      MKNetworkOperation *op = [engine operationWithURLString:avatarURL params:nil httpMethod:@"GET"];
      
      [op onCompletion:^(MKNetworkOperation *completedOperation) {
-          
+          [_loadingView hide];
+          [_loadingView removeFromSuperview];
           NSString *imagePath = [docs stringByAppendingPathComponent:fileName];
           
           NSLog(@"Image Path: %@",imagePath);

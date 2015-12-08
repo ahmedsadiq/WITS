@@ -13,11 +13,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="300" height="129"/>
                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_120.png" id="S51-dp-yVq" customClass="AsyncImageView">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal.png" id="S51-dp-yVq" customClass="AsyncImageView">
                         <rect key="frame" x="0.0" y="0.0" width="145" height="130"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <view alpha="0.5" contentMode="scaleToFill" id="df6-ZO-xLu" userLabel="leftoverlay">
+                    <view contentMode="scaleToFill" id="df6-ZO-xLu" userLabel="leftoverlay">
                         <rect key="frame" x="0.0" y="0.0" width="145" height="130"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -40,11 +40,11 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_120.png" id="cXc-zO-ACO" customClass="AsyncImageView">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal.png" id="cXc-zO-ACO" customClass="AsyncImageView">
                         <rect key="frame" x="155" y="0.0" width="145" height="130"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <view alpha="0.5" contentMode="scaleToFill" id="d6B-5i-rAB" userLabel="rightoverlay">
+                    <view contentMode="scaleToFill" id="d6B-5i-rAB" userLabel="rightoverlay">
                         <rect key="frame" x="155" y="0.0" width="145" height="130"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -88,8 +88,8 @@
     </objects>
     <resources>
         <image name="GR.png" width="40" height="30"/>
-        <image name="Icon_120.png" width="120" height="120"/>
         <image name="US.png" width="40" height="30"/>
+        <image name="personal.png" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

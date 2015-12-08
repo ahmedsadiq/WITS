@@ -504,7 +504,7 @@
 #define HISTORY_BTN @"History"
 #define MESSAGE_BTN @"Earn Free Points"
 #define DISCUSSION_BTN @"Discussion"
-#define RANKING_BTN @"Rankings"
+#define RANKING_BTN @"RANKINGS"
 #define WITS_STORE_BTN @"WITS Store (-)"
 #define SETTINGS_BTN @"Settings"
 #define LOGOUT_BTN @"Log Out"
@@ -1116,12 +1116,16 @@
 
 #define ChallengeForGem @"Challenge For Gems"
 #define ChallengeForPoint @"Challenge For Points"
-#define  FriendMod @"Friends"
+
 #define ChallengeForGem1 @"التحدي للحصول على الجواهر"
-#define ChallengeForPoints1 @""
+#define ChallengeForPoints1 @"التحدي للحصول على نقاط"
 
-
-
+#define ChallengeForGem2 @"Desafío por Gemas"
+#define ChallengeForPoints2 @"Desafío por Puntos"
+#define ChallengeForGem3 @"Défi par Gems"
+#define ChallengeForPoints3 @"Défi pour les points"
+#define ChallengeForGem4 @"Desafiar por Gems"
+#define ChallengeForPoints4 @"Desafiar por Pontos"
 
 ////////// Game Play Strings /////////
 #define VS @"VS"

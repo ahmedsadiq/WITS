@@ -13,20 +13,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="300" height="129"/>
                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_120.png" id="r5X-gf-Sui" customClass="AsyncImageView">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal.png" id="r5X-gf-Sui" customClass="AsyncImageView">
                         <rect key="frame" x="0.0" y="0.0" width="145" height="130"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_120.png" id="L3d-aq-537" customClass="AsyncImageView">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal.png" id="L3d-aq-537" customClass="AsyncImageView">
                         <rect key="frame" x="155" y="0.0" width="145" height="130"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" id="goO-oc-swr">
+                    <view hidden="YES" contentMode="scaleToFill" id="goO-oc-swr">
                         <rect key="frame" x="155" y="0.0" width="147" height="130"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
-                    <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" id="ZCs-NW-fnZ">
+                    <view hidden="YES" contentMode="scaleToFill" id="ZCs-NW-fnZ">
                         <rect key="frame" x="-2" y="0.0" width="147" height="130"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -87,7 +87,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Icon_120.png" width="120" height="120"/>
+        <image name="personal.png" width="512" height="512"/>
         <image name="verified.png" width="31" height="31"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

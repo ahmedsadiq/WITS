@@ -13,16 +13,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="768" height="299"/>
                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_152.png" id="KTh-gO-sdZ" customClass="AsyncImageView">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal.png" id="KTh-gO-sdZ" customClass="AsyncImageView">
                         <rect key="frame" x="50" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <view hidden="YES" alpha="0.40000000596046448" contentMode="scaleToFill" id="4UE-v1-T2a">
+                    <view hidden="YES" contentMode="scaleToFill" id="4UE-v1-T2a">
                         <rect key="frame" x="418" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
-                    <view hidden="YES" alpha="0.40000000596046448" contentMode="scaleToFill" id="Txb-K0-HGm">
+                    <view hidden="YES" contentMode="scaleToFill" id="Txb-K0-HGm">
                         <rect key="frame" x="50" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -34,7 +34,7 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_152.png" id="hLJ-mY-Y0C" customClass="AsyncImageView">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal.png" id="hLJ-mY-Y0C" customClass="AsyncImageView">
                         <rect key="frame" x="418" y="-1" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -87,7 +87,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Icon_152.png" width="152" height="152"/>
+        <image name="personal.png" width="512" height="512"/>
         <image name="verified.png" width="31" height="31"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

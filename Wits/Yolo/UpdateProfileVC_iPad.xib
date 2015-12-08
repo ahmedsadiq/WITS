@@ -45,7 +45,7 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="CYq-eq-OxI">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbg.png" id="CYq-eq-OxI">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -82,9 +82,9 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="KGG-d3-cMa">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbg.png" id="KGG-d3-cMa">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                    <autoresizingMask key="autoresizingMask"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Mau-7R-ZA6">
@@ -303,7 +303,7 @@
                         <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" id="0MY-cC-RCa">
                             <rect key="frame" x="184" y="387" width="400" height="250"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" patternImage="4C83E19F-1BF4-40D3-B83E-06F4AFD4B2A4" colorSpace="pattern"/>
+                            <color key="backgroundColor" patternImage="BF90E0EB-8923-4F1B-92E7-4227C0E2E77C" colorSpace="pattern"/>
                             <date key="date" timeIntervalSinceReferenceDate="-31582232.09760797">
                                 <!--2000-01-01 11:09:27 +0000-->
                             </date>
@@ -383,7 +383,7 @@
         </view>
     </objects>
     <resources>
-        <image name="4C83E19F-1BF4-40D3-B83E-06F4AFD4B2A4" width="256" height="256">
+        <image name="BF90E0EB-8923-4F1B-92E7-4227C0E2E77C" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -4825,7 +4825,6 @@ BA6JAAQOkQAEDp4ABA6jAAQOpQAEDqcABA6sAAQOtAAEDrcABA68AAQOxAAEDscABA7ZAAQO3AAEDuEA
 AAAAAAAEAQAAAAAAAABCAAAAAAAAAAAAAAAAAAQO4w
 </mutableData>
         </image>
-        <image name="bg.png" width="540" height="960"/>
         <image name="btnbgpressed.png" width="484" height="98"/>
         <image name="cityglowUP.png" width="67" height="60"/>
         <image name="countryglowUP.png" width="54" height="64"/>
@@ -4836,6 +4835,7 @@ AAAAAAAEAQAAAAAAAABCAAAAAAAAAAAAAAAAAAQO4w
         <image name="header.png" width="320" height="43"/>
         <image name="header_bar.png" width="320" height="1"/>
         <image name="messagebg.png" width="493" height="137"/>
+        <image name="newbg.png" width="540" height="960"/>
         <image name="textboxbg.png" width="470" height="73"/>
         <image name="uncheck.png" width="800" height="794"/>
         <image name="usernameglowUP.png" width="56" height="56"/>

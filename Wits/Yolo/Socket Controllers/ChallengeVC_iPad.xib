@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeVC">
@@ -765,7 +764,7 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="N1u-bi-2uI">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbg.png" id="N1u-bi-2uI">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -933,19 +932,25 @@
         <image name="gpclose.png" width="100" height="110"/>
         <image name="header.png" width="320" height="43"/>
         <image name="header_bar.png" width="320" height="1"/>
-        <image name="homeForIpad.png" width="80" height="80"/>
+        <image name="homeForIpad.png" width="80" height="72"/>
         <image name="homeglow.png" width="51" height="48"/>
+        <image name="newbg.png" width="540" height="960"/>
         <image name="opponentpic.png" width="151" height="151"/>
         <image name="optionpressedstate.png" width="540" height="110"/>
         <image name="picbg.png" width="151" height="151"/>
         <image name="playagain.png" width="126" height="114"/>
         <image name="playagainglow.png" width="145" height="130"/>
         <image name="rewardsglow.png" width="60" height="61"/>
-        <image name="rewardsicon.png" width="113" height="118"/>
+        <image name="rewardsicon.png" width="110" height="115"/>
         <image name="star.png" width="116" height="133"/>
         <image name="starg1.png" width="339" height="297"/>
         <image name="transparentbg.png" width="320" height="568"/>
         <image name="witsnewblue.png" width="1004" height="245"/>
         <image name="witsround.PNG" width="210" height="208"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>

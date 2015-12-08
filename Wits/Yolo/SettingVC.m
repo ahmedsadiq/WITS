@@ -137,13 +137,16 @@
           referralCodeTxt.textAlignment = NSTextAlignmentLeft;
           chooseLang.text = CHOOSE_LANGUAGE;
           chooseLang.textAlignment = NSTextAlignmentCenter;
-          
+          selectlanguageHeading.text = SELECT_LANGUAGE;
           [rateUs setTitle:@"Rate Us" forState:UIControlStateNormal];
           [languageSaveBtn setTitle:SAVE_LANGUAGE_BTN forState:UIControlStateNormal];
           [sendBtn setTitle:SEND_BTN forState:UIControlStateNormal];
           [aboutBtn setTitle:ABOUT_BTN forState:UIControlStateNormal];
           [changeLangBtn setTitle:CHANGE_LANG_BTN forState:UIControlStateNormal];
           [mainbackBtn setTitle:BACK_BTN forState:UIControlStateNormal];
+          languageArray = [[NSArray alloc] initWithObjects:@"English (US)", @"Arabic (Ar)", @"French (Fr)",@"Spanish (Es)",@"Portuguese (Pt)", nil];
+          [languageButtonOutlet setTitle:[languageArray objectAtIndex:0] forState:UIControlStateNormal];
+          
      }
      else if(languageCode == 1 ) {
           
@@ -162,7 +165,8 @@
           referralCodeTxt.textAlignment = NSTextAlignmentRight;
           chooseLang.text = CHOOSE_LANGUAGE_1;
           chooseLang.textAlignment = NSTextAlignmentCenter;
-          
+          selectlanguageHeading.text = SELECT_LANGUAGE_1;
+          languageArray = [[NSArray alloc] initWithObjects:@"الإنجليزية", @"العربية", @"الفرنسية",@"الأسبانية",@"البرتغالية", nil];
           
           [languageSaveBtn setTitle:SAVE_LANGUAGE_BTN_1 forState:UIControlStateNormal];
           [rateUs setTitle:@"قم بتقييمنا" forState:UIControlStateNormal];
@@ -170,6 +174,7 @@
           [aboutBtn setTitle:ABOUT_BTN_1 forState:UIControlStateNormal];
           [changeLangBtn setTitle:CHANGE_LANG_BTN_1 forState:UIControlStateNormal];
           [mainbackBtn setTitle:BACK_BTN_1 forState:UIControlStateNormal];
+          [languageButtonOutlet setTitle:[languageArray objectAtIndex:1] forState:UIControlStateNormal];
      }
      else if(languageCode == 2) {
           loadingtitle = Loading_2;
@@ -187,14 +192,15 @@
           referralCodeTxt.textAlignment = NSTextAlignmentLeft;
           chooseLang.text = CHOOSE_LANGUAGE_2;
           chooseLang.textAlignment = NSTextAlignmentCenter;
-          
+          selectlanguageHeading.text = SELECT_LANGUAGE_2;
           [languageSaveBtn setTitle:SAVE_LANGUAGE_BTN_2 forState:UIControlStateNormal];
           [rateUs setTitle:@"Evalúe-nos" forState:UIControlStateNormal];
-          
+       languageArray = [[NSArray alloc] initWithObjects:@"INGLÉS (US)", @"ÁRABE (Ar)", @"FRANCÉS (Fr)",@"ESPAÑOL (Es)",@"PORTUGUÉS (Pt)", nil];
           [sendBtn setTitle:SEND_BTN_2 forState:UIControlStateNormal];
           [aboutBtn setTitle:ABOUT_BTN_2 forState:UIControlStateNormal];
           [changeLangBtn setTitle:CHANGE_LANG_BTN_2 forState:UIControlStateNormal];
           [mainbackBtn setTitle:BACK_BTN_2 forState:UIControlStateNormal];
+          [languageButtonOutlet setTitle:[languageArray objectAtIndex:2] forState:UIControlStateNormal];
      }
      else if(languageCode == 3) {
           
@@ -213,14 +219,15 @@
           referralCodeTxt.textAlignment = NSTextAlignmentLeft;
           chooseLang.text = CHOOSE_LANGUAGE_3;
           chooseLang.textAlignment = NSTextAlignmentCenter;
-          
-          
+          selectlanguageHeading.text = SELECT_LANGUAGE_3;
+           languageArray = [[NSArray alloc] initWithObjects:@"Anglais", @"Arabe", @"Français",@"Espagnol",@"Portugais", nil];
           [languageSaveBtn setTitle:SAVE_LANGUAGE_BTN_3 forState:UIControlStateNormal];
           [rateUs setTitle:@"Notez nous" forState:UIControlStateNormal];
           [sendBtn setTitle:SEND_BTN_3 forState:UIControlStateNormal];
           [aboutBtn setTitle:ABOUT_BTN_3 forState:UIControlStateNormal];
           [changeLangBtn setTitle:CHANGE_LANG_BTN_3 forState:UIControlStateNormal];
           [mainbackBtn setTitle:BACK_BTN_3 forState:UIControlStateNormal];
+          [languageButtonOutlet setTitle:[languageArray objectAtIndex:3] forState:UIControlStateNormal];
      }
      else if(languageCode == 4) {
           
@@ -239,8 +246,9 @@
           referralCodeTxt.textAlignment = NSTextAlignmentLeft;
           chooseLang.text = CHOOSE_LANGUAGE_4;
           chooseLang.textAlignment = NSTextAlignmentCenter;
-          
-          
+          selectlanguageHeading.text = SELECT_LANGUAGE_4;
+           languageArray = [[NSArray alloc] initWithObjects:@"INGLÊS (US)", @"ÁRABE (Ar)", @"FRANCÊS (Fr)",@"ESPANHOL (Es)",@"PORTUGUÊS (Pt)", nil];
+          [languageButtonOutlet setTitle:[languageArray objectAtIndex:4] forState:UIControlStateNormal];
           [languageSaveBtn setTitle:SAVE_LANGUAGE_BTN_4 forState:UIControlStateNormal];
           [rateUs setTitle:@"Nos classifique " forState:UIControlStateNormal];
           [sendBtn setTitle:SEND_BTN_4 forState:UIControlStateNormal];
