@@ -576,7 +576,7 @@
      opponentProfileImageView.imageURL = [NSURL URLWithString:_tempUser.profile_image];
      NSURL *url = [NSURL URLWithString:_tempUser.profile_image];
      [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
-     //[opponentProfileImageView roundImageCorner];
+     [opponentProfileImageView roundImageCorner];
      
      if ([statusStr isEqualToString:@"Challenge"]) {
           [statusView setImage:[UIImage imageNamed:@"online_icon.png"]];
@@ -599,7 +599,7 @@
      [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
      searchingTxt.text = _user.display_name;
      
-     //[opponentProfileImageView roundImageCorner];
+     [opponentProfileImageView roundImageCorner];
      [loadView showInView:self.view withTitle:loadingTitle];
      _selectedUser = _user;
      
@@ -692,7 +692,7 @@
           [op onCompletion:^(MKNetworkOperation *completedOperation) {
                
                [senderProfileImageView setImage:[completedOperation responseImage]];
-               //[senderProfileImageView roundImageCorner];
+               [senderProfileImageView roundImageCorner];
                
           } onError:^(NSError* error) {
                
@@ -779,7 +779,7 @@
           opponentProfileImageView.imageURL = [NSURL URLWithString:_selectedUser.profile_image];
           NSURL *url = [NSURL URLWithString:_selectedUser.profile_image];
           [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
-          //[opponentProfileImageView roundImageCorner];
+          [opponentProfileImageView roundImageCorner];
           
           int flag = [[innerDictionary objectForKey:@"flag"] intValue];
           if(flag == 1) {

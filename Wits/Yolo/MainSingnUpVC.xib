@@ -86,12 +86,14 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                    <state key="normal" title="SIGN IN" backgroundImage="btnbg.png">
+                    <state key="normal" title="LOG IN" backgroundImage="btnbg.png">
                         <color key="titleColor" red="0.28884548609999999" green="0.28884548609999999" blue="0.28884548609999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="selected" backgroundImage="btnbgpressed.png"/>
-                    <state key="highlighted" backgroundImage="btnbgpressed.png"/>
+                    <state key="highlighted">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="hXC-41-c1w"/>
                     </connections>
@@ -404,7 +406,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signupbgcolored.png" id="YWC-Ge-rOw">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Signinbgcolored.png" id="YWC-Ge-rOw">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </imageView>
@@ -482,7 +484,6 @@
         <image name="line.png" width="466" height="2"/>
         <image name="logo.png" width="388" height="177"/>
         <image name="messagebg.png" width="493" height="137"/>
-        <image name="signupbgcolored.png" width="540" height="960"/>
         <image name="twitterbg.png" width="218" height="79"/>
         <image name="twitterbgpressed.png" width="281" height="142"/>
     </resources>

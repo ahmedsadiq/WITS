@@ -37,6 +37,7 @@
 - (void)viewDidLoad {
      [super viewDidLoad];
        self.tabBarController.tabBar.hidden = false;
+     [self setLanguageForScreen];
      // Do any additional setup after loading the view from its nib.
      searchField.delegate = self;
      searchField.placeholder = @"Type here ";

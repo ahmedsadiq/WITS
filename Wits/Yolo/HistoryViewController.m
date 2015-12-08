@@ -74,6 +74,7 @@
           [self getRanking];
      }
      else {
+          loadView = [[LoadingView alloc] init];
           [self historyPressed:nil];
      }
      

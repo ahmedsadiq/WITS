@@ -36,7 +36,8 @@
 
       IBOutlet UILabel *FriendsLabel;
      
-      IBOutlet UILabel *ChallengeForPoints;
+      IBOutlet UILabel *ChallengeForPointsLabel
+     ;
      BOOL isSearched;
      
 #pragma New UI changes

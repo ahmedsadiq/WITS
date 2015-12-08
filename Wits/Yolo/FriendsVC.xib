@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FriendsVC">
             <connections>
-                <outlet property="ChallengeForPoints" destination="sjI-Fi-fkR" id="rhz-ZU-Pcq"/>
+                <outlet property="ChallengeForPointsLabel" destination="sjI-Fi-fkR" id="CWQ-lg-sAL"/>
                 <outlet property="FriendsLabel" destination="BRH-4V-UT6" id="bGn-ru-ICk"/>
                 <outlet property="backbtn" destination="YZ9-ll-Beu" id="9V4-Ld-LyW"/>
                 <outlet property="challengeForGems" destination="GTu-ae-nV8" id="eNm-n0-lZX"/>
@@ -49,18 +49,6 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <animations/>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Search for friend" minimumFontSize="17" id="ROp-Mi-wKW">
-                    <rect key="frame" x="14" y="15" width="252" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <animations/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                    <connections>
-                        <action selector="ChangedEditing:" destination="-1" eventType="editingChanged" id="h9V-yv-DKp"/>
-                        <outlet property="delegate" destination="-1" id="leL-pX-ZHl"/>
-                    </connections>
-                </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iSi-DE-p27">
                     <rect key="frame" x="265" y="15" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -95,6 +83,18 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Search for friend" minimumFontSize="17" id="ROp-Mi-wKW">
+                    <rect key="frame" x="14" y="15" width="252" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
+                    <connections>
+                        <action selector="ChangedEditing:" destination="-1" eventType="editingChanged" id="h9V-yv-DKp"/>
+                        <outlet property="delegate" destination="-1" id="leL-pX-ZHl"/>
+                    </connections>
+                </textField>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

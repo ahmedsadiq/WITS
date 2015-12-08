@@ -603,7 +603,22 @@
                selectedUser.RelationshipStatus = @"3";
                
           }
+          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"NewSent.png"] forState:UIControlStateNormal];
+          _fmFriendButton.enabled = NO;
+          if(languageCode == 0 ) {
+               
+               FriendsLabel.text = @"Request Sent";
+          }else if(languageCode == 1 ) {
+               FriendsLabel.text = @"تم إرسال الطلب";
+          }else if(languageCode == 2 ) {
+               FriendsLabel.text = @"Solicitud enviada";
+          }else if(languageCode == 3 ) {
+               FriendsLabel.text = @"demande Envoyé";
+          }else if(languageCode == 4 ) {
+               FriendsLabel.text = @"Pedido Enviado";
+          }
           
+
           
      }onError:^(NSError *error){
           
@@ -718,13 +733,14 @@
 -(IBAction)ChangedEditing:(id)sender{
      [arrFriendImage removeAllObjects];
      
-     if (searchField.text.length <= 0) {
+     if (![searchField hasText]) {
           [self FetchFriendList];
      }
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
      self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
      [searchField resignFirstResponder];
+     [self FetchFriendList];
      return YES;
 }
 
@@ -832,7 +848,7 @@
           
           FriendsLabel.text = FRIENDS_BTN;
           challengeForGemsLbl.text = ChallengeForGem;
-          ChallengeForPoints.text =  ChallengeForPoint;
+          ChallengeForPointsLabel.text =  ChallengeForPoint;
           _friendsLbl.text = FRIENDS_BTN;
           loadingTitle = Loading;
           noFriendLbl.text = @"You have no friend.";
@@ -854,7 +870,7 @@
 //          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowarabic.png"] forState:UIControlStateNormal];
 //          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowarabic.png"] forState:UIControlStateNormal];
           challengeForGemsLbl.text = ChallengeForGem1;
-          ChallengeForPoints.text =  ChallengeForPoints1;
+          ChallengeForPointsLabel.text =  ChallengeForPoints1;
           UIColor *color = [UIColor whiteColor];
           searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"بحث صديق" attributes:@{NSForegroundColorAttributeName: color}];
           searchField.textAlignment = NSTextAlignmentRight;
@@ -872,7 +888,7 @@
 //          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowSpanish.png"] forState:UIControlStateNormal];
 //          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowSpanish.png"] forState:UIControlStateNormal];
           challengeForGemsLbl.text = ChallengeForGem2;
-          ChallengeForPoints.text =  ChallengeForPoints2;
+          ChallengeForPointsLabel.text =  ChallengeForPoints2;
           FriendsLabel.text = FRIENDS_BTN_2;
           _friendsLbl.text = FRIENDS_BTN_2;
           loadingTitle = Loading_2;
@@ -893,7 +909,7 @@
 //          [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlowFrench.png"] forState:UIControlStateNormal];
 //          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowFrench.png"] forState:UIControlStateNormal];
           challengeForGemsLbl.text = ChallengeForGem3;
-          ChallengeForPoints.text =  ChallengeForPoints3;
+          ChallengeForPointsLabel.text =  ChallengeForPoints3;
           
           FriendsLabel.text = FRIENDS_BTN_3;
           _friendsLbl.text = FRIENDS_BTN_3;
@@ -919,7 +935,7 @@
           
           FriendsLabel.text = FRIENDS_BTN_4;
           challengeForGemsLbl.text = ChallengeForGem4;
-         ChallengeForPoints.text =  ChallengeForPoints4;
+         ChallengeForPointsLabel.text =  ChallengeForPoints4;
           noFriendLbl.text = @"Você não tem nenhum amigo";
           UIColor *color = [UIColor whiteColor];
           searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"desafio" attributes:@{NSForegroundColorAttributeName: color}];
@@ -1083,6 +1099,9 @@
      languageCode = [language intValue];
      NSString *suffix = @"";
      int status = [[NSString stringWithFormat:@"%@",selectedUser.RelationshipStatus] intValue];
+     [ FriendsLabel setAlpha:0.5];
+     [challengeForGemsLbl setAlpha:0.5];
+     [ChallengeForPointsLabel setAlpha:0.5];
      // Changes below done by obaid
      switch (status) {
           // Case 0 : for add friend
@@ -1097,7 +1116,9 @@
 //                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGems.png"] forState:UIControlStateNormal];
 //                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsEnglish.png"] forState:UIControlStateNormal];
 //                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"Add.png"] forState:UIControlStateNormal];
-                    
+                    challengeForGemsLbl.text = ChallengeForGem;
+                    ChallengeForPointsLabel.text = ChallengeForPoint;
+                    FriendsLabel.text = @"Add Friend";
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
@@ -1107,7 +1128,9 @@
 //                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsArabic.png"] forState:UIControlStateNormal];
 //                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsArabic.png"] forState:UIControlStateNormal];
 //                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddArabic.png"] forState:UIControlStateNormal];
-                    
+                    challengeForGemsLbl.text = ChallengeForGem1;
+                    ChallengeForPointsLabel.text = ChallengeForPoints1;
+                    FriendsLabel.text = @"إإضافة صديق";
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
@@ -1116,17 +1139,23 @@
 //                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsSpanish.png"] forState:UIControlStateNormal];
 //                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsSpanish.png"] forState:UIControlStateNormal];
 //                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddSpanish.png"] forState:UIControlStateNormal];
+                    challengeForGemsLbl.text = ChallengeForGem2;
+                    ChallengeForPointsLabel.text = ChallengeForPoints2;
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
+                    FriendsLabel.text = @"Añadir amigo";
                }else if(languageCode == 3 ) {
 //                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatFrench.png"] forState:UIControlStateNormal];
 //                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsFrench.png"] forState:UIControlStateNormal];
 //                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsFrench.png"] forState:UIControlStateNormal];
 //                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddFrench.png"] forState:UIControlStateNormal];
+                    challengeForGemsLbl.text = ChallengeForGem3;
+                    ChallengeForPointsLabel.text = ChallengeForPoints3;
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
+                    FriendsLabel.text = @"Ajouter un ami";
                }else if(languageCode == 4 ) {
 //                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatportuguese.png"] forState:UIControlStateNormal];
 //                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsPortuguese.png"] forState:UIControlStateNormal];
@@ -1135,6 +1164,9 @@
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
+                    FriendsLabel.text = @"Adicionar um Amigo";
+                    challengeForGemsLbl.text = ChallengeForGem4;
+                    ChallengeForPointsLabel.text = ChallengeForPoints4;
                }
                
                break;
@@ -1145,6 +1177,9 @@
                [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"NewForPointsglow.png"] forState:UIControlStateNormal];
                [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatGlow.png"] forState:UIControlStateNormal];
                [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"NewTickpressed.png"] forState:UIControlStateNormal];
+               [ FriendsLabel setAlpha:1];
+               [ChallengeForPointsLabel setAlpha:1];
+               [challengeForGemsLbl setAlpha:1];
                if(languageCode == 0 ) {
                   
 //                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlow.png"] forState:UIControlStateNormal];
@@ -1155,6 +1190,7 @@
                     _challengeForPoints.enabled = YES;
                     _fmChatBtn.enabled = YES;
                     _fmFriendButton.enabled = YES;
+                    FriendsLabel.text = @"Friends";
                     
                     //_fmFriendButton.frame = btnFrame;
                }else if(languageCode == 1 ) {
@@ -1166,7 +1202,7 @@
                     _challengeForPoints.enabled = YES;
                     _fmChatBtn.enabled = YES;
                     _fmFriendButton.enabled = YES;
-                    
+                     FriendsLabel.text = @"الاصدقاء";
                }else if(languageCode == 2 ) {
                     
 //                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowSpanish.png"] forState:UIControlStateNormal];
@@ -1177,7 +1213,7 @@
                     _challengeForPoints.enabled = YES;
                     _fmChatBtn.enabled = YES;
                     _fmFriendButton.enabled = YES;
-                    
+                     FriendsLabel.text = @"Amigos";
                }else if(languageCode == 3 ) {
 //                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowFrench.png"] forState:UIControlStateNormal];
 //                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowFrench.png"] forState:UIControlStateNormal];
@@ -1187,7 +1223,7 @@
                     _challengeForPoints.enabled = YES;
                     _fmChatBtn.enabled = YES;
                     _fmFriendButton.enabled = YES;
-
+                    FriendsLabel.text = @"Amis";
                }else if(languageCode == 4 ) {
                     
 //                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowPortuguese.png"] forState:UIControlStateNormal];
@@ -1198,7 +1234,7 @@
                     _challengeForPoints.enabled = YES;
                     _fmChatBtn.enabled = YES;
                     _fmFriendButton.enabled = YES;
-                    
+                     FriendsLabel.text = @"Amigos";
                }
                break;
                // case 2: friend request received
@@ -1217,7 +1253,7 @@
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = YES;
-                   
+                   FriendsLabel.text = @"Friend Request";
                     //_fmFriendButton.frame = btnFrame;
                }else if(languageCode == 1 ) {
 //                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatarabic.png"] forState:UIControlStateNormal];
@@ -1228,6 +1264,7 @@
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = YES;
+                     FriendsLabel.text = @"طلب صداقة";
                }else if(languageCode == 2 ) {
 //                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatSpanish.png"] forState:UIControlStateNormal];
 //                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsSpanish.png"] forState:UIControlStateNormal];
@@ -1237,6 +1274,7 @@
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = YES;
+                     FriendsLabel.text = @"Solicitud de amigo";
                }else if(languageCode == 3 ) {
 //                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatFrench.png"] forState:UIControlStateNormal];
 //                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsFrench.png"] forState:UIControlStateNormal];
@@ -1246,6 +1284,7 @@
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = YES;
+                     FriendsLabel.text = @"Demande d\'ami";
                }else if(languageCode == 4 ) {
                     
 //                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatportuguese.png"] forState:UIControlStateNormal];
@@ -1256,7 +1295,7 @@
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = YES;
-                    
+                     FriendsLabel.text = @"Pedido de Amizade";
                }
                
                break;
@@ -1277,6 +1316,7 @@
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = NO;
+                    FriendsLabel.text = @"Request Sent";
                }else if(languageCode == 1 ) {
                     
 //                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatarabic.png"] forState:UIControlStateNormal];
@@ -1287,6 +1327,7 @@
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = NO;
+    FriendsLabel.text = @"تم إرسال الطلب";
                }else if(languageCode == 2 ) {
 //                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatSpanish.png"] forState:UIControlStateNormal];
 //                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsSpanish.png"] forState:UIControlStateNormal];
@@ -1296,6 +1337,7 @@
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = NO;
+                     FriendsLabel.text = @"Solicitud enviada";
                }else if(languageCode == 3 ) {
 //                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatFrench.png"] forState:UIControlStateNormal];
 //                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsFrench.png"] forState:UIControlStateNormal];
@@ -1305,6 +1347,7 @@
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = NO;
+                    FriendsLabel.text = @"demande Envoyé";
                }else if(languageCode == 4 ) {
                     
 //                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatportuguese.png"] forState:UIControlStateNormal];
@@ -1315,7 +1358,7 @@
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                     _fmFriendButton.enabled = NO;
-                    
+                    FriendsLabel.text = @"Pedido Enviado";
                }
             
 
@@ -1860,7 +1903,8 @@
      
      
      [super viewWillAppear:animated];
-     
+      [searchField setText:@""];
+      [self FetchFriendList];
      tapper = [[UITapGestureRecognizer alloc]
                initWithTarget:self action:@selector(handleSingleTap:)];
      

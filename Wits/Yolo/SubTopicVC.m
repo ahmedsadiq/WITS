@@ -2636,6 +2636,7 @@
      [super viewWillAppear:animated];
           [self setLanguageForScreen];
      self.tabBarController.tabBar.hidden = false;
+    // [self.tabBarController setSelectedIndex:0];
 }
 
 
@@ -2649,7 +2650,7 @@
      if([idOfCat isEqualToString:@"5"])
      {
           subcatMaintempImgName = @"Football.png";
-          subcatthumbnailtempName = @"Footballicon.png";
+          subcatthumbnailtempName = @"football_icon.png";
           
      }else  if([idOfCat isEqualToString:@"6"])
      {

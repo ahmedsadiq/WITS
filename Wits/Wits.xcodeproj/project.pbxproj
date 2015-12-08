@@ -1331,8 +1331,8 @@
 		F42CA82F1BAADC3B0083653E /* Premier League@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F42CA75D1BAADC3A0083653E /* Premier League@2x.png */; };
 		F42CA8301BAADC3B0083653E /* World Cup.png in Resources */ = {isa = PBXBuildFile; fileRef = F42CA75E1BAADC3B0083653E /* World Cup.png */; };
 		F42CA8311BAADC3B0083653E /* World Cup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F42CA75F1BAADC3B0083653E /* World Cup@2x.png */; };
-		F42CA8321BAADC3B0083653E /* footballicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F42CA7601BAADC3B0083653E /* footballicon.png */; };
-		F42CA8331BAADC3B0083653E /* footballicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F42CA7611BAADC3B0083653E /* footballicon@2x.png */; };
+		F42CA8321BAADC3B0083653E /* football_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F42CA7601BAADC3B0083653E /* football_icon.png */; };
+		F42CA8331BAADC3B0083653E /* football_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F42CA7611BAADC3B0083653E /* football_icon@2x.png */; };
 		F42CA8341BAADC3B0083653E /* Formula one.png in Resources */ = {isa = PBXBuildFile; fileRef = F42CA7621BAADC3B0083653E /* Formula one.png */; };
 		F42CA8351BAADC3B0083653E /* Formula one@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F42CA7631BAADC3B0083653E /* Formula one@2x.png */; };
 		F42CA8361BAADC3B0083653E /* Olympic Games.png in Resources */ = {isa = PBXBuildFile; fileRef = F42CA7641BAADC3B0083653E /* Olympic Games.png */; };
@@ -3034,8 +3034,8 @@
 		F42CA75D1BAADC3A0083653E /* Premier League@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Premier League@2x.png"; sourceTree = "<group>"; };
 		F42CA75E1BAADC3B0083653E /* World Cup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "World Cup.png"; sourceTree = "<group>"; };
 		F42CA75F1BAADC3B0083653E /* World Cup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "World Cup@2x.png"; sourceTree = "<group>"; };
-		F42CA7601BAADC3B0083653E /* footballicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footballicon.png; sourceTree = "<group>"; };
-		F42CA7611BAADC3B0083653E /* footballicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "footballicon@2x.png"; sourceTree = "<group>"; };
+		F42CA7601BAADC3B0083653E /* football_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = football_icon.png; sourceTree = "<group>"; };
+		F42CA7611BAADC3B0083653E /* football_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "football_icon@2x.png"; sourceTree = "<group>"; };
 		F42CA7621BAADC3B0083653E /* Formula one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Formula one.png"; sourceTree = "<group>"; };
 		F42CA7631BAADC3B0083653E /* Formula one@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Formula one@2x.png"; sourceTree = "<group>"; };
 		F42CA7641BAADC3B0083653E /* Olympic Games.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Olympic Games.png"; sourceTree = "<group>"; };
@@ -5546,8 +5546,8 @@
 				F42CA74F1BAADC3A0083653E /* Cricket.png */,
 				F42CA7501BAADC3A0083653E /* Cricket@2x.png */,
 				F42CA7511BAADC3A0083653E /* Football */,
-				F42CA7601BAADC3B0083653E /* footballicon.png */,
-				F42CA7611BAADC3B0083653E /* footballicon@2x.png */,
+				F42CA7601BAADC3B0083653E /* football_icon.png */,
+				F42CA7611BAADC3B0083653E /* football_icon@2x.png */,
 				F42CA7621BAADC3B0083653E /* Formula one.png */,
 				F42CA7631BAADC3B0083653E /* Formula one@2x.png */,
 				F42CA7641BAADC3B0083653E /* Olympic Games.png */,
@@ -6361,7 +6361,7 @@
 				E2EF26181B81C98300E960E4 /* close@2x.png in Resources */,
 				F42CA8381BAADC3B0083653E /* Sports.png in Resources */,
 				E210F0BD1B87414200BEDD6B /* Loader2.png in Resources */,
-				F42CA8321BAADC3B0083653E /* footballicon.png in Resources */,
+				F42CA8321BAADC3B0083653E /* football_icon.png in Resources */,
 				2E9C28AE1A272051009D80BC /* TG.png in Resources */,
 				2E9C27EC1A272051009D80BC /* BI.png in Resources */,
 				F4A5D06B1BAD582900B3F402 /* PlayNowPortuguese.png in Resources */,
@@ -6665,7 +6665,7 @@
 				E2EF26241B81C98300E960E4 /* star@2x.png in Resources */,
 				181813591C0DBDC8005F81CA /* aboutus@2x.png in Resources */,
 				E21855E61B8C936D00D10ACC /* messagebg.png in Resources */,
-				F42CA8331BAADC3B0083653E /* footballicon@2x.png in Resources */,
+				F42CA8331BAADC3B0083653E /* football_icon@2x.png in Resources */,
 				2E9C28671A272051009D80BC /* MM.png in Resources */,
 				2E9C28921A272051009D80BC /* RO.png in Resources */,
 				E210F0F31B8753F800BEDD6B /* earnglow@2x.png in Resources */,

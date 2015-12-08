@@ -594,22 +594,22 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 }
 
 -(void) disableOptions :(BOOL) isDisable {
-     if(isDisable) {
-          
-          option_1_Btn.enabled = false;
-          option_2_Btn.enabled = false;
-          option_3_Btn.enabled = false;
-          option_4_Btn.enabled = false;
-          
-     }
-     else {
-          
-          option_1_Btn.enabled = true;
-          option_2_Btn.enabled = true;
-          option_3_Btn.enabled = true;
-          option_4_Btn.enabled = true;
-          
-     }
+          if(isDisable) {
+     
+               option_1_Btn.userInteractionEnabled = false;
+               option_2_Btn.userInteractionEnabled = false;
+               option_3_Btn.userInteractionEnabled = false;
+               option_4_Btn.userInteractionEnabled = false;
+     
+          }
+          else {
+     
+               option_1_Btn.userInteractionEnabled = true;
+               option_2_Btn.userInteractionEnabled = true;
+               option_3_Btn.userInteractionEnabled = true;
+               option_4_Btn.userInteractionEnabled = true;
+               
+          }
 }
 
 - (IBAction)showTimeLine:(id)sender {

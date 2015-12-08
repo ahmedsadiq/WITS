@@ -228,7 +228,33 @@
            
            [alertView show];
            return;*/
-     }else{
+     }
+     //NSLog(@"%@",emailTxt.text);
+     else if(![pswdTxt hasText]){
+          NSString *emailMsg;
+          NSString *title;
+          if (languageCode == 0 ) {
+               emailMsg = @"Enter Password.";
+               title = @"Error";
+          } else if(languageCode == 1) {
+               emailMsg = @"أدخل كلمة المرور";
+               title = @"خطأ";
+          }else if (languageCode == 2){
+               emailMsg = @"Escribe contraseña.";
+               title = @"Erreur";
+          }else if (languageCode == 3){
+               emailMsg = @"Entrer votre mot de passe";
+               title = @"Error";
+          }else if (languageCode == 4){
+               emailMsg = @"Senha";
+               title = @"Erro";
+          }
+          
+          [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:OK_BTN OtherButton:nil];
+          
+
+     }
+     else{
           
           [pswdTxt resignFirstResponder];
           [self sendLoginCall:false];

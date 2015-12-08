@@ -85,7 +85,7 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="auK-Fi-7M9">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbg.png" id="auK-Fi-7M9">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -271,6 +271,7 @@
         <image name="languageicon.png" width="47" height="48"/>
         <image name="messagebg.png" width="493" height="137"/>
         <image name="music1.png" width="33" height="38"/>
+        <image name="newbg.png" width="540" height="960"/>
         <image name="off_btn.png" width="87" height="79"/>
         <image name="on_btn.png" width="87" height="79"/>
         <image name="soundeffects.png" width="37" height="38"/>
