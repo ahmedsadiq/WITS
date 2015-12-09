@@ -36,7 +36,7 @@
 }
 - (void)viewDidLoad {
      [super viewDidLoad];
-       self.tabBarController.tabBar.hidden = false;
+     self.tabBarController.tabBar.hidden = false;
      [self setLanguageForScreen];
      // Do any additional setup after loading the view from its nib.
      searchField.delegate = self;
@@ -45,6 +45,7 @@
      searchField.textColor = [UIColor whiteColor];
      [self.view addSubview: searchField];
      [searchField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+     [searchField addTarget:self action:@selector(textFieldDidEndEditing:) forControlEvents:UIControlEventEditingDidEnd];
      firsttime = true;
      //here you set up the methods to search array and reloading the tableview
      _listFiles = [[NSMutableArray alloc]  init];
@@ -124,7 +125,16 @@
           [self.navigationController popViewControllerAnimated:true];
      }
 }
-
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+     //     _addOnsArray = [_listFiles mutableCopy];
+     //     [_addOnsArray removeAllObjects];
+     //     for (int i=0; i< _listFiles.count; i++) {
+     //          [_addOnsArray addObject:[_listFiles objectAtIndex:i]];
+     //     }
+     [searchField resignFirstResponder];
+     // [rewardsTableView reloadData];
+}
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
      //self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
      [searchField resignFirstResponder];
@@ -142,14 +152,16 @@
           }
           firsttime = false;
      }
-     if([searchField.text isEqualToString:@""] || searchField.text == NULL){
-          //  _addOnsArray = [listFiles mutableCopy];
+     if(![searchField hasText]){
+          //[self.view endEditing:YES];
+          _addOnsArray = [_listFiles mutableCopy];
           [_addOnsArray removeAllObjects];
           for (int i=0; i< _listFiles.count; i++) {
                [_addOnsArray addObject:[_listFiles objectAtIndex:i]];
           }
           
      }else{
+          
           _addOnsArray = [NSMutableArray arrayWithArray:[_addOnsArray filteredArrayUsingPredicate:sPredicate]];
      }
      
@@ -168,7 +180,7 @@
 
 - (IBAction)sortBtn:(id)sender {
      timeSort++;
-  
+     
      if(timeSort == 3){
           timeSort =0;
           [sortbtn setBackgroundImage:[UIImage imageNamed:@"sortunlock.png"] forState:UIControlStateNormal ];
@@ -219,11 +231,11 @@
      
      //int indexS = indexPath.section;
      currentIndex = (indexPath.row*2);
-      RewardObj *obj = [_addOnsArray objectAtIndex:currentIndex];
+     RewardObj *obj = [_addOnsArray objectAtIndex:currentIndex];
      
-    
+     
      if(timeSort == 0){
-           //[sortbtn setBackgroundImage:[UIImage imageNamed:@"sortunlcok.png"] forState:UIControlStateNormal ];
+          //[sortbtn setBackgroundImage:[UIImage imageNamed:@"sortunlcok.png"] forState:UIControlStateNormal ];
           _addOnsArray = [_addOnsArray sortedArrayUsingComparator:^NSComparisonResult(RewardObj *p1, RewardObj *p2){
                
                return [p1.productName compare:p2.productName];
@@ -246,15 +258,15 @@
      {
           //timeSort = 0;
           [sortbtn setBackgroundImage:[UIImage imageNamed:@"sortgem.png"] forState:UIControlStateNormal ];
-                    _addOnsArray = [_addOnsArray sortedArrayUsingComparator:^NSComparisonResult(RewardObj *p1, RewardObj *p2){
-          
-                         return [p1.unlock_price compare:p2.unlock_price];
-          
-                    }];
+          _addOnsArray = [_addOnsArray sortedArrayUsingComparator:^NSComparisonResult(RewardObj *p1, RewardObj *p2){
+               
+               return [p1.unlock_price compare:p2.unlock_price];
+               
+          }];
           
      }
      
-    // RewardObj *obj = [_addOnsArray objectAtIndex:currentIndex];
+     // RewardObj *obj = [_addOnsArray objectAtIndex:currentIndex];
      //
      //     if(!obj.isSelected)
      //     {

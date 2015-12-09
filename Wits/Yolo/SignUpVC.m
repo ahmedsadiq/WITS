@@ -136,19 +136,19 @@
           
           LoadingTitle = Loading;
           cancel1 = CANCEL;
-          emailField.placeholder = @"EMAIL";
-          displayNameField.placeholder = @"DISPLAY NAME";
-          passwordField.placeholder = SIGNUP_PASSWORD;
+         // emailField.placeholder = @"Email";
+         // displayNameField.placeholder = @"Display Name";
+          //passwordField.placeholder = @"Password";
           birthdaylbl.text = @" BIRTHDAY";
-          usernameLbl.placeholder = @"USERNAME";
+          //usernameLbl.placeholder = @"Username";
           signUpDescLbl.text = SIGNUP_DESC;
           signUplbl.text = @"Sign Up";
           Done = @"Done";
           signinLabel.text = SIGIN_TEXT;
-          emailField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"EMAIL" attributes:@{NSForegroundColorAttributeName: color}];
-          displayNameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"DISPLAY NAME" attributes:@{NSForegroundColorAttributeName: color}];
-          usernameLbl.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"USERNAME" attributes:@{NSForegroundColorAttributeName: color}];
-          passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD" attributes:@{NSForegroundColorAttributeName: color}];
+          emailField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: color}];
+          displayNameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Display Name" attributes:@{NSForegroundColorAttributeName: color}];
+          usernameLbl.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: color}];
+          passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: color}];
           
           [cancelBtn setTitle:CANCEL forState:UIControlStateNormal];
           [AvatarBtn setTitle:@"Avatar" forState:UIControlStateNormal];

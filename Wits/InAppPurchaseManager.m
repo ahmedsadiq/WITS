@@ -260,6 +260,7 @@
                 [self completeTransaction:transaction];
                 break;
             case SKPaymentTransactionStateFailed:
+                  [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseManagerTransactionFailedNotification object:self userInfo:nil];
                 [self failedTransaction:transaction];
                 break;
             case SKPaymentTransactionStateRestored:

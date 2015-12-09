@@ -1755,7 +1755,7 @@
           resultsTitle.text = RESULTS_LBL;
           [playAgain setTitle:PLAY_AGAIN forState:UIControlStateNormal];
           [ReturnHome setTitle:@"Return Home" forState:UIControlStateNormal];
-          [rankingBtn setTitle:RANKING_BTN forState:UIControlStateNormal];
+          [rankingBtn setTitle:@"RANKINGS" forState:UIControlStateNormal];
           [historyBtn setTitle:@"HISTORY" forState:UIControlStateNormal];
           [quitsearch setTitle:QUIT_GAME forState:UIControlStateNormal];
           [mainBack setTitle:BACK_BTN forState:UIControlStateNormal];

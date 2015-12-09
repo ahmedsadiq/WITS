@@ -11,7 +11,7 @@
 #import "MKNetworkEngine.h"
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
-
+#import "UIImageView+RoundImage.h"
 @implementation CustomLoading
 static BOOL showing;
 
@@ -63,7 +63,8 @@ CustomLoading *loaderObj;
                
           } onError:^(NSError* error) {
                //////Changed by Fiza //////
-               senderProfileImageView.image= [UIImage imageNamed:@"Icon_120.png"];
+               senderProfileImageView.image= [UIImage imageNamed:@"personal.png"];
+               [senderProfileImageView roundImageCorner];
           }];
           
           [engine enqueueOperation:op];

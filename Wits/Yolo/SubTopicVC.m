@@ -1050,6 +1050,7 @@
           else {
                dot.image = [UIImage imageNamed:@"dotblack.png"];
           }
+    
      }
      //Socket Connection Code
      sharedManager = [SocketManager getInstance];
@@ -1303,7 +1304,9 @@
                          dot.image = [UIImage imageNamed:@"dotblack.png"];
                     }
                }
+               
           }
+          
           else {
                
                NSString *emailMsg;
@@ -1358,6 +1361,10 @@
                     }
                     
                     [AlertMessage showAlertWithMessage:message  andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+                    [timer invalidate];
+                    timer = nil;
+                    [sharedManager closeWebSocket];
+                    [searchingView removeFromSuperview];
                }
           }
      }
@@ -1876,7 +1883,7 @@
           adContentLbl.text = ADD_CONTENT;
           guidelineLbl.text = GUIDELINES;
           
-          // [backBtn2 setTitle:BACK_BTN forState:UIControlStateNormal];
+          [backBtn2 setTitle:@"Cancel" forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN forState:UIControlStateNormal];
@@ -1924,7 +1931,8 @@
           guidelineLbl.text = GUIDELINES_1;
           
           [backBtn3 setTitle:BACK_BTN_1 forState:UIControlStateNormal];
-          //          [backBtn2 setTitle:BACK_BTN_1 forState:UIControlStateNormal];
+     
+          [backBtn2 setTitle:@"إلغاء" forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_1 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_1 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_1 forState:UIControlStateNormal];
@@ -1970,7 +1978,7 @@
           loadingTitle = Loading_2;
           
           [backBtn3 setTitle:BACK_BTN_2 forState:UIControlStateNormal];
-          // [backBtn2 setTitle:BACK_BTN_2 forState:UIControlStateNormal];
+          [backBtn2 setTitle:@"Cancelar" forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_2 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_2 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_2 forState:UIControlStateNormal];
@@ -2015,7 +2023,7 @@
           adContentLbl.text = ADD_CONTENT_3;
           guidelineLbl.text = GUIDELINES_3;
           
-          //    [backBtn2 setTitle:BACK_BTN_3 forState:UIControlStateNormal];
+          [backBtn2 setTitle:@"Annuler" forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_3 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_3 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_3 forState:UIControlStateNormal];
@@ -2061,7 +2069,7 @@
           guidelineLbl.text = GUIDELINES_4;
           
           [backBtn3 setTitle:BACK_BTN_4 forState:UIControlStateNormal];
-          //   [backBtn2 setTitle:BACK_BTN_4 forState:UIControlStateNormal];
+           [backBtn2 setTitle:@"Cancelar" forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_4 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_4 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_4 forState:UIControlStateNormal];
@@ -2275,16 +2283,16 @@
      [self.tabBarController.tabBar setHidden:true];
      _searchingLoaderView.hidden = false;
      
-     //     [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gem.png"] forState:UIControlStateNormal];
+         [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
      //     [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"starglow.png"] forState:UIControlStateNormal];
-     if(appDelegate.friendToBeChalleneged) {
-          //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"playNow.png"] forState:UIControlStateNormal];
-          //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"challengenowglow.png"] forState:UIControlStateNormal];
-     }
-     else {
-          //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"swordglow.png"] forState:UIControlStateNormal];
-          //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"challengenow.png"] forState:UIControlStateNormal];
-     }
+//     if(appDelegate.friendToBeChalleneged) {
+//          //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"playNow.png"] forState:UIControlStateNormal];
+//          //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"challengenowglow.png"] forState:UIControlStateNormal];
+//     }
+//     else {
+//          //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"swordglow.png"] forState:UIControlStateNormal];
+//          //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"challengenow.png"] forState:UIControlStateNormal];
+//     }
 }
 
 - (IBAction)gameModCanelBtnPressed:(id)sender {
@@ -2412,38 +2420,43 @@
      forPointsLabel.textColor = [UIColor whiteColor];
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
-     if(languageCode == 0 ) {
-          
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+     [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal ];
+     
+     [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal ];
+     
 
-          
-          
-          
-     }else      if(languageCode == 1 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+//     if(languageCode == 0 ) {
+//          
+//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
 
-
-          
-     }else      if(languageCode == 2 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
-
-          
-     }else      if(languageCode == 3 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
-
-          
-     }else      if(languageCode == 4 ) {
-          
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
-
-
-          
-     }
+//
+//          
+//          
+//     }else      if(languageCode == 1 ) {
+//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+//
+//
+//          
+//     }else      if(languageCode == 2 ) {
+//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+//
+//          
+//     }else      if(languageCode == 3 ) {
+//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+//
+//          
+//     }else      if(languageCode == 4 ) {
+//          
+//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+//
+//
+//          
+//     }
      
      
          //     }
@@ -2462,40 +2475,45 @@
      forGemsLable.textColor = [UIColor whiteColor];
      forPointsLabel.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
      languageCode = [language intValue];
-     if(languageCode == 0 ) {
-          
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-          
-          
-          
-          
-     }else      if(languageCode == 1 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-          
-          
-          
-     }else      if(languageCode == 2 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-          
-          
-          
-     }else      if(languageCode == 3 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-          
-          
-          
-     }else      if(languageCode == 4 ) {
-          
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-          
-          
-          
-     }
+     
+     [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+     [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+     
+//
+//     if(languageCode == 0 ) {
+//          
+//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+//          
+//          
+//          
+//          
+//     }else      if(languageCode == 1 ) {
+//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+//          
+//          
+//          
+//     }else      if(languageCode == 2 ) {
+//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+//          
+//          
+//          
+//     }else      if(languageCode == 3 ) {
+//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+//          
+//          
+//          
+//     }else      if(languageCode == 4 ) {
+//          
+//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+//          
+//          
+//          
+//     }
      
      
      
@@ -2636,7 +2654,7 @@
      [super viewWillAppear:animated];
           [self setLanguageForScreen];
      self.tabBarController.tabBar.hidden = false;
-    // [self.tabBarController setSelectedIndex:0];
+    
 }
 
 

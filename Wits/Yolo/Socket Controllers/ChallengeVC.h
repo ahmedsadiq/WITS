@@ -35,6 +35,7 @@
      BOOL isFirstLoad;
      int ChancesSuperbot;
      
+      IBOutlet UIButton *cancelbuttonOutlet;
      //Quit Game
      IBOutlet UIView *quitGameDialog;
      

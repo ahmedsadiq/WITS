@@ -57,6 +57,11 @@
      //     AlertOBj = [[AlertMessage alloc]initWithNibName:@"AlertMessage" bundle:nil];
      //     AlertOBj.MAinSignUpvcOBJ = self;
      //
+     
+     UIColor *color = [UIColor whiteColor];
+     
+     emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"EMAIL" attributes:@{NSForegroundColorAttributeName: color}];
+     pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD" attributes:@{NSForegroundColorAttributeName: color}];
      [self setLanguage];
      [self setUpTutorial];
      
@@ -130,9 +135,7 @@
      //OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:15];
      forgotpasswordSigninButtonn.font = [UIFont fontWithName:FONT_NAME size:18];
      
-     UIColor *color = [UIColor whiteColor];
-     emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"EMAIL" attributes:@{NSForegroundColorAttributeName: color}];
-     pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD" attributes:@{NSForegroundColorAttributeName: color}];
+     
      
      UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(signUpSwipeDown:)];
      [left setDirection:UISwipeGestureRecognizerDirectionDown];
@@ -443,10 +446,11 @@
                UIButton * loginButton =  loginObject;
                loginButton.frame = CGRectMake(0, 0, _rect.size.width, _rect.size.height);
                UIImage *loginImage = [UIImage imageNamed:_imageName];
+               UIImage *pressedState = [UIImage imageNamed:@"facebookbgpressed.png"];
                loginButton.alpha = 1.0;
                [loginButton setBackgroundImage:loginImage forState:UIControlStateNormal];
                [loginButton setBackgroundImage:nil forState:UIControlStateSelected];
-               [loginButton setBackgroundImage:nil forState:UIControlStateHighlighted];
+               [loginButton setBackgroundImage:pressedState forState:UIControlStateHighlighted];
                
                UILabel * loginLabel =  [[UILabel alloc] init];
                loginLabel.textColor = [UIColor whiteColor];
@@ -1151,7 +1155,8 @@
                }
                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"NewLogin"];
                [[NSUserDefaults standardUserDefaults] synchronize];
-               
+               [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"FirstTime"];
+               [[NSUserDefaults standardUserDefaults] synchronize];
                [self createTabBarAndControl];
           }
           else if([flag isEqualToNumber:[NSNumber numberWithInt:USER_ALREADY_FLAG]])
@@ -1702,25 +1707,28 @@
           howtoPlay1 = @"Embark on a 1-1 challenge against anyone in the world.";
           howtoPlay2 = @"The faster you answer the more Gems you\'ll collect.";
           howtoPlay3 = @"Claim your rewards.";
-          emailTxt.placeholder = SIGNUP_EMAIL;
-          pswdTxt.placeholder      = SIGNUP_PASSWORD;
+          UIColor *color = [UIColor whiteColor];
+          [forgotpasswordSigninButtonn setTitle:@"Back To Sign In" forState:UIControlStateNormal];
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD attributes:@{NSForegroundColorAttributeName: color}];
           //           [forgotPasswordLabel setTitle:SIGNUP_FORGOT_PASS forState:UIControlStateNormal];
           forgot_password_button_text_label.text =SIGNUP_FORGOT_PASS;
           tutoStr1 = TUTORIAL_STR_1;
           tutoStr2 = TUTORIAL_STR_2;
           tutoStr3 = TUTORIAL_STR_3;
           tutoStr4 = TUTORIAL_STR_4;
-          signuplabelTextbelow.text = SIGNUP_TEXT;
+          signuplabelTextbelow.text = SIGNUP_REGISTER;
           HowtoPlay = @"How to Play";
           HowWitsStore = @"How to Use WITS Store";
           HowtoEarnPoints = @"How to Earn Free Points";
-          
+          //UIColor *colors = [UIColor whiteColor];
+          _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"ENTER EMAIL ID" attributes:@{NSForegroundColorAttributeName: color}];
           howtouseStoreDesc = @"Sign up now and get your hands on 100 free Gems.";
           howtoEarnPointDesc = @"You can always earn free Points simply by inviting your friends and sharing the app on Facebook or Twitter.";
-          
+          [_resetButtonOutlet setTitle:@"Reset Password" forState:UIControlStateNormal];
           logInBtn.text = LOGIN_BTN;
           [skipbtn setTitle:@"SKIP" forState:UIControlStateNormal];
-          [LoginBtnOutlet setTitle:LOGIN_BTN forState:UIControlStateNormal];
+          [LoginBtnOutlet setTitle:@"LOG IN" forState:UIControlStateNormal];
           [twitterBtn setTitle:TWITTER_BTN forState:UIControlStateNormal];
           [signUpBtn setTitle:SIGNUP_BTN forState:UIControlStateNormal];
           [tutorialBtn setTitle:TUTORIAL_BTN forState:UIControlStateNormal];
@@ -1731,27 +1739,32 @@
           forgot_password_button_text_label.text =SIGNUP_FORGOT_PASS_1;
           LoadingTitle = Loading_1;
           orLabel.text = OR_TEXT_1;
-          emailTxt.placeholder = SIGNUP_EMAIL_1;
+          //emailTxt.placeholder = SIGNUP_EMAIL_1;
           alreadyLbl.text = ALREADY_LBL_1;
           languageSelectionLbl.text = LANGUAGE_SELECTION_LBL_1;
           chooseLangLbl.text = CHOOSE_LANG_LBL_1;
-          pswdTxt.placeholder = SIGNUP_PASSWORD_1;
+          //pswdTxt.placeholder = SIGNUP_PASSWORD_1;
+          UIColor *color = [UIColor whiteColor];
+          [forgotpasswordSigninButtonn setTitle:@"العودة إلى تسجيل الدخول" forState:UIControlStateNormal];
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_1 attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_1 attributes:@{NSForegroundColorAttributeName: color}];
           tutorialLbl.text = TUTORIAL_LBL_1;
           knowledgelbl.text = KNOWLEDGE_LBL_1;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_1;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_1;
           tutorialDescLbl.textAlignment = NSTextAlignmentRight;
           tutorialDescLbl2.textAlignment = NSTextAlignmentRight;
-          signuplabelTextbelow.text = SIGNUP_TEXT_1;
+          signuplabelTextbelow.text = SIGNUP_REGISTER_1;
           tutoStr1 = TUTORIAL_STR_1_1;
           tutoStr2 = TUTORIAL_STR_2_1;
           tutoStr3 = TUTORIAL_STR_3_1;
           tutoStr4 = TUTORIAL_STR_4_1;
-          
+          [_resetButtonOutlet setTitle:@"إعادة تعيين كلمة المرور" forState:UIControlStateNormal];
           howtoPlay1 = @"أسرع في دخول تحدي ضد أي شخص في العالم ";
           howtoPlay2 = @"اسرع في الاجابة للحصول على نقاط اكثر";
           howtoPlay3 = @"قم باستبدال جواهرك بنقود حقيقية.";
-          
+          //UIColor *color = [UIColor whiteColor];
+          _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"الرجاء إدخال عنوان البريد الإلكتروني" attributes:@{NSForegroundColorAttributeName: color}];
           howtouseStoreDesc = @"اشترك الآن و احصل على 1000 نقطة مجانا.";
           howtoEarnPointDesc = @"يمكنك أن تحصل دائماً على النقاط مجانية بمجرد دعوة اصدقائك للعب و بمشاركة تطبيق اللعبة على الفيس بوك أو تويتر";
           HowtoPlay = @"كيفية اللعب";
@@ -1764,7 +1777,7 @@
           
           
           [skipbtn setTitle:@"تخطي" forState:UIControlStateNormal];
-          [LoginBtnOutlet setTitle:LOGIN_BTN_1 forState:UIControlStateNormal];
+          [LoginBtnOutlet setTitle:@"تسجيل الدخول" forState:UIControlStateNormal];
           [twitterBtn setTitle:TWITTER_BTN_1 forState:UIControlStateNormal];
           [signUpBtn setTitle:SIGNUP_BTN_1 forState:UIControlStateNormal];
           [tutorialBtn setTitle:TUTORIAL_BTN_1 forState:UIControlStateNormal];
@@ -1780,29 +1793,34 @@
           orLabel.text = OR_TEXT_2;
           knowledgelbl.text = KNOWLEDGE_LBL_2;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_2;
-          pswdTxt.placeholder = SIGNUP_PASSWORD_2;
+          //pswdTxt.placeholder = SIGNUP_PASSWORD_2;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_2;
-          signuplabelTextbelow.text = SIGNUP_TEXT_2;
+          signuplabelTextbelow.text = SIGNUP_REGISTER_2;
           tutoStr1 = TUTORIAL_STR_1_2;
           tutoStr2 = TUTORIAL_STR_2_2;
-          emailTxt.placeholder = SIGNUP_EMAIL_2;
+          //emailTxt.placeholder = SIGNUP_EMAIL_2;
+          UIColor *color = [UIColor whiteColor];
+          [forgotpasswordSigninButtonn setTitle:@"retour a connexion" forState:UIControlStateNormal];
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_2 attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_2 attributes:@{NSForegroundColorAttributeName: color}];
           tutoStr3 = TUTORIAL_STR_3_2;
           tutoStr4 = TUTORIAL_STR_4_2;
-          
+          [_resetButtonOutlet setTitle:@"Restablecer contraseña" forState:UIControlStateNormal];
           HowtoPlay = @"Comment jouer";
           HowWitsStore = @"Comment utiliser ESPRITS magasin";
           HowtoEarnPoints = @"Comment gagner des Points";
           howtoPlay1 = @"Défiez à 1-1 n\'importe qui dans le monde.";
           howtoPlay2 = @"Plus vite vous répondez, plus vous cumulez de Gems.";
           howtoPlay3 = @"Echangez vos Gems contre de l'argent.";
-          
+          //UIColor *color = [UIColor whiteColor];
+          _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Introducir ID email" attributes:@{NSForegroundColorAttributeName: color}];
           
           howtouseStoreDesc = @"Inscrivez-vous maintenant et gagnez 1000 Gems gratuits.";
           howtoEarnPointDesc = @"Vous pouvez toujours gagner des Points en invitant vos amis et en partageant notre application sur Facebook et Twitter.";
           
           logInBtn.text = LOGIN_BTN_2;
           [skipbtn setTitle:@"sauter" forState:UIControlStateNormal];
-          [LoginBtnOutlet setTitle:LOGIN_BTN_2 forState:UIControlStateNormal];
+          [LoginBtnOutlet setTitle:@"INICIAR" forState:UIControlStateNormal];
           [twitterBtn setTitle:TWITTER_BTN_2 forState:UIControlStateNormal];
           [signUpBtn setTitle:SIGNUP_BTN_2 forState:UIControlStateNormal];
           [tutorialBtn setTitle:TUTORIAL_BTN_2 forState:UIControlStateNormal];
@@ -1814,7 +1832,7 @@
      else if(languageCode == 3) {
           
           LoadingTitle = Loading_3;
-          signuplabelTextbelow.text = SIGNUP_TEXT_3;
+          signuplabelTextbelow.text = SIGNUP_REGISTER_3;
           alreadyLbl.text = ALREADY_LBL_3;
           languageSelectionLbl.text = LANGUAGE_SELECTION_LBL_3;
           chooseLangLbl.text = CHOOSE_LANG_LBL_3;
@@ -1822,15 +1840,20 @@
           tutorialLbl.text = TUTORIAL_LBL_3;
           forgot_password_button_text_label.text =SIGNUP_FORGOT_PASS_3;          knowledgelbl.text = KNOWLEDGE_LBL_3;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_3;
-          pswdTxt.placeholder = SIGNUP_PASSWORD_3;
+          //pswdTxt.placeholder = SIGNUP_PASSWORD_3;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_3;
-          emailTxt.placeholder = SIGNUP_EMAIL_3;
-          
+          //emailTxt.placeholder = SIGNUP_EMAIL_3;
+          UIColor *color = [UIColor whiteColor];
+          [forgotpasswordSigninButtonn setTitle:@": Volver al inicio de sesión" forState:UIControlStateNormal];
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_3 attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_3 attributes:@{NSForegroundColorAttributeName: color}];
+            [_resetButtonOutlet setTitle:@"réinitialiser le mot de" forState:UIControlStateNormal];
           tutoStr1 = TUTORIAL_STR_1_3;
           tutoStr2 = TUTORIAL_STR_2_3;
           tutoStr3 = TUTORIAL_STR_3_3;
           tutoStr4 = TUTORIAL_STR_4_3;
-          
+         // UIColor *color = [UIColor whiteColor];
+          _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Entrez Email ID" attributes:@{NSForegroundColorAttributeName: color}];
           HowtoPlay = @"Cómo jugar";
           HowWitsStore = @"Cómo utilizar WITS tienda";
           HowtoEarnPoints = @"Cómo ganar pontus.";
@@ -1843,7 +1866,7 @@
           howtoEarnPointDesc = @"Puedes ganar pontus gratis invitando a tus amigos y compartiendo la aplicación en Facebook or Twitter.";
           
           logInBtn.text = LOGIN_BTN_3;
-          [LoginBtnOutlet setTitle:LOGIN_BTN_3 forState:UIControlStateNormal];
+          [LoginBtnOutlet setTitle:@"Identifiant" forState:UIControlStateNormal];
           [twitterBtn setTitle:TWITTER_BTN_3 forState:UIControlStateNormal];
           [signUpBtn setTitle:SIGNUP_BTN_3 forState:UIControlStateNormal];
           [tutorialBtn setTitle:TUTORIAL_BTN_3 forState:UIControlStateNormal];
@@ -1852,16 +1875,22 @@
      }
      else if(languageCode == 4) {
           LoadingTitle = Loading_4;
-          emailTxt.placeholder = SIGNUP_EMAIL_4;
+         // emailTxt.placeholder = SIGNUP_EMAIL_4;
           forgot_password_button_text_label.text =SIGNUP_FORGOT_PASS_4;
           tutoStr1 = TUTORIAL_STR_1_4;
           tutoStr2 = TUTORIAL_STR_2_4;
           tutoStr3 = TUTORIAL_STR_3_4;
           orLabel.text = OR_TEXT_4;
-          pswdTxt.placeholder = SIGNUP_PASSWORD_4;
+         // pswdTxt.placeholder = SIGNUP_PASSWORD_4;
           tutoStr4 = TUTORIAL_STR_4_4;
-          signuplabelTextbelow.text = SIGNUP_TEXT_4;
+          signuplabelTextbelow.text = SIGNUP_REGISTER_4;
+          //UIColor *color = [UIColor whiteColor];
           
+          UIColor *color = [UIColor whiteColor];
+          [forgotpasswordSigninButtonn setTitle:@" Voltar para acessar" forState:UIControlStateNormal];
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_4 attributes:@{NSForegroundColorAttributeName: color}];
+          pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_4 attributes:@{NSForegroundColorAttributeName: color}];
+          _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Digite o E-mail" attributes:@{NSForegroundColorAttributeName: color}];
           howtoPlay1 = @"Inicie um desafio de 1-1 contra qualquer pessoa no mundo.";
           
           howtoPlay2 = @"Quanto mais rápido você responder, mais pontos você vai acumular.";
@@ -1873,7 +1902,7 @@
           HowWitsStore = @"Como usar WITS loja";
           HowtoEarnPoints = @"Como ganhar pontus grátis";
           
-          
+            [_resetButtonOutlet setTitle:@"Redefinir senha" forState:UIControlStateNormal];
           alreadyLbl.text = ALREADY_LBL_4;
           languageSelectionLbl.text = LANGUAGE_SELECTION_LBL_4;
           chooseLangLbl.text = CHOOSE_LANG_LBL_4;
@@ -1882,7 +1911,7 @@
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_4;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_4;
           logInBtn.text = LOGIN_BTN_4;
-          [LoginBtnOutlet setTitle:LOGIN_BTN_4 forState:UIControlStateNormal];
+          [LoginBtnOutlet setTitle:@"Usuário" forState:UIControlStateNormal];
           [twitterBtn setTitle:TWITTER_BTN_4 forState:UIControlStateNormal];
           [signUpBtn setTitle:SIGNUP_BTN_4 forState:UIControlStateNormal];
           [tutorialBtn setTitle:TUTORIAL_BTN_4 forState:UIControlStateNormal];
@@ -1940,10 +1969,11 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-     [self animateTextField: textField up: NO];
+    // [self animateTextField: textField up: YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
+      [self animateTextField: textField up: NO];
      [textField resignFirstResponder];
      return YES;
 }
@@ -1951,7 +1981,7 @@
 - (void) animateTextField: (UITextField*) textField up: (BOOL) up
 {
      const int movementDistance = 145; // tweak as needed
-     const float movementDuration = 0.3f; // tweak as needed
+     const float movementDuration = 0.2f; // tweak as needed
      
      int movement = (up ? -movementDistance : movementDistance);
      
@@ -2115,7 +2145,7 @@
      [self.view addSubview:_resetPswdView];
      
      UIColor *color = [UIColor whiteColor];
-     _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"ENTER EMAIL ID" attributes:@{NSForegroundColorAttributeName: color}];
+     //_resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"ENTER EMAIL ID" attributes:@{NSForegroundColorAttributeName: color}];
      
 }
 - (IBAction)sendResetPswdCall:(id)sender {

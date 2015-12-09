@@ -1819,16 +1819,22 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           
           searchingOpponentLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
           if (languageCode == 0) {
-               searchingOpponentLbl.text = @"VS";
+               [cancelbuttonOutlet setTitle:@"Cancel" forState:UIControlStateNormal];
+               searchingOpponentLbl.text = @"Waiting for opponent...";
           }else if(languageCode == 1){
-               searchingOpponentLbl.text = @"VS";
+               [cancelbuttonOutlet setTitle:@"إلغاء" forState:UIControlStateNormal];
+               searchingOpponentLbl.text = @"االبحث عن الخصم...";
           }else if (languageCode == 2 ){
-               searchingOpponentLbl.text = @"VS";
+               [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
+               searchingOpponentLbl.text = @"Recherche d\'un adversaire...";
           }else if (languageCode == 3){
-               searchingOpponentLbl.text = @"VS";
+               [cancelbuttonOutlet setTitle:@"Annuler" forState:UIControlStateNormal];
+               searchingOpponentLbl.text = @"La búsqueda de un oponente...";
           }else if (languageCode == 4){
-               searchingOpponentLbl.text = @"VS";
+               [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
+               searchingOpponentLbl.text = @"Procurando um adversário...";
           }
+
           [GemsDialogView removeFromSuperview];
           [searchingView removeFromSuperview];
           appDelegate.friendToBeChalleneged = nil;
@@ -2248,14 +2254,19 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 //               }else
 //               {
                     if (languageCode == 0) {
+                         [cancelbuttonOutlet setTitle:@"Cancel" forState:UIControlStateNormal];
                          searchingOpponentLbl.text = @"Waiting for opponent...";
                     }else if(languageCode == 1){
+                         [cancelbuttonOutlet setTitle:@"إلغاء" forState:UIControlStateNormal];
                          searchingOpponentLbl.text = @"االبحث عن الخصم...";
                     }else if (languageCode == 2 ){
+                          [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
                          searchingOpponentLbl.text = @"Recherche d\'un adversaire...";
                     }else if (languageCode == 3){
+                           [cancelbuttonOutlet setTitle:@"Annuler" forState:UIControlStateNormal];
                          searchingOpponentLbl.text = @"La búsqueda de un oponente...";
                     }else if (languageCode == 4){
+                       [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
                          searchingOpponentLbl.text = @"Procurando um adversário...";
                     }
                     
@@ -2296,7 +2307,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           }
           
           else if(flag == 0){
-               
+               //////
+              
                [searchingView removeFromSuperview];
                NSString *emailMsg;
                NSString *title;
@@ -2938,7 +2950,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                option_1_Btn.transform = CGAffineTransformMakeScale(0.1, 0.1);
                option_1_Lbl.transform = CGAffineTransformMakeScale(0.1, 0.1);
                
-               [UIView animateWithDuration:0.3
+               [UIView animateWithDuration:0.5
                                      delay:0.0
                                    options:UIViewAnimationOptionTransitionCrossDissolve
                                 animations:^{
@@ -2952,7 +2964,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                                      option_2_Btn.transform = CGAffineTransformMakeScale(0.1, 0.1);
                                      option_2_Lbl.transform = CGAffineTransformMakeScale(0.1, 0.1);
                                      
-                                     [UIView animateWithDuration:0.3
+                                     [UIView animateWithDuration:0.5
                                                            delay:0.0
                                                          options:UIViewAnimationOptionTransitionCrossDissolve
                                                       animations:^{
@@ -2966,7 +2978,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                                                            option_3_Btn.transform = CGAffineTransformMakeScale(0.1, 0.1);
                                                            option_3_Lbl.transform = CGAffineTransformMakeScale(0.1, 0.1);
                                                            
-                                                           [UIView animateWithDuration:0.3
+                                                           [UIView animateWithDuration:0.5
                                                                                  delay:0.0
                                                                                options:UIViewAnimationOptionTransitionCrossDissolve
                                                                             animations:^{
@@ -2979,7 +2991,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                                                                                  option_4_Btn.transform = CGAffineTransformMakeScale(0.1, 0.1);
                                                                                  option_4_Lbl.transform = CGAffineTransformMakeScale(0.1, 0.1);
                                                                                  
-                                                                                 [UIView animateWithDuration:0.3
+                                                                                 [UIView animateWithDuration:0.5
                                                                                                        delay:0.0
                                                                                                      options:UIViewAnimationOptionTransitionCrossDissolve
                                                                                                   animations:^{

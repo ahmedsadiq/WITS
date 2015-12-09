@@ -152,9 +152,9 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yFr-SW-IiE">
-                            <rect key="frame" x="43" y="325" width="235" height="25"/>
+                            <rect key="frame" x="43" y="325" width="235" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                             <color key="textColor" red="0.22217209839999999" green="0.79748326030000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -186,14 +186,14 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textbg.png" id="a4G-mz-ioM">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialogbg.png" id="a4G-mz-ioM">
                             <rect key="frame" x="30" y="177" width="261" height="213"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OIQ-YO-VbD">
-                            <rect key="frame" x="273" y="162" width="34" height="34"/>
+                            <rect key="frame" x="255" y="187" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="popupclose.png">
+                            <state key="normal" backgroundImage="closeDialog.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -203,15 +203,13 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nGA-pt-nl5">
                             <rect key="frame" x="43" y="214" width="235" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                            <color key="textColor" red="0.95686274510000002" green="0.6705882353" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Request is recieved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IVO-KV-FZo">
                             <rect key="frame" x="43" y="246" width="235" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                            <color key="textColor" red="0.32156862749999998" green="0.69411764710000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our team will verify your details and will contact you for further process" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mue-xj-S80">
@@ -239,15 +237,15 @@
     <resources>
         <image name="Newrewardsicon.png" width="97" height="102"/>
         <image name="Rewardcellbg.png" width="265" height="318"/>
+        <image name="closeDialog.png" width="31" height="31"/>
         <image name="clsoeglow.png" width="32" height="32"/>
+        <image name="dialogbg.png" width="487" height="371"/>
         <image name="gemstore.png" width="147" height="120"/>
         <image name="newbg.png" width="540" height="960"/>
-        <image name="popupclose.png" width="55" height="55"/>
         <image name="rewardicon.png" width="35" height="37"/>
         <image name="searchglow.png" width="64" height="64"/>
         <image name="sortunlock.png" width="192" height="170"/>
         <image name="starg1.png" width="339" height="297"/>
-        <image name="textbg.png" width="438" height="306"/>
         <image name="textboxbg.png" width="470" height="73"/>
         <image name="topbar.png" width="540" height="148"/>
         <image name="trans.png" width="540" height="960"/>

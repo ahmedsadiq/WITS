@@ -855,6 +855,7 @@
           
           UIColor *color = [UIColor whiteColor];
           searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Search a Friend" attributes:@{NSForegroundColorAttributeName: color}];
+          searchField.textAlignment = NSTextAlignmentLeft;
           [backbtn setTitle:BACK_BTN forState:UIControlStateNormal];
           [GoBtn setTitle:@"Search" forState:UIControlStateNormal];
           [mainBackBtn setTitle:BACK_BTN forState:UIControlStateNormal];
@@ -893,7 +894,7 @@
           _friendsLbl.text = FRIENDS_BTN_2;
           loadingTitle = Loading_2;
           noFriendLbl.text = @"No tienes amigo.";
-          
+          searchField.textAlignment = NSTextAlignmentLeft;
           UIColor *color = [UIColor whiteColor];
           searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Rechercher un ami" attributes:@{NSForegroundColorAttributeName: color}];
           [backbtn setTitle:BACK_BTN_2 forState:UIControlStateNormal];
@@ -910,7 +911,7 @@
 //          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowFrench.png"] forState:UIControlStateNormal];
           challengeForGemsLbl.text = ChallengeForGem3;
           ChallengeForPointsLabel.text =  ChallengeForPoints3;
-          
+          searchField.textAlignment = NSTextAlignmentLeft;
           FriendsLabel.text = FRIENDS_BTN_3;
           _friendsLbl.text = FRIENDS_BTN_3;
           loadingTitle = Loading_3;
@@ -932,7 +933,7 @@
 //          [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"FriendsGlowportuguese.png"] forState:UIControlStateNormal];
           _friendsLbl.text = FRIENDS_BTN_4;
           loadingTitle = Loading_4;
-          
+          searchField.textAlignment = NSTextAlignmentLeft;
           FriendsLabel.text = FRIENDS_BTN_4;
           challengeForGemsLbl.text = ChallengeForGem4;
          ChallengeForPointsLabel.text =  ChallengeForPoints4;
@@ -1856,7 +1857,7 @@
           [self AcceptRejectRequest];
      }
      else if(status == 1 ) {
-          [self DeleteFriend];
+          //[self DeleteFriend];
      }
 //     else if(status == 1 && iscancel)
 //     {[self friendModCanelBtnPressed:nil];}

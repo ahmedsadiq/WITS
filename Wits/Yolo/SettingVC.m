@@ -412,6 +412,7 @@
           [dropDown hideDropDown:sender]; 
           [self rel];
      }
+     dropDown.backgroundColor = [UIColor blackColor];
 }
 
 - (IBAction)languageSaved:(id)sender {
@@ -438,7 +439,7 @@
 }
 - (void) niDropDownDelegateMethod: (NIDropDown *) sender {
      AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-     
+     dropDown.backgroundColor = [UIColor blackColor];
      if(sender.selectedIndex == 0) {
           [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"languageCode"];
           [languageBtn setTitle:@"English(US)" forState:UIControlStateNormal];

@@ -59,8 +59,11 @@
      
      AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
      appDelegate.isStore = true;
+     
      [[NSNotificationCenter defaultCenter] addObserver:appDelegate selector:@selector(recieveInventoryUpdate:) name:@"kInAppPurchaseManagerTransactionSucceededNotification" object:nil];
      [[NSNotificationCenter defaultCenter] addObserver:appDelegate selector:@selector(recieveInventoryUpdateFailure:) name:@"kInAppPurchaseManagerProductsFetchedNotification" object:nil];
+     
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(UIUpdaterFailure1:) name:@"kInAppPurchaseManagerTransactionFailedNotification" object:nil];
      
      
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(UIUpdaterSuccess:) name:@"kInAppPurchaseManagerTransactionSucceededNotification" object:nil];
@@ -1403,6 +1406,9 @@
 }
 - (void)UIUpdaterFailure:(NSNotification *)notification {
      //[loadView hide];
+}
+- (void)UIUpdaterFailure1:(NSNotification *)notification {
+     [loadView hide];
 }
 - (IBAction)addOnsPressed:(id)sender {
      

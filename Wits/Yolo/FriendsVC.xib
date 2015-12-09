@@ -102,7 +102,7 @@
         </view>
         <view hidden="YES" contentMode="scaleToFill" id="V3H-tP-ySi">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="Jvr-9Y-tzp">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>

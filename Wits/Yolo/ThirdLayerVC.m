@@ -1356,7 +1356,12 @@
                     }
                     
                     [AlertMessage showAlertWithMessage:message  andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+                    [timer invalidate];
+                    timer = nil;
+                    [sharedManager closeWebSocket];
+                    [searchingView removeFromSuperview];
                }
+               
           }
      }
      else if([packet.name isEqualToString:@"acceptChallenge"])
