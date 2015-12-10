@@ -69,7 +69,7 @@ CustomLoading *loaderObj;
           
           [engine enqueueOperation:op];
      }
-     
+     opponentProfileImageView.image= [UIImage imageNamed:@"personal.png"];
      opponentProfileImageView.imageURL = [NSURL URLWithString:senderObj.recieverProfileImgLink];
      NSURL *url2 = [NSURL URLWithString:senderObj.recieverProfileImgLink];
      [[AsyncImageLoader sharedLoader] loadImageWithURL:url2];

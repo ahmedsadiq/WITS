@@ -146,6 +146,8 @@
      NSString *loadingTitle;
      BOOL isChallenegAlreadySelected;
      NSString *challengeID;
+     
+     NSTimer *animationTimer;
 }
 
 - (IBAction)PlaywitStars:(id)sender;

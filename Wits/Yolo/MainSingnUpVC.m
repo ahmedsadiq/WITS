@@ -254,7 +254,7 @@
           }
           
           [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:OK_BTN OtherButton:nil];
-          
+          // [self textFieldDidEndEditing:nil];
 
      }
      else{
@@ -1722,7 +1722,7 @@
           HowWitsStore = @"How to Use WITS Store";
           HowtoEarnPoints = @"How to Earn Free Points";
           //UIColor *colors = [UIColor whiteColor];
-          _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"ENTER EMAIL ID" attributes:@{NSForegroundColorAttributeName: color}];
+          _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Enter Email ID" attributes:@{NSForegroundColorAttributeName: color}];
           howtouseStoreDesc = @"Sign up now and get your hands on 100 free Gems.";
           howtoEarnPointDesc = @"You can always earn free Points simply by inviting your friends and sharing the app on Facebook or Twitter.";
           [_resetButtonOutlet setTitle:@"Reset Password" forState:UIControlStateNormal];
@@ -1969,11 +1969,11 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    // [self animateTextField: textField up: YES];
+     [self animateTextField: textField up: NO];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-      [self animateTextField: textField up: NO];
+      //[self animateTextField: textField up: NO];
      [textField resignFirstResponder];
      return YES;
 }

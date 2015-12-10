@@ -199,13 +199,13 @@
      obj = (RewardObj*)[self.addOnsArray objectAtIndex:indexPath.section];
      if(obj.isSelected == false) {
           if (IS_IPAD) {
-               return 107;
+               return 310;
           }else{
                return 240;
           }
      }
      if (IS_IPAD) {
-          return 200;
+          return 310;
      }
      return 240;
 }
@@ -383,11 +383,13 @@
           cell.rightlockedimg.hidden = true;
      }
      
-     cell.selectionStyle = NAN;
+     
      [cell.downBtn setTag:indexPath.row];
      
      [cell.downBtn addTarget:self action:@selector(downbtnSelected:) forControlEvents:UIControlEventTouchUpInside];
-     
+     [cell setBackgroundColor:[UIColor clearColor]];
+     [cell.contentView setBackgroundColor:[UIColor clearColor]];
+     cell.selectionStyle = NAN;
      return cell;
      //     }
      //     else {

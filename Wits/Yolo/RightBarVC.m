@@ -192,7 +192,7 @@ float _yLocation;
           [[NavigationHandler getInstance] NavigateToSignUpScreen];
           //[self ShowInView];
           [self removeImage:@"test"];
-          profileImageView.image = [UIImage imageNamed:@"Icon_152.png"];
+          profileImageView.image = [UIImage imageNamed:@"personal.png"];
           [delegate musicSwitch:false];
      } onError:^(NSError* error) {
           
@@ -368,7 +368,7 @@ float _yLocation;
                     
                } onError:^(NSError* error) {
                     
-                    [profileImageView setImage:[UIImage imageNamed:@"witsround.PNG"]];
+                    [profileImageView setImage:[UIImage imageNamed:@"personal.png"]];
                     [profileImageView roundImageCorner];
                     
                }];

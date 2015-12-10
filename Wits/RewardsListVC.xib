@@ -96,12 +96,12 @@
                     <rect key="frame" x="135" y="10" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starg1.png" id="wSK-V5-ylm">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newStarPoints.png" id="wSK-V5-ylm">
                     <rect key="frame" x="245" y="20" width="50" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemstore.png" id="aCi-Jb-9dc">
-                    <rect key="frame" x="20" y="19" width="60" height="49"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemnotinstore.png" id="aCi-Jb-9dc">
+                    <rect key="frame" x="25" y="23" width="50" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Search for friend" minimumFontSize="17" id="bLc-dR-Iq1">
@@ -240,12 +240,13 @@
         <image name="closeDialog.png" width="31" height="31"/>
         <image name="clsoeglow.png" width="32" height="32"/>
         <image name="dialogbg.png" width="487" height="371"/>
+        <image name="gemnotinstore.png" width="300" height="221"/>
         <image name="gemstore.png" width="147" height="120"/>
+        <image name="newStarPoints.png" width="200" height="191"/>
         <image name="newbg.png" width="540" height="960"/>
         <image name="rewardicon.png" width="35" height="37"/>
         <image name="searchglow.png" width="64" height="64"/>
         <image name="sortunlock.png" width="192" height="170"/>
-        <image name="starg1.png" width="339" height="297"/>
         <image name="textboxbg.png" width="470" height="73"/>
         <image name="topbar.png" width="540" height="148"/>
         <image name="trans.png" width="540" height="960"/>

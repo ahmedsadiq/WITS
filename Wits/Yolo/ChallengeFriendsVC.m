@@ -408,8 +408,8 @@
      NSString * stat = _user.RelationshipStatus ;
      int status = [[NSString stringWithFormat:@"%@",stat] intValue];
      if(status){
-            [cell.leftUserVerified setImage:[UIImage imageNamed:@"friendstick.png"]];
-           [cell.rightUserVerified setImage:[UIImage imageNamed:@"friendstick.png"]];
+            [cell.leftUserVerified setImage:[UIImage imageNamed:@""]];
+           [cell.rightUserVerified setImage:[UIImage imageNamed:@""]];
      }
      currentIndex++;
      if(currentIndex < challengeArray.count) {
@@ -630,6 +630,7 @@
                timer = nil;
                
                [searchingView removeFromSuperview];
+               [self.tabBarController.tabBar setHidden:false];
                [SocketManager getInstance].socketdelegate = nil;
                
                NSString *emailMsg;
@@ -790,6 +791,7 @@
                else if(IS_IPHONE_4) {
                     searchingView.frame = CGRectMake(0, 0, 320, 480);
                }
+              [self.tabBarController.tabBar setHidden:true];
                [self.view addSubview:searchingView];
                _loaderIndex = 1;
                
@@ -876,6 +878,7 @@
           if(flag == 1){
                
                [searchingView removeFromSuperview];
+               [self.tabBarController.tabBar setHidden:false];
                [timer invalidate];
                timer = nil;
                Challenge *_challenge = [[Challenge alloc] initWithDictionary:userDictInner];
@@ -899,12 +902,14 @@
           
           [sharedManager closeWebSocket];
           [searchingView removeFromSuperview];
+          [self.tabBarController.tabBar setHidden:false];
      }
 }
 -(void)socketDisconnected:(SocketIO *)socket onError:(NSError *)error {
      
      [timer invalidate];
      timer = nil;
+     [self.tabBarController.tabBar setHidden:false];
      [searchingView removeFromSuperview];
      [loadView hide];
 }
@@ -912,6 +917,7 @@
      
      [timer invalidate];
      timer = nil;
+     [self.tabBarController.tabBar setHidden:false];
      [searchingView removeFromSuperview];
      [loadView hide];
 }

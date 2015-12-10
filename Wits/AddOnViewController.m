@@ -290,7 +290,7 @@
 {
 
 }
--(void)buyBtnClicked:(UIButton*)sender
+-(void)buyBtnClickeds:(UIButton*)sender
 {
 
      UIButton *btn = (UIButton*)sender;

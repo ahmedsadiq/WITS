@@ -21,12 +21,12 @@
                         <rect key="frame" x="155" y="0.0" width="145" height="130"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <view hidden="YES" contentMode="scaleToFill" id="goO-oc-swr">
+                    <view contentMode="scaleToFill" id="goO-oc-swr">
                         <rect key="frame" x="155" y="0.0" width="147" height="130"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
-                    <view hidden="YES" contentMode="scaleToFill" id="ZCs-NW-fnZ">
+                    <view contentMode="scaleToFill" id="ZCs-NW-fnZ">
                         <rect key="frame" x="-2" y="0.0" width="147" height="130"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

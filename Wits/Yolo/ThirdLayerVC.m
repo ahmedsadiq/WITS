@@ -2135,31 +2135,31 @@
      languageCode = [language intValue];
      if(languageCode == 0 ) {
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsglowNew.png"] forState:UIControlStateNormal];
           [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
           
           
           
           
      }else      if(languageCode == 1 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsglowNew.png"] forState:UIControlStateNormal];
           [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
           
           
           
      }else      if(languageCode == 2 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsglowNew.png"] forState:UIControlStateNormal];
           [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
           
           
      }else      if(languageCode == 3 ) {
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsglowNew.png"] forState:UIControlStateNormal];
           [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
           
           
      }else      if(languageCode == 4 ) {
           
-          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsglowNew.png"] forState:UIControlStateNormal];
           [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
           
           

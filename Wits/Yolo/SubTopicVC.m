@@ -726,17 +726,20 @@
      [self.tabBarController.tabBar setHidden:NO];
      isGameStarted = true;
      [timer invalidate];
+     [opponentProfileImageView stopAnimating];
+     [animationTimer invalidate];
      timer = nil;
      _gmGemsSelected = false;
      _gmChallengeSelected = false;
      UIView *effectView = [self.view viewWithTag:499];
      [effectView removeFromSuperview];
      
-     //added by osama 
+    
+     /////
      AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;
      del.friendToBeChalleneged = nil;
      del.requestType = nil;
-     
+   
      
      _gameModView.hidden = true;
      [_gameModView removeFromSuperview];
@@ -1041,9 +1044,30 @@
      [self.view addSubview:searchingView];
      _loaderIndex = 1;
      timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
+     NSArray *imageNames = @[@"avatar1.png",@"avatar2.png",@"avatar3.png",@"avatar4.png",@"avatar5.png",@"avatar6.png"];
+     NSMutableArray *images = [[NSMutableArray alloc] init];
+     for (int i = 0; i < imageNames.count; i++) {
+          [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
+     }
      
+     opponentProfileImageView.animationImages = images;
+     opponentProfileImageView.animationDuration = 4.0f;
+     //opponentProfileImageView.animationRepeatCount = 1;
+     
+    
+     [opponentProfileImageView startAnimating];
+     // [self.view addSubview:opponentProfileImageView];
+     animationTimer= [NSTimer timerWithTimeInterval:1.0
+                                              target:self
+                                            selector:@selector(onTimer)
+                                            userInfo:nil
+                                             repeats:YES];
+     
+     [[NSRunLoop currentRunLoop] addTimer:animationTimer forMode:NSDefaultRunLoopMode];
+     [animationTimer fire];
      for(int i = 1; i<5; i++) {
           UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
+          
           if(i == _loaderIndex) {
                dot.image = [UIImage imageNamed:@"dotglow.png"];
           }
@@ -1057,6 +1081,14 @@
      sharedManager.socketdelegate = nil;
      sharedManager.socketdelegate = self;
      [sharedManager openSockets];
+}
+-(void)onTimer{
+     [UIView animateWithDuration:0.5 animations:^{
+          opponentProfileImageView.alpha = 0.0;
+     }];
+     [UIView animateWithDuration:0.5 animations:^{
+          opponentProfileImageView.alpha = 1.0;
+     }];
 }
 - (void)increaseTimerCount
 {
@@ -1295,15 +1327,15 @@
                [self.view addSubview:searchingView];
                _loaderIndex = 1;
                
-               for(int i = 1; i<5; i++) {
-                    UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
-                    if(i == _loaderIndex) {
-                         dot.image = [UIImage imageNamed:@"dotglow.png"];
-                    }
-                    else {
-                         dot.image = [UIImage imageNamed:@"dotblack.png"];
-                    }
-               }
+//               for(int i = 1; i<5; i++) {
+//                    UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
+//                    if(i == _loaderIndex) {
+//                         dot.image = [UIImage imageNamed:@"dotglow.png"];
+//                    }
+//                    else {
+//                         dot.image = [UIImage imageNamed:@"dotblack.png"];
+//                    }
+  //             }
                
           }
           
@@ -1444,6 +1476,10 @@
           else if(flag == 1){
                //Oponent Found
                _searchingLoaderView.hidden = true;
+               [opponentProfileImageView stopAnimating];
+               [animationTimer invalidate
+                ];
+                
                 _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
                _searchOppLbl.text = @"VS";
                //               _searchOppLbl.text = @"";
@@ -1459,6 +1495,7 @@
                opponentProfileImageView.imageURL = [NSURL URLWithString:_challenge.opponent_profileImage];
                NSURL *url = [NSURL URLWithString:_challenge.opponent_profileImage];
                [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
+               opponentProfileImageView.image = [UIImage imageNamed:@"personal.png"];
                [opponentProfileImageView roundImageCorner];
                _challenge = [[Challenge alloc] initWithDictionary:json];
                _challenge.type = @"2";
@@ -2420,7 +2457,7 @@
      forPointsLabel.textColor = [UIColor whiteColor];
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
-     [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal ];
+     [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsglowNew.png"] forState:UIControlStateNormal ];
      
      [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal ];
      
@@ -2640,7 +2677,7 @@
 
 -(void)SendChallengeToYourFriend:(UserProfile *)_user{
      
-     timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
+   //  timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
      opponentProfileImageView.imageURL = [NSURL URLWithString:_user.profile_image];
      NSURL *url = [NSURL URLWithString:_user.profile_image];
      [[AsyncImageLoader sharedLoader] loadImageWithURL:url];

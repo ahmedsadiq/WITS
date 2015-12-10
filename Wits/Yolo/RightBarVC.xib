@@ -163,7 +163,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="533"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="witsround.PNG" id="EdP-LW-EHX">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal.png" id="EdP-LW-EHX">
                             <rect key="frame" x="110" y="54" width="100" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -367,6 +367,7 @@
         <image name="menubgrightbar.png" width="540" height="960"/>
         <image name="message_icon.png" width="32" height="32"/>
         <image name="messagesglow.png" width="102" height="84"/>
+        <image name="personal.png" width="512" height="512"/>
         <image name="rankingo1.png" width="128" height="128"/>
         <image name="rankings.png" width="110" height="90"/>
         <image name="rankingsglow.png" width="96" height="81"/>
@@ -379,7 +380,6 @@
         <image name="topics_icon.png" width="21" height="23"/>
         <image name="transferPoints1.png" width="256" height="256"/>
         <image name="verified.png" width="31" height="31"/>
-        <image name="witsround.PNG" width="210" height="208"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

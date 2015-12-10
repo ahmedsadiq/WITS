@@ -3,6 +3,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="game_font_7.ttf">
+            <string>GameFont7</string>
+            <string>GameFont7</string>
+            <string>GameFont7</string>
+            <string>GameFont7</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeVC">
             <connections>
@@ -16,6 +24,10 @@
                 <outlet property="carrierView" destination="Jw9-Lk-HEP" id="Hqt-Hb-D53"/>
                 <outlet property="firstdot" destination="Ayd-tJ-JQ1" id="nbf-5i-O1i"/>
                 <outlet property="fourthDot" destination="h7Y-bK-D4I" id="RMm-po-fal"/>
+                <outlet property="gameModForGems" destination="uZ0-XX-44F" id="C0a-dv-07t"/>
+                <outlet property="gameModForPoints" destination="K8L-Fi-pg1" id="z5g-zS-3fm"/>
+                <outlet property="gemLeft" destination="ixA-JH-ycq" id="XCc-jE-lmi"/>
+                <outlet property="gemRight" destination="wri-PE-AmB" id="OZe-o7-KZr"/>
                 <outlet property="homeBtn" destination="5dP-8E-zIN" id="TcP-Xq-zup"/>
                 <outlet property="opponentName" destination="CQv-w5-Pql" id="xbU-m6-dn5"/>
                 <outlet property="opponentPointsLbl" destination="frQ-wR-j3B" id="f8y-yQ-xHR"/>
@@ -39,6 +51,7 @@
                 <outlet property="playerName" destination="zI4-Bg-1gb" id="9gz-YK-H3h"/>
                 <outlet property="playwithGemsbtn" destination="Orr-yH-05x" id="hIR-h5-1HO"/>
                 <outlet property="questionImg" destination="B2f-uY-pnL" id="JcR-c6-nhI"/>
+                <outlet property="questionNoLbl" destination="6X2-ar-EfJ" id="J11-4L-m90"/>
                 <outlet property="questionTextLbl" destination="fPZ-C4-oPz" id="hl7-FQ-eFP"/>
                 <outlet property="questionView" destination="o7p-kp-BD3" id="6zG-Ku-rFl"/>
                 <outlet property="quitGameDialog" destination="3L5-GK-A7h" id="Wza-eQ-Ixv"/>
@@ -70,6 +83,8 @@
                 <outlet property="topBarPlayerName" destination="MiA-9w-z6i" id="6h9-pp-QLr"/>
                 <outlet property="upperViewLeft" destination="idT-CJ-1hz" id="Rsl-3N-YkM"/>
                 <outlet property="upperViewRight" destination="YEh-uo-fgg" id="8fJ-zx-al7"/>
+                <outlet property="userGemTotal" destination="DiD-z3-4fB" id="BYg-sO-vev"/>
+                <outlet property="userPointsTotal" destination="Bvt-Qf-iRP" id="Kgi-m3-tYi"/>
                 <outlet property="userTotal" destination="00Y-Vt-ra0" id="7sT-iL-x5q"/>
                 <outlet property="view" destination="ywt-0i-bOZ" id="vnt-S2-Pae"/>
                 <outlet property="youLooseTitle" destination="ZfK-Ui-ZR9" id="a2t-PE-c3f"/>
@@ -233,7 +248,7 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="SuT-Fv-dF0">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbg.png" id="SuT-Fv-dF0">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -252,11 +267,11 @@
                         </imageView>
                     </subviews>
                 </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bC3-Jn-DfZ">
-                    <rect key="frame" x="580" y="921.99999988836987" width="100" height="100"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bC3-Jn-DfZ">
+                    <rect key="frame" x="580" y="921.99999985810121" width="100" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                    <state key="normal" backgroundImage="rewardsicon.png">
+                    <state key="normal" backgroundImage="rewardsglow.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -276,10 +291,10 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="A19-if-Acj">
-                    <rect key="frame" x="309" y="850" width="150" height="150"/>
+                    <rect key="frame" x="309" y="857.00000170069632" width="200" height="112"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                    <state key="normal" backgroundImage="playagain.png">
+                    <state key="normal" backgroundImage="playagainglowNew.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -289,24 +304,24 @@
                         <action selector="playAgainPressed:" destination="-1" eventType="touchUpInside" id="HG1-rP-i6o"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Lost !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" id="jq3-t2-nrA">
-                    <rect key="frame" x="242" y="25" width="284" height="66"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Lost !" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="14" id="jq3-t2-nrA">
+                    <rect key="frame" x="84" y="180" width="600" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="GameFont7" family="Game Font 7" pointSize="35"/>
                     <color key="textColor" red="0.6588235294" green="0.81568627449999997" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="witsround.PNG" id="8Y1-s8-ZQT">
-                    <rect key="frame" x="284" y="189" width="200" height="200"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal.png" id="8Y1-s8-ZQT">
+                    <rect key="frame" x="284" y="375" width="200" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starg1.png" id="VIW-wE-wHa">
-                    <rect key="frame" x="334" y="465" width="100" height="100"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemnotinstore.png" id="VIW-wE-wHa">
+                    <rect key="frame" x="314" y="600" width="140" height="103"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="00Y-Vt-ra0">
-                    <rect key="frame" x="234" y="687" width="300" height="100"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="45"/>
+                    <rect key="frame" x="234" y="700" width="300" height="100"/>
+                    <fontDescription key="fontDescription" name="GameFont7" family="Game Font 7" pointSize="45"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -314,7 +329,7 @@
                     <rect key="frame" x="88" y="922" width="100" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                    <state key="normal" backgroundImage="homeForIpad.png">
+                    <state key="normal" backgroundImage="homeglow.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -330,13 +345,33 @@
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <connections>
-                        <action selector="showTimeLine:" destination="-1" eventType="touchUpInside" id="KZO-gm-Bqz"/>
-                    </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemnotinstore.png" id="qmF-Ra-Uco">
+                    <rect key="frame" x="100" y="25" width="80" height="59"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" id="Bvt-Qf-iRP">
+                    <rect key="frame" x="590" y="100" width="100" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="GameFont7" family="Game Font 7" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newStarPoints.png" id="rEP-87-ItG">
+                    <rect key="frame" x="600" y="20" width="80" height="76"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" id="DiD-z3-4fB">
+                    <rect key="frame" x="90" y="100" width="100" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="GameFont7" family="Game Font 7" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="1933" y="-715"/>
         </view>
         <view clearsContextBeforeDrawing="NO" tag="-10" contentMode="scaleToFill" id="ywt-0i-bOZ">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -358,7 +393,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="rwB-ei-at8">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbg.png" id="rwB-ei-at8">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -482,49 +517,53 @@
                 <view contentMode="scaleToFill" id="idT-CJ-1hz">
                     <rect key="frame" x="0.0" y="28" width="384" height="200"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="742" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ArM-iX-Ppf">
-                            <rect key="frame" x="140" y="50" width="250" height="40"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="742" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ArM-iX-Ppf">
+                            <rect key="frame" x="140" y="100" width="250" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joseph" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MiA-9w-z6i">
-                            <rect key="frame" x="140" y="95" width="250" height="50"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bachir" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MiA-9w-z6i">
+                            <rect key="frame" x="140" y="45" width="250" height="50"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="witsround.PNG" id="iqn-sb-c5u">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal.png" id="iqn-sb-c5u">
                             <rect key="frame" x="5" y="30" width="100" height="100"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="fG8-zA-XDw">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="fG8-zA-XDw">
                             <rect key="frame" x="8" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="Gbi-wM-7gY">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="Gbi-wM-7gY">
                             <rect key="frame" x="72" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="X6a-Gi-Qln">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="X6a-Gi-Qln">
                             <rect key="frame" x="102" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="s4I-bW-EVb">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="s4I-bW-EVb">
                             <rect key="frame" x="132" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="dFX-jI-ycg">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="dFX-jI-ycg">
                             <rect key="frame" x="162" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="4yj-XM-5p7">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="4yj-XM-5p7">
                             <rect key="frame" x="192" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="NsN-Yu-rAq">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="NsN-Yu-rAq">
                             <rect key="frame" x="40" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemnotinstore.png" id="ixA-JH-ycq">
+                            <rect key="frame" x="165" y="105" width="40" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -532,49 +571,53 @@
                 <view contentMode="scaleToFill" id="YEh-uo-fgg">
                     <rect key="frame" x="384" y="28" width="384" height="200"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="frQ-wR-j3B">
-                            <rect key="frame" x="30" y="50" width="250" height="40"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="frQ-wR-j3B">
+                            <rect key="frame" x="190" y="100" width="200" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bachir Alzaim" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vJm-b9-S0b">
-                            <rect key="frame" x="30" y="95" width="250" height="50"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bachir" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vJm-b9-S0b">
+                            <rect key="frame" x="140" y="45" width="250" height="50"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="witsround.PNG" id="TC2-JS-WSN">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal.png" id="TC2-JS-WSN">
                             <rect key="frame" x="280" y="30" width="100" height="100"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="tQj-nP-MSi">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="tQj-nP-MSi">
                             <rect key="frame" x="220" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="Rz2-En-L2C">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="Rz2-En-L2C">
                             <rect key="frame" x="190" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="WC6-ML-Key">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="WC6-ML-Key">
                             <rect key="frame" x="160" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="RDe-xA-bmV">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="RDe-xA-bmV">
                             <rect key="frame" x="130" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="hin-KJ-HeQ">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="hin-KJ-HeQ">
                             <rect key="frame" x="100" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="UbY-fv-v1c">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="UbY-fv-v1c">
                             <rect key="frame" x="70" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="Kdb-Es-v9D">
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemwhite.png" id="Kdb-Es-v9D">
                             <rect key="frame" x="30" y="167" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gemnotinstore.png" id="wri-PE-AmB">
+                            <rect key="frame" x="145" y="105" width="40" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -604,10 +647,21 @@
                         <action selector="addOnBtnPressed:" destination="-1" eventType="touchUpInside" id="1uB-We-aO9"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.png" id="akh-N3-vrj">
+                    <rect key="frame" x="354" y="250" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6X2-ar-EfJ">
+                    <rect key="frame" x="369" y="264" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="709" y="-1013"/>
+            <point key="canvasLocation" x="761" y="-1015"/>
         </view>
         <view contentMode="scaleToFill" id="PPi-AZ-73O">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -623,13 +677,13 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialogbg.png" id="Umv-bd-AVW">
-                            <rect key="frame" x="0.0" y="0.0" width="737" height="482"/>
+                            <rect key="frame" x="68" y="96" width="600" height="300"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Orr-yH-05x">
-                            <rect key="frame" x="468" y="196" width="154" height="149"/>
+                            <rect key="frame" x="468" y="196" width="140" height="104"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            <state key="normal" backgroundImage="gem.png">
+                            <state key="normal" backgroundImage="forgemsNew.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="selected" backgroundImage="gemglow.png"/>
@@ -638,9 +692,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1LJ-EB-h3K">
-                            <rect key="frame" x="113" y="196" width="168" height="149"/>
+                            <rect key="frame" x="150" y="180" width="130" height="126"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            <state key="normal" backgroundImage="star.png">
+                            <state key="normal" backgroundImage="forpintsNew.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -651,17 +705,29 @@
                             <rect key="frame" x="535" y="164" width="125" height="105"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9hQ-DQ-lb9">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9hQ-DQ-lb9">
                             <rect key="frame" x="218" y="23" width="300" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Gems" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uZ0-XX-44F">
+                            <rect key="frame" x="468" y="320" width="140" height="27"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                            <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K8L-Fi-pg1">
+                            <rect key="frame" x="140" y="320" width="140" height="27"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                            <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="he2-fH-Y61">
-                    <rect key="frame" x="689" y="286" width="43" height="38"/>
+                    <rect key="frame" x="600" y="380" width="43" height="38"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <state key="normal" backgroundImage="closeDialog.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -769,11 +835,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picbg.png" id="KIg-6s-Qxl">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picbg.png" id="KIg-6s-Qxl">
                     <rect key="frame" x="285" y="101" width="200" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="cII-hC-ivC">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal.png" id="cII-hC-ivC">
                     <rect key="frame" x="286" y="100" width="200" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -818,7 +884,7 @@
                     <rect key="frame" x="282" y="650" width="200" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_120.png" id="QQb-FA-c6G">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal.png" id="QQb-FA-c6G">
                     <rect key="frame" x="282" y="650" width="200" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -826,18 +892,22 @@
                     <rect key="frame" x="284" y="900" width="200" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                    <state key="normal" title="Cancel" backgroundImage="btnbg_gameMod.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Cancel" backgroundImage="btnbgpressed.png">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="btnbg_gameMod.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="quitGame:" destination="-1" eventType="touchUpInside" id="ogP-IM-jQs"/>
                     </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching Opponent..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E3h-b3-Xa5">
-                    <rect key="frame" x="263" y="461" width="242" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <rect key="frame" x="234" y="461" width="300" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -914,36 +984,37 @@
     <resources>
         <image name="4.png" width="540" height="110"/>
         <image name="ColoredRing.png" width="210" height="208"/>
-        <image name="Icon_120.png" width="120" height="120"/>
         <image name="SearchingIcon.png" width="210" height="208"/>
         <image name="bg-ipad.png" width="640" height="1136"/>
         <image name="bg.png" width="540" height="960"/>
         <image name="blackBar.png" width="220" height="34"/>
         <image name="btnbg_gameMod.png" width="290" height="72"/>
+        <image name="btnbgpressed.png" width="484" height="98"/>
         <image name="buynowlbl.png" width="67" height="66"/>
+        <image name="circle.png" width="111" height="111"/>
         <image name="closeDialog.png" width="31" height="31"/>
         <image name="dialogbg.png" width="487" height="371"/>
         <image name="dotblack.png" width="26" height="27"/>
         <image name="dotglow.png" width="45" height="45"/>
-        <image name="gem.png" width="108" height="129"/>
+        <image name="forgemsNew.png" width="86" height="64"/>
+        <image name="forpintsNew.png" width="150" height="146"/>
         <image name="gemglow.png" width="127" height="146"/>
+        <image name="gemnotinstore.png" width="300" height="221"/>
         <image name="gemwhite.png" width="43" height="35"/>
         <image name="gp5050.png" width="95" height="110"/>
         <image name="gpclose.png" width="100" height="110"/>
         <image name="header.png" width="320" height="43"/>
         <image name="header_bar.png" width="320" height="1"/>
-        <image name="homeForIpad.png" width="80" height="72"/>
         <image name="homeglow.png" width="51" height="48"/>
+        <image name="newStarPoints.png" width="200" height="191"/>
         <image name="newbg.png" width="540" height="960"/>
         <image name="opponentpic.png" width="151" height="151"/>
         <image name="optionpressedstate.png" width="540" height="110"/>
+        <image name="personal.png" width="512" height="512"/>
         <image name="picbg.png" width="151" height="151"/>
-        <image name="playagain.png" width="126" height="114"/>
         <image name="playagainglow.png" width="145" height="130"/>
+        <image name="playagainglowNew.png" width="200" height="112"/>
         <image name="rewardsglow.png" width="60" height="61"/>
-        <image name="rewardsicon.png" width="110" height="115"/>
-        <image name="star.png" width="116" height="133"/>
-        <image name="starg1.png" width="339" height="297"/>
         <image name="transparentbg.png" width="320" height="568"/>
         <image name="witsnewblue.png" width="1004" height="245"/>
         <image name="witsround.PNG" width="210" height="208"/>

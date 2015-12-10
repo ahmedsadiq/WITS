@@ -324,6 +324,17 @@
                         <action selector="fmFriendButtonPressed:" destination="-1" eventType="touchUpInside" id="BOA-Ct-HxC"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HON-i6-7UX">
+                    <rect key="frame" x="282" y="8" width="30" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <animations/>
+                    <state key="normal" backgroundImage="close.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="friendModCanelBtnPressed:" destination="-1" eventType="touchUpInside" id="e50-YM-s7O"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GTu-ae-nV8">
                     <rect key="frame" x="31" y="131" width="117" height="110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -334,17 +345,6 @@
                     <state key="highlighted" backgroundImage="Newchallengeforgemspressed.png"/>
                     <connections>
                         <action selector="fmChallenegeGemsPressed:" destination="-1" eventType="touchUpInside" id="8Xh-Fh-WE7"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HON-i6-7UX">
-                    <rect key="frame" x="282" y="8" width="30" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <animations/>
-                    <state key="normal" backgroundImage="close.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="friendModCanelBtnPressed:" destination="-1" eventType="touchUpInside" id="e50-YM-s7O"/>
                     </connections>
                 </button>
             </subviews>
