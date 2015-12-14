@@ -96,7 +96,7 @@
           [mainTitlelbl setText:parentTopicModel.title];
           
      }
-     
+      imageNames = @[@"avatar1.png",@"avatar2.png",@"avatar3.png",@"avatar4.png",@"avatar5.png",@"avatar6.png"];
      
      [self setUpTutorial];
      [topicTblView reloadData];
@@ -879,7 +879,7 @@
                     [senderProfileImageView roundImageCorner];
                     
                } onError:^(NSError* error) {
-                    senderProfileImageView.image = [UIImage imageNamed:@"Icon_152.png"];
+                    senderProfileImageView.image = [UIImage imageNamed:@"personal.png"];
                     
                     /*UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Cannot Fetch Image" message:@"Network Unreachable" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
                      [alert show];*/
@@ -1044,19 +1044,15 @@
      [self.view addSubview:searchingView];
      _loaderIndex = 1;
      timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
-     NSArray *imageNames = @[@"avatar1.png",@"avatar2.png",@"avatar3.png",@"avatar4.png",@"avatar5.png",@"avatar6.png"];
+   
      NSMutableArray *images = [[NSMutableArray alloc] init];
      for (int i = 0; i < imageNames.count; i++) {
           [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
      }
      
      opponentProfileImageView.animationImages = images;
-     opponentProfileImageView.animationDuration = 4.0f;
-     //opponentProfileImageView.animationRepeatCount = 1;
-     
-    
+     opponentProfileImageView.animationDuration = 6.0f;
      [opponentProfileImageView startAnimating];
-     // [self.view addSubview:opponentProfileImageView];
      animationTimer= [NSTimer timerWithTimeInterval:1.0
                                               target:self
                                             selector:@selector(onTimer)
@@ -1083,10 +1079,10 @@
      [sharedManager openSockets];
 }
 -(void)onTimer{
-     [UIView animateWithDuration:0.5 animations:^{
+     [UIView animateWithDuration:1.0 animations:^{
           opponentProfileImageView.alpha = 0.0;
      }];
-     [UIView animateWithDuration:0.5 animations:^{
+     [UIView animateWithDuration:1.0 animations:^{
           opponentProfileImageView.alpha = 1.0;
      }];
 }
@@ -1157,18 +1153,18 @@
      if(sharedManager.socketIO.isConnected) {
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
-          
+          _searchOppLbl.textAlignment = NSTextAlignmentCenter;
          _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
           if (languageCode == 0) {
                _searchOppLbl.text = @"VS";
           }else if(languageCode == 1){
-               _searchOppLbl.text = @"VS";
+               _searchOppLbl.text = VS_1;
           }else if (languageCode == 2 ){
-               _searchOppLbl.text = @"VS";
+               _searchOppLbl.text =VS_2;
           }else if (languageCode == 3){
-               _searchOppLbl.text = @"VS";
+               _searchOppLbl.text = VS_3;
           }else if (languageCode == 4){
-               _searchOppLbl.text = @"VS";
+               _searchOppLbl.text = VS_4;
           }
           [searchingView removeFromSuperview];
           appDelegate.friendToBeChalleneged = nil;
@@ -1188,17 +1184,19 @@
      if(sharedManager.socketIO.isConnected) {
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
+          _searchOppLbl.textAlignment = NSTextAlignmentCenter;
            _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
+          
           if (languageCode == 0) {
                _searchOppLbl.text = @"VS";
           }else if(languageCode == 1){
-               _searchOppLbl.text = @"VS";
+               _searchOppLbl.text = VS_1;
           }else if (languageCode == 2 ){
-               _searchOppLbl.text = @"VS";
+               _searchOppLbl.text =VS_2;
           }else if (languageCode == 3){
-               _searchOppLbl.text = @"VS";
+               _searchOppLbl.text = VS_3;
           }else if (languageCode == 4){
-               _searchOppLbl.text = @"VS";
+               _searchOppLbl.text = VS_4;
           }
           [searchingView removeFromSuperview];
           
@@ -1369,6 +1367,7 @@
                     }
                     
                     [AlertMessage showAlertWithMessage:emailMsg  andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+                     self.tabBarController.tabBar.hidden = false;
                }else{
                     if (languageCode == 0 ) {
                          emailMsg = @"Check your internet connection setting.";
@@ -1397,6 +1396,7 @@
                     timer = nil;
                     [sharedManager closeWebSocket];
                     [searchingView removeFromSuperview];
+                     self.tabBarController.tabBar.hidden = false;
                }
           }
      }
@@ -1481,8 +1481,21 @@
                 ];
                 
                 _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
-               _searchOppLbl.text = @"VS";
-               //               _searchOppLbl.text = @"";
+          
+
+               //_searchOppLbl.text = @"VS";
+               if (languageCode == 0) {
+                    _searchOppLbl.text = @"VS";
+               }else if(languageCode == 1){
+                    _searchOppLbl.text = VS_1;
+               }else if (languageCode == 2 ){
+                    _searchOppLbl.text =VS_2;
+               }else if (languageCode == 3){
+                    _searchOppLbl.text = VS_3;
+               }else if (languageCode == 4){
+                    _searchOppLbl.text = VS_4;
+               }
+
                [timer invalidate];
                timer = nil;
                
@@ -1771,8 +1784,51 @@
           int totalPoints = [[SharedManager getInstance]._userProfile.cashablePoints intValue];
           if (totalPoints < 10) {
                // not enough gems to pay game, show dialog and on ok take user to store
-               [self gameModCanelBtnPressed:nil];
-               self.tabBarController.selectedIndex = 2;
+               UIView *effectView = [self.view viewWithTag:499];
+               [effectView removeFromSuperview];
+               _gameModView.hidden = true;
+               [_gameModView removeFromSuperview];
+              // self.tabBarController.selectedIndex = 2;
+               buyGemsView.hidden = false;
+               [self.view addSubview:buyGemsView];
+               
+               buygemsdesc.text = @"You do not have enough Gems to continue. Do you want to purchase Gems now?";
+               buygemsHeading.text = @"Confirmation";
+               
+               [_acceptbuygems setTitle:@"Buy Now" forState:UIControlStateNormal];
+               [_rejectbuygems setTitle:@"Cancel" forState:UIControlStateNormal];
+               if(languageCode == 1){
+                    
+                    buygemsdesc.text = @"لم يكن لديك ما يكفي من الأحجار الكريمة للمتابعة. هل ترغب في شراء الأحجار الكريمة الآن؟";
+                    buygemsHeading.text = @"!التأكيد";
+                    
+                    [_acceptbuygems setTitle:@"اشتري الآن" forState:UIControlStateNormal];
+                    [_rejectbuygems setTitle:@"إلغاء" forState:UIControlStateNormal];
+                    
+               }
+               else if (languageCode == 2){
+                    
+                    buygemsdesc.text = @"Vous ne disposez pas de suffisamment de gemmes pour continuer. Vous voulez acheter Gems maintenant?";
+                    buygemsHeading.text = @"Confirmation!";
+                    
+                    [_acceptbuygems setTitle:@"Achetez maintenant" forState:UIControlStateNormal];
+                    [_rejectbuygems setTitle:@"Annuler" forState:UIControlStateNormal];
+               }
+               else if (languageCode == 3){
+                   
+                    buygemsdesc.text = @">No tienes suficientes Gemas para continuar. ¿Quieres comprar Gemas ahora?";
+                    buygemsHeading.text = @"¡Confirmación!";
+                    
+                    [_acceptbuygems setTitle:@"Comprar" forState:UIControlStateNormal];
+                    [_rejectbuygems setTitle:@"Cancelar" forState:UIControlStateNormal];
+               }
+               else if (languageCode == 4){
+                  
+                    buygemsdesc.text = @"Você não tem Gems suficientes para continuar. Você deseja comprar mais Gems agora?";
+                    buygemsHeading.text = @"Confirmação!";
+                    
+                    [_acceptbuygems setTitle:@"Compre Agora" forState:UIControlStateNormal];
+                    [_rejectbuygems setTitle:@"Cancelar" forState:UIControlStateNormal];               }
           }
           else {
                NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
@@ -2341,6 +2397,7 @@
      _gmChallengeSelected = false;
      _gameModView.hidden = true;
      [_gameModView removeFromSuperview];
+     [self gmStarsPressed:nil];
 }
 
 - (IBAction)gmPlayNowPressed:(id)sender {
@@ -2623,6 +2680,22 @@
 }
 
 
+- (IBAction)rejectGemsBuyPressed:(id)sender {
+     appDelegate.friendToBeChalleneged = nil;
+     appDelegate.requestType = nil;
+     [self gameModCanelBtnPressed:nil];
+
+    buyGemsView.hidden = true;
+     [buyGemsView removeFromSuperview];
+}
+
+- (IBAction)acceptGemsBuyPressed:(id)sender {
+    buyGemsView.hidden = true;
+     [buyGemsView removeFromSuperview]; [self gmStarsPressed:self];
+     self.tabBarController.selectedIndex = 2;
+     
+}
+
 - (IBAction)gmGoPressed:(id)sender {
      [self.tabBarController.tabBar setHidden:YES];
      isOpponentFound = false;
@@ -2691,7 +2764,7 @@
      [super viewWillAppear:animated];
           [self setLanguageForScreen];
      self.tabBarController.tabBar.hidden = false;
-    
+ 
 }
 
 

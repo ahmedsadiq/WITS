@@ -87,6 +87,7 @@
      
      [lblGemsPoints setText:[[SharedManager getInstance] _userProfile].cashablePoints];
      [lblStarsPoints setText:[[SharedManager getInstance] _userProfile].totalPoints];
+      imageNames = @[@"avatar1.png",@"avatar2.png",@"avatar3.png",@"avatar4.png",@"avatar5.png",@"avatar6.png"];
      
      int totalPoints = [[SharedManager getInstance]._userProfile.cashablePoints intValue];
      if (totalPoints <10) {
@@ -411,6 +412,7 @@
                          cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:25];
                          cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:25];
                          cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
+                         cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:45];
                          cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:25];
                          cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
                     }
@@ -634,7 +636,8 @@
      isGameStarted = true;
      [timer invalidate];
      timer = nil;
-     
+      [opponentProfileImageView stopAnimating];
+     [animationTimer invalidate];
      [sharedManager closeWebSocket];
      [searchingView removeFromSuperview];
 }
@@ -892,8 +895,49 @@
           int totalPoints = [[SharedManager getInstance]._userProfile.cashablePoints intValue];
           if (totalPoints < 10) {
                // not enough gems to pay game, show dialog and on ok take user to store
-               [self gameModCanelBtnPressed:nil];
-               self.tabBarController.selectedIndex = 2;
+               _gameModView.hidden = true;
+               [_gameModView removeFromSuperview];
+               // self.tabBarController.selectedIndex = 2;
+               _buyGemsView.hidden = false;
+               [self.view addSubview:_buyGemsView];
+               
+               buygemsdesc.text = @"You do not have enough Gems to continue. Do you want to purchase Gems now?";
+               buygemsHeading.text = @"Confirmation";
+               
+               [_acceptbuygems setTitle:@"Buy Now" forState:UIControlStateNormal];
+               [_rejectbuygems setTitle:@"Cancel" forState:UIControlStateNormal];
+               if(languageCode == 1){
+                    
+                    buygemsdesc.text = @"لم يكن لديك ما يكفي من الأحجار الكريمة للمتابعة. هل ترغب في شراء الأحجار الكريمة الآن؟";
+                    buygemsHeading.text = @"!التأكيد";
+                    
+                    [_acceptbuygems setTitle:@"اشتري الآن" forState:UIControlStateNormal];
+                    [_rejectbuygems setTitle:@"إلغاء" forState:UIControlStateNormal];
+                    
+               }
+               else if (languageCode == 2){
+                    
+                    buygemsdesc.text = @"Vous ne disposez pas de suffisamment de gemmes pour continuer. Vous voulez acheter Gems maintenant?";
+                    buygemsHeading.text = @"Confirmation!";
+                    
+                    [_acceptbuygems setTitle:@"Achetez maintenant" forState:UIControlStateNormal];
+                    [_rejectbuygems setTitle:@"Annuler" forState:UIControlStateNormal];
+               }
+               else if (languageCode == 3){
+                    
+                    buygemsdesc.text = @">No tienes suficientes Gemas para continuar. ¿Quieres comprar Gemas ahora?";
+                    buygemsHeading.text = @"¡Confirmación!";
+                    
+                    [_acceptbuygems setTitle:@"Comprar" forState:UIControlStateNormal];
+                    [_rejectbuygems setTitle:@"Cancelar" forState:UIControlStateNormal];
+               }
+               else if (languageCode == 4){
+                    
+                    buygemsdesc.text = @"Você não tem Gems suficientes para continuar. Você deseja comprar mais Gems agora?";
+                    buygemsHeading.text = @"Confirmação!";
+                    
+                    [_acceptbuygems setTitle:@"Compre Agora" forState:UIControlStateNormal];
+                    [_rejectbuygems setTitle:@"Cancelar" forState:UIControlStateNormal];               }
           }
           else {
                NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
@@ -964,6 +1008,22 @@
      }
 }
 
+- (IBAction)rejectGemsBuyPressed:(id)sender {
+     
+     appDelegate.friendToBeChalleneged = nil;
+     appDelegate.requestType = nil;
+     [self gameModCanelBtnPressed:nil];
+     
+     _buyGemsView.hidden = true;
+     [_buyGemsView removeFromSuperview];
+}
+
+- (IBAction)acceptGemsBuyPressed:(id)sender {
+     _buyGemsView.hidden = true;
+     [_buyGemsView removeFromSuperview]; [self gmStarsPressed:self];
+     self.tabBarController.selectedIndex = 2;
+     
+}
 - (IBAction)CloseGemsDialog:(id)sender {
      
      [GemsDialogView removeFromSuperview];
@@ -1074,6 +1134,22 @@
      [self.view addSubview:searchingView];
      _loaderIndex = 1;
      timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
+     NSMutableArray *images = [[NSMutableArray alloc] init];
+     for (int i = 0; i < imageNames.count; i++) {
+          [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
+     }
+     
+     opponentProfileImageView.animationImages = images;
+     opponentProfileImageView.animationDuration = 6.0f;
+     [opponentProfileImageView startAnimating];
+     animationTimer= [NSTimer timerWithTimeInterval:1.0
+                                             target:self
+                                           selector:@selector(onTimer)
+                                           userInfo:nil
+                                            repeats:YES];
+     
+     [[NSRunLoop currentRunLoop] addTimer:animationTimer forMode:NSDefaultRunLoopMode];
+     [animationTimer fire];
      
      for(int i = 1; i<5; i++) {
           UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
@@ -1090,6 +1166,15 @@
      sharedManager.socketdelegate = self;
      [sharedManager openSockets];
 }
+-(void)onTimer{
+     [UIView animateWithDuration:1.0 animations:^{
+          opponentProfileImageView.alpha = 0.0;
+     }];
+     [UIView animateWithDuration:1.0 animations:^{
+          opponentProfileImageView.alpha = 1.0;
+     }];
+}
+
 - (void)increaseTimerCount
 {
      if (!isOpponentFound){
@@ -1157,17 +1242,19 @@
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
           
+          _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
           if (languageCode == 0) {
-               _searchOppLbl.text = @"";
+               _searchOppLbl.text = @"VS";
           }else if(languageCode == 1){
-               _searchOppLbl.text = @"";
+               _searchOppLbl.text = VS_1;
           }else if (languageCode == 2 ){
-               _searchOppLbl.text = @"";
+               _searchOppLbl.text =VS_2;
           }else if (languageCode == 3){
-               _searchOppLbl.text = @"";
+               _searchOppLbl.text = VS_3;
           }else if (languageCode == 4){
-               _searchOppLbl.text = @"";
+               _searchOppLbl.text = VS_4;
           }
+
           [searchingView removeFromSuperview];
           appDelegate.friendToBeChalleneged = nil;
           UIView *effectView = [self.view viewWithTag:499];
@@ -1185,17 +1272,18 @@
      if(sharedManager.socketIO.isConnected) {
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
+          _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
           
           if (languageCode == 0) {
-               _searchOppLbl.text = @"";
+               _searchOppLbl.text = @"VS";
           }else if(languageCode == 1){
-               _searchOppLbl.text = @"";
+               _searchOppLbl.text = VS_1;
           }else if (languageCode == 2 ){
-               _searchOppLbl.text = @"";
+               _searchOppLbl.text =VS_2;
           }else if (languageCode == 3){
-               _searchOppLbl.text = @"";
+               _searchOppLbl.text = VS_3;
           }else if (languageCode == 4){
-               _searchOppLbl.text = @"";
+               _searchOppLbl.text = VS_4;
           }
           [searchingView removeFromSuperview];
           appDelegate.friendToBeChalleneged = nil;
@@ -1291,16 +1379,16 @@
                }
                [self.view addSubview:searchingView];
                _loaderIndex = 1;
-               
-               for(int i = 1; i<5; i++) {
-                    UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
-                    if(i == _loaderIndex) {
-                         dot.image = [UIImage imageNamed:@"dotglow.png"];
-                    }
-                    else {
-                         dot.image = [UIImage imageNamed:@"dotblack.png"];
-                    }
-               }
+//               
+//               for(int i = 1; i<5; i++) {
+//                    UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
+//                    if(i == _loaderIndex) {
+//                         dot.image = [UIImage imageNamed:@"dotglow.png"];
+//                    }
+//                    else {
+//                         dot.image = [UIImage imageNamed:@"dotblack.png"];
+//                    }
+//               }
           }
           else {
                
@@ -1410,12 +1498,29 @@
                [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionary];
           }
           else if(flag == 1){
-               
+                [opponentProfileImageView stopAnimating];
+               [animationTimer invalidate
+                ];
                [timer invalidate];
                timer = nil;
                isGameStarted = true;
                //Oponent Found
+               _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
                
+               
+               //_searchOppLbl.text = @"VS";
+               if (languageCode == 0) {
+                    _searchOppLbl.text = @"VS";
+               }else if(languageCode == 1){
+                    _searchOppLbl.text = VS_1;
+               }else if (languageCode == 2 ){
+                    _searchOppLbl.text =VS_2;
+               }else if (languageCode == 3){
+                    _searchOppLbl.text = VS_3;
+               }else if (languageCode == 4){
+                    _searchOppLbl.text = VS_4;
+               }
+
                //Changed by Fiza
                NSString *oppName = [json objectForKey:@"displayName"];
                opponent.text = oppName;

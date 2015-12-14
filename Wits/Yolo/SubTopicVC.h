@@ -35,7 +35,7 @@
      
      IBOutlet UILabel *mainTitlelbl;
      IBOutlet UIImageView *statusView;
-     
+      IBOutlet UIView *buyGemsView;
      
      
      NSMutableArray *subtopicsArray;
@@ -58,6 +58,7 @@
      IBOutlet UITableView *expandView;
      IBOutlet UIView *tutorialView;
      
+ 
      NSString *HowtoPlay;
      NSString *HowWitsStore;
      NSString *HowtoEarnPoints;
@@ -130,6 +131,8 @@
      IBOutlet UILabel *willHelpinEarnMoney;
      BOOL *isDisabled;
      
+      IBOutlet UITextView *buygemsdesc;
+      IBOutlet UILabel *buygemsHeading;
      IBOutlet UIButton *playwithGemsbtn;
      IBOutlet UIImageView *starImage;
      IBOutlet UIImageView *gemImage;
@@ -146,7 +149,7 @@
      NSString *loadingTitle;
      BOOL isChallenegAlreadySelected;
      NSString *challengeID;
-     
+     NSArray *imageNames;
      NSTimer *animationTimer;
 }
 
@@ -187,9 +190,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *playNowBtn;
 @property (weak, nonatomic) IBOutlet UIButton *gmStarsBtn;
 @property (strong, nonatomic) IBOutlet UIView *gameModView;
+
 @property (weak, nonatomic) IBOutlet UIButton *challengeNowBtn;
 @property (weak, nonatomic) IBOutlet UIButton *gmGemButton;
 @property (weak, nonatomic) IBOutlet UILabel *searchOppLbl;
+- (IBAction)rejectGemsBuyPressed:(id)sender;
+- (IBAction)acceptGemsBuyPressed:(id)sender;
 
 - (IBAction)gmGoPressed:(id)sender;
 - (IBAction)gmGemsPressed:(id)sender;
@@ -197,6 +203,8 @@
 - (IBAction)gmPlayNowPressed:(id)sender;
 - (IBAction)challengeNowPressed:(id)sender;
 - (IBAction)gameModCanelBtnPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *acceptbuygems;
+@property (weak, nonatomic) IBOutlet UIButton *rejectbuygems;
 
 #pragma Searching UI Changes
 @property (weak, nonatomic) IBOutlet UIView *searchingLoaderView;

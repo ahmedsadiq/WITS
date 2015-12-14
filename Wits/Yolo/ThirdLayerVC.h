@@ -114,7 +114,7 @@
      BOOL isGameStarted;
      IBOutlet UIButton *backBtn;
      
-     
+      NSArray *imageNames;
      //Gems and Stars
      
      IBOutlet UIView *GemsDialogView;
@@ -129,6 +129,9 @@
      IBOutlet UILabel *willhelpinRanking;
      IBOutlet UILabel *willHelpinEarnMoney;
      
+     IBOutlet UITextView *buygemsdesc;
+     IBOutlet UILabel *buygemsHeading;
+     
      IBOutlet UIImageView *starimg2;
      IBOutlet UIImageView *starImage;
      IBOutlet UIImageView *gemImage;
@@ -137,6 +140,7 @@
      BOOL isChallenge;
      BOOL *isDisabled;
      NSString *requestType;
+     NSTimer *animationTimer;
      
 #pragma New UI
      int indexCounter;
@@ -182,7 +186,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *challengeNowBtn;
 @property (weak, nonatomic) IBOutlet UIButton *gmGemButton;
 @property (weak, nonatomic) IBOutlet UILabel *searchOppLbl;
-
+@property (strong, nonatomic)  IBOutlet UIView *buyGemsView;
+@property (weak, nonatomic) IBOutlet UIButton *acceptbuygems;
+@property (weak, nonatomic) IBOutlet UIButton *rejectbuygems;
 - (IBAction)gmGoPressed:(id)sender;
 - (IBAction)gmGemsPressed:(id)sender;
 - (IBAction)gmStarsPressed:(id)sender;

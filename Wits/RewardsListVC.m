@@ -580,7 +580,7 @@
           claim = CLAIM;
      }
      else if(languageCode == 1 ) {
-          searchField.contentVerticalAlignment = UIControlContentHorizontalAlignmentLeft;
+          //searchField.contentVerticalAlignment = UIControlContentHorizontalAlignmentCenter;
           lblRewards.text = REWARDS_1;
           LblCograts.text = COMGRATULATIONS_1;
           buyAddonLbl.text = REWARD_INSTRUCTION_1;

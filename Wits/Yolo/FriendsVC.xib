@@ -268,7 +268,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenge For Gems" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="wk5-3u-bbj">
-                    <rect key="frame" x="11" y="240" width="140" height="30"/>
+                    <rect key="frame" x="15" y="240" width="140" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                     <color key="textColor" red="0.71764705882352942" green="0.84705882352941175" blue="1" alpha="1" colorSpace="calibratedRGB"/>

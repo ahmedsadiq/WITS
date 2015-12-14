@@ -335,7 +335,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
                                     <state key="normal" title="SIGN UP" backgroundImage="btnbg.png">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <state key="selected" backgroundImage="btnbgpressed.png"/>

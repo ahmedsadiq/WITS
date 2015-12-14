@@ -8,8 +8,12 @@
             <connections>
                 <outlet property="GemsDialogView" destination="cNR-qp-NaP" id="M0b-O2-uXa"/>
                 <outlet property="PlayNowLabel" destination="XLZ-QF-deR" id="Tan-en-vJL"/>
+                <outlet property="acceptbuygems" destination="nM5-lg-gOJ" id="bbo-B8-BKF"/>
                 <outlet property="backBtn1" destination="rso-ti-UNu" id="B6L-dO-Kfh"/>
                 <outlet property="backBtn2" destination="trg-g8-4uA" id="Tf2-eZ-dcD"/>
+                <outlet property="buyGemsView" destination="S9c-yh-rVA" id="9t0-1T-H2M"/>
+                <outlet property="buygemsHeading" destination="HCq-Hl-HYV" id="Xlz-Qx-5Df"/>
+                <outlet property="buygemsdesc" destination="Ksp-lT-EAZ" id="5Ad-dD-Sua"/>
                 <outlet property="buynowlabel" destination="pkQ-Hh-P9r" id="OBg-df-g3y"/>
                 <outlet property="challengeAFriend" destination="SJb-LQ-puS" id="zqH-16-1rJ"/>
                 <outlet property="challengeNowBtn" destination="pW9-Gb-xOZ" id="d3s-C4-1Uz"/>
@@ -32,6 +36,7 @@
                 <outlet property="opponentProfileImageView" destination="pEb-oe-JFh" id="ALT-1r-qPg"/>
                 <outlet property="playNowBtn" destination="Kh9-oL-Tlk" id="1rf-4e-hEj"/>
                 <outlet property="playwithGemsbtn" destination="pTD-kg-1US" id="Ooz-rA-VGA"/>
+                <outlet property="rejectbuygems" destination="eMb-8y-GGB" id="oEv-xo-KXB"/>
                 <outlet property="searchBg" destination="Fea-ps-nc5" id="Ksh-NZ-1K6"/>
                 <outlet property="searchDisplayController" destination="sCj-0c-g5m" id="VF2-uu-Z9v"/>
                 <outlet property="searchOppLbl" destination="R1H-2k-r7U" id="GZ8-98-DBq"/>
@@ -479,6 +484,77 @@
             <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="1459" y="-403"/>
         </view>
+        <view contentMode="scaleToFill" id="S9c-yh-rVA">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbg.png" id="1c3-Fw-E0T">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="DD7-QD-pcC">
+                    <rect key="frame" x="14" y="159" width="292" height="250"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialogbg.png" id="9R5-wB-pbD">
+                            <rect key="frame" x="0.0" y="20" width="292" height="197"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nM5-lg-gOJ">
+                            <rect key="frame" x="8" y="166" width="135" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                            <state key="normal" title="Accept" backgroundImage="blackBar.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="acceptGemsBuyPressed:" destination="-1" eventType="touchUpInside" id="hR2-jE-jq2"/>
+                            </connections>
+                        </button>
+                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="You recieved a new Friend Request" textAlignment="center" id="Ksp-lT-EAZ">
+                            <rect key="frame" x="9" y="90" width="274" height="58"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eMb-8y-GGB">
+                            <rect key="frame" x="148" y="166" width="135" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Reject" backgroundImage="blackBar.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="rejectGemsBuyPressed:" destination="-1" eventType="touchUpInside" id="eu5-6Z-icY"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="deH-oD-Pf7">
+                            <rect key="frame" x="260" y="8" width="24" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="closeDialog.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="HCq-Hl-HYV">
+                            <rect key="frame" x="18" y="45" width="255" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="1254" y="-980"/>
+        </view>
     </objects>
     <resources>
         <image name="Newchallengenow.png" width="109" height="88"/>
@@ -486,11 +562,13 @@
         <image name="Newplaynowglow.png" width="115" height="86"/>
         <image name="ame1.png" width="168" height="184"/>
         <image name="ame1_glow.png" width="88" height="90"/>
+        <image name="blackBar.png" width="220" height="34"/>
         <image name="blueBar.png" width="91" height="31"/>
         <image name="btnbg_gameMod.png" width="290" height="72"/>
         <image name="btnbgpressed.png" width="484" height="98"/>
         <image name="buynowlbl.png" width="67" height="66"/>
         <image name="close.png" width="56" height="56"/>
+        <image name="closeDialog.png" width="31" height="31"/>
         <image name="crossbtn.png" width="128" height="128"/>
         <image name="dialogbg.png" width="487" height="371"/>
         <image name="done_btn.png" width="65" height="25"/>

@@ -116,7 +116,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      if ([requestType isEqualToString:@"gems"]) {
           selfgameTypeimg.image = [UIImage imageNamed:@"ame1.png"];
           oppGametypeimg.image = [UIImage imageNamed:@"ame1.png"];
-          resultGametypeimg.image = [UIImage imageNamed:@"gemstore.png"];
+          resultGametypeimg.image = [UIImage imageNamed:@"gemnotinstore.png"];
           _gemRight.image = [UIImage imageNamed:@"gemstore.png"];
           _gemLeft.image = [UIImage imageNamed:@"gemstore.png"];
           if([[SharedManager getInstance]._userProfile.cashablePoints intValue] < 70) {
@@ -184,7 +184,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      
      [self initData];
      [self initViews];
-    
+     
      NSArray * name_Player = [[SharedManager getInstance]._userProfile.display_name componentsSeparatedByString:@" "];
      NSArray * name_opponent = [_challenge.opponentDisplayName componentsSeparatedByString:@" "];
      //topBarOpponentName.text = _challenge.opponentDisplayName;
@@ -327,7 +327,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                
           } onError:^(NSError* error) {
                //////Changed by Fiza //////
-               selfProfileImg.image= [UIImage imageNamed:@"Icon_120.png"];
+               selfProfileImg.image= [UIImage imageNamed:@"personal.png"];
                [selfProfileImg roundImageCorner];
           }];
           
@@ -358,7 +358,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           
      } onError:^(NSError* error) {
           /////////// Changed by Fiza ////////
-          opponentProfileImg.image= [UIImage imageNamed:@"Icon_120.png"];
+          opponentProfileImg.image= [UIImage imageNamed:@"personal.png"];
           [opponentProfileImg roundImageCorner];
      }];
      
@@ -1555,7 +1555,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                int receiverTotalPoints = [[mainDict objectForKey:@"user_score"] intValue];
                int senderTotalPoints = [[mainDict objectForKey:@"opponent_score"] intValue];
                
-               if (receiverTotalPoints > senderTotalPoints)
+               if (receiverTotalPoints > senderTotalPoints && [val intValue] > 500 )
                {
                     //resultLbl.textColor = [UIColor greenColor];
                     
@@ -1588,6 +1588,26 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                     
                     youWinTitle.hidden = false;
                     youLooseTitle.hidden = true;
+               }else if(receiverTotalPoints > senderTotalPoints && [val intValue] < 500 )
+               {
+                    if (languageCode == 0) {
+                   
+                         resultLbl.text = @"Congrats! You are doing great. Let\'s play more to win exciting prizes! You need more Gems! Go go go!";
+                    }else if (languageCode == 1){
+                         
+                         resultLbl.text = @"مبروك ! ما تقوم به عظيم . انظر الى قائمة الجوائز لتكن لك ..  العب أكثر...و للفوز بها ...انت بحاجة الى مزيد من الأحجار الكريمة ! إذهب! إذهب! إذهب! ";
+                         
+                    }else if (languageCode == 2){
+                         
+                         resultLbl.text = @"Félicitations! Êtes-vous un ours très bien. Nous allons jouer plus pour gagner de magnifiques prix! Vous avez besoin de plus Gems! Allez Allez Allez!";
+                    }else if (languageCode == 3){
+                         
+                         resultLbl.text = @"¡Enhorabuena! ¡Lo estás haciendo genial ¡Juguemos más para ganar fabulosos premios! ¡Necesitas más Gemas! ¡Vamos, vamos!";
+                    }else if (languageCode == 4){
+                         
+                         resultLbl.text = @"Parabéns! Muito bem! Vamos jogar mais para ganhar grandes prêmios! Você precisa de mais Gems! Vamos lá!";
+                    }
+
                }
                else{
                     if (receiverTotalPoints<senderTotalPoints || receiverTotalPoints < 0)
@@ -2283,7 +2303,6 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                _searchingLoaderView.hidden = true;
                searchingOpponentLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
                searchingOpponentLbl.text = @"VS";
-               //               _searchOppLbl.text = @"";
                [timer invalidate];
                timer = nil;
                
