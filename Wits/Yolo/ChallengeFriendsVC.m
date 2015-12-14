@@ -168,6 +168,8 @@
      
      [postParams setObject:@"showFriendsForChellenge" forKey:@"method"];
      [postParams setObject:[SharedManager getInstance].userID forKey:@"user_id"];
+  
+
      [postParams setObject:[SharedManager getInstance].sessionID forKey:@"session_id"];
      MKNetworkOperation *op = [engine operationWithURLString:SERVER_URL params:postParams httpMethod:@"POST"];
      

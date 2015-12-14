@@ -50,7 +50,7 @@
 {
      [super viewDidLoad];
      user_name_id = @"";
-     NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+    language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
      [self.navigationController setNavigationBarHidden:YES];
      
@@ -1128,6 +1128,7 @@
      [postParams setObject:birthday forKey:@"birthday"];
      [postParams setObject:profileImageUrl forKey:@"profile_image"];
      [postParams setObject:user_name_id forKey:@"user_name_id"];
+     [postParams setObject:language forKey:@"language"];
      if (hasSession)
           [postParams setObject:@"true" forKey:@"has_session"];
      else
@@ -1998,7 +1999,7 @@
      MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
      
      NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
-     
+      [postParams setObject:language forKey:@"language"];
      [postParams setObject:@"userLogin" forKey:@"method"];
      [postParams setObject:emailTxt.text forKey:@"email"];
      [postParams setObject:pswdTxt.text forKey:@"password"];
@@ -2203,7 +2204,7 @@
      
      [postParams setObject:@"userPasswordReset" forKey:@"method"];
      [postParams setObject:_resetPswdEmail.text forKey:@"email"];
-     
+     [postParams setObject:language forKey:@"language"];
      MKNetworkOperation *op = [engine operationWithURLString:SERVER_URL params:postParams httpMethod:@"POST"];
      
      [op onCompletion:^(MKNetworkOperation *completedOperation) {

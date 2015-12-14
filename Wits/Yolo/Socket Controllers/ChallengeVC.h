@@ -60,6 +60,7 @@
      int currentResponseIndex;
      BOOL isWrongAns;
      
+      IBOutlet UILabel *PlayAgainLabel;
      BOOL isQuestionAnswered;
      BOOL isGameEnd;
      BOOL isOptionSelected;

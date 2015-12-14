@@ -434,7 +434,7 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helpshift.png" id="7DR-Hd-tYq">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helpshift_ipad.png" id="7DR-Hd-tYq">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -467,7 +467,7 @@
         <image name="done_btn.png" width="65" height="25"/>
         <image name="header.png" width="320" height="43"/>
         <image name="header_bar.png" width="320" height="1"/>
-        <image name="helpshift.png" width="540" height="960"/>
+        <image name="helpshift_ipad.png" width="540" height="720"/>
         <image name="messagebg.png" width="493" height="137"/>
         <image name="newbg.png" width="540" height="960"/>
         <image name="pinkBar.png" width="280" height="40"/>

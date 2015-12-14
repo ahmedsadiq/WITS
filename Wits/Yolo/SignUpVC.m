@@ -1061,7 +1061,7 @@
      NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
      
      [postParams setObject:@"userSignUP" forKey:@"method"];
-     
+     [postParams setObject:language forKey:@"language"];
      [postParams setObject:displayNameField.text forKey:@"display_name"];
      [postParams setObject:emailField.text forKey:@"email"];
      [postParams setObject:passwordField.text forKey:@"password"];

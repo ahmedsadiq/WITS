@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WITS</string>
+    <string name="action_settings">Configuración</string>
+    <string name="login">INICIAR</string>
+    <string name="register_string">REGISTRO</string>
+    <string name="password_string">Escribe contraseña</string>
+    <string name="signup_imageview_edit">Editar</string>
+    <string name="signup_displaynameedittext">Nombre en pantalla</string>
+    <string name="signup_birthday_et">Fecha nacimiento</string>
+    <string name="signup_email_et">Email</string>
+    <string name="password">Contraseña</string>
+    <string name="forgot">Olvidado </string>
+    <string name="Sign_up_location">Aproximamos tu ubicación para que puedas ver tu rango en tu país. Al iniciar sesión, estás de acuerdo con los Términos de Servicio y Política de Privacidad</string>
+    <string name="error_connection">Revisa tu configuración de conexión a Internet.</string>
+    <string name="error_mail_text">¡Ajusta el formato correcto de email!</string>
+    <string name="error_empty_text">¡Es necesario rellenar este campo!</string>
+    <string name="reset_password">Restablecer contraseña</string>
+    <string name="error_password_length">La contraseña debe contener un mínimo de 6 caracteres</string>
+    <string name="facebook_app_id">1524399421105901</string>
+    <string name="login_facebook_string">Iniciar sesión con Facebook</string>
+    <string name="unknown_person">Desconocido</string>
+    <string name="actionsheet_take_picture">Subir foto</string>
+    <string name="actionsheet_file_string">Desde archivo</string>
+    <string name="avatar_string">Avatar</string>
+    <string name="error_on_image">Imagen no seleccionada</string>
+    <string name="home_string">Inicio</string>
+    <string name="error_login_session">Ya has iniciado sesión desde otro dispositivo. ¿Quieres cerrar sesión en todos los dispositivos e iniciarla aquí?</string>
+    <string name="yes_str">Sí</string>
+    <string name="no_str">No</string>
+    <string name="warning_str">¡Ha ocurrido un error!</string>
+
+        <integer-array name="menuicons">
+        <item>@drawable/home</item>
+<!--
+        <item>@drawable/topics</item>
+-->
+        <item>@drawable/friend_icon</item>
+<!--
+        <item>@drawable/calendar</item>
+-->
+        <item>@drawable/ic_launcher</item>
+        <!-- <item>@drawable/comments</item> -->
+        <!-- <item>@drawable/achievements</item> -->
+<!--
+        <item>@drawable/store</item>
+-->
+        <item>@drawable/settings</item>
+        <item>@drawable/icon_facebook_active</item>
+<!--
+        <item>@drawable/logout_signout_exit</item>
+-->
+    </integer-array>
+	
+    <string name="play_string">¡Jugar ahora!</string>
+    <string name="home_cate_str">CATEGORÍAS TEMÁTICAS</string>
+	<string name="cate_str">Categorías</string>
+    <string name="topic_str">Temas</string>
+    <string name="challenge_strr">Desafío</string>
+    <string name="ranking_str">Rangos</string>
+    <string name="discussion_str">Mis Amigos</string>
+    <string name="sub_topic_search_hint">Buscar categoría</string>
+    <string name="sub_topic_search_hint1">Buscar tema</string>
+    <string name="all_topics_str">Jugar ahora</string>
+    <string name="sub_topic_str">Sub-temas</string>
+    <string name="new_content_str">Añadir contenido</string>
+    <string name="recommended_str">Recomendado</string>
+    <string name="animation_desc">Animaciones</string>
+    <string name="cancel_str">Cancelar</string>
+    <string name="addPayment">Añadir método de pago</string>
+    <string name="paymentMethods">Métodos de pago</string>
+    <string name="buy_more_str">Compra más Puntos</string>
+    <string name="submit_str">Enviar</string>
+    <string name="cvc">CVC</string>
+    <string name="cardNumber_str">Número de tarjeta</string>
+    <string name="select_month">¡Selecciona un mes!</string>
+    <string name="select_year">¡Selecciona un año!</string>
+    <string name="Title">Título</string>
+    <string name="gender">Sexo</string>
+    <string name="about">Sobre</string>
+    <string name="city">Ciudad</string>
+    <string name="country">País</string>
+    <string name="update">Actualización</string>
+
+    <string-array name="spinnerItems">
+        <item>Hombre</item>
+        <item>Mujer</item>
+    </string-array>
+    <string-array name="contactItems">
+        <item>Problema técnico</item>
+        <item>Comentarios generales</item>
+    </string-array>
+    <string-array name="cardItems">
+        <item>Visa</item>
+        <item>MasterCard</item>
+        <item>Discover</item>
+        <item>Amex</item>
+        <item>Maestro</item>
+        <item>Solo</item>
+    </string-array>
+    <string-array name="languagesArray">
+        <item>INGLÉS (US)</item>
+        <item>ÁRABE (Ar)</item>
+        <item>FRANCÉS (Fr)</item>
+        <item>ESPAÑOL (Es)</item>
+        <item>PORTUGUÉS (Pt)</item>
+    </string-array>
+
+    <string name="general">General</string>
+    <string name="music">Música</string>
+    <string name="soundeffects">Efectos de sonido</string>
+    <string name="vibration">Vibración</string>
+    <string name="Privacymode">Modo de privacidad</string>
+    <string name="push_notification">Notificaciones</string>
+    <string name="challenge_notification">Notificaciones del Desafío</string>
+    <string name="chat_notifications">Notificaciones del Chat</string>
+    <string name="follower">Seguidor</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="back">Volver</string>
+    <string name="search_oppenent_str">Buscando oponente</string>
+    <string name="surrender_str">¿Seguro que quieres rendirte?</string>
+    <string name="error_connection_lost_str">¡Conexión con el servidor perdida!</string>
+    <string name="rounds_str">Rondas</string>
+    <string name="won_str">¡Has ganado!</string>
+    <string name="loss_str">¡Has perdido!</string>
+    <string name="draw_str">¡Empate!</string>
+    <string name="purchase_str">Comprar</string>
+    <string name="cashout_str">Convertir pago</string>
+    <string name="search_friends_str">Buscar amigo</string>
+	<string name="search_rewards_str">Buscar recompensa</string>
+    <string name="send_str">Enviar</string>
+    <string name="friend_str">Añadir amigo</string>
+    <string name="unfriend_str">Cancelar amistad</string>
+    <string name="pending_str">Pendiente</string>
+    <string name="accept_str">Aceptar</string>
+    <string name="no_record_str">¡No se han encontrado registros!</string>
+    <string name="challenge_str">Desafía a un amigo</string>
+    <string name="no_friend_str">No tienes amigos.</string>
+    <string name="no_oppnent_str">Oponente no encontrado, vuelva e inténtalo de nuevo.</string>
+    <string name="accept_challenge_str">Pulsa para aceptar desafío.</string>
+    <string name="no_chat_str">No tienes mensajes.</string>
+    <string name="sent_msg_str">¡Mensaje enviado!</string>
+    <string name="delete_str">Eliminar</string>
+    <string name="create_str">Crear</string>
+    <string name="profile_str">Perfil</string>
+    <string name="updated_str">¡Actualizado!</string>
+    <string name="rematch_str">Revancha</string>
+    <string name="result_str">Resultados</string>
+    <string name="select_language_str">Elige tu idioma</string>
+    <string name="save_str">Guardar</string>
+    <string name="change_language">Cambiar idioma</string>
+    <string name="selection_language">Selección del idioma</string>
+    <string name="new_topics">Nuevos temas</string>
+    <string name="recommended_social">Te recomendamos usar Facebook o Google para poder jugar contra tus amigos.</string>
+    <string name="signin_facebook_text">Facebook</string>
+    <string name="signin_twitter">Twitter</string>
+    <string name="or_text">O</string>
+    <string name="signup_email">Registro con email</string>
+    <string name="already_have_account_text">¿Ya tienes una cuenta?</string>
+    <string name="already_have_account_text1">Inicia sesión ahora</string>
+    <string name="signup_text">Registro</string>
+    <string name="store_str">Wits Tienda</string>
+    <string name="achievement_str">Rangos</string>
+    <string name="messages_str">Mis mensajes</string>
+    <string name="setting_str">Configuración</string>
+	<string name="tutorial_str">Tutorial</string>
+    <string name="vs_str">Vs</string>
+    <string name="latest_str">Últimas</string>
+    <string name="back_str">Volver</string>
+    <string name="loading_str">Cargando…</string>
+    <string name="chat_str">Chat</string>
+    <string name="online_str">Conectado</string>
+    <string name="offline_str">Desconectado</string>
+    <string name="done_str">Listo</string>
+<!--
+    <string name="mail_sent">Mensaje enviado.</string>
+-->
+    <string name="paypal_payment_str">PayPal</string>
+    <string name="transfer_email">Nombre / ID email del destinatario</string>
+    <string name="transfer_points">Cantidad</string>
+    <string name="transfer_send">Enviar</string>
+	<string name="referral_code">Código de referencia</string>
+    <string name="enter_referral_code">Introducir código de referencia</string>
+    <string name="enter_email">Introducir ID email</string>
+    <string name="enter_amount">Introducir cantidad</string>
+    <string name="referal_entered">Código de referencia publicado con éxito</string>
+    <string name="referal_error">Error al introducir el código de referencia, ¡inténtalo más tarde!</string>
+    <string name="rankings">Rangos</string>
+    <string name="history">Historial</string>
+   
+    <string-array name="menuitems">
+        <item>Inicio</item>
+        <item>Categorías</item>
+        <item>Amigos</item>
+        <item>Historial</item>
+        <item>Mensajes</item>
+        <!-- <item>Discussions</item> -->
+        <item>Rangos</item>
+        <item>WITS Tienda</item>
+        <item>Configuración</item>
+        <item>Transferir Gemas</item>
+        <item>Contacto</item>
+        <item>Cerrar sesión</item>
+    </string-array>
+    
+    <string name="cashable">Se puede cobrar</string>
+    <string name="non_cashable">No se puede cobrar</string>
+    <string name="verify_account">¡Verifica tu cuenta!</string>
+    <string name="title_activity_cashable_points">Actividad puntos cobro</string>
+    <string name="enter_name_str">Introducir nombre</string>
+    <string name="enter_email_paypal_str">Introducir email de PayPal</string>
+    <string name="enter_email_skril_str">Introducir email de Skrill</string>
+    <string name="enter_contact_email_str">Introducir email de contacto</string>
+    <string name="enter_contact_no_str">Introducir número de contacto</string>
+    <string name="enter_address_str">Introducir dirección</string>
+    <string name="enter_bank_title_str">Nombre banco</string>
+	<string name="enter_account_no_str">Número de cuenta bancaria</string>
+    <string name="enter_swift_Code_str">Código SWIFT</string>
+    <string name="enter_iban_no_str">IBAN (Opcional)</string>
+    <string name="enter_bank_name_str">Nombre del banco</string>
+    <string name="enter_bank_loc_str">Dirección del banco</string>
+    <string name="please_wait">Por favor espera</string>
+    <string name="Sending_email">Enviando email</string>
+    <string name="tutorial_btn_text">Tutorial</string>
+    <string name="tutorial_des_title">El conocimiento es dinero, ¡conoce más, gana más!</string>
+    <string name="tutorial_main_des1">La aplicación Wits hará tu sueño realidad, inicia sesión y completa 10 preguntas ingeniosas de cualquier tema que domines.</string>
+
+	<string name="tutorial_main_des2">Wits te hará ganar dinero real de la forma más fácil y segura. </string>
+    <string name="how_to_play">Cómo jugar</string>
+    <string name="how_to_use_store">Cómo utilizar WITS Tienda</string>
+    <string name="title_activity_tutorial_detailed_fragment">Tutorial fragmento detallado</string>
+    <string name="add_ques">Añadir pregunta</string>
+    <string name="enter_ques">Introducir pregunta</string>
+    <string name="enter_ans">Introducir respuesta</string>
+    <string name="how_to_play_str">Instrucciones</string>
+    <string name="signup_username_et">Nombre de usuario</string>
+    <string name="error_username_text">¡Introducir nombre de usuario!</string>
+    <string name="signup_email_or_text">Introducir email o nombre de usuario</string>
+    <string name="play_again">Jugar de nuevo</string>
+    <string name="return_home">Volver a Inicio</string>
+
+	<string-array name="CountryCodes">
+        <item>93,AF</item>
+        <item>355,AL</item>
+        <item>213,DZ</item>
+        <item>376,AD</item>
+        <item>244,AO</item>
+        <item>672,AQ</item>
+        <item>54,AR</item>
+        <item>374,AM</item>
+        <item>297,AW</item>
+        <item>61,AU</item>
+        <item>43,AT</item>
+        <item>994,AZ</item>
+        <item>973,BH</item>
+        <item>880,BD</item>
+        <item>375,BY</item>
+        <item>32,BE</item>
+        <item>501,BZ</item>
+        <item>229,BJ</item>
+        <item>975,BT</item>
+        <item>591,BO</item>
+        <item>387,BA</item>
+        <item>267,BW</item>
+        <item>55,BR</item>
+        <item>673,BN</item>
+        <item>359,BG</item>
+        <item>226,BF</item>
+        <item>95,MM</item>
+        <item>257,BI</item>
+        <item>855,KH</item>
+        <item>237,CM</item>
+        <item>1,CA</item>
+        <item>238,CV</item>
+        <item>236,CF</item>
+        <item>235,TD</item>
+        <item>56,CL</item>
+        <item>86,CN</item>
+        <item>61,CX</item>
+        <item>61,CC</item>
+        <item>57,CO</item>
+        <item>269,KM</item>
+        <item>242,CG</item>
+        <item>243,CD</item>
+        <item>682,CK</item>
+        <item>506,CR</item>
+        <item>385,HR</item>
+        <item>53,CU</item>
+        <item>357,CY</item>
+        <item>420,CZ</item>
+        <item>45,DK</item>
+        <item>253,DJ</item>
+        <item>670,TL</item>
+        <item>593,EC</item>
+        <item>20,EG</item>
+        <item>503,SV</item>
+        <item>240,GQ</item>
+        <item>291,ER</item>
+        <item>372,EE</item>
+        <item>251,ET</item>
+        <item>500,FK</item>
+        <item>298,FO</item>
+        <item>679,FJ</item>
+        <item>358,FI</item>
+        <item>33,FR</item>
+        <item>689,PF</item>
+        <item>241,GA</item>
+        <item>220,GM</item>
+        <item>995,GE</item>
+        <item>49,DE</item>
+        <item>233,GH</item>
+        <item>350,GI</item>
+        <item>30,GR</item>
+        <item>299,GL</item>
+        <item>502,GT</item>
+        <item>224,GN</item>
+        <item>245,GW</item>
+        <item>592,GY</item>
+        <item>509,HT</item>
+        <item>504,HN</item>
+        <item>852,HK</item>
+        <item>36,HU</item>
+        <item>91,IN</item>
+        <item>62,ID</item>
+        <item>98,IR</item>
+        <item>964,IQ</item>
+        <item>353,IE</item>
+        <item>44,IM</item>
+        <item>972,IL</item>
+        <item>123,AX</item>
+        <item>39,IT</item>
+        <item>225,CI</item>
+        <item>81,JP</item>
+        <item>962,JO</item>
+        <item>7,KZ</item>
+        <item>254,KE</item>
+        <item>686,KI</item>
+        <item>965,KW</item>
+        <item>996,KG</item>
+        <item>856,LA</item>
+        <item>371,LV</item>
+        <item>961,LB</item>
+        <item>266,LS</item>
+        <item>231,LR</item>
+        <item>218,LY</item>
+        <item>423,LI</item>
+        <item>370,LT</item>
+        <item>352,LU</item>
+        <item>853,MO</item>
+        <item>389,MK</item>
+        <item>261,MG</item>
+        <item>265,MW</item>
+        <item>60,MY</item>
+        <item>960,MV</item>
+        <item>223,ML</item>
+        <item>356,MT</item>
+        <item>692,MH</item>
+        <item>222,MR</item>
+        <item>230,MU</item>
+        <item>262,YT</item>
+        <item>52,MX</item>
+        <item>691,FM</item>
+        <item>373,MD</item>
+        <item>377,MC</item>
+        <item>976,MN</item>
+        <item>382,ME</item>
+        <item>212,MA</item>
+        <item>258,MZ</item>
+        <item>264,NA</item>
+        <item>674,NR</item>
+        <item>977,NP</item>
+        <item>31,NL</item>
+        <item>599,AN</item>
+        <item>687,NC</item>
+        <item>64,NZ</item>
+        <item>505,NI</item>
+        <item>227,NE</item>
+        <item>234,NG</item>
+        <item>683,NU</item>
+        <item>850,KP</item>
+        <item>47,NO</item>
+        <item>968,OM</item>
+        <item>92,PK</item>
+        <item>680,PW</item>
+        <item>507,PA</item>
+        <item>675,PG</item>
+        <item>595,PY</item>
+        <item>51,PE</item>
+        <item>63,PH</item>
+        <item>870,PN</item>
+        <item>48,PL</item>
+        <item>351,PT</item>
+        <item>1,PR</item>
+        <item>974,QA</item>
+        <item>40,RO</item>
+        <item>7,RU</item>
+        <item>250,RW</item>
+        <item>590,BL</item>
+        <item>685,WS</item>
+        <item>378,SM</item>
+        <item>239,ST</item>
+        <item>966,SA</item>
+        <item>221,SN</item>
+        <item>381,RS</item>
+        <item>248,SC</item>
+        <item>232,SL</item>
+        <item>65,SG</item>
+        <item>421,SK</item>
+        <item>386,SI</item>
+        <item>677,SB</item>
+        <item>252,SO</item>
+        <item>27,ZA</item>
+        <item>82,KR</item>
+        <item>34,ES</item>
+        <item>94,LK</item>
+        <item>290,SH</item>
+        <item>508,PM</item>
+        <item>249,SD</item>
+        <item>597,SR</item>
+        <item>268,SZ</item>
+        <item>46,SE</item>
+        <item>41,CH</item>
+        <item>963,SY</item>
+        <item>886,TW</item>
+        <item>992,TJ</item>
+        <item>255,TZ</item>
+        <item>66,TH</item>
+        <item>228,TG</item>
+        <item>690,TK</item>
+        <item>676,TO</item>
+        <item>216,TN</item>
+        <item>90,TR</item>
+        <item>993,TM</item>
+        <item>688,TV</item>
+        <item>971,AE</item>
+        <item>256,UG</item>
+        <item>44,GB</item>
+        <item>380,UA</item>
+        <item>598,UY</item>
+        <item>1,US</item>
+        <item>998,UZ</item>
+        <item>678,VU</item>
+        <item>39,VA</item>
+        <item>58,VE</item>
+        <item>84,VN</item>
+        <item>681,WF</item>
+        <item>967,YE</item>
+        <item>260,ZM</item>
+        <item>263,ZW</item>
+    </string-array>
+	
+	<string name="opp_not_available">El oponente no está disponible en este momento</string>
+    <string name="opp_not_available_title">Oponente no disponible</string>
+    <string name="opp_away">El oponente está ausente</string>
+    <string name="session_invalid_title">Ha ocurrido un error</string>
+    <string name="surrender_title">Salir del juego</string>
+    <string name="sign_in_error">Ya has iniciado sesión</string>
+    <string name="round_text">Ronda</string>
+    <string name="last_round">Última ronda</string>
+<!--
+    <string name="silver_medal_text">KO</string>
+-->
+    <string name="bronze_medal_text">¡Correcto! Estuvo cerca</string>
+    <string name="opp_answered_before_text">Tu oponente contestó antes</string>
+    <string name="time_up_text">Se ha acabado el tiempo</string>
+    <string name="wrong_ans_text">¡Respuesta equivocada! Esperando la respuesta del oponente.</string>
+    <string name="you_win_text">HAS GANADO</string>
+    <string name="draw_text">¡Empate!</string>
+    <string name="lost_text">Más suerte la próxima vez</string>
+    <string name="status_text">Estatus</string>
+    <string name="time_text">Tiempo</string>
+    <string name="points_text">Puntos</string>
+    <string name="private_info_text">INFORMACIóN PRIVADA</string>
+    <string name="verified_text">Verificado</string>
+    <string name="not_verified_text">No verificado</string>
+    <string name="username_text">Nombre de usuario</string>
+    <string name="invite_email_text1">Te ha invitado a jugar WITS:</string>
+    <string name="invite_email_text2">, el código de referencia del usuario es:</string>
+    <string name="invite_fb_text1">Hola, juguemos a WITS. Mi código de referencia es </string>
+    <string name="invite_fb_des">WITS es el galardonado juego de trivia multijugador y una comunidad de fans.</string>
+    <string name="unfriend_confirmation_text">¿Seguro quieres eliminar a esa persona?</string>
+    <string name="ok_text">OK</string>
+    <string name="cancel_text">Cancelar</string>
+    <string name="general_feedback_text">Comentarios generales</string>
+    <string name="technical_issue_text">Problema técnico</string>
+    <string name="notification_added_text"> te ha añadido!</string>
+    <string name="notification_challenge_text"> te ha desafiado!</string>
+    <string name="notification_message_text"> te ha enviado un mensaje</string>
+    <string name="notification_request_text">Solicitud de amistad</string>
+    <string name="join_text">Unirse</string>
+    <string name="view_text">Ver</string>
+    <string name="return_home_text">Volver a Inicio</string>
+    <string name="play_again_text">Jugar de nuevo</string>
+    <string name="enter_email_username_text">Introducir email o nombre de usuario</string>
+    <string name="enter_username">Introducir nombre de usuario</string>
+    <string name="sending_email_text">Enviando email</string>
+    <string name="please_wait_text">Por favor espera</string>
+    <string name="bank_loc_text">Ubicación del banco</string>
+    <string name="bank_name_text">Nombre del banco</string>
+    <string name="iban_text">IBAN (Opcional)</string>
+    <string name="swift_code_text">Código Swift</string>
+    <string name="account_no_text">Número de cuenta</string>
+    <string name="bank_title">Título del banco</string>
+    <string name="enter_address">Introducir dirección</string>
+    <string name="enter_contact_no">Introducir número de teléfono</string>
+    <string name="enter_contact_email">Introducir email</string>
+    <string name="email_skril">Introducir email de Skrill</string>
+    <string name="email_paypal">Introducir email de PayPal</string>
+    <string name="error_referral">Error al introducir el código de referencia, ¡inténtalo más tarde!</string>
+    <string name="referral_posted">Código de referencia introducido con éxito</string>
+    <string name="quit_game">Salir del juego</string>
+    <string name="warning_title">Ha ocurrido un error</string>
+    <string name="add_friend">Añadir como amigo</string>
+    <string name="no_account_setup">CUENTA SIN CONFIGURAR</string>
+    <string name="total_text">Total</string>
+    <string name="http_error">Ha ocurrido un error, inténtalo más tarde</string>
+    <string name="http_error1">Revisa tu configuración de conexión a Internet.</string>
+    <string name="ERROR404">Revisa tu configuración de conexión a Internet.</string>
+    <string name="ERROR1">Error de protocolo</string>
+    <string name="ERROR2">Error de análisis</string>
+    <string name="ERROR3">Error de codificación</string>
+    <string name="ERROR4">Tiempo de espera de la conexión</string>
+    <string name="my_account">Mi Cuenta</string>
+    <string name="title_activity_inapp_billing">Actividad Facturación dentro de la App</string>
+    <string name="cashout_success">Gracias por hacer la conversión, hemos recibido tus detalles y enviaremos [AMOUNT]$ a tu cuenta. Recibirás el dinero en 3-4 días laborables y todas las comisiones necesarias para completar la transferencia se deducirán del usuario .</string>
+    <string name="rank_beginner">Principiante</string>
+    <string name="rank_expert">Experto</string>
+    <string name="rank_advance">Avanzado</string>
+    <string name="rank_witty">Ingenioso</string>
+    <string name="search">Buscar</string>
+    <string name="start_chat">Envía un mensaje a un amigo</string>
+    <string name="reject">Rechazar</string>
+    <string name="addfriend">Añadir amigo</string>
+    <string name="pending">Pendiente</string>
+    <string name="confirmation">¡Confirmación!</string>
+    <string name="permission_title">Acuerdo WITS</string>
+	<string name="permission_text">Necesitamos esta información para poder enviarte el dinero de forma segura. Sin la información requerida, WITS no puede enviar tu dinero. WITS guarda la información de forma confidencial y asegura la seguridad de sus usuarios como prioridad.</string>
+    <string name="gameplay_error">Lo sentimos, o tú o tu oponente habéis perdido la conexión a internet.</string>
+    <string name="request_sent">Solicitud enviada</string>
+    <string name="days_ago">hace días</string>
+    <string name="hour_ago">hace horas</string>
+    <string name="min_ago">hace minutos</string>
+    <string name="sec_ago">hace segundos</string>
+    <string name="a_sec_ago">hace un segundo</string>
+    <string name="pwd_reset_sent">El email para restablecer la contraseña se ha enviado correctamente</string>
+    <string name="opp_cancel_challenge">Lo sentimos, tu amigo no está interesado en el desafío en este momento. ¡Vuelve a intentarlo!</string>
+    <string name="friend_surrendered">Lo sentimos, tu oponente se ha rendido. Vuelve a intentarlo más tarde.</string>
+    <string name="login_error">¡Email o contraseña incorrectos!</string>
+    <string name="select_cashout_option">Selecciona opción para convertir pago</string>
+    <string name="sms_error">Tu dispositivo no es compatible con esta función</string>
+    <string name="email_incorrect">Email incorrecto</string>
+    <string name="verify_dialog_title">Verifica tu cuenta de WITS</string>
+    <string name="verify_dialog_text">Para activar tu cuenta, haz clic en el link de verificación enviado a </string>
+    <string name="verify_dialog_btn">Probar otra cuenta</string>
+
+    <!-- Gems Strings -->
+    <string name="gems">Gemas</string>
+    <string name="trasnfer">Transferir Gemas a tus amigos</string>
+    <string name="transfer_title">Transferir Gemas</string>
+    <string name="buy_now">Comprar</string>
+    <string name="cashout_gems">Convertir Gemas</string>
+    <string name="play_for_points">JUGAR POR PUNTOS</string>
+    <string name="play_for_gems">JUGAR POR GEMAS</string>
+    <string name="stars_desc">Mejorará tu rango</string>
+    <string name="gems_desc">Te ayudará a ganar dinero real</string>
+    <string name="history_str">Ganar Gemas gratis</string>
+    <string name="minimum_cashout_str">Límite mínimo para retirar son 601 Gemas</string>
+    <string name="earn_free_points">Ganar Puntos gratis</string>
+    <string name="enter_points">Introducir Gemas</string>
+    <string name="current_points_str">Gemas actuales: </string>
+    <string name="points_transferred">Gemas transferidas con éxito</string>
+    <string name="points_transfer_error">Error al transferir Gemas, ¡inténtalo más tarde!</string>
+    <string name="transfer_error2">Siempre deja 100 Gemas en tu cuenta para poder transferir</string>
+    <string name="insufficient_points">No tienes suficientes Gemas</string>
+    <string name="cashout_error">Para poder retirar debes tener al menos 500 gemas</string>
+    <string name="cashout_error2">Siempre deja 100 Gemas en tu cuenta para poder retirar</string>
+    <string name="cashout_error3">Límite mínimo para retirar son 500 Gemas</string>
+    <string name="no_points">No te quedan Gemas. ¡Recarga tu cuenta!</string>
+    <string name="no_points_banner">¡No te quedan Gemas!</string>
+    <string name="points_transfered">Gemas transferidas con éxito</string>
+<!--
+    <string name="message_sent">Mensaje enviado.</string>
+-->
+	<string name="earn_points_text">Comparte WITS en cualquiera de las siguientes herramientas y gana Gemas gratis cada vez que tus amigos utilicen el código de referencia que has compartido.</string>
+    <string name="cashout_limit">Límite mínimo para retirar son 601 Gemas</string>
+    <string name="tutorial_des2">Cuanto más rápido respondas, más Gemas ganarás.</string>
+	<string name="tutorial_des3">Convierte tus Gemas en dinero real.</string>
+    <string name="how_to_earn_free_points">Cómo ganar Gemas gratis</string>
+    <string name="error_not_enough_points">No tienes suficientes Gemas</string>
+	<string name="howto_earn_points_des1">Puedes ganar Gemas gratis invitando a tus amigos y compartiendo la aplicación en Facebook o Twitter.</string>
+    <string name="earn_points_main">Comparte WITS en cualquiera de las siguientes herramientas y gana Gemas gratis cada vez que tus amigos utilicen el código de referencia que has compartido.</string>
+	<string name="invite_fb_text2">. Ayúdame a ganar Gemas gratis</string>
+    <string name="error_transfer">Error al transferir Gemas, ¡inténtalo más tarde!</string>
+    <string name="title_activity_tit">Actividad Título</string>
+
+    <!-- TUTORIAL SCREEN -->
+    <string name="language_tutorial">Juega en tu propio idioma.</string>
+    <string name="category_tutorial">Compite con otros en temas de tu elección.</string>
+    <string name="challenge_tutorial">Encuentra aleatoriamente jugadores con tus mismos intereses; acierta y sé rápido para ganar más.</string>
+    <string name="buy_tutorial">Compra Gemas para desbloquear el modo de juego que te ayudará a ganar dinero real. Canjea tus gemas por dinero real.</string>
+    <string name="skip">SALTAR</string>
+
+    <!-- AddOn Feature | START -->
+    <string name="addon_desc">Desbloquear 2 preguntas</string>
+    <string name="addon_detailed_desc">Por dos preguntas consecutivas se eliminarán dos respuestas incorrectas.</string>
+    <string name="addon_desc_1">Desbloquear 5 preguntas</string>
+    <string name="addon_detailed_desc_1">Por cinco preguntas consecutivas se eliminarán dos respuestas incorrectas.</string>
+    <string name="congratulations">¡Felicidades!</string>
+    <string name="you_have_unlocked_5050">Has desbloqueado 50/50</string>
+    <string name="your_request_received">Solicitud recibida</string>
+    <string name="our_team_will_contact">Nuestro equipo verificará tus detalles y se pondrá en contacto contigo para continuar el proceso.</string>
+    <string name="claim">Solicitar</string>
+	<string name="reward_instruction">Compra Gemas para desbloquear Premios.</string>
+    <string name="reward_instruction_new">¡Compra Gemas, juega con Gemas y gana Premios reales!</string>
+    <string name="addon_instruction">Comprar potenciadores te ayudará a desbloquear excitantes Premios. ¡Compra más, gana más!</string>
+    <string name="addon">Potenciadores</string>
+    <string name="addon_title">Potenciadores</string>
+    <string name="rewards">Premios</string>
+    <string name="view_rewards">Lista Premios</string>
+	
+    <string name="swipe_down">DESLIZAR </string>
+    <string name="buy_100_gems">100 Gemas</string>
+    <string name="messages">Mensajes</string>
+    <string name="enter_chat_text">Escribe el texto aquí</string>
+    <string name="challenge_now">Desafiar ahora</string>
+    <string name="already_friends">Amigos</string>
+
+    <string name="for_points">Por Puntos</string>
+    <string name="for_gems">Por Gemas</string>
+    <string name="go_text">ADELANTE</string>
+
+
+    <string name="cat_general">General</string>
+    <string name="cat_sports">Deportes</string>
+    <string name="cat_history">Historia</string>
+    <string name="cat_geography">Geografía</string>
+    <string name="cat_education">Educación</string>
+    <string name="cat_games">Juegos</string>
+    <string name="cat_science_and_tech">Ciencia y tecnología</string>
+    <string name="cat_entertainment">Entretenimiento</string>
+    <string name="cat_religion">Religión</string>
+
+
+    <string name="tutorial1">Bienvenido a WITS, el galardonado juego de Trivial multijugador que te permite ganar dinero real mientras compites en los temas de los que tienes conocimiento.</string>
+    <string name="tutorial2">¡Regístrate mediante el método que prefieras para empezar a jugar y ganar!</string>
+    <string name="tutorial3">Elige un tema de las diferentes categorías proporcionadas. Elige tu favorito para tener ventaja sobre los demás.</string>
+    <string name="tutorial4">¡Selecciona cómo quieres jugar! Contra un amigo o un oponente aleatorio de cualquier parte del mundo. ¡La decisión es tuya!</string>
+    <string name="tutorial5">Elige por qué quieres jugar,\n Gemas: para ganar Premios y dinero en metálico O\n Puntos: para mejorar tu ranking en la tabla de líderes.</string>
+    <string name="tutorial6">¡Que no cunda el pánico! Solo lee la pregunta y elige la respuesta correcta antes de que lo haga tu oponente.</string>
+    <string name="tutorial7">¡Tendrás potenciadores para ayudarte! Úsalos para que la competición sea más fácil.</string>
+    <string name="tutorial8">Juega más, gana más\nsolicita tus Premios desbloqueados</string>
+    <string name="for_gems_text">Por Gemas</string>
+    <string name="for_points_text">Por Puntos</string>
+    <string name="game_mode_error1">Selecciona un Modo de juego</string>
+    <string name="game_mode_error2">Selecciona un tipo de moneda</string>
+
+    <string name="friend_request_dialog_msg">Quieres ser amigo de </string>
+    <string name="friend_request">Solicitud de amigo</string>
+    <string name="game_mode">MODO DE JUEGO</string>
+    <string name="skip_text">Saltar>></string>
+    <string name="challenge_gems">Desafío por Gemas</string>
+    <string name="challenge_points">Desafío por Puntos</string>
+    <string name="waiting_for_opp">Esperando oponente</string>
+    <string name="purchase_gems_msg">No tienes suficientes Gemas para continuar. ¿Quieres comprar Gemas ahora?</string>
+    <string name="unlocked_rewards">Premios desbloqueados</string>
+    <string name="accept_send_str">Aceptar y enviar</string>
+    <string name="new_lost_str">¡Vaya! NO has ganado ningún Premio nuevo ni dinero en metálico. ¡Juega mejor la próxima vez!</string>
+    <string name="reward_msg_1">¡Eh! Tienes suficientes Gemas para comprar un nuevo potenciador. Compra cualquier potenciador, juega con Gemas, ¡y gana fabulosos premios!</string>
+    <string name="reward_msg_2">¡Lo has hecho bien! ¡Ahora puedes solicitar tu premio!</string>
+    <string name="reward_unlock_msg">¡Enhorabuena! ¡Has ganado nuevos premios!</string>
+    <string name="reward_unlock_btn1">Ver ahora</string>
+    <string name="reward_unlock_btn2">Después</string>
+
+    <string name="addon_dialog_msg">¡Enhorabuena! Ahora puedes desbloquear potenciadores mágicos para ganar premios reales.</string>
+    <string name="win_msg_rewards">¡Enhorabuena! ¡Lo estás haciendo genial ¡Juguemos más para ganar fabulosos premios! ¡Necesitas más Gemas! ¡Vamos, vamos!</string>
+
+    <string name="helpshift_detail1">Ir a la Tienda de WITS</string>
+    <string name="helpshift_detail2">Comprar Gemas</string>
+    <string name="helpshift_detail3">Jugar y ganar premios</string>
+    <string name="helpshift_title">3 pasos fáciles para liberar tu premio</string>
+    <string name="enter_displayname">Introducir nombre en pantalla</string>
+    <string name="help_str">Ayuda</string>
+    <string name="new_invite_string">¡Ahora puedes ganar Premios reales y dinero en WITS! Clic aquí</string>
+    <string name="helpshift_item1_title">Roxi-Fashion Royal</string>
+    <string name="helpshift_item2_title">Canon N, Cámara Digital</string>
+    <string name="helpshift_item1_desc">Top Oro Plateado Estilo Australiano.</string>
+    <string name="helpshift_item2_desc">El nuevo PowerShot N abre una nueva dimensión de la expresión fotográfica ayudándote a expresar tu estilo personal y tu potencial con las potentes e innovadoras tecnologías Canon.</string>
+    <string name="forgot_password">¿Has olvidado la contraseña?</string>
+    <string name="redeem_text">Liberar</string>
+    <string name="cashout_error4">No tienes suficientes Gemas para retirar</string>
+</resources>

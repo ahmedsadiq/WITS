@@ -52,7 +52,7 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Signinbgcolored.png" id="c2l-Gf-Lfw">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignInbgipad.png" id="c2l-Gf-Lfw">
                     <rect key="frame" x="0.0" y="0.0" width="786" height="1024"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -221,7 +221,7 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="languagebgcolored.png" id="Rq2-K0-Wjr">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Languagebgipad.png" id="Rq2-K0-Wjr">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -253,7 +253,7 @@
                         <action selector="languageSelectonPressed:" destination="-1" eventType="touchUpInside" id="Bz0-FA-Ndl"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" id="Je2-dw-TJk">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" id="Je2-dw-TJk">
                     <rect key="frame" x="40" y="50" width="700" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -338,9 +338,9 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Signinbgcolored.png" id="pKn-wS-4hm">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignInbgipad.png" id="pKn-wS-4hm">
                     <rect key="frame" x="0.0" y="0.0" width="786" height="1024"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ENTER EMAIL ID" minimumFontSize="17" id="wgJ-DW-Ra4">
                     <rect key="frame" x="109" y="361" width="550" height="65"/>
@@ -372,7 +372,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JX4-ut-7zK">
                     <rect key="frame" x="234" y="600" width="300" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -466,7 +466,8 @@
         </view>
     </objects>
     <resources>
-        <image name="Signinbgcolored.png" width="540" height="960"/>
+        <image name="Languagebgipad.png" width="540" height="720"/>
+        <image name="SignInbgipad.png" width="540" height="720"/>
         <image name="arrowRight.png" width="40" height="64"/>
         <image name="arrowdown.png" width="64" height="40"/>
         <image name="bg.png" width="540" height="960"/>
@@ -476,7 +477,6 @@
         <image name="done_btn.png" width="65" height="25"/>
         <image name="header.png" width="320" height="43"/>
         <image name="header_bar.png" width="320" height="1"/>
-        <image name="languagebgcolored.png" width="540" height="960"/>
         <image name="line.png" width="466" height="2"/>
         <image name="logo.png" width="388" height="177"/>
         <image name="messagebg.png" width="493" height="137"/>

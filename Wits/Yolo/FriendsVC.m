@@ -54,7 +54,7 @@
      
      _loadingView = [[LoadingView alloc] init];
      arrFriendImage = [[NSMutableArray alloc]init];
-     NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+    language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
      friendsList = [[NSMutableArray alloc] init];
      if (IS_IPAD) {
@@ -118,6 +118,8 @@
      
      if([searchField.text isEqualToString:@""] || searchField.text == NULL){
           [postParams setObject:@"showFriends" forKey:@"method"];
+          NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+          [postParams setObject:language forKey:@"language"];
           isSearched = false;
      }
      else
@@ -304,6 +306,8 @@
           //          cell.rightOverlayView.tag = currentIndex;
           //          [HelperFunctions setBackgroundColor:cell.rightOverlayView];
           cell.rightUserActionBtn.tag = currentIndex;
+          NSString * stat = _user2.RelationshipStatus ;
+          int status = [[NSString stringWithFormat:@"%@",stat] intValue];
           if(status == 1)
           {
                
@@ -585,6 +589,8 @@
      
      NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
      [postParams setObject:@"sendFriendRequest" forKey:@"method"];
+     
+     [postParams setObject:language forKey:@"language"];
      [postParams setObject:[SharedManager getInstance].userID forKey:@"user_id"];
      [postParams setObject:[SharedManager getInstance].sessionID forKey:@"session_id"];
      [postParams setObject:selectedUser.friendID forKey:@"friend_id"];
@@ -700,6 +706,7 @@
      
      NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
      [postParams setObject:@"rejectFriendRequest" forKey:@"method"];
+       [postParams setObject:language forKey:@"language"];
      [postParams setObject:[SharedManager getInstance].userID forKey:@"user_id"];
      [postParams setObject:[SharedManager getInstance].sessionID forKey:@"session_id"];
      [postParams setObject:selectedUser.friendID forKey:@"friend_id"];
@@ -782,7 +789,9 @@
      MKNetworkEngine *engine = [[MKNetworkEngine alloc] initWithHostName:nil];
      
      NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
+     
      [postParams setObject:@"deleteFriend" forKey:@"method"];
+       [postParams setObject:language forKey:@"language"];
      [postParams setObject:[SharedManager getInstance].userID forKey:@"user_id"];
      [postParams setObject:[SharedManager getInstance].sessionID forKey:@"session_id"];
      [postParams setObject:selectedUser.friendID forKey:@"friend_id"];
@@ -864,7 +873,7 @@
           
           _friendsLbl.text = FRIENDS_BTN_1;
           loadingTitle = Loading_1;
-          noFriendLbl.text = @"لا يوجد لديك صديق.      ";
+          noFriendLbl.text = @"لا يوجد لديك صديق";
           FriendsLabel.text = FRIENDS_BTN_1;
 //          [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsGlowArabic.png"] forState:UIControlStateNormal];
 //          [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsGlowArabic.png"] forState:UIControlStateNormal];
@@ -873,7 +882,7 @@
           challengeForGemsLbl.text = ChallengeForGem1;
           ChallengeForPointsLabel.text =  ChallengeForPoints1;
           UIColor *color = [UIColor whiteColor];
-          searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"بحث صديق" attributes:@{NSForegroundColorAttributeName: color}];
+          searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"البحث عن صديق" attributes:@{NSForegroundColorAttributeName: color}];
           searchField.textAlignment = NSTextAlignmentRight;
           [backbtn setTitle:BACK_BTN_1 forState:UIControlStateNormal];
           [GoBtn setTitle:GO_1 forState:UIControlStateNormal];
@@ -893,7 +902,7 @@
           FriendsLabel.text = FRIENDS_BTN_2;
           _friendsLbl.text = FRIENDS_BTN_2;
           loadingTitle = Loading_2;
-          noFriendLbl.text = @"No tienes amigo.";
+          noFriendLbl.text = @"Vous n\'avez pas d\'ami";
           searchField.textAlignment = NSTextAlignmentLeft;
           UIColor *color = [UIColor whiteColor];
           searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Rechercher un ami" attributes:@{NSForegroundColorAttributeName: color}];
@@ -915,9 +924,9 @@
           FriendsLabel.text = FRIENDS_BTN_3;
           _friendsLbl.text = FRIENDS_BTN_3;
           loadingTitle = Loading_3;
-          noFriendLbl.text = @"Vous n'avez pas d'ami";
+          noFriendLbl.text = @"No tienes amigos.";
           UIColor *color = [UIColor whiteColor];
-          searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Search For Friends" attributes:@{NSForegroundColorAttributeName: color}];
+          searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Buscar amigo" attributes:@{NSForegroundColorAttributeName: color}];
           
           [backbtn setTitle:BACK_BTN_3 forState:UIControlStateNormal];
           [GoBtn setTitle:GO_3 forState:UIControlStateNormal];
@@ -939,7 +948,7 @@
          ChallengeForPointsLabel.text =  ChallengeForPoints4;
           noFriendLbl.text = @"Você não tem nenhum amigo";
           UIColor *color = [UIColor whiteColor];
-          searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"desafio" attributes:@{NSForegroundColorAttributeName: color}];
+          searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Procure um amigo" attributes:@{NSForegroundColorAttributeName: color}];
           [backbtn setTitle:BACK_BTN_4 forState:UIControlStateNormal];
           [GoBtn setTitle:GO_4 forState:UIControlStateNormal];
           [mainBackBtn setTitle:BACK_BTN_4 forState:UIControlStateNormal];
@@ -1113,10 +1122,6 @@
                [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"Newfriendsglow.png"] forState:UIControlStateNormal];
                if(languageCode == 0 ) {
                 
-//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chat.png"] forState:UIControlStateNormal];
-//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGems.png"] forState:UIControlStateNormal];
-//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsEnglish.png"] forState:UIControlStateNormal];
-//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"Add.png"] forState:UIControlStateNormal];
                     challengeForGemsLbl.text = ChallengeForGem;
                     ChallengeForPointsLabel.text = ChallengeForPoint;
                     FriendsLabel.text = @"Add Friend";
@@ -1125,10 +1130,6 @@
                     _fmChatBtn.enabled = NO;
                }else if(languageCode == 1 ) {
                     
-//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatarabic.png"] forState:UIControlStateNormal];
-//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsArabic.png"] forState:UIControlStateNormal];
-//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsArabic.png"] forState:UIControlStateNormal];
-//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddArabic.png"] forState:UIControlStateNormal];
                     challengeForGemsLbl.text = ChallengeForGem1;
                     ChallengeForPointsLabel.text = ChallengeForPoints1;
                     FriendsLabel.text = @"إإضافة صديق";
@@ -1136,10 +1137,7 @@
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
                }else if(languageCode == 2 ) {
-//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatSpanish.png"] forState:UIControlStateNormal];
-//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsSpanish.png"] forState:UIControlStateNormal];
-//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsSpanish.png"] forState:UIControlStateNormal];
-//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddSpanish.png"] forState:UIControlStateNormal];
+
                     challengeForGemsLbl.text = ChallengeForGem2;
                     ChallengeForPointsLabel.text = ChallengeForPoints2;
                     _challengeForGems.enabled = NO;
@@ -1147,10 +1145,7 @@
                     _fmChatBtn.enabled = NO;
                     FriendsLabel.text = @"Añadir amigo";
                }else if(languageCode == 3 ) {
-//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"ChatFrench.png"] forState:UIControlStateNormal];
-//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsFrench.png"] forState:UIControlStateNormal];
-//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsFrench.png"] forState:UIControlStateNormal];
-//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddFrench.png"] forState:UIControlStateNormal];
+
                     challengeForGemsLbl.text = ChallengeForGem3;
                     ChallengeForPointsLabel.text = ChallengeForPoints3;
                     _challengeForGems.enabled = NO;
@@ -1158,10 +1153,7 @@
                     _fmChatBtn.enabled = NO;
                     FriendsLabel.text = @"Ajouter un ami";
                }else if(languageCode == 4 ) {
-//                    [_fmChatBtn setBackgroundImage:[UIImage imageNamed:@"Chatportuguese.png"] forState:UIControlStateNormal];
-//                    [_challengeForGems setBackgroundImage:[UIImage imageNamed:@"ForGemsPortuguese.png"] forState:UIControlStateNormal];
-//                    [_challengeForPoints setBackgroundImage:[UIImage imageNamed:@"ForPointsPortuguese.png"] forState:UIControlStateNormal];
-//                    [_fmFriendButton setBackgroundImage:[UIImage imageNamed:@"AddPortuguese.png"] forState:UIControlStateNormal];
+
                     _challengeForGems.enabled = NO;
                     _challengeForPoints.enabled = NO;
                     _fmChatBtn.enabled = NO;
@@ -1806,25 +1798,84 @@
      }
      else if(status == 2){
           [self.view addSubview:_friendActionView];
-          NSString *friendActionStr = [NSString stringWithFormat:@"%@ sent you friend request.",selectedUser.display_name];
+          NSString *friendActionStr = [NSString stringWithFormat:@"Do you want to be friend with %@.",selectedUser.display_name];
           _friendActionText.text = friendActionStr;
-          _friendActionTitle.text = @"Friend Request";
+          _friendActionTitle.text = @"Confirmation";
           
           [_friendActionAcceptBtn setTitle:@"Accept" forState:UIControlStateNormal];
           [_friendActionRejectBtn setTitle:@"Reject" forState:UIControlStateNormal];
-          
+          if(languageCode == 1){
+               friendActionStr = [NSString stringWithFormat:@" هل تريد أن تكون مع صديق %@ ؟",selectedUser.display_name];
+               _friendActionText.text = friendActionStr;
+               _friendActionTitle.text = @"!التأكيد";
+               
+               [_friendActionAcceptBtn setTitle:@"قبول" forState:UIControlStateNormal];
+               [_friendActionRejectBtn setTitle:@"رفض" forState:UIControlStateNormal];
+          }
+          else if (languageCode == 2){
+               friendActionStr = [NSString stringWithFormat:@"Voulez-vous être un ami de %@.",selectedUser.display_name];
+               _friendActionText.text = friendActionStr;
+               _friendActionTitle.text = @"Confirmation!";
+               
+               [_friendActionAcceptBtn setTitle:@"Accepter" forState:UIControlStateNormal];
+               [_friendActionRejectBtn setTitle:@"Refuser" forState:UIControlStateNormal];}
+          else if (languageCode == 3){
+               friendActionStr = [NSString stringWithFormat:@"Quieres ser amigo de %@.",selectedUser.display_name];
+               _friendActionText.text = friendActionStr;
+               _friendActionTitle.text = @"¡Confirmación!";
+               
+               [_friendActionAcceptBtn setTitle:@"Aceptar" forState:UIControlStateNormal];
+               [_friendActionRejectBtn setTitle:@"Refuser" forState:UIControlStateNormal];}
+          else if (languageCode == 4){
+               friendActionStr = [NSString stringWithFormat:@"Você quer ser amigo de %@.",selectedUser.display_name];
+               _friendActionText.text = friendActionStr;
+               _friendActionTitle.text = @"Confirmação!";
+               
+               [_friendActionAcceptBtn setTitle:@"Aceitar" forState:UIControlStateNormal];
+               [_friendActionRejectBtn setTitle:@"Rejeitar" forState:UIControlStateNormal];
+          }
           _friendActionImg.imageURL = [NSURL URLWithString:selectedUser.profile_image];
           NSURL *url = [NSURL URLWithString:selectedUser.profile_image];
           [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
      }
      else if(status == 1) {
           [self.view addSubview:_friendActionView];
-          NSString *friendActionStr = [NSString stringWithFormat:@"Are you sure you want to unfriend %@?",selectedUser.display_name];
+          NSString *friendActionStr = [NSString stringWithFormat:@"Are you sure you want to Unfriend %@?",selectedUser.display_name];
           _friendActionText.text = friendActionStr;
-          _friendActionTitle.text = @"Delete Friend";
+          _friendActionTitle.text = @"Confirmation";
           
-          [_friendActionAcceptBtn setTitle:@"Delete" forState:UIControlStateNormal];
+          [_friendActionAcceptBtn setTitle:@"OK" forState:UIControlStateNormal];
           [_friendActionRejectBtn setTitle:@"Cancel" forState:UIControlStateNormal];
+          if(languageCode == 1){
+               friendActionStr = [NSString stringWithFormat:@" هل أنت أكيد من إلغاء الصداقة %@ ؟",selectedUser.display_name];
+               _friendActionText.text = friendActionStr;
+               _friendActionTitle.text = @"!التأكيد";
+               
+               [_friendActionAcceptBtn setTitle:@"نعم" forState:UIControlStateNormal];
+               [_friendActionRejectBtn setTitle:@"إلغاء" forState:UIControlStateNormal];
+          }
+          else if (languageCode == 2){
+               friendActionStr = [NSString stringWithFormat:@"Êtes-vous sûr de vouloir supprimer cette personne %@?",selectedUser.display_name];
+               _friendActionText.text = friendActionStr;
+               _friendActionTitle.text = @"Confirmation!";
+               
+               [_friendActionAcceptBtn setTitle:@"D\'accord" forState:UIControlStateNormal];
+               [_friendActionRejectBtn setTitle:@"Annuler" forState:UIControlStateNormal];}
+          else if (languageCode == 3){
+               friendActionStr = [NSString stringWithFormat:@"¿Seguro quieres eliminar a esa persona %@ ?",selectedUser.display_name];
+               _friendActionText.text = friendActionStr;
+               _friendActionTitle.text = @"¡Confirmación!";
+               
+               [_friendActionAcceptBtn setTitle:@"OK" forState:UIControlStateNormal];
+               [_friendActionRejectBtn setTitle:@"Cancelar" forState:UIControlStateNormal];}
+          else if (languageCode == 4){
+               friendActionStr = [NSString stringWithFormat:@"Você tem certeza que deseja excluir esta pessoa %@ ?",selectedUser.display_name];
+               _friendActionText.text = friendActionStr;
+               _friendActionTitle.text = @"Confirmação!";
+               
+               [_friendActionAcceptBtn setTitle:@"OK" forState:UIControlStateNormal];
+               [_friendActionRejectBtn setTitle:@"Cancelar" forState:UIControlStateNormal];
+          }
          // iscancel = true;
           _friendActionImg.imageURL = [NSURL URLWithString:selectedUser.profile_image];
           NSURL *url = [NSURL URLWithString:selectedUser.profile_image];
@@ -1875,6 +1926,7 @@
      else if(status == 1) {
           [self DeleteFriend];
      }
+     [self FetchFriendList];
 }
 
 - (IBAction)friendActionQuit:(id)sender {

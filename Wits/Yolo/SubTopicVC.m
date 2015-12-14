@@ -144,8 +144,8 @@
      backBtn2.font = [UIFont fontWithName:FONT_NAME size:16];
      
      currentSelectedIndex = -1;
+     
 }
-
 -(void) setUpTutorial {
      
      [self setLanguageForScreen];

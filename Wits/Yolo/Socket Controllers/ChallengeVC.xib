@@ -15,6 +15,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeVC">
             <connections>
                 <outlet property="GemsDialogView" destination="XdF-hr-ARA" id="dn0-Op-STl"/>
+                <outlet property="PlayAgainLabel" destination="cSx-GN-YOQ" id="qaW-tR-gfr"/>
                 <outlet property="QuitTitle" destination="iYZ-r7-QMg" id="CbJ-Xm-epw"/>
                 <outlet property="ResultsView" destination="Mk8-RQ-wMr" id="kGi-Sy-IcV"/>
                 <outlet property="addOnBtn" destination="J2x-GV-MD1" id="qjX-z5-auH"/>
@@ -320,7 +321,7 @@
                     <rect key="frame" x="166" y="28" width="160" height="68"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2xS-Fv-eCh">
-                            <rect key="frame" x="32.999998913940551" y="20" width="60" height="28"/>
+                            <rect key="frame" x="32.99999794579977" y="20" width="60" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -461,19 +462,12 @@
                         <action selector="GotoHome:" destination="-1" eventType="touchUpInside" id="klm-mQ-GjI"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Lost !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" id="Tyo-sf-TcT">
-                    <rect key="frame" x="18" y="80" width="284" height="66"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="GameFont7" family="Game Font 7" pointSize="29"/>
-                    <color key="textColor" red="0.6588235294117647" green="0.81568627450980391" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal.png" id="Qjc-ti-8qr">
                     <rect key="frame" x="100" y="150" width="120" height="120"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="JRJ-JP-yxT">
-                    <rect key="frame" x="110" y="460.00000039787989" width="120" height="67"/>
+                    <rect key="frame" x="110" y="460.00000139698881" width="120" height="67"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" backgroundImage="playagainglowNew.png">
@@ -506,6 +500,12 @@
                         <action selector="homePressed:" destination="-1" eventType="touchUpInside" id="gET-TL-QIf"/>
                     </connections>
                 </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Again" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cSx-GN-YOQ">
+                    <rect key="frame" x="98" y="530" width="117" height="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                    <color key="textColor" red="0.71764705880000002" green="0.84705882349999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1JJ-Pb-ghG">
                     <rect key="frame" x="247" y="500" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
@@ -530,6 +530,13 @@
                         <action selector="showTimeLine:" destination="-1" eventType="touchUpInside" id="OPS-5h-Bnc"/>
                     </connections>
                 </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Lost !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" id="Tyo-sf-TcT">
+                    <rect key="frame" x="18" y="79" width="284" height="66"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="GameFont7" family="Game Font 7" pointSize="29"/>
+                    <color key="textColor" red="0.6588235294117647" green="0.81568627450980391" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>

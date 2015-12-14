@@ -429,7 +429,6 @@
                     <state key="normal" backgroundImage="forgemsNew.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="forgemsglowNew.png"/>
                     <connections>
                         <action selector="gmGemsPressed:" destination="-1" eventType="touchUpInside" id="bw5-Tp-sw3"/>
                     </connections>
@@ -514,7 +513,6 @@
         <image name="dotblack.png" width="26" height="27"/>
         <image name="dotglow.png" width="45" height="45"/>
         <image name="forgemsNew.png" width="86" height="64"/>
-        <image name="forgemsglowNew.png" width="86" height="63"/>
         <image name="forpintsglowNew.png" width="75" height="72"/>
         <image name="gameMode-Logo.png" width="263" height="48"/>
         <image name="header.png" width="320" height="43"/>

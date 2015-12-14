@@ -25,7 +25,7 @@
      NSString *statusStr;
      NSString *loadingTitle;
      IBOutlet UIButton *GoBtn;
-     
+     NSString *language;
      IBOutlet UILabel *noFriendLbl;
      IBOutlet UIButton *backbtn;
      

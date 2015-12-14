@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WITS</string>
+    <string name="action_settings">الإعدادات</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="register_string">تسجيل</string>
+    <string name="password_string">أدخل كلمة المرور</string>
+    <string name="signup_birthday_et">تاريخ ميلادك</string>
+    <string name="signup_email_et">البريد الإلكتروني</string>
+    <string name="password">كلمة السر</string>
+    <string name="forgot">نسيت </string>
+    <string name="error_connection">يرجى التحقق من إعدادات اتصال الإنترنت الخاصة بك.</string>
+    <string name="error_mail_text">يرجى تعيين البريد الإلكتروني الصحيح!</string>
+    <string name="error_empty_text">الرجاء ملء هذا الحقل!</string>
+    <string name="error_password_length">يجب أن تتألف كلمة السر من أكثر من 6 أحرف</string>
+    <string name="facebook_app_id">1524399421105901</string>
+    <string name="login_facebook_string">تسجيل الدخول من حساب الفيسبوك</string>
+    <string name="unknown_person">غير معروف</string>
+    <string name="actionsheet_take_picture">أخذ صورة</string>
+    <string name="actionsheet_file_string">من ملف</string>
+    <string name="avatar_string">الصورة الرمزية</string>
+    <string name="error_on_image">الصورة غير محددة</string>
+    <string name="home_string">الصفحة الرئسية</string>
+    <string name="error_login_session">لقد تم تسجيل الدخول من جهاز آخر. هل ترغب في تسجيل الخروج من جميع الأجهزة الأخرى وتسجيل الدخول هنا؟</string>
+    <string name="yes_str">نعم</string>
+    <string name="no_str">لا </string>
+    <string name="warning_str">لقد حصل خطأ ما</string>
+
+    <string-array name="menuitems">
+        <item>الصفحة الرئسية</item>
+        <item>فئات الأسئلة</item>
+        <item>اصدقائي</item>
+        <item>تاريخ المباريات</item>
+        <item>رسائلي</item>
+        <!-- <item>Discussions</item> -->
+        <item>جدول الترتيب</item>
+        <item>المتجر</item>
+        <item>الإعدادات</item>
+        <item>نقل الأحجار الكريمة</item>
+        <item>إتصل بنا</item>
+        <item>الخروج</item>
+    </string-array>
+
+    <integer-array name="menuicons">
+        <item>@drawable/home</item>
+        <!--        <item>@drawable/topics</item>-->
+        <item>@drawable/friend_icon</item>
+        <!--<item>@drawable/calendar</item>-->
+        <item>@drawable/ic_launcher</item>
+        <!-- <item>@drawable/comments</item> -->
+        <!-- <item>@drawable/achievements</item> -->
+        <!--<item>@drawable/store</item>-->
+        <item>@drawable/settings</item>
+        <item>@drawable/icon_facebook_active</item>
+        <!--
+                <item>@drawable/logout_signout_exit</item>
+        -->
+    </integer-array>
+
+    <string name="play_string">إلعب الآن</string>
+    <string name="home_cate_str">تصنيفات المواضيع</string>
+    <string name="challenge_str">تحدي صديق</string>
+    <string name="ranking_str">تصنيف</string>
+    <string name="discussion_str">أصدقائي</string>
+    <string name="sub_topic_search_hint">ابحث عن فئة</string>
+    <string name="sub_topic_search_hint1">ابحث عن موضوع</string>
+    <string name="all_topics_str">إلعب الآن!</string>
+    <string name="sub_topic_str">مواضيع فرعية</string>
+    <string name="recommended_str">موصى به</string>
+    <string name="animation_desc">صور متحركة</string>
+    <string name="cancel_str">إلغاء</string>
+    <string name="addPayment">إضافة طريقة الدفع</string>
+    <string name="paymentMethods">طرق الدفع</string>
+    <string name="buy_more_str">اشتري المزيد من النقاط</string>
+    <string name="cvc">CVC</string>
+    <string name="cardNumber_str">رقم البطاقة</string>
+    <string name="select_month">ااختر الشهر!</string>
+    <string name="select_year">اختر السنة!</string>
+    <string name="Title">الإسم</string>
+    <string name="gender">الجنس</string>
+    <string name="about">معلومات عنا </string>
+    <string name="city">المدينة</string>
+    <string name="country">البلد</string>
+    <string name="update">تحديث</string>
+
+
+    <string-array name="spinnerItems">
+        <item>الذكور</item>
+        <item>أنثى</item>
+    </string-array>
+
+    <string-array name="cardItems">
+        <item>Visa</item>
+        <item>MasterCard</item>
+        <item>Discover</item>
+        <item>Amex</item>
+        <item>Maestro</item>
+        <item>Solo</item>
+    </string-array>
+    <string-array name="languagesArray">
+        <item>الإنجليزية</item>
+        <item>العربية</item>
+        <item>الفرنسية</item>
+        <item>الأسبانية</item>
+        <item>البرتغالية</item>
+    </string-array>
+
+    <string name="general">عام</string>
+    <string name="music">الموسيقى</string>
+<!--    <string name="soundeffects">تأثير الصوت</string>-->
+    <string name="vibration">اهتزاز</string>
+    <string name="Privacymode">تطبيقات الخصوصية</string>
+    <string name="push_notification">الإشعارات</string>
+    <string name="challenge_notification">التبليغ بالتحدي</string>
+    <string name="chat_notifications">االتبليغ بالرسائل</string>
+    <string name="follower">المتابعون</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="back">العودة</string>
+    <string name="search_oppenent_str">البحث عن خصم….</string>
+    <string name="surrender_str">هل أنت أكيد من الإستسلام؟ </string>
+    <string name="error_connection_lost_str">فقدان الإتصال بالإنترنت</string>
+    <string name="rounds_str">جولات</string>
+    <string name="won_str">لقد فزت!</string>
+    <string name="loss_str">لقد خسرت!</string>
+    <!--<string name="draw_str">سحب!</string>-->
+    <string name="purchase_str">شراء</string>
+    <string name="cashout_str">صرف الأحجار الكريمة إلى مال</string>
+    <!--<string name="store_points_100">100 نقطة</string>
+    <string name="store_points_500">220 نقطة</string>
+    <string name="store_points_1000">500 نقطة</string>-->
+    <string name="search_friends_str">البحث عن صديق</string>
+    <!--<string name="invite_str">دعوة</string>-->
+    <string name="send_str">إرسال</string>
+    <string name="friend_str">إإضافة صديق</string>
+    <string name="unfriend_str">إلغاء الصداقة</string>
+    <string name="pending_str">في الإنتظار</string>
+    <string name="accept_str">قبول</string>
+    <string name="no_record_str">لا يوجد سجل !</string>
+
+    <!-- <string name="challenge_str">تحدى صديق</string> -->
+    <string name="no_friend_str">لا يوجد لديك صديق</string>
+    <string name="no_oppnent_str">لم يتم العثور على الخصم، يرجى العودة والمحاولة مرة أخرى.</string>
+<!--
+    <string name="accept_challenge_str">اضغط على قبول التحدي</string>
+-->
+    <string name="no_chat_str">لا يوجد لديك رسالة.</string>
+    <string name="sent_msg_str"> تم إرسال الرسالة !</string>
+    <string name="delete_str">حذف</string>
+    <string name="create_str">إنشاء</string>
+    <string name="profile_str">الملف الشخصي</string>
+    <string name="updated_str">محدثة !</string>
+    <string name="rematch_str">إعادة مباراة</string>
+    <string name="result_str">النتائج</string>
+    <string name="select_language_str">الرجاء اختيار اللغة</string>
+    <string name="save_str">حفظ</string>
+    <string name="change_language">تغير اللغة</string>
+    <string name="selection_language">اختيار اللغة</string>
+    <string name="new_topics">مواضيع جديدة</string>
+    <string name="recommended_social">نحن نوصي بإستخدام الفيسبوك أو جوجل لتكون قادرا على اللعب ضد أصدقائك</string>
+    <string name="signin_facebook_text"> الفيسبوك </string>
+    <string name="signin_twitter">التويتر</string>
+    <string name="or_text">أو</string>
+    <string name="signup_email">انشئ حساب عبر بريدك الإلكتروني</string>
+    <string name="already_have_account_text1">ادخل الآن !</string>
+    <string name="signup_text">اشترك</string>
+    <string name="store_str">متجر الويتس</string>
+    <string name="achievement_str">جدول الترتيب</string>
+    <string name="messages_str">رسائلي</string>
+    <string name="setting_str">الإعدادات</string>
+    <string name="vs_str">مقابل</string>
+    <string name="latest_str">آخر</string>
+    <string name="back_str">رجوع</string>
+    <string name="loading_str">تحميل… </string>
+    <string name="chat_str">دردشة</string>
+    <string name="online_str">متصل</string>
+    <string name="offline_str">غير متصل</string>
+    <string name="done_str">منجز</string>
+    <string name="paypal_payment_str">PayPal</string>
+    <string name="transfer_email">اسم المتلقي و عنوان البريد الإلكتروني</string>
+    <string name="transfer_points">الكمية</string>
+    <string name="transfer_send">ارسل</string>
+    <string name="referral_code">رمز الإحالة</string>
+    <string name="enter_referral_code">الرجاء إدخال رمز الإحالة</string>
+    <string name="enter_email">الرجاء إدخال عنوان البريد الإلكتروني</string>
+    <string name="enter_amount">أدخل المبلغ</string>
+    <string name="referal_entered">تم نشر رمز الإحالة بنجاح</string>
+    <string name="referal_error">خطأ في إدخال رمز الإحالة، الرجاء المحاولة لاحقا!</string>
+    <string name="rankings">الترتيب</string>
+    <string name="history">التاريخ</string>
+    <string name="verify_account">تحقق من حسابك</string>
+    <string name="tutorial_str">دليل اللعبة</string>
+    <string name="cashable">قابل للصرف نقدا</string>
+    <string name="non_cashable">غير قابل للصرف نقدا</string>
+
+
+    <!--
+<string name="tutorial_des4">4. فإن لعبة البحث الخصم بالنسبة لك للعب على الانترنت
+</string>
+    <string name="tutorial_des5">5. الإجابة على الأسئلة المطروحة ل كسب الأحجار الكريمة يمكن صرفه نقدا
+</string>
+    <string name="tutorial_des6">6.كيفية اللعب يتس</string>
+
+
+    -->
+
+    <string name="enter_name_str">أدخل اسم</string>
+    <string name="enter_email_paypal_str">أأدخل البريد الإلكتروني من باي بال PayPal</string>
+    <string name="enter_email_skril_str">أدخل البريد الإلكتروني من Skrill</string>
+    <string name="enter_contact_email_str">أدخل البريد الالكتروني للاتصال بك</string>
+    <string name="enter_contact_no_str">ادخل رقم الاتصال</string>
+    <string name="enter_address_str">أدخل العنوان</string>
+    <string name="enter_bank_title_str">اسم المصرف</string>
+    <string name="enter_account_no_str">رقم حساب البنك</string>
+    <string name="enter_swift_Code_str">رمز SWIFT</string>
+    <string name="enter_iban_no_str">رمز IBAN (اختياري)</string>
+    <string name="enter_bank_name_str">اسم البنك</string>
+    <string name="enter_bank_loc_str">عنوان البنك</string>
+    <string name="please_wait">الرجاء الإنتظر قليلاً</string>
+    <string name="Sending_email">إرسال البريد الإلكتروني</string>
+    <string name="tutorial_btn_text">تعليمات</string>
+    <string name="tutorial_des_title">المعرفة مال ، معرفة أكبر ربح أكثر!</string>
+    <string name="tutorial_main_des1"> تطبيق ويتس سيحقق رغبتكم، سجل دخولك و قم بالإجابة على 10 أسئلة بطريقة صحيحة في أي موضوع تختاره</string>
+    <string name="tutorial_main_des2">تطبيق ويتس سيمنحك فرصة ربح المال بطريقة سريعة و مضمونة</string>
+    <string name="how_to_play">كيفية اللعب	</string>
+    <string name="how_to_use_store">كيفية استخدام مخزن ويتس</string>
+    <string name="title_activity_tutorial_detailed_fragment">مقطع تعليمي مفصل</string>
+    <string name="add_ques">أضافة سؤال</string>
+    <string name="enter_ques">أدخل السؤال</string>
+    <string name="enter_ans">أدخل الجواب</string>
+    <string name="how_to_play_str">الإرشادات</string>
+
+    <!--
+    <string name="howto_use_wits_Store_des2">2. You can purchase points using PayPal</string>
+    <string name="howto_use_wits_Store_des3">3. The earned points from game can make you real money using cashout option. Just provide your details and keep wining</string>
+
+    -->
+
+
+    <!--
+         <string name="howto_earn_points_des2">2. Send Invite using Facebook, Twiter, SMS or Email</string>
+    <string name="howto_earn_points_des3">3. Your Referral Code will be sent using Invite to your Friends</string>
+    <string name="howto_earn_points_des4">4. When any of Wits user enters your referral Code in Setting, you will get free Points</string>
+
+
+    -->
+    <string name="signup_username_et">اسم المستخدم</string>
+    <string name="error_username_text">ادخل اسم المستخدم</string>
+    <string name="signup_email_or_text">أدخل البريد الإلكتروني أو اسم المستخدم</string>
+    <string name="play_again">إلعب مرة أخرى</string>
+    <string name="return_home">العودة إلى الصفحة الرئيسية</string>
+
+    <string-array name="CountryCodes">
+        <item>93,AF</item>
+        <item>355,AL</item>
+        <item>213,DZ</item>
+        <item>376,AD</item>
+        <item>244,AO</item>
+        <item>672,AQ</item>
+        <item>54,AR</item>
+        <item>374,AM</item>
+        <item>297,AW</item>
+        <item>61,AU</item>
+        <item>43,AT</item>
+        <item>994,AZ</item>
+        <item>973,BH</item>
+        <item>880,BD</item>
+        <item>375,BY</item>
+        <item>32,BE</item>
+        <item>501,BZ</item>
+        <item>229,BJ</item>
+        <item>975,BT</item>
+        <item>591,BO</item>
+        <item>387,BA</item>
+        <item>267,BW</item>
+        <item>55,BR</item>
+        <item>673,BN</item>
+        <item>359,BG</item>
+        <item>226,BF</item>
+        <item>95,MM</item>
+        <item>257,BI</item>
+        <item>855,KH</item>
+        <item>237,CM</item>
+        <item>1,CA</item>
+        <item>238,CV</item>
+        <item>236,CF</item>
+        <item>235,TD</item>
+        <item>56,CL</item>
+        <item>86,CN</item>
+        <item>61,CX</item>
+        <item>61,CC</item>
+        <item>57,CO</item>
+        <item>269,KM</item>
+        <item>242,CG</item>
+        <item>243,CD</item>
+        <item>682,CK</item>
+        <item>506,CR</item>
+        <item>385,HR</item>
+        <item>53,CU</item>
+        <item>357,CY</item>
+        <item>420,CZ</item>
+        <item>45,DK</item>
+        <item>253,DJ</item>
+        <item>670,TL</item>
+        <item>593,EC</item>
+        <item>20,EG</item>
+        <item>503,SV</item>
+        <item>240,GQ</item>
+        <item>291,ER</item>
+        <item>372,EE</item>
+        <item>251,ET</item>
+        <item>500,FK</item>
+        <item>298,FO</item>
+        <item>679,FJ</item>
+        <item>358,FI</item>
+        <item>33,FR</item>
+        <item>689,PF</item>
+        <item>241,GA</item>
+        <item>220,GM</item>
+        <item>995,GE</item>
+        <item>49,DE</item>
+        <item>233,GH</item>
+        <item>350,GI</item>
+        <item>30,GR</item>
+        <item>299,GL</item>
+        <item>502,GT</item>
+        <item>224,GN</item>
+        <item>245,GW</item>
+        <item>592,GY</item>
+        <item>509,HT</item>
+        <item>504,HN</item>
+        <item>852,HK</item>
+        <item>36,HU</item>
+        <item>91,IN</item>
+        <item>62,ID</item>
+        <item>98,IR</item>
+        <item>964,IQ</item>
+        <item>353,IE</item>
+        <item>44,IM</item>
+        <item>972,IL</item>
+        <item>39,IT</item>
+        <item>225,CI</item>
+        <item>81,JP</item>
+        <item>962,JO</item>
+        <item>7,KZ</item>
+        <item>254,KE</item>
+        <item>686,KI</item>
+        <item>965,KW</item>
+        <item>996,KG</item>
+        <item>856,LA</item>
+        <item>371,LV</item>
+        <item>961,LB</item>
+        <item>266,LS</item>
+        <item>231,LR</item>
+        <item>218,LY</item>
+        <item>423,LI</item>
+        <item>370,LT</item>
+        <item>352,LU</item>
+        <item>853,MO</item>
+        <item>389,MK</item>
+        <item>261,MG</item>
+        <item>265,MW</item>
+        <item>60,MY</item>
+        <item>960,MV</item>
+        <item>223,ML</item>
+        <item>356,MT</item>
+        <item>692,MH</item>
+        <item>222,MR</item>
+        <item>230,MU</item>
+        <item>262,YT</item>
+        <item>52,MX</item>
+        <item>691,FM</item>
+        <item>373,MD</item>
+        <item>377,MC</item>
+        <item>976,MN</item>
+        <item>382,ME</item>
+        <item>212,MA</item>
+        <item>258,MZ</item>
+        <item>264,NA</item>
+        <item>674,NR</item>
+        <item>977,NP</item>
+        <item>31,NL</item>
+        <item>599,AN</item>
+        <item>687,NC</item>
+        <item>64,NZ</item>
+        <item>505,NI</item>
+        <item>227,NE</item>
+        <item>234,NG</item>
+        <item>683,NU</item>
+        <item>850,KP</item>
+        <item>47,NO</item>
+        <item>968,OM</item>
+        <item>92,PK</item>
+        <item>680,PW</item>
+        <item>507,PA</item>
+        <item>675,PG</item>
+        <item>595,PY</item>
+        <item>51,PE</item>
+        <item>63,PH</item>
+        <item>870,PN</item>
+        <item>48,PL</item>
+        <item>351,PT</item>
+        <item>1,PR</item>
+        <item>974,QA</item>
+        <item>40,RO</item>
+        <item>7,RU</item>
+        <item>250,RW</item>
+        <item>590,BL</item>
+        <item>685,WS</item>
+        <item>378,SM</item>
+        <item>239,ST</item>
+        <item>966,SA</item>
+        <item>221,SN</item>
+        <item>381,RS</item>
+        <item>248,SC</item>
+        <item>232,SL</item>
+        <item>65,SG</item>
+        <item>421,SK</item>
+        <item>386,SI</item>
+        <item>677,SB</item>
+        <item>252,SO</item>
+        <item>27,ZA</item>
+        <item>82,KR</item>
+        <item>34,ES</item>
+        <item>94,LK</item>
+        <item>290,SH</item>
+        <item>508,PM</item>
+        <item>249,SD</item>
+        <item>597,SR</item>
+        <item>268,SZ</item>
+        <item>46,SE</item>
+        <item>41,CH</item>
+        <item>963,SY</item>
+        <item>886,TW</item>
+        <item>992,TJ</item>
+        <item>255,TZ</item>
+        <item>66,TH</item>
+        <item>228,TG</item>
+        <item>690,TK</item>
+        <item>676,TO</item>
+        <item>216,TN</item>
+        <item>90,TR</item>
+        <item>993,TM</item>
+        <item>688,TV</item>
+        <item>971,AE</item>
+        <item>256,UG</item>
+        <item>44,GB</item>
+        <item>380,UA</item>
+        <item>598,UY</item>
+        <item>1,US</item>
+        <item>998,UZ</item>
+        <item>678,VU</item>
+        <item>39,VA</item>
+        <item>58,VE</item>
+        <item>84,VN</item>
+        <item>681,WF</item>
+        <item>967,YE</item>
+        <item>260,ZM</item>
+        <item>263,ZW</item>
+    </string-array>
+
+    <string name="opp_not_available">الخصم المطلوب غير متاح حاليا </string>
+    <string name="opp_not_available_title">الخصم غير متاح</string>
+    <string name="opp_away">الخصم المطلوب قد غادر</string>
+    <string name="session_invalid_title">لقد حصل خطأ ما</string>
+    <string name="surrender_title">غادر اللعبة </string>
+    <string name="sign_in_error">قد تم تسجيل الدخول مسبقا</string>
+    <string name="round_text">جولة</string>
+    <string name="last_round">آخر جولة </string>
+    <string name="gold_medal_text">أحسنت</string>
+    <string name="silver_medal_text">ضربة قاضية</string>
+    <string name="bronze_medal_text">صح ! كانت قريبة</string>
+    <string name="opp_answered_before_text">الخصم أجاب قبلك </string>
+    <string name="time_up_text">الوقت إنتهى </string>
+    <string name="wrong_ans_text">الإجابة خاطئة، بإنتظار إجابة الخصم ... </string>
+    <string name="you_win_text">لقد ربحت !</string>
+    <string name="draw_text">تعادلت !</string>
+    <string name="lost_text">حظ أوفر في المرة القادمة</string>
+    <string name="status_text">الحالة </string>
+    <string name="time_text">الوقت</string>
+    <string name="points_text">النقاط </string>
+    <string name="private_info_text">معلومات خاصة </string>
+    <string name="not_verified_text">لم يتم التحقق</string>
+    <string name="username_text">اسم المستخدم</string>
+    <string name="invite_email_text1">أنت مدعو للعب ويتس من قبل </string>
+    <string name="invite_email_text2">,رمز إحالة المستخدم هو:</string>
+    <string name="invite_fb_text3">مرحباً، هيا لنلعب ويتس. استخدم هذا الرمز: </string>
+    <string name="invite_fb_des"> ويتس هي جائزة الفوز متعددة لعبة التوافه والمجتمع مروحة</string>
+    <string name="unfriend_confirmation_text">هل أنت أكيد من إلغاء الصداقة؟</string>
+    <string name="ok_text">نعم </string>
+    <string name="cancel_text">إلغاء </string>
+    <string name="general_feedback_text">رأيك بشكل عام</string>
+    <string name="technical_issue_text">مشكلة تقنية </string>
+    <string name="notification_added_text"> اضفتك  </string>
+    <string name="notification_challenge_text">أتحداك لجولة </string>
+    <string name="notification_message_text">أرسل رسالة</string>
+    <string name="notification_request_text">طلب صداقة </string>
+    <string name="view_text">شاهد</string>
+    <string name="return_home_text">عد إلى الصفحة الرئسية </string>
+    <string name="play_again_text">إلعب مرة أخرى</string>
+    <string name="enter_email_username_text">أدخل حسابك الإلكتروني أو اسم المستخدم</string>
+    <string name="enter_username">أدخل إسم المستخدم </string>
+    <string name="sending_email_text">إرسال الرسالة</string>
+    <string name="please_wait_text">إنتظر قليلا </string>
+    <string name="bank_loc_text">عنوان المصرف</string>
+    <string name="bank_name_text">إسم المصرف </string>
+    <string name="iban_text">رمز IBAN (اختياري)</string>
+    <string name="swift_code_text">رمز SWIFT</string>
+    <string name="account_no_text">رقم الحساب</string>
+    <string name="bank_title">إسم المصرف</string>
+    <string name="enter_address">أدخل عنوانك</string>
+    <string name="enter_contact_no">أدخل رقم الهاتف </string>
+    <string name="enter_contact_email">أدخل بريدك الإلكتروني</string>
+    <string name="email_skril">أدخل حسابك في Skrill</string>
+    <string name="email_paypal">أدخل حسابك في PayPal</string>
+    <string name="error_referral">مشكلة في إدخال رمز الإحالة، الرجاء المحاولة مرة أخرى</string>
+    <string name="referral_posted">تم إرسال رمز الإحالة</string>
+    <string name="quit_game">غادر اللعبة</string>
+    <string name="warning_title">حصل خطأ ما</string>
+
+  <!--  <string-array name="contactItems">
+        <item>مشكلة تقنية</item>
+        <item>رأيك بشكل عام </item>
+    </string-array>-->
+
+    <string name="cate_str">فئات الأسئلة </string>
+    <string name="topic_str">مواضيع فرعية </string>
+    <string name="add_friend">أضف كصديق</string>
+    <string name="no_account_setup">لا إعدادات للحساب</string>
+    <string name="total_text">مجموع</string>
+    <string name="http_error">وقع خطأ ما، حاول مرة أخرى في وقت لاحق</string>
+    <string name="http_error1">الرجاء التحقق من إعدادات اتصال الإنترنت الخاصة بك</string>
+    <string name="ERROR404">الرجاء التحقق من إعدادات اتصال الإنترنت الخاصة بك</string>
+    <!--<string name="ERROR1">Protocol error</string>
+    <string name="ERROR2">Parsing error</string>
+    <string name="ERROR3">Encoding error</string>
+    <string name="ERROR4">Connection Timeout</string>-->
+    <string name="my_account">حسابي</string>
+<!--    <string name="title_activity_inapp_billing">InappBillingActivity</string>-->
+    <string name="cashout_success">شكراً لاتمام عملية السحب. تلقينا التفاصيل الخاصة بك و سنقوم بإرسال [AMOUNT]$ دولار لحسابك. عملية التحويل النقدي تستغرق 3-4 أيام عمل، وسيتم خصم جميع الرسوم اللازمة لإتمام العملية من المستخدم</string>
+    <string name="rank_beginner">مبتدئ</string>
+    <string name="rank_expert">خبير</string>
+    <string name="rank_advance">متقدم</string>
+    <string name="rank_witty">ذكي</string>
+    <string name="search">بحث</string>
+    <string name="start_chat">إرسال رسالة الى صديق</string>
+    <string name="reject">رفض</string>
+    <string name="addfriend">إضافة صديق</string>
+    <string name="pending">ريثما</string>
+    <string name="confirmation">!التأكيد</string>
+    <string name="permission_title">اتفاق ويتس</string>
+    <string name="permission_text">نحن بحاجة إلى المعلومات اللازمة لنرسل لك المال بأمان. دون المعلومات المطلوبة، لا يمكن لإدارة ويتس القيام بعملية التحويل. تطبيق ويتس يبقي على جميع المعلومات سرية للغاية، فضمان سلامة المستخدمين هي أولويتنا القصوى</string>
+    <string name="gameplay_error">عذرا، إما أنت أو خصمك فقدتم الاتصال بشبكة الانترنت</string>
+    <string name="request_sent">تم إرسال الطلب</string>
+    <string name="days_ago"> قبل أيام</string>
+    <string name="hour_ago">قبل ساعة</string>
+    <string name="min_ago">قبل دقيقة </string>
+    <string name="sec_ago">قبل ثانية</string>
+    <string name="a_sec_ago">قبل ثانية</string>
+    <string name="pwd_reset_sent">تم إرسال البريد الإلكتروني لإعادة تعيين كلمة المرور بنجاح</string>
+    <string name="opp_cancel_challenge">عذرا، صديقك غير مهتم في طلب التحدي في الوقت الراهن. يرجى إعادة المحاولة في وقت لاحق!</string>
+    <string name="friend_surrendered">نأسف، خصمك استسلم. الرجاء المحاولة مرة أخرى لاحقا</string>
+    <string name="login_error">البريد الإلكتروني أو كلمة المرور غير صحيحة!</string>
+    <string name="select_cashout_option">حدد الخيار لسحب المبلغ المالي</string>
+    <string name="sms_error">لا يدعم جهازك هذه الميزة!</string>
+ <!--   <string name="email_incorrect">البريد الإلكتروني غير صحيحة</string>-->
+    <string name="verify_dialog_title">التحقق من حساب الويتس الخاص بك</string>
+    <string name="verify_dialog_text">لتفعيل حسابك، يرجى النقر على الرابط التحقق التي تم إرسالها إلى </string>
+    <string name="verify_dialog_btn">محاولة حساب آخر</string>
+
+    <!-- Gems Strings -->
+    <string name="gems">جواهر</string>
+    <string name="trasnfer">إرسل جواهر لأصدقائك</string>
+    <string name="transfer_title">إرسل جواهر</string>
+    <string name="buy_now">اشتري الآن</string>
+    <string name="cashout_gems">استبدل جواهرك بنقود</string>
+    <string name="play_for_points">العب من أجل الحصول على نقاط</string>
+    <string name="play_for_gems">العب من أجل الحصول على جواهر</string>
+    <string name="stars_desc">سيحسن من ترتيبك</string>
+    <string name="gems_desc">سيساعدك للحصول على نقود حقيقية</string>
+    <string name="history_str">احصل على جواهر مجانية</string>
+<!--    <string name="minimum_cashout_str">الحد الأدنى لاستبدال الجواهر هو 100 جوهرة </string>-->
+    <string name="earn_free_points">احصل على النقاط مجانية</string>
+    <string name="enter_points">من فضلك ادخل الجواهر</string>
+    <string name="current_points_str">الرصيد الحالي من الجواهر: </string>
+    <string name="points_transferred">تم تحويل الجواهر بنجاح</string>
+    <string name="points_transfer_error">هناك مشكلة في تحويل الجواهر، حاول مرة أخرى!</string>
+    <string name="transfer_error2">حاول دائماً أن تترك في رصيدك 100 جوهرة لتستطيع التحويل</string>
+    <string name="insufficient_points">ليس لديك رصيد كافٍ من الجواهر</string>
+    <string name="cashout_error">لاستبدال الجواهر, يجب أن يكون  لدي 500 جوهرة في رصيدك على الأقل</string>
+    <string name="cashout_error2">حافظ دائما على 100 جوهرة في رصيدك لتتمتع بخاصية استبدال النقود </string>
+    <string name="cashout_error3">الحد الأدنى لاستبدال الجواهر هو 500 جوهرة</string>
+    <string name="no_points">عـــــذراً، ليس لديك جواهر. أرجوا إعادة شحن رصيدك!</string>
+    <string name="no_points_banner">رصيدك من الجواهر نفذ!</string>
+    <string name="points_transfered">تم تحويل الجواهر بنجاح</string>
+    <!--<string name="message_sent">تم إرسال الرسالة</string>-->
+    <string name="earn_points_text">قم بمشاركة WITS  مع اصدقائك على أي من الوسائل التالية، ستحصل على جواهر مجاناً كلما استخدم أحد من اصدقائك رمز الإحالة الذي شاركته معه</string>
+    <string name="cashout_limit">الحد الأدنى لاستبدال الجواهر هو 601 جوهرة </string>
+    <string name="tutorial_des2">كلما أجبت أسرع كلما حصلت على جواهر أكثر</string>
+    <string name="tutorial_heading2">كيف تحصل على جواهر مجاناً؟</string>
+    <string name="invite_twitter_text2">. ساعدني لأحصل على جواهر مجانية. دعنا نلعب Wits سوياً.</string>
+    <string name="tutorial_des3">قم باستبدال جواهرك بنقود حقيقية.</string>
+    <string name="tutorial_heading2_des1">1. افتح و احصل على جواهر مجانية </string>
+    <string name="tutorial_heading2_des2">2. قم بإرسال دعوة باستخدام الفيسبوك ، تويتر ، الرسائل القصيرة أو البريد الالكتروني</string>
+    <string name="tutorial_heading2_des3">3. سيتم إرسال رمز الإحالة الخاص بك من خلال دعوة أصدقائك</string>
+    <string name="tutorial_heading2_des4">4. عندما يدخل أحد مستخدمي لعبة Wits رمز الإحالة الذي ارسلته له، سوف تحصل  على جواهر مجانية.</string>
+    <string name="how_to_earn_free_points">كيف تحصل على جواهر مجاناً؟</string>
+    <string name="error_not_enough_points">لا يوجد رصيد كافٍ من الجواهر</string>
+    <string name="howto_earn_points_des1">يمكنك أن تحصل دائماً على جواهر مجانية بمجرد دعوة اصدقائك للعب و بمشاركة تطبيق اللعبة على الفيس بوك أو تويتر</string>
+    <string name="earn_points_main">قم بمشاركة WITS  مع اصدقائك على أي من الوسائل التالية، ستحصل على جواهر مجاناً كلما استخدم أحد من اصدقائك رمز الإحالة الذي شاركته معه  </string>
+    <string name="invite_fb_text2">. ساعدني لأحصل على جواهر مجانية. </string>
+    <string name="error_transfer">هناك مشكلة في تحويل الجواهر، حاول مرة أخرى!</string>
+    <string name="title_activity_tit">TitActivity</string>
+
+    <!-- TUTORIAL SCREEN -->
+    <string name="language_tutorial">العب بلغتك الخاصة.</string>
+    <string name="category_tutorial">تنافس مع الآخرين في مواضيع من إختيارك.</string>
+    <string name="challenge_tutorial">ابحث عن لاعبين عشوائيين لديهم نفس اهتماماتك; كن دقيقا وسريعا لتكسب أكثر.</string>
+<!--
+    <string name="buy_tutorial">اشتر حجارة مرصعًة لفك الألعاب التي تساعدك لكسب أموال حقيقية. استبدل حجارتك الكريمة بأموال حقيقية.</string>
+-->
+
+    <string name="skip">تخطي </string>
+
+    <!-- AddOn Feature | START -->
+    <string name="addon_detailed_desc">وعن سؤالين متتالية تتم إزالة اثنين إجابات خاطئة.</string>
+    <string name="addon_desc_1">فتح 5 أسئلة</string>
+    <string name="congratulations">ألف مبروك!</string>
+    <string name="your_request_received">تلقي طلب الخاص بك</string>
+    <string name="claim">شكوى</string>
+    <string name="addon">إضافات</string>
+    <string name="rewards">المكافآت</string>
+    <string name="view_rewards">قائمة المكافآت</string>
+    <string name="messages">الرسائل</string>
+    <string name="go_text">اذهب الان</string>
+    <string name="already_friends">الاصدقاء</string>
+    <string name="buy_100_gems">شراء 100 من الأحجار الكريمة</string>
+    <string name="challenge_now">التحدي الآن</string>
+    <string name="challenge_strr">التحدي</string>
+    <string name="enter_chat_text">أدخل النص هنا</string>
+    <string name="for_gems">للحصول على الجواهر</string>
+    <string name="for_gems_text">للحصول على الجواهر</string>
+    <string name="for_points">للحصول على نقاط</string>
+    <string name="for_points_text">للحصول على نقاط</string>
+    <string name="friend_request">طلب صداقة </string>
+    <string name="friend_request_dialog_msg">هل تريد أن تكون مع صديق ؟</string>
+    <string name="game_mode_error1">يرجى اختيار أي نمط لعب تريد .</string>
+    <string name="game_mode_error2">يرجى اختيار أي نوع العملة .</string>
+    <string name="swipe_down"> اسحب باصبعك </string>
+    <string name="tutorial1">مرحبا بكم في WITS  - جوائزالفوز متعددة لعبة Trivia game التي تسمح لكم بالكسب المادي النقدي و الجوائز العديدة الحقيقية  التنافس على المواضيع إن كنت جيداً فيها ! </string>
+    <string name="tutorial3">اختر موضوعاً من الفئات المختلفة المقدمة عندنا .  اختر الموضوع المفضل لديك  للكسب التميزعن الآخرين ! </string>
+    <string name="tutorial7">هنالك "إضافات " لمساعدتك ! استخدامها لجعل المنافسة أسهل بالنسبة لك .</string>
+    <string name="tutorial8">العب أكثر، واكسب المزيد من المكافآت لفتح الجوائز المقفلة .</string>
+    <string name="game_mode">نوع اللعبة</string>
+    <string name="skip_text"></string>
+    <string name="addon_title">إضافات</string>
+    <string name="accept_send_str">اقبل وأرسل</string>
+    <string name="addon_dialog_msg">مبروك ! يمكنك الآن فتح ما يسمَى  :" بالاضافات " للفوز بجوائز حقيقية. و كثيرة .</string>
+    <string name="challenge_gems">التحدي للحصول على الجواهر</string>
+    <string name="challenge_points">التحدي للحصول على نقاط</string>
+    <string name="new_lost_str"> للأسف ! أنت لا تستطيع الحصول على أي مكافأة أو جائزة نقدية جديدة. الان وقت اللعب أصبح أكثر صعوبة في المرحلة المقبل ! </string>
+    <string name="purchase_gems_msg">لم يكن لديك ما يكفي من الأحجار الكريمة للمتابعة. هل ترغب في شراء الأحجار الكريمة الآن؟</string>
+    <string name="reward_msg_1">مرحبا ! هل لديك الأحجار الكريمة كافية ؟ لفتح مزيد من الجوائز القيمة .</string>
+    <string name="reward_msg_2">لقد أبليت حسنا ! الآن هو الوقت المناسب للحصول على جائزتك !</string>
+    <string name="reward_unlock_btn1">تأكد الآن</string>
+    <string name="reward_unlock_btn2">في وقت لاحق</string>
+    <string name="reward_unlock_msg">مبروك ! لفد فزت الان جوائز جديدة في اتظارك !</string>
+    <string name="search_rewards_str">البحث عن المكافأة</string>
+    <string name="unlocked_rewards">المكافآت مقفلة</string>
+    <string name="waiting_for_opp">في انتظار الخصم</string>
+    <string name="win_msg_rewards">مبروك ! ما تقوم به عظيم . انظر الى قائمة الجوائز لتكن لك ..  العب أكثر...و للفوز بها ...انت بحاجة الى مزيد من الأحجار الكريمة ! إذهب! إذهب! إذهب! </string>
+    <string name="enter_displayname"> ادخل اسم الظهور</string>
+    <string name="tutorial2">تسجيل الدخول بالأسلوب المفضل لديك من أجل البدء في اللعب والفوز!</string>
+    <string name="helpshift_detail1">الذهاب إلى مخزن WITS</string>
+    <string name="helpshift_detail2">شراء الأحجار الكريمة</string>
+    <string name="helpshift_detail3">إلعب واربح جوائز</string>
+    <string name="you_have_unlocked_5050">لقد فتحت 50/50 </string>
+    <string name="reward_instruction">اشتري جواهر لفتح المكافآت</string>
+    <string name="reward_instruction_new"> اشتري جواهر، العب بالجواهر واحصل على جوائز حقيقبة</string>
+    <string name="helpshift_title">3 خطوات سهلة لتخليص جائزتك و الحصول عليها </string>
+    <string name="forgot_password">نسيت كلمة السر</string>
+    <string name="help_str">مساعدة</string>
+    <string name="helpshift_item1_desc">مطلية بالذهب من الطراز النمساوي الأكثر ثراء</string>
+    <string name="helpshift_item1_title"> أزياء روكسي الملكية</string>
+    <string name="helpshift_item2_desc"> بورشوت ن الجديدة تفتح بعد جديد من التعبير التصويري، وتساعدك على التعبير عن أسلوبك الشخصي وموهبتك مع تكنولوجيات كانون القوية والمبدعة</string>
+    <string name="helpshift_item2_title">كاميرا كانون ن الرقمية</string>
+    <string name="new_invite_string">الآن يمكنك أيضا أن تحصل على النقود والجوائز الحقيقية مع ويتس! اضغط هنا</string>
+
+
+
+    <!-- NEW  -->
+    <string name="signup_imageview_edit">تعديل</string>
+    <string name="signup_displaynameedittext">اسم الظهور</string>
+    <string name="Sign_up_location">نحن تقارب موقعك حتى نتمكن من تحديد ترتيبك في بلدك </string>
+    <string name="reset_password"> إعادة تعيين كلمة المرور</string>
+    <string name="login_gplus_string">تسجيل الدخول مع جوجل</string>
+    <string name="plus_generic_error">تسجيل الدخول مع جوجل غير متوفر</string>
+    <string name="new_content_str">أضف موضوع</string>
+    <string name="submit_str">تسليم</string>
+    <string name="soundeffects">المؤثرات الصوتية</string>
+    <string name="draw_str">تعادل!</string>
+    <string name="store_points_100">100 نقطة</string>
+    <string name="store_points_500">220 نقطة</string>
+    <string name="store_points_1000">500 نقطة</string>
+    <string name="invite_str">دعوة</string>
+    <string name="accept_challenge_str">اضغط لقبول التحدي</string>
+    <string name="create_discussion_str">إنشاء مناقشة جديدة</string>
+    <string name="enter_discussion_title">يرجى إدخال عنوان المناقشة.</string>
+    <string name="no_create_thread_str">لم تقم بإنشاء مناقشة بعد.</string>
+    <string name="already_have_account_text">لديك حساب؟</string>
+    <string name="mail_sent">تم إرسال الرسالة</string>
+    <string name="title_activity_rankings_fragment">RankingsFragment</string>
+    <string name="title_activity_wits_store_tabs_fragment">WitsStoreTabsFragment</string>
+    <string name="title_activity_earn_points_fragment">EarnPointsFragment</string>
+    <string name="title_activity_transfer_points_fragment">TransferPointsFragment</string>
+    <string name="title_activity_twiter_invite">TwiterInviteActivity</string>
+    <string name="title_activity_tutorial_fragment">مقطع تعليمي</string>
+    <string name="tutorial_heading1">كيفية اللعب</string>
+    <string name="tutorial_des1">أسرع في دخول تحدي ضد أي شخص في العالم </string>
+    <!--< string name="tutorial_des4">4. فإن لعبة البحث الخصم بالنسبة لك للعب على الانترنت </string> <string name="tutorial_des5">5. الإجابة على الأسئلة المطروحة ل كسب الأحجار الكريمة يمكن صرفه نقدا </string> <string name="tutorial_des6">6.كيفية اللعب يتس</string> -->
+    <string name="title_activity_cashable_points">تحركات النقاط القابلة للصرف نقدا</string>
+    <string name="howto_use_wits_Store_des1">اشترك الآن و احصل على 100 نقطة مجانا</string>
+    <!-- <string name="howto_use_wits_Store_des2">2. You can purchase points using PayPal</string> <string name="howto_use_wits_Store_des3">3. The earned points from game can make you real money using cashout option. Just provide your details and keep wining</string> -->
+    <!-- <string name="howto_earn_points_des2">2. Send Invite using Facebook, Twiter, SMS or Email</string> <string name="howto_earn_points_des3">3. Your Referral Code will be sent using Invite to your Friends</string> <string name="howto_earn_points_des4">4. When any of Wits user enters your referral Code in Setting, you will get free Points</string> -->
+
+<!--
+    <string-array name="CountryCodes"> = أكواد البلاد
+-->
+    <string name="verified_text">تم التحقق</string>
+    <string name="invite_fb_text1">مرحباً، هيا لنلعب ويتس. رمز الإحالة الخاصة بي هو:</string>
+    <string name="invite_fb_title">ويتس - رقم الإحالة</string>
+    <string name="invite_twitter_text1">مرحباً! رمز الإحالة الخاص بي هو:</string>
+    <string name="join_text">اشترك </string>
+    <string name="ERROR1">خطأ بروتوكولي</string>
+    <string name="ERROR2">خطأ في التحليل</string>
+    <string name="ERROR3">خطأ في التكويد</string>
+    <string name="ERROR4">تأخر في الاتصال</string>
+    <string name="title_activity_inapp_billing">ملخص المدفوعات باللعبة</string>
+    <string name="email_incorrect">البريد الإلكتروني غير صحيح</string>
+    <string name="minimum_cashout_str">الحد الأدنى لاستبدال الجواهر هو 601 جوهرة </string>
+    <string name="message_sent">تم إرسال الرسالة</string> this string seems to have error in the English version
+    <string name="buy_tutorial">اشتر جواهر لفك الألعاب التي تساعدك لكسب أموال حقيقية. استبدل حجارتك الكريمة بأموال حقيقية.</string>
+    <string name="addon_desc">فتح سؤالين</string>
+    <string name="addon_detailed_desc_1">عن خمسة أسئلة متتالية تتم إزالة إجابتين خاطئة.</string>
+    <string name="our_team_will_contact">فريقنا سيتحقق من التفاصيل الخاصة بك وسنقوم بالاتصال لتحليل الشكوى</string>
+    <string name="addon_instruction"> شراء الملحق تساعدك على فتح المكافآت مثيرة. نشتري أكثر، و كسب المزيد</string>
+    <string name="tutorial4">اختر الطريقة التي تريد أن تلعب : ضد صديق ؟ أو خصم عشوائي من جميع أنحاء العالم ؟! الخيار لك !</string>
+    <string name="tutorial5">لكسب الأحجار الكريمة - لكسب المكافآت الفعلية والنقدية أو نقاط لتحسين مرتبتك من بين الاوائل . </string>
+    <string name="tutorial6">دون ذعر! قم بقراءة السؤال واختيار الإجابة الصحيحة قبل الخصم الخاص بك </string>
+
+
+    <!--<string-array name="spinnerItems">
+        <item>ذكر</item> = <item>الذكور</item>
+    </string-array>-->
+    <string-array name="contactItems"> = بنود الاتصال
+        <item>Technical Issue</item> = مشكلة تقنية
+        <item>General Feedback</item> = تقييم عام
+    </string-array>
+    <string name="redeem_text">استرداد</string>
+    <string name="cashout_error4">ليس لديك ما يكفي من الجواهر للحصول على النقود</string>
+    <!--
+        &lt;!&ndash; <string name="challenge_str">تحدى صديق</string> &ndash;&gt; it seems there is an error with this string
+    -->
+
+
+
+</resources>

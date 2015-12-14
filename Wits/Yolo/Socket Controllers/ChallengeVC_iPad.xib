@@ -15,6 +15,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeVC">
             <connections>
                 <outlet property="GemsDialogView" destination="PPi-AZ-73O" id="k6h-kX-fbk"/>
+                <outlet property="PlayAgainLabel" destination="hVk-Ix-Vm7" id="Cch-ob-CAn"/>
                 <outlet property="QuitTitle" destination="KiZ-QK-So7" id="P2c-9d-Czh"/>
                 <outlet property="ResultsView" destination="FLy-O9-yRI" id="IsX-aj-x0U"/>
                 <outlet property="addOnBtn" destination="eXy-SY-fgJ" id="Una-jC-lW1"/>
@@ -268,7 +269,7 @@
                     </subviews>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bC3-Jn-DfZ">
-                    <rect key="frame" x="580" y="921.99999985810121" width="100" height="100"/>
+                    <rect key="frame" x="580" y="921.99999982771396" width="100" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" backgroundImage="rewardsglow.png">
@@ -291,7 +292,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="A19-if-Acj">
-                    <rect key="frame" x="309" y="857.00000170069632" width="200" height="112"/>
+                    <rect key="frame" x="309" y="857.00000359993305" width="200" height="112"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" backgroundImage="playagainglowNew.png">
@@ -366,6 +367,12 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="GameFont7" family="Game Font 7" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Again" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hVk-Ix-Vm7">
+                    <rect key="frame" x="240" y="980" width="300" height="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                    <color key="textColor" red="0.71764705880000002" green="0.84705882349999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

@@ -29,6 +29,7 @@
                 <outlet property="O2View" destination="cPu-M8-I50" id="2oS-b2-uVf"/>
                 <outlet property="O2sendBtn" destination="3qg-9d-wn2" id="BX5-tJ-ueb"/>
                 <outlet property="OKBtn" destination="w0e-Ip-1Rk" id="Hzw-z3-L8M"/>
+                <outlet property="RewardsbtnLbl" destination="0d6-Bf-77U" id="C12-Jn-ayT"/>
                 <outlet property="ViewAgreement" destination="4Bf-49-180" id="XcT-M0-LW1"/>
                 <outlet property="acceptBtn" destination="N0f-CE-PsT" id="2cN-Xh-um6"/>
                 <outlet property="ageemntTitle" destination="oPb-tQ-ZHE" id="4Hh-qc-SvL"/>

@@ -307,11 +307,12 @@ NSString * const NotificationActionTwoIdent = @"CLOSE_CATEGORY";
 -(void)sendOnlineStatusCall:(NSString *)_status{
     
     MKNetworkEngine *engine = [[MKNetworkEngine alloc] initWithHostName:nil];
-    
+    NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
     NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
     [postParams setObject:@"onlineStatus" forKey:@"method"];
     [postParams setObject:[SharedManager getInstance].userID forKey:@"user_id"];
     [postParams setObject:[SharedManager getInstance].sessionID forKey:@"session_id"];
+[postParams setObject:language forKey:@"language"];
     [postParams setObject:_status forKey:@"online_status"];
     
     

@@ -153,10 +153,10 @@
           loadingtitle = Loading_1;
           settingsLbl.text = SETTINGS_1;
           musiclbl.text = MUSIC_LBL_1;
-          soundEffectLbl.text = SOUND_LBL_1;
+          soundEffectLbl.text = @"المؤثرات الصوتية";
           vibrationLbl.text = VIBRATION_LBL_1;
           generalLbl.text = GENERAL_LBL_1;
-          pushNotificationLbl.text = PUSH_LBL_1;
+          pushNotificationLbl.text = @"الإشعارات";
           challengeNotificationLbl.text = CHALLENGE_LBL_1;
           chatNotification.text = CHAT_LBL_1;
           referalCode.text = REFERRAL_CODE_1;
@@ -165,7 +165,7 @@
           referralCodeTxt.textAlignment = NSTextAlignmentRight;
           chooseLang.text = CHOOSE_LANGUAGE_1;
           chooseLang.textAlignment = NSTextAlignmentCenter;
-          selectlanguageHeading.text = SELECT_LANGUAGE_1;
+          selectlanguageHeading.text = @"اختيار اللغة";
           languageArray = [[NSArray alloc] initWithObjects:@"الإنجليزية", @"العربية", @"الفرنسية",@"الأسبانية",@"البرتغالية", nil];
           
           [languageSaveBtn setTitle:SAVE_LANGUAGE_BTN_1 forState:UIControlStateNormal];
@@ -183,7 +183,7 @@
           soundEffectLbl.text = SOUND_LBL_2;
           vibrationLbl.text = VIBRATION_LBL_2;
           generalLbl.text = GENERAL_LBL_2;
-          pushNotificationLbl.text = PUSH_LBL_2;
+          pushNotificationLbl.text = @"Les notifications";
           challengeNotificationLbl.text = CHALLENGE_LBL_2;
           chatNotification.text = CHAT_LBL_2;
           referalCode.text = REFERRAL_CODE_2;
@@ -192,10 +192,10 @@
           referralCodeTxt.textAlignment = NSTextAlignmentLeft;
           chooseLang.text = CHOOSE_LANGUAGE_2;
           chooseLang.textAlignment = NSTextAlignmentCenter;
-          selectlanguageHeading.text = SELECT_LANGUAGE_2;
+          selectlanguageHeading.text = @"Changer de langue";
           [languageSaveBtn setTitle:SAVE_LANGUAGE_BTN_2 forState:UIControlStateNormal];
           [rateUs setTitle:@"Evalúe-nos" forState:UIControlStateNormal];
-       languageArray = [[NSArray alloc] initWithObjects:@"INGLÉS (US)", @"ÁRABE (Ar)", @"FRANCÉS (Fr)",@"ESPAÑOL (Es)",@"PORTUGUÉS (Pt)", nil];
+       languageArray = [[NSArray alloc] initWithObjects:@"Anglais (US)", @"Arabe (Ar)", @"Français (Fr)",@"Espagnol (Es)",@"Portugais (Pt)", nil];
           [sendBtn setTitle:SEND_BTN_2 forState:UIControlStateNormal];
           [aboutBtn setTitle:ABOUT_BTN_2 forState:UIControlStateNormal];
           [changeLangBtn setTitle:CHANGE_LANG_BTN_2 forState:UIControlStateNormal];
@@ -219,8 +219,8 @@
           referralCodeTxt.textAlignment = NSTextAlignmentLeft;
           chooseLang.text = CHOOSE_LANGUAGE_3;
           chooseLang.textAlignment = NSTextAlignmentCenter;
-          selectlanguageHeading.text = SELECT_LANGUAGE_3;
-           languageArray = [[NSArray alloc] initWithObjects:@"Anglais", @"Arabe", @"Français",@"Espagnol",@"Portugais", nil];
+          selectlanguageHeading.text = @"Cambiar idioma";
+          languageArray = [[NSArray alloc] initWithObjects:@"INGLÉS", @"ÁRABE", @"FRANCÉS",@"ESPAÑOL",@"PORTUGUÉS", nil];
           [languageSaveBtn setTitle:SAVE_LANGUAGE_BTN_3 forState:UIControlStateNormal];
           [rateUs setTitle:@"Notez nous" forState:UIControlStateNormal];
           [sendBtn setTitle:SEND_BTN_3 forState:UIControlStateNormal];
@@ -237,7 +237,7 @@
           soundEffectLbl.text = SOUND_LBL_4;
           vibrationLbl.text = VIBRATION_LBL_4;
           generalLbl.text = GENERAL_LBL_4;
-          pushNotificationLbl.text = PUSH_LBL_4;
+          pushNotificationLbl.text = @"Notificações de envio";
           challengeNotificationLbl.text = CHALLENGE_LBL_4;
           chatNotification.text = CHAT_LBL_4;
           referalCode.text = REFERRAL_CODE_4;
@@ -246,7 +246,7 @@
           referralCodeTxt.textAlignment = NSTextAlignmentLeft;
           chooseLang.text = CHOOSE_LANGUAGE_4;
           chooseLang.textAlignment = NSTextAlignmentCenter;
-          selectlanguageHeading.text = SELECT_LANGUAGE_4;
+          selectlanguageHeading.text = @"Alterar o Idioma";
            languageArray = [[NSArray alloc] initWithObjects:@"INGLÊS (US)", @"ÁRABE (Ar)", @"FRANCÊS (Fr)",@"ESPANHOL (Es)",@"PORTUGUÊS (Pt)", nil];
           [languageButtonOutlet setTitle:[languageArray objectAtIndex:4] forState:UIControlStateNormal];
           [languageSaveBtn setTitle:SAVE_LANGUAGE_BTN_4 forState:UIControlStateNormal];

@@ -2827,6 +2827,11 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 -(void)setLanguageForScreen {
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
+     PlayAgainLabel.layer.shadowColor = [UIColor colorWithRed:183 green:216 blue:255 alpha:1.0].CGColor;
+     PlayAgainLabel.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+     PlayAgainLabel.layer.shadowRadius = 3.0;
+     PlayAgainLabel.layer.shadowOpacity = 0.9;
+     PlayAgainLabel.layer.masksToBounds = NO;
      NSString *suffix = @"";
      if(languageCode == 0 ) {
           _roundLbl.text = Round;
@@ -2845,7 +2850,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           
           loadingTitle = Loading_1;
           _roundLbl.text = Round_1;
-          
+          PlayAgainLabel.text = @"إلعب مرة أخرى";
           lblPlayforPoints.text = PLAY_FOR_POINTS_1;
           lblplayforGems.text = PLAY_FOR_GEMS_1;
           willhelpinRanking.text = WILL_HELP_IN_RANKING_1;
@@ -2857,6 +2862,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      }
      else if(languageCode == 2) {
           loadingTitle = Loading_2;
+          PlayAgainLabel.text = @"Rejouer";
           _roundLbl.text = Round_2;
           gameModForGems.text = For_Gems2;
           gameModForPoints.text = For_Points2;
@@ -2873,6 +2879,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           gameModForPoints.text = For_Points3;
           loadingTitle = Loading_3;
           _roundLbl.text = Round_3;
+          PlayAgainLabel.text= @"Jugar de nuevo";
           roundTitleLbl.text = Round_3;
           lblPlayforPoints.text = PLAY_FOR_POINTS_3;
           lblplayforGems.text = PLAY_FOR_GEMS_3;
@@ -2883,6 +2890,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      }
      else if(languageCode == 4) {
           loadingTitle = Loading_4;
+          PlayAgainLabel.text = @"Jogar Novamente";
           _roundLbl.text = Round_4;
           lblPlayforPoints.text = PLAY_FOR_POINTS_4;
           lblplayforGems.text = PLAY_FOR_GEMS_4;

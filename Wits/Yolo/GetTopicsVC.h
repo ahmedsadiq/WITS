@@ -14,7 +14,7 @@
 #import "AppDelegate.h"
 #import "CustomAnimationView.h"
 
-@interface GetTopicsVC : UIViewController<UITableViewDataSource,UITableViewDelegate,MFMailComposeViewControllerDelegate,UITextFieldDelegate,UISearchDisplayDelegate,SocketManagerDelegate>{
+@interface GetTopicsVC : UIViewController<UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate,MFMailComposeViewControllerDelegate,UITextFieldDelegate,UISearchDisplayDelegate,SocketManagerDelegate>{
      
      IBOutlet UISearchBar *searchBar;
      IBOutlet UITableView *topicTblView;

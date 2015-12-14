@@ -233,7 +233,7 @@
 {
      [super viewDidLoad];
      
-     self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+    // self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
      
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
@@ -256,16 +256,39 @@
      vsLbl.font = [UIFont fontWithName:FONT_NAME  size:17];
      searchingTxt.font = [UIFont fontWithName:FONT_NAME  size:14];
      opponent.font = [UIFont fontWithName:FONT_NAME  size:14];
-     
-     
+
      
      BOOL isMusicOn = [[NSUserDefaults standardUserDefaults] boolForKey:@"music"];
      if(isMusicOn) {
           AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;
           [del musicSwitch:true];
      }
-     
+     UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(signUpSwipeDown:)];
+     [left setDirection:UISwipeGestureRecognizerDirectionUp];
+     [self.view addGestureRecognizer:left];
 }
+- (void)signUpSwipeDown:(UISwipeGestureRecognizer *)gesture
+{
+     
+
+     [self.tabBarController.tabBar setHidden:false];
+
+//     [UIView animateWithDuration:0.5
+//                      animations:^{_HelpShiftView.alpha = 0.0;}
+//                      completion:^(BOOL finished){ [_HelpShiftView removeFromSuperview]; }];
+     [UIView beginAnimations:nil context:nil];
+     [UIView setAnimationDuration:1.0];
+     [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp
+                            forView:[self view]
+                              cache:NO];
+     [_HelpShiftView removeFromSuperview];
+
+     
+     
+     [UIView commitAnimations];
+}
+
+
 -(void) setUpTutorial {
      
      [self setLanguageForScreen];
@@ -1044,7 +1067,7 @@
 #pragma mark - gesture tapped
 - (void)sectionHeaderTapped:(UITapGestureRecognizer *)gestureRecognizer{
      NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:gestureRecognizer.view.tag];
-     if (indexPath.row == 0) {
+     if (indexPath.row == 0 ) {
           BOOL collapsed  = [[arrayForBool objectAtIndex:indexPath.section] boolValue];
           collapsed       = !collapsed;
           [arrayForBool replaceObjectAtIndex:indexPath.section withObject:[NSNumber numberWithBool:collapsed]];

@@ -401,7 +401,7 @@
 
 
 #define SIGNUP_TEXT @" SIGN UP"
-#define SIGIN_TEXT @" SIGN IN"
+#define SIGIN_TEXT @" LOG IN"
 #define OR_TEXT @"  OR"
 #define SIGNUP_EMAIL @"  Email"
 #define SIGNUP_DISPLAY_NAME @"  Display Name"
@@ -513,7 +513,7 @@
 #define ABOUTUS_TEXT @"About"
 
 #define HOME_BTN_1 @"الصفحة الرئسية"
-#define ABOUTUS_TEXT_1 @"معلومات عنا "
+#define ABOUTUS_TEXT_1 @"معلومات "
 #define TOPICS_BTN_1 @"فئات الأسئلة "
 #define FRIENDS_BTN_1 @"اصدقائي"
 #define HISTORY_BTN_1 @"تاريخ المباريات"
@@ -555,7 +555,7 @@
 #define TRANSFER_POINTS_BTN_3 @"Transferencia de Pontus"
 #define CONTACTS_BTN_3 @"Contactarnos"
 
-#define ABOUTUS_TEXT_4 @"Sobre nós"
+#define ABOUTUS_TEXT_4 @"Sobre"
 #define HOME_BTN_4 @"Início"
 #define TOPICS_BTN_4 @"Categorias"
 #define FRIENDS_BTN_4 @"Amigos"
@@ -1715,7 +1715,7 @@
 #define YOU_UNLOCKED_50_50 @"You have unlocked 50/50"
 #define NOW_FIVE_QUESTIONS_MSG @"Now for five consecutive questions two wrong answers will be removed"
 
-#define REWARDS_1 @"جوائز"
+#define REWARDS_1 @"المكافآت"
 #define COMGRATULATIONS_1 @"تهانينا"
 #define REQUEST_RECIEVED_1 @"تم استلام طلبك"
 #define OUR_TEAM_WILL_VERIFY_1 @" سيتأكد فريقنا من تفاصيل طلبك وسيتم الاتصال بك للمتابعة"

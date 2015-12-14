@@ -40,7 +40,7 @@
      [self setLanguageForScreen];
      // Do any additional setup after loading the view from its nib.
      searchField.delegate = self;
-     searchField.placeholder = @"Type here ";
+     searchField.placeholder = @"Type  ";
      searchField.backgroundColor = [UIColor clearColor];
      searchField.textColor = [UIColor whiteColor];
      [self.view addSubview: searchField];
@@ -522,6 +522,7 @@
      [postParams setObject:@"claimRewardLatest" forKey:@"method"];
      [postParams setObject:[SharedManager getInstance].userID forKey:@"user_id"];
      [postParams setObject:[SharedManager getInstance].sessionID forKey:@"session_id"];
+     
      [postParams setObject:[NSString stringWithFormat:@"%d",[rObj.reward_id intValue]] forKey:@"reward_id"];
      [postParams setObject:language forKey:@"language"];
      MKNetworkOperation *op = [engine operationWithURLString:SERVER_URL params:postParams httpMethod:@"POST"];
@@ -572,18 +573,23 @@
           cannotPurchase = CANNOT_PURCHASE;
           purchaseError = PURCHASE_ERROR;
           OKstr = @"Okay";
-          
+          [searchField setTextAlignment:NSTextAlignmentLeft];
+          UIColor *color = [UIColor whiteColor];
+          searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Search Reward" attributes:@{NSForegroundColorAttributeName: color}];
           loadingTitle = Loading;
           claim = CLAIM;
      }
      else if(languageCode == 1 ) {
+          searchField.contentVerticalAlignment = UIControlContentHorizontalAlignmentLeft;
           lblRewards.text = REWARDS_1;
           LblCograts.text = COMGRATULATIONS_1;
           buyAddonLbl.text = REWARD_INSTRUCTION_1;
           lblRequestRecieved.text = REQUEST_RECIEVED_1;
           ourTeamMsg.text = OUR_TEAM_WILL_VERIFY_1;
           [backBtn setTitle:BACK_BTN_1 forState:UIControlStateNormal];
-          
+          UIColor *color = [UIColor whiteColor];
+        [searchField setTextAlignment:NSTextAlignmentRight];
+          searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"البحث عن المكافأة" attributes:@{NSForegroundColorAttributeName: color}];
           cannotPurchase = CANNOT_PURCHASE_1;
           purchaseError = PURCHASE_ERROR_1;
           OKstr = OK_BTN_1;
@@ -600,7 +606,9 @@
           cannotPurchase = CANNOT_PURCHASE_2;
           purchaseError = PURCHASE_ERROR_2;
           OKstr = OK_BTN_2;
-          
+         [searchField setTextAlignment:NSTextAlignmentLeft];
+          UIColor *color = [UIColor whiteColor];
+          searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Cherche récompense"attributes:@{NSForegroundColorAttributeName: color}];
           loadingTitle = Loading_2;
           claim = CLAIM_2;
      }
@@ -614,8 +622,12 @@
           cannotPurchase = CANNOT_PURCHASE_3;
           purchaseError = PURCHASE_ERROR_3;
           OKstr = OK_BTN_3;
+          [searchField setTextAlignment:NSTextAlignmentLeft];
           loadingTitle = Loading_3;
           claim = CLAIM_3;
+          UIColor *color = [UIColor whiteColor];
+          searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Buscar recompensa"attributes:@{NSForegroundColorAttributeName: color}];
+          
      }
      else if(languageCode == 4) {
           lblRewards.text = REWARDS_4;
@@ -623,12 +635,15 @@
           lblRequestRecieved.text = REQUEST_RECIEVED_4;
           ourTeamMsg.text = OUR_TEAM_WILL_VERIFY_4;
           buyAddonLbl.text = REWARD_INSTRUCTION_4;
+          [searchField setTextAlignment:NSTextAlignmentLeft];;
           [backBtn setTitle:BACK_BTN_4 forState:UIControlStateNormal];
           cannotPurchase = CANNOT_PURCHASE_4;
           purchaseError = PURCHASE_ERROR_4;
           OKstr = OK_BTN_4;
           loadingTitle = Loading_4;
           claim = CLAIM_4;
+          UIColor *color = [UIColor whiteColor];
+          searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Pesquisar Recompensas"attributes:@{NSForegroundColorAttributeName: color}];
      }
      
      if (languageCode == 1) {

@@ -68,7 +68,7 @@ float _yLocation;
      
      // Do any additional setup after loading the view from its nib.
      _loadingView = [[LoadingView alloc] init];
-     self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+     //self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
      language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
      if(IS_IPAD){
@@ -453,7 +453,7 @@ float _yLocation;
           
           lblhistory.text = HISTORY_BTN;
           lblmesage.text = MESSAGE_BTN;
-          lblranking.text = RANKING_BTN;
+          lblranking.text =RANKING_BTN;
           lblsetting.text = SETTINGS_BTN;
           lblaboutus.text = ABOUTUS_TEXT;
           lbllogout.text = LOGOUT_BTN;
@@ -478,7 +478,8 @@ float _yLocation;
           loadingTitle = Loading_1;
           lblhistory.text = HISTORY_BTN_1;
           lblmesage.text = MESSAGE_BTN_1;
-          lblranking.text = RANKING_BTN_1;
+          lblranking.text = @"الترتيب";
+
           lblsetting.text = SETTINGS_BTN_1;
           lblaboutus.text = ABOUTUS_TEXT_1;
           lbllogout.text = LOGOUT_BTN_1;
@@ -514,10 +515,10 @@ float _yLocation;
           
           loadingTitle = Loading_2;
           lblhistory.text = HISTORY_BTN_2;
-          lblmesage.text = MESSAGE_BTN_2;
-          lblranking.text = RANKING_BTN_2;
+          lblmesage.text = @"Gagnez des Points";
+          lblranking.text = @"Classements";
           lblsetting.text = SETTINGS_BTN_2;
-          lblaboutus.text = ABOUTUS_TEXT_2;
+          lblaboutus.text = @"A propos";
           lbllogout.text = LOGOUT_BTN_2;
           //          [homeBtn setTitle:HOME_BTN_2 forState:UIControlStateNormal];
           //          [topicsBtn setTitle:TOPICS_BTN_2 forState:UIControlStateNormal];
@@ -536,11 +537,11 @@ float _yLocation;
           
           loadingTitle = Loading_3;
           lblhistory.text = HISTORY_BTN_3;
-          lblmesage.text = MESSAGE_BTN_3;
-          lblranking.text = RANKING_BTN_3;
-          lblsetting.text = SETTINGS_BTN_3;
-          lblaboutus.text = ABOUTUS_TEXT_3;
-          lbllogout.text = LOGOUT_BTN_3;
+          lblmesage.text = @"Ganar Puntos gratis";
+          lblranking.text = @"Rangos";
+          lblsetting.text = @"Configuración";
+          lblaboutus.text = @"Sobre";
+          lbllogout.text = @"Cerrar sesión";
           
           //          [homeBtn setTitle:HOME_BTN_3 forState:UIControlStateNormal];
           //          [topicsBtn setTitle:TOPICS_BTN_3 forState:UIControlStateNormal];
@@ -559,8 +560,8 @@ float _yLocation;
           loadingTitle = Loading_4;
           loadingTitle = Loading_4;
           lblhistory.text = HISTORY_BTN_4;
-          lblmesage.text = MESSAGE_BTN_4;
-          lblranking.text = RANKING_BTN_4;
+          lblmesage.text = @"Ganhe Pontos Grátis";
+          lblranking.text = @"Classificações";
           lblsetting.text = SETTINGS_BTN_4;
           lblaboutus.text = ABOUTUS_TEXT_4;
           lbllogout.text = LOGOUT_BTN_4;

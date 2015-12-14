@@ -52,7 +52,7 @@
 {
      [super viewDidLoad];
      
-     self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+    // self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
      
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
@@ -97,7 +97,10 @@
      _rejectBtn.font = [UIFont fontWithName:FONT_NAME size:16];
      _btnSelect.font = [UIFont fontWithName:FONT_NAME size:17];
      
-     
+     if(IS_IPAD)
+     {
+           cashablePoints.font = [UIFont fontWithName:STORE_FONT_NAME size:30];
+     }
 }
 
 -(void) setLanguage {
@@ -189,7 +192,7 @@
           cashoutAmount.text = CASHOUT_BTN_TITLE_1;
           loadingTitle = Loading_1;
           RewardsbtnLbl.text = REWARDS_1;
-          LblbuyButtonText.text = WITS_STORE_BUY_BUTTON_100_1;
+          LblbuyButtonText.text = @"شراء 100 من الأحجار الكريمة";
           titleLbl.text = WITS_STORE_TITLE_1;
           cashableTitle.text = CASHABLE_TITLE_1;
           noncashableTitle.text = NON_CASHABLE_TITLE_1;
@@ -267,7 +270,7 @@
           cashoutAmount.text = CASHOUT_BTN_TITLE_2;
           loadingTitle = Loading_2;
           titleLbl.text = WITS_STORE_TITLE_2;
-          LblbuyButtonText.text = WITS_STORE_BUY_BUTTON_100_2;
+          LblbuyButtonText.text = @"Acheter 100 gems";
           cashableTitle.text = CASHABLE_TITLE_2;
           noncashableTitle.text = NON_CASHABLE_TITLE_2;
           buyTitle.text = BUY_TITLE_2;
@@ -321,10 +324,10 @@
      }
      else if(languageCode == 3) {
           
-           RewardsbtnLbl.text = REWARDS_3;
+           RewardsbtnLbl.text = @"Premios";
           cashoutAmount.text = @"Ingresa los Puntos";
           loadingTitle = Loading_3;
-          LblbuyButtonText.text = WITS_STORE_BUY_BUTTON_100_3;
+          LblbuyButtonText.text = @"100 Gemas";
           titleLbl.text = WITS_STORE_TITLE_3;
           cashableTitle.text = CASHABLE_TITLE_3;
           
@@ -377,12 +380,12 @@
           [buyBtn3 setTitle:INAPP_BTN3_3 forState:UIControlStateNormal];
      }
      else if(languageCode == 4) {
-           RewardsbtnLbl.text = REWARDS_4;
+           RewardsbtnLbl.text = @"Prêmios";
           cashoutAmount.text = CASHOUT_BTN_TITLE_4;
           loadingTitle = Loading_4;
           titleLbl.text = WITS_STORE_TITLE_4;
           cashableTitle.text = CASHABLE_TITLE_4;
-          LblbuyButtonText.text = WITS_STORE_BUY_BUTTON_100_4;
+          LblbuyButtonText.text = @"Comprar 100 Gems";
           noncashableTitle.text = NON_CASHABLE_TITLE_4;
           buyTitle.text = BUY_TITLE_4;
           cashoutTitle.text = CASHOUT_TITLE_4;
@@ -1425,16 +1428,17 @@
 }
 
 - (IBAction)rewardsPressed:(id)sender {
-     if ([[UIScreen mainScreen] bounds].size.height == iPad) {
-          
-          RewardsListVC *update = [[RewardsListVC alloc] initWithNibName:@"RewardsListVC_iPad" bundle:nil];
-          [self.navigationController pushViewController:update animated:YES];
-     }
-     else{
-          
-          RewardsListVC *update = [[RewardsListVC alloc] initWithNibName:@"RewardsListVC" bundle:nil];
-          [self.navigationController pushViewController:update animated:YES];
-     }
+//     if ([[UIScreen mainScreen] bounds].size.height == iPad) {
+//          
+//          RewardsListVC *update = [[RewardsListVC alloc] initWithNibName:@"RewardsListVC_iPad" bundle:nil];
+//          [self.navigationController pushViewController:update animated:YES];
+//     }
+//     else{
+//          
+//          RewardsListVC *update = [[RewardsListVC alloc] initWithNibName:@"RewardsListVC" bundle:nil];
+//          [self.navigationController pushViewController:update animated:YES];
+//     }
+     [self.tabBarController setSelectedIndex:3];
 }
 
 - (IBAction)StoreMainBackPressed:(id)sender {

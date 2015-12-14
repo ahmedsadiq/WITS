@@ -55,40 +55,59 @@
 -(void)setLanguage {
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
+     UIColor *color = [UIColor whiteColor];
+   
      if(languageCode == 0 ) {
           Done = @"Done";
-          
+          [cityField setTextAlignment:NSTextAlignmentLeft];
+         cityField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"City" attributes:@{NSForegroundColorAttributeName: color}];
+          dobLbl.textAlignment = NSTextAlignmentLeft;
+          dobLbl.text = @"Birthday";
           cancel1 = CANCEL;
           loadingTitle = Loading;
           profileLbl.text = @"Profile";
           _profileLbl.text = PROFILE;
           [_backBtn setTitle:BACK_BTN forState:UIControlStateNormal];
           privateInformation.text = @"PRIVATE INFORMATION";
-          
+          MaleLbl.text = @"Male";
+          FemaleLbl.text = @"Female";
+          [aboutField setTextAlignment:NSTextAlignmentLeft];
+          aboutField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"About" attributes:@{NSForegroundColorAttributeName: color}];
+                [usernameField setTextAlignment:NSTextAlignmentLeft];
+          usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: color}];
           [cancelAvatar setTitle:CANCEL forState:UIControlStateNormal];
           [cancelBtn setTitle:CANCEL forState:UIControlStateNormal];
           [AvatarBtn setTitle:@"Avatar" forState:UIControlStateNormal];
           [takePictureBtn setTitle:@"Take Picture" forState:UIControlStateNormal];
-          [CameraRollBtn setTitle:@"Camera Roll" forState:UIControlStateNormal];
+          [CameraRollBtn setTitle:@"From File" forState:UIControlStateNormal];
           [updateBtn setTitle:@"Update" forState:UIControlStateNormal];
           [_backBtn setTitle:BACK_BTN forState:UIControlStateNormal];
      }
      else if(languageCode == 1 ) {
+          [cityField setTextAlignment:NSTextAlignmentRight];
+          dobLbl.textAlignment = NSTextAlignmentRight;
+          dobLbl.text = @"تاريخ ميلادك";
           Done = @"منجز";
+             [aboutField setTextAlignment:NSTextAlignmentRight];
           cancel1 = CANCEL_1;
+           [usernameField setTextAlignment:NSTextAlignmentRight];
           loadingTitle = Loading_1;
           _profileLbl.text = PROFILE_1;
           profileLbl.text = @"الملف الشخصي";
           privateInformation.text = @"معلومات خاصة";
           titleField.placeholder = @"اسم";
           cityField.placeholder = @"المدينة";
-          about.placeholder = @"معلومات عنا ";
+               usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"اسم المستخدم" attributes:@{NSForegroundColorAttributeName: color}];
+          aboutField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"معلومات عنا " attributes:@{NSForegroundColorAttributeName: color}];
+          MaleLbl.text = @"الذكور";
+          FemaleLbl.text = @"أنثى";
+          cityField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"المدينة" attributes:@{NSForegroundColorAttributeName: color}];
           
           [cancelAvatar setTitle:CANCEL_1 forState:UIControlStateNormal];
           [cancelBtn setTitle:CANCEL_1 forState:UIControlStateNormal];
           [AvatarBtn setTitle:@"الصورة الرمزية" forState:UIControlStateNormal];
           [takePictureBtn setTitle:@"تأخذ صورة" forState:UIControlStateNormal];
-          [CameraRollBtn setTitle:@"الصورة الرمزية" forState:UIControlStateNormal];
+          [CameraRollBtn setTitle:@"من ملف" forState:UIControlStateNormal];
           [_backBtn setTitle:BACK_BTN_1 forState:UIControlStateNormal];
           [updateBtn setTitle:@"تحديث" forState:UIControlStateNormal];
           [_backBtn setTitle:BACK_BTN_1 forState:UIControlStateNormal];
@@ -97,13 +116,22 @@
           Done = @"Terminé";
           cancel1 = CANCEL_2;
           loadingTitle = Loading_2;
+             [aboutField setTextAlignment:NSTextAlignmentLeft];
           _profileLbl.text = PROFILE_2;
           profileLbl.text = @"Profil";
+          dobLbl.text = @"Date de naissance";
           privateInformation.text = @"RENSEIGNEMENTS PERSONNELS";
           titleField.placeholder = @"nom";
           cityField.placeholder = @"Ville";
-          about.placeholder = @"A propos";
-          
+         // aboutField.placeholder = @"A propos";
+                aboutField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"A propos" attributes:@{NSForegroundColorAttributeName: color}];
+          MaleLbl.text = @"Mâle";
+           [usernameField setTextAlignment:NSTextAlignmentLeft];
+          FemaleLbl.text = @"Femelle";
+          [cityField setTextAlignment:NSTextAlignmentLeft];
+          dobLbl.textAlignment = NSTextAlignmentLeft;
+           usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Nom d\'utilisateur" attributes:@{NSForegroundColorAttributeName: color}];
+            cityField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Ville" attributes:@{NSForegroundColorAttributeName: color}];
           [cancelAvatar setTitle:CANCEL_2 forState:UIControlStateNormal];
           [cancelBtn setTitle:CANCEL_2 forState:UIControlStateNormal];
           [AvatarBtn setTitle:@"Avatar" forState:UIControlStateNormal];
@@ -111,49 +139,63 @@
           [CameraRollBtn setTitle:@"À partir du fichier" forState:UIControlStateNormal];
           
           [_backBtn setTitle:BACK_BTN_2 forState:UIControlStateNormal];
-          [updateBtn setTitle:@"Mettre à jour" forState:UIControlStateNormal];
+          [updateBtn setTitle:@"Mise à jour" forState:UIControlStateNormal];
      }
      else if(languageCode == 3) {
           Done = @"Done";
-          
+               usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Nombre de usuario" attributes:@{NSForegroundColorAttributeName: color}];
           cancel1 = CANCEL_3;
           loadingTitle = Loading_3;
           _profileLbl.text = PROFILE_3;
           profileLbl.text = @"Profilo";
+          aboutField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Sobre" attributes:@{NSForegroundColorAttributeName: color}];
+          dobLbl.text = @"Fecha nacimiento";
           titleField.placeholder = @"nombre";
           privateInformation.text = @"PRIVATE INFORMO";
+          [cityField setTextAlignment:NSTextAlignmentLeft];
+          dobLbl.textAlignment = NSTextAlignmentLeft;
+            cityField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Ciudad" attributes:@{NSForegroundColorAttributeName: color}];
           cityField.placeholder = @"Ciudad";
-          about.placeholder = @"Sobre ";
-          
+          [aboutField setTextAlignment:NSTextAlignmentLeft];
+ [usernameField setTextAlignment:NSTextAlignmentLeft];
+          MaleLbl.text = @"Hombre";
+          FemaleLbl.text = @"Mujer";
           [cancelAvatar setTitle:CANCEL_3 forState:UIControlStateNormal];
           [cancelBtn setTitle:CANCEL_3 forState:UIControlStateNormal];
           [AvatarBtn setTitle:@"Avatar" forState:UIControlStateNormal];
           [takePictureBtn setTitle:@"tomar foto" forState:UIControlStateNormal];
           [CameraRollBtn setTitle:@"Desde archivo" forState:UIControlStateNormal];
           [_backBtn setTitle:BACK_BTN_3 forState:UIControlStateNormal];
-          [updateBtn setTitle:@"Ĝisdatigu" forState:UIControlStateNormal];
+          [updateBtn setTitle:@"Actualización" forState:UIControlStateNormal];
           [_backBtn setTitle:BACK_BTN_3 forState:UIControlStateNormal];
      }
      else if(languageCode == 4) {
-          
+           [usernameField setTextAlignment:NSTextAlignmentLeft];
           Done = @"Terminé";
           cancel1 = CANCEL_4;
           loadingTitle = Loading_4;
-          
+             cityField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Cidade" attributes:@{NSForegroundColorAttributeName: color}];
           _profileLbl.text = PROFILE_4;
+          aboutField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Sobre" attributes:@{NSForegroundColorAttributeName: color}];
           profileLbl.text = @"Perfil";
+          [cityField setTextAlignment:NSTextAlignmentLeft];
+          dobLbl.textAlignment = NSTextAlignmentLeft;
           titleField.placeholder = @"nome";
           privateInformation.text = @"INFORMAÇÕES PESSOAIS";
           cityField.placeholder = @"Cidade";
-          about.placeholder = @"Sobre";
-          
+          aboutField.placeholder = @"Sobre";
+          [aboutField setTextAlignment:NSTextAlignmentLeft];
+     usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Nome de Usuário" attributes:@{NSForegroundColorAttributeName: color}];
+          MaleLbl.text = @"Masculino";
+          dobLbl.text = @"Data de Nascimento";
+          FemaleLbl.text = @"Feminino";
           [cancelAvatar setTitle:CANCEL_4 forState:UIControlStateNormal];
           [cancelBtn setTitle:CANCEL_4 forState:UIControlStateNormal];
           [AvatarBtn setTitle:@"Avatar" forState:UIControlStateNormal];
           [takePictureBtn setTitle:@"Tirar foto" forState:UIControlStateNormal];
           [CameraRollBtn setTitle:@"De Arquivo" forState:UIControlStateNormal];
           [_backBtn setTitle:BACK_BTN_4 forState:UIControlStateNormal];
-          [updateBtn setTitle:@"Atualizar" forState:UIControlStateNormal];
+          [updateBtn setTitle:@"Atualização" forState:UIControlStateNormal];
           [_backBtn setTitle:BACK_BTN_4 forState:UIControlStateNormal];
      }
 //     if (IS_IPAD) {
@@ -234,13 +276,13 @@
 //          }
 //          
 //     }
-     UIColor *color = [UIColor whiteColor];
-     nameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@" Name" attributes:@{NSForegroundColorAttributeName: color}];
-     countryField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@" Country" attributes:@{NSForegroundColorAttributeName: color}];
+    // UIColor *color = [UIColor whiteColor];
+     //nameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@" Name" attributes:@{NSForegroundColorAttributeName: color}];
+    // countryField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@" Country" attributes:@{NSForegroundColorAttributeName: color}];
      
-     about.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@" About" attributes:@{NSForegroundColorAttributeName: color}];
+    // about.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@" About" attributes:@{NSForegroundColorAttributeName: color}];
      
-     cityField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@" City" attributes:@{NSForegroundColorAttributeName: color}];
+   //  cityField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@" City" attributes:@{NSForegroundColorAttributeName: color}];
      
      UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, nameField.frame.size.height)];
      leftView.backgroundColor = nameField.backgroundColor;
@@ -271,12 +313,13 @@
 }
 
 -(void)sendgetProfileCall{
-     
+     NSString *language = [NSString stringWithFormat:@"%d", languageCode];
      MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
      NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
      [postParams setObject:@"getProfile" forKey:@"method"];
      [postParams setObject:[SharedManager getInstance].userID forKey:@"user_id"];
      [postParams setObject:[SharedManager getInstance].sessionID forKey:@"session_id"];
+     [postParams setObject:language forKey:@"language"];
      
      NSLog(@"%@",[SharedManager getInstance].sessionID);
      
@@ -534,6 +577,7 @@
      
      NSString *dateInNewFormat = [dateFormatter stringFromDate:dateOnly];
      [dobLbl setText:dateInNewFormat];
+     
      dobPicker.hidden = true;
      dobView.hidden = true;
      overlayView.hidden = true;
@@ -587,8 +631,8 @@
      
      [postParams setObject:displayName forKey:@"display_name"];
      [postParams setObject:dobLbl.text forKey:@"birthday"];
-     [postParams setObject:profile.usernameID forKey:@"user_name_id"];
-     [postParams setObject:about.text forKey:@"about"];
+     [postParams setObject:usernameField.text forKey:@"user_name_id"];
+     [postParams setObject:aboutField.text forKey:@"about"];
      
      NSString *gender = @"";
      if(isMale ) {
@@ -633,7 +677,7 @@
                [SharedManager getInstance]._userProfile.profile_image = imageUrl;
                [SharedManager getInstance]._userProfile.display_name = displayName;
                [SharedManager getInstance]._userProfile.usernameID = profile.usernameID;
-               [SharedManager getInstance]._userProfile.about = about.text;
+               [SharedManager getInstance]._userProfile.about = aboutField.text;
                [SharedManager getInstance]._userProfile.cityName = cityField.text;
                [SharedManager getInstance]._userProfile.birthday = dobLbl.text;
                [SharedManager getInstance]._userProfile.cur_countryName = countryField.text;
@@ -786,8 +830,8 @@
      
      [_loadingView hide];
      [_loadView removeFromSuperview];
-     //_loadingView = [[LoadingView alloc] init];
-     //[_loadingView showInView:self.view withTitle:loadingTitle];
+     _loadingView = [[LoadingView alloc] init];
+     [_loadingView showInView:self.view withTitle:loadingTitle];
      [self showAvatars];
 }
 
@@ -851,11 +895,11 @@
 -(void)showAvatars{
      
      
-     if([_avatarsArray count] > 0)
-     {
-          [self downloadAvatars];
-          return;
-     }
+//     if([_avatarsArray count] > 0)
+//     {
+//          [self downloadAvatars];
+//          return;
+//     }
      
      MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
      NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
@@ -1017,8 +1061,8 @@
 
 
 -(void)LoadAvatars{
-     
-     
+     [_loadView hide];
+     [_loadView removeFromSuperview];
      ////////////    Add cover image here  ///////////
      
      float interElementDistance_X = 6.0;

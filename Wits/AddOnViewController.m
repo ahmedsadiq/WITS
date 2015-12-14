@@ -312,6 +312,8 @@
      MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
      NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
      [postParams setObject:@"claimRewardLatest" forKey:@"method"];
+     NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+       [postParams setObject:language forKey:@"language"];
      [postParams setObject:[SharedManager getInstance].userID forKey:@"user_id"];
      [postParams setObject:[SharedManager getInstance].sessionID forKey:@"session_id"];
     // [postParams setObject:pointDeducted forKey:@"consumed_gems"];

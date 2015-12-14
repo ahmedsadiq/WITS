@@ -19,6 +19,8 @@
      
     IBOutlet UIImageView *cityicon;
     
+      IBOutlet UILabel *FemaleLbl;
+      IBOutlet UILabel *MaleLbl;
     IBOutlet UIButton *profileImgOutlet;
     IBOutlet UIImageView *genderIcon;
     IBOutlet UIImageView *countryicon;
@@ -31,10 +33,11 @@
     IBOutlet UIImageView *AboutIcon;
     __weak IBOutlet UIScrollView *profileScrollView;
     
+      IBOutlet UITextField *usernameField;
     __weak IBOutlet UITextField *nameField;
     __weak IBOutlet UITextField *titleField;
     __weak IBOutlet UILabel *genderLbl;
-    __weak IBOutlet UILabel *dobLbl;
+     IBOutlet UILabel *dobLbl;
     __weak IBOutlet UITextField *aboutField;
     __weak IBOutlet UITextField *cityField;
      IBOutlet UITextField *countryField;
