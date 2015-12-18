@@ -9,5 +9,5 @@
 #import "ChallengeSearchObject.h"
 
 @implementation ChallengeSearchObject
-@synthesize recieverName,senderName,senderProfileImage,senderProfileImgLink;
+@synthesize recieverName,senderName,senderProfileImage,senderProfileImgLink,language;
 @end

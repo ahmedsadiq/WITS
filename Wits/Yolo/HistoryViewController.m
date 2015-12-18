@@ -467,7 +467,7 @@
      if(isRanking) {
           
           int rows = ([[SharedManager getInstance].rankingArray count]/2);
-          if(rows%2 == 1) {
+          if([[SharedManager getInstance].rankingArray count] %2 == 1) {
                rows++;
           }
           return rows;
@@ -475,7 +475,7 @@
      else{
           
           int rows = ([historyArray count]/2);
-          if(rows%2 == 1) {
+          if([historyArray count]%2 == 1) {
                rows++;
           }
           return rows;
@@ -493,16 +493,23 @@
                
                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RankingCC_iPad" owner:self options:nil];
                cell = [nib objectAtIndex:0];
-          }
+               cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:20];
+               cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:20];
+                cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:20];
+                cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:20];
+                                }
           else{
                
                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RankingCC" owner:self options:nil];
                cell = [nib objectAtIndex:0];
+               cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:13];
+               cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:13];
+                 cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:13];
           }
           [cell setBackgroundColor:[UIColor clearColor]];
           
           NoRecordLbl.hidden = YES;
-          cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:13];
+        
           
 
           Rank *_rank = (Rank*)[[SharedManager getInstance].rankingArray objectAtIndex:currentIndex];
@@ -551,8 +558,8 @@
                NSString  *points = _rank.scorePoints;
                int totalPoints = [points intValue];
                cell.rightSubTitles.text = [self getStatusAccordingToPoints:totalPoints];
-               cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:13];
-               cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:13];
+//               cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:13];
+//               cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:13];
 
                if(_rank.countryName.length > 1) {
                     
@@ -606,10 +613,18 @@
           if ([[UIScreen mainScreen] bounds].size.height == iPad) {
                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HistoryCC_iPad" owner:self options:nil];
                cell = [nib objectAtIndex:0];
+               cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:20];
+               cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:20];
+               cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:20];
+               cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:20];
           }
           else{
                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HistoryCC" owner:self options:nil];
                cell = [nib objectAtIndex:0];
+               cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:13];
+               cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:13];
+               cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:13];
+               cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:13];
           }
           [cell setBackgroundColor:[UIColor clearColor]];
           NSUInteger index = [historyArray count];
@@ -622,8 +637,7 @@
           cell.leftTitle.text = tempHistory.sub_topic_title;
           NSString *messageStr = [NSString stringWithFormat:@"%@%@ ", tempHistory.game_message,[self getTimeDifference:tempHistory.history_date]];
           cell.leftSubTitles.text = messageStr;
-                          cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:13];
-                          cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:13];
+          
           
           [HelperFunctions setBackgroundColor:cell.leftOverLay];
           MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
@@ -643,8 +657,7 @@
                cell.rightTitle.text = tempHistory.sub_topic_title;
                NSString *messageStr = [NSString stringWithFormat:@"%@%@ ", tempHistory.game_message,[self getTimeDifference:tempHistory.history_date]];
                cell.rightSubTitles.text = messageStr;
-                cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:13];
-               cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:13];
+             
                [HelperFunctions setBackgroundColor:cell.rightOverLay];
                MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
                MKNetworkOperation *op = [engine operationWithURLString:tempHistory.opponent_image params:nil httpMethod:@"GET"];

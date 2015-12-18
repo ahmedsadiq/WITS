@@ -27,6 +27,7 @@
                 <outlet property="gmBg" destination="7nf-li-LUN" id="3Nw-br-0y4"/>
                 <outlet property="gmGemButton" destination="o58-SI-2Ct" id="TDv-0y-yWy"/>
                 <outlet property="gmStarsBtn" destination="isn-Ga-p3c" id="bBa-NZ-1eA"/>
+                <outlet property="gobtn" destination="o2i-qh-yUZ" id="JBC-BY-xF3"/>
                 <outlet property="knowledgeLbl" destination="hIe-Qy-Yb2" id="GcF-Wy-qf6"/>
                 <outlet property="lblGemsPoints" destination="Zhz-oG-Ke1" id="fnr-YK-1eB"/>
                 <outlet property="lblPlayforPoints" destination="XZl-3n-B57" id="wOB-QW-lVk"/>
@@ -153,7 +154,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="trg-g8-4uA">
-                    <rect key="frame" x="100" y="500" width="120" height="40"/>
+                    <rect key="frame" x="100" y="501" width="120" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                     <state key="normal" title="Cancel" backgroundImage="btnbgpressed.png">

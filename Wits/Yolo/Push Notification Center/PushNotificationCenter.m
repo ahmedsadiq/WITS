@@ -23,6 +23,8 @@
 #import "ChallengeSearchObject.h"
 #import "ConversationVC.h"
 #import "FriendsVC.h"
+#import "ToastView.h"
+
 //#import "conver"
 
 @implementation PushNotificationCenter
@@ -136,6 +138,7 @@ static PushNotificationCenter *centerInstance;
      NSString *msgbody = (NSString*)[challengeDIctionary objectForKey:@"message"];
      NSString *gameTitle = (NSString*)[challengeDIctionary objectForKey:@"gameTitle"];
      NSString *requestType = (NSString*)[challengeDIctionary objectForKey:@"requestType"];
+     NSLog(@"Request Type is : %@",requestType);
      opponentsenderImage = (NSString*)[challengeDIctionary objectForKey:@"profileImage"];
      
      [[NSUserDefaults standardUserDefaults] setObject:requestType forKey:@"requestType"];
@@ -190,7 +193,7 @@ static PushNotificationCenter *centerInstance;
                                                otherButtonTitles:View,nil];
      AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
      appDelegate.isGameInProcess = true;
-     
+
      alertView.tag = CHALLENGE_NOTIFICATION_TYPE;
      [alertView show];
      Tag = CHALLENGE_NOTIFICATION_TYPE;
@@ -478,6 +481,12 @@ static PushNotificationCenter *centerInstance;
           appDelegate.isFriendRequest = true;
           [tbc setSelectedIndex:1];
      }
+     else if([alertType isEqualToString:@"Buy Gems"])
+     {
+          UITabBarController *tbc = (UITabBarController *)[appDelegate window].rootViewController;
+          [tbc setSelectedIndex:2];
+     }
+     
      
 }
 
@@ -510,8 +519,17 @@ static PushNotificationCenter *centerInstance;
                searchObj.recieverName = opposenderName;
                searchObj.senderProfileImgLink = [SharedManager getInstance]._userProfile.profile_image;
                searchObj.recieverProfileImgLink = opponentsenderImage;
-               
+               searchObj.language = language;
+               NSString *requestType = [[NSUserDefaults standardUserDefaults]
+                                        stringForKey:@"requestType"];
+               if(([[SharedManager getInstance]._userProfile.cashablePoints intValue]> 10 && [requestType isEqualToString:@"gems"])|| [requestType isEqualToString:@"points"] ){
+               if(IS_IPAD)
+               {
+                    customSerachView = [[[NSBundle mainBundle] loadNibNamed:@"CustomLoading_iPad" owner:nil options:nil] objectAtIndex:0];
+               }
+               else{
                customSerachView = [[[NSBundle mainBundle] loadNibNamed:@"CustomLoading" owner:nil options:nil] objectAtIndex:0];
+               }
                [customSerachView showAlertMessage:searchObj];
                
                AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -522,6 +540,43 @@ static PushNotificationCenter *centerInstance;
                eventId = 0;
                [self connectToSocket];
                [alertView dismissWithClickedButtonIndex:0 animated:YES];
+               }else{
+                    //Case when you are out of gems
+                    NSString *message;
+                    NSString *title;
+                    NSString *cancel;
+                    NSString *View;
+                    
+                    if (languageCode == 0) {
+                         message = @"Sorry, you are out of Gems. Please recharge your account!";
+                         title = @"You are out of Gems!";
+                         cancel = CANCEL;
+                         View = @"Buy Gems";
+                    }else if (languageCode == 1){
+                         message = @"عـــــذراً، ليس لديك جواهر. أرجوا إعادة شحن رصيدك!";
+                         title = @"رصيدك من الجواهر نفذ!";
+                         cancel = CANCEL_1;
+                         View = @"شراء الأحجار";
+                    }else if (languageCode == 2){
+                         message = @"Désolé vous n\'avez plus de Gems. Merci de recharger votre compte.";
+                         title = @"Vous n\'avez plus de Gems!";
+                         cancel = CANCEL_2;
+                         View = @"Acheter de Gems";
+                    }else if (languageCode == 3){
+                         message = @"No te quedan Gemas. ¡Recarga tu cuenta!";
+                         title = @"¡No te quedan Gemas!";
+                         cancel = CANCEL_3;
+                         View = @"Comprar Gemas";
+                    }else if (languageCode == 4){
+                         message = @"Desculpe, não tem mais Gems! Faça uma recarga!";
+                         title = @"Não tem mais Gems!";
+                         cancel = CANCEL_4;
+                         View = @"Comprar Gems";
+                    }
+                    
+
+                      [NotifAlertMessage showNotifAlertWithMessage:message andTitle:title cancelButton:cancel OtherButton:View ActionNameForSecondBtn:@"BuyGems" ImageLink:@"" initwithDict:nil];
+               }
           }
           
      }
@@ -624,45 +679,58 @@ static PushNotificationCenter *centerInstance;
           }
      }
      else if ([packet.name isEqualToString:@"acceptChallenge"]) {
-          searchingicon.hidden = YES;
-          NSArray* args = packet.args;
-          NSDictionary *json = (NSDictionary*)args[0];
-          NSDictionary *userDictInner = [json objectForKey:[SharedManager getInstance].userID];
-          [customSerachView removeFromSuperview];
-          int flag = [[userDictInner objectForKey:@"flag"] intValue];
-          if(flag == 1){
-               isOpponentFound = true;
-               [timer invalidate];
-               timer = nil;
-          
-               Challenge *_challenge = [[Challenge alloc] initWithDictionary:userDictInner];
-               _challenge.type = type;
-               _challenge.type_ID = type_id;
-               NSString *strOppName= [userDictInner objectForKey:@"displayName"];
-               searchLbl.text = strOppName;
-               _challenge.challengeID = [challengeDIctionary objectForKey:@"challengeId"];
-               
-               ChallengeVC *challengeTemp = [[ChallengeVC alloc] initWithChallenge:_challenge];
-               
-               AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-               
-               
-               UITabBarController *tbc = (UITabBarController *)[appDelegate window].rootViewController;
-               tbc.tabBar.hidden = true;
-               [(UINavigationController *)tbc.selectedViewController pushViewController:challengeTemp animated:YES];
-               
-          }
-          else if(flag == 5) {
-               [AlertMessage showAlertWithMessage:@"Sorry, your friend is not interested in the challenge request at the moment. Retry later." andTitle:@"Challenge Not Accepted" SingleBtn:YES cancelButton:CANCEL OtherButton:nil];
+          AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+          if(!appDelegate.isChallengeCancelled) {
+               searchingicon.hidden = YES;
+               NSArray* args = packet.args;
+               NSDictionary *json = (NSDictionary*)args[0];
+               NSDictionary *userDictInner = [json objectForKey:[SharedManager getInstance].userID];
+               [customSerachView removeFromSuperview];
+               int flag = [[userDictInner objectForKey:@"flag"] intValue];
+               if(flag == 1){
+                    isOpponentFound = true;
+                    [timer invalidate];
+                    timer = nil;
+                    
+                    Challenge *_challenge = [[Challenge alloc] initWithDictionary:userDictInner];
+                    _challenge.type = type;
+                    _challenge.type_ID = type_id;
+                    NSString *strOppName= [userDictInner objectForKey:@"displayName"];
+                    searchLbl.text = strOppName;
+                    _challenge.challengeID = [challengeDIctionary objectForKey:@"challengeId"];
+                    
+                    ChallengeVC *challengeTemp = [[ChallengeVC alloc] initWithChallenge:_challenge];
+                    
+                    
+                    
+                    
+                    UITabBarController *tbc = (UITabBarController *)[appDelegate window].rootViewController;
+                    tbc.tabBar.hidden = true;
+                    [(UINavigationController *)tbc.selectedViewController pushViewController:challengeTemp animated:YES];
+                    
+               }
+               else if(flag == 5) {
+                    [AlertMessage showAlertWithMessage:@"Sorry, your friend is not interested in the challenge request at the moment. Retry later." andTitle:@"Challenge Not Accepted" SingleBtn:YES cancelButton:CANCEL OtherButton:nil];
+               }
+               else {
+                    [AlertMessage showAlertWithMessage:@"Unfortunately, your friend can't be reached at the moment. Please try later." andTitle:@"Friend Not Available" SingleBtn:YES cancelButton:OK_BTN OtherButton:nil];
+               }
           }
           else {
-               [AlertMessage showAlertWithMessage:@"Unfortunately, your friend can't be reached at the moment. Please try later." andTitle:@"Friend Not Available" SingleBtn:YES cancelButton:OK_BTN OtherButton:nil];
+               AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+               appDelegate.isGameInProcess = false;
+               [customSerachView removeFromSuperview];
+               
+               [sharedManager closeWebSocket];
           }
+          
      }
      else if ([packet.name isEqualToString:@"cancelChallenge"]) {
           AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
           appDelegate.isGameInProcess = false;
           [customSerachView removeFromSuperview];
+          
+          [sharedManager closeWebSocket];
      }
 }
 -(void)socketDisconnected:(SocketIO *)socket onError:(NSError *)error {

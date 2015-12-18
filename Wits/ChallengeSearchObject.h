@@ -14,5 +14,5 @@
 @property (strong, nonatomic) NSString *senderProfileImgLink;
 @property (strong, nonatomic) NSString *recieverProfileImgLink;
 @property (strong, nonatomic) UIImage *senderProfileImage;
-
+@property(strong,nonatomic) NSString *language;
 @end

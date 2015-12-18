@@ -114,7 +114,7 @@ static NSString * const kClientId = @"1020327276316-t4kr4gqvabt8dl5rscsblcco5nq7
     BOOL shouldHidePage2;
     BOOL shouldHidePage3;
     BOOL shouldHidePage4;
-    
+     BOOL DontSwipe;
     int contentValue;
     
     BOOL didStopPage0;

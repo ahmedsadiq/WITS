@@ -38,6 +38,7 @@
 {
      [super viewDidLoad];
      
+
      // Do any additional setup after loading the view from its nib.
      //[self setLanguage];
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
@@ -72,9 +73,9 @@
           MaleLbl.text = @"Male";
           FemaleLbl.text = @"Female";
           [aboutField setTextAlignment:NSTextAlignmentLeft];
-          aboutField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"About" attributes:@{NSForegroundColorAttributeName: color}];
+         // aboutField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"About" attributes:@{NSForegroundColorAttributeName: color}];
                 [usernameField setTextAlignment:NSTextAlignmentLeft];
-          usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: color}];
+          //usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: color}];
           [cancelAvatar setTitle:CANCEL forState:UIControlStateNormal];
           [cancelBtn setTitle:CANCEL forState:UIControlStateNormal];
           [AvatarBtn setTitle:@"Avatar" forState:UIControlStateNormal];
@@ -97,8 +98,8 @@
           privateInformation.text = @"معلومات خاصة";
           titleField.placeholder = @"اسم";
           cityField.placeholder = @"المدينة";
-               usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"اسم المستخدم" attributes:@{NSForegroundColorAttributeName: color}];
-          aboutField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"معلومات عنا " attributes:@{NSForegroundColorAttributeName: color}];
+              // usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"اسم المستخدم" attributes:@{NSForegroundColorAttributeName: color}];
+        //  aboutField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"معلومات عنا " attributes:@{NSForegroundColorAttributeName: color}];
           MaleLbl.text = @"الذكور";
           FemaleLbl.text = @"أنثى";
           cityField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"المدينة" attributes:@{NSForegroundColorAttributeName: color}];
@@ -130,8 +131,8 @@
           FemaleLbl.text = @"Femelle";
           [cityField setTextAlignment:NSTextAlignmentLeft];
           dobLbl.textAlignment = NSTextAlignmentLeft;
-           usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Nom d\'utilisateur" attributes:@{NSForegroundColorAttributeName: color}];
-            cityField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Ville" attributes:@{NSForegroundColorAttributeName: color}];
+         //  usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Nom d\'utilisateur" attributes:@{NSForegroundColorAttributeName: color}];
+          //  cityField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Ville" attributes:@{NSForegroundColorAttributeName: color}];
           [cancelAvatar setTitle:CANCEL_2 forState:UIControlStateNormal];
           [cancelBtn setTitle:CANCEL_2 forState:UIControlStateNormal];
           [AvatarBtn setTitle:@"Avatar" forState:UIControlStateNormal];
@@ -143,12 +144,12 @@
      }
      else if(languageCode == 3) {
           Done = @"Done";
-               usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Nombre de usuario" attributes:@{NSForegroundColorAttributeName: color}];
+             //  usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Nombre de usuario" attributes:@{NSForegroundColorAttributeName: color}];
           cancel1 = CANCEL_3;
           loadingTitle = Loading_3;
           _profileLbl.text = PROFILE_3;
           profileLbl.text = @"Profilo";
-          aboutField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Sobre" attributes:@{NSForegroundColorAttributeName: color}];
+         // aboutField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Sobre" attributes:@{NSForegroundColorAttributeName: color}];
           dobLbl.text = @"Fecha nacimiento";
           titleField.placeholder = @"nombre";
           privateInformation.text = @"PRIVATE INFORMO";
@@ -176,7 +177,7 @@
           loadingTitle = Loading_4;
              cityField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Cidade" attributes:@{NSForegroundColorAttributeName: color}];
           _profileLbl.text = PROFILE_4;
-          aboutField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Sobre" attributes:@{NSForegroundColorAttributeName: color}];
+         // aboutField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Sobre" attributes:@{NSForegroundColorAttributeName: color}];
           profileLbl.text = @"Perfil";
           [cityField setTextAlignment:NSTextAlignmentLeft];
           dobLbl.textAlignment = NSTextAlignmentLeft;
@@ -185,7 +186,7 @@
           cityField.placeholder = @"Cidade";
           aboutField.placeholder = @"Sobre";
           [aboutField setTextAlignment:NSTextAlignmentLeft];
-     usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Nome de Usuário" attributes:@{NSForegroundColorAttributeName: color}];
+   //  usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Nome de Usuário" attributes:@{NSForegroundColorAttributeName: color}];
           MaleLbl.text = @"Masculino";
           dobLbl.text = @"Data de Nascimento";
           FemaleLbl.text = @"Feminino";
@@ -341,9 +342,7 @@
                [self SetProfileData];
           }
      } onError:^(NSError* error) {
-          
-          [_loadView hide];
-          [_loadView removeFromSuperview];
+      
           NSString *emailMsg;
           NSString *title;
           NSString *cancel;
@@ -386,11 +385,11 @@
      
      displayName = tempUser.display_name;
      titleField.text = tempUser.display_name;;
-     about.text = tempUser.about;
+     aboutField.text = tempUser.about;
      cityField.text = tempUser.cityName;
      dobLbl.text = tempUser.birthday;
      countryField.text = tempUser.cur_countryName;
-     
+     usernameField.text = tempUser.usernameID;
      [self setUserProfileImage];
      
      if( [tempUser.gender caseInsensitiveCompare:@"male"] == NSOrderedSame ) {
@@ -828,10 +827,11 @@
 }
 - (IBAction)popUpAvatarPressed:(id)sender {
      
-     [_loadingView hide];
-     [_loadView removeFromSuperview];
-     _loadingView = [[LoadingView alloc] init];
-     [_loadingView showInView:self.view withTitle:loadingTitle];
+     //[_loadingView hide];
+     //[_loadView removeFromSuperview];
+     //_loadingView = [[LoadingView alloc] init];
+     AvatarView.hidden = NO;
+     [_loadView showInView:self.view withTitle:loadingTitle];
      [self showAvatars];
 }
 
@@ -895,11 +895,11 @@
 -(void)showAvatars{
      
      
-//     if([_avatarsArray count] > 0)
-//     {
-//          [self downloadAvatars];
-//          return;
-//     }
+     if([_avatarsArray count] > 0)
+     {
+          [self downloadAvatars];
+          return;
+     }
      
      MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
      NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
@@ -1006,8 +1006,7 @@
      MKNetworkOperation *op = [engine operationWithURLString:avatarURL params:nil httpMethod:@"GET"];
      
      [op onCompletion:^(MKNetworkOperation *completedOperation) {
-          [_loadingView hide];
-          [_loadingView removeFromSuperview];
+         
           NSString *imagePath = [docs stringByAppendingPathComponent:fileName];
           
           NSLog(@"Image Path: %@",imagePath);
@@ -1020,8 +1019,8 @@
           
      }onError:^(NSError* error) {
           
-          [_loadingView hide];
-          [_loadingView removeFromSuperview];
+          [_loadView hide];
+          [_loadView removeFromSuperview];
           NSString *emailMsg;
           NSString *title;
           NSString *cancel;
@@ -1061,8 +1060,7 @@
 
 
 -(void)LoadAvatars{
-     [_loadView hide];
-     [_loadView removeFromSuperview];
+
      ////////////    Add cover image here  ///////////
      
      float interElementDistance_X = 6.0;
@@ -1111,9 +1109,10 @@
           [avatarSelectionBtn setImage:avatarImage forState:UIControlStateNormal];
           [avatarSelectionBtn addTarget:self action:@selector(AvatarSelected:) forControlEvents:UIControlEventTouchUpInside];
           [avatarSelectionBtn setTag:k];
+          avatarSelectionBtn.backgroundColor = [UIColor clearColor];
           [AvatarsScrollView addSubview:avatarSelectionBtn];
      }
-     [AvatarsScrollView setContentSize:CGSizeMake(AvatarsScrollView.frame.size.width, AvatarsScrollView.frame.size.height+60)];
+     [AvatarsScrollView setContentSize:CGSizeMake(AvatarsScrollView.frame.size.width, AvatarsScrollView.frame.size.height+930)];
 
 }
 -(void)loadAvatarsToIpadView{
@@ -1164,7 +1163,7 @@
           }
      }
      
-     [AvatarsScrollView setContentSize:CGSizeMake(AvatarsScrollView.frame.size.width, AvatarsScrollView.frame.size.height+60)];
+     [AvatarsScrollView setContentSize:CGSizeMake(AvatarsScrollView.frame.size.width, AvatarsScrollView.frame.size.height+930)];
 
      
 }
@@ -1172,7 +1171,7 @@
 -(void)AvatarSelected:(id)sender{
      
      
-     [_loadView showInView:self.view  withTitle:loadingTitle];
+     //[_loadView showInView:self.view  withTitle:loadingTitle];
      UIButton *btn = (UIButton *)sender;
      AvatarSelectedIndex = btn.tag;
      NSString *avatarURL = [_avatarsArray objectAtIndex:btn.tag];

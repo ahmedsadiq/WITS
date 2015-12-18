@@ -49,7 +49,7 @@
      //[self loadProfileImage];
      _profileImageType = FromAvatar;
      AvatarSelectedIndex = 0;
-     
+     DontSwipe = false;
      profileScrollView.contentSize = CGSizeMake(320, 510);
      
      UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 5)];
@@ -100,12 +100,14 @@
 
 - (void)signUpSwipeDown:(UISwipeGestureRecognizer *)gesture
 {
+     if(!DontSwipe){
      int numViewControllers = self.navigationController.viewControllers.count;
      UIView *nextView = [[self.navigationController.viewControllers objectAtIndex:numViewControllers - 2] view];
      
      [UIView transitionFromView:self.navigationController.topViewController.view toView:nextView duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve completion:^(BOOL finished) {
           [self.navigationController popViewControllerAnimated:NO];
      }];
+     }
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -1077,7 +1079,7 @@
           if([_avatarsArray count] > 0)
                [postParams setObject:[_avatarsArray objectAtIndex:AvatarSelectedIndex] forKey:@"profile_image"];
           else
-               [postParams setObject:@"http://witsdev.witsapplication.com/api/images/avatars/Avengers_3.png" forKey:@"profile_image"];
+               [postParams setObject:@"http://www.quizapplication.faditekdev.com/api/images/1.jpg" forKey:@"profile_image"];
      }
      else
      {
@@ -1099,7 +1101,7 @@
           [_loadingView hide];
           NSDictionary *responseDict = [completedOperation responseJSON];
           NSNumber *flag = [responseDict objectForKey:@"flag"];
-          
+          errorMessageFromServer = [responseDict objectForKey:@"message"];
           if([flag isEqualToNumber:[NSNumber numberWithInt:SUCCESSFUL_LOGIN_FLAG]])
           {
                [self removeImage:@"test"];
@@ -1141,73 +1143,73 @@
                     cancel = CANCEL_4;
                }
                
-               if ([[responseDict objectForKey:@"message"]isEqualToString:@"Email Already Exist"]){
-                    
-                    [AlertMessage showAlertWithMessage:message andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-                    
-                    
-               }else if ([[responseDict objectForKey:@"message"]isEqualToString:@"Email Already Exist"]){
-                    
-                    
-                    NSString *emailMsg;
-                    NSString *title;
-                    
-                    if (languageCode == 0 ) {
-                         emailMsg = @"Username already exists";
-                         title = @"Error";
-                         cancel = CANCEL;
-                    } else if(languageCode == 1) {
-                         emailMsg = @"اسم المستخدم موجود مسبقا";
-                         title = @"خطأ";
-                         cancel = CANCEL_1;
-                    }else if (languageCode == 2){
-                         emailMsg = @"ECe nom d'utilisateur existe déjà";
-                         title = @"Erreur";
-                         cancel = CANCEL_2;
-                    }else if (languageCode == 3){
-                         emailMsg = @"¡Este usuario ya existe!";
-                         title = @"Error";
-                         cancel = CANCEL_3;
-                    }else if (languageCode == 4){
-                         emailMsg = @"O usuário já existe";
-                         title = @"Erro";
-                         cancel = CANCEL_4;
-                    }
-                    
-                    
-                    [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-                    
-               }else{
-                    
-                    NSString *emailMsg;
-                    NSString *title;
-                    
-                    if (languageCode == 0 ) {
-                         emailMsg = @"Something went wrong.";
-                         title = @"Error";
-                         cancel = CANCEL;
-                    } else if(languageCode == 1) {
-                         emailMsg = @"لقد حصل خطأ ما";
-                         title = @"خطأ";
-                         cancel = CANCEL_1;
-                    }else if (languageCode == 2){
-                         emailMsg = @"Erreur: Quelque chose s\'est mal passé!";
-                         title = @"Erreur";
-                         cancel = CANCEL_2;
-                    }else if (languageCode == 3){
-                         emailMsg = @"Algo salió mal!";
-                         title = @"Error";
-                         cancel = CANCEL_3;
-                    }else if (languageCode == 4){
-                         emailMsg = @"Alguma coisa deu errado!";
-                         title = @"Erro";
-                         cancel = CANCEL_4;
-                    }
-                    
-                    
-                    [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-               }
+//               if ([[responseDict objectForKey:@"message"]isEqualToString:@"Email Already Exist"]){
+//                    
+//                    [AlertMessage showAlertWithMessage:message andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+//                    
+//                    
+//               }else if ([[responseDict objectForKey:@"message"]isEqualToString:@"Email Already Exist"]){
+//                    
+//                    
+//                    NSString *emailMsg;
+//                    NSString *title;
+//                    
+//                    if (languageCode == 0 ) {
+//                         emailMsg = @"Username already exists";
+//                         title = @"Error";
+//                         cancel = CANCEL;
+//                    } else if(languageCode == 1) {
+//                         emailMsg = @"اسم المستخدم موجود مسبقا";
+//                         title = @"خطأ";
+//                         cancel = CANCEL_1;
+//                    }else if (languageCode == 2){
+//                         emailMsg = @"ECe nom d'utilisateur existe déjà";
+//                         title = @"Erreur";
+//                         cancel = CANCEL_2;
+//                    }else if (languageCode == 3){
+//                         emailMsg = @"¡Este usuario ya existe!";
+//                         title = @"Error";
+//                         cancel = CANCEL_3;
+//                    }else if (languageCode == 4){
+//                         emailMsg = @"O usuário já existe";
+//                         title = @"Erro";
+//                         cancel = CANCEL_4;
+//                    }
+//                    
+//                    
+//                    [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+//                    
+//               }else{
+//                    
+//                    NSString *emailMsg;
+//                    NSString *title;
+//                    
+//                    if (languageCode == 0 ) {
+//                         emailMsg = @"Something went wrong.";
+//                         title = @"Error";
+//                         cancel = CANCEL;
+//                    } else if(languageCode == 1) {
+//                         emailMsg = @"لقد حصل خطأ ما";
+//                         title = @"خطأ";
+//                         cancel = CANCEL_1;
+//                    }else if (languageCode == 2){
+//                         emailMsg = @"Erreur: Quelque chose s\'est mal passé!";
+//                         title = @"Erreur";
+//                         cancel = CANCEL_2;
+//                    }else if (languageCode == 3){
+//                         emailMsg = @"Algo salió mal!";
+//                         title = @"Error";
+//                         cancel = CANCEL_3;
+//                    }else if (languageCode == 4){
+//                         emailMsg = @"Alguma coisa deu errado!";
+//                         title = @"Erro";
+//                         cancel = CANCEL_4;
+//                    }
+//                    
+               
+                    [AlertMessage showAlertWithMessage:errorMessageFromServer andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
           }
+          
           
      } onError:^(NSError* error) {
           
@@ -1295,7 +1297,7 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
      
-     NSLog(@"Clicked at index: %i",buttonIndex);
+     NSLog(@"Clicked at index: %li",(long)buttonIndex);
      
      if(buttonIndex == CAMERA_INDEX)
           [self cameraPhoto];
@@ -1309,6 +1311,7 @@
 #pragma mark - TextField Delegates
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
+     DontSwipe = true;
      if (textField == usernameLbl){
           [UIView beginAnimations:nil context:nil];
           [UIView setAnimationDuration:0.3];
@@ -1331,7 +1334,7 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
      self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-     
+     DontSwipe = false;
      [self animateTextField: textField up: NO];
 }
 
@@ -1469,11 +1472,11 @@
      self.navController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
      if(IS_IPAD)
      {
-          [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"homeglowForIpad.png"]
+          [self.navController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"homeglowForIpad.png"]
                                                                   imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
           
-          [self.navigationController.tabBarItem setImage:[[UIImage imageNamed:@"homeForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-          self.navigationController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -35, 15, 35);
+          [self.navController.tabBarItem setImage:[[UIImage imageNamed:@"homeForIpad.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+          self.navController.tabBarItem.imageInsets = UIEdgeInsetsMake(-15, -35, 15, 35);
           
      }
      [self.navController setNavigationBarHidden:YES animated:NO];

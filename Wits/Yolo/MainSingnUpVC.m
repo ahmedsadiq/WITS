@@ -59,14 +59,14 @@
      //
      
      UIColor *color = [UIColor whiteColor];
-     
+     DontSwipe = false;
      emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"EMAIL" attributes:@{NSForegroundColorAttributeName: color}];
      pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD" attributes:@{NSForegroundColorAttributeName: color}];
      [self setLanguage];
      [self setUpTutorial];
      
      tutorialLbl.text = tutoStr1;
-     
+   
      CGRect myRect = CGRectMake(0, 0, 0, 0);
      NSString *imageName = @"";
      if ([[UIScreen mainScreen] bounds].size.height == iPad){
@@ -146,6 +146,7 @@
 - (void)signUpSwipeDown:(UISwipeGestureRecognizer *)gesture
 {
      SignUpVC *signUpVC;
+     if(!DontSwipe){
      if ([[UIScreen mainScreen] bounds].size.height == iPad) {
           
           signUpVC = [[SignUpVC alloc] initWithNibName:@"SignUpVC_iPad" bundle:nil];
@@ -181,6 +182,7 @@
            [nav pushViewController:destVC animated:NO];
       }
       ];
+     }
 }
 
 - (void)languageSwipeDown:(UISwipeGestureRecognizer *)gesture
@@ -530,7 +532,8 @@
           [session closeAndClearTokenInformation];
           [session close];
           [FBSession setActiveSession:nil];
-          
+          if(DontSwipe)
+          [self textFieldDidBeginEditing:nil];
           NSHTTPCookieStorage* cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
           NSArray* facebookCookies = [cookies cookiesForURL:[NSURL         URLWithString:@"https://facebook.com/"]];
           for (NSHTTPCookie* cookie in facebookCookies) {
@@ -694,6 +697,13 @@
           _lblTutorial.frame = CGRectMake(20, _skipOutlet.frame.origin.y - _lblTutorial.frame.size.height, _lblTutorial.frame.size.width, _skipOutlet.frame.size.height);
      }
      
+//     CGRect btnframe = _skipOutlet.frame;
+//     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//     
+//     UIImage *buttonImageNormal = [UIImage imageNamed:@"arrowRight.png"];
+//     [button setBackgroundImage:buttonImageNormal forState:UIControlStateNormal];
+//     button.frame = CGRectMake(btnframe.origin.x + 20, btnframe.origin.y, 20, 30);
+//     [tutorialScrollView addSubview:button];
      
      [tutorialScrollView addSubview:tutorialScroll];
      tutorialScroll.pagingEnabled = YES;
@@ -1162,7 +1172,7 @@
           }
           else if([flag isEqualToNumber:[NSNumber numberWithInt:USER_ALREADY_FLAG]])
           {
-               
+              // [self DialogYes:self];
                /*    [AlertMessage showAlertWithMessage:@"You have already signed in from another device. Would you like to sign out from all other devices and sign in here?"  andTitle:@"Error"];
                 */
                NSString *Title;
@@ -1965,11 +1975,13 @@
 #pragma text field delegates method
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
+     DontSwipe = true;
      [self animateTextField: textField up: YES];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+     DontSwipe = false;
      [self animateTextField: textField up: NO];
 }
 
@@ -2123,7 +2135,7 @@
 - (IBAction)DialogYes:(id)sender {
      
      [self sendLoginCall:true];
-    // [DialogView removeFromSuperview];
+     //[DialogView removeFromSuperview];
 }
 
 - (IBAction)DialogNo:(id)sender {

@@ -23,9 +23,10 @@
      NSString * LoadingTitle;
      NSString *cancel1;
      NSString *Done;
+     NSString *errorMessageFromServer;
      IBOutlet UIButton *takePictureBtn;
      BOOL  isEditPressed;
-     
+     BOOL DontSwipe;
      __weak IBOutlet UILabel *signinLabel;
      IBOutlet UIButton *cancelAvatar;
      IBOutlet UIButton *cancelBtn;

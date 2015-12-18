@@ -9,15 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "ChallengeSearchObject.h"
 #import "AsyncImageView.h"
+#import "AsyncImageView.h"
+#import "SocketManager.h"
 @interface CustomLoading : UIView {
-    
+     int languageCode;
+     NSString *language;
      NSTimer *timer;
      int timeSinceTimer;
+     SocketManager *sharedManager;
      BOOL isOpponentFound;
      ChallengeSearchObject *senderObj;
      __weak IBOutlet UIImageView *searchBg;
      __weak IBOutlet AsyncImageView *senderProfileImageView;
      
+     __weak IBOutlet UIButton *cancelbtn;
      __weak IBOutlet UILabel *senderNameLbl;
     __weak IBOutlet UILabel *opponentNameLbl;
      
@@ -30,6 +35,7 @@
 @property int loaderIndex;
 @property (weak, nonatomic) IBOutlet UIImageView *senderProfileImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *opponentProfileImageView;
+- (IBAction)cancelPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIView *searchingLoaderView;
 @property (weak, nonatomic) IBOutlet UIImageView *firstdot;

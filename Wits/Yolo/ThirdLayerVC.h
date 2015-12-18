@@ -185,6 +185,7 @@
 @property (strong, nonatomic) IBOutlet UIView *gameModView;
 @property (weak, nonatomic) IBOutlet UIButton *challengeNowBtn;
 @property (weak, nonatomic) IBOutlet UIButton *gmGemButton;
+@property (weak, nonatomic) IBOutlet UIButton *gobtn;
 @property (weak, nonatomic) IBOutlet UILabel *searchOppLbl;
 @property (strong, nonatomic)  IBOutlet UIView *buyGemsView;
 @property (weak, nonatomic) IBOutlet UIButton *acceptbuygems;

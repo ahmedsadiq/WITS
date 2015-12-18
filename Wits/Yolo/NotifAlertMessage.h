@@ -23,7 +23,7 @@
 {
      NotifAlertMessage *alertMessage;
      NSInteger currentSelectedIndex;
-     
+     BOOL noProfileimage;
      UIView *challengeView;
      NSString *opponentsenderImage;
      NSString *opposenderName;

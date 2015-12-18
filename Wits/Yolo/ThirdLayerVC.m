@@ -1680,7 +1680,8 @@
           loadingTitle = Loading;
           searchBar.placeholder = SEARCH_CATEGORY;
           
-          
+          [_gobtn setTitle:@"GO" forState:(UIControlStateNormal)];
+     
           
           knowledgeLbl.text = KNOWLEDGE_LBL;
           tutoDesc1.text = TUTORIAL_DESC_LBL;
@@ -1721,6 +1722,7 @@
           [backBtn setTitle:BACK_BTN forState:UIControlStateNormal];
      }
      else if(languageCode == 1 ) {
+          [_gobtn setTitle:@"اذهب الان" forState:(UIControlStateNormal)];
           
           loadingTitle = Loading_1;
           searchBar.placeholder = SEARCH_CATEGORY_1;
@@ -1779,6 +1781,7 @@
           howtoPlay3 = @"Echangez vos Gems contre de l'argent.";
           forGemsLable.text = For_Gems2;
           forPointsLabel.text = For_Points2;
+          [_gobtn setTitle:@"Allez" forState:(UIControlStateNormal)];
           
           
           
@@ -1818,6 +1821,7 @@
           
           searchBar.placeholder = SEARCH_CATEGORY_3;
           loadingTitle = Loading_3;
+          [_gobtn setTitle:@"ADELANTE" forState:(UIControlStateNormal)];
           
           PlayNowLabel.text =PLAY_NOW_3;
           challengeAFriend.text = Challenge_a_friend3;
@@ -1861,7 +1865,7 @@
           [backBtn3 setTitle:BACK_BTN_3 forState:UIControlStateNormal];
      }
      else if(languageCode == 4) {
-          
+          [_gobtn setTitle:@"IR" forState:(UIControlStateNormal)];
           searchBar.placeholder = SEARCH_CATEGORY_4;
           loadingTitle = Loading_4;
           howtoPlay1 = @"Inicie um desafio de 1-1 contra qualquer pessoa no mundo.";
@@ -2100,7 +2104,7 @@
      
      
      CATransition *transition = [CATransition animation];
-     transition.duration = 0.3;
+     transition.duration = 0.6;
      transition.type = kCATransitionPush; //choose your animation
      transition.subtype = kCATransitionFromBottom;
      [_gameModView.layer addAnimation:transition forKey:nil];

@@ -127,12 +127,12 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                currentSelfPoints = 70;
                currentOtherPoints = 70;
           }
-//          for(int i=1; i<8; i++) {
-//               UIImageView *starImgLeftView = (UIImageView*)[upperViewLeft viewWithTag:i];
-//               UIImageView *starImgRightView = (UIImageView*)[upperViewRight viewWithTag:i];
-//               starImgLeftView.image = [UIImage imageNamed:@"gemwhite.png"];
-//               starImgRightView.image = [UIImage imageNamed:@"gemwhite.png"];
-//          }
+          //          for(int i=1; i<8; i++) {
+          //               UIImageView *starImgLeftView = (UIImageView*)[upperViewLeft viewWithTag:i];
+          //               UIImageView *starImgRightView = (UIImageView*)[upperViewRight viewWithTag:i];
+          //               starImgLeftView.image = [UIImage imageNamed:@"gemwhite.png"];
+          //               starImgRightView.image = [UIImage imageNamed:@"gemwhite.png"];
+          //          }
      }else if ([requestType isEqualToString:@"points"]){
           selfgameTypeimg.image = [UIImage imageNamed:@"starg1.png"];
           oppGametypeimg.image = [UIImage imageNamed:@"starg1.png"];
@@ -141,12 +141,12 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           currentOtherPoints = 0;
           _gemRight.image = [UIImage imageNamed:@"newStarPoints.png"];
           _gemLeft.image = [UIImage imageNamed:@"newStarPoints.png"];
-//          for(int i=1; i<8; i++) {
-//               UIImageView *starImgLeftView = (UIImageView*)[upperViewLeft viewWithTag:i];
-//               UIImageView *starImgRightView = (UIImageView*)[upperViewRight viewWithTag:i];
-//               starImgLeftView.image = [UIImage imageNamed:@"starwhite.png"];
-//               starImgRightView.image = [UIImage imageNamed:@"starwhite.png"];
-//          }
+          //          for(int i=1; i<8; i++) {
+          //               UIImageView *starImgLeftView = (UIImageView*)[upperViewLeft viewWithTag:i];
+          //               UIImageView *starImgRightView = (UIImageView*)[upperViewRight viewWithTag:i];
+          //               starImgLeftView.image = [UIImage imageNamed:@"starwhite.png"];
+          //               starImgRightView.image = [UIImage imageNamed:@"starwhite.png"];
+          //          }
      }
      if(IS_IPHONE_4){
           _roundView.frame = CGRectMake(0,_roundLbl.frame.size.height+400, 320, 330);
@@ -193,9 +193,12 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      topBarOpponentName.text = [name_opponent objectAtIndex:0];
      [self viewSlideInFromLeftToRight:upperViewLeft];
      [self viewSlideInFromRightToLeft:upperViewRight];
-      appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+     appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
      [self showQuestion:currentIndex];
-     
+     option_1_Btn.exclusiveTouch = YES;
+     option_2_Btn.exclusiveTouch = YES;
+     option_3_Btn.exclusiveTouch = YES;
+     option_4_Btn.exclusiveTouch = YES;
      [self setInitialPoints];
      
      [self connectToSocket];
@@ -504,9 +507,9 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 -(void)countDown:(NSTimer *) aTimer {
      
      timerLbl.text = [NSString stringWithFormat:@"%d",[timerLbl.text  intValue] - 1];
-     int timeSpend = 10 - [timerLbl.text intValue];
+     int timeSpend = 10 - ([timerLbl.text intValue] );
      if ([_challenge.isSuperBot intValue]== 0 && [_challenge.isBot intValue]== 1) {
-          if(timeSpend >= [timeSeconds intValue]){
+          if(timeSpend >= 10){
                if (!isQuestionAnswered ) {
                     [a_Timer invalidate];
                     [self disableOptions:true];
@@ -520,9 +523,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      }
      if ([_challenge.isBot intValue]== 0){
           
-          if(timeSpend >= [timeSeconds intValue]){
-               if (!isQuestionAnswered ) {
-                    
+          if(timeSpend >= 10){
+               if (!isQuestionAnswered) {
                     [a_Timer invalidate];
                     [self disableOptions:true];
                     [self TimerUp];
@@ -594,22 +596,22 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 }
 
 -(void) disableOptions :(BOOL) isDisable {
-          if(isDisable) {
-     
-               option_1_Btn.userInteractionEnabled = false;
-               option_2_Btn.userInteractionEnabled = false;
-               option_3_Btn.userInteractionEnabled = false;
-               option_4_Btn.userInteractionEnabled = false;
-     
-          }
-          else {
-     
-               option_1_Btn.userInteractionEnabled = true;
-               option_2_Btn.userInteractionEnabled = true;
-               option_3_Btn.userInteractionEnabled = true;
-               option_4_Btn.userInteractionEnabled = true;
-               
-          }
+     if(isDisable) {
+          
+          option_1_Btn.userInteractionEnabled = false;
+          option_2_Btn.userInteractionEnabled = false;
+          option_3_Btn.userInteractionEnabled = false;
+          option_4_Btn.userInteractionEnabled = false;
+          
+     }
+     else {
+          
+          option_1_Btn.userInteractionEnabled = true;
+          option_2_Btn.userInteractionEnabled = true;
+          option_3_Btn.userInteractionEnabled = true;
+          option_4_Btn.userInteractionEnabled = true;
+          
+     }
 }
 
 - (IBAction)showTimeLine:(id)sender {
@@ -623,7 +625,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      [[RightBarVC getInstance] ShowInView];
 }
 -(void)TimerUp{
-     
+     NSLog(@"challelahscljhdlkas d%@",_challenge.challengeID );
      if(!isQuestionAnswered){
           answerReaction.hidden = true;
           int timeSpend = 10 - ([timerLbl.text  intValue] - 1);
@@ -678,26 +680,31 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           for(int i=0; i<tempQuestion.optionsArray.count; i++) {
                Option *tempOption1 = [tempQuestion.optionsArray objectAtIndex:i];
                if([tempOption1.isCorrect intValue] == 1) {
+                    NSString *correctOpt = [_challenge.randAnswerArray objectAtIndex:currentIndex];
                     
                     buttonToBlink = (UIButton*)[self.view viewWithTag:i+100];
-                    
+                      IndexToShowProfilePic = i;
                     switch (i) {
                          case 0:
                               [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"1right.png"] forState:UIControlStateNormal];
-                              _optionImg1.hidden = false;
+                              if([correctOpt integerValue] == 1 )
+                                //   _optionImg1.hidden = false;
                               
                               break;
                          case 1:
                               [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"2right.png"] forState:UIControlStateNormal];
-                              _optionImg2.hidden = false;
+                              if([correctOpt integerValue] == 1 )
+                                //   _optionImg2.hidden = false;
                               break;
                          case 2:
                               [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"3right.png"] forState:UIControlStateNormal];
-                              _optionImg3.hidden = false;
+                              if([correctOpt integerValue] == 1)
+                                  // _optionImg3.hidden = false;
                               break;
                          case 3:
                               [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"4right.png"] forState:UIControlStateNormal];
-                              _optionImg4.hidden = false;
+                              if([correctOpt integerValue] == 1 )
+                                  // _optionImg4.hidden = false;
                               break;
                               
                          default:
@@ -705,6 +712,41 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                     }
                }
           }
+     }
+     else{
+          
+          Question *tempQuestion = [_challenge.questionsArray objectAtIndex:currentIndex];
+          for(int i=0; i<tempQuestion.optionsArray.count; i++) {
+               Option *tempOption1 = [tempQuestion.optionsArray objectAtIndex:i];
+               if([tempOption1.isCorrect intValue] == 1) {
+                    buttonToBlink = (UIButton*)[self.view viewWithTag:i+100];
+                    IndexToShowProfilePic = i;
+                    switch (i) {
+                         case 0:
+                              [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"1right.png"] forState:UIControlStateNormal];
+                              // _optionImg1.hidden = false;
+                              
+                              break;
+                         case 1:
+                              [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"2right.png"] forState:UIControlStateNormal];
+                              // _optionImg2.hidden = false;
+                              break;
+                         case 2:
+                              [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"3right.png"] forState:UIControlStateNormal];
+                              //_optionImg3.hidden = false;
+                              break;
+                         case 3:
+                              [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"4right.png"] forState:UIControlStateNormal];
+                              // _optionImg4.hidden = false;
+                              break;
+                              
+                         default:
+                              break;
+                              
+                    }
+               }
+          }
+          
      }
      
      [self notifyUser:-1];
@@ -751,15 +793,19 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           switch (btn.tag) {
                case 100:
                     [option_1_Btn setBackgroundImage:[UIImage imageNamed:@"1right.png"] forState:UIControlStateNormal];
+                    IndexToShowProfilePic = 0;
                     break;
                case 101:
                     [option_2_Btn setBackgroundImage:[UIImage imageNamed:@"2right.png"] forState:UIControlStateNormal];
+                    IndexToShowProfilePic = 1;
                     break;
                case 102:
                     [option_3_Btn setBackgroundImage:[UIImage imageNamed:@"3right.png"] forState:UIControlStateNormal];
+                    IndexToShowProfilePic = 2;
                     break;
                case 103:
                     [option_4_Btn setBackgroundImage:[UIImage imageNamed:@"4right.png"] forState:UIControlStateNormal];
+                    IndexToShowProfilePic = 3;
                     break;
                     
                     
@@ -811,19 +857,23 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                Option *tempOption1 = [tempQuestion.optionsArray objectAtIndex:i];
                if([tempOption1.isCorrect intValue] == 1) {
                     buttonToBlink = (UIButton*)[self.view viewWithTag:i+100];
-                    
+                      IndexToShowProfilePic =i;
                     switch (i) {
                          case 0:
                               [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"1right.png"] forState:UIControlStateNormal];
+                              
                               break;
                          case 1:
                               [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"2right.png"] forState:UIControlStateNormal];
+                              
                               break;
                          case 2:
                               [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"3right.png"] forState:UIControlStateNormal];
+                              
                               break;
                          case 3:
                               [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"4right.png"] forState:UIControlStateNormal];
+                              
                               break;
                               
                          default:
@@ -1151,7 +1201,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 #pragma mark Notify User
 
 -(void)notifyUser:(int)_selectedIndex{
-     
+     NSLog(@"USER ID IS : %@",[SharedManager getInstance].userID);
      reconnectAttempt = 0;
      
      sharedManager.socketdelegate = self;
@@ -1159,6 +1209,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      latestEvent = [[EventModel alloc] init];
      int seconds = [timerLbl.text intValue];
      seconds = 10-seconds;
+     int randomNumber = 3 + rand() % (7-2);
+     int randomNumber1 = 2 + rand() % (7-2);
      
      requestType = [[NSUserDefaults standardUserDefaults]
                     stringForKey:@"requestType"];
@@ -1171,7 +1223,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           
           Question *tempQuestion = [_challenge.questionsArray objectAtIndex:currentIndex];
           
-          if(_selectedIndex == -1) // If user has not selected any thing
+          if(_selectedIndex == -1  ) // If user has not selected any thing
           {
                NSString *selfPointsStr = [NSString stringWithFormat:@"%i",currentSelfPoints];
                NSString *otherPointsStr = [NSString stringWithFormat:@"%i",currentOtherPoints];
@@ -1216,23 +1268,26 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                
                if ([_challenge.isSuperBot intValue]== 0 && _selectedIndex == -1){
                     
-                    int randomNumber = 2 + rand() % (7-2);
+                    
                     timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber];
-                    correctOpt = [_challenge.randAnswerArray objectAtIndex:currentIndex];
+                    //correctOpt = [_challenge.randAnswerArray objectAtIndex:currentIndex];
                     
                }
                
                if ([_challenge.isSuperBot intValue]== 1 && _selectedIndex == -1) {
-                    
+                    timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
                     if (ChancesSuperbot <= 70) {
                          timeInSeconds = @"7";
-                         correctOpt = @"1";
+                         //  timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
+                         // correctOpt = @"1";
                     }else if (ChancesSuperbot >70 && ChancesSuperbot <= 90){
                          timeInSeconds = @"8";
-                         correctOpt = @"1";
+                         // timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
+                         //correctOpt = @"1";
                     }else if (ChancesSuperbot >90 && ChancesSuperbot <= 100){
                          timeInSeconds = @"6";
-                         correctOpt = @"1";
+                         //timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
+                         //correctOpt = @"1";
                     }
                     
                }else{
@@ -1241,13 +1296,16 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                     NSLog(@"randomNumber : %d",ChancesSuperbot);
                     if (ChancesSuperbot <= 70) {
                          timeInSeconds = @"7";
-                         correctOpt = @"1";
+                         //timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber];
+                         // correctOpt = @"0";
                     }else if (ChancesSuperbot >70 && ChancesSuperbot <= 90){
                          timeInSeconds = @"8";
-                         correctOpt = @"1";
+                         //timeInSeconds =[NSString stringWithFormat:@"%d",randomNumber];
+                         //correctOpt = @"0";
                     }else if (ChancesSuperbot >90 && ChancesSuperbot <= 100){
                          timeInSeconds = @"6";
-                         correctOpt = @"1";
+                         //timeInSeconds =[NSString stringWithFormat:@"%d",randomNumber];
+                         //correctOpt = @"0";
                     }
                     
                     [a_Timer invalidate];
@@ -1522,7 +1580,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                
                userTotal.text = userEarnedPointsSte;
                userGemTotal.text = [SharedManager getInstance]._userProfile.cashablePoints;
-              userPointsTotal.text =  [SharedManager getInstance]._userProfile.totalPoints;
+               userPointsTotal.text =  [SharedManager getInstance]._userProfile.totalPoints;
                [SharedManager getInstance]._userProfile.cashablePoints = [mainDict objectForKey:@"gems"];
                NSString *val = [mainDict objectForKey:@"gems"];
                if ([val intValue] < 0) {
@@ -1591,7 +1649,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                }else if(receiverTotalPoints > senderTotalPoints && [val intValue] < 500 )
                {
                     if (languageCode == 0) {
-                   
+                         
                          resultLbl.text = @"Congrats! You are doing great. Let\'s play more to win exciting prizes! You need more Gems! Go go go!";
                     }else if (languageCode == 1){
                          
@@ -1607,7 +1665,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                          
                          resultLbl.text = @"Parabéns! Muito bem! Vamos jogar mais para ganhar grandes prêmios! Você precisa de mais Gems! Vamos lá!";
                     }
-
+                    
                }
                else{
                     if (receiverTotalPoints<senderTotalPoints || receiverTotalPoints < 0)
@@ -1831,8 +1889,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 }
 
 - (void) ticki:(NSTimer *) timer {
-    
-
+     
+     
      if(sharedManager.socketIO.isConnected) {
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
@@ -1854,21 +1912,21 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
                searchingOpponentLbl.text = @"Procurando um adversário...";
           }
-
+          
           [GemsDialogView removeFromSuperview];
           [searchingView removeFromSuperview];
           appDelegate.friendToBeChalleneged = nil;
           UIView *effectView = [self.view viewWithTag:499];
           
           [effectView removeFromSuperview];
-//          _gmGemsSelected = false;
-//          _gmChallengeSelected = false;
-//          _gameModView.hidden = true;
-//          [_gameModView removeFromSuperview];
+          //          _gmGemsSelected = false;
+          //          _gmChallengeSelected = false;
+          //          _gameModView.hidden = true;
+          //          [_gameModView removeFromSuperview];
           //Challenge *_challenge1 = [[Challenge alloc] initWithDictionary:userDictInner];
           _challenge.type = rematchType;
           _challenge.type_ID = rematchTypeId;
-         // _challenge.challengeID = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"ChallengeId"];
+          // _challenge.challengeID = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"ChallengeId"];
           
           isOpponentFound = true;
           ChallengeVC *_challengeVC = [[ChallengeVC alloc] initWithChallenge:_challenge ];
@@ -1944,7 +2002,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      }else if (IS_IPHONE_5){
           GemsDialogView.frame = CGRectMake(0, 0, 320, 568);
      }else if (IS_IPHONE_6){
-         // GemsDialogView.frame = CGRectMake(0, 0, 375, 667);
+          // GemsDialogView.frame = CGRectMake(0, 0, 375, 667);
      }
      
      if (languageCode == 1) {
@@ -2008,7 +2066,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 }
 
 - (IBAction)PlaywitStars:(id)sender {
-      [opponentProfileImageView roundImageCorner];
+     [opponentProfileImageView roundImageCorner];
      requestType = @"points";
      [[NSUserDefaults standardUserDefaults] setObject:requestType forKey:@"requestType"];
      [[NSUserDefaults standardUserDefaults] synchronize];
@@ -2029,7 +2087,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 }
 
 - (IBAction)PlaywithGems:(id)sender {
-      [opponentProfileImageView roundImageCorner];
+     [opponentProfileImageView roundImageCorner];
      requestType = @"gems";
      [[NSUserDefaults standardUserDefaults] setObject:requestType forKey:@"requestType"];
      [[NSUserDefaults standardUserDefaults] synchronize];
@@ -2201,7 +2259,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 
 #pragma mark iPhone - Server Communication
 -(void) DataRevieved:(SocketIOPacket *)dict{
-       
+     
      [loadView hide];
      
      [self dissableOptionSelection];
@@ -2239,7 +2297,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                
                
                [AlertMessage showAlertWithMessage:message andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-               
+               // [self QuitYes:nil];
                [responeTimeOutTimer invalidate];
                responeTimeOutTimer = nil;
                [a_Timer invalidate];
@@ -2258,39 +2316,39 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
                languageCode = [language intValue];
                
-//               if(!(_gmChallengeSelected))
-//               {
-//                    if (languageCode == 0) {
-//                         _searchOppLbl.text = @"Searching opponent...";
-//                    }else if(languageCode == 1){
-//                         _searchOppLbl.text = @"االبحث عن الخصم...";
-//                    }else if (languageCode == 2 ){
-//                         _searchOppLbl.text = @"Recherche d\'un adversaire...";
-//                    }else if (languageCode == 3){
-//                         _searchOppLbl.text = @"La búsqueda de un oponente...";
-//                    }else if (languageCode == 4){
-//                         _searchOppLbl.text = @"Procurando um adversário...";
-//                    }
-//               }else
-//               {
-                    if (languageCode == 0) {
-                         [cancelbuttonOutlet setTitle:@"Cancel" forState:UIControlStateNormal];
-                         searchingOpponentLbl.text = @"Waiting for opponent...";
-                    }else if(languageCode == 1){
-                         [cancelbuttonOutlet setTitle:@"إلغاء" forState:UIControlStateNormal];
-                         searchingOpponentLbl.text = @"االبحث عن الخصم...";
-                    }else if (languageCode == 2 ){
-                          [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
-                         searchingOpponentLbl.text = @"Recherche d\'un adversaire...";
-                    }else if (languageCode == 3){
-                           [cancelbuttonOutlet setTitle:@"Annuler" forState:UIControlStateNormal];
-                         searchingOpponentLbl.text = @"La búsqueda de un oponente...";
-                    }else if (languageCode == 4){
-                       [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
-                         searchingOpponentLbl.text = @"Procurando um adversário...";
-                    }
-                    
-                    
+               //               if(!(_gmChallengeSelected))
+               //               {
+               //                    if (languageCode == 0) {
+               //                         _searchOppLbl.text = @"Searching opponent...";
+               //                    }else if(languageCode == 1){
+               //                         _searchOppLbl.text = @"االبحث عن الخصم...";
+               //                    }else if (languageCode == 2 ){
+               //                         _searchOppLbl.text = @"Recherche d\'un adversaire...";
+               //                    }else if (languageCode == 3){
+               //                         _searchOppLbl.text = @"La búsqueda de un oponente...";
+               //                    }else if (languageCode == 4){
+               //                         _searchOppLbl.text = @"Procurando um adversário...";
+               //                    }
+               //               }else
+               //               {
+               if (languageCode == 0) {
+                    [cancelbuttonOutlet setTitle:@"Cancel" forState:UIControlStateNormal];
+                    searchingOpponentLbl.text = @"Waiting for opponent...";
+               }else if(languageCode == 1){
+                    [cancelbuttonOutlet setTitle:@"إلغاء" forState:UIControlStateNormal];
+                    searchingOpponentLbl.text = @"االبحث عن الخصم...";
+               }else if (languageCode == 2 ){
+                    [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
+                    searchingOpponentLbl.text = @"Recherche d\'un adversaire...";
+               }else if (languageCode == 3){
+                    [cancelbuttonOutlet setTitle:@"Annuler" forState:UIControlStateNormal];
+                    searchingOpponentLbl.text = @"La búsqueda de un oponente...";
+               }else if (languageCode == 4){
+                    [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
+                    searchingOpponentLbl.text = @"Procurando um adversário...";
+               }
+               
+               
                //}
                //Oponent is still searching
                
@@ -2316,9 +2374,9 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                NSURL *url = [NSURL URLWithString:image];
                [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
                [opponentProfileImageView roundImageCorner];
-              _challenge = [[Challenge alloc] initWithDictionary:json];
+               _challenge = [[Challenge alloc] initWithDictionary:json];
                _challenge.type = @"2";
-              // _challenge.type_ID = tempToplic.topic_id;
+               // _challenge.type_ID = tempToplic.topic_id;
                
                
                [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(ticki:) userInfo:nil repeats:NO];
@@ -2327,7 +2385,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           
           else if(flag == 0){
                //////
-              
+               
                [searchingView removeFromSuperview];
                NSString *emailMsg;
                NSString *title;
@@ -2360,7 +2418,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           }
           
      }
-
+     
      else if([dict.name isEqualToString:@"reMatch"])
      {
           NSArray* args = dict.args;
@@ -2377,32 +2435,32 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           if(flag == 0){
                //opponent gone away
                
-             //  NSString *message;
-              // NSString *title;
+               //  NSString *message;
+               // NSString *title;
                
-//               NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
-//               [sharedManager sendEvent:@"register" andParameters:registerDictionary];
-//               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-//               languageCode = [language intValue];
+               //               NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
+               //               [sharedManager sendEvent:@"register" andParameters:registerDictionary];
+               //               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+               //               languageCode = [language intValue];
                
-//               NSArray* args = dict.args;
-//               NSDictionary* arg = args[0];
-//               
-//               NSString *isVerified = [arg objectForKey:@"msg"];
-//               if([isVerified isEqualToString:@"verified"] ){
-                    NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-                    languageCode = [language intValue];
+               //               NSArray* args = dict.args;
+               //               NSDictionary* arg = args[0];
+               //
+               //               NSString *isVerified = [arg objectForKey:@"msg"];
+               //               if([isVerified isEqualToString:@"verified"] ){
+               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+               languageCode = [language intValue];
                
-//                    if(appDelegate.friendToBeChalleneged) {
-//                         NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",appDelegate.friendToBeChalleneged.friendID,@"friend_id",@"2",@"type",_challenge.type_ID,@"type_id",language,@"language",requestType,@"challenge_type", nil];
-//                         [sharedManager sendEvent:@"sendChallenge" andParameters:registerDictionary];
-//                         
-//                    }
-//                    else {
-                         NSDictionary *registerDictionaryS = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"2",@"type",_challenge.type_ID,@"type_id",language,@"language",@"false",@"is_cancel",requestType, @"request_type", nil];
-                         [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionaryS];
-                   // }
-            //   }//
+               //                    if(appDelegate.friendToBeChalleneged) {
+               //                         NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",appDelegate.friendToBeChalleneged.friendID,@"friend_id",@"2",@"type",_challenge.type_ID,@"type_id",language,@"language",requestType,@"challenge_type", nil];
+               //                         [sharedManager sendEvent:@"sendChallenge" andParameters:registerDictionary];
+               //
+               //                    }
+               //                    else {
+               NSDictionary *registerDictionaryS = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"2",@"type",_challenge.type_ID,@"type_id",language,@"language",@"false",@"is_cancel",requestType, @"request_type", nil];
+               [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionaryS];
+               // }
+               //   }//
                
                [self displayNameAndImage];
                if(IS_IPHONE_5) {
@@ -2424,26 +2482,26 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                     }
                }
                timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
-//               if (languageCode == 0 ) {
-//                    title = Friend_Not_Available;
-//                    message = @"Unfortunately, your friend can't be reached at the moment. Please try later.";
-//               }else if (languageCode == 1){
-//                    title = Friend_Not_Availabl_1;
-//                    message = @"لسوء الحظ، لا يمكن أن يتم التوصل صديقك في الوقت الراهن. يرجى المحاولة لاحقا.";
-//               }else if (languageCode == 2){
-//                    title = Friend_Not_Availabl_2;
-//                    message = @"Malheureusement, votre ami ne peut pas être atteint pour le moment. Se il vous plaît réessayer plus tard.";
-//               }else if (languageCode == 3){
-//                    title = Friend_Not_Availabl_3;
-//                    message = @"Por desgracia, su amigo no puede ser alcanzado por el momento. Por favor, intente más tarde.";
-//               }else if (languageCode == 4){
-//                    title = Friend_Not_Availabl_4;
-//                    message = @"Infelizmente, o seu amigo não pode ser alcançado no momento. Por favor, tente mais tarde.";
-//               }
-//               
-//               [AlertMessage showAlertWithMessage:message andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-//               //[[NavigationHandler getInstance] NavigateToRoot];
-     }
+               //               if (languageCode == 0 ) {
+               //                    title = Friend_Not_Available;
+               //                    message = @"Unfortunately, your friend can't be reached at the moment. Please try later.";
+               //               }else if (languageCode == 1){
+               //                    title = Friend_Not_Availabl_1;
+               //                    message = @"لسوء الحظ، لا يمكن أن يتم التوصل صديقك في الوقت الراهن. يرجى المحاولة لاحقا.";
+               //               }else if (languageCode == 2){
+               //                    title = Friend_Not_Availabl_2;
+               //                    message = @"Malheureusement, votre ami ne peut pas être atteint pour le moment. Se il vous plaît réessayer plus tard.";
+               //               }else if (languageCode == 3){
+               //                    title = Friend_Not_Availabl_3;
+               //                    message = @"Por desgracia, su amigo no puede ser alcanzado por el momento. Por favor, intente más tarde.";
+               //               }else if (languageCode == 4){
+               //                    title = Friend_Not_Availabl_4;
+               //                    message = @"Infelizmente, o seu amigo não pode ser alcançado no momento. Por favor, tente mais tarde.";
+               //               }
+               //
+               //               [AlertMessage showAlertWithMessage:message andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+               //               //[[NavigationHandler getInstance] NavigateToRoot];
+          }
           else{
                //UI for Socket connection and User searching
                [self displayNameAndImage];
@@ -2638,6 +2696,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                               starImgLeftView.image = [UIImage imageNamed:@"staryellow.png"];
                               starImgRightView.image = [UIImage imageNamed:@"starwhite.png"];
                          }
+                         
                     }
                     else {
                          answerReaction.hidden = true;
@@ -2645,17 +2704,58 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                          if( [is_correct caseInsensitiveCompare:@"1"] == NSOrderedSame ) {
                               // user did not answered
                               if(oppoentEarned > earned) {
+                                   
                                    //Opponent Answered Before You
                                    if([requestType isEqualToString:@"gems"]) {
+                                        
+                                        switch (IndexToShowProfilePic) {
+                                             case 0:
+                                                  _optionImg1.hidden = false;
+                                                  break;
+                                             case 1:
+                                                  _optionImg2.hidden = false;
+                                                  break;
+                                             case 2:
+                                                  _optionImg3.hidden = false;
+                                                  break;
+                                             case 3:
+                                                  _optionImg4.hidden = false;
+                                                  break;
+                                                  
+                                             default:
+                                                  break;
+                                                  
+                                        }
+                                        
                                         starImgLeftView.image = [UIImage imageNamed:@"gemwhite.png"];
                                         starImgRightView.image = [UIImage imageNamed:@"gemyellow.png"];
                                    }
                                    else {
+                                        switch (IndexToShowProfilePic) {
+                                             case 0:
+                                                  _optionImg1.hidden = false;
+                                                  break;
+                                             case 1:
+                                                  _optionImg2.hidden = false;
+                                                  break;
+                                             case 2:
+                                                  _optionImg3.hidden = false;
+                                                  break;
+                                             case 3:
+                                                  _optionImg4.hidden = false;
+                                                  break;
+                                                  
+                                             default:
+                                                  break;
+                                                  
+                                        }
                                         starImgLeftView.image = [UIImage imageNamed:@"starwhite.png"];
                                         starImgRightView.image = [UIImage imageNamed:@"staryellow.png"];
                                    }
                                    
                               }
+                              
+                              
                          }
                          else {
                               answerReaction.image = [UIImage imageNamed:@""];
@@ -2663,21 +2763,60 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                               if(isCorrect == 0) {
                                    if([requestType isEqualToString:@"gems"]) {
                                         if(oppoentEarned > earned) {
+                                             switch (IndexToShowProfilePic) {
+                                                  case 0:
+                                                       _optionImg1.hidden = false;
+                                                       break;
+                                                  case 1:
+                                                       _optionImg2.hidden = false;
+                                                       break;
+                                                  case 2:
+                                                       _optionImg3.hidden = false;
+                                                       break;
+                                                  case 3:
+                                                       _optionImg4.hidden = false;
+                                                       break;
+                                                       
+                                                  default:
+                                                       break;
+                                                       
+                                             }
                                              starImgLeftView.image = [UIImage imageNamed:@"gemwhite.png"];
                                              starImgRightView.image = [UIImage imageNamed:@"gemyellow.png"];
                                         }
                                         else {
+                                             
                                              starImgLeftView.image = [UIImage imageNamed:@"gemwhite.png"];
                                              starImgRightView.image = [UIImage imageNamed:@"gemwhite.png"];
                                         }
                                         
                                    }
+                                   
                                    else {
                                         if(oppoentEarned > earned) {
+                                             switch (IndexToShowProfilePic) {
+                                                  case 0:
+                                                       _optionImg1.hidden = false;
+                                                       break;
+                                                  case 1:
+                                                       _optionImg2.hidden = false;
+                                                       break;
+                                                  case 2:
+                                                       _optionImg3.hidden = false;
+                                                       break;
+                                                  case 3:
+                                                       _optionImg4.hidden = false;
+                                                       break;
+                                                       
+                                                  default:
+                                                       break;
+                                                       
+                                             }
                                              starImgLeftView.image = [UIImage imageNamed:@"starwhite.png"];
                                              starImgRightView.image = [UIImage imageNamed:@"staryellow.png"];
                                         }
                                         else {
+                                             
                                              starImgLeftView.image = [UIImage imageNamed:@"starwhite.png"];
                                              starImgRightView.image = [UIImage imageNamed:@"starwhite.png"];
                                         }
@@ -2685,10 +2824,46 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                               }
                               if(oppoentEarned > earned) {
                                    if([requestType isEqualToString:@"gems"]) {
+                                        switch (IndexToShowProfilePic) {
+                                             case 0:
+                                                  _optionImg1.hidden = false;
+                                                  break;
+                                             case 1:
+                                                  _optionImg2.hidden = false;
+                                                  break;
+                                             case 2:
+                                                  _optionImg3.hidden = false;
+                                                  break;
+                                             case 3:
+                                                  _optionImg4.hidden = false;
+                                                  break;
+                                                  
+                                             default:
+                                                  break;
+                                                  
+                                        }
                                         starImgLeftView.image = [UIImage imageNamed:@"gemwhite.png"];
                                         starImgRightView.image = [UIImage imageNamed:@"gemyellow.png"];
                                    }
                                    else {
+                                        switch (IndexToShowProfilePic) {
+                                             case 0:
+                                                  _optionImg1.hidden = false;
+                                                  break;
+                                             case 1:
+                                                  _optionImg2.hidden = false;
+                                                  break;
+                                             case 2:
+                                                  _optionImg3.hidden = false;
+                                                  break;
+                                             case 3:
+                                                  _optionImg4.hidden = false;
+                                                  break;
+                                                  
+                                             default:
+                                                  break;
+                                                  
+                                        }
                                         starImgLeftView.image = [UIImage imageNamed:@"starwhite.png"];
                                         starImgRightView.image = [UIImage imageNamed:@"staryellow.png"];
                                    }
@@ -2696,10 +2871,12 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                               }
                               else {
                                    if([requestType isEqualToString:@"gems"]) {
+                                        
                                         starImgLeftView.image = [UIImage imageNamed:@"gemwhite.png"];
                                         starImgRightView.image = [UIImage imageNamed:@"gemwhite.png"];
                                    }
                                    else{
+                                        
                                         starImgLeftView.image = [UIImage imageNamed:@"starwhite.png"];
                                         starImgRightView.image = [UIImage imageNamed:@"starwhite.png"];
                                    }

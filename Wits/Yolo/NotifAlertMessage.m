@@ -38,7 +38,7 @@ static BOOL showing;
      if(showing) {
           return;
      }
-
+     
      NotifAlertMessage *alertMessage = [[[NSBundle mainBundle] loadNibNamed:@"NotifAlertMessage" owner:nil options:nil] objectAtIndex:0];
      
      [[NSUserDefaults standardUserDefaults] setObject:ActionName forKey:@"ActionName"];
@@ -52,21 +52,23 @@ static BOOL showing;
      [[NSUserDefaults standardUserDefaults] setObject:Dictionary forKey:@"AlertDict"];
      [[NSUserDefaults standardUserDefaults] synchronize];
      
-     
+     if([imageLink isEqualToString:@""]){
+          alertMessage.ProfileImage.hidden = YES;
+           
+     }
+     else
+          alertMessage.ProfileImage.hidden = NO;
      MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
      MKNetworkOperation *op = [engine operationWithURLString:imageLink params:Nil httpMethod:@"GET"];
      
      [op onCompletion:^(MKNetworkOperation *completedOperation) {
           [alertMessage.ProfileImage setImage:[completedOperation responseImage]];
-          
-          
      } onError:^(NSError* error) {
-          alertMessage.ProfileImage.image = [UIImage imageNamed:@"Icon_152.png"];
-          
+          alertMessage.ProfileImage.image = [UIImage imageNamed:@"personal.png"];
      }];
      
      [engine enqueueOperation:op];
-
+     
      
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      int languageCode = [language intValue];
@@ -97,7 +99,7 @@ static BOOL showing;
      }
      
      [alertMessage.outletCancel setTitle:cancelTitle forState:UIControlStateNormal];
-
+     
      [alertMessage show];
      
      
@@ -107,7 +109,7 @@ static BOOL showing;
      
      PushNotificationCenter *pushObj = [[PushNotificationCenter alloc]init];
      NSString *actionstr = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"ActionName"];
-      NSDictionary *Dict = (NSDictionary*)[[NSUserDefaults standardUserDefaults] objectForKey:@"AlertDict"];
+     NSDictionary *Dict = (NSDictionary*)[[NSUserDefaults standardUserDefaults] objectForKey:@"AlertDict"];
      [self.delegate Okbtn:actionstr withDictionary:Dict];
      
      if ([actionstr isEqualToString:@"Msg"]) {
@@ -120,8 +122,11 @@ static BOOL showing;
      }else if([actionstr isEqualToString:@"Challenge"]){
           
           [pushObj Okbtn:@"Challenge" withDictionary:Dict];
-}
-     
+     }
+     else if([actionstr isEqualToString:@"BuyGems"]){
+          
+          [pushObj Okbtn:@"Buy Gems" withDictionary:Dict];
+     }
      showing = NO;
      [self removeFromSuperview];
 }
@@ -139,7 +144,9 @@ static BOOL showing;
           CGSize sizeBtnWeb = [_textView sizeThatFits:CGSizeMake(400,FLT_MAX)];
           _textView.frame = CGRectMake(_titleLbl.frame.origin.x, 50, 160, sizeBtnWeb.height+30);
           _messageView.frame= CGRectMake(180, 350, 400, 350);
-           [_titleLbl setFont:[UIFont fontWithName:@"Helvetica" size:20]];
+          if(alertMessage.ProfileImage.isHidden)
+               NSLog(@"Asdasdasd");
+               [_titleLbl setFont:[UIFont fontWithName:@"Helvetica" size:20]];
           [_textView setFont:[UIFont fontWithName:@"Helvetica" size:18]];
           //     [_messageView setCenter:CGPointMake(400 , 300)];
           
@@ -173,23 +180,23 @@ static BOOL showing;
           
      }else if (IS_IPHONE_6){
           
-//          CGSize sizeBtnWeb = [_textView sizeThatFits:CGSizeMake(320,FLT_MAX)];
-//          
-//          _textView.frame = CGRectMake(1, 76, 300, sizeBtnWeb.height+10);
-//          
-//          CGRect btnFrame = _outletCancel.frame;
-//          btnFrame.origin.y = _textView.frame.origin.y + _textView.frame.size.height + 10;
-//          _outletCancel.frame = btnFrame;
-//          
-//          //   _messageView.frame= CGRectMake(100, 310, 300, 300);
-//          
-//          [_messageView setCenter:CGPointMake(190, 300)];
-//          
-//          [_messageView setAutoresizingMask:UIViewAutoresizingNone];
-//          
-//          CGRect messageViewFrame = _messageView.frame;
-//          messageViewFrame.size.height = _outletCancel.frame.origin.y + _outletCancel.frame.size.height + 10;
-//          _messageView.frame = messageViewFrame;
+          //          CGSize sizeBtnWeb = [_textView sizeThatFits:CGSizeMake(320,FLT_MAX)];
+          //
+          //          _textView.frame = CGRectMake(1, 76, 300, sizeBtnWeb.height+10);
+          //
+          //          CGRect btnFrame = _outletCancel.frame;
+          //          btnFrame.origin.y = _textView.frame.origin.y + _textView.frame.size.height + 10;
+          //          _outletCancel.frame = btnFrame;
+          //
+          //          //   _messageView.frame= CGRectMake(100, 310, 300, 300);
+          //
+          //          [_messageView setCenter:CGPointMake(190, 300)];
+          //
+          //          [_messageView setAutoresizingMask:UIViewAutoresizingNone];
+          //
+          //          CGRect messageViewFrame = _messageView.frame;
+          //          messageViewFrame.size.height = _outletCancel.frame.origin.y + _outletCancel.frame.size.height + 10;
+          //          _messageView.frame = messageViewFrame;
      }
      //  [_messageView layer].cornerRadius = 12;
      // _messageView.clipsToBounds = YES;
@@ -203,7 +210,7 @@ static BOOL showing;
 - (IBAction)closeAlert:(id)sender {
      PushNotificationCenter *pushObj = [[PushNotificationCenter alloc]init];
      NSString *actionstr = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"ActionName"];
-    
+     
      [self.delegate closeAlert:actionstr];
      
      if ([actionstr isEqualToString:@"Msg"]) {

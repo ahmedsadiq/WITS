@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180529051C240D8300140470 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 180529031C240D8300140470 /* camera.png */; };
+		180529061C240D8300140470 /* ring.png in Resources */ = {isa = PBXBuildFile; fileRef = 180529041C240D8300140470 /* ring.png */; };
 		181813141C0DAD04005F81CA /* menubgForIpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 181813131C0DAD04005F81CA /* menubgForIpad.png */; };
 		1818131F1C0DB537005F81CA /* friendsForIpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 181813151C0DB536005F81CA /* friendsForIpad.png */; };
 		181813201C0DB537005F81CA /* friendsglowForIpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 181813161C0DB536005F81CA /* friendsglowForIpad.png */; };
@@ -66,9 +68,11 @@
 		1818139F1C0DD3D6005F81CA /* tutorial6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 181813911C0DD3D6005F81CA /* tutorial6@2x.png */; };
 		181813A01C0DD3D6005F81CA /* tutorial7.png in Resources */ = {isa = PBXBuildFile; fileRef = 181813921C0DD3D6005F81CA /* tutorial7.png */; };
 		181813A11C0DD3D6005F81CA /* tutorial7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 181813931C0DD3D6005F81CA /* tutorial7@2x.png */; };
+		182AB5391C1F05FC00566DF6 /* CustomLoading_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182AB5381C1F05FC00566DF6 /* CustomLoading_iPad.xib */; };
 		183376FC1AC3F3B8000ABF17 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 183376FB1AC3F3B8000ABF17 /* libsqlite3.dylib */; };
 		183377001AC3F877000ABF17 /* WitsDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 183376FF1AC3F877000ABF17 /* WitsDB.m */; };
 		183998151C1A9458002D608B /* res in Resources */ = {isa = PBXBuildFile; fileRef = 183998141C1A9458002D608B /* res */; };
+		184D524B1C21546900D9629C /* ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D524A1C21546900D9629C /* ToastView.m */; };
 		184FEEAB1C157837000F10FD /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 184FEEA81C157837000F10FD /* lock.png */; };
 		184FEEAC1C157837000F10FD /* clsoeglow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 184FEEA91C157837000F10FD /* clsoeglow@2x.png */; };
 		184FEEAD1C157837000F10FD /* clsoeglow.png in Resources */ = {isa = PBXBuildFile; fileRef = 184FEEAA1C157837000F10FD /* clsoeglow.png */; };
@@ -154,7 +158,6 @@
 		18D709511C12162B00627B68 /* topbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D709471C12162B00627B68 /* topbar@2x.png */; };
 		18D709521C12162B00627B68 /* txtboxbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D709481C12162B00627B68 /* txtboxbg.png */; };
 		18D709531C12162B00627B68 /* txtboxbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D709491C12162B00627B68 /* txtboxbg@2x.png */; };
-		18DC9F9B1C1A8135009DBB76 /* CustomLoading_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DC9F9A1C1A8135009DBB76 /* CustomLoading_iPad.xib */; };
 		18DC9FA41C1A81A5009DBB76 /* Languagebgipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DC9F9C1C1A81A4009DBB76 /* Languagebgipad.png */; };
 		18DC9FA51C1A81A5009DBB76 /* Languagebgipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DC9F9D1C1A81A4009DBB76 /* Languagebgipad@2x.png */; };
 		18DC9FA61C1A81A5009DBB76 /* SignInbgipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DC9F9E1C1A81A4009DBB76 /* SignInbgipad.png */; };
@@ -1607,6 +1610,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180529031C240D8300140470 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		180529041C240D8300140470 /* ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ring.png; sourceTree = "<group>"; };
 		181813131C0DAD04005F81CA /* menubgForIpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menubgForIpad.png; path = "WITS Store_iPhone_assets/menubgForIpad.png"; sourceTree = SOURCE_ROOT; };
 		181813151C0DB536005F81CA /* friendsForIpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friendsForIpad.png; sourceTree = "<group>"; };
 		181813161C0DB536005F81CA /* friendsglowForIpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friendsglowForIpad.png; sourceTree = "<group>"; };
@@ -1666,10 +1671,13 @@
 		181813911C0DD3D6005F81CA /* tutorial6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial6@2x.png"; sourceTree = "<group>"; };
 		181813921C0DD3D6005F81CA /* tutorial7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial7.png; sourceTree = "<group>"; };
 		181813931C0DD3D6005F81CA /* tutorial7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial7@2x.png"; sourceTree = "<group>"; };
+		182AB5381C1F05FC00566DF6 /* CustomLoading_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLoading_iPad.xib; sourceTree = "<group>"; };
 		183376FB1AC3F3B8000ABF17 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		183376FE1AC3F877000ABF17 /* WitsDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WitsDB.h; sourceTree = "<group>"; };
 		183376FF1AC3F877000ABF17 /* WitsDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WitsDB.m; sourceTree = "<group>"; };
 		183998141C1A9458002D608B /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
+		184D52491C21543300D9629C /* ToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToastView.h; sourceTree = "<group>"; };
+		184D524A1C21546900D9629C /* ToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastView.m; sourceTree = "<group>"; };
 		184FEEA81C157837000F10FD /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
 		184FEEA91C157837000F10FD /* clsoeglow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clsoeglow@2x.png"; sourceTree = "<group>"; };
 		184FEEAA1C157837000F10FD /* clsoeglow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clsoeglow.png; sourceTree = "<group>"; };
@@ -1755,7 +1763,6 @@
 		18D709471C12162B00627B68 /* topbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbar@2x.png"; sourceTree = "<group>"; };
 		18D709481C12162B00627B68 /* txtboxbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = txtboxbg.png; sourceTree = "<group>"; };
 		18D709491C12162B00627B68 /* txtboxbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "txtboxbg@2x.png"; sourceTree = "<group>"; };
-		18DC9F9A1C1A8135009DBB76 /* CustomLoading_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLoading_iPad.xib; sourceTree = "<group>"; };
 		18DC9F9C1C1A81A4009DBB76 /* Languagebgipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Languagebgipad.png; sourceTree = "<group>"; };
 		18DC9F9D1C1A81A4009DBB76 /* Languagebgipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Languagebgipad@2x.png"; sourceTree = "<group>"; };
 		18DC9F9E1C1A81A4009DBB76 /* SignInbgipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignInbgipad.png; sourceTree = "<group>"; };
@@ -3977,7 +3984,7 @@
 				E28E56101B9867EE009218E6 /* CustomLoading.h */,
 				E28E56111B9867EE009218E6 /* CustomLoading.m */,
 				E28E56121B9867EF009218E6 /* CustomLoading.xib */,
-				18DC9F9A1C1A8135009DBB76 /* CustomLoading_iPad.xib */,
+				182AB5381C1F05FC00566DF6 /* CustomLoading_iPad.xib */,
 				E210F0B31B8740C400BEDD6B /* CustomAnimationView.h */,
 				E210F0B41B8740C400BEDD6B /* CustomAnimationView.m */,
 				F43785FB1BB14183008B79FA /* Amatic-Bold.ttf */,
@@ -4520,6 +4527,8 @@
 		58ABD36C193E0BB60054064C = {
 			isa = PBXGroup;
 			children = (
+				180529031C240D8300140470 /* camera.png */,
+				180529041C240D8300140470 /* ring.png */,
 				18DC9FB01C1A82D8009DBB76 /* IpadBackgroundAssests */,
 				18EBE4C81C19C9A8006E8A78 /* Miscellaneous IphoneAndIPad */,
 				18C8F15A1C15C065008278F3 /* FriendModNewAssets */,
@@ -4646,6 +4655,8 @@
 				2EC6BE861A92298800227233 /* EventModel.h */,
 				2EC6BE871A92298800227233 /* EventModel.m */,
 				58ABD38A193E0BB60054064C /* Images.xcassets */,
+				184D52491C21543300D9629C /* ToastView.h */,
+				184D524A1C21546900D9629C /* ToastView.m */,
 				58ABD37F193E0BB60054064C /* Supporting Files */,
 			);
 			path = Yolo;
@@ -6643,7 +6654,6 @@
 				586E82EB195AB7BE008D24BB /* go_btn.png in Resources */,
 				E2AB1B391B7B40DB002C98E0 /* referralglow.png in Resources */,
 				F42CA6801BAAD89E0083653E /* Generalsmallicon@2x.png in Resources */,
-				18DC9F9B1C1A8135009DBB76 /* CustomLoading_iPad.xib in Resources */,
 				5838283F19BF15CE00DF9642 /* ChallengeVC_iPad.xib in Resources */,
 				E28E561B1B98ED93009218E6 /* playagain@2x.png in Resources */,
 				F4B4DC8D1BAFD65900A00C94 /* ChallengeglowSpanish.png in Resources */,
@@ -6797,6 +6807,7 @@
 				E2EF263B1B81F2ED00E960E4 /* dotglow@2x.png in Resources */,
 				181813991C0DD3D6005F81CA /* tutorial3@2x.png in Resources */,
 				2E9C27D71A272051009D80BC /* AG.png in Resources */,
+				180529061C240D8300140470 /* ring.png in Resources */,
 				F4B5BFF21BB979A2000FF551 /* PointsGlowportuguese@2x.png in Resources */,
 				E284C8B11B79D09400F410AE /* Signinbgcolored@2x.png in Resources */,
 				2E62EC7C1A4B85F700F502D5 /* rankingo1.png in Resources */,
@@ -6865,6 +6876,7 @@
 				F48A70281BAC3EF300175086 /* ForGemsGlow@2x.png in Resources */,
 				F4B5BFD01BB96B3A000FF551 /* FriendRequestFrench.png in Resources */,
 				F42CA8151BAADC3B0083653E /* GeneralScience@2x.png in Resources */,
+				180529051C240D8300140470 /* camera.png in Resources */,
 				E210F1111B8753F800BEDD6B /* transfergemsglow@2x.png in Resources */,
 				2E9C289F1A272051009D80BC /* SK.png in Resources */,
 				F42CA77A1BAADC3B0083653E /* Fashion.png in Resources */,
@@ -7695,6 +7707,7 @@
 				2E9C28171A272051009D80BC /* ER.png in Resources */,
 				355E47F3195EAEF800D7A3B7 /* btn_blue.png in Resources */,
 				353946EA199E055900024056 /* PurchaseVC.xib in Resources */,
+				182AB5391C1F05FC00566DF6 /* CustomLoading_iPad.xib in Resources */,
 				5805A5A9195C6BEE005F2DE8 /* RankingVC.xib in Resources */,
 				E23D44521B8B116B005356A9 /* sharetutorial-Pressed@2x.png in Resources */,
 				2E9C282D1A272051009D80BC /* GQ.png in Resources */,
@@ -7876,6 +7889,7 @@
 				2E1B3EFE1B6F8F5900A732AF /* NotifAlertMessage.m in Sources */,
 				58212626195B0BAF00566898 /* SubTopicSelectedCC.m in Sources */,
 				2E13CCD41A8271D900B16E4A /* SBJsonWriter.m in Sources */,
+				184D524B1C21546900D9629C /* ToastView.m in Sources */,
 				355E4800195EB92200D7A3B7 /* FriendsCC.m in Sources */,
 				58E2F7C41946FD3E008309BD /* NSData+Base64.m in Sources */,
 				58E2F7CA1946FD3E008309BD /* MKNetworkOperation.m in Sources */,
@@ -8099,7 +8113,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.txlabs.wits;
 				PRODUCT_NAME = Wits;
-				PROVISIONING_PROFILE = "1c6610bc-23de-413c-9079-36c031cb6764";
+				PROVISIONING_PROFILE = "6dacdbd6-280d-485d-9ad5-35dc8815ff4c";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -8132,7 +8146,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.txlabs.wits;
 				PRODUCT_NAME = Wits;
-				PROVISIONING_PROFILE = "1c6610bc-23de-413c-9079-36c031cb6764";
+				PROVISIONING_PROFILE = "6dacdbd6-280d-485d-9ad5-35dc8815ff4c";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -8259,7 +8273,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.txlabs.wits;
 				PRODUCT_NAME = Wits;
-				PROVISIONING_PROFILE = "1c6610bc-23de-413c-9079-36c031cb6764";
+				PROVISIONING_PROFILE = "6dacdbd6-280d-485d-9ad5-35dc8815ff4c";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

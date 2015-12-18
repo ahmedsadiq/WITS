@@ -9,26 +9,32 @@
 #import "CustomLoading.h"
 #import "SharedManager.h"
 #import "MKNetworkEngine.h"
+#import "AppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 #import "UIImageView+RoundImage.h"
+#import "Utils.h"
 @implementation CustomLoading
 static BOOL showing;
 
 
 CustomLoading *loaderObj;
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect {
- // Drawing code
- }
- */
-
 
 - (void)showAlertMessage:(ChallengeSearchObject *)searchObject
 {
      senderObj = searchObject;
+     language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+     languageCode = [language intValue];
+     if(languageCode == 0)
+          [cancelbtn setTitle:@"Cancel" forState:UIControlStateNormal];
+     else if(languageCode == 1)
+          [cancelbtn setTitle:@"إلغاء" forState:UIControlStateNormal];
+     else if(languageCode == 2)
+          [cancelbtn setTitle:@"Cancelar" forState:UIControlStateNormal];
+     else if(languageCode == 3)
+          [cancelbtn setTitle:@"Annuler" forState:UIControlStateNormal];
+     else if (languageCode == 4)
+          [cancelbtn setTitle:@"Cancelar" forState:UIControlStateNormal];
      [self showPrivate];
 }
 
@@ -60,6 +66,7 @@ CustomLoading *loaderObj;
           
           [op onCompletion:^(MKNetworkOperation *completedOperation) {
                [senderProfileImageView setImage:[completedOperation responseImage]];
+               [senderProfileImageView roundImageCorner];
                
           } onError:^(NSError* error) {
                //////Changed by Fiza //////
@@ -70,9 +77,10 @@ CustomLoading *loaderObj;
           [engine enqueueOperation:op];
      }
      opponentProfileImageView.image= [UIImage imageNamed:@"personal.png"];
-     opponentProfileImageView.imageURL = [NSURL URLWithString:senderObj.recieverProfileImgLink];
+     //opponentProfileImageView.imageURL = [NSURL URLWithString:senderObj.recieverProfileImgLink];
      NSURL *url2 = [NSURL URLWithString:senderObj.recieverProfileImgLink];
      [[AsyncImageLoader sharedLoader] loadImageWithURL:url2];
+     [opponentProfileImageView roundImageCorner];
      
      
 }
@@ -119,26 +127,31 @@ CustomLoading *loaderObj;
      CustomLoading *cusLoading = [[CustomLoading alloc]init];
      if(showing)
      {
-        
-         [loaderObj dissmiss ];
+          
+          [loaderObj dissmiss ];
      }
-     
-     
-//     [CustomLoading ];
-
-
 }
 - (void)dissmiss
 {
      showing = false;
-     [self removeFromSuperview];
-     
 }
 
 -(void)frames
 {
      
 }
-
-
+- (IBAction)cancelPressed:(id)sender {
+     
+     [timer invalidate];
+     [opponentProfileImageView stopAnimating];
+     timer = nil;
+     
+     
+     AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;
+     del.isChallengeCancelled = true;
+     del.friendToBeChalleneged = nil;
+     del.requestType = nil;
+     [sharedManager closeWebSocket];
+     [self removeFromSuperview];
+}
 @end

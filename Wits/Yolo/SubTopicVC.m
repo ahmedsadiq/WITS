@@ -733,8 +733,6 @@
      _gmChallengeSelected = false;
      UIView *effectView = [self.view viewWithTag:499];
      [effectView removeFromSuperview];
-     
-    
      /////
      AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;
      del.friendToBeChalleneged = nil;
@@ -880,7 +878,7 @@
                     
                } onError:^(NSError* error) {
                     senderProfileImageView.image = [UIImage imageNamed:@"personal.png"];
-                    
+                    [senderProfileImageView roundImageCorner];
                     /*UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Cannot Fetch Image" message:@"Network Unreachable" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
                      [alert show];*/
                     
@@ -1975,7 +1973,7 @@
           CategoriesLbl.text = @"Sub Topics";
           adContentLbl.text = ADD_CONTENT;
           guidelineLbl.text = GUIDELINES;
-          
+          [_gobtn setTitle:@"GO" forState:(UIControlStateNormal)];
           [backBtn2 setTitle:@"Cancel" forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN forState:UIControlStateNormal];
@@ -1995,7 +1993,7 @@
           HowtoPlay = @"كيفية اللعب";
           HowWitsStore = @"كيفية استخدام مخزن ويتس";
           HowtoEarnPoints = @"كيف تحصل على النقاط مجاناً؟";
-          
+          [_gobtn setTitle:@"اذهب الان" forState:(UIControlStateNormal)];
           
           lblPlayforPoints.text = PLAY_NOW_1;
           lblplayforGems.text = Challenge_a_friend1;
@@ -2041,7 +2039,7 @@
           howtoPlay3 = @"Echangez vos Gems contre de l'argent.";
           forGemsLable.text = For_Gems2;
           forPointsLabel.text = For_Points2;
-          
+           [_gobtn setTitle:@"Allez" forState:(UIControlStateNormal)];
          
 
           
@@ -2084,6 +2082,7 @@
           PlayNowLabel.text =PLAY_NOW_3;
           challengeAFriend.text = Challenge_a_friend3;
           
+           [_gobtn setTitle:@"ADELANTE" forState:(UIControlStateNormal)];
           forGemsLable.text = For_Gems3;
           forPointsLabel.text = For_Points3;
           
@@ -2123,7 +2122,7 @@
           [backBtn3 setTitle:BACK_BTN_3 forState:UIControlStateNormal];
      }
      else if(languageCode == 4) {
-          
+            [_gobtn setTitle:@"IR" forState:(UIControlStateNormal)];
           searchBar.placeholder = SEARCH_CATEGORY_4;
           loadingTitle = Loading_4;
           howtoPlay1 = @"Inicie um desafio de 1-1 contra qualquer pessoa no mundo.";

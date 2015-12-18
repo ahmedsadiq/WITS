@@ -190,6 +190,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *playNowBtn;
 @property (weak, nonatomic) IBOutlet UIButton *gmStarsBtn;
 @property (strong, nonatomic) IBOutlet UIView *gameModView;
+@property (weak, nonatomic) IBOutlet UIButton *gobtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *challengeNowBtn;
 @property (weak, nonatomic) IBOutlet UIButton *gmGemButton;

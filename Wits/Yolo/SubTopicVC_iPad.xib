@@ -27,6 +27,7 @@
                 <outlet property="gemimg2" destination="gDD-2n-u2n" id="u58-7z-Ah3"/>
                 <outlet property="gmGemButton" destination="n7L-wa-4aS" id="VWG-M7-kEE"/>
                 <outlet property="gmStarsBtn" destination="vyE-e0-hY0" id="5Co-QX-WiJ"/>
+                <outlet property="gobtn" destination="hsV-mO-f57" id="d6b-OI-ohG"/>
                 <outlet property="knowledgeLbl" destination="w6f-bl-duX" id="ReV-br-LuP"/>
                 <outlet property="lblGemsPoints" destination="6xz-ZO-bFk" id="lcR-Yf-K38"/>
                 <outlet property="lblPlayforPoints" destination="r7E-a0-VDb" id="mg1-AD-HII"/>
@@ -442,21 +443,6 @@
                     <rect key="frame" x="184" y="512" width="400" height="1"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hsV-mO-f57">
-                    <rect key="frame" x="294" y="871" width="200" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                    <state key="normal" title="GO" backgroundImage="btnbgpressed.png">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" backgroundImage="btnbg_gameMod.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="gmGoPressed:" destination="-1" eventType="touchUpInside" id="dnU-gR-eVi"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Gems" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V2p-yL-HVh">
                     <rect key="frame" x="210" y="713" width="110" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -495,6 +481,21 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hsV-mO-f57">
+                    <rect key="frame" x="294" y="871" width="200" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                    <state key="normal" title="GO" backgroundImage="btnbgpressed.png">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="btnbg_gameMod.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="gmGoPressed:" destination="-1" eventType="touchUpInside" id="dnU-gR-eVi"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>

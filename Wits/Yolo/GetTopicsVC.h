@@ -84,6 +84,20 @@
      IBOutlet UILabel *tutoDesc2;
      IBOutlet UIButton *backBtn1;
      
+     //helpshift view
+     
+     IBOutlet UILabel *hpLefttitle;
+     IBOutlet UILabel *hprightTitle;
+     
+     IBOutlet UILabel *hpLbl3;
+     IBOutlet UILabel *hpLbl2;
+     IBOutlet UILabel *hplbl1;
+     IBOutlet UILabel *hpMidtitle;
+     IBOutlet UILabel *hpleftDesc;
+     IBOutlet UILabel *hprightDesc;
+     
+     //
+     
      IBOutlet UILabel *AddaQuestion;
      IBOutlet UIButton *sendQuestion;
      

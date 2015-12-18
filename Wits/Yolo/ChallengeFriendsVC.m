@@ -301,7 +301,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
      int rows = ([challengeArray count]/2);
-     if(rows%2 == 1) {
+     if([challengeArray count]%2  == 1) {
           rows++;
      }
      if([challengeArray count] == 1) {
@@ -442,8 +442,10 @@
           cell.rightUserVerified.hidden = true;
           cell.rightOverlayView.hidden = true;
      }
+     cell.selectionStyle = NAN;
      [cell setBackgroundColor:[UIColor clearColor]];
      [cell.contentView setBackgroundColor:[UIColor clearColor]];
+     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
      return cell;
      
      

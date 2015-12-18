@@ -28,7 +28,9 @@
 {
      [super viewWillAppear:animated];
      [self setLanguageForScreen];
-     
+      self.tabBarController.tabBar.hidden = false;
+     if(_addOnsArray.count == 0)
+          [self fetchRewards];
      [gemsCountLbl setText:[[SharedManager getInstance] _userProfile].cashablePoints];
      [pointsCountLbl setText:[[SharedManager getInstance] _userProfile].totalPoints];
      
@@ -71,6 +73,10 @@
      }
      
      
+
+     [self fetchRewards];
+}
+-(void)fetchRewards{
      MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
      
      NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];

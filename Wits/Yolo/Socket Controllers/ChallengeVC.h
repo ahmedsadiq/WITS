@@ -50,7 +50,8 @@
      NSString *timeInSeconds;
      NSString *timeSeconds;
      int tagbtn;
-     
+     int IndexToShowProfilePic;
+     BOOL opponentAns;
      int languageCode;
      NSString *message;
      NSString *FriendNotAvail;

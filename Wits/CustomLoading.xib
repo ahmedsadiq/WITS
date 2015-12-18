@@ -56,6 +56,9 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="cancelPressed:" destination="267-4z-hQT" eventType="touchUpInside" id="CNd-vh-sIe"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" id="8iN-KC-hu8">
                     <rect key="frame" x="104" y="272" width="113" height="25"/>
@@ -88,6 +91,7 @@
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <connections>
+                <outlet property="cancelbtn" destination="MY6-k9-Int" id="IrZ-gx-1w2"/>
                 <outlet property="firstdot" destination="sCy-9H-Uvo" id="DbL-e4-WUE"/>
                 <outlet property="fourthDot" destination="480-Zl-EEE" id="fts-RH-tEU"/>
                 <outlet property="opponentNameLbl" destination="MWL-G5-gju" id="vo5-Ms-dFm"/>

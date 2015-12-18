@@ -1454,6 +1454,16 @@
           adContentLbl.text = ADD_CONTENT;
           guidelineLbl.text = GUIDELINES;
           
+          //helpShiftView
+          hplbl1.text =@"Go to The WITS Store";
+          hpLbl2.text = @"Buy Gems";
+          hpLbl3.text = @"Play and Win Prizes";
+          hpleftDesc.text = @"Gold plated top rich Austrian style.";
+          hpLefttitle.text = @"Roxi-Fashion Royal";
+          hprightDesc.text = @"The new PowerShot N opens up a new dimension of photographic expression, helping you express your personal style and flair with powerful innovative Canon technologies.";
+          hprightTitle.text = @"Canon N, Digital Camera";
+          hpMidtitle.text = @"3 Easy Steps to Redeem your Prize";
+          
           [sendQuestion setTitle:SEND forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN forState:UIControlStateNormal];
@@ -1473,6 +1483,15 @@
           HowWitsStore = @"كيفية استخدام مخزن ويتس";
           HowtoEarnPoints = @"كيف تحصل على النقاط مجاناً؟";
           
+          //helpShiftView
+          hplbl1.text =@"الذهاب إلى مخزن WITS";
+          hpLbl2.text = @"شراء الأحجار الكريمة";
+          hpLbl3.text = @"إلعب واربح جوائز";
+          hpleftDesc.text = @"مطلية بالذهب من الطراز النمساوي الأكثر ثراء";
+          hpLefttitle.text = @"أزياء روكسي الملكية";
+          hprightDesc.text = @"بورشوت ن الجديدة تفتح بعد جديد من التعبير التصويري، وتساعدك على التعبير عن أسلوبك الشخصي وموهبتك مع تكنولوجيات كانون القوية والمبدعة";
+          hprightTitle.text = @"كاميرا كانون ن الرقمية";
+          hpMidtitle.text = @"";
           
           loadingTitle = Loading_1;
           
@@ -1526,6 +1545,16 @@
           
           AddaQuestion.text = ADD_QUESTION_2;
           
+          //helpShiftView
+          hplbl1.text =@"Aller à la boutique de WITS";
+          hpLbl2.text = @"Acheter de Gems";
+          hpLbl3.text = @"Jouer et gagner des prix";
+          hpleftDesc.text = @"Haut plaqué or riche Austrian Style";
+          hpLefttitle.text = @"";
+          hprightDesc.text = @"Les nouveaux PowerShot N ouvre une nouvelle dimension d\'expression photographique, vous aidant à exprimer votre style personnel et flair avec de puissantes technologies Canon innovants";
+          hprightTitle.text = @"Canon N, Appareil Photo Numérique";
+          hpMidtitle.text = @"";
+          
           HowtoPlay = @"Comment jouer";
           HowWitsStore = @"Comment utiliser ESPRITS magasin";
           HowtoEarnPoints = @"Comment gagner des Points";
@@ -1564,7 +1593,15 @@
           AddaQuestion.text = ADD_QUESTION_3;
           answerTxt.placeholder = ENTER_ANSWER_3;
           questionTxt.placeholder = @"Introduzca pregunta";
-          
+          //helpShiftView
+          hplbl1.text =@"Ir a la Tienda de WITS";
+          hpLbl2.text = @"Comprar Gemas";
+          hpLbl3.text = @"Jugar y ganar premios";
+          hpleftDesc.text = @"";
+          hpLefttitle.text = @"";
+          hprightDesc.text = @"El nuevo PowerShot N abre una nueva dimensión de la expresión fotográfica ayudándote a expresar tu estilo personal y tu potencial con las potentes e innovadoras tecnologías Canon.";
+          hprightTitle.text = @"Canon N, Cámara Digital";
+          hpMidtitle.text = @"";
           
           homeLbl.text = HOME_BTN_3;
           topicLbl.text = TOPICS_LBL_3;
@@ -1592,7 +1629,15 @@
           knowledgeLbl.text = KNOWLEDGE_LBL_4;
           tutoDesc1.text = TUTORIAL_DESC_LBL_4;
           tutoDesc2.text = TUTORIAL_DESC_LBL2_4;
-          
+          //helpShiftView
+          hplbl1.text =@"Ir para Loja WITS";
+          hpLbl2.text = @"Comprar Gems";
+          hpLbl3.text = @"Jogue e Ganhe Prêmios";
+          hpleftDesc.text = @"";
+          hpLefttitle.text = @"";
+          hprightDesc.text = @"A nova PowerShot N abre uma nova dimensão de expressão fotográfica, ajudando você expressar seu estilo e dom pessoal com poderosas tecnologias inovadoras Canon";
+          hprightTitle.text = @"Câmera Digital Canon N";
+          hpMidtitle.text = @"";
           AddaQuestion.text = ADD_QUESTION_4;
           answerTxt.placeholder = ENTER_ANSWER_4;
           questionTxt.placeholder = @"Digite Pergunta";
