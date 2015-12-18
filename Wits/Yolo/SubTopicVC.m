@@ -1080,7 +1080,7 @@
      [UIView animateWithDuration:1.0 animations:^{
           opponentProfileImageView.alpha = 0.0;
      }];
-     [UIView animateWithDuration:1.0 animations:^{
+     [UIView animateWithDuration:2.0 animations:^{
           opponentProfileImageView.alpha = 1.0;
      }];
 }

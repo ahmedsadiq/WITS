@@ -536,16 +536,15 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           }
      }
      if ([_challenge.isSuperBot intValue]== 1) {
-          if ([timerLbl.text intValue] <= [timeSeconds intValue]) {
-               if (isQuestionAnswered && isWrongAns) {
+          if (timeSpend >= 10) {
+               if (!isQuestionAnswered ) {
+                    [a_Timer invalidate];
+                    [self disableOptions:true];
+                    [self TimerUp];
+               }else{
                     [a_Timer invalidate];
                     [timerImg.layer removeAllAnimations];
                     [self notifyUser:tagbtn];
-                    
-               }else if(!isQuestionAnswered){
-                    [a_Timer invalidate];
-                    [self TimerUp];
-                    [timerImg.layer removeAllAnimations];
                }
           }
      }
@@ -1277,16 +1276,16 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                if ([_challenge.isSuperBot intValue]== 1 && _selectedIndex == -1) {
                     timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
                     if (ChancesSuperbot <= 70) {
-                         timeInSeconds = @"7";
-                         //  timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
+                         //timeInSeconds = @"7";
+                           timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
                          // correctOpt = @"1";
                     }else if (ChancesSuperbot >70 && ChancesSuperbot <= 90){
-                         timeInSeconds = @"8";
-                         // timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
+                        // timeInSeconds = @"8";
+                          timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
                          //correctOpt = @"1";
                     }else if (ChancesSuperbot >90 && ChancesSuperbot <= 100){
-                         timeInSeconds = @"6";
-                         //timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
+                         //timeInSeconds = @"6";
+                         timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
                          //correctOpt = @"1";
                     }
                     
@@ -1295,16 +1294,16 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                     
                     NSLog(@"randomNumber : %d",ChancesSuperbot);
                     if (ChancesSuperbot <= 70) {
-                         timeInSeconds = @"7";
-                         //timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber];
+                         //timeInSeconds = @"7";
+                         timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber];
                          // correctOpt = @"0";
                     }else if (ChancesSuperbot >70 && ChancesSuperbot <= 90){
-                         timeInSeconds = @"8";
-                         //timeInSeconds =[NSString stringWithFormat:@"%d",randomNumber];
+                        // timeInSeconds = @"8";
+                         timeInSeconds =[NSString stringWithFormat:@"%d",randomNumber];
                          //correctOpt = @"0";
                     }else if (ChancesSuperbot >90 && ChancesSuperbot <= 100){
-                         timeInSeconds = @"6";
-                         //timeInSeconds =[NSString stringWithFormat:@"%d",randomNumber];
+                        // timeInSeconds = @"6";
+                         timeInSeconds =[NSString stringWithFormat:@"%d",randomNumber];
                          //correctOpt = @"0";
                     }
                     
@@ -1550,6 +1549,13 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      [responeTimeOutTimer invalidate];
      responeTimeOutTimer = nil;
      responseStatus = YES;
+     CATransition *transition = [CATransition animation];
+     transition.duration = 0.3;
+     transition.type = kCATransitionPush; //choose your animation
+     transition.subtype = kCATransitionFromBottom;
+     [ResultsView.layer addAnimation:transition forKey:nil];
+     ResultsView.hidden = false;
+     [self.view addSubview:ResultsView];
      loadView = [[LoadingView alloc] init];
      [loadView showInView:self.view withTitle:loadingTitle];
      
@@ -1733,13 +1739,13 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                          youWinTitle.hidden = false;
                     }
                }
-               CATransition *transition = [CATransition animation];
-               transition.duration = 0.3;
-               transition.type = kCATransitionPush; //choose your animation
-               transition.subtype = kCATransitionFromBottom;
-               [ResultsView.layer addAnimation:transition forKey:nil];
-               ResultsView.hidden = false;
-               [self.view addSubview:ResultsView];
+//               CATransition *transition = [CATransition animation];
+//               transition.duration = 0.3;
+//               transition.type = kCATransitionPush; //choose your animation
+//               transition.subtype = kCATransitionFromBottom;
+//               [ResultsView.layer addAnimation:transition forKey:nil];
+//               ResultsView.hidden = false;
+//               [self.view addSubview:ResultsView];
                
                
                userProgress.hidden = YES;
@@ -2124,6 +2130,16 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 }
 
 - (IBAction)quitGame:(id)sender {
+     [timer invalidate];
+     
+     timer = nil;
+     
+     [GemsDialogView removeFromSuperview];
+     AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;
+     del.isChallengeCancelled = true;
+     del.friendToBeChalleneged = nil;
+     del.requestType = nil;
+     //[sharedManager closeWebSocket];
      [searchingView removeFromSuperview];
 }
 
@@ -2261,7 +2277,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 -(void) DataRevieved:(SocketIOPacket *)dict{
      
      [loadView hide];
-     
+     [loadView removeFromSuperview];
      [self dissableOptionSelection];
      
      [responeTimeOutTimer invalidate];

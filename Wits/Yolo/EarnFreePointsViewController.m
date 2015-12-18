@@ -235,8 +235,7 @@
     
      if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
           SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-           NSString *sharingStr = @"bnc.lt/l/4p9rauk_Qr";
-          
+          NSString *sharingStr = [NSString stringWithFormat:@"%@ %@",newShareString,@"https://goo.gl/WZE1kP"];          
           [controller setInitialText:sharingStr];
           [self presentViewController:controller animated:YES completion:Nil];
      }
@@ -275,7 +274,7 @@
      if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
      {
           
-          NSString *sharingStr = [NSString stringWithFormat:@"%@ \n%@%@",referalStr,[SharedManager getInstance]._userProfile.referral_code,referalStr2];
+          NSString *sharingStr = [NSString stringWithFormat:@"%@ %@",newShareString,@"https://goo.gl/WZE1kP"];
           SLComposeViewController *tweetSheet = [SLComposeViewController
                                                  composeViewControllerForServiceType:SLServiceTypeTwitter];
           [tweetSheet setInitialText:sharingStr];
@@ -351,12 +350,12 @@
      }
      else {
           NSArray *recipents = @[@""];
-          NSString *sharingStr = [NSString stringWithFormat:@"%@ \n%@%@",referalStr,[SharedManager getInstance]._userProfile.referral_code,referalStr2];
+          NSString *sharingStr = [NSString stringWithFormat:@"%@ %@",newShareString,@"https://goo.gl/WZE1kP"];
           
           
           MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
           messageController.messageComposeDelegate = self;
-          [messageController setRecipients:recipents];
+          [messageController setRecipients:nil];
           [messageController setBody:sharingStr];
           
           // Present message view controller on screen
@@ -620,6 +619,7 @@
      languageCode = [language intValue];
      NSString *suffix = @"";
      if(languageCode == 0 ) {
+          newShareString = @"WITS is an award winning multiplayer trivia game and fan community. Now you can also earn cash and real prizes on WITS! Click here : ";
           referalStr = @"Hi, My referral Code is";
           referalStr2 = @". Help me Earn Free Points. Lets play Wits together.";
           _knowlegdeLbl.text = KNOWLEDGE_LBL;
@@ -643,7 +643,7 @@
      else if(languageCode == 1 ) {
           referalStr = @". استخدم هذا الرقم لإحالة";
           referalStr2 = @". ساعدني لأحصل على النقاط مجانية. دعنا نلعب Wits سوياً.";
-          
+          newShareString =@"الآن يمكنك أيضا أن تحصل على النقود والجوائز الحقيقية مع ويتس! اضغط هنا.ويتس هي جائزة الفوز متعددة لعبة التوافه والمجتمع مروحة";
           _knowlegdeLbl.text = KNOWLEDGE_LBL_1;
           //_shareLbl.text = SHARE_WITS_LBL_1;
           _EarnfreePointLbl.text = INVITE_FRIENDS_1;
@@ -672,7 +672,7 @@
           
      }
      else if(languageCode == 2) {
-          
+          newShareString = @"WITS est un jeu primé multijoueur de trivia  et une communauté de fans. Maintenant vous pouvez également gagner de l\'argent et prix réel sur WITS! Cliquez ici : ";
           referalStr = @"Salut, Mon code de référence est";
           referalStr2 = @". Aidez-moi à gagner des Gems. Rejoignez-moi sur Wits.";
           _knowlegdeLbl.text = KNOWLEDGE_LBL_2;
@@ -703,7 +703,7 @@
           
      }
      else if(languageCode == 3) {
-          
+          newShareString = @"WITS es el galardonado juego de trivia multijugador y una comunidad de fans. ¡Ahora puedes ganar Premios reales y dinero en WITS! Clic aquí : ";
           referalStr = @"Hola, Mi Código de Referencia es";
           referalStr2 = @". Ayudame a ganar gemas gratis. Jueguemos Wits juntos.";
           _knowlegdeLbl.text = KNOWLEDGE_LBL_3;
@@ -734,7 +734,7 @@
      else if(languageCode == 4) {
           referalStr = @"Olá, Meu código de referência é ";
           referalStr2 = @". Ajude me Ganhar Gemas Grátis. Jogue Wits comigo.";
-          
+          newShareString = @"WITS é um premiado jogo de trivia multiplayer e uma comunidade de fãs. Agora você pode também ganhar dinheiro e prêmios reais no WITS! Clique aqui : ";
           howtoPlay1 = @"Inicie um desafio de 1-1 contra qualquer pessoa no mundo.";
           howtoPlay2 = @"Quanto mais rápido você responder, mais pontos você vai acumular.";
           howtoPlay3 = @"Troque as suas Gemas por dinheiro verdadeiro.";

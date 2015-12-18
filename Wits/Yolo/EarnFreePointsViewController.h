@@ -39,6 +39,7 @@
      IBOutlet UILabel *tutorialDescLbl2;
      
      int languageCode;
+     NSString *newShareString;
      NSString *referalStr;
      NSString *referalStr2;
     IBOutlet UIButton *mainBack;

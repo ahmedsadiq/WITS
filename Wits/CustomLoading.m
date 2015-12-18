@@ -77,7 +77,7 @@ CustomLoading *loaderObj;
           [engine enqueueOperation:op];
      }
      opponentProfileImageView.image= [UIImage imageNamed:@"personal.png"];
-     //opponentProfileImageView.imageURL = [NSURL URLWithString:senderObj.recieverProfileImgLink];
+     opponentProfileImageView.imageURL = [NSURL URLWithString:senderObj.recieverProfileImgLink];
      NSURL *url2 = [NSURL URLWithString:senderObj.recieverProfileImgLink];
      [[AsyncImageLoader sharedLoader] loadImageWithURL:url2];
      [opponentProfileImageView roundImageCorner];
@@ -143,7 +143,7 @@ CustomLoading *loaderObj;
 - (IBAction)cancelPressed:(id)sender {
      
      [timer invalidate];
-     [opponentProfileImageView stopAnimating];
+   
      timer = nil;
      
      

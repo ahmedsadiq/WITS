@@ -405,7 +405,7 @@
 #define OR_TEXT @"  OR"
 #define SIGNUP_EMAIL @"  Email"
 #define SIGNUP_DISPLAY_NAME @"  Display Name"
-#define SIGNUP_PASSWORD @"  Password"
+#define SIGNUP_PASSWORD @"Password"
 #define SIGNUP_BIRTHDAY @" Birthday"
 #define SIGNUP_USERNAME @"  Username"
 #define SIGNUP_DESC @"We approxomate your location so you can see how you rank in your country By signing up, you agree with Term of Service & Privacy Policy"

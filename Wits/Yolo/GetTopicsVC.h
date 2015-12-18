@@ -36,6 +36,7 @@
      LoadingView *loadView;
      LoadingView *_loadingView;
 
+     __weak IBOutlet UILabel *swipelbl;
      Challenge *_challenge;
      NSUInteger currentSelectedIndex;
      IBOutlet UILabel *opponent;

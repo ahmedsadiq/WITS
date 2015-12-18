@@ -57,7 +57,8 @@
      //     AlertOBj = [[AlertMessage alloc]initWithNibName:@"AlertMessage" bundle:nil];
      //     AlertOBj.MAinSignUpvcOBJ = self;
      //
-     
+  if(IS_IPAD)
+       skipbtn.titleLabel.font = [UIFont systemFontOfSize:30];
      UIColor *color = [UIColor whiteColor];
      DontSwipe = false;
      emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"EMAIL" attributes:@{NSForegroundColorAttributeName: color}];
@@ -206,36 +207,37 @@
 
 -(IBAction)loginAction:(id)sender{
      
-     if(![self validateEmail:emailTxt.text])
-     {
-          NSString *emailMsg;
-          NSString *title;
-          if (languageCode == 0 ) {
-               emailMsg = @"Please enter some valid email address.";
-               title = @"Error";
-          } else if(languageCode == 1) {
-               emailMsg = @"الرجاء تقديم عنوان بريدك الإلكتروني الصحيح!";
-               title = @"خطأ";
-          }else if (languageCode == 2){
-               emailMsg = @"Veuillez fournir une adresse e-mail correcte!";
-               title = @"Erreur";
-          }else if (languageCode == 3){
-               emailMsg = @"Por favor ingrese un correo electrónico correcto!";
-               title = @"Error";
-          }else if (languageCode == 4){
-               emailMsg = @"Por favor, forneça um endereço de e-mail correto!";
-               title = @"Erro";
-          }
-          
-          [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:OK_BTN OtherButton:nil];
-          
-          /*   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter some valid email address." delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-           
-           [alertView show];
-           return;*/
-     }
-     //NSLog(@"%@",emailTxt.text);
-     else if(![pswdTxt hasText]){
+//     if(![self validateEmail:emailTxt.text])
+//     {
+//          NSString *emailMsg;
+//          NSString *title;
+//          if (languageCode == 0 ) {
+//               emailMsg = @"Please enter some valid email address.";
+//               title = @"Error";
+//          } else if(languageCode == 1) {
+//               emailMsg = @"الرجاء تقديم عنوان بريدك الإلكتروني الصحيح!";
+//               title = @"خطأ";
+//          }else if (languageCode == 2){
+//               emailMsg = @"Veuillez fournir une adresse e-mail correcte!";
+//               title = @"Erreur";
+//          }else if (languageCode == 3){
+//               emailMsg = @"Por favor ingrese un correo electrónico correcto!";
+//               title = @"Error";
+//          }else if (languageCode == 4){
+//               emailMsg = @"Por favor, forneça um endereço de e-mail correto!";
+//               title = @"Erro";
+//          }
+//          
+//          [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:OK_BTN OtherButton:nil];
+//          
+//          /*   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter some valid email address." delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+//           
+//           [alertView show];
+//           return;*/
+//     }
+//     //NSLog(@"%@",emailTxt.text);
+//     else
+     if(![pswdTxt hasText]){
           NSString *emailMsg;
           NSString *title;
           if (languageCode == 0 ) {
@@ -1720,7 +1722,7 @@
           howtoPlay3 = @"Claim your rewards.";
           UIColor *color = [UIColor whiteColor];
           [forgotpasswordSigninButtonn setTitle:@"Back To Sign In" forState:UIControlStateNormal];
-          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL attributes:@{NSForegroundColorAttributeName: color}];
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Enter Email or Username" attributes:@{NSForegroundColorAttributeName: color}];
           pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD attributes:@{NSForegroundColorAttributeName: color}];
           //           [forgotPasswordLabel setTitle:SIGNUP_FORGOT_PASS forState:UIControlStateNormal];
           forgot_password_button_text_label.text =SIGNUP_FORGOT_PASS;
@@ -1757,7 +1759,7 @@
           //pswdTxt.placeholder = SIGNUP_PASSWORD_1;
           UIColor *color = [UIColor whiteColor];
           [forgotpasswordSigninButtonn setTitle:@"العودة إلى تسجيل الدخول" forState:UIControlStateNormal];
-          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_1 attributes:@{NSForegroundColorAttributeName: color}];
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"أدخل البريد الإلكتروني أو اسم المستخدم" attributes:@{NSForegroundColorAttributeName: color}];
           pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_1 attributes:@{NSForegroundColorAttributeName: color}];
           tutorialLbl.text = TUTORIAL_LBL_1;
           knowledgelbl.text = KNOWLEDGE_LBL_1;
@@ -1812,7 +1814,7 @@
           //emailTxt.placeholder = SIGNUP_EMAIL_2;
           UIColor *color = [UIColor whiteColor];
           [forgotpasswordSigninButtonn setTitle:@"retour a connexion" forState:UIControlStateNormal];
-          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_2 attributes:@{NSForegroundColorAttributeName: color}];
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Saisissez votre email ou nom d\'utilisateur" attributes:@{NSForegroundColorAttributeName: color}];
           pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_2 attributes:@{NSForegroundColorAttributeName: color}];
           tutoStr3 = TUTORIAL_STR_3_2;
           tutoStr4 = TUTORIAL_STR_4_2;
@@ -1856,7 +1858,7 @@
           //emailTxt.placeholder = SIGNUP_EMAIL_3;
           UIColor *color = [UIColor whiteColor];
           [forgotpasswordSigninButtonn setTitle:@": Volver al inicio de sesión" forState:UIControlStateNormal];
-          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_3 attributes:@{NSForegroundColorAttributeName: color}];
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Introducir email o nombre de usuario" attributes:@{NSForegroundColorAttributeName: color}];
           pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_3 attributes:@{NSForegroundColorAttributeName: color}];
             [_resetButtonOutlet setTitle:@"réinitialiser le mot de" forState:UIControlStateNormal];
           tutoStr1 = TUTORIAL_STR_1_3;
@@ -1899,7 +1901,7 @@
           
           UIColor *color = [UIColor whiteColor];
           [forgotpasswordSigninButtonn setTitle:@" Voltar para acessar" forState:UIControlStateNormal];
-          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_4 attributes:@{NSForegroundColorAttributeName: color}];
+          emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Digite o E-mail ou Usuário" attributes:@{NSForegroundColorAttributeName: color}];
           pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_4 attributes:@{NSForegroundColorAttributeName: color}];
           _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Digite o E-mail" attributes:@{NSForegroundColorAttributeName: color}];
           howtoPlay1 = @"Inicie um desafio de 1-1 contra qualquer pessoa no mundo.";
@@ -2013,7 +2015,12 @@
      NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
       [postParams setObject:language forKey:@"language"];
      [postParams setObject:@"userLogin" forKey:@"method"];
-     [postParams setObject:emailTxt.text forKey:@"email"];
+     if(![self validateEmail:emailTxt.text])
+     {
+          [postParams setObject:emailTxt.text forKey:@"user_name_id"];
+     }
+     else
+          [postParams setObject:emailTxt.text forKey:@"email"];
      [postParams setObject:pswdTxt.text forKey:@"password"];
      if(isAlreadyLogin == false)
           [postParams setObject:@"false" forKey:@"has_session"];

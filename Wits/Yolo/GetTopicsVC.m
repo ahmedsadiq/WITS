@@ -1463,7 +1463,7 @@
           hprightDesc.text = @"The new PowerShot N opens up a new dimension of photographic expression, helping you express your personal style and flair with powerful innovative Canon technologies.";
           hprightTitle.text = @"Canon N, Digital Camera";
           hpMidtitle.text = @"3 Easy Steps to Redeem your Prize";
-          
+          swipelbl.text = @"SWIPE";
           [sendQuestion setTitle:SEND forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN forState:UIControlStateNormal];
@@ -1491,8 +1491,8 @@
           hpLefttitle.text = @"أزياء روكسي الملكية";
           hprightDesc.text = @"بورشوت ن الجديدة تفتح بعد جديد من التعبير التصويري، وتساعدك على التعبير عن أسلوبك الشخصي وموهبتك مع تكنولوجيات كانون القوية والمبدعة";
           hprightTitle.text = @"كاميرا كانون ن الرقمية";
-          hpMidtitle.text = @"";
-          
+          hpMidtitle.text = @"3 خطوات سهلة لتخليص جائزتك و الحصول عليها ";
+           swipelbl.text = @" اسحب باصبعك";
           loadingTitle = Loading_1;
           
           _CategoriesLbl.text = TOPICS_BTN_1;
@@ -1533,7 +1533,7 @@
           howtoPlay2 = @"Plus vite vous répondez, plus vous cumulez de Gems.";
           howtoPlay3 = @"Echangez vos Gems contre de l'argent.";
           
-          
+          swipelbl.text =@"Frapper";
           howtouseStoreDesc = @"Inscrivez-vous maintenant et gagnez 100 Gems gratuits.";
           howtoEarnPointDesc = @"Vous pouvez toujours gagner des Points en invitant vos amis et en partageant notre application sur Facebook et Twitter.";
           
@@ -1550,10 +1550,10 @@
           hpLbl2.text = @"Acheter de Gems";
           hpLbl3.text = @"Jouer et gagner des prix";
           hpleftDesc.text = @"Haut plaqué or riche Austrian Style";
-          hpLefttitle.text = @"";
+          hpLefttitle.text = @"Roxi-Fashion Royal";
           hprightDesc.text = @"Les nouveaux PowerShot N ouvre une nouvelle dimension d\'expression photographique, vous aidant à exprimer votre style personnel et flair avec de puissantes technologies Canon innovants";
           hprightTitle.text = @"Canon N, Appareil Photo Numérique";
-          hpMidtitle.text = @"";
+          hpMidtitle.text = @"Trois étapes simples pour Recuperares votre prix";
           
           HowtoPlay = @"Comment jouer";
           HowWitsStore = @"Comment utiliser ESPRITS magasin";
@@ -1582,7 +1582,7 @@
           
           howtouseStoreDesc = @"Registrase ahora y gane 1000 puntos gratis";
           howtoEarnPointDesc = @"Puedes ganar pontus gratis invitando a tus amigos y compartiendo la aplicación en Facebook or Twitter.";
-          
+          swipelbl.text = @"DESLIZAR";
           searchBar.placeholder = SEARCH_CATEGORY_3;
           loadingTitle = Loading_3;
           _CategoriesLbl.text = TOPICS_BTN_3;
@@ -1597,11 +1597,11 @@
           hplbl1.text =@"Ir a la Tienda de WITS";
           hpLbl2.text = @"Comprar Gemas";
           hpLbl3.text = @"Jugar y ganar premios";
-          hpleftDesc.text = @"";
-          hpLefttitle.text = @"";
+          hpleftDesc.text = @"Top Oro Plateado Estilo Australiano.";
+          hpLefttitle.text = @"Roxi-Fashion Royal";
           hprightDesc.text = @"El nuevo PowerShot N abre una nueva dimensión de la expresión fotográfica ayudándote a expresar tu estilo personal y tu potencial con las potentes e innovadoras tecnologías Canon.";
           hprightTitle.text = @"Canon N, Cámara Digital";
-          hpMidtitle.text = @"";
+          hpMidtitle.text = @"3 pasos fáciles para liberar tu premio";
           
           homeLbl.text = HOME_BTN_3;
           topicLbl.text = TOPICS_LBL_3;
@@ -1622,7 +1622,7 @@
           
           howtouseStoreDesc = @"Inscreva-se gratuitamente e ganhe 1000 pontos";
           howtoEarnPointDesc = @"Poderá receber pontus Grátis a todo momento ao convidar os seus amigos ou ao partilhar a App no Facebook ou Twitter.";
-          
+          swipelbl.text = @"Deslizar";
           searchBar.placeholder = SEARCH_CATEGORY_4;
           loadingTitle = Loading_4;
           _CategoriesLbl.text = TOPICS_BTN_4;
@@ -1633,11 +1633,11 @@
           hplbl1.text =@"Ir para Loja WITS";
           hpLbl2.text = @"Comprar Gems";
           hpLbl3.text = @"Jogue e Ganhe Prêmios";
-          hpleftDesc.text = @"";
-          hpLefttitle.text = @"";
+          hpleftDesc.text = @"Coroa banhada a ouro, rico estilo Austríaco";
+          hpLefttitle.text = @"Roxi-Fashion Real";
           hprightDesc.text = @"A nova PowerShot N abre uma nova dimensão de expressão fotográfica, ajudando você expressar seu estilo e dom pessoal com poderosas tecnologias inovadoras Canon";
           hprightTitle.text = @"Câmera Digital Canon N";
-          hpMidtitle.text = @"";
+          hpMidtitle.text = @"3 Passos Simples para Resgatar seu Prêmio";
           AddaQuestion.text = ADD_QUESTION_4;
           answerTxt.placeholder = ENTER_ANSWER_4;
           questionTxt.placeholder = @"Digite Pergunta";
