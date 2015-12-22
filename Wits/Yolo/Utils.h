@@ -17,9 +17,9 @@
 
 /////Live Server///
 
-//#define SERVER_URL @"http://quizapplication.witsapplication.com/api/service.php"
+#define SERVER_URL @"http://quizapplication.witsapplication.com/api/service.php"
 ////// Dev Server
-#define SERVER_URL @"http://witsdev.witsapplication.com/api/service.php"
+//#define SERVER_URL @"http://witsdev.witsapplication.com/api/service.php"
 
 //#define FONT_NAME @"PTC55F"
 #define FONT_NAME @"PTSans-Caption"

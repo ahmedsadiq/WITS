@@ -260,8 +260,21 @@ static BOOL showing;
      if([packet.name isEqualToString:@"connected"])
      {
           eventId = 1;
-          NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
-          [sharedManager sendEvent:@"register" andParameters:registerDictionary];
+         // NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
+         // [sharedManager sendEvent:@"register" andParameters:registerDictionary];
+          
+          if(!isChallengeAccepted) {
+               
+               NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",challengeID,@"challenge_id",requestType,@"challenge_type", nil];
+               [sharedManager sendEvent:@"cancelChallenge" andParameters:registerDictionary];
+          }
+          else {
+               NSString *challengeID = [challengeDIctionary objectForKey:@"challengeId"];
+               NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",challengeID,@"challenge_id",language,@"language",requestType,@"challenge_type", nil];
+               [sharedManager sendEvent:@"acceptChallenge" andParameters:registerDictionary];
+          }
+
+          
      }
      else if([packet.name isEqualToString:@"register"])
      {

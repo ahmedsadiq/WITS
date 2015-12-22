@@ -1219,16 +1219,16 @@
      TopicModel *tempToplic = [subtopicsArray objectAtIndex:currentSelectedIndex];
      if([packet.name isEqualToString:@"connected"])
      {
-          NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
-          [sharedManager sendEvent:@"register" andParameters:registerDictionary];
-         NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-          languageCode = [language intValue];
+//          NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
+//          [sharedManager sendEvent:@"register" andParameters:registerDictionary];
+         //NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+         // languageCode = [language intValue];
           
           NSArray* args = packet.args;
           NSDictionary* arg = args[0];
           
-          NSString *isVerified = [arg objectForKey:@"msg"];
-          if([isVerified isEqualToString:@"verified"] ){
+         // NSString *isVerified = [arg objectForKey:@"msg"];
+         // if([isVerified isEqualToString:@"verified"] ){
                NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
                languageCode = [language intValue];
                
@@ -1241,7 +1241,7 @@
                     NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"2",@"type",tempToplic.topic_id,@"type_id",language,@"language",@"false",@"is_cancel",requestType, @"request_type", nil];
                     [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionary];
                }
-          }
+         // }
 
           if(!(_gmChallengeSelected))
           {

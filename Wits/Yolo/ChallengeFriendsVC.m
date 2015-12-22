@@ -748,8 +748,15 @@
      if([packet.name isEqualToString:@"connected"])
      {
           eventId = 0;
-          NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
-          [sharedManager sendEvent:@"register" andParameters:registerDictionary];
+//          NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
+//          [sharedManager sendEvent:@"register" andParameters:registerDictionary];
+          isSocketConnected = true;
+          NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+          int languageCode = [language intValue];
+          
+          NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",_selectedUser.friendID,@"friend_id",topic_ID,@"type",subTopic,@"type_id",language,@"language",requestType,@"challenge_type", nil];
+          [sharedManager sendEvent:@"sendChallenge" andParameters:registerDictionary];
+
      }
      
      else if([packet.name isEqualToString:@"register"])

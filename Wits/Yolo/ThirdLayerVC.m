@@ -1305,13 +1305,13 @@
      SubTopicsModel *subTopic = [subtopicsArray objectAtIndex:currentSelectedIndex];
      if([packet.name isEqualToString:@"connected"])
      {
-          NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
-          [sharedManager sendEvent:@"register" andParameters:registerDictionary];
+          //NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
+          //[sharedManager sendEvent:@"register" andParameters:registerDictionary];
           NSArray* args = packet.args;
           NSDictionary* arg = args[0];
           
-          NSString *isVerified = [arg objectForKey:@"msg"];
-          if([isVerified isEqualToString:@"verified"] ){
+          //NSString *isVerified = [arg objectForKey:@"msg"];
+          //if([isVerified isEqualToString:@"verified"] ){
                NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
                languageCode = [language intValue];
                
@@ -1325,7 +1325,7 @@
                     NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"3",@"type",subTopic.subTopic_id,@"type_id",language,@"language",@"false",@"is_cancel",requestType, @"request_type", nil];
                     [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionary];
                }
-          }
+          //}
      }
      
      else if([packet.name isEqualToString:@"register"])

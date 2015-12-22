@@ -1067,7 +1067,7 @@
      [postParams setObject:displayNameField.text forKey:@"display_name"];
      [postParams setObject:emailField.text forKey:@"email"];
      [postParams setObject:passwordField.text forKey:@"password"];
-    // [postParams setObject:birthdaylbl.text forKey:@"birthday"];
+     [postParams setObject:@"01-01-1994" forKey:@"birthday"];
      [postParams setObject:usernameLbl.text forKey:@"user_name_id"];
      
      [postParams setObject:@"Pakistan" forKey:@"country_name"];
@@ -1079,7 +1079,7 @@
           if([_avatarsArray count] > 0)
                [postParams setObject:[_avatarsArray objectAtIndex:AvatarSelectedIndex] forKey:@"profile_image"];
           else
-               [postParams setObject:@"http://www.quizapplication.faditekdev.com/api/images/1.jpg" forKey:@"profile_image"];
+               [postParams setObject:@"http://quizapplication.witsapplication.com/api/images/profile_images/1.jpg" forKey:@"profile_image"];
      }
      else
      {

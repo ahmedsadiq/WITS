@@ -398,6 +398,7 @@
                     //[SharedManager getInstance]._userProfile.cashablePoints = @"1000";
                     [SharedManager getInstance]._userProfile.referral_code = [mainDict objectForKey:@"user_referral_code"];
                     [SharedManager getInstance]._userProfile.profile_image = [mainDict objectForKey:@"profile_image"];
+                    NSLog(@"profile image url is %@",[SharedManager getInstance]._userProfile.profile_image);
                     [SharedManager getInstance]._userProfile.lastFetched = [NSDate date];
                     
                     [[SharedManager getInstance].topicsArray removeAllObjects];
@@ -1222,8 +1223,13 @@
      CategoryModel *subTopic = [topicsArray objectAtIndex:currentSelectedIndex];
      if([packet.name isEqualToString:@"connected"])
      {
-          NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
-          [sharedManager sendEvent:@"register" andParameters:registerDictionary];
+          //NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
+          //[sharedManager sendEvent:@"register" andParameters:registerDictionary];
+          NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+          int languageCode = [language intValue];
+          NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"1",@"type",subTopic.category_id,@"type_id",language,@"language",@"false",@"is_cancel", nil];
+          [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionary];
+
      }
      
      else if([packet.name isEqualToString:@"register"])

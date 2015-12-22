@@ -34,10 +34,10 @@ static SocketManager *socket_instance = nil;
      _socketIO = [[SocketIO alloc] initWithDelegate:self];
      NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
      //For Live
-//     [_socketIO connectToHost:@"nodeapp.witsapplication.com" onPort:3000 withParams:registerDictionary];
+   [_socketIO connectToHost:@"nodeapp.witsapplication.com" onPort:3000 withParams:registerDictionary];
      
      //For Dev
-     [_socketIO connectToHost:@"witsnodedev.witsapplication.com" onPort:11000 withParams:registerDictionary];
+     //[_socketIO connectToHost:@"witsnodedev.witsapplication.com" onPort:11000 withParams:registerDictionary];
      
 }
 -(void)closeWebSocket {

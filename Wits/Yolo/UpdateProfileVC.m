@@ -412,6 +412,8 @@
      }
      else {
           NSString *imageStr = [SharedManager getInstance]._userProfile.profile_image;
+          NSLog(@"Image str is this :%@",imageStr);
+          if(imageStr != nil || ![imageStr isEqualToString:@"http://quizapplication.witsapplication.com/api/images/profile_images/http://quizapplication.witsapplication.com/api/images/profile_images/1.jpg"]){
           if([SharedManager getInstance]._userProfile.profile_image.length > 3) {
                MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
                MKNetworkOperation *op = [engine operationWithURLString:[SharedManager getInstance]._userProfile.profile_image params:Nil httpMethod:@"GET"];
@@ -459,6 +461,7 @@
                }];
                
                [engine enqueueOperation:op];
+          }
           }
      }
 }
@@ -827,11 +830,11 @@
 }
 - (IBAction)popUpAvatarPressed:(id)sender {
      
-     //[_loadingView hide];
-     //[_loadView removeFromSuperview];
-     //_loadingView = [[LoadingView alloc] init];
+     [_loadView hide];
+     [_loadView removeFromSuperview];
      AvatarView.hidden = NO;
      [_loadView showInView:self.view withTitle:loadingTitle];
+   
      [self showAvatars];
 }
 
