@@ -2065,7 +2065,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 - (IBAction)addOnBtnPressed:(id)sender {
      isAddOnEnabled = true;
      addOnBtn.hidden = true;
-     bg.image = [UIImage imageNamed:@"5050bg.png"];
+    // bg.image = [UIImage imageNamed:@"5050bg.png"];
      [self performSelector:@selector(appAddOn:)
                 withObject: [NSNumber numberWithFloat: 1.0f]
                 afterDelay:0.0];
@@ -3265,7 +3265,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                                                                                                             if(7-currentIndex <= currentAddOns){
                                                                                                                  isAddOnEnabled = true;
                                                                                                                  addOnBtn.hidden = true;
-                                                                                                                 bg.image = [UIImage imageNamed:@"5050bg.png"];
+                                                                                                                 //bg.image = [UIImage imageNamed:@"5050bg.png"];
                                                                                                                  [self performSelector:@selector(appAddOn:)
                                                                                                                             withObject: [NSNumber numberWithFloat: 1.0f]
                                                                                                                             afterDelay:0.0];
@@ -3273,7 +3273,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                                                                                                             else if (isAddOnEnabled) {
                                                                                                                  isAddOnEnabled = true;
                                                                                                                  addOnBtn.hidden = true;
-                                                                                                                 bg.image = [UIImage imageNamed:@"5050bg.png"];
+                                                                                                                 //bg.image = [UIImage imageNamed:@"5050bg.png"];
                                                                                                                  [self performSelector:@selector(appAddOn:)
                                                                                                                             withObject: [NSNumber numberWithFloat: 1.0f]
                                                                                                                             afterDelay:0.0];

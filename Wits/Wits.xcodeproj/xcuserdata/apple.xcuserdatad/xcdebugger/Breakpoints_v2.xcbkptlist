@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yolo/MainSingnUpVC.m"
-            timestampString = "472143661.913998"
+            timestampString = "472992011.686423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1306"
-            endingLineNumber = "1306"
+            startingLineNumber = "1307"
+            endingLineNumber = "1307"
             landmarkName = "-createTabBarAndControl"
             landmarkType = "5">
          </BreakpointContent>

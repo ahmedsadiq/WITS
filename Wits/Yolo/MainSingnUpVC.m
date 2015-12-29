@@ -136,7 +136,8 @@
      //OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:15];
      forgotpasswordSigninButtonn.font = [UIFont fontWithName:FONT_NAME size:18];
      
-     
+     if(IS_IPAD)
+          forgotpasswordSigninButtonn.font = [UIFont fontWithName:FONT_NAME size:28];
      
      UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(signUpSwipeDown:)];
      [left setDirection:UISwipeGestureRecognizerDirectionDown];
