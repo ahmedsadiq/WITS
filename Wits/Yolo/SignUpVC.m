@@ -45,7 +45,8 @@
      
      language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
-     
+     [[backtoSignInBtn layer] setBorderWidth:0.5f];
+     [[backtoSignInBtn layer] setBorderColor:[UIColor whiteColor].CGColor];
      //[self loadProfileImage];
      _profileImageType = FromAvatar;
      AvatarSelectedIndex = 0;
@@ -81,7 +82,9 @@
           usernameLbl.font = [UIFont fontWithName:FONT_NAME size:25];
           passwordField.font = [UIFont fontWithName:FONT_NAME  size:25];
           registerBtn.font = [UIFont fontWithName:FONT_NAME size:27];
-          signinLabel.font = [UIFont fontWithName:FONT_NAME size:25];
+          signinLabel.font = [UIFont fontWithName:FONT_NAME size:19];
+          [[backtoSignInBtn layer] setBorderWidth:1.0f];
+          [[backtoSignInBtn layer] setBorderColor:[UIColor whiteColor].CGColor];
      }else
      {
           displayNameField.font = [UIFont fontWithName:FONT_NAME size:15];
@@ -89,26 +92,26 @@
           usernameLbl.font = [UIFont fontWithName:FONT_NAME size:15];
           passwordField.font = [UIFont fontWithName:FONT_NAME  size:15];
           registerBtn.font = [UIFont fontWithName:FONT_NAME size:17];
-          signinLabel.font = [UIFont fontWithName:FONT_NAME size:15];
+          signinLabel.font = [UIFont fontWithName:FONT_NAME size:12];
      }
   
-     UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(signUpSwipeDown:)];
-     [left setDirection:UISwipeGestureRecognizerDirectionDown];
-     [self.view addGestureRecognizer:left];
+//     UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(signUpSwipeDown:)];
+//     [left setDirection:UISwipeGestureRecognizerDirectionDown];
+//     [self.view addGestureRecognizer:left];
      
 }
 
-- (void)signUpSwipeDown:(UISwipeGestureRecognizer *)gesture
-{
-     if(!DontSwipe){
-     int numViewControllers = self.navigationController.viewControllers.count;
-     UIView *nextView = [[self.navigationController.viewControllers objectAtIndex:numViewControllers - 2] view];
-     
-     [UIView transitionFromView:self.navigationController.topViewController.view toView:nextView duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve completion:^(BOOL finished) {
-          [self.navigationController popViewControllerAnimated:NO];
-     }];
-     }
-}
+//- (void)signUpSwipeDown:(UISwipeGestureRecognizer *)gesture
+//{
+//     if(!DontSwipe){
+//     int numViewControllers = self.navigationController.viewControllers.count;
+//     UIView *nextView = [[self.navigationController.viewControllers objectAtIndex:numViewControllers - 2] view];
+//     
+//     [UIView transitionFromView:self.navigationController.topViewController.view toView:nextView duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve completion:^(BOOL finished) {
+//          [self.navigationController popViewControllerAnimated:NO];
+//     }];
+//     }
+//}
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -146,7 +149,8 @@
           signUpDescLbl.text = SIGNUP_DESC;
           signUplbl.text = @"Sign Up";
           Done = @"Done";
-          signinLabel.text = SIGIN_TEXT;
+          [signinLabel setText:[@"Back to Sign In" uppercaseString]];
+       
           emailField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: color}];
           displayNameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Display Name" attributes:@{NSForegroundColorAttributeName: color}];
           usernameLbl.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: color}];
@@ -168,8 +172,8 @@
           passwordField.placeholder = SIGNUP_PASSWORD_1;
           birthdaylbl.text = SIGNUP_BIRTHDAY_1;
           signUplbl.text = @"اشترك";
-          
-          signinLabel.text = SIGIN_TEXT_1;
+//          signinLabel.text = @"العودة إلى تسجيل الدخول";
+          [signinLabel setText:[@"العودة إلى تسجيل الدخول" uppercaseString]];
           emailField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_EMAIL_1 attributes:@{NSForegroundColorAttributeName: color}];
           displayNameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_DISPLAY_NAME_1 attributes:@{NSForegroundColorAttributeName: color}];
           usernameLbl.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_USERNAME_1 attributes:@{NSForegroundColorAttributeName: color}];
@@ -195,7 +199,8 @@
      else if(languageCode == 2) {
           LoadingTitle = Loading_2;
           cancel1 = CANCEL_2;
-          signinLabel.text = SIGIN_TEXT_2;
+          
+          [signinLabel setText:[@"retour a connexion" uppercaseString]];
           Done = @"Terminé";
           birthdaylbl.text = SIGNUP_BIRTHDAY_2;
           signUpDescLbl.text = SIGNUP_DESC_2;
@@ -218,7 +223,8 @@
      else if(languageCode == 3) {
           cancel1 = CANCEL_3;
           Done = @"Done";
-          signinLabel.text = SIGIN_TEXT_3;
+         
+          [signinLabel setText:[@": Volver al inicio de sesión" uppercaseString]];
           LoadingTitle = Loading_3;
           emailField.placeholder = SIGNUP_EMAIL_3;
           displayNameField.placeholder = SIGNUP_DISPLAY_NAME_3;
@@ -248,7 +254,8 @@
           LoadingTitle = Loading_4;
           emailField.placeholder = SIGNUP_EMAIL_4;
           displayNameField.placeholder = SIGNUP_DISPLAY_NAME_4;
-          signinLabel.text = SIGIN_TEXT_4;
+          
+          [signinLabel setText:[@"Voltar para acessar" uppercaseString]];
           passwordField.placeholder = SIGNUP_PASSWORD_4;
           birthdaylbl.text = SIGNUP_BIRTHDAY_4;
           usernameLbl.placeholder = SIGNUP_USERNAME_4;
@@ -289,6 +296,16 @@
           
      }];
      [engine enqueueOperation:op];
+}
+
+- (IBAction)backTosignIn:(id)sender {
+     int numViewControllers = self.navigationController.viewControllers.count;
+     UIView *nextView = [[self.navigationController.viewControllers objectAtIndex:numViewControllers - 2] view];
+     
+     [UIView transitionFromView:self.navigationController.topViewController.view toView:nextView duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve completion:^(BOOL finished) {
+          [self.navigationController popViewControllerAnimated:NO];
+     }];
+
 }
 
 -(IBAction)datePickerClicked:(id)sender{

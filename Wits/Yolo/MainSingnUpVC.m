@@ -53,9 +53,11 @@
     language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
      [self.navigationController setNavigationBarHidden:YES];
-     
-     //     AlertOBj = [[AlertMessage alloc]initWithNibName:@"AlertMessage" bundle:nil];
-     //     AlertOBj.MAinSignUpvcOBJ = self;
+     [[_RegisterButton layer] setBorderWidth:0.5f];
+     [[_RegisterButton layer] setBorderColor:[UIColor whiteColor].CGColor];
+     [[forgotpasswordSigninButtonn layer] setBorderWidth:0.5f];
+     [[forgotpasswordSigninButtonn layer] setBorderColor:[UIColor whiteColor].CGColor];
+    
      //
   if(IS_IPAD)
        skipbtn.titleLabel.font = [UIFont systemFontOfSize:30];
@@ -73,7 +75,7 @@
      if ([[UIScreen mainScreen] bounds].size.height == iPad){
           myRect = CGRectMake(415, 700, 300, 100);
           imageName = @"facebookbg.png";
-          signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:25];
+          signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:19];
           forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:25];
           orLabel.font = [UIFont fontWithName:FONT_NAME size:20];
           emailTxt.font = [UIFont fontWithName:FONT_NAME size:30];
@@ -83,12 +85,16 @@
           LoginBtnOutlet.font = [UIFont fontWithName:FONT_NAME size:25];
           _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:25];
           twitterBtn.font = [UIFont fontWithName:FONT_NAME size:25];
+          [[_RegisterButton layer] setBorderWidth:2.0f];
+          [[_RegisterButton layer] setBorderColor:[UIColor whiteColor].CGColor];
+          [[forgotpasswordSigninButtonn layer] setBorderWidth:2.0f];
+          [[forgotpasswordSigninButtonn layer] setBorderColor:[UIColor whiteColor].CGColor];
      }
      else{
           myRect = CGRectMake(174,421,132,42);
           imageName = @"facebookbg.png";
           twitterBtn.font = [UIFont fontWithName:FONT_NAME size:17];
-          signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:13];
+          signuplabelTextbelow.font = [UIFont fontWithName:FONT_NAME size:12];
           forgotPasswordLabel.font = [UIFont fontWithName:FONT_NAME size:18];
           orLabel.font = [UIFont fontWithName:FONT_NAME size:14];
           emailTxt.font = [UIFont fontWithName:FONT_NAME size:17];
@@ -134,59 +140,59 @@
      // _resetButtonOutlet.font = [UIFont fontWithName:FONT_NAME size:17];
      //_resetPswdEmail.font = [UIFont fontWithName:FONT_NAME size:14];
      //OrlabellForgotpasswrod.font = [UIFont fontWithName:FONT_NAME size:15];
-     forgotpasswordSigninButtonn.font = [UIFont fontWithName:FONT_NAME size:18];
+     forgotpasswordSigninButtonn.font = [UIFont fontWithName:FONT_NAME size:13];
      
      if(IS_IPAD)
-          forgotpasswordSigninButtonn.font = [UIFont fontWithName:FONT_NAME size:28];
+          forgotpasswordSigninButtonn.font = [UIFont fontWithName:FONT_NAME size:19];
      
-     UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(signUpSwipeDown:)];
-     [left setDirection:UISwipeGestureRecognizerDirectionDown];
-     [self.view addGestureRecognizer:left];
+//     UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(signUpSwipeDown:)];
+//     [left setDirection:UISwipeGestureRecognizerDirectionDown];
+//     [self.view addGestureRecognizer:left];
      
 }
 
-- (void)signUpSwipeDown:(UISwipeGestureRecognizer *)gesture
-{
-     SignUpVC *signUpVC;
-     if(!DontSwipe){
-     if ([[UIScreen mainScreen] bounds].size.height == iPad) {
-          
-          signUpVC = [[SignUpVC alloc] initWithNibName:@"SignUpVC_iPad" bundle:nil];
-     }
-     else{
-          signUpVC = [[SignUpVC alloc] initWithNibName:@"SignUpVC" bundle:nil];
-     }
-     //     CATransition* transition = [CATransition animation];
-     //     transition.duration = 0.4f;
-     //     transition.type = kCATransitionMoveIn;
-     //     transition.subtype = kCATransitionFromBottom;
-     //
-     //     [self.navigationController.view.layer addAnimation:transition
-     //                                                 forKey:kCATransition];
-     //     [self.navigationController pushViewController:signUpVC animated:NO];
-     
-     UIViewController *destVC = signUpVC;
-     UIViewController *sourceVC = self;
-     [destVC viewWillAppear:YES];
-     
-     destVC.view.frame = sourceVC.view.frame;
-     
-     [UIView transitionFromView:sourceVC.view
-                         toView:destVC.view
-                       duration:0.7
-                        options:UIViewAnimationOptionTransitionCrossDissolve
-                     completion:^(BOOL finished)
-      {
-           [destVC viewDidAppear:YES];
-           
-           UINavigationController *nav = sourceVC.navigationController;
-           [nav popViewControllerAnimated:NO];
-           [nav pushViewController:destVC animated:NO];
-      }
-      ];
-     }
-}
-
+//- (void)signUpSwipeDown:(UISwipeGestureRecognizer *)gesture
+//{
+//     SignUpVC *signUpVC;
+//     if(!DontSwipe){
+//     if ([[UIScreen mainScreen] bounds].size.height == iPad) {
+//          
+//          signUpVC = [[SignUpVC alloc] initWithNibName:@"SignUpVC_iPad" bundle:nil];
+//     }
+//     else{
+//          signUpVC = [[SignUpVC alloc] initWithNibName:@"SignUpVC" bundle:nil];
+//     }
+//     //     CATransition* transition = [CATransition animation];
+//     //     transition.duration = 0.4f;
+//     //     transition.type = kCATransitionMoveIn;
+//     //     transition.subtype = kCATransitionFromBottom;
+//     //
+//     //     [self.navigationController.view.layer addAnimation:transition
+//     //                                                 forKey:kCATransition];
+//     //     [self.navigationController pushViewController:signUpVC animated:NO];
+//     
+//     UIViewController *destVC = signUpVC;
+//     UIViewController *sourceVC = self;
+//     [destVC viewWillAppear:YES];
+//     
+//     destVC.view.frame = sourceVC.view.frame;
+//     
+//     [UIView transitionFromView:sourceVC.view
+//                         toView:destVC.view
+//                       duration:0.7
+//                        options:UIViewAnimationOptionTransitionCrossDissolve
+//                     completion:^(BOOL finished)
+//      {
+//           [destVC viewDidAppear:YES];
+//           
+//           UINavigationController *nav = sourceVC.navigationController;
+//           [nav popViewControllerAnimated:NO];
+//           [nav pushViewController:destVC animated:NO];
+//      }
+//      ];
+//     }
+//}
+//
 - (void)languageSwipeDown:(UISwipeGestureRecognizer *)gesture
 {
      [self languageSaved:nil];
@@ -271,6 +277,36 @@
      
      [emailTxt resignFirstResponder];
      [pswdTxt resignFirstResponder];
+}
+
+- (IBAction)RegiterBtnPressed:(id)sender {
+      SignUpVC *signUpVC;
+     if ([[UIScreen mainScreen] bounds].size.height == iPad) {
+          
+          signUpVC = [[SignUpVC alloc] initWithNibName:@"SignUpVC_iPad" bundle:nil];
+     }
+     else{
+          signUpVC = [[SignUpVC alloc] initWithNibName:@"SignUpVC" bundle:nil];
+     }
+     UIViewController *destVC = signUpVC;
+     UIViewController *sourceVC = self;
+     [destVC viewWillAppear:YES];
+     
+     destVC.view.frame = sourceVC.view.frame;
+     
+     [UIView transitionFromView:sourceVC.view
+                         toView:destVC.view
+                       duration:0.4
+                        options:UIViewAnimationOptionTransitionCrossDissolve
+                     completion:^(BOOL finished)
+      {
+           [destVC viewDidAppear:YES];
+           
+           UINavigationController *nav = sourceVC.navigationController;
+           [nav popViewControllerAnimated:NO];
+           [nav pushViewController:destVC animated:NO];
+      }
+      ];
 }
 #pragma mark Twitter Sign In
 - (void) storeCachedTwitterOAuthData: (NSString *) data forUsername: (NSString *) username {
@@ -510,7 +546,7 @@
           }
           
           else {
-               NSString *userName = [FBuser name];
+              // NSString *userName = [FBuser name];
                NSString *userImageURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [FBuser objectID]];
                userImageURLFB = userImageURL;
                
@@ -1722,7 +1758,8 @@
           howtoPlay2 = @"The faster you answer the more Gems you\'ll collect.";
           howtoPlay3 = @"Claim your rewards.";
           UIColor *color = [UIColor whiteColor];
-          [forgotpasswordSigninButtonn setTitle:@"Back To Sign In" forState:UIControlStateNormal];
+          [forgotpasswordSigninButtonn setTitle:[@"Back To Sign in" uppercaseString]
+                                       forState:UIControlStateNormal];
           emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Enter Email or Username" attributes:@{NSForegroundColorAttributeName: color}];
           pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD attributes:@{NSForegroundColorAttributeName: color}];
           //           [forgotPasswordLabel setTitle:SIGNUP_FORGOT_PASS forState:UIControlStateNormal];
@@ -1814,7 +1851,8 @@
           tutoStr2 = TUTORIAL_STR_2_2;
           //emailTxt.placeholder = SIGNUP_EMAIL_2;
           UIColor *color = [UIColor whiteColor];
-          [forgotpasswordSigninButtonn setTitle:@"retour a connexion" forState:UIControlStateNormal];
+          [forgotpasswordSigninButtonn setTitle:[@"retour a connexion" uppercaseString]
+                                       forState:UIControlStateNormal];
           emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Saisissez votre email ou nom d\'utilisateur" attributes:@{NSForegroundColorAttributeName: color}];
           pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_2 attributes:@{NSForegroundColorAttributeName: color}];
           tutoStr3 = TUTORIAL_STR_3_2;
@@ -1858,7 +1896,8 @@
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_3;
           //emailTxt.placeholder = SIGNUP_EMAIL_3;
           UIColor *color = [UIColor whiteColor];
-          [forgotpasswordSigninButtonn setTitle:@": Volver al inicio de sesión" forState:UIControlStateNormal];
+          [forgotpasswordSigninButtonn setTitle:[@": Volver al inicio de sesión" uppercaseString]
+                                       forState:UIControlStateNormal];
           emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Introducir email o nombre de usuario" attributes:@{NSForegroundColorAttributeName: color}];
           pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_3 attributes:@{NSForegroundColorAttributeName: color}];
             [_resetButtonOutlet setTitle:@"réinitialiser le mot de" forState:UIControlStateNormal];
@@ -1901,7 +1940,8 @@
           //UIColor *color = [UIColor whiteColor];
           
           UIColor *color = [UIColor whiteColor];
-          [forgotpasswordSigninButtonn setTitle:@" Voltar para acessar" forState:UIControlStateNormal];
+          [forgotpasswordSigninButtonn setTitle:[@" Voltar para acessar" uppercaseString]
+                                       forState:UIControlStateNormal];
           emailTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Digite o E-mail ou Usuário" attributes:@{NSForegroundColorAttributeName: color}];
           pswdTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:SIGNUP_PASSWORD_4 attributes:@{NSForegroundColorAttributeName: color}];
           _resetPswdEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Digite o E-mail" attributes:@{NSForegroundColorAttributeName: color}];

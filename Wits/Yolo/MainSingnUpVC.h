@@ -165,6 +165,8 @@ static NSString * const kClientId = @"1020327276316-t4kr4gqvabt8dl5rscsblcco5nq7
 -(IBAction)SignInUsingGoogle:(id)sender;
 -(IBAction)SignUpUsingEmail:(id)sender;
 -(IBAction)loginAction:(id)sender;
+- (IBAction)RegiterBtnPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *RegisterButton;
 
 - (IBAction)twiiterSignIn:(id)sender;
 

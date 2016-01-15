@@ -56,7 +56,7 @@
 #define Loading @"Loading"
 #define APP_NAME @"Wits"
 #define HOME_PAGE_TITLE @"Home"
-#define PLAY_NOW @"Play Now"
+#define PLAY_NOW @"Play Now!"
 #define Challenge_a_friend @"Challenge a Friend"
 #define WITS_STORE @"WITS Store"
 #define EARN_FREE_POINTS @"Earn Free Points"
@@ -68,8 +68,8 @@
 #define Loading_1 @"تحميل..."
 #define APP_NAME_1 @"Wits"
 #define HOME_PAGE_TITLE_1 @"الصفحة الرئسية"
-#define PLAY_NOW_1 @"تلعب الآن!"
-#define Challenge_a_friend1 @"اضغط لقبول التحدي"
+#define PLAY_NOW_1 @"إلعب الآن"
+#define Challenge_a_friend1 @"تحدي صديق"
 #define WITS_STORE_1 @"متجر الويتس"
 #define EARN_FREE_POINTS_1 @"احصل على النقاط مجانية"
 #define MY_MESSAGE_1 @"رسائلي"
@@ -81,7 +81,7 @@
 #define APP_NAME_2 @"Wits"
 #define HOME_PAGE_TITLE_2 @"Accueil"
 #define PLAY_NOW_2 @"Jouez maintenant!"
-#define Challenge_a_friend2 @ "Desafío"
+#define Challenge_a_friend2 @ "Défiez un ami"
 #define WITS_STORE_2 @"WITS Boutique"
 #define EARN_FREE_POINTS_2 @"Gagnez des Points"
 #define MY_MESSAGE_2 @"Mes Messages"
@@ -91,9 +91,9 @@
 
 #define Loading_3 @"Cargando..."
 #define APP_NAME_3 @"Wits"
-#define Challenge_a_friend3 @"défi"
+#define Challenge_a_friend3 @"Desafía a un amigo"
 #define HOME_PAGE_TITLE_3 @"Inicio"
-#define PLAY_NOW_3 @"Jugar ahora"
+#define PLAY_NOW_3 @"¡Jugar ahora!"
 #define WITS_STORE_3 @"WITS Tienda"
 #define EARN_FREE_POINTS_3 @"Gana pontus gratis"
 #define MY_MESSAGE_3 @"Mis mensajes"
@@ -200,111 +200,111 @@
 
 ////////// Tutorial screen
 
-#define screenOne1 @"مرحبا بكم في WITS - جائزة الفوز متعددة لعبة التوافه الذي يسمح لك كسب النقود الحقيقي أثناء التنافس على المواضيع كنت جيدة في!"
+#define screenOne1 @"مرحبا بكم في WITS  - جوائزالفوز متعددة لعبة Trivia game التي تسمح لكم بالكسب المادي النقدي و الجوائز العديدة الحقيقية  التنافس على المواضيع إن كنت جيداً فيها !"
 
 
-#define screenTwo1 @"تسجيل الدخول الأسلوب المفضل لديك من أجل البدء في اللعب والفوز!"
+#define screenTwo1 @"تسجيل الدخول بالأسلوب المفضل لديك من أجل البدء في اللعب والفوز!"
 
-#define screenThree1 @"تسجيل الدخول الأسلوب المفضل لديك من أجل البدء في اللعب والفوز!"
+#define screenThree1 @"اختر موضوعاً من الفئات المختلفة المقدمة عندنا .  اختر الموضوع المفضل لديك  للكسب التميزعن الآخرين ! "
 
-#define screenfour1 @"اختر الطريقة التي تريد أن تلعب! ضد صديق أو خصم عشوائي من جميع أنحاء العالم! الخيار لك!"
+#define screenfour1 @"اختر الطريقة التي تريد أن تلعب : ضد صديق ؟ أو خصم عشوائي من جميع أنحاء العالم ؟! الخيار لك !"
 
-#define screenfive1 @"تختار ما تريد أن تلعب ل، n\  الأحجار الكريمة - لكسب المكافآت الفعلية والنقدية أو \n نقاط - لتحسين رتبتك في المتصدرين."
+#define screenfive1 @"لكسب الأحجار الكريمة - لكسب المكافآت الفعلية والنقدية أو نقاط لتحسين مرتبتك من بين الاوائل . "
 
-#define screensix1 @"دون \ ر ذعر! مجرد قراءة السؤال واختيار الإجابة الصحيحة قبل الخصم الخاص بك لا!"
+#define screensix1 @"دون ذعر! قم بقراءة السؤال واختيار الإجابة الصحيحة قبل الخصم الخاص بك "
 
-#define screenseven1 @"ماكسثون هناك لمساعدتك! استخدامها لجعل المنافسة أسهل بالنسبة لك!"
+#define screenseven1 @"هنالك "إضافات " لمساعدتك ! استخدامها لجعل المنافسة أسهل بالنسبة لك ."
 
-#define screeneight1 @"لعب أكثر من ذلك، كسب المزيد n\ المطالبة المكافآت الخاصة بك مقفلة"
+#define screeneight1 @"العب أكثر، واكسب المزيد من المكافآت لفتح الجوائز المقفلة ."
 
 // spanish
-#define screenOne2 @"Bienvenido a WITS - un galardonado juego multijugador Trivia que te permite ganar dinero real mientras se compite con los temas que son buenos!"
+#define screenOne2 @"Bienvenue à WITS-Un jeu multijoueur de Trivia gagnante qui vous permet de gagner de l\'argent tout en rivalisant sur ​​les sujets qui sont plus forts!"
 
 
-#define screenTwo2 @"Regístrate En su método preferido para empezar a jugar y ganar!"
+#define screenTwo2 @"Connectez-vous avec votre méthode préférée pour être en mesure de commencer à jouer et gagner!"
 
-#define screenThree2 @"Regístrate En su método preferido para empezar a jugar y ganar!"
+#define screenThree2 @"Choisissez un sujet parmi de nombreuses catégories données. Choisissez votre favori et gagner avantage sur les autres!"
 
-#define screenfour2 @"Elige cómo quieres jugar! Contra un amigo o un oponente al azar de todo el mundo! ¡La decisión es tuya!"
+#define screenfour2 @"Vous choisissez comment vous voulez jouer! Contre un ami ou un adversaire au hasard dans toute parete le monde! Le choix est le vôtre!"
 
-#define screenfive2 @"Elige lo que quieres jugar, \n Gems - gane recompensas reales y Efectivo O \n Puntos - para mejorar su ranking en la tabla de posiciones."
+#define screenfive2 @"Choisissez ce que vous voulez jouer par\'n Gems - gagner de l\'argent réel et récompenses ou\'n points-pour améliorer votre classement en tête."
 
-#define screensix2 @"Don \'t Panic! Acabo de leer la pregunta y elegir la respuesta correcta antes que tu oponente!"
+#define screensix2 @"Ne paniquez pas! Il suffit de lire la question et choisissez la bonne réponse avant votre adversaire!"
 
-#define screenseven2 @"Complementos están ahí para ayudarle! Úsalos para hacer la competencia más fácil para usted!"
+#define screenseven2 @"Les annonces sont là pour vous aider! Utilisez-les pour rendre la compétition plus facile pour vous!"
 
-#define screeneight2 @"Juega más, ganar más \n demandar sus recompensas desbloqueados"
-
-
-
+#define screeneight2 @"Jouer plus, gagner plus appels et vos récompenses débloqués"
 
 
 
 
 
 
-#define screenOne @"Welcome to WITS - an award winning multiplayer Trivia game that let's you earn real cash while you compete with the topics you are good at!"
 
 
-#define screenTwo @"Sign In your preferred method in order to start playing and winning!"
+
+#define screenOne @"Welcome to WITS - an award winning multiplayer Trivia game that let\'s you earn real cash while you compete with the topics you are good at!"
+
+
+#define screenTwo @"Sign In using your preferred method in order to start playing and winning!"
 
 #define screenThree @"Choose a topic out of different categories provided. Choose your favorite one to gain advantage over others!"
 
 #define screenfour @"Choose how you want to play! Against a friend or a random opponent from around the globe! The choice is yours!"
 
-#define screenfive @"Choose what you want to play for Gems - to earn actual Real Rewards OR Points - to improve your ranking in the leaderboards!"
+#define screenfive @"Choose what you want to play for,\n Gems - to earn actual Rewards and Cash OR\n Points - to improve your ranking in leaderboard."
 
-#define screensix @"Don't Panic! Just read the question and choose the right answer before your opponent does!"
+#define screensix @"Don\'t Panic! Just read the question and choose the right answer before your opponent does!"
 
 #define screenseven @"Addons are there to help you! Use them to make the competition easier for you!"
 
-#define screeneight @"Play more, Earn More Claim your unlocked rewards"
+#define screeneight @"Play more, Earn More\nClaim your unlocked rewards"
 
 
 
 
 
 
-#define screenOne3 @"Bienvenue à ESPRITS - un jeu multijoueur Trivia primé qui vous permet de gagner de l\'argent réel pendant que vous rivaliser avec les sujets que vous êtes bon!"
+#define screenOne3 @"Bienvenido a WITS, el galardonado juego de Trivial multijugador que te permite ganar dinero real mientras compites en los temas de los que tienes conocimiento."
 
 
-#define screenTwo3 @"Connectez-vous votre méthode préférée pour commencer à jouer et gagner!"
+#define screenTwo3 @"¡Regístrate mediante el método que prefieras para empezar a jugar y ganar!"
 
-#define screenThree3 @"Choose a topic out of different categories provided. Choose your favorite one to gain advantage over others!"
+#define screenThree3 @"Elige un tema de las diferentes categorías proporcionadas. Elige tu favorito para tener ventaja sobre los demás."
 
-#define screenfour3 @"Choisissez comment vous voulez jouer! Contre un ami ou un adversaire aléatoire du monde entier! Le choix t\'appartient!"
+#define screenfour3 @"¡Selecciona cómo quieres jugar! Contra un amigo o un oponente aleatorio de cualquier parte del mundo. ¡La decisión es tuya!"
 
-#define screenfive3 @"Choisissez ce que vous voulez jouer pour, \n Gems - de gagner des récompenses réelles et des espèces ou \n points - pour améliorer votre classement dans leaderboard."
+#define screenfive3 @"Elige por qué quieres jugar,\n Gemas: para ganar Premios y dinero en metálico O\n Puntos: para mejorar tu ranking en la tabla de líderes."
 
-#define screensix3 @"Don \'t Panic! Il suffit de lire la question et choisissez la bonne réponse avant votre adversaire!"
+#define screensix3 @"¡Que no cunda el pánico! Solo lee la pregunta y elige la respuesta correcta antes de que lo haga tu oponente."
 
-#define screenseven3 @"Extensions sont là pour vous aider! Utilisez-les pour rendre la compétition plus facile pour vous!"
+#define screenseven3 @"¡Tendrás potenciadores para ayudarte! Úsalos para que la competición sea más fácil."
 
-#define screeneight3 @"Jouer plus pour gagner plus \ n revendication vos récompenses débloqués"
-
-
-
+#define screeneight3 @"Juega más, gana más\nsolicita tus Premios desbloqueados"
 
 
 
 
 
-#define screenOne4 @"Bem-vindo ao WITS - um premiado jogo de trivia multiplayer que permite que você ganhe dinheiro real quando você competir com os tópicos que você é bom em!"
 
 
-#define screenTwo4 @"Entrar em seu método preferido para começar a jogar e ganhar!"
 
-#define screenThree4 @"Entrar em seu método preferido para começar a jogar e ganhar!"
+#define screenOne4 @"Bem-vindo ao WITS - um premiado jogo de Perguntas de múltiplos jogadores onde você ganhará dinheiro real ao competir dentro dos tópicos que você conhece."
 
-#define screenfour4 @"Escolha como você deseja jogar! Contra um amigo ou um oponente aleatório de todo o mundo! A escolha é sua!"
 
-#define screenfive4 @"Escolha o que você quer jogar, \n - Gems para ganhar recompensas reais e dinheiro ou \n pontos - para melhorar seu ranking no leaderboard."
+#define screenTwo4 @"Efetue login da forma que preferir e comece a jogar e ganhar!"
 
-#define screensix4 @"Don \'t Panic! Basta ler a pergunta e escolher a resposta correta antes do seu oponente!"
+#define screenThree4 @"Escolha um tópico dentre as diferentes categorias disponíveis. Escolha seu favorito e tenha vantagens sobre os outros!"
 
-#define screenseven4 @"Complementos estão lá para ajudá-lo! Use-os para tornar a competição mais fácil para você!"
+#define screenfour4 @"Escolha como quer jogar! Pode ser contra um amigo ou um oponente aleatório ao redor do mundo! A escolha é sua!"
 
-#define screeneight4 @"Jogue mais, ganhe mais \ n reivindicação suas recompensas desbloqueados"
+#define screenfive4 @"Escolha pelo que você quer jogar,\n Gems - para ganhar Prêmios reais e Dinheiro OU\n Pontos - para melhorar sua posição na classificação."
+
+#define screensix4 @"Não entre em pânico! Apenas leia a pergunta e escolha a resposta correta antes que seu oponente o faça!"
+
+#define screenseven4 @"Complementos existem para te ajudar! Use-os para fazer a competição mais fácil para você!"
+
+#define screeneight4 @"Jogue mais, Ganhe mais \n Reivindique suas recompensas desbloqueadas"
 
 
 
@@ -678,7 +678,7 @@
 #define EDUCATION_2 @"Education"
 #define GAMES_2 @"Jeux"
 #define GEOGRAPHY_2 @"Géographie"
-#define HISTORY_2 @" Histoire"
+#define HISTORY_2 @" Historique"
 #define LIFESTYLE_2 @" Mode de Vie"
 #define MUSIC_2 @"Musique"
 #define SCIENCE_&_TECH_2 @" Sciences et Technologies"
@@ -962,7 +962,7 @@
 #define INSTRUMENTS_2 @"Instruments"
 #define GENRES_2 @"Genres "
 #define PERFORMERS_2 @"Performers"
-#define HISTORY_2 @"Histoire"
+
 #define SUPERSTARS_2 @"Superstars"
 #define SONGS_2 @"chansons"
 
@@ -1208,7 +1208,7 @@
 #define BRAVO_1 @" أحسنت "
 #define KO_1 @" ضربة قاضية "
 #define CORRECT_1 @" صح! كانت قريبة  "
-#define OPPONENT_ANS_BEFORE_1 @"الخصم جواب قبلك "
+#define OPPONENT_ANS_BEFORE_1 @"الخصم أجاب قبلك "
 #define TIMES_UP_1 @"الوقت إنتهى "
 #define WRONG_ANS_WAIT_OPP_1 @"جواب خاطئ، بإنتظار جواب الخصم "
 #define YOU_WIN_1 @"لقد ربحت !"
@@ -1281,7 +1281,7 @@
 #define BRAVO_2 @"Bravo"
 #define KO_2 @"K.O"
 #define CORRECT_2 @"Correct! C'était juste "
-#define OPPONENT_ANS_BEFORE_2 @"L'opposant a répondu avant vous"
+#define OPPONENT_ANS_BEFORE_2 @"L\'opposant a répondu avant vous"
 #define TIMES_UP_2 @"Le temps est écoulé"
 #define WRONG_ANS_WAIT_OPP_2 @"Mauvaise réponse! En attente de réponse de l'opposant"
 #define YOU_WIN_2 @"vous avez gagné!"
@@ -1355,7 +1355,7 @@
 #define BRAVO_3 @"Bravo"
 #define KO_3 @"Nocaut	"
 #define CORRECT_3 @"Correcto! Estuvo cerca "
-#define OPPONENT_ANS_BEFORE_3 @"Tu adversario contestó antes"
+#define OPPONENT_ANS_BEFORE_3 @"Tu oponente contestó antes"
 #define TIMES_UP_3 @"Tiempo acabado"
 #define WRONG_ANS_WAIT_OPP_3 @"¡Respuesta equivocada! Esperando la respuesta del Adversario.."
 #define YOU_WIN_3 @"Te has ganado"
@@ -1429,7 +1429,7 @@
 #define BRAVO_4 @"Bravo"
 #define KO_4 @"Nocaute"
 #define CORRECT_4 @"Correto! Foi por pouco"
-#define OPPONENT_ANS_BEFORE_4 @"Adversário Respondeu Antes de Você"
+#define OPPONENT_ANS_BEFORE_4 @"O Adversário Respondeu Antes de Você"
 #define TIMES_UP_4 @"Tempo Esgotado"
 #define WRONG_ANS_WAIT_OPP_4 @"Resposta Incorreta! Aguardando Resposta do Adversário.."
 #define YOU_WIN_4 @"você ganhou!"
@@ -1664,8 +1664,8 @@
 #define TUTORIAL_STR_3_1 @"ابحث عن لاعبين عشوائيين لديهم نفس اهتماماتك; كن دقيقا وسريعا لتكسب أكثر."
 #define TUTORIAL_STR_4_1 @"اشتر حجارة مرصعًة لفك الألعاب التي تساعدك لكسب أموال حقيقية. استبدل حجارتك الكريمة بأموال حقيقية."
 
-#define For_Gems2 @"Por Gemas"
-#define For_Points2 @"Por PuntosS"
+#define For_Gems2 @"Pour les gems"
+#define For_Points2 @"Pour les points"
 #define PLAY_FOR_POINTS_2 @"Jouez pour des points"
 #define PLAY_FOR_GEMS_2 @"Jouez pour des Gems"
 #define WILL_HELP_IN_RANKING_2 @"Améliorera votre classement"
@@ -1675,8 +1675,8 @@
 #define TUTORIAL_STR_3_2 @"Trouvez des joueurs avec les mêmes intérêts de façon aléatoire; répondez correctement et soyez rapide pour plus de gains."
 #define TUTORIAL_STR_4_2 @"Achetez des gemmes pour débloquer une catégorie de jeu qui vous aide à gagner de l'argent réel. Echangez vos gemmes contre de l'argent réel."
 
-#define For_Gems3 @"Par les gems"
-#define For_Points3 @"Pour les points"
+#define For_Gems3 @"Por Gemas"
+#define For_Points3 @"Por Puntos"
 #define PLAY_FOR_POINTS_3 @"Juega para obtener puntos"
 #define PLAY_FOR_GEMS_3 @"Juega para obtener gemas"
 #define WILL_HELP_IN_RANKING_3 @"Mejorará tu ranking"
@@ -1699,7 +1699,7 @@
 
 
 ////Rewards Addons //////
-#define REWARDS @"Rewards"
+#define REWARDS @"REWARDS"
 #define COMGRATULATIONS @"Congratulations"
 #define REQUEST_RECIEVED @"Your Request is recieved"
 #define OUR_TEAM_WILL_VERIFY @"Our team will verify your details and will contact you for further process"

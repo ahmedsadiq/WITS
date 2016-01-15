@@ -62,7 +62,7 @@
      _HistoryPinkLine.frame = CGRectMake(161, 91, 159, 1);
      
      if(IS_IPAD){
-         // _RankingPinkLine.frame = CGRectMake(0,138, 384, 6);
+          // _RankingPinkLine.frame = CGRectMake(0,138, 384, 6);
           //_HistoryPinkLine.frame = CGRectMake(385, 142, 384, 2);
      }
      else if(IS_IPHONE_4){
@@ -495,23 +495,23 @@
                cell = [nib objectAtIndex:0];
                cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:20];
                cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:20];
-                cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:20];
-                cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:20];
-                                }
+               cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:20];
+               cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:20];
+          }
           else{
                
                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RankingCC" owner:self options:nil];
                cell = [nib objectAtIndex:0];
                cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:13];
                cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:13];
-                 cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:13];
+               cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:13];
           }
           [cell setBackgroundColor:[UIColor clearColor]];
           
           NoRecordLbl.hidden = YES;
-        
           
-
+          
+          
           Rank *_rank = (Rank*)[[SharedManager getInstance].rankingArray objectAtIndex:currentIndex];
           cell.leftTitle.text = [NSString stringWithFormat:@"%@ (%@)",_rank.displayName,_rank.scorePoints];
           NSString  *points = _rank.scorePoints;
@@ -558,9 +558,9 @@
                NSString  *points = _rank.scorePoints;
                int totalPoints = [points intValue];
                cell.rightSubTitles.text = [self getStatusAccordingToPoints:totalPoints];
-//               cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:13];
-//               cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:13];
-
+               //               cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:13];
+               //               cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:13];
+               
                if(_rank.countryName.length > 1) {
                     
                     NSString *flag = [_rank.countryName substringToIndex:2];
@@ -657,7 +657,7 @@
                cell.rightTitle.text = tempHistory.sub_topic_title;
                NSString *messageStr = [NSString stringWithFormat:@"%@%@ ", tempHistory.game_message,[self getTimeDifference:tempHistory.history_date]];
                cell.rightSubTitles.text = messageStr;
-             
+               
                [HelperFunctions setBackgroundColor:cell.rightOverLay];
                MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
                MKNetworkOperation *op = [engine operationWithURLString:tempHistory.opponent_image params:nil httpMethod:@"GET"];
@@ -706,7 +706,7 @@
           }else if (languageCode == 2){
                subTitle = @"Débutant";
           }else if (languageCode == 3){
-               subTitle = @"Debutante";
+               subTitle = @"Principiante";
           }else if (languageCode == 4){
                subTitle = @"Iniciante";
           }
@@ -745,9 +745,9 @@
           }else if (languageCode == 2){
                subTitle = @"Intelligent";
           }else if (languageCode == 3){
-               subTitle =  @"Inteligente ";
+               subTitle =  @"Ingenioso ";
           }else if (languageCode == 4){
-               subTitle = @"Gênio";
+               subTitle = @"Sábio";
           }
      }
      return subTitle;
@@ -1815,14 +1815,13 @@
           lblplayforGems.text = PLAY_FOR_GEMS_2;
           willhelpinRanking.text = WILL_HELP_IN_RANKING_2;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_2;
-          
           NoRecordLbl.text = @"No se han encontrado registros!";
           RankingTitleLbl.text = RANKING_BTN_2;
           resultsTitle.text = RESULTS_LBL_2;
-          [playAgain setTitle:PLAY_AGAIN_2 forState:UIControlStateNormal];
+          [playAgain setTitle:PLAY_AGAIN_2  forState:UIControlStateNormal];
           [ReturnHome setTitle:HOME_BTN_2 forState:UIControlStateNormal];
-          [rankingBtn setTitle:RANKING_BTN_2 forState:UIControlStateNormal];
-          [historyBtn setTitle:HISTORY_2 forState:UIControlStateNormal];
+          [rankingBtn setTitle:[RANKING_BTN_2 uppercaseString] forState:UIControlStateNormal ];
+          [historyBtn setTitle:[HISTORY_2 uppercaseString]forState:UIControlStateNormal];
           [quitsearch setTitle:QUIT_GAME_2 forState:UIControlStateNormal];
           [mainBack setTitle:BACK_BTN_2 forState:UIControlStateNormal];
      }
@@ -1848,8 +1847,8 @@
           resultsTitle.text = RESULTS_LBL_3;
           [playAgain setTitle:PLAY_AGAIN_3 forState:UIControlStateNormal];
           [ReturnHome setTitle:HOME_BTN_3 forState:UIControlStateNormal];
-          [rankingBtn setTitle:RANKING_BTN_3 forState:UIControlStateNormal];
-          [historyBtn setTitle:HISTORY_3 forState:UIControlStateNormal];
+          [rankingBtn setTitle:[@"Rangos" uppercaseString] forState:UIControlStateNormal];
+          [historyBtn setTitle:[@"Historial" uppercaseString] forState:UIControlStateNormal];
           [quitsearch setTitle:QUIT_GAME_3 forState:UIControlStateNormal];
           [mainBack setTitle:BACK_BTN_3 forState:UIControlStateNormal];
      }
@@ -1873,8 +1872,8 @@
           resultsTitle.text = RESULTS_LBL_4;
           [playAgain setTitle:PLAY_AGAIN_4 forState:UIControlStateNormal];
           [ReturnHome setTitle:HOME_BTN_4 forState:UIControlStateNormal];
-          [rankingBtn setTitle:RANKING_BTN_4 forState:UIControlStateNormal];
-          [historyBtn setTitle:HISTORY_4 forState:UIControlStateNormal];
+          [rankingBtn setTitle:[@"Classificações" uppercaseString] forState:UIControlStateNormal];
+          [historyBtn setTitle:[@"Histórico" uppercaseString] forState:UIControlStateNormal];
           [quitsearch setTitle:QUIT_GAME_4 forState:UIControlStateNormal];
           [mainBack setTitle:BACK_BTN_4 forState:UIControlStateNormal];
      }

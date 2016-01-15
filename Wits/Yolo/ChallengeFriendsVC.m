@@ -148,6 +148,7 @@
      
      NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",challengeID,@"challenge_id",requestType,@"request_type", nil];
      [sharedManager sendEvent:@"cancelChallenge" andParameters:registerDictionary];
+     [self.navigationController popToRootViewControllerAnimated:false];
 }
 
 - (IBAction)RefreshPressed:(id)sender {

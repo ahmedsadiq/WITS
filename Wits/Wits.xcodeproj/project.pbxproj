@@ -50,8 +50,6 @@
 		1818137E1C0DCA1B005F81CA /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 181813741C0DCA1B005F81CA /* facebook@2x.png */; };
 		1818137F1C0DCA1B005F81CA /* sms.png in Resources */ = {isa = PBXBuildFile; fileRef = 181813751C0DCA1B005F81CA /* sms.png */; };
 		181813801C0DCA1B005F81CA /* sms@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 181813761C0DCA1B005F81CA /* sms@2x.png */; };
-		181813811C0DCA1B005F81CA /* tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = 181813771C0DCA1B005F81CA /* tutorial.png */; };
-		181813821C0DCA1B005F81CA /* tutorial@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 181813781C0DCA1B005F81CA /* tutorial@2x.png */; };
 		181813831C0DCA1B005F81CA /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 181813791C0DCA1B005F81CA /* twitter.png */; };
 		181813841C0DCA1B005F81CA /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1818137A1C0DCA1B005F81CA /* twitter@2x.png */; };
 		181813941C0DD3D6005F81CA /* tutorial1.png in Resources */ = {isa = PBXBuildFile; fileRef = 181813861C0DD3D4005F81CA /* tutorial1.png */; };
@@ -99,6 +97,10 @@
 		185BBC4B1C0F0F9600428B97 /* smallbuttonbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185BBC431C0F0F9600428B97 /* smallbuttonbg@2x.png */; };
 		185BBC4C1C0F0F9600428B97 /* treasure.png in Resources */ = {isa = PBXBuildFile; fileRef = 185BBC441C0F0F9600428B97 /* treasure.png */; };
 		185BBC4D1C0F0F9600428B97 /* treasure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185BBC451C0F0F9600428B97 /* treasure@2x.png */; };
+		1867F3B71C467A6E0044773B /* tutorial-Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1867F3B31C467A6E0044773B /* tutorial-Pressed.png */; };
+		1867F3B81C467A6E0044773B /* tutorial-Pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1867F3B41C467A6E0044773B /* tutorial-Pressed@2x.png */; };
+		1867F3B91C467A6E0044773B /* tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = 1867F3B51C467A6E0044773B /* tutorial.png */; };
+		1867F3BA1C467A6E0044773B /* tutorial@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1867F3B61C467A6E0044773B /* tutorial@2x.png */; };
 		186973101C313DE600EC4F82 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 1869730F1C313DE600EC4F82 /* check.png */; };
 		188470871AC42F4900E37CEF /* Wits.sql in Resources */ = {isa = PBXBuildFile; fileRef = 188470861AC42F4900E37CEF /* Wits.sql */; };
 		189D58831ABC259700849465 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189D58821ABC259700849465 /* CoreFoundation.framework */; };
@@ -1281,8 +1283,6 @@
 		181813741C0DCA1B005F81CA /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
 		181813751C0DCA1B005F81CA /* sms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sms.png; sourceTree = "<group>"; };
 		181813761C0DCA1B005F81CA /* sms@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sms@2x.png"; sourceTree = "<group>"; };
-		181813771C0DCA1B005F81CA /* tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial.png; sourceTree = "<group>"; };
-		181813781C0DCA1B005F81CA /* tutorial@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial@2x.png"; sourceTree = "<group>"; };
 		181813791C0DCA1B005F81CA /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		1818137A1C0DCA1B005F81CA /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
 		181813861C0DD3D4005F81CA /* tutorial1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial1.png; sourceTree = "<group>"; };
@@ -1332,6 +1332,10 @@
 		185BBC431C0F0F9600428B97 /* smallbuttonbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smallbuttonbg@2x.png"; sourceTree = "<group>"; };
 		185BBC441C0F0F9600428B97 /* treasure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = treasure.png; sourceTree = "<group>"; };
 		185BBC451C0F0F9600428B97 /* treasure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "treasure@2x.png"; sourceTree = "<group>"; };
+		1867F3B31C467A6E0044773B /* tutorial-Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial-Pressed.png"; sourceTree = "<group>"; };
+		1867F3B41C467A6E0044773B /* tutorial-Pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial-Pressed@2x.png"; sourceTree = "<group>"; };
+		1867F3B51C467A6E0044773B /* tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial.png; sourceTree = "<group>"; };
+		1867F3B61C467A6E0044773B /* tutorial@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial@2x.png"; sourceTree = "<group>"; };
 		1869730F1C313DE600EC4F82 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		188470861AC42F4900E37CEF /* Wits.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wits.sql; sourceTree = "<group>"; };
 		189D58821ABC259700849465 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -2682,14 +2686,16 @@
 		181813851C0DCA27005F81CA /* EarnFreeIphoneAssests */ = {
 			isa = PBXGroup;
 			children = (
+				1867F3B31C467A6E0044773B /* tutorial-Pressed.png */,
+				1867F3B41C467A6E0044773B /* tutorial-Pressed@2x.png */,
+				1867F3B51C467A6E0044773B /* tutorial.png */,
+				1867F3B61C467A6E0044773B /* tutorial@2x.png */,
 				181813711C0DCA1A005F81CA /* earnfreepointsbg.png */,
 				181813721C0DCA1A005F81CA /* earnfreepointsbg@2x.png */,
 				181813731C0DCA1B005F81CA /* facebook.png */,
 				181813741C0DCA1B005F81CA /* facebook@2x.png */,
 				181813751C0DCA1B005F81CA /* sms.png */,
 				181813761C0DCA1B005F81CA /* sms@2x.png */,
-				181813771C0DCA1B005F81CA /* tutorial.png */,
-				181813781C0DCA1B005F81CA /* tutorial@2x.png */,
 				181813791C0DCA1B005F81CA /* twitter.png */,
 				1818137A1C0DCA1B005F81CA /* twitter@2x.png */,
 			);
@@ -2740,6 +2746,26 @@
 				185BBC451C0F0F9600428B97 /* treasure@2x.png */,
 			);
 			name = WitsStoreNewAssests;
+			sourceTree = "<group>";
+		};
+		1867F3B11C465E3D0044773B /* InApp */ = {
+			isa = PBXGroup;
+			children = (
+				2E1740E21A15693D00824935 /* InAppPurchaseManager.h */,
+				2E1740E31A15693D00824935 /* InAppPurchaseManager.m */,
+				2E1740E51A15695500824935 /* SKProduct+LocalizedPrice.h */,
+				2E1740E61A15695500824935 /* SKProduct+LocalizedPrice.m */,
+			);
+			name = InApp;
+			sourceTree = "<group>";
+		};
+		1867F3B21C46681F0044773B /* DejalActivity */ = {
+			isa = PBXGroup;
+			children = (
+				2E9A16171A0A222E00B1C3BD /* DejalActivityView.h */,
+				2E9A16181A0A222E00B1C3BD /* DejalActivityView.m */,
+			);
+			name = DejalActivity;
 			sourceTree = "<group>";
 		};
 		18B64DE81C101B0200EE9122 /* GameModAssetsNew */ = {
@@ -3623,10 +3649,7 @@
 				183376FD1AC3F82F000ABF17 /* SqlLite */,
 				2EEEF2941A5F22A40002D166 /* iRate */,
 				2EC84D671A1BEBD100C5F7C1 /* TransferPointsViewController */,
-				2E1740E21A15693D00824935 /* InAppPurchaseManager.h */,
-				2E1740E31A15693D00824935 /* InAppPurchaseManager.m */,
-				2E1740E51A15695500824935 /* SKProduct+LocalizedPrice.h */,
-				2E1740E61A15695500824935 /* SKProduct+LocalizedPrice.m */,
+				1867F3B11C465E3D0044773B /* InApp */,
 				3560C5F9197522EE001FA7AE /* SocketRocket */,
 				58ABD37E193E0BB60054064C /* Yolo */,
 				58ABD397193E0BB70054064C /* YoloTests */,
@@ -3685,8 +3708,7 @@
 				2E13CCA51A810A5C00B16E4A /* Socket.io */,
 				2E72B5C81A4355D100210117 /* ContactUs */,
 				2EC7A31A1A10B3B000A5B6BF /* HistoryAndRankings */,
-				2E9A16171A0A222E00B1C3BD /* DejalActivityView.h */,
-				2E9A16181A0A222E00B1C3BD /* DejalActivityView.m */,
+				1867F3B21C46681F0044773B /* DejalActivity */,
 				2EE3CFA019F6B40A008DE6BF /* EarnFreePoints */,
 				3563425719910093009A172B /* Push Notification Center */,
 				58EAE24D194B2BAD002FD59B /* Shared Manager */,
@@ -5236,7 +5258,6 @@
 				E2AB1B2A1B7B40DB002C98E0 /* friends@2x.png in Resources */,
 				18B64DDD1C100CE500EE9122 /* forgemsglowNew@2x.png in Resources */,
 				F42CA76F1BAADC3B0083653E /* Educationicon@2x.png in Resources */,
-				181813821C0DCA1B005F81CA /* tutorial@2x.png in Resources */,
 				F42CA81A1BAADC3B0083653E /* Basketball.png in Resources */,
 				2E9C282F1A272051009D80BC /* GS.png in Resources */,
 				2EC84D6C1A1BEC0200C5F7C1 /* TransferPointsViewController.xib in Resources */,
@@ -5270,7 +5291,6 @@
 				E2EF26231B81C98300E960E4 /* star.png in Resources */,
 				E21855E91B8C936D00D10ACC /* total-messages@2x.png in Resources */,
 				2ED4F8991A03FFEF00EDD72E /* blue_filled.png in Resources */,
-				181813811C0DCA1B005F81CA /* tutorial.png in Resources */,
 				E21856291B8F4D0B00D10ACC /* languageicon.png in Resources */,
 				F4B4DC961BB02F7A00A00C94 /* resultThreeDots.png in Resources */,
 				E2EF26391B81F2ED00E960E4 /* dotblack@2x.png in Resources */,
@@ -5325,6 +5345,7 @@
 				2E9C28321A272051009D80BC /* GW.png in Resources */,
 				E21855EB1B8C936D00D10ACC /* unreadbg@2x.png in Resources */,
 				F493F6371BAD6B6000E80E21 /* GetTopicsVC.xib in Resources */,
+				1867F3BA1C467A6E0044773B /* tutorial@2x.png in Resources */,
 				F42CA7701BAADC3B0083653E /* Math.png in Resources */,
 				E287D1191B947C54001D5E0D /* closeDialog@2x.png in Resources */,
 				F42CA67B1BAAD89E0083653E /* Cars.png in Resources */,
@@ -5564,6 +5585,7 @@
 				E210F10B1B8753F800BEDD6B /* settings@2x.png in Resources */,
 				F42CA7851BAADC3B0083653E /* Cities of the World@2x.png in Resources */,
 				2EF03CED1AB02732005D1D7B /* left_arow.png in Resources */,
+				1867F3B81C467A6E0044773B /* tutorial-Pressed@2x.png in Resources */,
 				18EBE4BF1C193A19006E8A78 /* avatar2.png in Resources */,
 				356825DD1966CCC600ED51CD /* Attachment_icon.png in Resources */,
 				E284C8BC1B79D09400F410AE /* splashbgcolored.png in Resources */,
@@ -5590,6 +5612,7 @@
 				F42CA8211BAADC3B0083653E /* Boxing@2x.png in Resources */,
 				2E9C282A1A272051009D80BC /* GM.png in Resources */,
 				E2DB122A1B1D9F6600FA655A /* AddOnViewSelected.xib in Resources */,
+				1867F3B71C467A6E0044773B /* tutorial-Pressed.png in Resources */,
 				2E9C28C91A272051009D80BC /* WS.png in Resources */,
 				F4AFA5CE1BBACBB5008645A0 /* usernameUP.png in Resources */,
 				F4B4DC941BB02F7A00A00C94 /* resultpressedThreeDots.png in Resources */,
@@ -5700,6 +5723,7 @@
 				586E82F3195ABCAD008D24BB /* Btns_bar.png in Resources */,
 				356825D51966C9BA00ED51CD /* ChatVC_iPad.xib in Resources */,
 				18EBE4C11C193A19006E8A78 /* avatar4.png in Resources */,
+				1867F3B91C467A6E0044773B /* tutorial.png in Resources */,
 				E210F0FB1B8753F800BEDD6B /* logout@2x.png in Resources */,
 				2E9C28341A272051009D80BC /* HK.png in Resources */,
 				E2E0B3DD1B9F2AC70069C82B /* Loader6.png in Resources */,
@@ -6089,9 +6113,9 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SDKROOT)/usr/include/libxml2/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "e1c9a2a8-e450-406a-806f-02c6dccb611a";
+				PROVISIONING_PROFILE = "8632718e-a19c-4c74-aa87-c9bdb1c127d2";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -6130,8 +6154,8 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SDKROOT)/usr/include/libxml2/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PROVISIONING_PROFILE = "e1c9a2a8-e450-406a-806f-02c6dccb611a";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				PROVISIONING_PROFILE = "8632718e-a19c-4c74-aa87-c9bdb1c127d2";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -6142,6 +6166,7 @@
 		58ABD3A2193E0BB70054064C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
 				ENABLE_BITCODE = NO;
@@ -6164,7 +6189,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.txlabs.wits;
 				PRODUCT_NAME = Wits;
-				PROVISIONING_PROFILE = "7642d496-74fa-4b3a-baea-3957e097e24d";
+				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -6197,7 +6222,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.txlabs.wits;
 				PRODUCT_NAME = Wits;
-				PROVISIONING_PROFILE = "7642d496-74fa-4b3a-baea-3957e097e24d";
+				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -6208,8 +6233,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -6224,7 +6249,7 @@
 				);
 				INFOPLIST_FILE = "YoloTests/WitsTests-Info.plist";
 				PRODUCT_NAME = WitsTests;
-				PROVISIONING_PROFILE = "e1c9a2a8-e450-406a-806f-02c6dccb611a";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wits.app/Wits";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -6234,8 +6259,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -6246,7 +6271,7 @@
 				GCC_PREFIX_HEADER = "Yolo/Wits-Prefix.pch";
 				INFOPLIST_FILE = "YoloTests/WitsTests-Info.plist";
 				PRODUCT_NAME = WitsTests;
-				PROVISIONING_PROFILE = "e1c9a2a8-e450-406a-806f-02c6dccb611a";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wits.app/Wits";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -6290,9 +6315,9 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SDKROOT)/usr/include/libxml2/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "e1c9a2a8-e450-406a-806f-02c6dccb611a";
+				PROVISIONING_PROFILE = "8632718e-a19c-4c74-aa87-c9bdb1c127d2";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -6324,7 +6349,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.txlabs.wits;
 				PRODUCT_NAME = Wits;
-				PROVISIONING_PROFILE = "7642d496-74fa-4b3a-baea-3957e097e24d";
+				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -6335,8 +6360,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bachir Alzaim (7EFUKMU9QF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -6351,7 +6376,7 @@
 				);
 				INFOPLIST_FILE = "YoloTests/WitsTests-Info.plist";
 				PRODUCT_NAME = WitsTests;
-				PROVISIONING_PROFILE = "e1c9a2a8-e450-406a-806f-02c6dccb611a";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wits.app/Wits";
 				WRAPPER_EXTENSION = xctest;
 			};

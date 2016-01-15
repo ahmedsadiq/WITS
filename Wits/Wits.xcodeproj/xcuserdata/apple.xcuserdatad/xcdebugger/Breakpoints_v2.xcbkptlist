@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yolo/MainSingnUpVC.m"
-            timestampString = "472992011.686423"
+            timestampString = "474536042.400984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1307"
-            endingLineNumber = "1307"
+            startingLineNumber = "1343"
+            endingLineNumber = "1343"
             landmarkName = "-createTabBarAndControl"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yolo/SubTopicVC.m"
-            timestampString = "472052210.147267"
+            timestampString = "474552464.956596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1781"
-            endingLineNumber = "1781"
+            startingLineNumber = "1785"
+            endingLineNumber = "1785"
             landmarkName = "-PlaywithGems:"
             landmarkType = "5">
          </BreakpointContent>
@@ -89,13 +89,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Yolo/UpdateProfileVC.m"
-            timestampString = "472473715.353108"
+            filePath = "Yolo/Socket Controllers/ChallengeVC.m"
+            timestampString = "474465211.626356"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1109"
-            endingLineNumber = "1109"
-            landmarkName = "-LoadAvatars"
+            startingLineNumber = "689"
+            endingLineNumber = "689"
+            landmarkName = "-TimerUp"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -105,29 +105,45 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Yolo/FriendsVC.m"
-            timestampString = "471943329.036289"
+            filePath = "RewardsListVC.m"
+            timestampString = "474379223.593867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1111"
-            endingLineNumber = "1111"
-            landmarkName = "-PerformLeftUserAction:"
+            startingLineNumber = "416"
+            endingLineNumber = "416"
+            landmarkName = "-rewardDetailedPressed:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CustomLoading.m"
+            timestampString = "474201679.669448"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-showPrivate"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yolo/Socket Controllers/ChallengeVC.m"
-            timestampString = "472139206.235525"
+            timestampString = "474552464.956596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "685"
-            endingLineNumber = "685"
-            landmarkName = "-TimerUp"
+            startingLineNumber = "1774"
+            endingLineNumber = "1774"
+            landmarkName = "-fetchResults"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -100,6 +100,7 @@
      
      IBOutlet UILabel *knowledgeLbl;
      
+     IBOutlet UILabel *GameModLabel;
      IBOutlet UILabel *tutoDesc1;
      
      IBOutlet UILabel *tutoDesc2;

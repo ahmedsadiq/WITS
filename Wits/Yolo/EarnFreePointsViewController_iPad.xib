@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EarnFreePointsViewController">
             <connections>
+                <outlet property="SkipBtn" destination="BDj-iQ-3zD" id="pTv-bI-53C"/>
                 <outlet property="knowledgelbl" destination="cyu-M4-dEa" id="Gyy-6a-Rha"/>
                 <outlet property="lblTutorial" destination="9ki-Ev-5us" id="b0O-QH-OeI"/>
                 <outlet property="referralText" destination="v9N-n3-gZf" id="o8J-PA-nU2"/>
@@ -78,16 +79,15 @@
                         <action selector="fbBtnPressed:" destination="-1" eventType="touchUpInside" id="fa6-Oi-A9x"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="QE7-p5-LQo">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="QE7-p5-LQo">
                     <rect key="frame" x="394" y="545" width="200" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                     <state key="normal" backgroundImage="tutorial.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="selected" backgroundImage="sharetutorial-Pressed.png"/>
-                    <state key="highlighted" backgroundImage="sharetutorial-Pressed.png"/>
+                    <state key="highlighted" backgroundImage="tutorial-Pressed.png"/>
                     <connections>
                         <action selector="tutorialpressed:" destination="-1" eventType="touchUpInside" id="cbF-Fe-TaX"/>
                     </connections>
@@ -213,7 +213,8 @@
         <image name="sharetutorial-Pressed.png" width="205" height="205"/>
         <image name="sharetwitter-Pressed.png" width="204" height="204"/>
         <image name="sms.png" width="229" height="230"/>
-        <image name="tutorial.png" width="231" height="231"/>
+        <image name="tutorial-Pressed.png" width="205" height="205"/>
+        <image name="tutorial.png" width="186" height="186"/>
         <image name="tutorial1.png" width="540" height="960"/>
         <image name="tutorial2.png" width="540" height="960"/>
         <image name="tutorial3.png" width="540" height="960"/>

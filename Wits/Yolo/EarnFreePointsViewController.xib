@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EarnFreePointsViewController">
             <connections>
+                <outlet property="SkipBtn" destination="geK-Vd-leO" id="Vdb-mf-alt"/>
                 <outlet property="knowlegdeLbl" destination="FJb-m9-3VZ" id="k8I-bU-S4x"/>
                 <outlet property="lblTutorial" destination="Ium-S7-qhh" id="j2Y-wA-Q3S"/>
                 <outlet property="referralText" destination="iJt-H8-f65" id="Gnf-3Z-Gv2"/>
@@ -59,7 +60,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="RMo-gm-aB1">
-                    <rect key="frame" x="34" y="344" width="113" height="113"/>
+                    <rect key="frame" x="39" y="326" width="113" height="113"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <state key="normal" backgroundImage="sms.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,18 +69,6 @@
                     <state key="highlighted" backgroundImage="sharesms-Pressed.png"/>
                     <connections>
                         <action selector="smsBtnPressed:" destination="-1" eventType="touchUpInside" id="1SI-Ya-7Ew"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="gHD-PA-eTp">
-                    <rect key="frame" x="173" y="205" width="113" height="113"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="twitter.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" backgroundImage="sharetwitter-Pressed.png"/>
-                    <state key="highlighted" backgroundImage="sharetwitter-Pressed.png"/>
-                    <connections>
-                        <action selector="twitterBtnPressed:" destination="-1" eventType="touchUpInside" id="D6t-UP-Ygy"/>
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ShK-Lq-7fy">
@@ -95,7 +84,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Vaj-G6-5Ol">
-                    <rect key="frame" x="34" y="205" width="113" height="113"/>
+                    <rect key="frame" x="39" y="205" width="113" height="113"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <state key="normal" backgroundImage="facebook.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -106,18 +95,29 @@
                         <action selector="fbBtnPressed:" destination="-1" eventType="touchUpInside" id="y7b-H4-6GW"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="6Cu-3P-s2F">
-                    <rect key="frame" x="173" y="344" width="113" height="113"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="6Cu-3P-s2F">
+                    <rect key="frame" x="165" y="326" width="113" height="113"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                     <state key="normal" backgroundImage="tutorial.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="selected" backgroundImage="sharetutorial-Pressed.png"/>
-                    <state key="highlighted" backgroundImage="sharetutorial-Pressed.png"/>
+                    <state key="highlighted" backgroundImage="tutorial-Pressed.png"/>
                     <connections>
                         <action selector="tutorialpressed:" destination="-1" eventType="touchUpInside" id="eIu-wy-4EN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="gHD-PA-eTp">
+                    <rect key="frame" x="165" y="205" width="113" height="113"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="twitter.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" backgroundImage="sharetwitter-Pressed.png"/>
+                    <state key="highlighted" backgroundImage="sharetwitter-Pressed.png"/>
+                    <connections>
+                        <action selector="twitterBtnPressed:" destination="-1" eventType="touchUpInside" id="D6t-UP-Ygy"/>
                     </connections>
                 </button>
             </subviews>
@@ -170,7 +170,7 @@
                     </connections>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" id="Ium-S7-qhh">
-                    <rect key="frame" x="16" y="430" width="288" height="72"/>
+                    <rect key="frame" x="16" y="420" width="288" height="72"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <string key="text">Welcome to WITS - an award winning multiplayer Trivia game that let's you earn real cash while you compete with the topics you are good at!
 </string>
@@ -212,7 +212,8 @@
         <image name="sharetutorial-Pressed.png" width="205" height="205"/>
         <image name="sharetwitter-Pressed.png" width="204" height="204"/>
         <image name="sms.png" width="229" height="230"/>
-        <image name="tutorial.png" width="231" height="231"/>
+        <image name="tutorial-Pressed.png" width="205" height="205"/>
+        <image name="tutorial.png" width="186" height="186"/>
         <image name="tutorial1.png" width="540" height="960"/>
         <image name="tutorial2.png" width="540" height="960"/>
         <image name="tutorial3.png" width="540" height="960"/>

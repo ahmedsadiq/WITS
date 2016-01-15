@@ -15,4 +15,6 @@
 
 
 -(void)roundImageCorner;
+-(void)roundImageCornerWithoutBorders;
+-(void)roundImageCornerBlackBorder;
 @end

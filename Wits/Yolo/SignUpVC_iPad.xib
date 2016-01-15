@@ -17,6 +17,7 @@
                 <outlet property="CameraRollBtn" destination="Nur-wM-esV" id="Ds6-Ml-KBy"/>
                 <outlet property="_profileImage" destination="ijF-aU-ZhH" id="LDj-mr-tpw"/>
                 <outlet property="_scrollView" destination="edr-zs-htj" id="JIR-tk-4zB"/>
+                <outlet property="backtoSignInBtn" destination="4ww-nJ-PWj" id="knc-IA-pDn"/>
                 <outlet property="birthdaylbl" destination="IKX-vB-f7F" id="81n-pd-Izb"/>
                 <outlet property="cancelAvatar" destination="pQ0-iT-qkb" id="pRE-JF-ZXt"/>
                 <outlet property="cancelBtn" destination="C6l-S4-YVX" id="Ykh-8D-SkQ"/>
@@ -393,7 +394,17 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowdown.png" id="eIh-68-MWK">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4ww-nJ-PWj">
+                    <rect key="frame" x="202" y="915" width="364" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="backTosignIn:" destination="-1" eventType="touchUpInside" id="W3S-Ls-I7Q"/>
+                    </connections>
+                </button>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowdown.png" id="eIh-68-MWK">
                     <rect key="frame" x="354" y="965" width="60" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </imageView>
@@ -415,7 +426,7 @@
         <image name="header_bar.png" width="320" height="1"/>
         <image name="initialdp.jpg" width="224" height="225"/>
         <image name="line.png" width="466" height="2"/>
-        <image name="redbar.jpeg" width="36" height="14"/>
+        <image name="redbar.jpeg" width="540" height="960"/>
         <image name="witsnewblue.png" width="1004" height="245"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

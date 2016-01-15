@@ -23,7 +23,7 @@
 static NSString *_deviceToken = NULL;
 
 @implementation AppDelegate
-@synthesize profileImage,isChatNotificationOn,transferPointsEmail,isFirstTime,isLanguageChanged,isGameInProcess,isInbox,LoginEmail,isAlreadyFetched,isStore,selectedIndex,friendToBeChalleneged,isFriendRequest,requestType;
+@synthesize profileImage,isChatNotificationOn,transferPointsEmail,isFirstTime,isLanguageChanged,isGameInProcess,isInbox,LoginEmail,isAlreadyFetched,isStore,selectedIndex,friendToBeChalleneged,isFriendRequest,requestType,isGameOver;
 +(NSString *)getDeviceToken{
     
     return _deviceToken;
@@ -42,7 +42,7 @@ NSString * const NotificationActionTwoIdent = @"CLOSE_CATEGORY";
      languageCode = [language intValue];
      isInbox = false;
      isGameInProcess = false;
-     
+     isGameOver = false;
 
      
     // Override point for customization after application launch.

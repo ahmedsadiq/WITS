@@ -212,6 +212,7 @@
      self.tabBarController.tabBar.hidden = false;
      indexCounter = 0;
      
+     
      if (![[SharedManager getInstance] categoryArray] || ![[SharedManager getInstance] categoryArray].count){
           customObject = [[CustomAnimationView alloc]initWithFrame:CGRectMake(50, 50, 50, 50)];
           [customObject startAnimating];
@@ -233,7 +234,7 @@
 {
      [super viewDidLoad];
      
-    // self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+     //self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
      
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
@@ -269,13 +270,7 @@
 }
 - (void)signUpSwipeDown:(UISwipeGestureRecognizer *)gesture
 {
-     
-
      [self.tabBarController.tabBar setHidden:false];
-
-//     [UIView animateWithDuration:0.5
-//                      animations:^{_HelpShiftView.alpha = 0.0;}
-//                      completion:^(BOOL finished){ [_HelpShiftView removeFromSuperview]; }];
      [UIView beginAnimations:nil context:nil];
      [UIView setAnimationDuration:1.0];
      [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp
@@ -530,38 +525,38 @@
                     
                     [self.view addSubview:invalidUserBg];
                }
-               else{
-                    NSString *emailMsg;
-                    NSString *title;
-                    NSString *cancel;
-                    
-                    NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-                    int languageCode = [language intValue];
-                    
-                    if (languageCode == 0 ) {
-                         emailMsg = @"Check your internet connection setting.";
-                         title = @"Error";
-                         cancel = CANCEL;
-                    } else if(languageCode == 1) {
-                         emailMsg = @"يرجى التحقق من إعدادات اتصال الإنترنت الخاصة بك.";
-                         title = @"خطأ";
-                         cancel = CANCEL_1;
-                    }else if (languageCode == 2){
-                         emailMsg = @"Vérifiez vos paramètres de connexion Internet.";
-                         title = @"Erreur";
-                         cancel = CANCEL_2;
-                    }else if (languageCode == 3){
-                         emailMsg = @"Revise su configuración de conexión a Internet.";
-                         title = @"Error";
-                         cancel = CANCEL_3;
-                    }else if (languageCode == 4){
-                         emailMsg = @"Verifique sua configuração de conexão à Internet";
-                         title = @"Erro";
-                         cancel = CANCEL_4;
-                    }
-                    
-                    [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-               }
+//               else{
+//                    NSString *emailMsg;
+//                    NSString *title;
+//                    NSString *cancel;
+//                    
+//                    NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+//                    int languageCode = [language intValue];
+//                    
+//                    if (languageCode == 0 ) {
+//                         emailMsg = @"Check your internet connection setting.";
+//                         title = @"Error";
+//                         cancel = CANCEL;
+//                    } else if(languageCode == 1) {
+//                         emailMsg = @"يرجى التحقق من إعدادات اتصال الإنترنت الخاصة بك.";
+//                         title = @"خطأ";
+//                         cancel = CANCEL_1;
+//                    }else if (languageCode == 2){
+//                         emailMsg = @"Vérifiez vos paramètres de connexion Internet.";
+//                         title = @"Erreur";
+//                         cancel = CANCEL_2;
+//                    }else if (languageCode == 3){
+//                         emailMsg = @"Revise su configuración de conexión a Internet.";
+//                         title = @"Error";
+//                         cancel = CANCEL_3;
+//                    }else if (languageCode == 4){
+//                         emailMsg = @"Verifique sua configuração de conexão à Internet";
+//                         title = @"Erro";
+//                         cancel = CANCEL_4;
+//                    }
+//                    
+//                    [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+//               }
           }
           else{
                //self.tabBarController.tabBar.hidden = false;
@@ -779,7 +774,7 @@
           }
           [cell setBackgroundColor:[UIColor clearColor]];
           [cell.contentView setBackgroundColor:[UIColor clearColor]];
-          cell.selectionStyle = NAN;
+          cell.selectionStyle = UITableViewCellSelectionStyleNone;
           
           return cell;
      }
@@ -829,7 +824,7 @@
           cell.mainBtn.tag = index;
           [cell setBackgroundColor:[UIColor clearColor]];
           [cell.contentView setBackgroundColor:[UIColor clearColor]];
-          cell.selectionStyle = NAN;
+          cell.selectionStyle = UITableViewCellSelectionStyleNone;
           return cell;
           
      }
@@ -1079,6 +1074,7 @@
           [expandView reloadSections:sectionToReload withRowAnimation:UITableViewRowAnimationFade];
      }
 }
+
 
 - (void)didReceiveMemoryWarning
 {

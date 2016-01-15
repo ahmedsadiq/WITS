@@ -1,10 +1,3 @@
-//
-//  EarnFreePointsViewController.m
-//  Wits
-//
-//  Created by Mr on 21/10/2014.
-//  Copyright (c) 2014 Xint Solutions. All rights reserved.
-//
 
 #import "EarnFreePointsViewController.h"
 #import "RightBarVC.h"
@@ -41,8 +34,8 @@
           _shareLbl.font = [UIFont fontWithName:FONT_NAME size:25];
      }
      else{
-     knowledgelbl.font = [UIFont fontWithName:FONT_NAME size:17];
-     _shareLbl.font = [UIFont fontWithName:FONT_NAME size:14];
+          knowledgelbl.font = [UIFont fontWithName:FONT_NAME size:17];
+          _shareLbl.font = [UIFont fontWithName:FONT_NAME size:14];
      }
      _tutorialScrollView.contentSize = CGSizeMake(screenWidth*7, screenRect.size.height);
 }
@@ -232,10 +225,10 @@
 
 
 - (IBAction)fbBtnPressed:(id)sender {
-    
+     
      if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
           SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-          NSString *sharingStr = [NSString stringWithFormat:@"%@ %@",newShareString,@"https://goo.gl/WZE1kP"];          
+          NSString *sharingStr = [NSString stringWithFormat:@"%@ %@",newShareString,@"https://goo.gl/WZE1kP"];
           [controller setInitialText:sharingStr];
           [self presentViewController:controller animated:YES completion:Nil];
      }
@@ -628,14 +621,15 @@
           howtoPlay1 = @"Embark on a 1-1 challenge against anyone in the world.";
           howtoPlay2 = @"The faster you answer the more Gems you\'ll collect.";
           howtoPlay3 = @"Claim your rewards.";
-          
+         [_SkipBtn setTitle:@"Skip" forState:UIControlStateNormal];
           HowtoPlay = @"How to Play";
           HowWitsStore = @"How to Use WITS Store";
           HowtoEarnPoints = @"How to Earn Free Points";
-          
+          _lblTutorial.text = screenOne;
+         
           howtouseStoreDesc = @"Sign up now and get your hands on 100 free Gems.";
           howtoEarnPointDesc = @"You can always earn free Points simply by inviting your friends and sharing the app on Facebook or Twitter.";
-         // [_tutorialPressed setTitle:TUTORIAL_BTN forState:UIControlStateNormal];
+          // [_tutorialPressed setTitle:TUTORIAL_BTN forState:UIControlStateNormal];
           [_tutorialBacklbl setTitle:BACK_BTN forState:UIControlStateNormal];
           [mainBack setTitle:BACK_BTN forState:UIControlStateNormal];
           
@@ -647,13 +641,14 @@
           _knowlegdeLbl.text = KNOWLEDGE_LBL_1;
           //_shareLbl.text = SHARE_WITS_LBL_1;
           _EarnfreePointLbl.text = INVITE_FRIENDS_1;
-          
+          [_SkipBtn setTitle:@"تخطي" forState:UIControlStateNormal];
           knowledgelbl.text = KNOWLEDGE_LBL_1;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_1;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_1;
           tutorialDescLbl.textAlignment = NSTextAlignmentRight;
           tutorialDescLbl2.textAlignment = NSTextAlignmentRight;
           
+          _lblTutorial.text = screenOne1;
           
           howtoPlay1 = @"أسرع في دخول تحدي ضد أي شخص في العالم ";
           howtoPlay2 = @"اسرع في الاجابة للحصول على نقاط اكثر";
@@ -676,11 +671,12 @@
           referalStr = @"Salut, Mon code de référence est";
           referalStr2 = @". Aidez-moi à gagner des Gems. Rejoignez-moi sur Wits.";
           _knowlegdeLbl.text = KNOWLEDGE_LBL_2;
-          
+          _lblTutorial.text = screenOne2;
+         
           knowledgelbl.text = KNOWLEDGE_LBL_2;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_2;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_2;
-          
+          [_SkipBtn setTitle:@"PASSER" forState:UIControlStateNormal];
           HowtoPlay = @"Comment jouer";
           HowWitsStore = @"Comment utiliser ESPRITS magasin";
           HowtoEarnPoints = @"Comment gagner des Gems";
@@ -707,14 +703,15 @@
           referalStr = @"Hola, Mi Código de Referencia es";
           referalStr2 = @". Ayudame a ganar gemas gratis. Jueguemos Wits juntos.";
           _knowlegdeLbl.text = KNOWLEDGE_LBL_3;
-         // _shareLbl.text = SHARE_WITS_LBL_3;
+          // _shareLbl.text = SHARE_WITS_LBL_3;
           _EarnfreePointLbl.text = INVITE_FRIENDS_3;
           
           knowledgelbl.text = KNOWLEDGE_LBL_3;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_3;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_3;
-          
-          
+          [_SkipBtn setTitle:@"SALTAR" forState:UIControlStateNormal];
+          _lblTutorial.text = screenOne3;
+        
           HowtoPlay = @"Cómo jugar";
           HowWitsStore = @"Cómo utilizar WITS tienda";
           HowtoEarnPoints = @"Cómo ganar gemas.";
@@ -747,11 +744,11 @@
           knowledgelbl.text = KNOWLEDGE_LBL_4;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_4;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_4;
-          
+            _lblTutorial.text = screenOne4;
           _knowlegdeLbl.text = KNOWLEDGE_LBL_4;
           //_shareLbl.text = SHARE_WITS_LBL_4;
           _EarnfreePointLbl.text = INVITE_FRIENDS_4;
-          
+             [_SkipBtn setTitle:@"Pular" forState:UIControlStateNormal];
           //[_tutorialPressed setTitle:TUTORIAL_BTN_4 forState:UIControlStateNormal];
           [_tutorialBacklbl setTitle:BACK_BTN_4 forState:UIControlStateNormal];
           [mainBack setTitle:BACK_BTN_4 forState:UIControlStateNormal];
@@ -776,7 +773,7 @@
      else if(languageCode == 1 ) {
           
           _knowlegdeLbl.text = REFER_YOUR_FRIENDS_1;
-         // _shareLbl.text = EARN_POINT_TEXT_1;
+          // _shareLbl.text = EARN_POINT_TEXT_1;
           
      }
      else if(languageCode == 2) {
@@ -789,7 +786,7 @@
      else if(languageCode == 3) {
           
           _knowlegdeLbl.text = REFER_YOUR_FRIENDS_3;
-         // _shareLbl.text = EARN_POINT_TEXT_3;
+          // _shareLbl.text = EARN_POINT_TEXT_3;
           
      }
      else if(languageCode == 4) {
@@ -798,19 +795,6 @@
           
      }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - (IBAction)tutorialpressed:(id)sender {
      self.tabBarController.tabBar.hidden = true;
@@ -1004,4 +988,3 @@
      _lblTutorial.text = textToBeShown;
 }
 @end
-

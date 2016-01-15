@@ -110,15 +110,15 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 }
 
 - (void)initViews {
-     [selfProfileImg roundImageCorner];
-     [opponentProfileImg roundImageCorner];
+     [selfProfileImg roundImageCornerWithoutBorders];
+     [opponentProfileImg roundImageCornerWithoutBorders];
      
      if ([requestType isEqualToString:@"gems"]) {
           selfgameTypeimg.image = [UIImage imageNamed:@"ame1.png"];
           oppGametypeimg.image = [UIImage imageNamed:@"ame1.png"];
           resultGametypeimg.image = [UIImage imageNamed:@"gemnotinstore.png"];
-          _gemRight.image = [UIImage imageNamed:@"gemstore.png"];
-          _gemLeft.image = [UIImage imageNamed:@"gemstore.png"];
+          _gemRight.image = [UIImage imageNamed:@"gemnotinstore.png"];
+          _gemLeft.image = [UIImage imageNamed:@"gemnotinstore.png"];
           if([[SharedManager getInstance]._userProfile.cashablePoints intValue] < 70) {
                currentSelfPoints = [[SharedManager getInstance]._userProfile.cashablePoints intValue];
                currentOtherPoints = 70;
@@ -148,25 +148,25 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           //               starImgRightView.image = [UIImage imageNamed:@"starwhite.png"];
           //          }
      }
-     if(IS_IPHONE_4){
-          _roundView.frame = CGRectMake(0,_roundLbl.frame.size.height+400, 320, 330);
-          
-          _gamebg.frame = CGRectMake(0, 0, 320, 480);
-          _roundView.frame = CGRectMake(0, 75, 320, 330);
-          
-          answerReaction.frame = CGRectMake(answerReaction.frame.origin.x, answerReaction.frame.origin.y+29, answerReaction.frame.size.width, answerReaction.frame.size.height);
-          answerTxt.frame = CGRectMake(answerTxt.frame.origin.x, answerTxt.frame.origin.y+33, answerTxt.frame.size.width, answerTxt.frame.size.height);
-          
-          answerTxt.frame = CGRectMake(answerTxt.frame.origin.x, answerTxt.frame.origin.y+8, answerTxt.frame.size.width, answerTxt.frame.size.height);
-          answerReaction.frame = CGRectMake(answerReaction.frame.origin.x, answerReaction.frame.origin.y+15, answerReaction.frame.size.width, answerReaction.frame.size.height);
-     }
-     else if(IS_IPHONE_5) {
-          
-          _gamebg.frame = CGRectMake(0, 0, 320, 568);
-          
-          answerReaction.frame = CGRectMake(40,460,240,25);
-          answerTxt.frame = CGRectMake(30,448,260,21);
-     }
+     //     if(IS_IPHONE_4){
+     //          _roundView.frame = CGRectMake(0,_roundLbl.frame.size.height+400, 320, 330);
+     //
+     //          _gamebg.frame = CGRectMake(0, 0, 320, 480);
+     //          _roundView.frame = CGRectMake(0, 75, 320, 330);
+     //
+     //          answerReaction.frame = CGRectMake(answerReaction.frame.origin.x, answerReaction.frame.origin.y+29, answerReaction.frame.size.width, answerReaction.frame.size.height);
+     ////          answerTxt.frame = CGRectMake(answerTxt.frame.origin.x, answerTxt.frame.origin.y+33, answerTxt.frame.size.width, answerTxt.frame.size.height);
+     ////
+     ////          answerTxt.frame = CGRectMake(answerTxt.frame.origin.x, answerTxt.frame.origin.y+8, answerTxt.frame.size.width, answerTxt.frame.size.height);
+     //          answerReaction.frame = CGRectMake(answerReaction.frame.origin.x, answerReaction.frame.origin.y+15, answerReaction.frame.size.width, answerReaction.frame.size.height);
+     //     }
+     //     else if(IS_IPHONE_5) {
+     //
+     //          _gamebg.frame = CGRectMake(0, 0, 320, 568);
+     //
+     //          answerReaction.frame = CGRectMake(40,460,240,25);
+     //          answerTxt.frame = CGRectMake(30,448,260,21);
+     //     }
      
      labelToBlink = option_1_Lbl;
      
@@ -200,6 +200,11 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      option_3_Btn.exclusiveTouch = YES;
      option_4_Btn.exclusiveTouch = YES;
      [self setInitialPoints];
+     answerTxt.layer.shadowColor = [UIColor colorWithRed:183 green:216 blue:255 alpha:1.0].CGColor;
+     answerTxt.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+     answerTxt.layer.shadowRadius = 3.0;
+     answerTxt.layer.shadowOpacity = 0.9;
+     answerTxt.layer.masksToBounds = NO;
      
      [self connectToSocket];
      
@@ -211,7 +216,10 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 -(void)viewWillAppear:(BOOL)animated
 {
      [super viewWillAppear:animated];
+     answerTxt.text = @"";
      [self setLanguageForScreen];
+     if(!appDelegate.isGameInProcess)
+          [self.navigationController popToRootViewControllerAnimated:true];
 }
 
 -(void) setAfterChalleneg {
@@ -233,14 +241,14 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      [self viewSlideInFromLeftToRight:upperViewLeft];
      [self viewSlideInFromRightToLeft:upperViewRight];
      
-     if(IS_IPHONE_4) {
-          answerReaction.frame = CGRectMake(answerReaction.frame.origin.x, answerReaction.frame.origin.y+27, answerReaction.frame.size.width, answerReaction.frame.size.height);
-          answerTxt.frame = CGRectMake(answerTxt.frame.origin.x, answerTxt.frame.origin.y+35, answerTxt.frame.size.width, answerTxt.frame.size.height);
-     }
-     else if(IS_IPHONE_5) {
-          answerReaction.frame = CGRectMake(40,460,240,25);
-          answerTxt.frame = CGRectMake(30,438,260,21);
-     }
+     //     if(IS_IPHONE_4) {
+     //          answerReaction.frame = CGRectMake(answerReaction.frame.origin.x, answerReaction.frame.origin.y+27, answerReaction.frame.size.width, answerReaction.frame.size.height);
+     ////          answerTxt.frame = CGRectMake(answerTxt.frame.origin.x, answerTxt.frame.origin.y+35, answerTxt.frame.size.width, answerTxt.frame.size.height);
+     //     }
+     //     else if(IS_IPHONE_5) {
+     //          answerReaction.frame = CGRectMake(40,460,240,25);
+     //          answerTxt.frame = CGRectMake(30,438,260,21);
+     //     }
      if([[SharedManager getInstance]._userProfile.cashablePoints intValue] < 100) {
           
           currentSelfPoints = [[SharedManager getInstance]._userProfile.cashablePoints intValue];
@@ -326,12 +334,12 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           [op onCompletion:^(MKNetworkOperation *completedOperation) {
                
                [selfProfileImg setImage:[completedOperation responseImage]];
-               [selfProfileImg roundImageCorner];
+               [selfProfileImg roundImageCornerWithoutBorders];
                
           } onError:^(NSError* error) {
                //////Changed by Fiza //////
                selfProfileImg.image= [UIImage imageNamed:@"personal.png"];
-               [selfProfileImg roundImageCorner];
+               [selfProfileImg roundImageCornerWithoutBorders];
           }];
           
           [engine enqueueOperation:op];
@@ -346,23 +354,23 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      [op onCompletion:^(MKNetworkOperation *completedOperation) {
           
           [opponentProfileImg setImage:[completedOperation responseImage]];
-          [opponentProfileImg roundImageCorner];
+          [opponentProfileImg roundImageCornerWithoutBorders];
           
           _optionImg1.image = opponentProfileImg.image;
           _optionImg2.image = opponentProfileImg.image;
           _optionImg3.image = opponentProfileImg.image;
           _optionImg4.image = opponentProfileImg.image;
           
-          [_optionImg1 roundImageCorner];
-          [_optionImg2 roundImageCorner];
-          [_optionImg3 roundImageCorner];
-          [_optionImg4 roundImageCorner];
+          [_optionImg1 roundImageCornerWithoutBorders];
+          [_optionImg2 roundImageCornerWithoutBorders];
+          [_optionImg3 roundImageCornerWithoutBorders];
+          [_optionImg4 roundImageCornerWithoutBorders];
           
           
      } onError:^(NSError* error) {
           /////////// Changed by Fiza ////////
           opponentProfileImg.image= [UIImage imageNamed:@"personal.png"];
-          [opponentProfileImg roundImageCorner];
+          [opponentProfileImg roundImageCornerWithoutBorders];
      }];
      
      [engine enqueueOperation:op];
@@ -628,48 +636,44 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      if(!isQuestionAnswered){
           answerReaction.hidden = true;
           int timeSpend = 10 - ([timerLbl.text  intValue] - 1);
-          if(timeSpend >= 10)
-          {
-               if (languageCode == 0) {
-                    
-                    answerTxt.text = @"Time is up..";
-               }else if (languageCode==1){
-                    
-                    answerTxt.text = TIMES_UP_1;
-                    
-               }else if (languageCode==2){
-                    
-                    answerTxt.text = TIMES_UP_2;
-                    
-               }else if (languageCode==3){
-                    
-                    answerTxt.text = TIMES_UP_3;
-                    
-               }else if (languageCode==4){
-                    
-                    answerTxt.text = TIMES_UP_4;
-               }
-               
-          }else{
-               if (languageCode == 0) {
-                    
-                    answerTxt.text = @"Wrong answer, Opponent Answered Before You";
-               }else if (languageCode==1){
-                    
-                    answerTxt.text = OPPONENT_ANS_BEFORE_1;
-                    
-               }else if (languageCode==2){
-                    
-                    answerTxt.text = OPPONENT_ANS_BEFORE_2;
-                    
-               }else if (languageCode==3){
-                    
-                    answerTxt.text = OPPONENT_ANS_BEFORE_3;
-                    
-               }else if (languageCode==4){
-                    answerTxt.text = OPPONENT_ANS_BEFORE_4;
-               }
-          }
+          //          if(timeSpend >= 10)
+          //          {
+          //               if (languageCode == 0) {
+          //
+          //                    answerTxt.text = @"Time is up..";
+          //               }else if (languageCode==1){
+          //
+          //                    answerTxt.text = TIMES_UP_1;
+          //
+          //               }else if (languageCode==2){
+          //
+          //                    answerTxt.text = TIMES_UP_2;
+          //
+          //               }else if (languageCode==3){
+          //
+          //                    answerTxt.text = TIMES_UP_3;
+          //
+          //               }else if (languageCode==4){
+          //
+          //                    answerTxt.text = TIMES_UP_4;
+          //               }
+          //
+          //          }else{
+          //               if (languageCode == 0) {
+          //                    answerTxt.text = @"Wrong answer, Opponent Answered Before You";
+          //               }else if (languageCode==1){
+          //                    answerTxt.text = OPPONENT_ANS_BEFORE_1;
+          //
+          //               }else if (languageCode==2){
+          //                    answerTxt.text = OPPONENT_ANS_BEFORE_2;
+          //
+          //               }else if (languageCode==3){
+          //                    answerTxt.text = OPPONENT_ANS_BEFORE_3;
+          //
+          //               }else if (languageCode==4){
+          //                    answerTxt.text = OPPONENT_ANS_BEFORE_4;
+          //               }
+          // }
      }
      if(currentIndex == 7) {
           return;
@@ -682,28 +686,22 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                     NSString *correctOpt = [_challenge.randAnswerArray objectAtIndex:currentIndex];
                     
                     buttonToBlink = (UIButton*)[self.view viewWithTag:i+100];
-                      IndexToShowProfilePic = i;
+                    IndexToShowProfilePic = i;
                     switch (i) {
                          case 0:
                               [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"1right.png"] forState:UIControlStateNormal];
-                              if([correctOpt integerValue] == 1 )
-                                //   _optionImg1.hidden = false;
-                              
                               break;
                          case 1:
                               [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"2right.png"] forState:UIControlStateNormal];
-                              if([correctOpt integerValue] == 1 )
-                                //   _optionImg2.hidden = false;
+                              
                               break;
                          case 2:
                               [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"3right.png"] forState:UIControlStateNormal];
-                              if([correctOpt integerValue] == 1)
-                                  // _optionImg3.hidden = false;
+                              
                               break;
                          case 3:
                               [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"4right.png"] forState:UIControlStateNormal];
-                              if([correctOpt integerValue] == 1 )
-                                  // _optionImg4.hidden = false;
+                              
                               break;
                               
                          default:
@@ -850,13 +848,13 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           }else if (languageCode==4){
                answerTxt.text = WRONG_ANS_WAIT_OPP_4;
           }
-          answerTxt.hidden = NO;
+         
           
           for(int i=0; i<tempQuestion.optionsArray.count; i++) {
                Option *tempOption1 = [tempQuestion.optionsArray objectAtIndex:i];
                if([tempOption1.isCorrect intValue] == 1) {
                     buttonToBlink = (UIButton*)[self.view viewWithTag:i+100];
-                      IndexToShowProfilePic =i;
+                    IndexToShowProfilePic =i;
                     switch (i) {
                          case 0:
                               [buttonToBlink setBackgroundImage:[UIImage imageNamed:@"1right.png"] forState:UIControlStateNormal];
@@ -1277,11 +1275,11 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                     timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
                     if (ChancesSuperbot <= 70) {
                          //timeInSeconds = @"7";
-                           timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
+                         timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
                          // correctOpt = @"1";
                     }else if (ChancesSuperbot >70 && ChancesSuperbot <= 90){
-                        // timeInSeconds = @"8";
-                          timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
+                         // timeInSeconds = @"8";
+                         timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber1];
                          //correctOpt = @"1";
                     }else if (ChancesSuperbot >90 && ChancesSuperbot <= 100){
                          //timeInSeconds = @"6";
@@ -1298,11 +1296,11 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                          timeInSeconds = [NSString stringWithFormat:@"%d",randomNumber];
                          // correctOpt = @"0";
                     }else if (ChancesSuperbot >70 && ChancesSuperbot <= 90){
-                        // timeInSeconds = @"8";
+                         // timeInSeconds = @"8";
                          timeInSeconds =[NSString stringWithFormat:@"%d",randomNumber];
                          //correctOpt = @"0";
                     }else if (ChancesSuperbot >90 && ChancesSuperbot <= 100){
-                        // timeInSeconds = @"6";
+                         // timeInSeconds = @"6";
                          timeInSeconds =[NSString stringWithFormat:@"%d",randomNumber];
                          //correctOpt = @"0";
                     }
@@ -1488,8 +1486,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",_challenge.contest_ID,@"contest_id",_challenge.opponent_ID,@"opponent_id",_challenge.challengeID,@"challenge_id",requestType,@"request_type", nil];
                [sharedManager sendEvent:@"notifyOnSurrender" andParameters:registerDictionary];
           }
-          else {
-          }
+          
      }
      
 }
@@ -1541,7 +1538,17 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 #pragma mark -
 #pragma mark Show Results
 
-
+- (NSData*)encodeDictionary:(NSDictionary*)dictionary {
+     NSMutableArray *parts = [[NSMutableArray alloc] init];
+     for (NSString *key in dictionary) {
+          NSString *encodedValue = [[dictionary objectForKey:key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+          NSString *encodedKey = [key stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+          NSString *part = [NSString stringWithFormat: @"%@=%@", encodedKey, encodedValue];
+          [parts addObject:part];
+     }
+     NSString *encodedDictionary = [parts componentsJoinedByString:@"&"];
+     return [encodedDictionary dataUsingEncoding:NSUTF8StringEncoding];
+}
 -(void)fetchResults{
      AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
      delegate.isGameInProcess = false;
@@ -1559,203 +1566,247 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      loadView = [[LoadingView alloc] init];
      [loadView showInView:self.view withTitle:loadingTitle];
      
-     MKNetworkEngine *engine = [[MKNetworkEngine alloc] initWithHostName:nil];
+     NSURL *url = [NSURL URLWithString:SERVER_URL];
+     
      
      NSMutableDictionary *postParamas = [[NSMutableDictionary alloc] init];
      [postParamas setObject:@"gameContestResult" forKey:@"method"];
      [postParamas setObject:[SharedManager getInstance].userID forKey:@"user_id"];
      [postParamas setObject:[SharedManager getInstance].sessionID forKey:@"session_id"];
-     [postParamas setObject:_challenge.contest_ID forKey:@"contest_id"];
-     [postParamas setObject:_challenge.opponent_ID forKey:@"opponent_id"];
+     NSString *contest_id = [NSString stringWithFormat:@"%@", _challenge.contest_ID];
+     NSString *opponent_id = [NSString stringWithFormat:@"%@",_challenge.opponent_ID];
+     [postParamas setObject:contest_id forKey:@"contest_id"];
+     [postParamas setObject:opponent_id forKey:@"opponent_id"];
      
-     MKNetworkOperation *operation = [engine operationWithURLString:SERVER_URL params:postParamas httpMethod:@"POST"];
+     NSData *postData = [self encodeDictionary:postParamas];
+     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+     [request setURL:url];
+     [request setHTTPMethod:@"POST"];
+     [request setHTTPBody:postData];
      
-     [operation onCompletion:^(MKNetworkOperation *completedOper){
-          
+     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response , NSData  *data, NSError *error) {
           [loadView hide];
-          NSDictionary *mainDict = [completedOper responseJSON];
-          NSNumber *flag = [mainDict objectForKey:@"flag"];
-          if ([flag isEqualToNumber:[NSNumber numberWithInt:1]]) {
-               
-               int consumed_gems = [[SharedManager getInstance]._userProfile.consumedGems intValue];
-               
-               
-               isGameEnd = true;
-               int *userEarnedPoints = [[mainDict objectForKey:@"user_score"] intValue];
-               NSString* userEarnedPointsSte = [NSString stringWithFormat:@"%d",userEarnedPoints];
-               
-               userTotal.text = userEarnedPointsSte;
-               userGemTotal.text = [SharedManager getInstance]._userProfile.cashablePoints;
-               userPointsTotal.text =  [SharedManager getInstance]._userProfile.totalPoints;
-               [SharedManager getInstance]._userProfile.cashablePoints = [mainDict objectForKey:@"gems"];
-               NSString *val = [mainDict objectForKey:@"gems"];
-               if ([val intValue] < 0) {
-                    [SharedManager getInstance]._userProfile.cashablePoints = @"0";
+          if ( [(NSHTTPURLResponse *)response statusCode] == 200 )
+          {
+               NSDictionary *mainDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+               NSNumber *flag = [mainDict objectForKey:@"flag"];
+               if ([flag isEqualToNumber:[NSNumber numberWithInt:1]]) {
                     
-               }
-               
-               [SharedManager getInstance]._userProfile.totalPoints = [mainDict objectForKey:@"points"];
-               int oppID = [_challenge.opponent_ID intValue];
-               NSString *opponentUSerIdStr = [NSString stringWithFormat:@"%d", oppID];
-               senderPointsArray = [mainDict objectForKey:opponentUSerIdStr];
-               selfPointsArray = [mainDict objectForKey:[SharedManager getInstance].userID];
-               
-               [self_resultImg setImage:[selfProfileImg image]];
-               [self_resultImg roundImageCorner];
-               [opponent_resultImg setImage:[opponentProfileImg image]];
-               if([senderPointsArray count] > [selfPointsArray count])
-                    tempVar = (int)[senderPointsArray count];
-               else
-                    tempVar = (int)[selfPointsArray count];
-               
-               
-               if(IS_IPHONE_4) {
-                    ResultsView.frame = CGRectMake(0, 0, 320, 480);
-               }
-               else if (IS_IPHONE_5) {
-                    ResultsView.frame = CGRectMake(0, 0, 320, 568);
-               }
-               
-               int receiverTotalPoints = [[mainDict objectForKey:@"user_score"] intValue];
-               int senderTotalPoints = [[mainDict objectForKey:@"opponent_score"] intValue];
-               
-               if (receiverTotalPoints > senderTotalPoints && [val intValue] > 500 )
-               {
-                    //resultLbl.textColor = [UIColor greenColor];
+                    int consumed_gems = [[SharedManager getInstance]._userProfile.consumedGems intValue];
                     
-                    if (languageCode == 0) {
-                         
-                         resultLbl.text = YOU_WIN;
-                         youWinTitle.text = YOU_WIN;
-                         
-                    }else if (languageCode == 1){
-                         
-                         resultLbl.text = YOU_WIN_1;
-                         youWinTitle.text = YOU_WIN_1;
-                         
-                    }else if (languageCode == 2){
-                         
-                         resultLbl.text = YOU_WIN_2;
-                         youWinTitle.text = YOU_WIN_2;
-                         
-                    }else if (languageCode == 3){
-                         
-                         resultLbl.text = YOU_WIN_3;
-                         youWinTitle.text = YOU_WIN_3;
-                         
-                    }else if (languageCode == 4){
-                         
-                         resultLbl.text = YOU_WIN_4;
-                         youWinTitle.text = YOU_WIN_4;
+                    
+                    isGameEnd = true;
+                    int *userEarnedPoints = [[mainDict objectForKey:@"user_score"] intValue];
+                    NSString* userEarnedPointsSte = [NSString stringWithFormat:@"%d",userEarnedPoints];
+                    
+                    userTotal.text = userEarnedPointsSte;
+                    userGemTotal.text = [SharedManager getInstance]._userProfile.cashablePoints;
+                    userPointsTotal.text =  [SharedManager getInstance]._userProfile.totalPoints;
+                    [SharedManager getInstance]._userProfile.cashablePoints = [mainDict objectForKey:@"gems"];
+                    NSString *val = [mainDict objectForKey:@"gems"];
+                    if ([val intValue] < 0) {
+                         [SharedManager getInstance]._userProfile.cashablePoints = @"0";
                          
                     }
                     
-                    youWinTitle.hidden = false;
-                    youLooseTitle.hidden = true;
-               }else if(receiverTotalPoints > senderTotalPoints && [val intValue] < 500 )
-               {
-                    if (languageCode == 0) {
-                         
-                         resultLbl.text = @"Congrats! You are doing great. Let\'s play more to win exciting prizes! You need more Gems! Go go go!";
-                    }else if (languageCode == 1){
-                         
-                         resultLbl.text = @"مبروك ! ما تقوم به عظيم . انظر الى قائمة الجوائز لتكن لك ..  العب أكثر...و للفوز بها ...انت بحاجة الى مزيد من الأحجار الكريمة ! إذهب! إذهب! إذهب! ";
-                         
-                    }else if (languageCode == 2){
-                         
-                         resultLbl.text = @"Félicitations! Êtes-vous un ours très bien. Nous allons jouer plus pour gagner de magnifiques prix! Vous avez besoin de plus Gems! Allez Allez Allez!";
-                    }else if (languageCode == 3){
-                         
-                         resultLbl.text = @"¡Enhorabuena! ¡Lo estás haciendo genial ¡Juguemos más para ganar fabulosos premios! ¡Necesitas más Gemas! ¡Vamos, vamos!";
-                    }else if (languageCode == 4){
-                         
-                         resultLbl.text = @"Parabéns! Muito bem! Vamos jogar mais para ganhar grandes prêmios! Você precisa de mais Gems! Vamos lá!";
+                    [SharedManager getInstance]._userProfile.totalPoints = [mainDict objectForKey:@"points"];
+                    int oppID = [_challenge.opponent_ID intValue];
+                    NSString *opponentUSerIdStr = [NSString stringWithFormat:@"%d", oppID];
+                    senderPointsArray = [mainDict objectForKey:opponentUSerIdStr];
+                    selfPointsArray = [mainDict objectForKey:[SharedManager getInstance].userID];
+                    
+                    [self_resultImg setImage:[selfProfileImg image]];
+                    [self_resultImg roundImageCorner];
+                    [opponent_resultImg setImage:[opponentProfileImg image]];
+                    if([senderPointsArray count] > [selfPointsArray count])
+                         tempVar = (int)[senderPointsArray count];
+                    else
+                         tempVar = (int)[selfPointsArray count];
+                    
+                    
+                    if(IS_IPHONE_4) {
+                         ResultsView.frame = CGRectMake(0, 0, 320, 480);
+                    }
+                    else if (IS_IPHONE_5) {
+                         ResultsView.frame = CGRectMake(0, 0, 320, 568);
                     }
                     
-               }
-               else{
-                    if (receiverTotalPoints<senderTotalPoints || receiverTotalPoints < 0)
+                    int receiverTotalPoints = [[mainDict objectForKey:@"user_score"] intValue];
+                    int senderTotalPoints = [[mainDict objectForKey:@"opponent_score"] intValue];
+                    
+                    if (receiverTotalPoints > senderTotalPoints && [val intValue] > 500 )
+                    {
+                         //resultLbl.textColor = [UIColor greenColor];
+                         
+                         if (languageCode == 0) {
+                              
+                              resultLbl.text = YOU_WIN;
+                              youWinTitle.text = YOU_WIN;
+                              
+                         }else if (languageCode == 1){
+                              
+                              resultLbl.text = YOU_WIN_1;
+                              youWinTitle.text = YOU_WIN_1;
+                              
+                         }else if (languageCode == 2){
+                              
+                              resultLbl.text = YOU_WIN_2;
+                              youWinTitle.text = YOU_WIN_2;
+                              
+                         }else if (languageCode == 3){
+                              
+                              resultLbl.text = YOU_WIN_3;
+                              youWinTitle.text = YOU_WIN_3;
+                              
+                         }else if (languageCode == 4){
+                              
+                              resultLbl.text = YOU_WIN_4;
+                              youWinTitle.text = YOU_WIN_4;
+                              
+                         }
+                         
+                         youWinTitle.hidden = false;
+                         youLooseTitle.hidden = true;
+                    }else if(receiverTotalPoints > senderTotalPoints && [val intValue] < 500 )
                     {
                          if (languageCode == 0) {
                               
-                              resultLbl.text = BETTER_LUCK;
-                              youLooseTitle.text = BETTER_LUCK;
-                              
+                              resultLbl.text = @"Congrats! You are doing great. Let\'s play more to win exciting prizes! You need more Gems! Go go go!";
                          }else if (languageCode == 1){
                               
-                              resultLbl.text = BETTER_LUCK_1;
-                              youLooseTitle.text = BETTER_LUCK_1;
+                              resultLbl.text = @"مبروك ! ما تقوم به عظيم . انظر الى قائمة الجوائز لتكن لك ..  العب أكثر...و للفوز بها ...انت بحاجة الى مزيد من الأحجار الكريمة ! إذهب! إذهب! إذهب! ";
                               
                          }else if (languageCode == 2){
                               
-                              resultLbl.text = BETTER_LUCK_2;
-                              youLooseTitle.text = BETTER_LUCK_2;
-                              
+                              resultLbl.text = @"Félicitations! Êtes-vous un ours très bien. Nous allons jouer plus pour gagner de magnifiques prix! Vous avez besoin de plus Gems! Allez Allez Allez!";
                          }else if (languageCode == 3){
                               
-                              resultLbl.text = BETTER_LUCK_3;
-                              youLooseTitle.text = BETTER_LUCK_3;
-                              
+                              resultLbl.text = @"¡Enhorabuena! ¡Lo estás haciendo genial ¡Juguemos más para ganar fabulosos premios! ¡Necesitas más Gemas! ¡Vamos, vamos!";
                          }else if (languageCode == 4){
                               
-                              resultLbl.text = BETTER_LUCK_4;
-                              youLooseTitle.text = BETTER_LUCK_4;
-                              
+                              resultLbl.text = @"Parabéns! Muito bem! Vamos jogar mais para ganhar grandes prêmios! Você precisa de mais Gems! Vamos lá!";
                          }
                          
-                         youWinTitle.hidden = true;
-                         youLooseTitle.hidden = false;
                     }
-                    else {
-                         
-                         
-                         if (languageCode == 0) {
+                    else{
+                         if (receiverTotalPoints<senderTotalPoints || receiverTotalPoints < 0)
+                         {
+                              if (languageCode == 0) {
+                                   
+                                   resultLbl.text = BETTER_LUCK;
+                                   youLooseTitle.text = BETTER_LUCK;
+                                   
+                              }else if (languageCode == 1){
+                                   
+                                   resultLbl.text = BETTER_LUCK_1;
+                                   youLooseTitle.text = BETTER_LUCK_1;
+                                   
+                              }else if (languageCode == 2){
+                                   
+                                   resultLbl.text = BETTER_LUCK_2;
+                                   youLooseTitle.text = BETTER_LUCK_2;
+                                   
+                              }else if (languageCode == 3){
+                                   
+                                   resultLbl.text = BETTER_LUCK_3;
+                                   youLooseTitle.text = BETTER_LUCK_3;
+                                   
+                              }else if (languageCode == 4){
+                                   
+                                   resultLbl.text = BETTER_LUCK_4;
+                                   youLooseTitle.text = BETTER_LUCK_4;
+                                   
+                              }
                               
-                              resultLbl.text = ITS_TIE;
-                              youWinTitle.text = ITS_TIE;
-                              
-                         }else if (languageCode == 1){
-                              
-                              resultLbl.text = ITS_TIE_1;
-                              youWinTitle.text = ITS_TIE_1;
-                              
-                         }else if (languageCode == 2){
-                              
-                              resultLbl.text = ITS_TIE_2;
-                              youWinTitle.text = ITS_TIE_2;
-                              
-                         }else if (languageCode == 3){
-                              
-                              resultLbl.text = ITS_TIE_3;
-                              youWinTitle.text = ITS_TIE_3;
-                              
-                         }else if (languageCode == 4){
-                              
-                              resultLbl.text = ITS_TIE_4;
-                              youWinTitle.text = ITS_TIE_4;
-                              
+                              youWinTitle.hidden = true;
+                              youLooseTitle.hidden = false;
                          }
-                         youLooseTitle.hidden = true;
-                         youWinTitle.hidden = false;
+                         else {
+                              
+                              
+                              if (languageCode == 0) {
+                                   
+                                   resultLbl.text = ITS_TIE;
+                                   youWinTitle.text = ITS_TIE;
+                                   
+                              }else if (languageCode == 1){
+                                   
+                                   resultLbl.text = ITS_TIE_1;
+                                   youWinTitle.text = ITS_TIE_1;
+                                   
+                              }else if (languageCode == 2){
+                                   
+                                   resultLbl.text = ITS_TIE_2;
+                                   youWinTitle.text = ITS_TIE_2;
+                                   
+                              }else if (languageCode == 3){
+                                   
+                                   resultLbl.text = ITS_TIE_3;
+                                   youWinTitle.text = ITS_TIE_3;
+                                   
+                              }else if (languageCode == 4){
+                                   
+                                   resultLbl.text = ITS_TIE_4;
+                                   youWinTitle.text = ITS_TIE_4;
+                                   
+                              }
+                              youLooseTitle.hidden = true;
+                              youWinTitle.hidden = false;
+                         }
+                    }
+                    //               CATransition *transition = [CATransition animation];
+                    //               transition.duration = 0.3;
+                    //               transition.type = kCATransitionPush; //choose your animation
+                    //               transition.subtype = kCATransitionFromBottom;
+                    //               [ResultsView.layer addAnimation:transition forKey:nil];
+                    //               ResultsView.hidden = false;
+                    //               [self.view addSubview:ResultsView];
+                    
+                    
+                    userProgress.hidden = YES;
+                    opponentProgress.hidden = YES;
+                    
+                    if(consumed_gems >= 100) {
+                         _rewardsBtn.enabled = true;
                     }
                }
-//               CATransition *transition = [CATransition animation];
-//               transition.duration = 0.3;
-//               transition.type = kCATransitionPush; //choose your animation
-//               transition.subtype = kCATransitionFromBottom;
-//               [ResultsView.layer addAnimation:transition forKey:nil];
-//               ResultsView.hidden = false;
-//               [self.view addSubview:ResultsView];
-               
-               
-               userProgress.hidden = YES;
-               opponentProgress.hidden = YES;
-               
-               if(consumed_gems >= 100) {
-                    _rewardsBtn.enabled = true;
+               else {
+                    NSString *emailMsg;
+                    NSString *title;
+                    
+                    if (languageCode == 0 ) {
+                         emailMsg = @"Check your internet connection setting.";
+                         title = @"Error";
+                         cancel = CANCEL;
+                    } else if(languageCode == 1) {
+                         emailMsg = @"يرجى التحقق من إعدادات اتصال الإنترنت الخاصة بك.";
+                         title = @"خطأ";
+                         cancel = CANCEL_1;
+                    }else if (languageCode == 2){
+                         emailMsg = @"Quelque chose se est mal passé, réessayez plus tard";
+                         title = @"Erreur";
+                         cancel = CANCEL_2;
+                    }else if (languageCode == 3){
+                         emailMsg = @"Algo salió mal, inténtelo más tarde";
+                         title = @"Error";
+                         cancel = CANCEL_3;
+                    }else if (languageCode == 4){
+                         emailMsg = @"Algo deu errado, tente novamente mais tarde";
+                         title = @"Erro";
+                         cancel = CANCEL_4;
+                    }
+                    
+                    
+                    [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+                    
+                    
+                    [[NavigationHandler getInstance] NavigateToRoot];
                }
-          }
-          else {
+               
+          }else{
+               
+               [loadView hide];
+               
                NSString *emailMsg;
                NSString *title;
                
@@ -1783,47 +1834,11 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                
                
                [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-               
-               
                [[NavigationHandler getInstance] NavigateToRoot];
           }
-          
-     }onError:^(NSError *error){
-          
-          [loadView hide];
-          
-          NSString *emailMsg;
-          NSString *title;
-          
-          if (languageCode == 0 ) {
-               emailMsg = @"Check your internet connection setting.";
-               title = @"Error";
-               cancel = CANCEL;
-          } else if(languageCode == 1) {
-               emailMsg = @"يرجى التحقق من إعدادات اتصال الإنترنت الخاصة بك.";
-               title = @"خطأ";
-               cancel = CANCEL_1;
-          }else if (languageCode == 2){
-               emailMsg = @"Quelque chose se est mal passé, réessayez plus tard";
-               title = @"Erreur";
-               cancel = CANCEL_2;
-          }else if (languageCode == 3){
-               emailMsg = @"Algo salió mal, inténtelo más tarde";
-               title = @"Error";
-               cancel = CANCEL_3;
-          }else if (languageCode == 4){
-               emailMsg = @"Algo deu errado, tente novamente mais tarde";
-               title = @"Erro";
-               cancel = CANCEL_4;
-          }
-          
-          
-          [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-          [[NavigationHandler getInstance] NavigateToRoot];
-          
      }];
      
-     [engine enqueueOperation:operation];
+     //[engine enqueueOperation:operation];
      
 }
 
@@ -1944,7 +1959,9 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      //do something here..
      
      answerReaction.hidden = true;
-     answerTxt.hidden = true;
+     answerTxt.text = @"";
+     //answerTxt.hidden = true;
+     
      if([self checkFinished])
      {
           [self fetchResults];
@@ -2065,7 +2082,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 - (IBAction)addOnBtnPressed:(id)sender {
      isAddOnEnabled = true;
      addOnBtn.hidden = true;
-    // bg.image = [UIImage imageNamed:@"5050bg.png"];
+     // bg.image = [UIImage imageNamed:@"5050bg.png"];
      [self performSelector:@selector(appAddOn:)
                 withObject: [NSNumber numberWithFloat: 1.0f]
                 afterDelay:0.0];
@@ -2094,17 +2111,18 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 
 - (IBAction)PlaywithGems:(id)sender {
      [opponentProfileImageView roundImageCorner];
-     requestType = @"gems";
-     [[NSUserDefaults standardUserDefaults] setObject:requestType forKey:@"requestType"];
-     [[NSUserDefaults standardUserDefaults] synchronize];
+     
      
      int totalPoints = [[SharedManager getInstance]._userProfile.cashablePoints intValue];
      if (totalPoints < 10) {
-          
+          appDelegate.isGameOver = true;
           // Move to store Code
           [self.tabBarController setSelectedIndex:2];
      }
      else {
+          requestType = @"gems";
+          [[NSUserDefaults standardUserDefaults] setObject:requestType forKey:@"requestType"];
+          [[NSUserDefaults standardUserDefaults] synchronize];
           isPlayAgain = true;
           
           isRematch = true;
@@ -2694,7 +2712,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                     NSDictionary *opponentRecord = (NSDictionary*)[userDict objectForKey:opponentID];
                     
                     answerReaction.hidden = false;
-                    answerTxt.hidden = false;
+                    //answerTxt.hidden = false;
                     
                     int earned = [[userRecord objectForKey:@"earned_points"] intValue];
                     int oppoentEarned = [[opponentRecord objectForKey:@"earned_points"] intValue];
@@ -2720,9 +2738,25 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                          if( [is_correct caseInsensitiveCompare:@"1"] == NSOrderedSame ) {
                               // user did not answered
                               if(oppoentEarned > earned) {
-                                   
+                                   if([answerTxt.text isEqualToString:@""]){
+                                        if (languageCode == 0) {
+                                             answerTxt.text = @"Opponent Answered Before You";
+                                        }else if (languageCode==1){
+                                             answerTxt.text = OPPONENT_ANS_BEFORE_1;
+                                             
+                                        }else if (languageCode==2){
+                                             answerTxt.text = OPPONENT_ANS_BEFORE_2;
+                                             
+                                        }else if (languageCode==3){
+                                             answerTxt.text = OPPONENT_ANS_BEFORE_3;
+                                             
+                                        }else if (languageCode==4){
+                                             answerTxt.text = OPPONENT_ANS_BEFORE_4;
+                                        }
+                                   }
                                    //Opponent Answered Before You
                                    if([requestType isEqualToString:@"gems"]) {
+                                        
                                         
                                         switch (IndexToShowProfilePic) {
                                              case 0:
@@ -2747,6 +2781,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                                         starImgRightView.image = [UIImage imageNamed:@"gemyellow.png"];
                                    }
                                    else {
+                                        
                                         switch (IndexToShowProfilePic) {
                                              case 0:
                                                   _optionImg1.hidden = false;
@@ -2779,6 +2814,22 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                               if(isCorrect == 0) {
                                    if([requestType isEqualToString:@"gems"]) {
                                         if(oppoentEarned > earned) {
+                                             if([answerTxt.text isEqualToString:@""]){
+                                                  if (languageCode == 0) {
+                                                       answerTxt.text = @"Opponent Answered Before You";
+                                                  }else if (languageCode==1){
+                                                       answerTxt.text = OPPONENT_ANS_BEFORE_1;
+                                                       
+                                                  }else if (languageCode==2){
+                                                       answerTxt.text = OPPONENT_ANS_BEFORE_2;
+                                                       
+                                                  }else if (languageCode==3){
+                                                       answerTxt.text = OPPONENT_ANS_BEFORE_3;
+                                                       
+                                                  }else if (languageCode==4){
+                                                       answerTxt.text = OPPONENT_ANS_BEFORE_4;
+                                                  }
+                                             }
                                              switch (IndexToShowProfilePic) {
                                                   case 0:
                                                        _optionImg1.hidden = false;
@@ -2810,6 +2861,22 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                                    
                                    else {
                                         if(oppoentEarned > earned) {
+                                             if([answerTxt.text isEqualToString:@""]){
+                                                  if (languageCode == 0) {
+                                                       answerTxt.text = @"Opponent Answered Before You";
+                                                  }else if (languageCode==1){
+                                                       answerTxt.text = OPPONENT_ANS_BEFORE_1;
+                                                       
+                                                  }else if (languageCode==2){
+                                                       answerTxt.text = OPPONENT_ANS_BEFORE_2;
+                                                       
+                                                  }else if (languageCode==3){
+                                                       answerTxt.text = OPPONENT_ANS_BEFORE_3;
+                                                       
+                                                  }else if (languageCode==4){
+                                                       answerTxt.text = OPPONENT_ANS_BEFORE_4;
+                                                  }
+                                             }
                                              switch (IndexToShowProfilePic) {
                                                   case 0:
                                                        _optionImg1.hidden = false;
@@ -2839,6 +2906,22 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                                    }
                               }
                               if(oppoentEarned > earned) {
+                                   if([answerTxt.text isEqualToString:@""]){
+                                        if (languageCode == 0) {
+                                             answerTxt.text = @"Opponent Answered Before You";
+                                        }else if (languageCode==1){
+                                             answerTxt.text = OPPONENT_ANS_BEFORE_1;
+                                             
+                                        }else if (languageCode==2){
+                                             answerTxt.text = OPPONENT_ANS_BEFORE_2;
+                                             
+                                        }else if (languageCode==3){
+                                             answerTxt.text = OPPONENT_ANS_BEFORE_3;
+                                             
+                                        }else if (languageCode==4){
+                                             answerTxt.text = OPPONENT_ANS_BEFORE_4;
+                                        }
+                                   }
                                    if([requestType isEqualToString:@"gems"]) {
                                         switch (IndexToShowProfilePic) {
                                              case 0:
@@ -3315,13 +3398,14 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 - (IBAction)rewardsBtnPressed:(id)sender {
      AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
      appDelegate.isStore = false;
-     if (IS_IPAD) {
-          RewardsListVC *update = [[RewardsListVC alloc] initWithNibName:@"RewardsListVC_iPad" bundle:nil];
-          [self.navigationController pushViewController:update animated:YES];
-     }else{
-          
-          RewardsListVC *update = [[RewardsListVC alloc] initWithNibName:@"RewardsListVC" bundle:nil];
-          [self.navigationController pushViewController:update animated:YES];
-     }
+     //     if (IS_IPAD) {
+     //          RewardsListVC *update = [[RewardsListVC alloc] initWithNibName:@"RewardsListVC_iPad" bundle:nil];
+     //          [self.navigationController pushViewController:update animated:YES];
+     //     }else{
+     //          
+     //          RewardsListVC *update = [[RewardsListVC alloc] initWithNibName:@"RewardsListVC" bundle:nil];
+     //          [self.navigationController pushViewController:update animated:YES];
+     //     }
+     [self.tabBarController setSelectedIndex:3];
 }
 @end

@@ -96,11 +96,15 @@
           [mainTitlelbl setText:parentTopicModel.title];
           
      }
-      imageNames = @[@"avatar1.png",@"avatar2.png",@"avatar3.png",@"avatar4.png",@"avatar5.png",@"avatar6.png"];
-     
+     imageNames = @[@"avatar1.png",@"avatar2.png",@"avatar3.png",@"avatar4.png",@"avatar5.png",@"avatar6.png"];
+     GameModLabel.layer.shadowColor = [UIColor colorWithRed:183 green:216 blue:255 alpha:1.0].CGColor;
+     GameModLabel.layer.shadowOffset = CGSizeMake(0.2, 0.2);
+     GameModLabel.layer.shadowRadius = 3.0;
+     GameModLabel.layer.shadowOpacity = 0.9;
+     GameModLabel.layer.masksToBounds = NO;
      [self setUpTutorial];
      [topicTblView reloadData];
-
+     
      if(IS_IPHONE_4){
           searchBg.frame = CGRectMake(0, 0, 320, 480);
           GemsDialogView.frame = CGRectMake(0, 0, 320, 480);
@@ -134,7 +138,7 @@
      }
      if(IS_IPAD)
      {
-         PlayNowLabel.font = [UIFont fontWithName:FONT_NAME size:18];
+          PlayNowLabel.font = [UIFont fontWithName:FONT_NAME size:18];
           challengeAFriend.font = [UIFont fontWithName:FONT_NAME size:18];
           forGemsLable.font = [UIFont fontWithName:FONT_NAME size:18];
           forPointsLabel.font = [UIFont fontWithName:FONT_NAME size:18];
@@ -392,10 +396,10 @@
                
                TopicModel *tempTopic = [subtopicsArray objectAtIndex:index];
                cell.leftTitle.text = tempTopic.title;
-            
+               
                // here
                cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:15];
-                cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
+               cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
                if(IS_IPAD)
                {
                     cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:25];
@@ -417,19 +421,19 @@
                
                if([tempTopic.topic_id intValue] == 22) {
                     // Changes here
-//                    NSString * tempId = tempTopic.topic_id;
-//                    [self settingNameofImage:tempId];
+                    //                    NSString * tempId = tempTopic.topic_id;
+                    //                    [self settingNameofImage:tempId];
                     NSString * tempId = tempTopic.topic_id;
                     [self settingNameofImage:tempId];
                     cell.leftImg.image = [UIImage imageNamed:[NSString stringWithFormat:subcatMaintempImgName]];
                     
                     if(!([subcatthumbnailtempName isEqualToString:@""] || subcatthumbnailtempName == nil)){
-                     cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:subcatthumbnailtempName]];
+                         cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:subcatthumbnailtempName]];
                     }
                     
-//
-//                    cell.leftImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@Science.png",tempTopic.title]];
-//                    cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
+                    //
+                    //                    cell.leftImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@Science.png",tempTopic.title]];
+                    //                    cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
                }
                else {
                     
@@ -437,13 +441,13 @@
                     [self settingNameofImage:tempId];
                     cell.leftImg.image = [UIImage imageNamed:[NSString stringWithFormat:subcatMaintempImgName]];
                     
-                  if(!([subcatthumbnailtempName isEqualToString:@""] || subcatthumbnailtempName == nil)){
-                       
-                                        cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:subcatthumbnailtempName]];
-                  }
+                    if(!([subcatthumbnailtempName isEqualToString:@""] || subcatthumbnailtempName == nil)){
+                         
+                         cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:subcatthumbnailtempName]];
+                    }
                     
-//                    cell.leftImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",tempTopic.title]];
-//                    cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
+                    //                    cell.leftImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",tempTopic.title]];
+                    //                    cell.leftImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
                }
                
                //
@@ -459,16 +463,16 @@
                     [self settingNameofImage:tempId];
                     
                     cell.rightImg.image = [UIImage imageNamed:[NSString stringWithFormat:subcatMaintempImgName]];
-                      if(!([subcatthumbnailtempName isEqualToString:@""] || subcatthumbnailtempName == nil)){
-                           
-                           cell.rightImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:subcatthumbnailtempName]];
-                      }
+                    if(!([subcatthumbnailtempName isEqualToString:@""] || subcatthumbnailtempName == nil)){
+                         
+                         cell.rightImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:subcatthumbnailtempName]];
+                    }
                     
                     
-//                    cell.rightImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",tempTopic.title]];
-//                    // changes here
-//                    cell.rightImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
-                   
+                    //                    cell.rightImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",tempTopic.title]];
+                    //                    // changes here
+                    //                    cell.rightImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
+                    
                     
                     //                    cell.rightImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
                     //                    cell.rightImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",tempTopic.title]];
@@ -476,15 +480,15 @@
                     
                     
                     
-                     cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:15];
-                     cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
+                    cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:15];
+                    cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:38];
                     if(IS_IPAD)
                     {
                          cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:25];
                          cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
                          
                     }
-                   
+                    
                     if(tempTopic.subTopicsArray.count > 0) {
                          cell.rightSubTitles.text = [NSString stringWithFormat:@"%lu",(unsigned long)tempTopic.subTopicsArray.count];
                     }
@@ -505,7 +509,7 @@
                     cell.rightSubTitles.hidden = true;
                     cell.rightTitle.hidden = true;
                }
-               cell.selectionStyle = NAN;
+               cell.selectionStyle = UITableViewCellSelectionStyleNone;
                [cell setBackgroundColor:[UIColor clearColor]];
                [cell.contentView setBackgroundColor:[UIColor clearColor]];
                return cell;
@@ -531,7 +535,7 @@
                
                TopicModel *tempTopic = [subtopicsArray objectAtIndex:index];
                cell.mainTitle.text = tempTopic.title;
-                cell.mainTitle.font = [UIFont fontWithName:FONT_NAME size:15];
+               cell.mainTitle.font = [UIFont fontWithName:FONT_NAME size:15];
                cell.mainSubTitle.font = [UIFont fontWithName:FONT_NAME size:38];
                if(IS_IPAD)
                {
@@ -549,19 +553,20 @@
                
                NSString * tempId = tempTopic.topic_id;
                [self settingNameofImage:tempId];
-
-                              cell.mainImg.image = [UIImage imageNamed:[NSString stringWithFormat:subcatMaintempImgName]];
-                if(!([subcatthumbnailtempName isEqualToString:@""] || subcatthumbnailtempName == nil)){
-                              cell.mainImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:subcatthumbnailtempName]];
-                }
+               
+               cell.mainImg.image = [UIImage imageNamed:[NSString stringWithFormat:subcatMaintempImgName]];
+               if(!([subcatthumbnailtempName isEqualToString:@""] || subcatthumbnailtempName == nil)){
+                    cell.mainImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:subcatthumbnailtempName]];
+               }
                
                
-//               cell.mainImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",tempTopic.title]];
-//               cell.mainImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
+               //               cell.mainImg.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",tempTopic.title]];
+               //               cell.mainImgThumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@icon.png",tempTopic.title]];
                [cell.mainBtn addTarget:self action:@selector(mainBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
                cell.mainBtn.tag = index;
                [cell setBackgroundColor:[UIColor clearColor]];
                [cell.contentView setBackgroundColor:[UIColor clearColor]];
+               cell.selectionStyle  = UITableViewCellSelectionStyleNone;
                return cell;
                
           }
@@ -733,12 +738,11 @@
      _gmChallengeSelected = false;
      UIView *effectView = [self.view viewWithTag:499];
      [effectView removeFromSuperview];
+     [self.navigationController popToRootViewControllerAnimated:false];
      /////
      AppDelegate *del = (AppDelegate*)[UIApplication sharedApplication].delegate;
      del.friendToBeChalleneged = nil;
      del.requestType = nil;
-   
-     
      _gameModView.hidden = true;
      [_gameModView removeFromSuperview];
      [searchingView removeFromSuperview];
@@ -1042,7 +1046,7 @@
      [self.view addSubview:searchingView];
      _loaderIndex = 1;
      timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
-   
+     
      NSMutableArray *images = [[NSMutableArray alloc] init];
      for (int i = 0; i < imageNames.count; i++) {
           [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
@@ -1052,10 +1056,10 @@
      opponentProfileImageView.animationDuration = 6.0f;
      [opponentProfileImageView startAnimating];
      animationTimer= [NSTimer timerWithTimeInterval:1.0
-                                              target:self
-                                            selector:@selector(onTimer)
-                                            userInfo:nil
-                                             repeats:YES];
+                                             target:self
+                                           selector:@selector(onTimer)
+                                           userInfo:nil
+                                            repeats:YES];
      
      [[NSRunLoop currentRunLoop] addTimer:animationTimer forMode:NSDefaultRunLoopMode];
      [animationTimer fire];
@@ -1068,7 +1072,7 @@
           else {
                dot.image = [UIImage imageNamed:@"dotblack.png"];
           }
-    
+          
      }
      //Socket Connection Code
      sharedManager = [SocketManager getInstance];
@@ -1152,7 +1156,7 @@
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
           _searchOppLbl.textAlignment = NSTextAlignmentCenter;
-         _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
+          _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
           if (languageCode == 0) {
                _searchOppLbl.text = @"VS";
           }else if(languageCode == 1){
@@ -1183,7 +1187,7 @@
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
           _searchOppLbl.textAlignment = NSTextAlignmentCenter;
-           _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
+          _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
           
           if (languageCode == 0) {
                _searchOppLbl.text = @"VS";
@@ -1219,40 +1223,40 @@
      TopicModel *tempToplic = [subtopicsArray objectAtIndex:currentSelectedIndex];
      if([packet.name isEqualToString:@"connected"])
      {
-//          NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
-//          [sharedManager sendEvent:@"register" andParameters:registerDictionary];
-         //NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-         // languageCode = [language intValue];
+          //          NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id", nil];
+          //          [sharedManager sendEvent:@"register" andParameters:registerDictionary];
+          //NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+          // languageCode = [language intValue];
           
           NSArray* args = packet.args;
           NSDictionary* arg = args[0];
           
-         // NSString *isVerified = [arg objectForKey:@"msg"];
-         // if([isVerified isEqualToString:@"verified"] ){
-               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-               languageCode = [language intValue];
+          // NSString *isVerified = [arg objectForKey:@"msg"];
+          // if([isVerified isEqualToString:@"verified"] ){
+          NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+          languageCode = [language intValue];
+          
+          if(appDelegate.friendToBeChalleneged) {
+               NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",appDelegate.friendToBeChalleneged.friendID,@"friend_id",@"2",@"type",tempToplic.topic_id,@"type_id",language,@"language",requestType,@"challenge_type", nil];
+               [sharedManager sendEvent:@"sendChallenge" andParameters:registerDictionary];
                
-               if(appDelegate.friendToBeChalleneged) {
-                    NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",appDelegate.friendToBeChalleneged.friendID,@"friend_id",@"2",@"type",tempToplic.topic_id,@"type_id",language,@"language",requestType,@"challenge_type", nil];
-                    [sharedManager sendEvent:@"sendChallenge" andParameters:registerDictionary];
-                    
-               }
-               else {
-                    NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"2",@"type",tempToplic.topic_id,@"type_id",language,@"language",@"false",@"is_cancel",requestType, @"request_type", nil];
-                    [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionary];
-               }
-         // }
-
+          }
+          else {
+               NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"2",@"type",tempToplic.topic_id,@"type_id",language,@"language",@"false",@"is_cancel",requestType, @"request_type", nil];
+               [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionary];
+          }
+          // }
+          
           if(!(_gmChallengeSelected))
           {
                if (languageCode == 0) {
-                    _searchOppLbl.text = @"Searching opponent...";
+                    _searchOppLbl.text = @"Searching for Opponent...";
                }else if(languageCode == 1){
                     _searchOppLbl.text = @"االبحث عن الخصم...";
                }else if (languageCode == 2 ){
                     _searchOppLbl.text = @"Recherche d\'un adversaire...";
                }else if (languageCode == 3){
-                    _searchOppLbl.text = @"La búsqueda de un oponente...";
+                    _searchOppLbl.text = @"Buscando oponente...";
                }else if (languageCode == 4){
                     _searchOppLbl.text = @"Procurando um adversário...";
                }
@@ -1263,11 +1267,11 @@
                }else if(languageCode == 1){
                     _searchOppLbl.text = @"في انتظار الخصم.....";
                }else if (languageCode == 2 ){
-                    _searchOppLbl.text = @"Recherche d\'un adversaire...";
+                    _searchOppLbl.text = @"En attendant un adversaire...";
                }else if (languageCode == 3){
-                    _searchOppLbl.text = @"La búsqueda de un oponente...";
+                    _searchOppLbl.text = @"Esperando oponente...";
                }else if (languageCode == 4){
-                    _searchOppLbl.text = @"Procurando um adversário...";
+                    _searchOppLbl.text = @"Esperando por Oponente...";
                }
                
                
@@ -1310,7 +1314,7 @@
           opponentProfileImageView.imageURL = [NSURL URLWithString:appDelegate.friendToBeChalleneged.profile_image];
           NSURL *url = [NSURL URLWithString:appDelegate.friendToBeChalleneged.profile_image];
           [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
-            [opponentProfileImageView roundImageCorner];
+          [opponentProfileImageView roundImageCorner];
           int flag = [[innerDictionary objectForKey:@"flag"] intValue];
           if(flag == 1) {
                [self displayNameAndImage];
@@ -1323,15 +1327,15 @@
                [self.view addSubview:searchingView];
                _loaderIndex = 1;
                
-//               for(int i = 1; i<5; i++) {
-//                    UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
-//                    if(i == _loaderIndex) {
-//                         dot.image = [UIImage imageNamed:@"dotglow.png"];
-//                    }
-//                    else {
-//                         dot.image = [UIImage imageNamed:@"dotblack.png"];
-//                    }
-  //             }
+               //               for(int i = 1; i<5; i++) {
+               //                    UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
+               //                    if(i == _loaderIndex) {
+               //                         dot.image = [UIImage imageNamed:@"dotglow.png"];
+               //                    }
+               //                    else {
+               //                         dot.image = [UIImage imageNamed:@"dotblack.png"];
+               //                    }
+               //             }
                
           }
           
@@ -1365,7 +1369,7 @@
                     }
                     
                     [AlertMessage showAlertWithMessage:emailMsg  andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
-                     self.tabBarController.tabBar.hidden = false;
+                    self.tabBarController.tabBar.hidden = false;
                }else{
                     if (languageCode == 0 ) {
                          emailMsg = @"Check your internet connection setting.";
@@ -1394,7 +1398,7 @@
                     timer = nil;
                     [sharedManager closeWebSocket];
                     [searchingView removeFromSuperview];
-                     self.tabBarController.tabBar.hidden = false;
+                    self.tabBarController.tabBar.hidden = false;
                }
           }
      }
@@ -1439,13 +1443,13 @@
                if(!(_gmChallengeSelected))
                {
                     if (languageCode == 0) {
-                         _searchOppLbl.text = @"Searching opponent...";
+                         _searchOppLbl.text = @"Searching for Opponent...";
                     }else if(languageCode == 1){
                          _searchOppLbl.text = @"االبحث عن الخصم...";
                     }else if (languageCode == 2 ){
                          _searchOppLbl.text = @"Recherche d\'un adversaire...";
                     }else if (languageCode == 3){
-                         _searchOppLbl.text = @"La búsqueda de un oponente...";
+                         _searchOppLbl.text = @"Buscando oponente...";
                     }else if (languageCode == 4){
                          _searchOppLbl.text = @"Procurando um adversário...";
                     }
@@ -1456,11 +1460,11 @@
                     }else if(languageCode == 1){
                          _searchOppLbl.text = @"االبحث عن الخصم...";
                     }else if (languageCode == 2 ){
-                         _searchOppLbl.text = @"Recherche d\'un adversaire...";
+                         _searchOppLbl.text = @"En attendant un adversaire...";
                     }else if (languageCode == 3){
-                         _searchOppLbl.text = @"La búsqueda de un oponente...";
+                         _searchOppLbl.text = @"Esperando oponente...";
                     }else if (languageCode == 4){
-                         _searchOppLbl.text = @"Procurando um adversário...";
+                         _searchOppLbl.text = @"Esperando por Oponente...";
                     }
                     
                     
@@ -1477,10 +1481,10 @@
                [opponentProfileImageView stopAnimating];
                [animationTimer invalidate
                 ];
-                
-                _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
-          
-
+               
+               _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
+               
+               
                //_searchOppLbl.text = @"VS";
                if (languageCode == 0) {
                     _searchOppLbl.text = @"VS";
@@ -1493,7 +1497,7 @@
                }else if (languageCode == 4){
                     _searchOppLbl.text = VS_4;
                }
-
+               
                [timer invalidate];
                timer = nil;
                
@@ -1688,13 +1692,13 @@
           if(!(_gmChallengeSelected))
           {
                if (languageCode == 0) {
-                    _searchOppLbl.text = @"Searching opponent...";
+                    _searchOppLbl.text = @"Searching for Opponent...";
                }else if(languageCode == 1){
                     _searchOppLbl.text = @"االبحث عن الخصم...";
                }else if (languageCode == 2 ){
                     _searchOppLbl.text = @"Recherche d\'un adversaire...";
                }else if (languageCode == 3){
-                    _searchOppLbl.text = @"La búsqueda de un oponente...";
+                    _searchOppLbl.text = @"Buscando oponente...";
                }else if (languageCode == 4){
                     _searchOppLbl.text = @"Procurando um adversário...";
                }
@@ -1705,11 +1709,11 @@
                }else if(languageCode == 1){
                     _searchOppLbl.text = @"االبحث عن الخصم...";
                }else if (languageCode == 2 ){
-                    _searchOppLbl.text = @"Recherche d\'un adversaire...";
+                    _searchOppLbl.text = @"En attendant un adversaire...";
                }else if (languageCode == 3){
-                    _searchOppLbl.text = @"La búsqueda de un oponente...";
+                    _searchOppLbl.text = @"Esperando oponente...";
                }else if (languageCode == 4){
-                    _searchOppLbl.text = @"Procurando um adversário...";
+                    _searchOppLbl.text = @"Esperando por Oponente...";
                }
                
                
@@ -1786,7 +1790,7 @@
                [effectView removeFromSuperview];
                _gameModView.hidden = true;
                [_gameModView removeFromSuperview];
-              // self.tabBarController.selectedIndex = 2;
+               // self.tabBarController.selectedIndex = 2;
                buyGemsView.hidden = false;
                [self.view addSubview:buyGemsView];
                
@@ -1813,7 +1817,7 @@
                     [_rejectbuygems setTitle:@"Annuler" forState:UIControlStateNormal];
                }
                else if (languageCode == 3){
-                   
+                    
                     buygemsdesc.text = @">No tienes suficientes Gemas para continuar. ¿Quieres comprar Gemas ahora?";
                     buygemsHeading.text = @"¡Confirmación!";
                     
@@ -1821,7 +1825,7 @@
                     [_rejectbuygems setTitle:@"Cancelar" forState:UIControlStateNormal];
                }
                else if (languageCode == 4){
-                  
+                    
                     buygemsdesc.text = @"Você não tem Gems suficientes para continuar. Você deseja comprar mais Gems agora?";
                     buygemsHeading.text = @"Confirmação!";
                     
@@ -1835,13 +1839,13 @@
                if(!(_gmChallengeSelected))
                {
                     if (languageCode == 0) {
-                         _searchOppLbl.text = @"Searching opponent...";
+                         _searchOppLbl.text = @"Searching for Opponent...";
                     }else if(languageCode == 1){
                          _searchOppLbl.text = @"االبحث عن الخصم...";
                     }else if (languageCode == 2 ){
                          _searchOppLbl.text = @"Recherche d\'un adversaire...";
                     }else if (languageCode == 3){
-                         _searchOppLbl.text = @"La búsqueda de un oponente...";
+                         _searchOppLbl.text = @"Buscando oponente...";
                     }else if (languageCode == 4){
                          _searchOppLbl.text = @"Procurando um adversário...";
                     }
@@ -1852,11 +1856,11 @@
                     }else if(languageCode == 1){
                          _searchOppLbl.text = @"في انتظار الخصم.....";
                     }else if (languageCode == 2 ){
-                         _searchOppLbl.text = @"Recherche d\'un adversaire...";
+                         _searchOppLbl.text = @"En attendant un adversaire...";
                     }else if (languageCode == 3){
-                         _searchOppLbl.text = @"La búsqueda de un oponente...";
+                         _searchOppLbl.text = @"Esperando oponente...";
                     }else if (languageCode == 4){
-                         _searchOppLbl.text = @"Procurando um adversário...";
+                         _searchOppLbl.text = @"Esperando por Oponente...";
                     }
                     
                     
@@ -1938,8 +1942,7 @@
      if(languageCode == 0 ) {
           loadingTitle = Loading;
           searchBar.placeholder = SEARCH_CATEGORY;
-          
-          
+          [GameModLabel setText:[@"Game Mode" uppercaseString]];
           
           knowledgeLbl.text = KNOWLEDGE_LBL;
           tutoDesc1.text = TUTORIAL_DESC_LBL;
@@ -1995,6 +1998,7 @@
           HowtoEarnPoints = @"كيف تحصل على النقاط مجاناً؟";
           [_gobtn setTitle:@"اذهب الان" forState:(UIControlStateNormal)];
           
+          [GameModLabel setText:[@"نوع اللعبة" uppercaseString]];
           lblPlayforPoints.text = PLAY_NOW_1;
           lblplayforGems.text = Challenge_a_friend1;
           PlayNowLabel.text =PLAY_NOW_1;
@@ -2022,7 +2026,7 @@
           guidelineLbl.text = GUIDELINES_1;
           
           [backBtn3 setTitle:BACK_BTN_1 forState:UIControlStateNormal];
-     
+          
           [backBtn2 setTitle:@"إلغاء" forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_1 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_1 forState:UIControlStateNormal];
@@ -2039,11 +2043,8 @@
           howtoPlay3 = @"Echangez vos Gems contre de l'argent.";
           forGemsLable.text = For_Gems2;
           forPointsLabel.text = For_Points2;
-           [_gobtn setTitle:@"Allez" forState:(UIControlStateNormal)];
-         
-
-          
-          
+          [_gobtn setTitle:@"Allez" forState:(UIControlStateNormal)];
+          [GameModLabel setText:[@"Mode de jeu" uppercaseString]];
           howtouseStoreDesc = @"Inscrivez-vous maintenant et gagnez 1000 Gems gratuits.";
           howtoEarnPointDesc = @"Vous pouvez toujours gagner des Points en invitant vos amis et en partageant notre application sur Facebook et Twitter.";
           knowledgeLbl.text = KNOWLEDGE_LBL_2;
@@ -2082,10 +2083,11 @@
           PlayNowLabel.text =PLAY_NOW_3;
           challengeAFriend.text = Challenge_a_friend3;
           
-           [_gobtn setTitle:@"ADELANTE" forState:(UIControlStateNormal)];
+          [_gobtn setTitle:@"ADELANTE" forState:(UIControlStateNormal)];
           forGemsLable.text = For_Gems3;
           forPointsLabel.text = For_Points3;
           
+          [GameModLabel setText:[@"MODO DE JUEGO" uppercaseString]];
           knowledgeLbl.text = KNOWLEDGE_LBL_3;
           tutoDesc1.text = TUTORIAL_DESC_LBL_3;
           tutoDesc2.text = TUTORIAL_DESC_LBL2_3;
@@ -2122,7 +2124,7 @@
           [backBtn3 setTitle:BACK_BTN_3 forState:UIControlStateNormal];
      }
      else if(languageCode == 4) {
-            [_gobtn setTitle:@"IR" forState:(UIControlStateNormal)];
+          [_gobtn setTitle:@"IR" forState:(UIControlStateNormal)];
           searchBar.placeholder = SEARCH_CATEGORY_4;
           loadingTitle = Loading_4;
           howtoPlay1 = @"Inicie um desafio de 1-1 contra qualquer pessoa no mundo.";
@@ -2139,8 +2141,8 @@
           knowledgeLbl.text = KNOWLEDGE_LBL_4;
           forGemsLable.text = For_Gems4;
           forPointsLabel.text = For_Points4;
-        
           
+          GameModLabel.text = @"MODO DE JOGO";
           
           
           lblPlayforPoints.text = PLAY_NOW_4;
@@ -2161,7 +2163,7 @@
           guidelineLbl.text = GUIDELINES_4;
           
           [backBtn3 setTitle:BACK_BTN_4 forState:UIControlStateNormal];
-           [backBtn2 setTitle:@"Cancelar" forState:UIControlStateNormal];
+          [backBtn2 setTitle:@"Cancelar" forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_4 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_4 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_4 forState:UIControlStateNormal];
@@ -2350,7 +2352,7 @@
 #pragma GameModeScreen
 
 -(void) setUpGameModScreen {
-     
+     [_gmGemButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
      UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
      UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
      blurEffectView.frame = self.view.frame;
@@ -2375,16 +2377,16 @@
      [self.tabBarController.tabBar setHidden:true];
      _searchingLoaderView.hidden = false;
      
-         [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+     [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
      //     [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"starglow.png"] forState:UIControlStateNormal];
-//     if(appDelegate.friendToBeChalleneged) {
-//          //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"playNow.png"] forState:UIControlStateNormal];
-//          //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"challengenowglow.png"] forState:UIControlStateNormal];
-//     }
-//     else {
-//          //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"swordglow.png"] forState:UIControlStateNormal];
-//          //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"challengenow.png"] forState:UIControlStateNormal];
-//     }
+     //     if(appDelegate.friendToBeChalleneged) {
+     //          //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"playNow.png"] forState:UIControlStateNormal];
+     //          //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"challengenowglow.png"] forState:UIControlStateNormal];
+     //     }
+     //     else {
+     //          //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"swordglow.png"] forState:UIControlStateNormal];
+     //          //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"challengenow.png"] forState:UIControlStateNormal];
+     //     }
 }
 
 - (IBAction)gameModCanelBtnPressed:(id)sender {
@@ -2409,34 +2411,34 @@
      challengeAFriend.textColor = [UIColor whiteColor];
      [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynowglow.png"] forState:UIControlStateNormal];
      [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenow.png"] forState:UIControlStateNormal];
-//     if(languageCode == 0 ) {
-//        
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynowglow.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenow.png"] forState:UIControlStateNormal];
-//         
-//          
-//     }else      if(languageCode == 1 ) {
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowArabic.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeArabic.png"] forState:UIControlStateNormal];
-//          
-//     }else      if(languageCode == 2 ) {
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowSpanish.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeSpanish.png"] forState:UIControlStateNormal];
-//          
-//     }else      if(languageCode == 3 ) {
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowFrench.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeFrench.png"] forState:UIControlStateNormal];
-//          
-//     }else      if(languageCode == 4 ) {
-//          
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowPortuguese.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengePortuguese.png"] forState:UIControlStateNormal];
-//          
-//     }
+     //     if(languageCode == 0 ) {
+     //
+     //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynowglow.png"] forState:UIControlStateNormal];
+     //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenow.png"] forState:UIControlStateNormal];
+     //
+     //
+     //     }else      if(languageCode == 1 ) {
+     //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowArabic.png"] forState:UIControlStateNormal];
+     //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeArabic.png"] forState:UIControlStateNormal];
+     //
+     //     }else      if(languageCode == 2 ) {
+     //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowSpanish.png"] forState:UIControlStateNormal];
+     //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeSpanish.png"] forState:UIControlStateNormal];
+     //
+     //     }else      if(languageCode == 3 ) {
+     //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowFrench.png"] forState:UIControlStateNormal];
+     //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeFrench.png"] forState:UIControlStateNormal];
+     //
+     //     }else      if(languageCode == 4 ) {
+     //
+     //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowPortuguese.png"] forState:UIControlStateNormal];
+     //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengePortuguese.png"] forState:UIControlStateNormal];
+     //
+     //     }
      
      
      
-   
+     
      //     }
      //     else {
      //          _gmChallengeSelected = true;
@@ -2465,36 +2467,36 @@
      PlayNowLabel.textColor = [UIColor whiteColor];
      [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynow.png"] forState:UIControlStateNormal];
      [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenowglow.png"] forState:UIControlStateNormal];
-//     if(languageCode == 0 ) {
-//          
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowEnglish.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowEnglish.png"] forState:UIControlStateNormal];
-//          
-//          
-//          
-//     }else      if(languageCode == 1 ) {
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowArabic.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowArabic.png"] forState:UIControlStateNormal];
-//          
-//     }else      if(languageCode == 2 ) {
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowSpanish.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowSpanish.png"] forState:UIControlStateNormal];
-//          
-//     }else      if(languageCode == 3 ) {
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowFrench.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowFrench.png"] forState:UIControlStateNormal];
-//          
-//     }else      if(languageCode == 4 ) {
-//          
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowPortuguese.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowPortuguese.png"] forState:UIControlStateNormal];
-//          
-//     }
+     //     if(languageCode == 0 ) {
+     //
+     //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowEnglish.png"] forState:UIControlStateNormal];
+     //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowEnglish.png"] forState:UIControlStateNormal];
+     //
+     //
+     //
+     //     }else      if(languageCode == 1 ) {
+     //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowArabic.png"] forState:UIControlStateNormal];
+     //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowArabic.png"] forState:UIControlStateNormal];
+     //
+     //     }else      if(languageCode == 2 ) {
+     //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowSpanish.png"] forState:UIControlStateNormal];
+     //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowSpanish.png"] forState:UIControlStateNormal];
+     //
+     //     }else      if(languageCode == 3 ) {
+     //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowFrench.png"] forState:UIControlStateNormal];
+     //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowFrench.png"] forState:UIControlStateNormal];
+     //
+     //     }else      if(languageCode == 4 ) {
+     //
+     //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowPortuguese.png"] forState:UIControlStateNormal];
+     //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowPortuguese.png"] forState:UIControlStateNormal];
+     //
+     //     }
      
      
      
-//     [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowEnglish.png"] forState:UIControlStateNormal];
-//     [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowEnglish.png"] forState:UIControlStateNormal];
+     //     [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowEnglish.png"] forState:UIControlStateNormal];
+     //     [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowEnglish.png"] forState:UIControlStateNormal];
      //     }
 }
 
@@ -2508,7 +2510,7 @@
      //     else {
      _gmGemsSelected = true;
      
-     
+       [_gmGemButton setBackgroundImage:[UIImage imageNamed:nil] forState:UIControlStateNormal];
      forGemsLable.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
      forPointsLabel.textColor = [UIColor whiteColor];
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
@@ -2517,53 +2519,54 @@
      
      [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal ];
      
-
-//     if(languageCode == 0 ) {
-//          
-//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
-//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
-
-//
-//          
-//          
-//     }else      if(languageCode == 1 ) {
-//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
-//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
-//
-//
-//          
-//     }else      if(languageCode == 2 ) {
-//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
-//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
-//
-//          
-//     }else      if(languageCode == 3 ) {
-//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
-//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
-//
-//          
-//     }else      if(languageCode == 4 ) {
-//          
-//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
-//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
-//
-//
-//          
-//     }
+     
+     //     if(languageCode == 0 ) {
+     //
+     //          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+     //          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+     
+     //
+     //
+     //
+     //     }else      if(languageCode == 1 ) {
+     //          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+     //          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+     //
+     //
+     //
+     //     }else      if(languageCode == 2 ) {
+     //          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+     //          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+     //
+     //
+     //     }else      if(languageCode == 3 ) {
+     //          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+     //          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+     //
+     //
+     //     }else      if(languageCode == 4 ) {
+     //
+     //          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsGlowNew.png"] forState:UIControlStateNormal];
+     //          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsNew.png"] forState:UIControlStateNormal];
+     //
+     //
+     //
+     //     }
      
      
-         //     }
+     //     }
 }
 
 
 
 - (IBAction)gmStarsPressed:(id)sender {
+       [_gmGemButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
      //     if(_gmGemsSelected) {
      _gmGemsSelected = false;
      
-//     [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gem.png"] forState:UIControlStateNormal];
-//     [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"starglow.png"] forState:UIControlStateNormal];
-//     
+     //     [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gem.png"] forState:UIControlStateNormal];
+     //     [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"starglow.png"] forState:UIControlStateNormal];
+     //
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      forGemsLable.textColor = [UIColor whiteColor];
      forPointsLabel.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
@@ -2572,41 +2575,41 @@
      [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
      [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
      
-//
-//     if(languageCode == 0 ) {
-//          
-//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-//          
-//          
-//          
-//          
-//     }else      if(languageCode == 1 ) {
-//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-//          
-//          
-//          
-//     }else      if(languageCode == 2 ) {
-//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-//          
-//          
-//          
-//     }else      if(languageCode == 3 ) {
-//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-//          
-//          
-//          
-//     }else      if(languageCode == 4 ) {
-//          
-//          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
-//          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
-//          
-//          
-//          
-//     }
+     //
+     //     if(languageCode == 0 ) {
+     //
+     //          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+     //          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+     //
+     //
+     //
+     //
+     //     }else      if(languageCode == 1 ) {
+     //          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+     //          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+     //
+     //
+     //
+     //     }else      if(languageCode == 2 ) {
+     //          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+     //          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+     //
+     //
+     //
+     //     }else      if(languageCode == 3 ) {
+     //          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+     //          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+     //
+     //
+     //
+     //     }else      if(languageCode == 4 ) {
+     //
+     //          [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"forgemsNew.png"] forState:UIControlStateNormal];
+     //          [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"forpintsglowNew.png"] forState:UIControlStateNormal];
+     //
+     //
+     //
+     //     }
      
      
      
@@ -2683,13 +2686,13 @@
      appDelegate.friendToBeChalleneged = nil;
      appDelegate.requestType = nil;
      [self gameModCanelBtnPressed:nil];
-
-    buyGemsView.hidden = true;
+     
+     buyGemsView.hidden = true;
      [buyGemsView removeFromSuperview];
 }
 
 - (IBAction)acceptGemsBuyPressed:(id)sender {
-    buyGemsView.hidden = true;
+     buyGemsView.hidden = true;
      [buyGemsView removeFromSuperview]; [self gmStarsPressed:self];
      self.tabBarController.selectedIndex = 2;
      
@@ -2749,7 +2752,7 @@
 
 -(void)SendChallengeToYourFriend:(UserProfile *)_user{
      
-   //  timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
+     //  timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
      opponentProfileImageView.imageURL = [NSURL URLWithString:_user.profile_image];
      NSURL *url = [NSURL URLWithString:_user.profile_image];
      [[AsyncImageLoader sharedLoader] loadImageWithURL:url];
@@ -2761,9 +2764,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
      [super viewWillAppear:animated];
-          [self setLanguageForScreen];
+     [self setLanguageForScreen];
      self.tabBarController.tabBar.hidden = false;
- 
+     
 }
 
 
@@ -2830,133 +2833,133 @@
      }else  if([idOfCat isEqualToString:@"11"])
      {
           subcatMaintempImgName = @"Ancient History.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"12"])
      {
           subcatMaintempImgName = @"Modern History.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"13"])
      {
           subcatMaintempImgName = @"General";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"15"])
      {
           subcatMaintempImgName = @"Capitals.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"16"])
      {
           subcatMaintempImgName = @"Cities of the World.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"17"])
      {
           subcatMaintempImgName = @"Math.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"18"])
      {
           subcatMaintempImgName = @"World of Warcraft.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"19"])
      {
           subcatMaintempImgName = @"Pokemon.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"20"])
      {
           subcatMaintempImgName = @"League of Legends";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"21"])
      {
           subcatMaintempImgName = @"Valve.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"22"])
      {
           subcatMaintempImgName = @"GeneralScience.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"23"])
      {
           subcatMaintempImgName = @"Hollywood.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"24"])
      {
           subcatMaintempImgName = @"Music.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"25"])
      {
           subcatMaintempImgName = @"Bollywood";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"26"])
      {
           subcatMaintempImgName = @"Celebrities.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"27"])
      {
           subcatMaintempImgName = @"Fashion.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"28"])
      {
           subcatMaintempImgName = @"TV.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"30"])
      {
           subcatMaintempImgName = @"Islam.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"31"])
      {
           subcatMaintempImgName = @"Judaism.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
@@ -2964,26 +2967,26 @@
      else  if([idOfCat isEqualToString:@"32"])
      {
           subcatMaintempImgName = @"Christianity.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"33"])
      {
           subcatMaintempImgName = @"Others.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      else  if([idOfCat isEqualToString:@"34"])
      {
           subcatMaintempImgName = @"Cricket.png";
-                    subcatthumbnailtempName = @"";
+          subcatthumbnailtempName = @"";
           
           
      }
      
-
+     
      
      
      

@@ -33,6 +33,7 @@
      IBOutlet UIButton *AvatarBtn;
      IBOutlet UIButton *CameraRollBtn;
      
+     __weak IBOutlet UIButton *backtoSignInBtn;
      UIButton *dismissBtn;
      IBOutlet UITextField *emailField;
      IBOutlet UITextField *displayNameField;
@@ -79,6 +80,8 @@
 @property(nonatomic, retain) IBOutlet UIScrollView *_scrollView;
 @property(nonatomic, retain) IBOutlet UIView *firstView;
 @property(nonatomic, retain) IBOutlet UIView *secondView;
+
+- (IBAction)backTosignIn:(id)sender;
 
 -(IBAction)datePickerClicked:(id)sender;
 -(IBAction)birthdayReasonAction:(id)sender;

@@ -338,7 +338,7 @@ float _yLocation;
      UIImage *profileImg = [self loadImage];
      if(profileImg) {
           [profileImageView setImage:profileImg];
-          [profileImageView roundImageCorner];
+          [profileImageView roundImageCornerBlackBorder];
           delegate.profileImage = profileImg;
           isProfileImageLoaded = true;
      }
@@ -347,7 +347,7 @@ float _yLocation;
           //logout user
           if(delegate.profileImage) {
                [profileImageView setImage:delegate.profileImage];
-               [profileImageView roundImageCorner];
+               [profileImageView roundImageCornerBlackBorder];
           }
           else {
                [namelbl setText:[SharedManager getInstance]._userProfile.display_name];
@@ -360,7 +360,7 @@ float _yLocation;
                [op onCompletion:^(MKNetworkOperation *completedOperation) {
                     
                     [profileImageView setImage:[completedOperation responseImage]];
-                    [profileImageView roundImageCorner];
+                    [profileImageView roundImageCornerBlackBorder];
                     delegate.profileImage = [completedOperation responseImage];
                     isProfileImageLoaded = true;
                     
@@ -369,7 +369,7 @@ float _yLocation;
                } onError:^(NSError* error) {
                     
                     [profileImageView setImage:[UIImage imageNamed:@"personal.png"]];
-                    [profileImageView roundImageCorner];
+                    [profileImageView roundImageCornerBlackBorder];
                     
                }];
                
@@ -477,7 +477,7 @@ float _yLocation;
      else if(languageCode == 1 ) {
           loadingTitle = Loading_1;
           lblhistory.text = HISTORY_BTN_1;
-          lblmesage.text = MESSAGE_BTN_1;
+          lblmesage.text = @"احصل على النقاط مجانية";
           lblranking.text = @"الترتيب";
 
           lblsetting.text = SETTINGS_BTN_1;

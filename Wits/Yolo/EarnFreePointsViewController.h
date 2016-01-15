@@ -61,6 +61,7 @@
 - (IBAction)mainBackPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblTutorial;
+@property (weak, nonatomic) IBOutlet UIButton *SkipBtn;
 
 #pragma mark -
 #pragma new UI

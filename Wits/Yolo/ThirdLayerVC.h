@@ -107,7 +107,7 @@
      IBOutlet UILabel *adContentLbl;
      IBOutlet UILabel *SubtopicsLbl;
      IBOutlet UILabel *guidelineLbl;
-     
+     IBOutlet UILabel *GameModLabel;
      
      IBOutlet UIButton *backBtn3;
      __weak IBOutlet UIImageView *searchBg;

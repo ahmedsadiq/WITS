@@ -832,7 +832,7 @@
      
      [_loadView hide];
      [_loadView removeFromSuperview];
-     AvatarView.hidden = NO;
+    
      [_loadView showInView:self.view withTitle:loadingTitle];
    
      [self showAvatars];
@@ -894,7 +894,17 @@
      [self rel];
 }
 
-
+- (NSData*)encodeDictionary:(NSDictionary*)dictionary {
+     NSMutableArray *parts = [[NSMutableArray alloc] init];
+     for (NSString *key in dictionary) {
+          NSString *encodedValue = [[dictionary objectForKey:key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+          NSString *encodedKey = [key stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+          NSString *part = [NSString stringWithFormat: @"%@=%@", encodedKey, encodedValue];
+          [parts addObject:part];
+     }
+     NSString *encodedDictionary = [parts componentsJoinedByString:@"&"];
+     return [encodedDictionary dataUsingEncoding:NSUTF8StringEncoding];
+}
 -(void)showAvatars{
      
      
@@ -904,32 +914,42 @@
           return;
      }
      
-     MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
-     NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
-     [postParams setObject:@"userGetAvatars" forKey:@"method"];
+//     MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
+//     NSMutableDictionary *postParams = [[NSMutableDictionary alloc] init];
+//     [postParams setObject:@"userGetAvatars" forKey:@"method"];
+//     
+//     MKNetworkOperation *op = [engine operationWithURLString:SERVER_URL params:postParams httpMethod:@"POST"];
+//     
      
-     MKNetworkOperation *op = [engine operationWithURLString:SERVER_URL params:postParams httpMethod:@"POST"];
+     NSURL *url = [NSURL URLWithString:SERVER_URL];
+     NSMutableDictionary *postParamas = [[NSMutableDictionary alloc] init];
+     [postParamas setObject:@"userGetAvatars" forKey:@"method"];
+     NSData *postData = [self encodeDictionary:postParamas];
+     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+     [request setURL:url];
+     [request setHTTPMethod:@"POST"];
+     [request setHTTPBody:postData];
      
      
-     [op onCompletion:^(MKNetworkOperation *completedOperation) {
-          
-          [_loadView hide];
-          [_loadView removeFromSuperview];
-          NSLog(@"Response: %@",[completedOperation responseString]);
-          NSDictionary *recievedDict = [completedOperation responseJSON];
-          NSNumber *flag = [recievedDict objectForKey:@"flag"];
-          
-          if([flag isEqualToNumber:[NSNumber numberWithInt:1]])
-          {
-               _avatarsArray = [recievedDict objectForKey:@"avatars"];
-               [self downloadAvatars];
-          }
-          
-          
-     } onError:^(NSError* error) {
-          
-          [_loadView hide];
-          [_loadView removeFromSuperview];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response , NSData  *data, NSError *error) {
+         //[_loadView hide];
+        // [_loadView removeFromSuperview];
+         if ( [(NSHTTPURLResponse *)response statusCode] == 200 )
+         {
+              NSDictionary *mainDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+              NSNumber *flag = [mainDict objectForKey:@"flag"];
+              if([flag isEqualToNumber:[NSNumber numberWithInt:1]])
+              {
+                   _avatarsArray = [mainDict objectForKey:@"avatars"];
+                   [self downloadAvatars];
+              }
+              
+         }
+    else
+     {
+         
+          //[_loadView hide];
+          //[_loadView removeFromSuperview];
           NSString *emailMsg;
           NSString *title;
           NSString *cancel;
@@ -956,14 +976,13 @@
           }
           
           [AlertMessage showAlertWithMessage:emailMsg andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+     }
      }];
-     
-     
-     [engine enqueueOperation:op];
-     
+
 }
 -(void)downloadAvatars{
      
+
      for (NSString *avatarURL in _avatarsArray) {
           
           NSURL *_avatarURL = [NSURL URLWithString:avatarURL];
@@ -976,14 +995,12 @@
           }
           
      }
-     [_loadView hide];
-     [_loadView removeFromSuperview];
      if ([[UIScreen mainScreen] bounds].size.height == iPad)
           [self loadAvatarsToIpadView];
      else
           [self LoadAvatars];
-     
-     
+     [_loadView removeFromSuperview];
+      AvatarView.hidden = NO;
      [self.view addSubview:AvatarView];
 }
 
@@ -1009,7 +1026,8 @@
      MKNetworkOperation *op = [engine operationWithURLString:avatarURL params:nil httpMethod:@"GET"];
      
      [op onCompletion:^(MKNetworkOperation *completedOperation) {
-         
+          
+         // [_loadView removeFromSuperview];
           NSString *imagePath = [docs stringByAppendingPathComponent:fileName];
           
           NSLog(@"Image Path: %@",imagePath);
@@ -1018,11 +1036,11 @@
           NSData *imageData = UIImageJPEGRepresentation(image, 0.0);
           [imageData writeToFile:imagePath atomically:NO];
           
-          [self downloadAvatars];
+         [self downloadAvatars];
           
      }onError:^(NSError* error) {
           
-          [_loadView hide];
+          
           [_loadView removeFromSuperview];
           NSString *emailMsg;
           NSString *title;
@@ -1065,7 +1083,8 @@
 -(void)LoadAvatars{
 
      ////////////    Add cover image here  ///////////
-     
+     [_loadView hide];
+     [_loadView removeFromSuperview];
      float interElementDistance_X = 6.0;
      float interElementDistance_Y = 6.0;
      
@@ -1120,7 +1139,8 @@
 }
 -(void)loadAvatarsToIpadView{
      ////////////    Add cover image here  ///////////
-     
+     [_loadView hide];
+     [_loadView removeFromSuperview];
      float xPosition = 20.0f;
      float yPosition = 20.0f;
      

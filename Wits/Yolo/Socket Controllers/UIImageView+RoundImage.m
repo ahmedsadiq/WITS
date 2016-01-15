@@ -15,13 +15,28 @@
     [self setBackgroundColor:[UIColor clearColor]];
      self.layer.cornerRadius = self.frame.size.width / 2;
      self.layer.borderWidth = 2.0f;
-      self.clipsToBounds = YES;
+     self.clipsToBounds = YES;
      //self.layer.masksToBounds = YES;
      self.layer.borderColor = [UIColor whiteColor].CGColor;
-   
-    
     //return self;
 }
-
-
+-(void)roundImageCornerWithoutBorders{
+     
+     [self setBackgroundColor:[UIColor clearColor]];
+     self.layer.cornerRadius = self.frame.size.width / 2;
+     self.clipsToBounds = YES;
+     //self.layer.masksToBounds = YES;
+     self.layer.borderColor = [UIColor whiteColor].CGColor;
+     //return self;
+}
+-(void)roundImageCornerBlackBorder{
+     
+     [self setBackgroundColor:[UIColor clearColor]];
+     self.layer.cornerRadius = self.frame.size.width / 2;
+     self.layer.borderWidth = 2.0f;
+     self.clipsToBounds = YES;
+     self.layer.masksToBounds = YES;
+     self.layer.borderColor = [UIColor blackColor].CGColor;
+     //return self;
+}
 @end

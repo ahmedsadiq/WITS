@@ -17,6 +17,7 @@
                 <outlet property="CameraRollBtn" destination="zDt-L6-EJX" id="qb5-MX-GHJ"/>
                 <outlet property="_profileImage" destination="rN5-y3-pLg" id="BFs-24-vUd"/>
                 <outlet property="_scrollView" destination="VM0-Sk-88R" id="bn6-uA-jIA"/>
+                <outlet property="backtoSignInBtn" destination="OT2-9S-ikz" id="SeX-gE-MHM"/>
                 <outlet property="birthdaylbl" destination="PGS-kX-2U4" id="ADW-6j-zm2"/>
                 <outlet property="cancelAvatar" destination="37A-Ki-yw5" id="rhX-pO-VIf"/>
                 <outlet property="cancelBtn" destination="jvq-nD-brk" id="ijB-Gr-HZS"/>
@@ -236,13 +237,13 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOG IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EJs-Rd-KV3">
-                    <rect key="frame" x="12" y="514" width="295" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <rect key="frame" x="13" y="514" width="295" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowdown.png" id="bat-Bw-gnu">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowdown.png" id="bat-Bw-gnu">
                     <rect key="frame" x="152" y="540" width="15" height="12"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </imageView>
@@ -355,6 +356,17 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OT2-9S-ikz">
+                    <rect key="frame" x="85" y="515" width="150" height="36"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="backTosignIn:" destination="-1" eventType="touchUpInside" id="cLV-Oc-bff"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>

@@ -28,13 +28,14 @@
 {
      [super viewWillAppear:animated];
      [self setLanguageForScreen];
-      self.tabBarController.tabBar.hidden = false;
+     self.tabBarController.tabBar.hidden = false;
      if(_addOnsArray.count == 0)
           [self fetchRewards];
      [gemsCountLbl setText:[[SharedManager getInstance] _userProfile].cashablePoints];
      [pointsCountLbl setText:[[SharedManager getInstance] _userProfile].totalPoints];
-     
+     [self Crossbtn:nil];
      consumedGems = [[[SharedManager getInstance] _userProfile].cashablePoints intValue];
+     [rewardsTableView reloadData];
 }
 - (void)viewDidLoad {
      [super viewDidLoad];
@@ -63,17 +64,14 @@
      timeSort = 0;
      LblCograts.font = [UIFont fontWithName:FONT_NAME size:24];
      
-     lblRewards.font = [UIFont fontWithName:FONT_NAME size:20];
+     lblRewards.font = [UIFont fontWithName:FONT_NAME size:16];
      buyAddonLbl.font = [UIFont fontWithName:FONT_NAME size:15];
      if(IS_IPAD){
           LblCograts.font = [UIFont fontWithName:FONT_NAME size:25];
           
-          lblRewards.font = [UIFont fontWithName:FONT_NAME size:25];
+          lblRewards.font = [UIFont fontWithName:FONT_NAME size:22];
           buyAddonLbl.font = [UIFont fontWithName:FONT_NAME size:20];
      }
-     
-     
-
      [self fetchRewards];
 }
 -(void)fetchRewards{
@@ -104,9 +102,7 @@
                rewardObj.productName = [rewardDict objectForKey:@"name"];
                
                [_addOnsArray addObject:rewardObj];
-               NSLog(@"%@",rewardObj);
           }
-          
           currentIndex = 0;
           [rewardsTableView reloadData];
      } onError:^(NSError* error) {
@@ -146,6 +142,7 @@
      [searchField resignFirstResponder];
      return YES;
 }
+
 -(void)textFieldDidChange:(UITextField *)txtFld {
      NSString * match = txtFld.text;
      
@@ -171,9 +168,6 @@
           _addOnsArray = [NSMutableArray arrayWithArray:[_addOnsArray filteredArrayUsingPredicate:sPredicate]];
      }
      
-     
-     
-     NSLog(@"%lu",(unsigned long)_addOnsArray.count);
      [rewardsTableView reloadData];
 }
 - (IBAction)popupBackBtn:(id)sender {
@@ -181,6 +175,7 @@
 }
 
 - (IBAction)Crossbtn:(id)sender {
+     searchField.hidden = false;
      rewardDetailView.hidden = true;
 }
 
@@ -227,7 +222,7 @@
           rows++;
      }
      
-     if([_addOnsArray count] == 1) {
+     else if([_addOnsArray count] == 1) {
           rows = 1;
      }
      return rows;
@@ -237,45 +232,32 @@
      
      //int indexS = indexPath.section;
      currentIndex = (indexPath.row*2);
-     RewardObj *obj = [_addOnsArray objectAtIndex:currentIndex];
-     
-     
+    
      if(timeSort == 0){
-          //[sortbtn setBackgroundImage:[UIImage imageNamed:@"sortunlcok.png"] forState:UIControlStateNormal ];
-          _addOnsArray = [_addOnsArray sortedArrayUsingComparator:^NSComparisonResult(RewardObj *p1, RewardObj *p2){
-               
-               return [p1.productName compare:p2.productName];
-               
-          }];
-          
+          NSSortDescriptor *sortDescriptor;
+          sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"unlock_price" ascending:YES];
+          NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+          [_addOnsArray sortUsingDescriptors:sortDescriptors];
      }
      
      
      else if(timeSort == 1){
-          [sortbtn setBackgroundImage:[UIImage imageNamed:@"sortalpha.png"] forState:UIControlStateNormal ];
-          _addOnsArray = [_addOnsArray sortedArrayUsingComparator:^NSComparisonResult(RewardObj *p1, RewardObj *p2){
-               
-               return [p1.productName compare:p2.productName];
-               
-          }];
-          
+           [sortbtn setBackgroundImage:[UIImage imageNamed:@"sortalpha.png"] forState:UIControlStateNormal];
+          NSSortDescriptor *sortDescriptor;
+          sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"productName" ascending:YES];
+          NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+          [_addOnsArray sortUsingDescriptors:sortDescriptors];
      }
      else if(timeSort == 2)
      {
-          //timeSort = 0;
-          [sortbtn setBackgroundImage:[UIImage imageNamed:@"sortgem.png"] forState:UIControlStateNormal ];
-          _addOnsArray = [_addOnsArray sortedArrayUsingComparator:^NSComparisonResult(RewardObj *p1, RewardObj *p2){
-               
-               return [p1.unlock_price compare:p2.unlock_price];
-               
-          }];
           
+          [sortbtn setBackgroundImage:[UIImage imageNamed:@"sortgem.png"] forState:UIControlStateNormal ];
+          NSSortDescriptor *sortDescriptor;
+          sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"unlock_price" ascending:YES];
+          NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+          [_addOnsArray sortUsingDescriptors:sortDescriptors];
      }
-     
-     // RewardObj *obj = [_addOnsArray objectAtIndex:currentIndex];
-     //
-     //     if(!obj.isSelected)
-     //     {
+     RewardObj *obj = [_addOnsArray objectAtIndex:currentIndex];
      AddOnCell *cell;
      if ([[UIScreen mainScreen] bounds].size.height == iPad) {
           NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"AddOnCell_iPad" owner:self options:nil];
@@ -286,8 +268,9 @@
           cell = [nib objectAtIndex:0];
      }
      cell.title.text = obj.productName;
-     // [cell.title setFont:[UIFont systemFontOfSize:17]];
-     cell.title.font = [UIFont fontWithName:FONT_NAME size:17];
+     cell.title.font = [UIFont fontWithName:FONT_NAME size:10];
+     if(IS_IPAD)
+          cell.title.font = [UIFont fontWithName:FONT_NAME size:17];
      cell.leftDiscription.text = obj.productDescription;
      cell.addonCount.text = @"";
      int unlockPrice = [obj.unlock_price intValue];
@@ -305,19 +288,16 @@
      //cell.gemsImgView.hidden = true;
      cell.price.text = [NSString stringWithFormat:@"%d",[obj.unlock_price intValue]];
      cell.iconImgView.image = [UIImage imageNamed:@"rewardsicon.png"];
-     MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
-     
-     MKNetworkOperation *op = [engine operationWithURLString:obj.image params:nil httpMethod:@"GET"];
-     
-     [op onCompletion:^(MKNetworkOperation *completedOperation) {
-          
-          [cell.iconImgView setImage:[completedOperation responseImage]];
-          //[cell.iconImgView roundImageCorner];
-          obj.cellimage = completedOperation.responseImage;
-          
-     } onError:^(NSError* error) {
+     NSURL *url = [NSURL URLWithString:[obj.image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+     [self downloadImageWithURL:url completionBlock:^(BOOL succeeded, UIImage *image) {
+          if (succeeded) {
+               // change the image in the cell
+               cell.iconImgView.image = image;
+               // cache the image for use later (when scrolling up)
+               obj.cellimage = image;
+          }
      }];
-     [engine enqueueOperation:op];
+     
      //[_addOnsArray addObject:obj];
      product_id = obj.reward_id;
      cell.buybtnleft.tag = currentIndex;
@@ -334,8 +314,9 @@
           RewardObj *obj = [_addOnsArray objectAtIndex:currentIndex];
           
           cell.rightTitle.text = obj.productName;
-          //          [cell.title setFont:[UIFont systemFontOfSize:17]];
-          cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:17];
+          cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:10];
+          if(IS_IPAD)
+               cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:17];
           cell.rightDiscription.text = obj.productDescription;
           cell.addonCount.text = @"";
           int unlockPrice = [obj.unlock_price intValue];
@@ -353,19 +334,16 @@
           //cell.gemsImgView.hidden = true;
           cell.rightPrice.text = [NSString stringWithFormat:@"%d",[obj.unlock_price intValue]];
           cell.rightIconImgView.image = [UIImage imageNamed:@"rewardsicon.png"];
-          MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
           
-          MKNetworkOperation *op = [engine operationWithURLString:obj.image params:nil httpMethod:@"GET"];
-          
-          [op onCompletion:^(MKNetworkOperation *completedOperation) {
-               
-               [cell.rightIconImgView setImage:[completedOperation responseImage]];
-               obj.cellimage = completedOperation.responseImage;
-               
-          } onError:^(NSError* error) {
+          NSURL *url = [NSURL URLWithString:[obj.image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+          [self downloadImageWithURL:url completionBlock:^(BOOL succeeded, UIImage *image) {
+               if (succeeded) {
+                    // change the image in the cell
+                    cell.rightIconImgView.image = image;
+                    // cache the image for use later (when scrolling up)
+                    obj.cellimage = image;
+               }
           }];
-          
-          [engine enqueueOperation:op];
           //[_addOnsArray addObject:obj];
           product_id = obj.reward_id;
           cell.buybtnright.tag = currentIndex;
@@ -397,62 +375,7 @@
      [cell.contentView setBackgroundColor:[UIColor clearColor]];
      cell.selectionStyle = NAN;
      return cell;
-     //     }
-     //     else {
-     //          AddOnViewSelected *cell;
-     //          if ([[UIScreen mainScreen] bounds].size.height == iPad) {
-     //               NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"AddOnViewSelected_iPad" owner:self options:nil];
-     //               cell = [nib objectAtIndex:0];
-     //          }
-     //          else{
-     //               NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"AddOnViewSelected" owner:self options:nil];
-     //               cell = [nib objectAtIndex:0];
-     //          }
-     //          //[cell.title setFont:[UIFont systemFontOfSize:17]];
-     //          cell.title.font = [UIFont fontWithName:FONT_NAME size:17];
-     //
-     //          cell.title.text = obj.productName;
-     //          cell.addonCount.text = @"";
-     //          int unlockPrice = [obj.unlock_price intValue];
-     //
-     //          if(unlockPrice <= consumedGems) {
-     //               cell.lockedImg.image = [UIImage imageNamed:@""];
-     //
-     //          }
-     //          else {
-     //               cell.lockedImg.image = [UIImage imageNamed:@"locked.png"];
-     //               cell.buyBtn.enabled = false;
-     //          }
-     //         // cell.gemsImgView.hidden = true;
-     //          cell.iconImgView.image = [UIImage imageNamed:@"rewardsicon.png"];
-     //          MKNetworkEngine *engine=[[MKNetworkEngine alloc] initWithHostName:nil];
-     //
-     //          MKNetworkOperation *op = [engine operationWithURLString:obj.image params:nil httpMethod:@"GET"];
-     //
-     //          [op onCompletion:^(MKNetworkOperation *completedOperation) {
-     //
-     //               [cell.iconImgView setImage:[completedOperation responseImage]];
-     //               //[cell.iconImgView roundImageCorner];
-     //               cell.iconImgView.layer.cornerRadius = 10;
-     //
-     //          } onError:^(NSError* error) {
-     //          }];
-     //
-     //          [engine enqueueOperation:op];
-     //
-     //          //cell.price.text = [NSString stringWithFormat:@"%d",[obj.unlock_price intValue]];
-     //          cell.addOnDesc.text = obj.productDescription;
-     //          cell.selectionStyle = NAN;
-     //
-     //          cell.buyBtn.tag = indexPath.section;
-     //          //           cell.buyBtn.font = [UIFont systemFontOfSize:13];
-     //          cell.buyBtn.font = [UIFont fontWithName:FONT_NAME size:13];
-     //
-     //          [cell.buyBtn setTitle:claim forState:UIControlStateNormal];
-     //          [cell.buyBtn addTarget:self action:@selector(buyBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-     //
-     //          return cell;
-     //     }
+
 }
 #pragma mark - TableView Delegates
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -482,20 +405,48 @@
      return v;
 }
 -(void)rewardDetailedPressed:(id)sender{
+     searchField.hidden = true;
      UIButton *downBtn = (UIButton *)sender;
      currentSelectedIndex = downBtn.tag;
-     
-     int indexS = indexPath.section;
      RewardObj *obj = [_addOnsArray objectAtIndex:currentSelectedIndex];
      rewardDetailView.hidden = false;
      discriptionlbl.text = obj.productDescription;
      titlelbl.text = obj.productName;
      gemsAmountlbl.text = [NSString stringWithFormat:@"%d",[obj.unlock_price intValue]];
      if(obj.cellimage){
-          rewardsiconimgview.image = obj.cellimage;}
+          rewardsiconimgview.image = obj.cellimage;
+     }
      else
+     {
           rewardsiconimgview.image = [UIImage imageNamed:@"rewardsicon.png"];
+          NSURL *url = [NSURL URLWithString:[obj.image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+          [self downloadImageWithURL:url completionBlock:^(BOOL succeeded, UIImage *image) {
+               if (succeeded) {
+                    // change the image in the cell
+                    rewardsiconimgview.image = image;
+                    // cache the image for use later (when scrolling up)
+                    obj.cellimage = image;
+               }
+          }];
+     }
+     
      //rewardsiconimgview.image = selectedRewardImage;
+}
+- (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
+{
+     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+     [NSURLConnection sendAsynchronousRequest:request
+                                        queue:[NSOperationQueue mainQueue]
+                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                                 if ( !error )
+                                 {
+                                      UIImage *image = [[UIImage alloc] initWithData:data];
+                                      completionBlock(YES,image);
+                                 } else{
+                                      completionBlock(NO,nil);
+                                        //rewardsiconimgview.image = [UIImage imageNamed:@"rewardsicon.png"];
+                                 }
+                            }];
 }
 -(void)downbtnSelected:(id)sender{
      
@@ -504,7 +455,7 @@
      currentSelectedIndex = downBtn.tag;
      
      int indexS = indexPath.section;
-     RewardObj *obj = (RewardObj*)[self.addOnsArray objectAtIndex:indexS];
+     RewardObj *obj = (RewardObj*)[self.addOnsArray objectAtIndex:currentSelectedIndex];
      if(obj.isSelected)
           obj.isSelected = false;
      else
@@ -570,6 +521,7 @@
      int languageCode = [language intValue];
      NSString *suffix = @"";
      if(languageCode == 0 ) {
+            claim = CLAIM;
           lblRewards.text = REWARDS;
           buyAddonLbl.text = REWARD_INSTRUCTION;
           LblCograts.text = COMGRATULATIONS;
@@ -583,27 +535,30 @@
           UIColor *color = [UIColor whiteColor];
           searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Search Reward" attributes:@{NSForegroundColorAttributeName: color}];
           loadingTitle = Loading;
-          claim = CLAIM;
+        
      }
      else if(languageCode == 1 ) {
           //searchField.contentVerticalAlignment = UIControlContentHorizontalAlignmentCenter;
+           claim = @"استرداد";
           lblRewards.text = REWARDS_1;
+          
           LblCograts.text = COMGRATULATIONS_1;
           buyAddonLbl.text = REWARD_INSTRUCTION_1;
           lblRequestRecieved.text = REQUEST_RECIEVED_1;
           ourTeamMsg.text = OUR_TEAM_WILL_VERIFY_1;
           [backBtn setTitle:BACK_BTN_1 forState:UIControlStateNormal];
           UIColor *color = [UIColor whiteColor];
-        [searchField setTextAlignment:NSTextAlignmentRight];
+          [searchField setTextAlignment:NSTextAlignmentRight];
           searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"البحث عن المكافأة" attributes:@{NSForegroundColorAttributeName: color}];
           cannotPurchase = CANNOT_PURCHASE_1;
           purchaseError = PURCHASE_ERROR_1;
           OKstr = OK_BTN_1;
           loadingTitle = Loading_1;
-          claim = CLAIM_1;
+         
      }
      else if(languageCode == 2) {
-          lblRewards.text = REWARDS_2;
+          claim = @"Rembourser";
+          [lblRewards setText:[@"Récompenses" uppercaseString]];
           LblCograts.text = COMGRATULATIONS_2;
           buyAddonLbl.text = REWARD_INSTRUCTION_2;
           lblRequestRecieved.text = REQUEST_RECIEVED_2;
@@ -612,14 +567,15 @@
           cannotPurchase = CANNOT_PURCHASE_2;
           purchaseError = PURCHASE_ERROR_2;
           OKstr = OK_BTN_2;
-         [searchField setTextAlignment:NSTextAlignmentLeft];
+          [searchField setTextAlignment:NSTextAlignmentLeft];
           UIColor *color = [UIColor whiteColor];
           searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Cherche récompense"attributes:@{NSForegroundColorAttributeName: color}];
           loadingTitle = Loading_2;
-          claim = CLAIM_2;
+          
      }
      else if(languageCode == 3) {
-          lblRewards.text = REWARDS_3;
+          claim = @"Liberar";
+          [lblRewards setText:[@"Premios" uppercaseString]];
           buyAddonLbl.text = REWARD_INSTRUCTION_3;
           LblCograts.text = COMGRATULATIONS_3;
           lblRequestRecieved.text = REQUEST_RECIEVED_3;
@@ -630,13 +586,15 @@
           OKstr = OK_BTN_3;
           [searchField setTextAlignment:NSTextAlignmentLeft];
           loadingTitle = Loading_3;
-          claim = CLAIM_3;
+          
           UIColor *color = [UIColor whiteColor];
           searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Buscar recompensa"attributes:@{NSForegroundColorAttributeName: color}];
           
      }
      else if(languageCode == 4) {
-          lblRewards.text = REWARDS_4;
+          claim = @"Resgatar";
+         
+          [lblRewards setText:[@"Prêmios" uppercaseString]];
           LblCograts.text = COMGRATULATIONS_4;
           lblRequestRecieved.text = REQUEST_RECIEVED_4;
           ourTeamMsg.text = OUR_TEAM_WILL_VERIFY_4;
@@ -647,17 +605,10 @@
           purchaseError = PURCHASE_ERROR_4;
           OKstr = OK_BTN_4;
           loadingTitle = Loading_4;
-          claim = CLAIM_4;
           UIColor *color = [UIColor whiteColor];
           searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Pesquisar Recompensas"attributes:@{NSForegroundColorAttributeName: color}];
      }
      
-     if (languageCode == 1) {
-          
-          
-     }else{
-          
-     }
 }
 
 @end

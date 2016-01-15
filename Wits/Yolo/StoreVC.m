@@ -17,6 +17,9 @@
 #import "AppDelegate.h"
 #import "AddOnViewController.h"
 #import "RewardsListVC.h"
+#import "AlertMessage.h"
+
+
 @interface StoreVC ()
 
 @end
@@ -1412,7 +1415,36 @@
 }
 - (void)UIUpdaterFailure1:(NSNotification *)notification {
      [loadView hide];
+     NSString *messageStr = @"";
+     
+     NSString *title;
+     NSString *cancel;
+     if (languageCode == 0 ) {
+          messageStr = @"Something went wrong, Try again Later";
+          title = @"Error";
+          cancel = CANCEL;
+     } else if(languageCode == 1) {
+          messageStr = @"وقع خطأ ما، حاول مرة أخرى في وقت لاحق";
+          title = @"خطأ";
+          cancel = CANCEL_1;
+     }else if (languageCode == 2){
+          messageStr = @"Quelque chose se est mal passé, réessayez plus tard";
+          title = @"Erreur";
+          cancel = CANCEL_2;
+     }else if (languageCode == 3){
+          messageStr = @"Ha ocurrido un error, inténtalo más tarde";
+          title = @"Error";
+          cancel = CANCEL_3;
+     }else if (languageCode == 4){
+          messageStr = @"Algo deu errado, tente novamente mais tarde";
+          title = @"Erro";
+          cancel = CANCEL_4;
+     }
+     
+     [AlertMessage showAlertWithMessage:messageStr  andTitle:title SingleBtn:YES cancelButton:cancel OtherButton:nil];
+
 }
+
 - (IBAction)addOnsPressed:(id)sender {
      
      if ([[UIScreen mainScreen] bounds].size.height == iPad) {

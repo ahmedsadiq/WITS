@@ -77,7 +77,11 @@
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
      [mainTitlelbl setText:parentTopics.title];
-     
+     GameModLabel.layer.shadowColor = [UIColor colorWithRed:183 green:216 blue:255 alpha:1.0].CGColor;
+     GameModLabel.layer.shadowOffset = CGSizeMake(0.2, 0.2);
+     GameModLabel.layer.shadowRadius = 3.0;
+     GameModLabel.layer.shadowOpacity = 0.9;
+     GameModLabel.layer.masksToBounds = NO;
      appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
      
      NSString *val = [SharedManager getInstance]._userProfile.cashablePoints;
@@ -357,7 +361,7 @@
           }
           [cell setBackgroundColor:[UIColor clearColor]];
           [cell.contentView setBackgroundColor:[UIColor clearColor]];
-          cell.selectionStyle = NAN;
+          cell.selectionStyle = UITableViewCellSelectionStyleNone;
           return cell;
      }
      else {
@@ -390,7 +394,11 @@
                cell.leftSubTitles.text = @"";
                cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:13];
                cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:13];
-               
+               if(IS_IPAD)
+               {
+                    cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:25];
+                    cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
+               }
                
                
                //               Changes here
@@ -409,9 +417,6 @@
                     cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:13];
                     if(IS_IPAD)
                     {
-                         cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:25];
-                         cell.leftTitle.font = [UIFont fontWithName:FONT_NAME size:25];
-                         cell.leftSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
                          cell.textLabel.font = [UIFont fontWithName:FONT_NAME size:45];
                          cell.rightTitle.font = [UIFont fontWithName:FONT_NAME size:25];
                          cell.rightSubTitles.font = [UIFont fontWithName:FONT_NAME size:45];
@@ -437,7 +442,7 @@
                }
                [cell setBackgroundColor:[UIColor clearColor]];
                [cell.contentView setBackgroundColor:[UIColor clearColor]];
-               cell.selectionStyle = NAN;
+               cell.selectionStyle = UITableViewCellSelectionStyleNone;
                
                return cell;
           }
@@ -636,6 +641,7 @@
      isGameStarted = true;
      [timer invalidate];
      timer = nil;
+     [self.navigationController popToRootViewControllerAnimated:false];
       [opponentProfileImageView stopAnimating];
      [animationTimer invalidate];
      [sharedManager closeWebSocket];
@@ -817,18 +823,17 @@
           
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           int languageCode = [language intValue];
-          
-          if (languageCode == 0) {
-               _searchOppLbl.text = @"Searching opponent...";
-          }else if(languageCode == 1){
-               _searchOppLbl.text = @"االبحث عن الخصم...";
-          }else if (languageCode == 2 ){
-               _searchOppLbl.text = @"Recherche d\'un adversaire...";
-          }else if (languageCode == 3){
-               _searchOppLbl.text = @"La búsqueda de un oponente...";
-          }else if (languageCode == 4){
-               _searchOppLbl.text = @"Procurando um adversário...";
-          }
+               if (languageCode == 0) {
+                    _searchOppLbl.text = @"Searching for Opponent...";
+               }else if(languageCode == 1){
+                    _searchOppLbl.text = @"االبحث عن الخصم...";
+               }else if (languageCode == 2 ){
+                    _searchOppLbl.text = @"Recherche d\'un adversaire...";
+               }else if (languageCode == 3){
+                    _searchOppLbl.text = @"Buscando oponente...";
+               }else if (languageCode == 4){
+                    _searchOppLbl.text = @"Procurando um adversário...";
+               }
           if(isChallenge == true){
                
                [self gameModCanelBtnPressed:nil];
@@ -1682,7 +1687,8 @@
           
           [_gobtn setTitle:@"GO" forState:(UIControlStateNormal)];
      
-          
+          [GameModLabel setText:[@"Game Mode" uppercaseString]];
+        
           knowledgeLbl.text = KNOWLEDGE_LBL;
           tutoDesc1.text = TUTORIAL_DESC_LBL;
           tutoDesc2.text = TUTORIAL_DESC_LBL2;
@@ -1723,7 +1729,8 @@
      }
      else if(languageCode == 1 ) {
           [_gobtn setTitle:@"اذهب الان" forState:(UIControlStateNormal)];
-          
+          [GameModLabel setText:[@"نوع اللعبة" uppercaseString]];
+         
           loadingTitle = Loading_1;
           searchBar.placeholder = SEARCH_CATEGORY_1;
           forGemsLable.text = For_Gems1;
@@ -1782,11 +1789,8 @@
           forGemsLable.text = For_Gems2;
           forPointsLabel.text = For_Points2;
           [_gobtn setTitle:@"Allez" forState:(UIControlStateNormal)];
-          
-          
-          
-          
-          
+          [GameModLabel setText:[@"Mode de jeu" uppercaseString]];
+
           howtouseStoreDesc = @"Inscrivez-vous maintenant et gagnez 1000 Gems gratuits.";
           howtoEarnPointDesc = @"Vous pouvez toujours gagner des Points en invitant vos amis et en partageant notre application sur Facebook et Twitter.";
           knowledgeLbl.text = KNOWLEDGE_LBL_2;
@@ -1822,6 +1826,7 @@
           searchBar.placeholder = SEARCH_CATEGORY_3;
           loadingTitle = Loading_3;
           [_gobtn setTitle:@"ADELANTE" forState:(UIControlStateNormal)];
+          [GameModLabel setText:[@"MODO DE JUEGO" uppercaseString]];
           
           PlayNowLabel.text =PLAY_NOW_3;
           challengeAFriend.text = Challenge_a_friend3;
@@ -1878,7 +1883,7 @@
           HowtoPlay = @"Como Jogar";
           HowWitsStore = @"Como usar WITS loja";
           HowtoEarnPoints = @"Convide amigos e desafiá-los";
-          
+          GameModLabel.text = @"MODO DE JOGO";
           knowledgeLbl.text = KNOWLEDGE_LBL_4;
           forGemsLable.text = For_Gems4;
           forPointsLabel.text = For_Points4;
@@ -2088,13 +2093,13 @@
 
 -(void) setUpGameModScreen {
      self.tabBarController.tabBar.hidden = true;
-     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-     UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-     blurEffectView.frame = self.view.frame;
-     blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-     blurEffectView.tag = 499;
-     [self.view addSubview:blurEffectView];
-     //  popup settings
+//     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+//     UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+//     blurEffectView.frame = self.view.frame;
+//     blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//     blurEffectView.tag = 499;
+//     [self.view addSubview:blurEffectView];
+//     //  popup settings
      
      [[NSUserDefaults standardUserDefaults] setObject:requestType forKey:@"requestType"];
      [[NSUserDefaults standardUserDefaults] synchronize];
@@ -2148,36 +2153,7 @@
      [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynowglow.png"] forState:UIControlStateNormal];
      [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenow.png"] forState:UIControlStateNormal];
      
-//     NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-//     languageCode = [language intValue];
-//     if(languageCode == 0 ) {
-//          
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowEnglish.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeEnglish.png"] forState:UIControlStateNormal];
-//          
-//          
-//          
-//     }else      if(languageCode == 1 ) {
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowArabic.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeArabic.png"] forState:UIControlStateNormal];
-//          
-//     }else      if(languageCode == 2 ) {
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowSpanish.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeSpanish.png"] forState:UIControlStateNormal];
-//          
-//     }else      if(languageCode == 3 ) {
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowFrench.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeFrench.png"] forState:UIControlStateNormal];
-//          
-//     }else      if(languageCode == 4 ) {
-//          
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowGlowPortuguese.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengePortuguese.png"] forState:UIControlStateNormal];
-//          
-//     }
-//     
-     
-     
+
      
 }
 
@@ -2198,31 +2174,7 @@
      [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynow.png"] forState:UIControlStateNormal];
      [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenowglow.png"] forState:UIControlStateNormal];
      
-//     if(languageCode == 0 ) {
-//          
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowEnglish.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowEnglish.png"] forState:UIControlStateNormal];
-//          
-//          
-//          
-//     }else      if(languageCode == 1 ) {
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowArabic.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowArabic.png"] forState:UIControlStateNormal];
-//          
-//     }else      if(languageCode == 2 ) {
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowSpanish.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowSpanish.png"] forState:UIControlStateNormal];
-//          
-//     }else      if(languageCode == 3 ) {
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowFrench.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowFrench.png"] forState:UIControlStateNormal];
-//          
-//     }else      if(languageCode == 4 ) {
-//          
-//          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"PlayNowPortuguese.png"] forState:UIControlStateNormal];
-//          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"ChallengeglowPortuguese.png"] forState:UIControlStateNormal];
-//          
-//     }
+
      
 }
 
