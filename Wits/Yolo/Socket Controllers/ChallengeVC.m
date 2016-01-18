@@ -184,7 +184,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      
      [self initData];
      [self initViews];
-     
+     imageNames = @[@"avatar1.png",@"avatar2.png",@"avatar3.png",@"avatar4.png",@"avatar5.png",@"avatar6.png"];
      NSArray * name_Player = [[SharedManager getInstance]._userProfile.display_name componentsSeparatedByString:@" "];
      NSArray * name_opponent = [_challenge.opponentDisplayName componentsSeparatedByString:@" "];
      //topBarOpponentName.text = _challenge.opponentDisplayName;
@@ -200,6 +200,9 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      option_3_Btn.exclusiveTouch = YES;
      option_4_Btn.exclusiveTouch = YES;
      [self setInitialPoints];
+     ShouldVibrate =  [[NSUserDefaults standardUserDefaults] boolForKey:@"vibration"];
+     
+     
      answerTxt.layer.shadowColor = [UIColor colorWithRed:183 green:216 blue:255 alpha:1.0].CGColor;
      answerTxt.layer.shadowOffset = CGSizeMake(0.0, 0.0);
      answerTxt.layer.shadowRadius = 3.0;
@@ -814,6 +817,9 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      }
      else {
           [self playCorrectSound:@"incorrect.mp3" Loop: NO];
+          if(ShouldVibrate)
+               AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+         
           switch (btn.tag) {
                case 100:
                     [option_1_Btn setBackgroundImage:[UIImage imageNamed:@"1wrong.png"] forState:UIControlStateNormal];
@@ -1924,14 +1930,14 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                [cancelbuttonOutlet setTitle:@"إلغاء" forState:UIControlStateNormal];
                searchingOpponentLbl.text = @"االبحث عن الخصم...";
           }else if (languageCode == 2 ){
-               [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
-               searchingOpponentLbl.text = @"Recherche d\'un adversaire...";
-          }else if (languageCode == 3){
                [cancelbuttonOutlet setTitle:@"Annuler" forState:UIControlStateNormal];
-               searchingOpponentLbl.text = @"La búsqueda de un oponente...";
+               searchingOpponentLbl.text = @"En attendant un adversaire...";
+          }else if (languageCode == 3){
+               [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
+               searchingOpponentLbl.text = @"Esperando oponente...";
           }else if (languageCode == 4){
                [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
-               searchingOpponentLbl.text = @"Procurando um adversário...";
+               searchingOpponentLbl.text = @"Esperando por Oponente...";
           }
           
           [GemsDialogView removeFromSuperview];
@@ -2149,7 +2155,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
 
 - (IBAction)quitGame:(id)sender {
      [timer invalidate];
-     
+     [opponentProfileImageView stopAnimating];
+     [animationTimer invalidate];
      timer = nil;
      
      [GemsDialogView removeFromSuperview];
@@ -2290,7 +2297,14 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      sharedManager.socketdelegate = nil;
      sharedManager.socketdelegate = self;
 }
-
+-(void)onTimer{
+     [UIView animateWithDuration:1.0 animations:^{
+          opponentProfileImageView.alpha = 0.0;
+     }];
+     [UIView animateWithDuration:2.0 animations:^{
+          opponentProfileImageView.alpha = 1.0;
+     }];
+}
 #pragma mark iPhone - Server Communication
 -(void) DataRevieved:(SocketIOPacket *)dict{
      
@@ -2350,21 +2364,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
                languageCode = [language intValue];
                
-               //               if(!(_gmChallengeSelected))
-               //               {
-               //                    if (languageCode == 0) {
-               //                         _searchOppLbl.text = @"Searching opponent...";
-               //                    }else if(languageCode == 1){
-               //                         _searchOppLbl.text = @"االبحث عن الخصم...";
-               //                    }else if (languageCode == 2 ){
-               //                         _searchOppLbl.text = @"Recherche d\'un adversaire...";
-               //                    }else if (languageCode == 3){
-               //                         _searchOppLbl.text = @"La búsqueda de un oponente...";
-               //                    }else if (languageCode == 4){
-               //                         _searchOppLbl.text = @"Procurando um adversário...";
-               //                    }
-               //               }else
-               //               {
+           
                if (languageCode == 0) {
                     [cancelbuttonOutlet setTitle:@"Cancel" forState:UIControlStateNormal];
                     searchingOpponentLbl.text = @"Waiting for opponent...";
@@ -2372,14 +2372,14 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                     [cancelbuttonOutlet setTitle:@"إلغاء" forState:UIControlStateNormal];
                     searchingOpponentLbl.text = @"االبحث عن الخصم...";
                }else if (languageCode == 2 ){
-                    [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
-                    searchingOpponentLbl.text = @"Recherche d\'un adversaire...";
-               }else if (languageCode == 3){
                     [cancelbuttonOutlet setTitle:@"Annuler" forState:UIControlStateNormal];
-                    searchingOpponentLbl.text = @"La búsqueda de un oponente...";
+                    searchingOpponentLbl.text = @"En attendant un adversaire...";
+               }else if (languageCode == 3){
+                    [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
+                    searchingOpponentLbl.text = @"Esperando oponente...";
                }else if (languageCode == 4){
                     [cancelbuttonOutlet setTitle:@"Cancelar" forState:UIControlStateNormal];
-                    searchingOpponentLbl.text = @"Procurando um adversário...";
+                    searchingOpponentLbl.text = @"Esperando por Oponente...";
                }
                
                
@@ -2394,10 +2394,25 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                //Oponent Found
                _searchingLoaderView.hidden = true;
                searchingOpponentLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
-               searchingOpponentLbl.text = @"VS";
+               [searchingOpponentLbl setCenter:self.view.center];
+               [opponentProfileImageView stopAnimating];
+               [animationTimer invalidate
+                ];
+               if (languageCode == 0) {
+                    searchingOpponentLbl.text = @"VS";
+               }else if(languageCode == 1){
+                    searchingOpponentLbl.text = VS_1;
+               }else if (languageCode == 2 ){
+                    searchingOpponentLbl.text =VS_2;
+               }else if (languageCode == 3){
+                    searchingOpponentLbl.text = VS_3;
+               }else if (languageCode == 4){
+                    searchingOpponentLbl.text = VS_4;
+               }
+               
                [timer invalidate];
                timer = nil;
-               
+               cancelbuttonOutlet.hidden = true;
                //isGameStarted = true;
                
                NSString *oppName = [json objectForKey:@"displayName"];
@@ -2505,7 +2520,23 @@ typedef NSUInteger MAIN_FLAG_TYPE;
                }
                [self.view addSubview:searchingView];
                _loaderIndex = 1;
+               NSMutableArray *images = [[NSMutableArray alloc] init];
+               for (int i = 0; i < imageNames.count; i++) {
+                    [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
+               }
                
+               opponentProfileImageView.animationImages = images;
+               opponentProfileImageView.animationDuration = 6.0f;
+               [opponentProfileImageView startAnimating];
+               animationTimer= [NSTimer timerWithTimeInterval:1.0
+                                                       target:self
+                                                     selector:@selector(onTimer)
+                                                     userInfo:nil
+                                                      repeats:YES];
+               
+               [[NSRunLoop currentRunLoop] addTimer:animationTimer forMode:NSDefaultRunLoopMode];
+               [animationTimer fire];
+
                for(int i = 1; i<5; i++) {
                     UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
                     if(i == _loaderIndex) {
@@ -3131,7 +3162,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
      if(languageCode == 0 ) {
           _roundLbl.text = Round;
           roundTitleLbl.text = Round;
-          
+          searchingOpponentLbl.text = @"Waiting for opponent...";
+         
           lblGemsPoints.text = PLAY_FOR_GEMS;
           lblPlayforPoints.text = PLAY_FOR_POINTS;
           willhelpinRanking.text = WILL_HELP_IN_RANKING;
@@ -3140,6 +3172,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           gameModForPoints.text = For_Points;
           loadingTitle = Loading;
           resultTitle.text = RESULTS_LBL;
+          
      }
      else if(languageCode == 1 ) {
           
@@ -3154,6 +3187,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           gameModForPoints.text = For_Points1;
           roundTitleLbl.text = Round_1;
           resultTitle.text = RESULTS_LBL_1;
+          searchingOpponentLbl.text = @"االبحث عن الخصم...";
+      
      }
      else if(languageCode == 2) {
           loadingTitle = Loading_2;
@@ -3165,7 +3200,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           lblplayforGems.text = PLAY_FOR_GEMS_2;
           willhelpinRanking.text = WILL_HELP_IN_RANKING_2;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_2;
-          
+          searchingOpponentLbl.text = @"En attendant un adversaire...";
+      
           roundTitleLbl.text = Round_2;
           resultTitle.text = RESULTS_LBL_2;
      }
@@ -3180,7 +3216,8 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           lblplayforGems.text = PLAY_FOR_GEMS_3;
           willhelpinRanking.text = WILL_HELP_IN_RANKING_3;
           willHelpinEarnMoney.text = WILL_HELP_EARN_MONEY_3;
-          
+          searchingOpponentLbl.text = @"Esperando oponente...";
+        
           resultTitle.text = RESULTS_LBL_3;
      }
      else if(languageCode == 4) {
@@ -3195,6 +3232,7 @@ typedef NSUInteger MAIN_FLAG_TYPE;
           gameModForPoints.text = For_Points4;
           roundTitleLbl.text = Round_4;
           resultTitle.text = RESULTS_LBL_4;
+          searchingOpponentLbl.text = @"Esperando por Oponente...";
      }
      
      if (languageCode == 1) {

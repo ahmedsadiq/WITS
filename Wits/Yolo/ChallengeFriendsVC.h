@@ -81,6 +81,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *secondDot;
 @property (weak, nonatomic) IBOutlet UIImageView *thirdDot;
 @property (weak, nonatomic) IBOutlet UIImageView *fourthDot;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn2;
 
 @property (weak, nonatomic) IBOutlet UILabel *searchOppLbl;
 

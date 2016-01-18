@@ -621,7 +621,7 @@
           howtoPlay1 = @"Embark on a 1-1 challenge against anyone in the world.";
           howtoPlay2 = @"The faster you answer the more Gems you\'ll collect.";
           howtoPlay3 = @"Claim your rewards.";
-         [_SkipBtn setTitle:@"Skip" forState:UIControlStateNormal];
+         [_SkipBtn setTitle:[@"Skip" uppercaseString] forState:UIControlStateNormal];
           HowtoPlay = @"How to Play";
           HowWitsStore = @"How to Use WITS Store";
           HowtoEarnPoints = @"How to Earn Free Points";
@@ -676,7 +676,7 @@
           knowledgelbl.text = KNOWLEDGE_LBL_2;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_2;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_2;
-          [_SkipBtn setTitle:@"PASSER" forState:UIControlStateNormal];
+          [_SkipBtn setTitle:[@"PASSER" uppercaseString] forState:UIControlStateNormal];
           HowtoPlay = @"Comment jouer";
           HowWitsStore = @"Comment utiliser ESPRITS magasin";
           HowtoEarnPoints = @"Comment gagner des Gems";
@@ -709,7 +709,7 @@
           knowledgelbl.text = KNOWLEDGE_LBL_3;
           tutorialDescLbl.text = TUTORIAL_DESC_LBL_3;
           tutorialDescLbl2.text = TUTORIAL_DESC_LBL2_3;
-          [_SkipBtn setTitle:@"SALTAR" forState:UIControlStateNormal];
+          [_SkipBtn setTitle:[@"SALTAR" uppercaseString] forState:UIControlStateNormal];
           _lblTutorial.text = screenOne3;
         
           HowtoPlay = @"Cómo jugar";
@@ -748,7 +748,7 @@
           _knowlegdeLbl.text = KNOWLEDGE_LBL_4;
           //_shareLbl.text = SHARE_WITS_LBL_4;
           _EarnfreePointLbl.text = INVITE_FRIENDS_4;
-             [_SkipBtn setTitle:@"Pular" forState:UIControlStateNormal];
+             [_SkipBtn setTitle:[@"Pular" uppercaseString] forState:UIControlStateNormal];
           //[_tutorialPressed setTitle:TUTORIAL_BTN_4 forState:UIControlStateNormal];
           [_tutorialBacklbl setTitle:BACK_BTN_4 forState:UIControlStateNormal];
           [mainBack setTitle:BACK_BTN_4 forState:UIControlStateNormal];

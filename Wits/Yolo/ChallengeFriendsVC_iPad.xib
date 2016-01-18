@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeFriendsVC">
             <connections>
+                <outlet property="backBtn2" destination="P1N-m0-nHe" id="xhb-n9-dOr"/>
                 <outlet property="challengeTbl" destination="jHF-qn-Oa1" id="qrp-Ik-xQE"/>
                 <outlet property="firstdot" destination="OiJ-1N-msn" id="Rmf-vN-NWM"/>
                 <outlet property="fourthDot" destination="0BT-Sm-GLk" id="xw8-pO-4cs"/>

@@ -60,7 +60,7 @@
      int currentIndex;
      int currentResponseIndex;
      BOOL isWrongAns;
-     
+     BOOL ShouldVibrate;
       IBOutlet UILabel *PlayAgainLabel;
      BOOL isQuestionAnswered;
      BOOL isGameEnd;
@@ -97,6 +97,8 @@
      int currentOtherPoints;
      
      LoadingView *loadView;
+     NSArray *imageNames;
+     NSTimer *animationTimer;
      
      int tempVar;
      IBOutlet UIImageView *timerImg;

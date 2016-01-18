@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeFriendsVC">
             <connections>
+                <outlet property="backBtn2" destination="bTc-Ya-l0W" id="pg8-HU-34Q"/>
                 <outlet property="challengeTbl" destination="Goz-Gd-nNC" id="Mvp-TE-iMl"/>
                 <outlet property="firstdot" destination="GHW-kY-rn9" id="nr2-6G-j2C"/>
                 <outlet property="fourthDot" destination="vfX-oS-BRT" id="aWO-Tl-Kas"/>
@@ -160,7 +161,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bTc-Ya-l0W">
-                    <rect key="frame" x="90" y="484" width="140" height="40"/>
+                    <rect key="frame" x="90" y="488" width="140" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                     <state key="normal" title="Cancel" backgroundImage="btnbgpressed.png">

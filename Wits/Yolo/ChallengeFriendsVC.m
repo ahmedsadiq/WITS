@@ -575,7 +575,7 @@
      UIButton *selectedBtn = (UIButton *)sender;
      currentSelectedIndex = (int)selectedBtn.tag;
      UserProfile *_tempUser = [challengeArray objectAtIndex:currentSelectedIndex];
-     NSString *status = _tempUser.status;
+     //NSString *status = _tempUser.status;
      statusStr = @"Challenge";
      
      opponentProfileImageView.imageURL = [NSURL URLWithString:_tempUser.profile_image];
@@ -745,7 +745,7 @@
      
      NSString *requestType = [[NSUserDefaults standardUserDefaults]
                               stringForKey:@"requestType"];
-     NSString *title;
+     //NSString *title;
      if([packet.name isEqualToString:@"connected"])
      {
           eventId = 0;
@@ -753,7 +753,7 @@
 //          [sharedManager sendEvent:@"register" andParameters:registerDictionary];
           isSocketConnected = true;
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-          int languageCode = [language intValue];
+          //int languageCode = [language intValue];
           
           NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",_selectedUser.friendID,@"friend_id",topic_ID,@"type",subTopic,@"type_id",language,@"language",requestType,@"challenge_type", nil];
           [sharedManager sendEvent:@"sendChallenge" andParameters:registerDictionary];
@@ -770,7 +770,7 @@
           if([isVerified isEqualToString:@"verified"] ){
                isSocketConnected = true;
                NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-               int languageCode = [language intValue];
+               //int languageCode = [language intValue];
                
                NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",_selectedUser.friendID,@"friend_id",topic_ID,@"type",subTopic,@"type_id",language,@"language",requestType,@"challenge_type", nil];
                [sharedManager sendEvent:@"sendChallenge" andParameters:registerDictionary];
@@ -939,49 +939,57 @@
      NSString* language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
      if (languageCode == 0) {
-          
+          _searchOppLbl.text = @"Waiting for opponent...";
           loadingTitle = Loading;
           noFriendsLbl.text = @"You have no friend.";
           challengesLbl.text =@"Challenge" ;
           searchField.placeholder = @"Search For Challenges";
           [GoBtn setTitle:@"Search" forState:UIControlStateNormal];
           [mainback setTitle:BACK_BTN forState:UIControlStateNormal];
+          [_backBtn2 setTitle:@"Cancel" forState:UIControlStateNormal];
+         
           
      }else if (languageCode == 1){
           
           loadingTitle = Loading_1;
           noFriendsLbl.text = @"لا يوجد لديك صديق.";
-          
+          _searchOppLbl.text = @"في انتظار الخصم.....";
           challengesLbl.text =@"تحدي صديق";
           searchField.placeholder = @"بحث صديق";
           searchField.textAlignment = NSTextAlignmentRight;
           [GoBtn setTitle:GO_1 forState:UIControlStateNormal];
           [mainback setTitle:BACK_BTN_1 forState:UIControlStateNormal];
+          [_backBtn2 setTitle:@"إلغاء" forState:UIControlStateNormal];
+       
      }else if (languageCode == 2){
-          
+            _searchOppLbl.text = @"En attendant un adversaire...";
           loadingTitle = Loading_2;
           noFriendsLbl.text = @"No tienes amigo.";
           challengesLbl.text=@"Défiez un ami";
           searchField.placeholder = @"Rechercher un ami";
           [GoBtn setTitle:GO_2 forState:UIControlStateNormal];
           [mainback setTitle:BACK_BTN_2 forState:UIControlStateNormal];
-          
+          [_backBtn2 setTitle:@"Annuler" forState:UIControlStateNormal];
+     
      }else if (languageCode == 3){
-          
+           _searchOppLbl.text = @"Esperando oponente...";
           loadingTitle = Loading_3;
           noFriendsLbl.text = @"Vous n'avez pas d'ami";
           challengesLbl.text =@"esafio";
           searchField.placeholder = @"Search For Challenges";
           [GoBtn setTitle:GO_3 forState:UIControlStateNormal];
           [mainback setTitle:BACK_BTN_3 forState:UIControlStateNormal];
+          [_backBtn2 setTitle:@"Cancelar" forState:UIControlStateNormal];
+          
           
      }else if (languageCode == 4){
-          
+           _searchOppLbl.text = @"Esperando por Oponente...";
           loadingTitle = Loading_4;
           noFriendsLbl.text = @"Você não tem nenhum amigo";
           challengesLbl.text =@"Desafie um amigo";
           searchField.placeholder = @"desafio";
           [GoBtn setTitle:GO_4 forState:UIControlStateNormal];
+          [_backBtn2 setTitle:@"Cancelar" forState:UIControlStateNormal];
           [mainback setTitle:BACK_BTN_4 forState:UIControlStateNormal];
      }
 }

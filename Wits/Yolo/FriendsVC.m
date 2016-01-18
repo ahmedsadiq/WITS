@@ -996,7 +996,7 @@
           _challengeForGems.enabled = NO;
           _challengeForPoints.enabled = NO;
           _fmChatBtn.enabled = NO;
-        
+          _fmFriendButton.enabled = YES;
      }
      else
      {
@@ -1037,8 +1037,7 @@
      [ChallengeForPointsLabel setAlpha:0.5];
      FriendsLabel.text = @"";
      [FriendsLabel removeFromSuperview];
-    // UILabel *FriendsLabel = (UILabel *)[self.friendModView viewWithTag:99];
-     NSLog(@"YOLO %@",FriendsLabel.text);
+    
      [_friendModView addSubview:FriendsLabel];
      // Changes below done by Osama
      switch (status) {

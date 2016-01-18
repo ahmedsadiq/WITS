@@ -91,7 +91,7 @@
      
      [lblGemsPoints setText:[[SharedManager getInstance] _userProfile].cashablePoints];
      [lblStarsPoints setText:[[SharedManager getInstance] _userProfile].totalPoints];
-      imageNames = @[@"avatar1.png",@"avatar2.png",@"avatar3.png",@"avatar4.png",@"avatar5.png",@"avatar6.png"];
+     imageNames = @[@"avatar1.png",@"avatar2.png",@"avatar3.png",@"avatar4.png",@"avatar5.png",@"avatar6.png"];
      
      int totalPoints = [[SharedManager getInstance]._userProfile.cashablePoints intValue];
      if (totalPoints <10) {
@@ -642,7 +642,7 @@
      [timer invalidate];
      timer = nil;
      [self.navigationController popToRootViewControllerAnimated:false];
-      [opponentProfileImageView stopAnimating];
+     [opponentProfileImageView stopAnimating];
      [animationTimer invalidate];
      [sharedManager closeWebSocket];
      [searchingView removeFromSuperview];
@@ -821,8 +821,10 @@
      if([SharedManager getInstance]._userProfile.isVerifiedBool) {
           int totalPoints = [[SharedManager getInstance]._userProfile.totalPoints intValue];
           
-          NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-          int languageCode = [language intValue];
+//          NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+//          int languageCode = [language intValue];
+          if(!(_gmChallengeSelected))
+          {
                if (languageCode == 0) {
                     _searchOppLbl.text = @"Searching for Opponent...";
                }else if(languageCode == 1){
@@ -834,6 +836,20 @@
                }else if (languageCode == 4){
                     _searchOppLbl.text = @"Procurando um adversário...";
                }
+          }else
+          {
+               if (languageCode == 0) {
+                    _searchOppLbl.text = @"Waiting for opponent...";
+               }else if(languageCode == 1){
+                    _searchOppLbl.text = @"االبحث عن الخصم...";
+               }else if (languageCode == 2 ){
+                    _searchOppLbl.text = @"En attendant un adversaire...";
+               }else if (languageCode == 3){
+                    _searchOppLbl.text = @"Esperando oponente...";
+               }else if (languageCode == 4){
+                    _searchOppLbl.text = @"Esperando por Oponente...";
+               }
+          }
           if(isChallenge == true){
                
                [self gameModCanelBtnPressed:nil];
@@ -945,20 +961,37 @@
                     [_rejectbuygems setTitle:@"Cancelar" forState:UIControlStateNormal];               }
           }
           else {
-               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-               int languageCode = [language intValue];
+//               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+//               int languageCode = [language intValue];
                
-               if (languageCode == 0) {
-                    _searchOppLbl.text = @"Searching opponent...";
-               }else if(languageCode == 1){
-                    _searchOppLbl.text = @"االبحث عن الخصم...";
-               }else if (languageCode == 2 ){
-                    _searchOppLbl.text = @"Recherche d\'un adversaire...";
-               }else if (languageCode == 3){
-                    _searchOppLbl.text = @"La búsqueda de un oponente...";
-               }else if (languageCode == 4){
-                    _searchOppLbl.text = @"Procurando um adversário...";
+               if(!(_gmChallengeSelected))
+               {
+                    if (languageCode == 0) {
+                         _searchOppLbl.text = @"Searching for Opponent...";
+                    }else if(languageCode == 1){
+                         _searchOppLbl.text = @"االبحث عن الخصم...";
+                    }else if (languageCode == 2 ){
+                         _searchOppLbl.text = @"Recherche d\'un adversaire...";
+                    }else if (languageCode == 3){
+                         _searchOppLbl.text = @"Buscando oponente...";
+                    }else if (languageCode == 4){
+                         _searchOppLbl.text = @"Procurando um adversário...";
+                    }
+               }else
+               {
+                    if (languageCode == 0) {
+                         _searchOppLbl.text = @"Waiting for opponent...";
+                    }else if(languageCode == 1){
+                         _searchOppLbl.text = @"االبحث عن الخصم...";
+                    }else if (languageCode == 2 ){
+                         _searchOppLbl.text = @"En attendant un adversaire...";
+                    }else if (languageCode == 3){
+                         _searchOppLbl.text = @"Esperando oponente...";
+                    }else if (languageCode == 4){
+                         _searchOppLbl.text = @"Esperando por Oponente...";
+                    }
                }
+
                
                if(isChallenge == true){
                     
@@ -1147,7 +1180,7 @@
      opponentProfileImageView.animationImages = images;
      opponentProfileImageView.animationDuration = 6.0f;
      [opponentProfileImageView startAnimating];
-     animationTimer= [NSTimer timerWithTimeInterval:1.0
+     animationTimer= [NSTimer timerWithTimeInterval:2.0
                                              target:self
                                            selector:@selector(onTimer)
                                            userInfo:nil
@@ -1172,10 +1205,10 @@
      [sharedManager openSockets];
 }
 -(void)onTimer{
-     [UIView animateWithDuration:1.0 animations:^{
-          opponentProfileImageView.alpha = 0.0;
+     [UIView animateWithDuration:0.5 animations:^{
+          opponentProfileImageView.alpha = 0.2;
      }];
-     [UIView animateWithDuration:1.0 animations:^{
+     [UIView animateWithDuration:0.5 animations:^{
           opponentProfileImageView.alpha = 1.0;
      }];
 }
@@ -1259,7 +1292,7 @@
           }else if (languageCode == 4){
                _searchOppLbl.text = VS_4;
           }
-
+          
           [searchingView removeFromSuperview];
           appDelegate.friendToBeChalleneged = nil;
           UIView *effectView = [self.view viewWithTag:499];
@@ -1317,19 +1350,50 @@
           
           //NSString *isVerified = [arg objectForKey:@"msg"];
           //if([isVerified isEqualToString:@"verified"] ){
-               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-               languageCode = [language intValue];
+          NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+          languageCode = [language intValue];
+          
+          if(!(_gmChallengeSelected))
+          {
+               if (languageCode == 0) {
+                    _searchOppLbl.text = @"Searching for Opponent...";
+               }else if(languageCode == 1){
+                    _searchOppLbl.text = @"االبحث عن الخصم...";
+               }else if (languageCode == 2 ){
+                    _searchOppLbl.text = @"Recherche d\'un adversaire...";
+               }else if (languageCode == 3){
+                    _searchOppLbl.text = @"Buscando oponente...";
+               }else if (languageCode == 4){
+                    _searchOppLbl.text = @"Procurando um adversário...";
+               }
+          }else
+          {
+               if (languageCode == 0) {
+                    _searchOppLbl.text = @"Waiting for opponent...";
+               }else if(languageCode == 1){
+                    _searchOppLbl.text = @"في انتظار الخصم.....";
+               }else if (languageCode == 2 ){
+                    _searchOppLbl.text = @"En attendant un adversaire...";
+               }else if (languageCode == 3){
+                    _searchOppLbl.text = @"Esperando oponente...";
+               }else if (languageCode == 4){
+                    _searchOppLbl.text = @"Esperando por Oponente...";
+               }
                
-               if(appDelegate.friendToBeChalleneged) {
-                    
-                    NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",appDelegate.friendToBeChalleneged.friendID,@"friend_id",@"3",@"type",subTopic.subTopic_id,@"type_id",language,@"language",requestType,@"challenge_type", nil];
-                    [sharedManager sendEvent:@"sendChallenge" andParameters:registerDictionary];
-                    
-               }
-               else {
-                    NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"3",@"type",subTopic.subTopic_id,@"type_id",language,@"language",@"false",@"is_cancel",requestType, @"request_type", nil];
-                    [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionary];
-               }
+               
+          }
+          
+          
+          if(appDelegate.friendToBeChalleneged) {
+               
+               NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",appDelegate.friendToBeChalleneged.friendID,@"friend_id",@"3",@"type",subTopic.subTopic_id,@"type_id",language,@"language",requestType,@"challenge_type", nil];
+               [sharedManager sendEvent:@"sendChallenge" andParameters:registerDictionary];
+               
+          }
+          else {
+               NSDictionary *registerDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[SharedManager getInstance].userID,@"user_id",@"3",@"type",subTopic.subTopic_id,@"type_id",language,@"language",@"false",@"is_cancel",requestType, @"request_type", nil];
+               [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionary];
+          }
           //}
      }
      
@@ -1384,16 +1448,16 @@
                }
                [self.view addSubview:searchingView];
                _loaderIndex = 1;
-//               
-//               for(int i = 1; i<5; i++) {
-//                    UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
-//                    if(i == _loaderIndex) {
-//                         dot.image = [UIImage imageNamed:@"dotglow.png"];
-//                    }
-//                    else {
-//                         dot.image = [UIImage imageNamed:@"dotblack.png"];
-//                    }
-//               }
+               //
+               //               for(int i = 1; i<5; i++) {
+               //                    UIImageView *dot = (UIImageView*)[_searchingLoaderView viewWithTag:i];
+               //                    if(i == _loaderIndex) {
+               //                         dot.image = [UIImage imageNamed:@"dotglow.png"];
+               //                    }
+               //                    else {
+               //                         dot.image = [UIImage imageNamed:@"dotblack.png"];
+               //                    }
+               //               }
           }
           else {
                
@@ -1494,7 +1558,33 @@
           int flag = [[json objectForKey:@"flag"] intValue];
           if(flag == 3) {
                //Oponent is still searching
-               
+               if(!(_gmChallengeSelected))
+               {
+                    if (languageCode == 0) {
+                         _searchOppLbl.text = @"Searching for Opponent...";
+                    }else if(languageCode == 1){
+                         _searchOppLbl.text = @"االبحث عن الخصم...";
+                    }else if (languageCode == 2 ){
+                         _searchOppLbl.text = @"Recherche d\'un adversaire...";
+                    }else if (languageCode == 3){
+                         _searchOppLbl.text = @"Buscando oponente...";
+                    }else if (languageCode == 4){
+                         _searchOppLbl.text = @"Procurando um adversário...";
+                    }
+               }else
+               {
+                    if (languageCode == 0) {
+                         _searchOppLbl.text = @"Waiting for opponent...";
+                    }else if(languageCode == 1){
+                         _searchOppLbl.text = @"االبحث عن الخصم...";
+                    }else if (languageCode == 2 ){
+                         _searchOppLbl.text = @"En attendant un adversaire...";
+                    }else if (languageCode == 3){
+                         _searchOppLbl.text = @"Esperando oponente...";
+                    }else if (languageCode == 4){
+                         _searchOppLbl.text = @"Esperando por Oponente...";
+                    }
+               }
                ////ADDED ISCANCEL PARAMETER/////
                
                NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
@@ -1503,15 +1593,18 @@
                [sharedManager sendEvent:@"findPlayerOpponent" andParameters:registerDictionary];
           }
           else if(flag == 1){
-                [opponentProfileImageView stopAnimating];
+                _searchingLoaderView.hidden = true;
+               [opponentProfileImageView stopAnimating];
                [animationTimer invalidate
                 ];
                [timer invalidate];
                timer = nil;
                isGameStarted = true;
+                backBtn2.hidden = YES;
                //Oponent Found
+               [_searchOppLbl setCenter:self.view.center];
                _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
-               
+              
                
                //_searchOppLbl.text = @"VS";
                if (languageCode == 0) {
@@ -1525,7 +1618,7 @@
                }else if (languageCode == 4){
                     _searchOppLbl.text = VS_4;
                }
-
+               
                //Changed by Fiza
                NSString *oppName = [json objectForKey:@"displayName"];
                opponent.text = oppName;
@@ -1569,17 +1662,6 @@
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
           
-          if (languageCode == 0) {
-               opponent.text = @"Something went wrong..";
-          }else if(languageCode == 1){
-               opponent.text = @"لقد حصل خطأ ما";
-          }else if (languageCode == 2 ){
-               opponent.text = @"Erreur: Quelque chose s\'est mal passé";
-          }else if (languageCode == 3){
-               opponent.text = @"Algo salió mal";
-          }else if (languageCode == 4){
-               opponent.text = @"Alguma coisa deu errado";
-          }
           [timer invalidate];
           timer = nil;
           
@@ -1622,17 +1704,7 @@
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
           
-          if (languageCode == 0) {
-               opponent.text = @"Something went wrong..";
-          }else if(languageCode == 1){
-               opponent.text = @"لقد حصل خطأ ما";
-          }else if (languageCode == 2 ){
-               opponent.text = @"Erreur: Quelque chose s\'est mal passé";
-          }else if (languageCode == 3){
-               opponent.text = @"Algo salió mal";
-          }else if (languageCode == 4){
-               opponent.text = @"Alguma coisa deu errado";
-          }
+  
           [timer invalidate];
           timer = nil;
           
@@ -1686,9 +1758,9 @@
           searchBar.placeholder = SEARCH_CATEGORY;
           
           [_gobtn setTitle:@"GO" forState:(UIControlStateNormal)];
-     
+          
           [GameModLabel setText:[@"Game Mode" uppercaseString]];
-        
+          
           knowledgeLbl.text = KNOWLEDGE_LBL;
           tutoDesc1.text = TUTORIAL_DESC_LBL;
           tutoDesc2.text = TUTORIAL_DESC_LBL2;
@@ -1730,7 +1802,7 @@
      else if(languageCode == 1 ) {
           [_gobtn setTitle:@"اذهب الان" forState:(UIControlStateNormal)];
           [GameModLabel setText:[@"نوع اللعبة" uppercaseString]];
-         
+          
           loadingTitle = Loading_1;
           searchBar.placeholder = SEARCH_CATEGORY_1;
           forGemsLable.text = For_Gems1;
@@ -1790,7 +1862,7 @@
           forPointsLabel.text = For_Points2;
           [_gobtn setTitle:@"Allez" forState:(UIControlStateNormal)];
           [GameModLabel setText:[@"Mode de jeu" uppercaseString]];
-
+          
           howtouseStoreDesc = @"Inscrivez-vous maintenant et gagnez 1000 Gems gratuits.";
           howtoEarnPointDesc = @"Vous pouvez toujours gagner des Points en invitant vos amis et en partageant notre application sur Facebook et Twitter.";
           knowledgeLbl.text = KNOWLEDGE_LBL_2;
@@ -2093,13 +2165,13 @@
 
 -(void) setUpGameModScreen {
      self.tabBarController.tabBar.hidden = true;
-//     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-//     UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-//     blurEffectView.frame = self.view.frame;
-//     blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//     blurEffectView.tag = 499;
-//     [self.view addSubview:blurEffectView];
-//     //  popup settings
+     //     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+     //     UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+     //     blurEffectView.frame = self.view.frame;
+     //     blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+     //     blurEffectView.tag = 499;
+     //     [self.view addSubview:blurEffectView];
+     //     //  popup settings
      
      [[NSUserDefaults standardUserDefaults] setObject:requestType forKey:@"requestType"];
      [[NSUserDefaults standardUserDefaults] synchronize];
@@ -2119,8 +2191,8 @@
      
      _searchingLoaderView.hidden = false;
      
-    // [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gem.png"] forState:UIControlStateNormal];
-    // [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"starglow.png"] forState:UIControlStateNormal];
+     // [_gmGemButton setBackgroundImage:[UIImage imageNamed:@"gem.png"] forState:UIControlStateNormal];
+     // [_gmStarsBtn setBackgroundImage:[UIImage imageNamed:@"starglow.png"] forState:UIControlStateNormal];
      if(appDelegate.friendToBeChalleneged) {
           //          [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"playNow.png"] forState:UIControlStateNormal];
           //          [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"challengenowglow.png"] forState:UIControlStateNormal];
@@ -2153,7 +2225,7 @@
      [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynowglow.png"] forState:UIControlStateNormal];
      [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenow.png"] forState:UIControlStateNormal];
      
-
+     
      
 }
 
@@ -2168,13 +2240,13 @@
      _gmChallengeSelected = true;
      NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
      languageCode = [language intValue];
-   
+     
      challengeAFriend.textColor=[UIColor colorWithRed:183.0/255.0f green:216.0/255.0f blue:255.0/255.0f alpha:1.0];
      PlayNowLabel.textColor = [UIColor whiteColor];
      [_playNowBtn setBackgroundImage:[UIImage imageNamed:@"Newplaynow.png"] forState:UIControlStateNormal];
      [_challengeNowBtn setBackgroundImage:[UIImage imageNamed:@"Newchallengenowglow.png"] forState:UIControlStateNormal];
      
-
+     
      
 }
 
@@ -2226,7 +2298,7 @@
           
           
      }
-
+     
 }
 
 - (IBAction)gmStarsPressed:(id)sender {

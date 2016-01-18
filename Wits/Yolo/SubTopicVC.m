@@ -1467,7 +1467,6 @@
                          _searchOppLbl.text = @"Esperando por Oponente...";
                     }
                     
-                    
                }
                //Oponent is still searching
                
@@ -1481,10 +1480,11 @@
                [opponentProfileImageView stopAnimating];
                [animationTimer invalidate
                 ];
-               
+             
+               [_searchOppLbl setCenter:self.view.center];
                _searchOppLbl.textColor = [UIColor colorWithRed:(255/255.f) green:(228/255.f) blue:(1/255.f) alpha:1];
                
-               
+               backBtn2.hidden = YES;
                //_searchOppLbl.text = @"VS";
                if (languageCode == 0) {
                     _searchOppLbl.text = @"VS";
@@ -1564,17 +1564,17 @@
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
           
-          if (languageCode == 0) {
-               _searchOppLbl.text = @"Something went wrong..";
-          }else if(languageCode == 1){
-               _searchOppLbl.text = @"لقد حصل خطأ ما";
-          }else if (languageCode == 2 ){
-               _searchOppLbl.text = @"Erreur: Quelque chose s\'est mal passé";
-          }else if (languageCode == 3){
-               _searchOppLbl.text = @"Algo salió mal";
-          }else if (languageCode == 4){
-               _searchOppLbl.text = @"Alguma coisa deu errado";
-          }
+//          if (languageCode == 0) {
+//               _searchOppLbl.text = @"Something went wrong..";
+//          }else if(languageCode == 1){
+//               _searchOppLbl.text = @"لقد حصل خطأ ما";
+//          }else if (languageCode == 2 ){
+//               _searchOppLbl.text = @"Erreur: Quelque chose s\'est mal passé";
+//          }else if (languageCode == 3){
+//               _searchOppLbl.text = @"Algo salió mal";
+//          }else if (languageCode == 4){
+//               _searchOppLbl.text = @"Alguma coisa deu errado";
+//          }
           
           
           [timer invalidate];
@@ -1623,17 +1623,17 @@
           NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
           languageCode = [language intValue];
           
-          if (languageCode == 0) {
-               _searchOppLbl.text = @"Something went wrong..";
-          }else if(languageCode == 1){
-               _searchOppLbl.text = @"لقد حصل خطأ ما";
-          }else if (languageCode == 2 ){
-               _searchOppLbl.text = @"Erreur: Quelque chose s\'est mal passé";
-          }else if (languageCode == 3){
-               _searchOppLbl.text = @"Algo salió mal";
-          }else if (languageCode == 4){
-               _searchOppLbl.text = @"Alguma coisa deu errado";
-          }
+//          if (languageCode == 0) {
+//               _searchOppLbl.text = @"Something went wrong..";
+//          }else if(languageCode == 1){
+//               _searchOppLbl.text = @"لقد حصل خطأ ما";
+//          }else if (languageCode == 2 ){
+//               _searchOppLbl.text = @"Erreur: Quelque chose s\'est mal passé";
+//          }else if (languageCode == 3){
+//               _searchOppLbl.text = @"Algo salió mal";
+//          }else if (languageCode == 4){
+//               _searchOppLbl.text = @"Alguma coisa deu errado";
+//          }
           [timer invalidate];
           timer = nil;
           
@@ -1685,9 +1685,9 @@
      if([SharedManager getInstance]._userProfile.isVerifiedBool) {
           int totalPoints = [[SharedManager getInstance]._userProfile.totalPoints intValue];
           
-          NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-          int languageCode = [language intValue];
-          
+//          NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+//          int languageCode = [language intValue];
+//          
           
           if(!(_gmChallengeSelected))
           {
@@ -1715,8 +1715,6 @@
                }else if (languageCode == 4){
                     _searchOppLbl.text = @"Esperando por Oponente...";
                }
-               
-               
           }
           
           
@@ -1833,8 +1831,8 @@
                     [_rejectbuygems setTitle:@"Cancelar" forState:UIControlStateNormal];               }
           }
           else {
-               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
-               int languageCode = [language intValue];
+//               NSString *language = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"languageCode"];
+//               int languageCode = [language intValue];
                
                if(!(_gmChallengeSelected))
                {
@@ -2070,7 +2068,7 @@
           loadingTitle = Loading_2;
           
           [backBtn3 setTitle:BACK_BTN_2 forState:UIControlStateNormal];
-          [backBtn2 setTitle:@"Cancelar" forState:UIControlStateNormal];
+          [backBtn2 setTitle:@"Annuler" forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_2 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_2 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_2 forState:UIControlStateNormal];
@@ -2117,7 +2115,7 @@
           adContentLbl.text = ADD_CONTENT_3;
           guidelineLbl.text = GUIDELINES_3;
           
-          [backBtn2 setTitle:@"Annuler" forState:UIControlStateNormal];
+          [backBtn2 setTitle:@"Cancelar" forState:UIControlStateNormal];
           [sendQuestion setTitle:SEND_3 forState:UIControlStateNormal];
           [backBtn1 setTitle:BACK_BTN_3 forState:UIControlStateNormal];
           [backBtn setTitle:BACK_BTN_3 forState:UIControlStateNormal];
