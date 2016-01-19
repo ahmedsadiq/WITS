@@ -40,6 +40,7 @@
 - (void)viewDidLoad {
      [super viewDidLoad];
      self.tabBarController.tabBar.hidden = false;
+      _addOnsArraySorted = [[NSMutableArray alloc] init];
      [self setLanguageForScreen];
      // Do any additional setup after loading the view from its nib.
      searchField.delegate = self;
@@ -99,8 +100,14 @@
                rewardObj.reward_id = [rewardDict objectForKey:@"id"];
                rewardObj.image = [rewardDict objectForKey:@"image"];
                rewardObj.unlock_price = [rewardDict objectForKey:@"unlock_price"];
-               rewardObj.productName = [rewardDict objectForKey:@"name"];
                
+               rewardObj.productName = [rewardDict objectForKey:@"name"];
+               NSString *newString = [rewardObj.productName stringByReplacingOccurrencesOfString:@" " withString:@""];
+               NSString *newString2 = [rewardObj.unlock_price stringByReplacingOccurrencesOfString:@" " withString:@""];
+              newString = [newString lowercaseString];
+               rewardObj.unlock_price = newString2;
+               rewardObj.price = [ rewardObj.unlock_price intValue];
+               rewardObj.productName = newString;
                [_addOnsArray addObject:rewardObj];
           }
           currentIndex = 0;
@@ -110,6 +117,7 @@
      }];
      
      [engine enqueueOperation:op];
+     
 }
 
 - (void)didReceiveMemoryWarning {
@@ -181,11 +189,34 @@
 
 - (IBAction)sortBtn:(id)sender {
      timeSort++;
-     
-     if(timeSort == 3){
-          timeSort =0;
-          [sortbtn setBackgroundImage:[UIImage imageNamed:@"sortunlock.png"] forState:UIControlStateNormal ];
+     if(timeSort == 1){
+          _addOnsArraySorted = [_addOnsArray mutableCopy];
+          [_addOnsArray removeAllObjects];
+          [sortbtn setBackgroundImage:[UIImage imageNamed:@"sortalpha.png"] forState:UIControlStateNormal];
+          NSSortDescriptor *sortDescriptor;
+          sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"_productName" ascending:YES];
+          NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+          [_addOnsArraySorted sortUsingDescriptors:sortDescriptors];
+          
+          _addOnsArray = [_addOnsArraySorted mutableCopy];
      }
+     else if(timeSort == 2)
+     {
+          _addOnsArraySorted = [_addOnsArray mutableCopy];
+          [sortbtn setBackgroundImage:[UIImage imageNamed:@"sortgem.png"] forState:UIControlStateNormal ];
+          NSSortDescriptor *sortDescriptor;
+          sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"price" ascending:YES];
+          NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+          [_addOnsArraySorted sortUsingDescriptors:sortDescriptors];
+          [_addOnsArray removeAllObjects];
+          _addOnsArray = [_addOnsArraySorted mutableCopy];
+          
+     }
+     else if(timeSort == 3){
+          timeSort =0;
+            [sortbtn setBackgroundImage:[UIImage imageNamed:@"sortunlock.png"] forState:UIControlStateNormal ];
+     }
+     
      [rewardsTableView reloadData];
      
 }
@@ -232,28 +263,9 @@
      
      //int indexS = indexPath.section;
      currentIndex = (indexPath.row*2);
-    
      if(timeSort == 0){
           NSSortDescriptor *sortDescriptor;
-          sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"unlock_price" ascending:YES];
-          NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-          [_addOnsArray sortUsingDescriptors:sortDescriptors];
-     }
-     
-     
-     else if(timeSort == 1){
-           [sortbtn setBackgroundImage:[UIImage imageNamed:@"sortalpha.png"] forState:UIControlStateNormal];
-          NSSortDescriptor *sortDescriptor;
-          sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"productName" ascending:YES];
-          NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-          [_addOnsArray sortUsingDescriptors:sortDescriptors];
-     }
-     else if(timeSort == 2)
-     {
-          
-          [sortbtn setBackgroundImage:[UIImage imageNamed:@"sortgem.png"] forState:UIControlStateNormal ];
-          NSSortDescriptor *sortDescriptor;
-          sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"unlock_price" ascending:YES];
+          sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"price" ascending:YES];
           NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
           [_addOnsArray sortUsingDescriptors:sortDescriptors];
      }
@@ -275,7 +287,7 @@
      cell.addonCount.text = @"";
      int unlockPrice = [obj.unlock_price intValue];
      
-     if(unlockPrice <= consumedGems) {
+     if(unlockPrice <= consumedGems && consumedGems>= 500) {
           cell.lockedImg.image = [UIImage imageNamed:@""];
           cell.buybtnleft.enabled = true;
           cell.buybtnleft.hidden = false;
@@ -321,7 +333,7 @@
           cell.addonCount.text = @"";
           int unlockPrice = [obj.unlock_price intValue];
           
-          if(unlockPrice <= consumedGems) {
+          if(unlockPrice <= consumedGems && consumedGems >= 500) {
                cell.rightlockedimg.image = [UIImage imageNamed:@""];
                cell.buybtnright.enabled = true;
                cell.buybtnright.hidden = false;
@@ -389,8 +401,8 @@
           obj.isSelected = true;
           
      }
-     //
-     //     [rewardsTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+     
+          [rewardsTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 //-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

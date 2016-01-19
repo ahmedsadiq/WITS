@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString *image;
 @property (nonatomic, retain) UIImage *cellimage;
 @property (nonatomic, retain) NSString *unlock_price;
+@property int price;
 @property BOOL isSelected;
 @property BOOL isUnlocked;
 @end

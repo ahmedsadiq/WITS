@@ -49,6 +49,7 @@
       IBOutlet UITextField *searchField;
 }
 @property (strong, nonatomic) NSMutableArray *addOnsArray;
+@property (strong, nonatomic) NSMutableArray *addOnsArraySorted;
 @property (strong, nonatomic) NSMutableArray *listFiles ;
 
 - (IBAction)backPressed:(id)sender;
